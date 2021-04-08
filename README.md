@@ -1,6 +1,6 @@
-# CE Style Guides
+# SS Style Guides
 
-Here we have all the CORE, COMPONENTS, COMPOUND, SECTIONS and TEMPLATE scss-code organized in the same waas is done on the Shopify repo.
+Here we have all the CORE, COMPONENTS, COMPOUND, SECTIONS and TEMPLATE scss-code organized in the same way as is done on the Shopify repo.
 
 In addition to the SCSS we also save the HTML for each of them.
 

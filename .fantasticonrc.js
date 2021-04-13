@@ -14,6 +14,6 @@ module.exports = {
 	},
 	pathOptions: {
 		scss: './src/scss/components/_icons.scss',
-		html: './docs/components/icons.html',
+		html: './src/hbs/components/icons.hbs',
 	}
 };

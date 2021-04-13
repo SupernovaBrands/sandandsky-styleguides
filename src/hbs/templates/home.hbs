@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{{> html-head title="Home" }}
+</head>
+
+<body>
+	{{> header}}
+	{{> carousel-banner }}
+
+	<div class="mobile-wrapper mt-2 mt-lg-5 mb-5">
+		<div class="container">
+			<div class="d-flex justify-content-between mb-2">
+				<h2 class="h1">Sand &amp; Sky featured products</h2>
+				<button class="btn btn-lg btn-primary d-none d-lg-block">Shop all featured</button>
+			</div>
+
+			<div class="row">
+				{{> product-card class="col-6 col-lg-3" color="ff6f8d"}}
+				{{> product-card class="col-6 col-lg-3" color="cc3195"}}
+				{{> product-card class="col-6 col-lg-3 d-none d-lg-block" color="66b3df"}}
+				{{> product-card class="col-6 col-lg-3 d-none d-lg-block" color="ff6f8d"}}
+			</div>
+
+			<div class="d-flex justify-content-center d-lg-none">
+				<button class="btn btn-lg btn-primary">Shop all featured</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="mobile-wrapper my-5 bg-light">
+		<div class="container py-5">
+			<h2 class="h1">Ingredients block</h2>
+		</div>
+	</div>
+
+	{{> collection-section class="my-5" color="ff6f8d" title="Detoxify with Australian Pink Clay" button="Shop all Detoxify"}}
+
+	{{> collection-section class="my-5" color="cc3195" title="Brighten with Australian Emu Apple" button="Shop all Brighten"}}
+
+	{{> collection-section class="my-5" color="66b3df" title="Hydrate with Tasmanian Spring Water" button="Shop all Hydrate"}}
+
+	<div class="mobile-wrapper my-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-8">
+					<h2 class="h1">Bringing A-Beauty to the world</h2>
+					<p>
+						Based on clean and highly effective formulas, we skip the 10-step routines and crazy claims.
+						<span class="d-none d-lg-inline-block">‘Cause we’d rather be at the beach, than stuck in the bathroom.</span>
+						<a href="">Explore A-Beauty</a>
+					</p>
+					<div class="row">
+						<div class="col-6 col-lg-3 text-center mb-5"><i class="sni-text text-secondary d-block" aria-hidden="true">ss</i>Australian Botanical ingredients.</div>
+						<div class="col-6 col-lg-3 text-center mb-5"><i class="sni-text text-secondary d-block" aria-hidden="true">ss</i>Cruelty-free. PETA Approved.</div>
+						<div class="col-6 col-lg-3 text-center mb-5"><i class="sni-text text-secondary d-block" aria-hidden="true">ss</i>No worries skincare.</div>
+						<div class="col-6 col-lg-3 text-center mb-5"><i class="sni-text text-secondary d-block" aria-hidden="true">ss</i>No nasties, only clean formulas.</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-lg-4">
+					<picture class="d-block">
+						<source srcset="https://via.placeholder.com/1810x1020" media="(min-width: 992px)">
+						<source srcset="https://via.placeholder.com/690x420">
+						<img src="https://via.placeholder.com/690x420" alt="Placeholder" class="d-block w-100">
+					</picture>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="mobile-wrapper my-5 bg-secondary-light">
+		<div class="container py-5">
+			<h2 class="h1">Title for the blog block goes here</h2>
+			<div class="row">
+				<div class="col-12 col-lg-6">
+					<article class="d-flex bg-white">
+						<figure class="col-12 col-lg-8 p-0 mb-0">
+							<img src="https://via.placeholder.com/740x494" class="w-100">
+						</figure>
+						<div class="col col-lg-4 py-2">
+							<h3 class="mb-1">Sand &amp; Sky Skinsiders with Ruchi Page</h3>
+							<p>Content creator and writer Ruchi Page caught our attention...</p>
+							<a href="">Continue reading</a>
+						</div>
+					</article>
+				</div>
+				<div class="col-12 col-lg-6 d-none d-lg-block">
+					<article class="d-flex bg-white">
+						<figure class="col-12 col-lg-8 p-0 mb-0">
+							<img src="https://via.placeholder.com/740x494" class="w-100">
+						</figure>
+						<div class="col col-lg-4 py-2">
+							<h3 class="mb-1">Sand &amp; Sky Skinsiders with Erica Jade</h3>
+							<p>A self-confessed skincare nerd, Erica Jade loves nothing...</p>
+							<a href="">Continue reading</a>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="mobile-wrapper my-5">
+		<div class="container py-5">
+			<div class="d-flex justify-content-between mb-2">
+				<h2 class="h1">Instagram lorem ipsum dolor sit amet</h2>
+				<button class="btn btn-lg btn-primary d-none d-lg-block">Go to Instagram</button>
+			</div>
+
+			<img src="https://via.placeholder.com/255x255">
+
+			<div class="d-flex justify-content-center d-lg-none">
+				<button class="btn btn-lg btn-primary">Go to Instagram</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="mobile-wrapper my-5 bg-light">
+		<div class="container py-5">
+			<h2 class="h1">Recognized A-Beauty leader by…</h2>
+		</div>
+	</div>
+
+	<div class="mobile-wrapper bg-secondary-light">
+		<div class="container py-5">
+			<div class="row justify-content-lg-center">
+				<div class="col-4 col-lg-3 text-secondary text-center">
+					<i class="sni-text d-block" aria-hidden="true">ss</i>
+					<span class="d-block mt-2">Easy Returns</span>
+				</div>
+				<div class="col-4 col-lg-3 text-secondary text-center">
+					<i class="sni-text d-block" aria-hidden="true">ss</i>
+					<span class="d-block mt-2">Free Shipping*</span>
+				</div>
+				<div class="col-4 col-lg-3 text-secondary text-center">
+					<i class="sni-text d-block" aria-hidden="true">ss</i>
+					<span class="d-block mt-2">Fast Delivery</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="mobile-wrapper bg-secondary">
+		<div class="container py-5">
+			<div class="row">
+				<div class="col-12 col-lg-6 text-white">
+					<h3>Join the A-Beauty movement and stay inspired with new content, special deals and more!</h3>
+					<input class="form-control bg-transparent text-white border-white mt-2 mt-lg-3" placeholder="E-mail address" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{{> footer}}
+
+	{{> js jquery=false popper=false bootstrap=false main=false }}
+</body>
+
+</html>

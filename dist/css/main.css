@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @font-face {
   font-family: "supernova-icon";
-  src: url("/sandandsky-styleguides/fonts/supernova-icon.svg?524cad38a7b955b2d4bfe17d13e030d5#supernova-icon") format("svg"), url("/sandandsky-styleguides/fonts/supernova-icon.ttf?524cad38a7b955b2d4bfe17d13e030d5") format("truetype"), url("/sandandsky-styleguides/fonts/supernova-icon.woff?524cad38a7b955b2d4bfe17d13e030d5") format("woff"), url("/sandandsky-styleguides/fonts/supernova-icon.woff2?524cad38a7b955b2d4bfe17d13e030d5") format("woff2");
+  src: url("/sandandsky-styleguides/fonts/supernova-icon.svg?411abeb92c91bb06aaf6fc05e1acb84c#supernova-icon") format("svg"), url("/sandandsky-styleguides/fonts/supernova-icon.ttf?411abeb92c91bb06aaf6fc05e1acb84c") format("truetype"), url("/sandandsky-styleguides/fonts/supernova-icon.woff?411abeb92c91bb06aaf6fc05e1acb84c") format("woff"), url("/sandandsky-styleguides/fonts/supernova-icon.woff2?411abeb92c91bb06aaf6fc05e1acb84c") format("woff2");
 }
 
 .sni,
@@ -9,6 +9,7 @@
   display: flex;
 }
 
+.sni-text,
 .sni:before,
 .sni-after:after {
   font-family: supernova-icon !important;
@@ -24,6 +25,43 @@
 .sni.sni__search:before,
 .sni-after.sni__search:after {
   content: "";
+}
+
+.sni.sni__ss:before,
+.sni-after.sni__ss:after {
+  content: "";
+}
+
+.btn-primary {
+  color: #fff;
+}
+
+.carousel-banner figcaption {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .carousel-banner figcaption {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .carousel-banner__text {
+    flex: 0 0 60%;
+    max-width: 60%;
+    margin-left: 20%;
+  }
+}
+
+.navbar-brand {
+  font-size: 2.8125em;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /*# sourceMappingURL=main.css.map */

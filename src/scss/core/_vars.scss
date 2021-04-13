@@ -49,11 +49,17 @@ $h3-font-size-lg: calc-em(24);
 $h4-font-size-lg: calc-em(20);
 
 // Colors
-$primary: #F3436C;
-$primary-light: #F5DADF;
-$primary-dark: #B22D4B;
-$secondary: #00635B;
-$secondary-light: #E0F0E9;
+$primary: #4ACD8A;
+// $primary-light: #F5DADF;
+// $primary-dark: #B22D4B;
+$secondary: #FF798F;
+$secondary-light: #FEEDEF;
+
+// Products
+$apc: #FF6F8D;
+$aea: #CC3195;
+$tsw: #66B3DF;
+
 $theme-colors: (
   'primary': $primary,
   'secondary': $secondary,

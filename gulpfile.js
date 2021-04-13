@@ -6,6 +6,8 @@ const del = require('del');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
+const handlebars = require('gulp-compile-handlebars');
+const rename = require('gulp-rename');
 
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
@@ -13,7 +15,9 @@ const webpackConfig = require('./webpack.config.js');
 const cssDir = 'dist/css';
 
 const files = {
-	html: ['docs/**/*', 'index.html'],
+	index: ['index.html'],
+	hbs: ['src/hbs/**/*.hbs', '!src/hbs/partials/*.hbs'],
+	partials: ['src/hbs/partials/*.hbs'],
 	js: ['dist/js/**/*'],
 	allScss: ['src/scss/**/*'],
 	scss: ['src/scss/*.scss'],
@@ -24,7 +28,13 @@ function errorHandler(err) {
 	this.emit('end');
 }
 
-const htmlFiles = () => src(files.html)
+const indexFile = () => src(files.index)
+	.pipe(browserSync.stream());
+
+const hbsFiles = () => src(files.hbs)
+	.pipe(handlebars({}, { batch: ['src/hbs/partials'] }))
+	.pipe(rename({ extname: '.html' }))
+	.pipe(dest('docs'))
 	.pipe(browserSync.stream());
 
 const jsFiles = () => src(files.js)
@@ -52,7 +62,9 @@ const webpackBuild = (isWatch = false) => () => new Promise((resolve, reject) =>
 
 const watchFiles = (done) => {
 	watch(files.allScss, parallel(scssFiles));
-	watch(files.html, parallel(htmlFiles));
+	watch(files.index, parallel(indexFile));
+	watch(files.hbs, parallel(hbsFiles));
+	watch(files.partials, parallel(hbsFiles));
 	watch(files.js, parallel(jsFiles));
 	done();
 };
@@ -83,10 +95,10 @@ task('webpack', webpackBuild());
 task('webpackWatch', webpackBuild(true));
 task(
 	'build',
-	parallel(scssFiles, 'webpack'),
+	parallel(hbsFiles, scssFiles, 'webpack'),
 );
 task('watch', series(
-	parallel(scssFiles, 'webpackWatch'),
+	parallel(hbsFiles, scssFiles, 'webpackWatch'),
 	watchFiles,
 ));
 task('default', series('clean', 'watch', 'initServer'));

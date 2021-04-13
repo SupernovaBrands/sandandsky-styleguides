@@ -1,13 +1,6 @@
 @import 'core/functions';
 @import 'core/vars';
 
-@import 'bootstrap/bootstrap';
-
-@import 'core/fonts';
-@import 'core/type';
-@import 'core/grid';
-@import 'core/utilities';
-
 @mixin make-box($parent, $color) {
 	.box-#{$parent} {
 		text-align: center;
@@ -29,8 +22,8 @@
 }
 
 @include make-box('primary', $primary);
-@include make-box('primary-light', $primary-light);
-@include make-box('primary-dark', $primary-dark);
+// @include make-box('primary-light', $primary-light);
+// @include make-box('primary-dark', $primary-dark);
 @include make-box('secondary', $secondary);
 @include make-box('secondary-light', $secondary-light);
 @include make-box('body-color', $body-color);

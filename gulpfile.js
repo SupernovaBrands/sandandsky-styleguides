@@ -15,12 +15,14 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 
 const cssDir = 'dist/css';
+const jsDir = 'dist/js';
 
 const files = {
 	index: ['src/docs/index.hbs'],
 	hbs: ['src/docs/**/*.hbs', '!src/docs/index.hbs'],
 	partials: ['src/partials/**/*.hbs'],
 	js: ['dist/js/**/*'],
+	vendorJs: ['src/js/vendor/*'],
 	allScss: ['src/scss/**/*'],
 	scss: ['src/scss/*.scss'],
 };
@@ -89,6 +91,10 @@ const hbsFiles = () => src(files.hbs)
 const jsFiles = () => src(files.js)
 	.pipe(browserSync.stream());
 
+const vendorJsFiles = () => src(files.vendorJs)
+	.pipe(dest(jsDir))
+	.pipe(browserSync.stream());
+
 const scssFiles = () => src(files.scss)
 	.pipe(sourcemaps.init())
 	.pipe(sass({ outputStyle: 'expanded' }).on('error', errorHandler))
@@ -117,6 +123,7 @@ const watchFiles = (done) => {
 		.on('unlink', indexFile);
 	watch(files.partials, parallel(hbsFiles));
 	watch(files.js, parallel(jsFiles));
+	watch(files.vendorJs, parallel(vendorJsFiles));
 	done();
 };
 
@@ -128,7 +135,7 @@ const initServer = (done) => {
 			function (req, res, next) {
 				// Handling URL for CSS files
 				if (req.url.indexOf('/sandandsky-styleguides') === 0) {
-					req.url = req.url.replace(/^(\/sandandsky-styleguides\/dist)/, '');
+					req.url = req.url.replace(/^(\/sandandsky-styleguides)/, '');
 				}
 				next();
 			},
@@ -137,7 +144,7 @@ const initServer = (done) => {
 	done();
 };
 
-const clean = () => del([cssDir]);
+const clean = () => del(['dist']);
 
 task(clean);
 task(indexFile);
@@ -147,10 +154,10 @@ task('webpack', webpackBuild());
 task('webpackWatch', webpackBuild(true));
 task(
 	'build',
-	parallel(indexFile, hbsFiles, scssFiles, 'webpack'),
+	parallel(indexFile, hbsFiles, vendorJsFiles, scssFiles, 'webpack'),
 );
 task('watch', series(
-	parallel(indexFile, hbsFiles, scssFiles, 'webpackWatch'),
+	parallel(indexFile, hbsFiles, vendorJsFiles, scssFiles, 'webpackWatch'),
 	watchFiles,
 ));
 task('default', series('clean', 'watch', 'initServer'));

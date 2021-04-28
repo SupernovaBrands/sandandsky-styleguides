@@ -1,3 +1,0 @@
-@function calc-em($pixels, $context: 16, $unit: 1em) {
-	@return $pixels / $context * $unit;
-}

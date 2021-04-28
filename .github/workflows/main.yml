@@ -26,8 +26,8 @@ jobs:
       - name: Github Build & Deploy Action
         uses: jeoy/github-deploy-actions@v1.0.1
         env:
-          COMMIT_EMAIL: lusia.purnama@supernovabrands
-          COMMIT_NAME: Lusia Purnama
+          COMMIT_EMAIL: lusia.purnama@supernovabrands.com
+          COMMIT_NAME: Lusia Kristiana Purnama
           ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BASE_BRANCH: master
           DEPLOY_BRANCH: gh-pages

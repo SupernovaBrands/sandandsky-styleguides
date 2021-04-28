@@ -16,6 +16,7 @@ const webpackConfig = require('./webpack.config.js');
 
 const cssDir = 'dist/css';
 const jsDir = 'dist/js';
+const fontsDir = 'dist/fonts';
 
 const files = {
 	index: ['src/docs/index.hbs'],
@@ -25,6 +26,7 @@ const files = {
 	vendorJs: ['src/js/vendor/*'],
 	allScss: ['src/scss/**/*'],
 	scss: ['src/scss/*.scss'],
+	fonts: ['fonts/*.svg', 'fonts/*.ttf', 'fonts/*.woff', 'fonts/*.woff2'],
 };
 
 function errorHandler(err) {
@@ -103,6 +105,10 @@ const scssFiles = () => src(files.scss)
 	.pipe(dest(cssDir))
 	.pipe(browserSync.stream());
 
+const fontsFiles = () => src(files.fonts)
+	.pipe(dest(fontsDir))
+	.pipe(browserSync.stream());
+
 const webpackBuild = (isWatch = false) => () => new Promise((resolve, reject) => {
 	webpack({ ...webpackConfig, watch: isWatch }, (err, stats) => {
 		if (err) {
@@ -124,6 +130,7 @@ const watchFiles = (done) => {
 	watch(files.partials, parallel(hbsFiles));
 	watch(files.js, parallel(jsFiles));
 	watch(files.vendorJs, parallel(vendorJsFiles));
+	watch(files.fonts, parallel(fontsFiles));
 	done();
 };
 
@@ -154,10 +161,10 @@ task('webpack', webpackBuild());
 task('webpackWatch', webpackBuild(true));
 task(
 	'build',
-	parallel(indexFile, hbsFiles, vendorJsFiles, scssFiles, 'webpack'),
+	parallel(indexFile, hbsFiles, vendorJsFiles, scssFiles, fontsFiles, 'webpack'),
 );
 task('watch', series(
-	parallel(indexFile, hbsFiles, vendorJsFiles, scssFiles, 'webpackWatch'),
+	parallel(indexFile, hbsFiles, vendorJsFiles, scssFiles, fontsFiles, 'webpackWatch'),
 	watchFiles,
 ));
 task('default', series('clean', 'watch', 'initServer'));

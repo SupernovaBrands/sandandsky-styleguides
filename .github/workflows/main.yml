@@ -2,7 +2,7 @@
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
@@ -22,14 +22,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-          
+
       - name: Github Build & Deploy Action
         uses: jeoy/github-deploy-actions@v1.0.1
         env:
           COMMIT_EMAIL: lusia.purnama@supernovabrands
           COMMIT_NAME: Lusia Purnama
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BASE_BRANCH: master
           DEPLOY_BRANCH: gh-pages
           BUILD_SCRIPT: npm run build
-          FOLDER: docs
+          FOLDER: dist

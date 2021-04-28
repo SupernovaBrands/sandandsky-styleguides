@@ -76,14 +76,14 @@ const indexFile = () => {
 	return src(files.index)
 		.pipe(handlebars(result, { helpers: hbsHelpers }))
 		.pipe(rename({ extname: '.html' }))
-		.pipe(dest('.'))
+		.pipe(dest('dist'))
 		.pipe(browserSync.stream());
 };
 
 const hbsFiles = () => src(files.hbs)
 	.pipe(handlebars({}, { batch: ['src/partials'], helpers: hbsHelpers }))
 	.pipe(rename({ extname: '.html' }))
-	.pipe(dest('docs'))
+	.pipe(dest('dist'))
 	.pipe(browserSync.stream());
 
 const jsFiles = () => src(files.js)
@@ -122,13 +122,13 @@ const watchFiles = (done) => {
 
 const initServer = (done) => {
 	browserSync.init({
-		server: true,
+		server: './dist',
 		port: 8080,
 		middleware: [
 			function (req, res, next) {
 				// Handling URL for CSS files
 				if (req.url.indexOf('/sandandsky-styleguides') === 0) {
-					req.url = req.url.replace(/^(\/sandandsky-styleguides)/, '');
+					req.url = req.url.replace(/^(\/sandandsky-styleguides\/dist)/, '');
 				}
 				next();
 			},

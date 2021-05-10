@@ -2,10 +2,10 @@ $supernova-icon-font: "supernova-icon";
 
 @font-face {
 	font-family: $supernova-icon-font;
-	src: url("/sandandsky-styleguides/fonts/supernova-icon.svg?411abeb92c91bb06aaf6fc05e1acb84c#supernova-icon") format("svg"),
-url("/sandandsky-styleguides/fonts/supernova-icon.ttf?411abeb92c91bb06aaf6fc05e1acb84c") format("truetype"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?411abeb92c91bb06aaf6fc05e1acb84c") format("woff"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff2?411abeb92c91bb06aaf6fc05e1acb84c") format("woff2");
+	src: url("/sandandsky-styleguides/fonts/supernova-icon.svg?bdb6c90d3eb64a67c2bcf1e592e76636#supernova-icon") format("svg"),
+url("/sandandsky-styleguides/fonts/supernova-icon.ttf?bdb6c90d3eb64a67c2bcf1e592e76636") format("truetype"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?bdb6c90d3eb64a67c2bcf1e592e76636") format("woff"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff2?bdb6c90d3eb64a67c2bcf1e592e76636") format("woff2");
 }
 
 .sni,
@@ -27,15 +27,55 @@ url("/sandandsky-styleguides/fonts/supernova-icon.woff2?411abeb92c91bb06aaf6fc05
 }
 
 $supernova-icon-map: (
-	"search": "\f101",
-	"ss": "\f102",
+	"chevron-next": "\f101",
+	"chevron-prev": "\f102",
+	"range-aea": "\f103",
+	"range-apc": "\f104",
+	"range-tsw": "\f105",
+	"returns-thumb": "\f106",
+	"search": "\f107",
+	"shipping-box": "\f108",
+	"ss": "\f109",
+	"trophy": "\f10a",
 );
 
+.sni.sni__chevron-next:before,
+.sni-after.sni__chevron-next:after {
+	content: map-get($supernova-icon-map, "chevron-next");
+}
+.sni.sni__chevron-prev:before,
+.sni-after.sni__chevron-prev:after {
+	content: map-get($supernova-icon-map, "chevron-prev");
+}
+.sni.sni__range-aea:before,
+.sni-after.sni__range-aea:after {
+	content: map-get($supernova-icon-map, "range-aea");
+}
+.sni.sni__range-apc:before,
+.sni-after.sni__range-apc:after {
+	content: map-get($supernova-icon-map, "range-apc");
+}
+.sni.sni__range-tsw:before,
+.sni-after.sni__range-tsw:after {
+	content: map-get($supernova-icon-map, "range-tsw");
+}
+.sni.sni__returns-thumb:before,
+.sni-after.sni__returns-thumb:after {
+	content: map-get($supernova-icon-map, "returns-thumb");
+}
 .sni.sni__search:before,
 .sni-after.sni__search:after {
 	content: map-get($supernova-icon-map, "search");
 }
+.sni.sni__shipping-box:before,
+.sni-after.sni__shipping-box:after {
+	content: map-get($supernova-icon-map, "shipping-box");
+}
 .sni.sni__ss:before,
 .sni-after.sni__ss:after {
 	content: map-get($supernova-icon-map, "ss");
+}
+.sni.sni__trophy:before,
+.sni-after.sni__trophy:after {
+	content: map-get($supernova-icon-map, "trophy");
 }

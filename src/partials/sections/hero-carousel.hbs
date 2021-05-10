@@ -1,0 +1,28 @@
+<section id="hero-carousel{{#if num}}{{num}}{{/if}}" class="carousel slide {{ class }}" data-ride="carousel" data-interval="7000">
+	<ol class="carousel-indicators">
+		{{#times totalSlide}}
+		<li data-target="#hero-carousel{{#if num}}{{num}}{{/if}}" data-slide-to="{{minus @index 1}}" class="{{#if @first}}active{{/if}}"></li>
+		{{/times}}
+	</ol>
+
+	<ul class="list-unstyled carousel-inner mb-0">
+		{{#times totalSlide}}
+		<li class="carousel-item hero-carousel {{#if @first}}active{{/if}}">
+			<figure class="container-grid position-relative">
+				<picture class="d-block grid-start grid-lg-s5 grid-end">
+					<source srcset="https://via.placeholder.com/1810x1020" media="(min-width: 992px)">
+					<source srcset="https://via.placeholder.com/750x600">
+					<img src="https://via.placeholder.com/750x600" alt="Slide {{@index}}" class="d-block w-100">
+				</picture>
+				<figcaption class="mt-n4 my-lg-3 bg-white grid-s1 grid-w12 grid-lg-w5 d-flex flex-column justify-content-center">
+					<div class="hero-carousel__text px-g py-3 text-center text-lg-left">
+						<p class="h1">Dive into deep hydration</p>
+						<p>Meet Tasmanian Spring Water - Slide {{@index}}</p>
+						<button class="btn btn-lg btn-primary">Shop the range</button>
+					</div>
+				</figcaption>
+			</figure>
+		</li>
+		{{/times}}
+	</ul>
+</section>

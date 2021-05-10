@@ -1,0 +1,19 @@
+.product-card {
+	@include media-breakpoint-up(lg) {
+		@include make-col(1, 5);
+	}
+
+	&__text {
+		font-size: $font-size-sm;
+		@include media-breakpoint-up(lg) {
+			font-size: $font-size-base;
+		}
+	}
+
+	&__text-sm {
+		font-size: $font-size-xs;
+		@include media-breakpoint-up(lg) {
+			font-size: $font-size-sm;
+		}
+	}
+}

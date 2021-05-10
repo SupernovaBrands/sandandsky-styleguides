@@ -1,10 +1,3 @@
-.mobile-wrapper {
-	@include media-breakpoint-down(md) {
-		padding-right: $grid-gutter-width / 2;
-		padding-left: $grid-gutter-width / 2;
-	}
-}
-
 @include media-breakpoint-up(lg) {
 	.container {
 		padding-right: $grid-gutter-width;
@@ -23,11 +16,66 @@
 	}
 }
 
-.no-gutters {
-  &__in-container {
-    @include media-breakpoint-down(md) {
-      margin-right: -$grid-gutter-width;
-      margin-left: -$grid-gutter-width;
-    }
-  }
+
+@function get-max-width($bp) {
+	@if $bp==xs {
+		@return map-get($grid-breakpoints, sm);
+	}
+
+	@return map-get($container-max-widths, $bp);
+}
+
+@function get-gutter($bp) {
+	@if $bp==lg or $bp==xl {
+		@return $grid-gutter-width-lg;
+	}
+
+	@return $grid-gutter-width;
+}
+
+@function get-grid-max($bp) {
+	@if $bp==lg or $bp==xl {
+		@return (get-max-width($bp) - get-gutter($bp) * ($grid-columns)) / $grid-columns;
+	}
+
+	@return (get-max-width($bp) - get-gutter($bp) * ($grid-columns + 1)) / $grid-columns;
+}
+
+.container-grid {
+	display: grid;
+	grid-template-columns: [grid-start] 1fr repeat($grid-columns, [col-start] minmax(0, get-grid-max(sm))) 1fr [grid-end];
+	column-gap: $grid-gutter-width;
+
+	@each $breakpoint in map-keys(map-remove($grid-breakpoints, xs, sm)) {
+		@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+			grid-template-columns: [grid-start] 1fr repeat($grid-columns, [col-start] minmax(0, get-grid-max($breakpoint))) 1fr [grid-end];
+			@if $breakpoint == lg {
+				column-gap: $grid-gutter-width-lg;
+			}
+		}
+	}
+}
+
+@each $breakpoint in (xs, lg) {
+	$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+	@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+		@if $grid-columns>0 {
+			.grid#{$infix}-start {
+				grid-column-start: grid-start;
+			}
+			.grid#{$infix}-end {
+				grid-column-end: grid-end;
+			}
+			@for $i from 1 through $grid-columns {
+				.grid#{$infix}-s#{$i} {
+					grid-column-start: col-start #{$i};
+				}
+			}
+			@for $i from 2 through $grid-columns {
+				.grid#{$infix}-w#{$i} {
+					grid-column-end: span #{$i};
+				}
+			}
+		}
+	}
 }

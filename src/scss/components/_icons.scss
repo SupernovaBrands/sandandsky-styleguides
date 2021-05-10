@@ -1,11 +1,13 @@
 $supernova-icon-font: "supernova-icon";
 
-@font-face {
-	font-family: $supernova-icon-font;
-	src: url("/sandandsky-styleguides/fonts/supernova-icon.svg?bdb6c90d3eb64a67c2bcf1e592e76636#supernova-icon") format("svg"),
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.svg?bdb6c90d3eb64a67c2bcf1e592e76636#supernova-icon") format("svg"),
 url("/sandandsky-styleguides/fonts/supernova-icon.ttf?bdb6c90d3eb64a67c2bcf1e592e76636") format("truetype"),
 url("/sandandsky-styleguides/fonts/supernova-icon.woff?bdb6c90d3eb64a67c2bcf1e592e76636") format("woff"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff2?bdb6c90d3eb64a67c2bcf1e592e76636") format("woff2");
+url("/sandandsky-styleguides/fonts/supernova-icon.woff2?bdb6c90d3eb64a67c2bcf1e592e76636") format("woff2") !default;
+
+@font-face {
+	font-family: $supernova-icon-font;
+	src: $supernova-icon-asset;
 }
 
 .sni,

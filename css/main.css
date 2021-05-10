@@ -159,6 +159,19 @@ input.text-white::placeholder {
   }
 }
 
+.product-card .badge {
+  top: 0.41667em;
+  left: 1.04167em;
+  padding: 0.41667em 0.83333em;
+}
+
+@media (min-width: 992px) {
+  .product-card .badge {
+    top: 0.83333em;
+    left: 2.08333em;
+  }
+}
+
 .product-card__text {
   font-size: 0.875em;
 }

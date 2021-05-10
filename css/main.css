@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @font-face {
   font-family: "supernova-icon";
-  src: url("/sandandsky-styleguides/fonts/supernova-icon.svg?411abeb92c91bb06aaf6fc05e1acb84c#supernova-icon") format("svg"), url("/sandandsky-styleguides/fonts/supernova-icon.ttf?411abeb92c91bb06aaf6fc05e1acb84c") format("truetype"), url("/sandandsky-styleguides/fonts/supernova-icon.woff?411abeb92c91bb06aaf6fc05e1acb84c") format("woff"), url("/sandandsky-styleguides/fonts/supernova-icon.woff2?411abeb92c91bb06aaf6fc05e1acb84c") format("woff2");
+  src: url("/sandandsky-styleguides/fonts/supernova-icon.svg?bdb6c90d3eb64a67c2bcf1e592e76636#supernova-icon") format("svg"), url("/sandandsky-styleguides/fonts/supernova-icon.ttf?bdb6c90d3eb64a67c2bcf1e592e76636") format("truetype"), url("/sandandsky-styleguides/fonts/supernova-icon.woff?bdb6c90d3eb64a67c2bcf1e592e76636") format("woff"), url("/sandandsky-styleguides/fonts/supernova-icon.woff2?bdb6c90d3eb64a67c2bcf1e592e76636") format("woff2");
 }
 
 .sni,
@@ -22,26 +22,169 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.sni.sni__chevron-next:before,
+.sni-after.sni__chevron-next:after {
+  content: "";
+}
+
+.sni.sni__chevron-prev:before,
+.sni-after.sni__chevron-prev:after {
+  content: "";
+}
+
+.sni.sni__range-aea:before,
+.sni-after.sni__range-aea:after {
+  content: "";
+}
+
+.sni.sni__range-apc:before,
+.sni-after.sni__range-apc:after {
+  content: "";
+}
+
+.sni.sni__range-tsw:before,
+.sni-after.sni__range-tsw:after {
+  content: "";
+}
+
+.sni.sni__returns-thumb:before,
+.sni-after.sni__returns-thumb:after {
+  content: "";
+}
+
 .sni.sni__search:before,
 .sni-after.sni__search:after {
-  content: "";
+  content: "";
+}
+
+.sni.sni__shipping-box:before,
+.sni-after.sni__shipping-box:after {
+  content: "";
 }
 
 .sni.sni__ss:before,
 .sni-after.sni__ss:after {
-  content: "";
+  content: "";
+}
+
+.sni.sni__trophy:before,
+.sni-after.sni__trophy:after {
+  content: "";
 }
 
 .btn-primary {
   color: #fff;
 }
 
-.carousel-banner figcaption {
+input.text-white::-moz-placeholder {
+  color: #fff;
+}
+
+input.text-white:-ms-input-placeholder {
+  color: #fff;
+}
+
+input.text-white::placeholder {
+  color: #fff;
+}
+
+.carousel--loop .active.carousel-item-left + .carousel-item-next.carousel-item-left, .carousel--loop .carousel-item-next.carousel-item-left + .carousel-item, .carousel--loop .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item, .carousel--loop .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item, .carousel--loop .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item, .carousel--loop .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item, .carousel--loop .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+  position: relative;
+  transform: translate3d(-100%, 0, 0);
+  visibility: visible;
+}
+
+.carousel--loop .active.carousel-item-right + .carousel-item-prev.carousel-item-right, .carousel--loop .carousel-item-prev.carousel-item-right + .carousel-item, .carousel--loop .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item, .carousel--loop .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item, .carousel--loop .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item, .carousel--loop .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item, .carousel--loop .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+  position: relative;
+  transform: translate3d(100%, 0, 0);
+  visibility: visible;
+  display: block;
+}
+
+.carousel--loop .carousel-item {
+  margin-right: 0;
+}
+
+.carousel--loop .carousel-item-next,
+.carousel--loop .carousel-item-prev {
+  position: relative;
+  transform: translate3d(0, 0, 0);
+}
+
+.carousel--loop .carousel-item-prev:not(.carousel-item-right) {
+  transform: translateX(-100%);
+}
+
+.carousel--loop .active, .carousel--loop .active + .carousel-item, .carousel--loop .active + .carousel-item + .carousel-item, .carousel--loop .active + .carousel-item + .carousel-item + .carousel-item, .carousel--loop .active + .carousel-item + .carousel-item + .carousel-item + .carousel-item, .carousel--loop .active + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item, .carousel--loop .active + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+  display: block;
+}
+
+.carousel--loop .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left), .carousel--loop .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item:not(.carousel-item--last), .carousel--loop .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item:not(.carousel-item--last) + .carousel-item:not(.carousel-item--last), .carousel--loop .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item:not(.carousel-item--last) + .carousel-item:not(.carousel-item--last) + .carousel-item:not(.carousel-item--last), .carousel--loop .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item:not(.carousel-item--last) + .carousel-item:not(.carousel-item--last) + .carousel-item:not(.carousel-item--last) + .carousel-item:not(.carousel-item--last), .carousel--loop .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item:not(.carousel-item--last) + .carousel-item:not(.carousel-item--last) + .carousel-item:not(.carousel-item--last) + .carousel-item:not(.carousel-item--last) + .carousel-item:not(.carousel-item--last), .carousel--loop .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item:not(.carousel-item--last) + .carousel-item:not(.carousel-item--last) + .carousel-item:not(.carousel-item--last) + .carousel-item:not(.carousel-item--last) + .carousel-item:not(.carousel-item--last) + .carousel-item:not(.carousel-item--last) {
+  transition: none;
+}
+
+.carousel--loop .carousel-item-prev.carousel-item-right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  visibility: visible;
+}
+
+@media (min-width: 992px) {
+  .carousel--loop[data-slide-number="5"] .carousel-item {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+.carousel-control--background {
+  background-color: #fff;
+  width: 1.875em;
+  height: 2.5em;
+  border-radius: 4px;
+}
+
+@media (min-width: 992px) {
+  .carousel-control--background {
+    height: 3.75em;
+  }
+}
+
+@media (min-width: 992px) {
+  .product-card {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+.product-card__text {
+  font-size: 0.875em;
+}
+
+@media (min-width: 992px) {
+  .product-card__text {
+    font-size: 1em;
+  }
+}
+
+.product-card__text-sm {
+  font-size: 0.75em;
+}
+
+@media (min-width: 992px) {
+  .product-card__text-sm {
+    font-size: 0.875em;
+  }
+}
+
+.hero-carousel figcaption {
   position: relative;
 }
 
 @media (min-width: 992px) {
-  .carousel-banner figcaption {
+  .hero-carousel figcaption {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -51,11 +194,66 @@
 }
 
 @media (min-width: 992px) {
-  .carousel-banner__text {
+  .hero-carousel__text {
     flex: 0 0 60%;
     max-width: 60%;
     margin-left: 20%;
   }
+}
+
+@media (min-width: 992px) {
+  .collection-section__cover {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+}
+
+.collection-section .sni:before {
+  align-self: center;
+  font-size: 1.875em;
+  margin-right: 0.46667em;
+}
+
+.feature-banner {
+  overflow: hidden;
+}
+
+.feature-banner .decor {
+  height: 80px;
+}
+
+.feature-banner .decor-left {
+  left: -40px;
+  top: 20px;
+  transform: scaleY(-1);
+}
+
+.feature-banner .decor-right {
+  right: -40px;
+  bottom: 20px;
+  transform: scaleY(-1);
+}
+
+@media (min-width: 992px) {
+  .feature-banner .decor {
+    height: auto;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+  .feature-banner .decor-left {
+    left: 0;
+  }
+  .feature-banner .decor-right {
+    right: 0;
+  }
+}
+
+.newsletter-banner {
+  background-image: url("/sandandsky-styleguides/images/newsletter-pattern.svg");
+  background-position: right;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
 }
 
 .navbar-brand {

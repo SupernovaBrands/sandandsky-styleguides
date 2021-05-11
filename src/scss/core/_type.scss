@@ -1,5 +1,6 @@
-h4, .h4 {
+h3, .h3 {
 	font-weight: $font-weight-normal;
+	font-style: italic;
 }
 
 @include media-breakpoint-up(lg) {
@@ -14,6 +15,9 @@ h4, .h4 {
 	}
 	h4, .h4 {
 		@include font-size($h4-font-size-lg);
+	}
+	h5, .h5 {
+		@include font-size($h5-font-size-lg);
 	}
 }
 

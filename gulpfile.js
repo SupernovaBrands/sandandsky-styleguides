@@ -137,15 +137,15 @@ const webpackBuild = (isWatch = false) => () => new Promise((resolve, reject) =>
 });
 
 const watchFiles = (done) => {
-	watch(files.allScss, parallel(scssFiles));
-	watch(files.index, parallel(indexFile));
-	watch(files.hbs, parallel(hbsFiles))
-		.on('add', indexFile)
-		.on('unlink', indexFile);
-	watch(files.partials, parallel(hbsFiles));
-	watch(files.js, parallel(jsFiles));
-	watch(files.vendorJs, parallel(vendorJsFiles));
-	watch(files.static, parallel(staticFiles));
+	watch(files.allScss, series(scssFiles));
+	watch(files.index, series(indexFile));
+	watch(files.hbs, series(hbsFiles))
+		.on('add', series(indexFile))
+		.on('unlink', series(indexFile));
+	watch(files.partials, series(hbsFiles));
+	watch(files.js, series(jsFiles));
+	watch(files.vendorJs, series(vendorJsFiles));
+	watch(files.static, series(staticFiles));
 	done();
 };
 

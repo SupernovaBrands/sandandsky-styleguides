@@ -2,35 +2,22 @@
 	overflow: hidden;
 
 	.decor {
-		height: 80px;
+		height: 60px;
 	}
 
 	.decor-left {
-		left: -40px;
+		left: 0;
 		top: 20px;
-		transform: scaleY(-1);
 	}
 
 	.decor-right {
-		right: -40px;
+		right: 0px;
 		bottom: 20px;
-		transform: scaleY(-1);
 	}
 
 	@include media-breakpoint-up(lg) {
 		.decor {
 			height: auto;
-			top: 50%;
-			bottom: auto;
-			transform: translateY(-50%);
-		}
-
-		.decor-left {
-			left: 0;
-		}
-
-		.decor-right {
-			right: 0;
 		}
 	}
 }

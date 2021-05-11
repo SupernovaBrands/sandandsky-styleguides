@@ -38,6 +38,10 @@ h3, .h3 {
 }
 
 .icon-size-lg {
+	font-size: calc-em(32) !important;
+}
+
+.icon-size-xl {
 	font-size: calc-em(40) !important;
 }
 

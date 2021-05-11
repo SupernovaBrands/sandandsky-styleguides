@@ -1,5 +1,17 @@
-
 .hero-carousel {
+	.carousel-indicators {
+		@include media-breakpoint-down(md) {
+			top: 55%;
+			bottom: auto;
+		}
+
+		li.active::before {
+			animation-duration: 7s;
+		}
+	}
+}
+
+.hero-banner {
 	figcaption {
 		position: relative;
 

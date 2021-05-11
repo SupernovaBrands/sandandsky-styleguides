@@ -6,8 +6,14 @@
 	}
 
 	.sni:before {
-		align-self: center;
-		font-size: calc-em(30);
-		margin-right: calc-em(14, 30);
+		font-size: calc-em(22);
+		margin-top: calc-em(8, 22);
+		margin-right: calc-em(14, 22);
+
+		@include media-breakpoint-up(lg) {
+			font-size: calc-em(30);
+			align-self: center;
+			margin-top: 0;
+		}
 	}
 }

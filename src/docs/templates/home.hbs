@@ -5,132 +5,79 @@
 	{{> html-head title="Home" }}
 </head>
 
-<body>
-	{{> header}}
+<body class="my-5">
 	{{> sections/hero-carousel totalSlide=3}}
 
-	<div class="container px-g mt-2 mt-lg-5 mb-5">
-		<div class="d-flex justify-content-between align-items-start mb-2">
-			<h2 class="h1">Sand &amp; Sky featured products</h2>
-			<button class="btn btn-lg btn-primary d-none d-lg-block">Shop all featured</button>
-		</div>
+	{{#> sections/carousel-scroll id="featured-products" class="mt-4 mt-lg-6 mb-5 mb-lg-6" header="Sand & Sky featured products" button="Shop all featured"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="cc3195" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="cc3195" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="cc3195" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller"}}
+	{{/ sections/carousel-scroll}}
 
-		<div id="featured-product-carousel" class="carousel slide carousel--loop mx-ng" data-ride="carousel" data-interval="false" data-slide-number="5">
-			<ul class="list-unstyled carousel-inner d-flex flex-nowrap mb-0">
-				{{> compounds/product-card class="carousel-item active" color="ff6f8d" badge="Best Seller"}}
-				{{> compounds/product-card class="carousel-item" color="cc3195" badge="Best Seller"}}
-				{{> compounds/product-card class="carousel-item" color="66b3df" badge="Best Seller"}}
-				{{> compounds/product-card class="carousel-item" color="ff6f8d" badge="Best Seller"}}
-				{{> compounds/product-card class="carousel-item" color="cc3195" badge="Best Seller"}}
-				{{> compounds/product-card class="carousel-item" color="66b3df" badge="Best Seller"}}
-				{{> compounds/product-card class="carousel-item" color="ff6f8d" badge="Best Seller"}}
-				{{> compounds/product-card class="carousel-item" color="cc3195" badge="Best Seller"}}
-				{{> compounds/product-card class="carousel-item" color="66b3df" badge="Best Seller"}}
-			</ul>
-
-			<a class="carousel-control-prev text-body justify-content-start" href="#featured-product-carousel" role="button"
-				data-slide="prev">
-				<span
-					class="carousel-control-prev-icon carousel-control--background sni sni__chevron-prev justify-content-center align-items-center"
-					aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next text-body justify-content-end" href="#featured-product-carousel" role="button"
-				data-slide="next">
-				<span
-					class="carousel-control-next-icon carousel-control--background sni sni__chevron-next justify-content-center align-items-center"
-					aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
-
-		<div class="d-flex justify-content-center d-lg-none">
-			<button class="btn btn-lg btn-primary">Shop all featured</button>
-		</div>
-	</div>
-
-	<div class="my-5 bg-light">
+	<div class="my-5 my-lg-6 bg-light">
 		<div class="container px-g py-5">
 			<h2 class="h1">Ingredients block</h2>
 		</div>
 	</div>
 
-	{{> sections/collection-section class="" color="ff6f8d" range="apc" title="Detoxify with Australian Pink Clay" button="Shop all Detoxify"}}
+	{{> sections/collection-section class="my-5 mt-lg-6" color="ff6f8d" range="apc" header="Detoxify with Australian Pink Clay" button="Shop all Detoxify"}}
 
-	{{> sections/collection-section class="" color="cc3195" range="aea" title="Brighten with Australian Emu Apple" button="Shop all Brighten"}}
+	{{> sections/collection-section class="my-5" color="cc3195" range="aea" header="Brighten with Australian Emu Apple" button="Shop all Brighten"}}
 
-	{{> sections/collection-section class="" color="66b3df" range="tsw" title="Hydrate with Tasmanian Spring Water" button="Shop all Hydrate"}}
+	{{> sections/collection-section class="my-5" color="66b3df" range="tsw" header="Hydrate with Tasmanian Spring Water" button="Shop all Hydrate"}}
 
-	<div class="container px-g py-2 a-beauty-banner">
-		<div class="row">
-			<div class="col-12 col-lg-8">
-				<h2 class="h1">Bringing A-Beauty to the world</h2>
-				<p>
+	<div class="container px-g mt-5 mb-4 a-beauty-banner">
+		<div class="row align-items-lg-end">
+			<div class="col-12 col-lg-8 mb-lg-3">
+				<h2 class="h1 mb-lg-4">Bringing A-Beauty to the world</h2>
+				<p class="mb-0 mb-lg-3">
 					Based on clean and highly effective formulas, we skip the 10-step routines and crazy claims.
 					<span class="d-none d-lg-inline-block">‘Cause we’d rather be at the beach, than stuck in the bathroom.</span>
 					<a href="">Explore A-Beauty</a>
 				</p>
-				<div class="row mt-2 mt-lg-4">
-					<div class="col-6 col-lg-3 text-center mb-4">
-						<i class="sni-text icon-size-lg text-secondary d-block" aria-hidden="true">ss</i>
-						<span class="font-size-sm mt-2">Australian Botanical ingredients.</span>
+				<div class="row">
+					<div class="col-6 col-lg-3 text-center py-3">
+						<i class="sni-text icon-size-xl text-secondary d-block mb-3" aria-hidden="true">australia</i>
+						<span class="font-size-sm">Australian Botanical ingredients.</span>
 					</div>
-					<div class="col-6 col-lg-3 text-center mb-4">
-						<i class="sni-text icon-size-lg text-secondary d-block" aria-hidden="true">ss</i>
-						<span class="font-size-sm mt-2">Cruelty-free. PETA Approved.</span>
+					<div class="col-6 col-lg-3 text-center py-3">
+						<i class="sni-text icon-size-xl text-secondary d-block mb-3" aria-hidden="true">koala</i>
+						<span class="font-size-sm">Cruelty-free. <br> <b><i>PETA</i></b> Approved.</span>
 					</div>
-					<div class="col-6 col-lg-3 text-center mb-4">
-						<i class="sni-text icon-size-lg text-secondary d-block" aria-hidden="true">ss</i>
-						<span class="font-size-sm mt-2">No worries skincare.</span>
+					<div class="col-6 col-lg-3 text-center py-3">
+						<i class="sni-text icon-size-xl text-secondary d-block mb-3" aria-hidden="true">shake</i>
+						<span class="font-size-sm">No worries <br> skincare.</span>
 					</div>
-					<div class="col-6 col-lg-3 text-center mb-4">
-						<i class="sni-text icon-size-lg text-secondary d-block" aria-hidden="true">ss</i>
-						<span class="font-size-sm mt-2">No nasties, only clean formulas.</span>
+					<div class="col-6 col-lg-3 text-center py-3">
+						<i class="sni-text icon-size-xl text-secondary d-block mb-3" aria-hidden="true">nasties</i>
+						<span class="font-size-sm">No nasties, only <br> clean formulas.</span>
 					</div>
 				</div>
 			</div>
 
-			<div class="col-12 col-lg-4">
+			<div class="col-12 col-lg-4 mt-3 mt-lg-0">
 				<picture class="d-block">
-					<source srcset="https://via.placeholder.com/1810x1020" media="(min-width: 992px)">
+					<source srcset="https://via.placeholder.com/740x740" media="(min-width: 992px)">
 					<source srcset="https://via.placeholder.com/690x420">
 					<img src="https://via.placeholder.com/690x420" alt="Placeholder" class="d-block w-100">
 				</picture>
 			</div>
 		</div>
 
-		<hr class="border-top mt-3 mb-0">
+		<hr class="border-top mt-4 mb-0">
 	</div>
 
-	<div class="mt-2 mb-4">
-		<div class="container px-g d-flex justify-content-between align-items-start mb-2">
-			<h2 class="h1">Instagram lorem ipsum dolor sit amet</h2>
-			<button class="btn btn-lg btn-primary d-none d-lg-block">Go to Instagram</button>
-		</div>
-
-		<div id="instagram-carousel" class="carousel slide carousel--loop" data-ride="carousel" data-interval="false" data-slide-number="5">
-			<ul class="list-unstyled carousel-inner d-flex flex-nowrap mb-0">
-				{{#times 8}}
-				<img class="carousel-item col-12 px-g {{#if @first}}active{{/if}}" src="https://via.placeholder.com/255x255/?text={{@index}}" />
-				{{/times}}
-			</ul>
-
-			<a class="carousel-control-prev text-body justify-content-start" href="#instagram-carousel" role="button" data-slide="prev">
-				<span class="carousel-control-prev-icon carousel-control--background sni sni__chevron-prev justify-content-center align-items-center"
-					aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next text-body justify-content-end" href="#instagram-carousel" role="button" data-slide="next">
-				<span class="carousel-control-next-icon carousel-control--background sni sni__chevron-next justify-content-center align-items-center"
-					aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
-
-		<div class="d-flex justify-content-center d-lg-none mt-2">
-			<button class="btn btn-lg btn-primary">Go to Instagram</button>
-		</div>
-	</div>
+	{{#> sections/carousel-scroll class="my-4 my-lg-5 py-2 py-lg-0" header="Instagram lorem ipsum dolor sit amet" button="Go to Instagram"}}
+		{{#times 8}}
+		<img class="carousel-item col-12 col-lg-1o5" src="https://via.placeholder.com/255x255/?text={{@index}}" />
+		{{/times}}
+	{{/ sections/carousel-scroll}}
 
 	<div class="bg-light">
 		<div class="container px-g py-5">
@@ -168,8 +115,6 @@
 	{{> sections/feature-banner}}
 
 	{{> sections/newsletter-banner}}
-
-	{{> footer}}
 
 	{{> js jquery=true bootstrap=true main=true }}
 </body>

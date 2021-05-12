@@ -8,3 +8,40 @@
 		}
 	}
 }
+
+#a-beauty-review {
+	.carousel-item {
+		height: 6em;
+
+		&.carousel-item-left,
+		&.carousel-item-right,
+		&.active {
+			display: flex;
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		.carousel-indicators {
+			li {
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				transition: left $carousel-transition-duration ease-in-out;
+
+				&.carousel-indicator--prev {
+					left: 0%;
+				}
+				&.carousel-indicator--prev-out {
+					left: -50%;
+				}
+				&.carousel-indicator--next {
+					left: 100%;
+				}
+				&.carousel-indicator--next-out {
+					left: 150%;
+				}
+			}
+		}
+	}
+}

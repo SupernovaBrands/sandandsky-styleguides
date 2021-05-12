@@ -1,4 +1,4 @@
-<section id="hero-carousel{{#if num}}{{num}}{{/if}}" class="hero-carousel carousel slide {{ class }}" data-ride="carousel" data-interval="7000">
+<section id="hero-carousel{{#if num}}{{num}}{{/if}}" class="hero-carousel carousel slide {{ class }}" data-ride="carousel" data-interval="7000" data-pause="false">
 	<ol class="carousel-indicators carousel-indicators--timer mb-0">
 		{{#times totalSlide}}
 		<li data-target="#hero-carousel{{#if num}}{{num}}{{/if}}" data-slide-to="{{minus @index 1}}" class="border-0 mb-3 mx-1 {{#if @first}}active{{/if}}"></li>

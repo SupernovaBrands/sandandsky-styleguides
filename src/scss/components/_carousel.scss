@@ -3,19 +3,12 @@
 		.carousel-item {
 			display: block;
 			margin-right: 0;
-
-			@include media-breakpoint-up(lg) {
-				padding-left: $grid-gutter-width / 2;
-				padding-right: $grid-gutter-width / 2;
-			}
 		}
 
 		.carousel-inner {
 			overflow: hidden;
 			-ms-overflow-style: none;
 			scrollbar-width: none;
-			margin-left: - $grid-gutter-width / 2;
-			margin-right: - $grid-gutter-width / 2;
 
 			@include media-breakpoint-up(lg) {
 				overflow-x: auto;

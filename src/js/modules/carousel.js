@@ -20,7 +20,9 @@ if ($('.carousel--scroll').length > 0) {
 		const prevButton = carousel.querySelector('.carousel-control-prev');
 		const nextButton = carousel.querySelector('.carousel-control-next');
 
-		adjustScrollThumb(scrollThumb, inner);
+		setTimeout(() => {
+			adjustScrollThumb(scrollThumb, inner);
+		}, 300);
 		scrollbars.push({ thumb: scrollThumb, inner });
 
 		let x = 0;

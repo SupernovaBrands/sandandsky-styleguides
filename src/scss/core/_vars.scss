@@ -96,7 +96,8 @@ $input-disabled-color: $gray-400;
 $custom-control-gutter: .5em;
 $custom-control-indicator-size: 1em;
 
-$input-padding-y: calc-em(28 / 2);
+$input-font-size: $font-size-sm;
+$input-padding-y: calc-em(28 / 2, 14);
 $input-padding-x: 1em;
 $custom-select-indicator-padding: 1em;
 

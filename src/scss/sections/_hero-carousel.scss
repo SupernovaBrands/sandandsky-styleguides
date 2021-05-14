@@ -10,24 +10,3 @@
 		}
 	}
 }
-
-.hero-banner {
-	figcaption {
-		position: relative;
-
-		@include media-breakpoint-up(lg) {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			right: 0;
-			left: 0;
-		}
-	}
-
-	&__text {
-		@include media-breakpoint-up(lg) {
-			@include make-col(3, 5);
-			@include make-col-offset(1, 5);
-		}
-	}
-}

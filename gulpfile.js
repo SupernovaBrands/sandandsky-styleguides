@@ -72,7 +72,7 @@ const hbsVars = {
 	cssUrl: '/sandandsky-styleguides/css',
 };
 
-const indexFile = () => {
+const indexFile = function () {
 	const base = 'src/docs';
 	const folders = ['core', 'components', 'compounds', 'sections', 'templates'];
 	const filenames = {};
@@ -99,57 +99,69 @@ const indexFile = () => {
 		.pipe(browserSync.stream());
 };
 
-const hbsFiles = () => src(files.hbs)
-	.pipe(handlebars(hbsVars, { batch: ['src/partials'], helpers: hbsHelpers }))
-	.pipe(rename({ extname: '.html' }))
-	.pipe(dest('dist'))
-	.pipe(browserSync.stream());
+const hbsFiles = function () {
+	return src(files.hbs)
+		.pipe(handlebars(hbsVars, { batch: ['src/partials'], helpers: hbsHelpers }))
+		.pipe(rename({ extname: '.html' }))
+		.pipe(dest('dist'))
+		.pipe(browserSync.stream());
+};
 
-const jsFiles = () => src(files.js)
-	.pipe(browserSync.stream());
+const jsFiles = function () {
+	return src(files.js)
+		.pipe(browserSync.stream());
+};
 
-const vendorJsFiles = () => src(files.vendorJs)
-	.pipe(dest(jsDir))
-	.pipe(browserSync.stream());
+const vendorJsFiles = function () {
+	return src(files.vendorJs)
+		.pipe(dest(jsDir))
+		.pipe(browserSync.stream());
+};
 
-const scssFiles = () => src(files.scss)
-	.pipe(sourcemaps.init())
-	.pipe(sass({ outputStyle: 'expanded' }).on('error', errorHandler))
-	.pipe(autoprefixer())
-	.pipe(sourcemaps.write('.'))
-	.pipe(dest(cssDir))
-	.pipe(browserSync.stream());
+const scssFiles = function () {
+	return src(files.scss)
+		.pipe(sourcemaps.init())
+		.pipe(sass({ outputStyle: 'expanded' }).on('error', errorHandler))
+		.pipe(autoprefixer())
+		.pipe(sourcemaps.write('.'))
+		.pipe(dest(cssDir))
+		.pipe(browserSync.stream());
+};
 
-const staticFiles = () => src(files.static, { base: '.' })
-	.pipe(dest('dist'))
-	.pipe(browserSync.stream());
+const staticFiles = function () {
+	return src(files.static, { base: '.' })
+		.pipe(dest('dist'))
+		.pipe(browserSync.stream());
+};
 
-const webpackBuild = (isWatch = false) => () => new Promise((resolve, reject) => {
-	webpack({ ...webpackConfig, watch: isWatch }, (err, stats) => {
-		if (err) {
-			return reject(err);
-		}
-		if (stats.hasErrors()) {
-			return reject(new Error(stats.compilation.errors.join('\n')));
-		}
-		return resolve();
+const webpackBuild = (isWatch = false) => function () {
+	return new Promise((resolve, reject) => {
+		webpack({ ...webpackConfig, watch: isWatch }, (err, stats) => {
+			if (err) {
+				return reject(err);
+			}
+			if (stats.hasErrors()) {
+				return reject(new Error(stats.compilation.errors.join('\n')));
+			}
+			return resolve();
+		});
 	});
-});
+};
 
-const watchFiles = (done) => {
-	watch(files.allScss, series(scssFiles));
-	watch(files.index, series(indexFile));
-	watch(files.hbs, series(hbsFiles))
-		.on('add', series(indexFile))
-		.on('unlink', series(indexFile));
-	watch(files.partials, series(hbsFiles));
-	watch(files.js, series(jsFiles));
-	watch(files.vendorJs, series(vendorJsFiles));
-	watch(files.static, series(staticFiles));
+const watchFiles = function (done) {
+	watch(files.allScss, scssFiles);
+	watch(files.index, indexFile);
+	watch(files.hbs, hbsFiles)
+		.on('add', indexFile)
+		.on('unlink', indexFile);
+	watch(files.partials, hbsFiles);
+	watch(files.js, jsFiles);
+	watch(files.vendorJs, vendorJsFiles);
+	watch(files.static, staticFiles);
 	done();
 };
 
-const initServer = (done) => {
+const initServer = function (done) {
 	browserSync.init({
 		server: './dist',
 		port: 8080,

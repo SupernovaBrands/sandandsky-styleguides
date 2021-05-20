@@ -1,17 +1,29 @@
 .how-to-video {
 
-    picture:after {
-        position: absolute;
-		color: white;
-		font-size: calc-em(32, 16);
-		right: calc-em(15, 32);
-		bottom: calc-em(15, 32);
+    picture {
+        cursor: pointer;
 
-		@include media-breakpoint-up(lg) {
-			font-size: calc-em(56, 16);
-			right: calc-em(30, 56);
-			bottom: calc-em(30, 56);
-		}
+        &:after {
+            position: absolute;
+            color: #000;
+            font-size: calc-em(18, 16);
+            background-color: white;
+            border-radius: 100%;
+            right: calc-em(15, 18);
+            bottom: calc-em(15, 18);
+            width: calc-em(32, 18);
+            height: calc-em(32, 18);
+            padding: calc-em(7.5, 18) calc-em(12, 18);
+
+            @include media-breakpoint-up(lg) {
+                font-size: calc-em(24, 16);
+                right: calc-em(30, 24);
+                bottom: calc-em(30, 24);
+                width: calc-em(56, 24);
+                height: calc-em(56, 24);
+                padding: calc-em(16, 24) calc-em(22, 24);
+            }
+        }
     }
 }
 

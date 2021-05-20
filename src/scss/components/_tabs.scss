@@ -1,0 +1,12 @@
+.tab {
+	.nav-item {
+		flex: 1 0 0;
+	}
+
+	.nav-link {
+		&.active {
+			box-shadow: 0 -2px 0 0 inset $secondary;
+            font-weight: bold;
+		}
+	}
+}

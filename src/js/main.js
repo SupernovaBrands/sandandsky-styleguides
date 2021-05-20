@@ -11,7 +11,6 @@ if ($('.carousel').length > 0) {
 const carouselLoop = $('.carousel--loop');
 if (carouselLoop.length > 0) {
 	import(/* webpackChunkName: 'carousel-loop' */ '~mod/carousel-loop');
-	import(/* webpackChunkName: 'products' */ '~mod/products');
 }
 
 

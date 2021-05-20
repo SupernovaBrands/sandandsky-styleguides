@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {{> html-head title="Video Card" }}
+</head>
+
+<body>
+	<div class="container mt-4">
+        <figure>
+            <picture data-toggle="modal" data-target="#videoCardModal">
+                <source srcset="https://via.placeholder.com/600x600/FFEFF2" media="(min-width: 992px)">
+                <img src="https://via.placeholder.com/345x345/FFEFF2" alt="Placeholder" class="d-block w-100">
+            </picture>
+        </figure>
+    </div>
+    {{> js jquery=true bootstrap=true main=true }}
+</body>

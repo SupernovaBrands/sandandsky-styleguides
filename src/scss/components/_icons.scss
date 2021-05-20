@@ -1,9 +1,9 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.svg?d125dffb48222abe5563ed5f377ed3f2#supernova-icon") format("svg"),
-url("/sandandsky-styleguides/fonts/supernova-icon.ttf?d125dffb48222abe5563ed5f377ed3f2") format("truetype"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?d125dffb48222abe5563ed5f377ed3f2") format("woff"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff2?d125dffb48222abe5563ed5f377ed3f2") format("woff2") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.svg?d32be4eca498d0f876e0adb6e292e043#supernova-icon") format("svg"),
+url("/sandandsky-styleguides/fonts/supernova-icon.ttf?d32be4eca498d0f876e0adb6e292e043") format("truetype"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?d32be4eca498d0f876e0adb6e292e043") format("woff"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff2?d32be4eca498d0f876e0adb6e292e043") format("woff2") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -34,15 +34,16 @@ $supernova-icon-map: (
 	"chevron-prev": "\f103",
 	"koala": "\f104",
 	"nasties": "\f105",
-	"range-aea": "\f106",
-	"range-apc": "\f107",
-	"range-tsw": "\f108",
-	"returns": "\f109",
-	"search": "\f10a",
-	"shake": "\f10b",
-	"shipping": "\f10c",
-	"ss": "\f10d",
-	"trophy": "\f10e",
+	"play": "\f106",
+	"range-aea": "\f107",
+	"range-apc": "\f108",
+	"range-tsw": "\f109",
+	"returns": "\f10a",
+	"search": "\f10b",
+	"shake": "\f10c",
+	"shipping": "\f10d",
+	"ss": "\f10e",
+	"trophy": "\f10f",
 );
 
 .sni.sni__australia:before,
@@ -64,6 +65,10 @@ $supernova-icon-map: (
 .sni.sni__nasties:before,
 .sni-after.sni__nasties:after {
 	content: map-get($supernova-icon-map, "nasties");
+}
+.sni.sni__play:before,
+.sni-after.sni__play:after {
+	content: map-get($supernova-icon-map, "play");
 }
 .sni.sni__range-aea:before,
 .sni-after.sni__range-aea:after {

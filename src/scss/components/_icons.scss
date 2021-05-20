@@ -1,9 +1,9 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.svg?1b20690c02ee3f4687c0c5e01f5ebae7#supernova-icon") format("svg"),
-url("/sandandsky-styleguides/fonts/supernova-icon.ttf?1b20690c02ee3f4687c0c5e01f5ebae7") format("truetype"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?1b20690c02ee3f4687c0c5e01f5ebae7") format("woff"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff2?1b20690c02ee3f4687c0c5e01f5ebae7") format("woff2") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.svg?710b39c33701a58fea5569154f08dbb4#supernova-icon") format("svg"),
+url("/sandandsky-styleguides/fonts/supernova-icon.ttf?710b39c33701a58fea5569154f08dbb4") format("truetype"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?710b39c33701a58fea5569154f08dbb4") format("woff"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff2?710b39c33701a58fea5569154f08dbb4") format("woff2") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -32,19 +32,21 @@ $supernova-icon-map: (
 	"australia": "\f101",
 	"chevron-next": "\f102",
 	"chevron-prev": "\f103",
-	"koala": "\f104",
-	"minus": "\f105",
-	"nasties": "\f106",
-	"plus": "\f107",
-	"range-aea": "\f108",
-	"range-apc": "\f109",
-	"range-tsw": "\f10a",
-	"returns": "\f10b",
-	"search": "\f10c",
-	"shake": "\f10d",
-	"shipping": "\f10e",
-	"ss": "\f10f",
-	"trophy": "\f110",
+	"close": "\f104",
+	"koala": "\f105",
+	"minus": "\f106",
+	"nasties": "\f107",
+	"play": "\f108",
+	"plus": "\f109",
+	"range-aea": "\f10a",
+	"range-apc": "\f10b",
+	"range-tsw": "\f10c",
+	"returns": "\f10d",
+	"search": "\f10e",
+	"shake": "\f10f",
+	"shipping": "\f110",
+	"ss": "\f111",
+	"trophy": "\f112",
 );
 
 .sni.sni__australia:before,
@@ -59,6 +61,10 @@ $supernova-icon-map: (
 .sni-after.sni__chevron-prev:after {
 	content: map-get($supernova-icon-map, "chevron-prev");
 }
+.sni.sni__close:before,
+.sni-after.sni__close:after {
+	content: map-get($supernova-icon-map, "close");
+}
 .sni.sni__koala:before,
 .sni-after.sni__koala:after {
 	content: map-get($supernova-icon-map, "koala");
@@ -70,6 +76,10 @@ $supernova-icon-map: (
 .sni.sni__nasties:before,
 .sni-after.sni__nasties:after {
 	content: map-get($supernova-icon-map, "nasties");
+}
+.sni.sni__play:before,
+.sni-after.sni__play:after {
+	content: map-get($supernova-icon-map, "play");
 }
 .sni.sni__plus:before,
 .sni-after.sni__plus:after {

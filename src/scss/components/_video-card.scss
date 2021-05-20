@@ -1,0 +1,33 @@
+.how-to-video {
+
+    picture:after {
+        position: absolute;
+		color: white;
+		font-size: calc-em(32, 16);
+		right: calc-em(15, 32);
+		bottom: calc-em(15, 32);
+
+		@include media-breakpoint-up(lg) {
+			font-size: calc-em(56, 16);
+			right: calc-em(30, 56);
+			bottom: calc-em(30, 56);
+		}
+    }
+}
+
+.video-modal {
+
+    .sni-after:after {
+        color: white;
+        font-size: calc-em(9, 16);
+        padding: calc-em(5, 9);
+    }
+
+    .close {
+        right: calc-em(20, 16);
+        top: 0;
+        transform: translateY(-50%);
+        opacity: 1;
+        background-color: $primary;
+    }
+}

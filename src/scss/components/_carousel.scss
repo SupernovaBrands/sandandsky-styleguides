@@ -121,7 +121,7 @@
 		.carousel-inner {
 			overflow: visible;
 
-			@include media-breakpoint-down(md) {
+			@include media-breakpoint-down(sm) {
 				transform: translateX(-62.5%);
 			}
 
@@ -170,6 +170,18 @@
 
 	&-prev {
 		left: $grid-gutter-width-lg;
+	}
+}
+
+
+.carousel-indicators {
+	&--primary li {
+		background: $body-color;
+		border: 1px solid $body-color;
+
+		&:not(.active) {
+			background: white;
+		}
 	}
 }
 

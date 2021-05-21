@@ -1,0 +1,20 @@
+.customer-reviews {
+
+    .carousel-control--background {
+        border: 1px solid $primary;
+        color: $primary;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .carousel-control-next {
+            right: 0;
+            transform: translateX(100%);
+        }
+
+        .carousel-control-prev {
+            left: 0;
+            transform: translateX(-100%);
+        }
+    }
+
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{> html-head title="Bullets" }}
+    </head>
+    <body>
+        <div class="container">
+            <h1>Carousel Bullets</h1>
+            <div class="position-relative mb-3">
+                <ol class="carousel-indicators carousel-indicators--primary">
+                    <li data-target="#carouselndicators" data-slide-to="0" class="active rounded-circle"></li>
+                    <li data-target="#carouselIndicators" data-slide-to="1" class="rounded-circle"></li>
+                    <li data-target="#carouselIndicators" data-slide-to="2" class="rounded-circle"></li>
+                </ol>
+            </div>
+
+        </div>
+
+        {{> js jquery=true bootstrap=true main=true }}
+    </body>
+</html>

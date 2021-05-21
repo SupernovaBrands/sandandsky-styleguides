@@ -20,17 +20,7 @@
                 </picture>
             </div>
 
-            <div class="modal fade" id="videoCardModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered video-modal" role="document">
-                    <div class="modal-content">
-                        <video controls>
-                            <source src="https://cdn.shopify.com/s/files/1/0277/5262/8295/files/Cleanser-How-To.mp4?v=1618379350" type="video/mp4">
-                        </video>
-                        <iframe class="d-none embed-responsive-item" src="https://cdn.shopify.com/s/files/1/0277/5262/8295/files/Cleanser-How-To.mp4?v=1618379350"></iframe>
-                        <button type="button" class="close position-absolute bg-primary sni-after sni__close" data-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                </div>
-            </div>
+            {{> components/video-modal}}
         </div>
     </div>
     {{> js jquery=true bootstrap=true main=true }}

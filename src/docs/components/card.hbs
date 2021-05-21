@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{{> html-head title="Product Card" }}
+</head>
+
+<body>
+	<div class="container px-g mt-4 text-center">
+
+        <h1>Customer Review Card</h1>
+        <div class="row justify-content-center mt-4">
+			{{> compounds/review-card}}
+		</div>
+
+		<h1>Product Featured Card</h1>
+		<div class="row justify-content-center mt-4">
+			{{> compounds/product-card-featured}}
+		</div>
+	</div>
+
+	{{> js jquery=true bootstrap=true main=true yotpo=true }}
+</body>
+
+</html>

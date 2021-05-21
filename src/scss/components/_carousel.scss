@@ -114,18 +114,62 @@
 			}
 		}
 	}
+
+	&--centered {
+		overflow: hidden;
+
+		.carousel-inner {
+			overflow: visible;
+
+			@include media-breakpoint-down(md) {
+				transform: translateX(-62.5%);
+			}
+
+			@include media-breakpoint-up(md) {
+
+				.active + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+					display: block;
+				}
+
+				.carousel-item {
+					&--last {
+						transform: translate3d(100%, 0, 0);
+					}
+				}
+			}
+		}
+	}
+
+	&--centered-mobile {
+		@include media-breakpoint-down(sm) {
+			overflow: hidden;
+		}
+
+		.carousel-inner {
+			@include media-breakpoint-down(sm) {
+				overflow: visible;
+				transform: translateX(-62.5%);
+			}
+		}
+	}
 }
 
 .carousel-control {
 	&--background {
 		background-color: $white;
-		width: calc-em(30);
-		height: calc-em(40);
-		border-radius: 4px;
+		width: calc-em(39);
+		height: calc-em(39);
+		top: 50%;
+		transform: translateY(-50%);
+		opacity: .75;
+	}
 
-		@include media-breakpoint-up(lg) {
-			height: calc-em(60);
-		}
+	&-next {
+		right: $grid-gutter-width-lg;
+	}
+
+	&-prev {
+		left: $grid-gutter-width-lg;
 	}
 }
 

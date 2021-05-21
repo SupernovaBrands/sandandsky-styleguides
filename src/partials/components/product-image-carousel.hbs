@@ -2,7 +2,7 @@
 	<figure id="product-image-carousel{{#if num}}{{num}}{{/if}}" class="product-image-carousel carousel slide mb-3 no-gutters__in-container d-lg-flex flex-column" data-ride="carousel" data-interval="false" data-indicator="#product-image-carousel__indicator{{#if num}}{{num}}{{/if}}">
 		<div class="carousel-inner order-lg-2">
 			{{#times totalSlide}}
-			<img class="carousel-item {{#if @first}}active{{/if}}" src="https://via.placeholder.com/750x750/EFADBA?text={{@index}}" alt="Slide {{@index}}">
+			<img class="carousel-item {{#if @first}}active{{/if}}" src="https://via.placeholder.com/750x750/?text={{@index}}" alt="Slide {{@index}}">
 			{{/times}}
 		</div>
 		<figcaption class="text-center py-1 text-white order-lg-1">Cleansing and Gentle Exfoliation</figcaption>
@@ -14,7 +14,7 @@
 		{{#times totalSlide}}
 		<div class="product-image-carousel__indicator__item carousel-item {{#if @first}}active{{/if}} col-12 px-lg-0 pb-lg-2 mw-100" data-target="#product-image-carousel{{#if num}}{{num}}{{/if}}" data-slide-to="{{minus @index 1}}" data-index="{{@index}}">
 			<button class="btn-unstyled m-0 border d-block {{#if @first}}border-secondary{{else}}border-white{{/if}}">
-				<img class="img-fluid mx-auto d-block" src="https://via.placeholder.com/150x150/EFADBA?text={{@index}}" alt="Slide {{@index}}">
+				<img class="img-fluid mx-auto d-block" src="https://via.placeholder.com/150x150/?text={{@index}}" alt="Slide {{@index}}">
 			</button>
 		</div>
 		{{/times}}

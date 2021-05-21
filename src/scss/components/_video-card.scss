@@ -1,28 +1,25 @@
-.how-to-video {
+.video-card {
 
-    picture {
+    picture:after {
         cursor: pointer;
+        position: absolute;
+        color: #000;
+        font-size: calc-em(18, 16);
+        background-color: white;
+        border-radius: 100%;
+        right: calc-em(15, 18);
+        bottom: calc-em(15, 18);
+        width: calc-em(32, 18);
+        height: calc-em(32, 18);
+        padding: calc-em(7.5, 18) calc-em(12, 18);
 
-        &:after {
-            position: absolute;
-            color: #000;
-            font-size: calc-em(18, 16);
-            background-color: white;
-            border-radius: 100%;
-            right: calc-em(15, 18);
-            bottom: calc-em(15, 18);
-            width: calc-em(32, 18);
-            height: calc-em(32, 18);
-            padding: calc-em(7.5, 18) calc-em(12, 18);
-
-            @include media-breakpoint-up(lg) {
-                font-size: calc-em(24, 16);
-                right: calc-em(30, 24);
-                bottom: calc-em(30, 24);
-                width: calc-em(56, 24);
-                height: calc-em(56, 24);
-                padding: calc-em(16, 24) calc-em(22, 24);
-            }
+        @include media-breakpoint-up(lg) {
+            font-size: calc-em(24, 16);
+            right: calc-em(30, 24);
+            bottom: calc-em(30, 24);
+            width: calc-em(56, 24);
+            height: calc-em(56, 24);
+            padding: calc-em(16, 24) calc-em(22, 24);
         }
     }
 }
@@ -40,6 +37,5 @@
         top: 0;
         transform: translateY(-50%);
         opacity: 1;
-        background-color: $primary;
     }
 }

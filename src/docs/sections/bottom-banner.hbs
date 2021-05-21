@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{{> html-head title="Bottom Banner" }}
+</head>
+
+<body>
+	<div class="container px-g mt-4">
+		<h1>Bottom Banner</h1>
+	</div>
+
+	{{#> compounds/bottom-banner class="mb-5" }}
+		<p class="h1">Buy any 3 products and save 30%</p>
+		<button class="btn btn-lg btn-primary">Shop all</button>
+	{{/ compounds/bottom-banner}}
+
+	{{> js jquery=true main=true }}
+</body>
+
+</html>

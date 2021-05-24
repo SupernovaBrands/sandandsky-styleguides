@@ -1,9 +1,9 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.svg?b2143542db16b56ce13616a58bb4746e#supernova-icon") format("svg"),
-url("/sandandsky-styleguides/fonts/supernova-icon.ttf?b2143542db16b56ce13616a58bb4746e") format("truetype"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?b2143542db16b56ce13616a58bb4746e") format("woff"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff2?b2143542db16b56ce13616a58bb4746e") format("woff2") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.svg?d809795b0dd22cf4279ec115ec96b1b6#supernova-icon") format("svg"),
+url("/sandandsky-styleguides/fonts/supernova-icon.ttf?d809795b0dd22cf4279ec115ec96b1b6") format("truetype"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?d809795b0dd22cf4279ec115ec96b1b6") format("woff"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff2?d809795b0dd22cf4279ec115ec96b1b6") format("woff2") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -30,28 +30,33 @@ url("/sandandsky-styleguides/fonts/supernova-icon.woff2?b2143542db16b56ce13616a5
 
 $supernova-icon-map: (
 	"australia": "\f101",
-	"chevron-next": "\f102",
-	"chevron-prev": "\f103",
-	"close": "\f104",
-	"koala": "\f105",
-	"minus": "\f106",
-	"nasties": "\f107",
-	"play": "\f108",
-	"plus": "\f109",
-	"range-aea": "\f10a",
-	"range-apc": "\f10b",
-	"range-tsw": "\f10c",
-	"returns": "\f10d",
-	"search": "\f10e",
-	"shake": "\f10f",
-	"shipping": "\f110",
-	"ss": "\f111",
-	"trophy": "\f112",
+	"check": "\f102",
+	"chevron-next": "\f103",
+	"chevron-prev": "\f104",
+	"close": "\f105",
+	"koala": "\f106",
+	"minus": "\f107",
+	"nasties": "\f108",
+	"play": "\f109",
+	"plus": "\f10a",
+	"range-aea": "\f10b",
+	"range-apc": "\f10c",
+	"range-tsw": "\f10d",
+	"returns": "\f10e",
+	"search": "\f10f",
+	"shake": "\f110",
+	"shipping": "\f111",
+	"ss": "\f112",
+	"trophy": "\f113",
 );
 
 .sni.sni__australia:before,
 .sni-after.sni__australia:after {
 	content: map-get($supernova-icon-map, "australia");
+}
+.sni.sni__check:before,
+.sni-after.sni__check:after {
+	content: map-get($supernova-icon-map, "check");
 }
 .sni.sni__chevron-next:before,
 .sni-after.sni__chevron-next:after {

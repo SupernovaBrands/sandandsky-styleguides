@@ -114,6 +114,17 @@
 
     .pull-left {
         float: none !important;
-        justify-content: center;
+		align-items: center;
     }
+
+	&__centered .pull-left {
+		justify-content: center;
+	}
+
+	&__show-text.bottomLine .text-m {
+		display: block;
+		color: $body-color !important;
+		margin-left: calc-em(10);
+		text-decoration: underline !important;
+	}
 }

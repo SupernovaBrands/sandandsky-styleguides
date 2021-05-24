@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{{> html-head title="Product Section" }}
+</head>
+
+<body class="template-product">
+	<div class="container mt-4">
+		<h1>Product Section</h1>
+
+		<div class="row align-items-start">
+			{{> components/product-image-carousel totalSlide=6 rangeclass="range--apc"}}
+			<div class="col-12 col-lg-5 order-lg-3">
+				<h1 class="mt-4">Australian Pink Clay Flash Perfection Exfoliator</h1>
+				<div class="yotpo bottomLine show-avg-score yotpo__show-text yotpo-small mb-1" data-appkey="6txi4aUWjmI6eNoVLssUgrIObhvqlGbIfVyePeRW"
+					data-domain="dev-cocoandeve.myshopify.com" data-product-id="4543113265187" data-product-models="4543113265187"
+					data-name="Sunny Honey Bali Bronzing Foam"
+					data-url="https://dev.cocoandeve.com/products/sunny-honey-bali-bronzing-self-tan-mousse"
+					data-image-url="//cdn.shopify.com/s/files/1/0286/1327/9779/products/FOAM_DARK_YELLOW_1_large.jpg%3Fv=1609922006"
+					data-description="<div> <strong></strong>Anti-cellulite, anti-ageing self tan with zero nasties. Created using unique CellushapeTM formula to hydrate and firm the skin.<br> </div> <ul> <li>Blurs Pigmentation and Perfects Skin.</li> <li>Tropical Mango and Guava Scent. (No biscuit smells!)</li> <li>Lightweight, non-sticky formula.</li> <li>Fast drying and develops in just 2 hours</li> <li>Vegan. 100% Natural DHA. No Nasties</li> </ul>" data-bread-crumbs="Best Sellers;Tan;" data-yotpo-element-id="2">
+				</div>
+				<p class="mt-2 mb-4">Smooth uneven texture and clear congestion with this triple-action facial exfoliator.</p>
+				<form class="product-form">
+					<div class="d-flex mb-3">
+						<div class="react-quantity-box"></div>
+						<button class="btn btn-lg btn-primary btn-block ml-g ml-lg-3" type="submit">Add to Cart - $49.90</button>
+					</div>
+				</form>
+				<p class="mb-3 font-size-sm">Afterpay</p>
+				<p class="mb-3 font-size-sm">Fast shipping worldwide</p>
+				<ul class="tab nav nav-tabs" id="tab" role="tablist">
+                    <li class="nav-item text-center">
+                        <a class="nav-link border-0 pb-2 text-body active" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Benefits</a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link border-0 pb-2 text-body" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Ingredients</a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link border-0 pb-2 text-body" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Routine</a>
+                    </li>
+                </ul>
+                <div class="tab-content mt-3" id="tabContent">
+                    <div id="tab-1" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tab-1">
+                        <p class="mb-2">Delivering a burst of powerful aquatic ingredients, the luxurious, ultra-lightweight formula smooths and strengthens skin – without weighing it down.</p>
+						<ul class="list-check pl-4">
+							<li class="my-1">Hydrates & strengthens with Tasmanian Spring Water</li>
+							<li class="my-1">Hyaluronic Acid Complex locks in moisture</li>
+							<li class="my-1">Fermented Sea Kelp smooths skin & targets wrinkles</li>
+							<li class="my-1">Red Seaweed Extract forms ‘second skin’ to prevent dehydration</li>
+							<li class="my-1">Ultra-lightweight gel-cream – ideal for all skin types</li>
+						</ul>
+                    </div>
+                    <div id="tab-2" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-2">
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                    </div>
+                    <div id="tab-3" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </div>
+                </div>
+
+
+			</div>
+		</div>
+    </div>
+
+	{{> js jquery=true bootstrap=true main=true yotpo=true }}
+</body>
+</html>

@@ -1,8 +1,8 @@
 
-<figure class="product-card__featured col-9 col-lg-3">
+<figure class="{{carousel}} product-card__featured col-9 col-lg-3 {{#if active}}active{{/if}}">
 	<picture class="d-block">
-		<img src="https://via.placeholder.com/270x331" alt="Placeholder" class="d-block w-100">
-		<source srcset="https://via.placeholder.com/270x331" media="(min-width: 992px)">
+		<img src="https://via.placeholder.com/296x296?text={{index}}" alt="Placeholder" class="d-block w-100">
+		<source srcset="https://via.placeholder.com/296x296?text={{index}}" media="(min-width: 992px)">
 	</picture>
 	<figcaption class="mt-g text-center">
         <p class="h5 font-weight-normal">Tasmanian Spring Water</p>
@@ -12,7 +12,7 @@
 			data-name="Sunny Honey Bali Bronzing Foam"
 			data-url="https://dev.cocoandeve.com/products/sunny-honey-bali-bronzing-self-tan-mousse"
 			data-image-url="//cdn.shopify.com/s/files/1/0286/1327/9779/products/FOAM_DARK_YELLOW_1_large.jpg%3Fv=1609922006"
-			data-description="<div> <strong></strong>Anti-cellulite, anti-ageing self tan with zero nasties. Created using unique CellushapeTM formula to hydrate and firm the skin.<br> </div> <ul> <li>Blurs Pigmentation and Perfects Skin.</li> <li>Tropical Mango and Guava Scent. (No biscuit smells!)</li> <li>Lightweight, non-sticky formula.</li> <li>Fast drying and develops in just 2 hours</li> <li>Vegan. 100% Natural DHA. No Nasties</li> </ul>" data-bread-crumbs="Best Sellers;Tan;" data-yotpo-element-id="2"></div>
+			data-description="<div> <strong></strong>Anti-cellulite, anti-ageing self tan with zero nasties. Created using unique CellushapeTM formula to hydrate and firm the skin.<br> </div> <ul> <li>Blurs Pigmentation and Perfects Skin.</li> <li>Tropical Mango and Guava Scent. (No biscuit smells!)</li> <li>Lightweight, non-sticky formula.</li> <li>Fast drying and develops in just 2 hours</li> <li>Vegan. 100% Natural DHA. No Nasties</li> </ul>" data-bread-crumbs="Best Sellers;Tan;" data-yotpo-element-id="{{index}}"></div>
 		<p class="mb-2"><span class="text-muted text-linethrough">$39.73</span> <span class="font-weight-bold">$39.73</span></p>
         <button class="btn btn-primary btn-block">Add to Cart</button>
 	</figcaption>

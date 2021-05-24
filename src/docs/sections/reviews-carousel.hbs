@@ -14,15 +14,8 @@
 			<div class="carousel--centered">
 				<div class="carousel-inner d-flex flex-nowrap" role="listbox">
                     {{#times 6}}
-                    <figure class="carousel-item review-card col-9 col-lg-4 {{#if @first}}active{{/if}}">
-                        <picture class="d-block">
-                            <source srcset="https://via.placeholder.com/370x370?text={{@index}}" media="(min-width: 992px)">
-                            <img src="https://via.placeholder.com/280x280?text={{@index}}" alt="Placeholder" class="d-block w-100">
-                        </picture>
-                        <figcaption class="mt-n2 mx-g p-g p-lg-3 text-center position-relative font-size-sm">
-                            <p>To all the ladies out there who are just having a bad skin day like me today, I wouldn’t look any further than this wonderful tub of magic by @sandandskyaus I absolutely adore this magic potion pink clay mask and just to let you know this is my second tub<br>-<br>@nichole.47</p>
-                        </figcaption>
-                    </figure>
+					{{> compounds/review-card active=@first index=@index carousel="carousel-item"}}
+
                     {{/times}}
 
 				</div>

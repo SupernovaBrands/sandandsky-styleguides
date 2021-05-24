@@ -14,24 +14,7 @@
 			<div class="carousel--centered">
 				<div class="carousel-inner d-flex flex-nowrap" role="listbox">
                     {{#times 6}}
-                    <figure class="carousel-item m-0 col-9 col-lg-3 {{#if @first}}active{{/if}}">
-                        <picture class="d-block">
-                            <img src="https://via.placeholder.com/296x296?text={{@index}}" alt="Placeholder" class="d-block w-100">
-                            <source srcset="https://via.placeholder.com/296x296?text={{@index}}" media="(min-width: 992px)">
-                        </picture>
-                        <figcaption class="mt-g text-center">
-                            <p class="h5 font-weight-normal">Tasmanian Spring Water</p>
-                            <h4 class="mb-1">Hydration Boost Cream</h4>
-                            <div class="yotpo bottomLine show-avg-score yotpo__centered yotpo-small mb-1" data-appkey="6txi4aUWjmI6eNoVLssUgrIObhvqlGbIfVyePeRW"
-                                data-domain="dev-cocoandeve.myshopify.com" data-product-id="4543113265187" data-product-models="4543113265187"
-                                data-name="Sunny Honey Bali Bronzing Foam"
-                                data-url="https://dev.cocoandeve.com/products/sunny-honey-bali-bronzing-self-tan-mousse"
-                                data-image-url="//cdn.shopify.com/s/files/1/0286/1327/9779/products/FOAM_DARK_YELLOW_1_large.jpg%3Fv=1609922006"
-                                data-description="<div> <strong></strong>Anti-cellulite, anti-ageing self tan with zero nasties. Created using unique CellushapeTM formula to hydrate and firm the skin.<br> </div> <ul> <li>Blurs Pigmentation and Perfects Skin.</li> <li>Tropical Mango and Guava Scent. (No biscuit smells!)</li> <li>Lightweight, non-sticky formula.</li> <li>Fast drying and develops in just 2 hours</li> <li>Vegan. 100% Natural DHA. No Nasties</li> </ul>" data-bread-crumbs="Best Sellers;Tan;" data-yotpo-element-id="{{@index}}"></div>
-                            <p class="mb-2"><span class="text-muted text-linethrough">$39.73</span> <span class="font-weight-bold">$39.73</span></p>
-                            <button class="btn btn-primary btn-block">Add to Cart</button>
-                        </figcaption>
-                    </figure>
+                    {{> compounds/product-card-featured active=@first index=@index carousel="carousel-item"}}
                     {{/times}}
 				</div>
 			</div>

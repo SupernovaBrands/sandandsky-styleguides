@@ -48,5 +48,10 @@ $(document).ready(function () {
 			$(this).find('.carousel-item--last').removeClass('carousel-item--last');
 		});
 
+		$('.carousel-indicators li').on('click', function(){
+
+			$('#carouselLoop').carousel($(this).data('slide-to') - 1);
+		});
+
 	}
 });

@@ -10,7 +10,8 @@
 		<h1>Product Section</h1>
 
 		<div class="row align-items-start">
-			{{> components/product-image-carousel totalSlide=6 rangeclass="range--tsw"}}
+			{{> components/product-image-carousel totalSlide=6 rangeclass="range-bg__tsw"}}
+
 			<div class="col-12 col-lg-5 d-flex flex-column order-lg-3">
 				<h1 class="mt-4">Australian Pink Clay Flash Perfection Exfoliator</h1>
 				<div class="yotpo bottomLine show-avg-score yotpo__show-text yotpo-small mb-1" data-appkey="6txi4aUWjmI6eNoVLssUgrIObhvqlGbIfVyePeRW"
@@ -42,10 +43,10 @@
                         <a class="nav-link border-0 pb-2 text-body" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Routine</a>
                     </li>
                 </ul>
-				<div class="tab-content mt-3 order-lg-2" id="tabContent">
+				<div class="tab-content mt-3 mb-lg-4 order-lg-2" id="tabContent">
                     <div id="tab-1" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tab-1">
                         <p class="mb-2">Delivering a burst of powerful aquatic ingredients, the luxurious, ultra-lightweight formula smooths and strengthens skin – without weighing it down.</p>
-						<ul class="list-check pl-4 mb-lg-4">
+						<ul class="list-check pl-4">
 							<li class="my-2">Hydrates & strengthens with Tasmanian Spring Water</li>
 							<li class="my-2">Hyaluronic Acid Complex locks in moisture</li>
 							<li class="my-2">Fermented Sea Kelp smooths skin & targets wrinkles</li>
@@ -53,14 +54,14 @@
 							<li class="my-2">Ultra-lightweight gel-cream – ideal for all skin types</li>
 						</ul>
                     </div>
-                    <div id="tab-2" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-2">
+                    <div id="tab-2" class="tab-pane tab-ingredients fade" role="tabpanel" aria-labelledby="tab-2">
                         <figure class="media mb-3">
 							<img src="https://via.placeholder.com/40x40" alt="Generic placeholder image">
 							<figcaption class="media-body ml-2">
 								<strong>Australian Pink Clay:</strong> A magnet for toxins, our hero ingredient deeply cleanses the skin. Purifying and tightening pores before your eyes, it’s our key to clearing congestion and battling breakouts.
 							</figcaption>
 						</figure>
-						<a class="text-body align-items-center sni-after sni__plus" data-toggle="collapse" href="#collapseIngredients" aria-expanded="false" aria-controls="collapseIngredients">Full ingredients list</a>
+						<button class="btn-unstyled align-items-center sni-after sni__plus collapsed" data-toggle="collapse" href="#collapseIngredients" aria-expanded="false" aria-controls="collapseIngredients">Full ingredients list</button>
 						<div class="collapse font-size-sm" id="collapseIngredients">
 							<p class="mt-4">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
 						</div>

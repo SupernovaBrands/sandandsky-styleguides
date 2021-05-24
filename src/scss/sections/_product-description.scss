@@ -1,14 +1,48 @@
-.range {
+.range-bg {
 
-    &--apc {
+    &__apc {
         background-color: $range-apc;
     }
 
-    &--tsw {
+    &__apc-light {
+        background-color: $range-apc-light;
+    }
+
+    &__tsw {
         background-color: $range-tsw;
     }
 
-    &--aea {
+    &__tsw-light {
+        background-color: $range-tsw-light;
+    }
+
+    &__aea {
         background-color: $range-aea;
+    }
+
+    &__aea-light {
+        background-color: $range-aea-light;
+    }
+}
+
+
+.tab-ingredients {
+
+    p {
+        color: $gray-600;
+    }
+
+    button {
+        color: $body-color;
+
+        &:after {
+            font-size: calc-em(10, 16);
+            margin-left: calc-em(5, 16);
+            text-decoration: none;
+        }
+
+        &:not(.collapsed):after {
+            content: "#{map-get($supernova-icon-map, "minus")}";
+        }
     }
 }

@@ -176,12 +176,20 @@
 
 .carousel-indicators {
 	&--primary li {
-		background: $body-color;
-		border: 1px solid $body-color;
 
-		&:not(.active) {
+		border: 1px solid $body-color;
+		opacity: 1;
+
+		&.active,
+		&.active-2 {
+			background: $body-color;
+		}
+
+		&.active.active-2 {
 			background: white;
 		}
+
+
 	}
 }
 

@@ -9,6 +9,9 @@ $(document).ready(function () {
 			let idx = $e.index();
 			let itemsPerSlide = $(this).data('slide-number') ? $(this).data('slide-number') : 3;
 			const totalItems = $(this).find('.carousel-item').length;
+			const activeIndex = (e.direction === 'left') ? $(this).find('.active').data('index') + 1 : $(this).find('.active').data('index') - 1;
+			let activeItems = (activeIndex > totalItems) ? 1 : activeIndex;
+			activeItems = (activeItems == 0) ? totalItems : activeItems;
 
 			if (screenLG > window.innerWidth) {
 				// set 1 for mobile
@@ -30,11 +33,18 @@ $(document).ready(function () {
 				for (let i = 0; i < it; i += 1) {
 					if (e.direction === 'left') {
 						$(this).find('.carousel-inner').append($(this).find('.carousel-item').eq(0).detach());
+						//$(this).find('.carousel-indicators').append($(this).find('.carousel-indicators li').eq(0).detach());
+
 					} else {
 						$(this).find('.carousel-inner').append($(this).find('.carousel-item').eq(totalItems - 1).detach());
+						//$(this).find('.carousel-indicators').append($(this).find('.carousel-indicators li').eq(totalItems - 1).detach());
 					}
 				}
+
 			}
+
+			$(this).next('.carousel-indicators').find('li').removeClass('active');
+			$(this).next('.carousel-indicators').find('li[data-slide-to="'+ (activeItems) +'"]').addClass('active');
 		});
 
 		$('.carousel--loop').on('slid.bs.carousel', function () {

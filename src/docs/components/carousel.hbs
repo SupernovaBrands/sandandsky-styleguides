@@ -13,30 +13,31 @@
 			{{> components/product-image-carousel totalSlide=6}}
 		</div>
 
-		<h1 class="mt-5">Carousel loop 3 items & Centered</h1>
-		<div id="carouselLoop" class="carousel slide carousel--loop row mb-3" data-slide-number="3">
+		<h1 class="mt-5">Carousel loop 3 items & Mobile Centered</h1>
+		<div id="carouselLoop" class="carousel slide carousel--loop row mb-3" data-slide-number="3" data-indicator="#carouselLoop__indicator">
 			<div class="carousel--centered">
 				<div class="carousel-inner d-flex flex-nowrap" role="listbox">
-					<div class="carousel-item col-9 col-md-4 active">
+					<div class="carousel-item col-9 col-md-4 active" data-index="1">
 						<img class="img-fluid w-100" src="//via.placeholder.com/296x296?text=1" alt="slide 1"/>
 					</div>
-					<div class="carousel-item col-9 col-md-4">
+					<div class="carousel-item col-9 col-md-4" data-index="2">
 						<img class="img-fluid w-100" src="//via.placeholder.com/296x296?text=2" alt="slide 2"/>
 					</div>
-					<div class="carousel-item col-9 col-md-4">
+					<div class="carousel-item col-9 col-md-4" data-index="3">
 						<img class="img-fluid w-100" src="//via.placeholder.com/296x296?text=3" alt="slide 3"/>
 					</div>
-					<div class="carousel-item col-9 col-md-4">
+					<div class="carousel-item col-9 col-md-4" data-index="4">
 						<img class="img-fluid w-100" src="//via.placeholder.com/296x296?text=4" alt="slide 4"/>
 					</div>
-					<div class="carousel-item col-9 col-md-4">
+					<div class="carousel-item col-9 col-md-4" data-index="5">
 						<img class="img-fluid w-100" src="//via.placeholder.com/296x296?text=5" alt="slide 5"/>
 					</div>
-					<div class="carousel-item col-9 col-md-4">
+					<div class="carousel-item col-9 col-md-4" data-index="6">
 						<img class="img-fluid w-100" src="//via.placeholder.com/296x296?text=6" alt="slide 6"/>
 					</div>
 				</div>
 			</div>
+
 			<a class="carousel-control carousel-control-prev carousel-control--background carousel-control--loop" href="#carouselLoop" role="button" data-slide="prev">
 				<span class="carousel-control-prev-icon sni sni__chevron-prev justify-content-center align-items-center" aria-hidden="true"></span>
 				<span class="sr-only">Previous</span>
@@ -47,32 +48,41 @@
 			</a>
 		</div>
 
-		<h1 class="mt-5">Carousel loop 4 items & Centered</h1>
-		<div id="carouselLoop2" class="carousel slide carousel--loop row mb-3" data-slide-number="3">
+		<ol id="carouselLoop__indicator" class="carousel-indicators position-static w-100 my-3 mx-0 carousel-indicators--primary">
+            <li data-target="#carouselLoop" data-slide-to="1" class="active rounded-circle"></li>
+            <li data-target="#carouselLoop" data-slide-to="2" class="rounded-circle"></li>
+            <li data-target="#carouselLoop" data-slide-to="3" class="rounded-circle"></li>
+			<li data-target="#carouselLoop" data-slide-to="4" class="rounded-circle"></li>
+            <li data-target="#carouselLoop" data-slide-to="5" class="rounded-circle"></li>
+            <li data-target="#carouselLoop" data-slide-to="6" class="rounded-circle"></li>
+        </ol>
+
+		<h1 class="mt-5">Carousel loop 4 items & Mobile Centered</h1>
+		<div id="carouselLoop2" class="carousel slide carousel--loop row mb-3" data-slide-number="3" data-indicator="#carouselLoop2__indicator">
 			<div class="carousel--centered">
 				<div class="carousel-inner d-flex flex-nowrap" role="listbox">
-					<div class="carousel-item col-9 col-md-3 active">
+					<div class="carousel-item col-9 col-md-3 active" data-index="1">
 						<img class="img-fluid w-100" src="//via.placeholder.com/296x296?text=1" alt="slide 1"/>
 					</div>
-					<div class="carousel-item col-9 col-md-3">
+					<div class="carousel-item col-9 col-md-3" data-index="2">
 						<img class="img-fluid w-100" src="//via.placeholder.com/296x296?text=2" alt="slide 2"/>
 					</div>
-					<div class="carousel-item col-9 col-md-3">
+					<div class="carousel-item col-9 col-md-3" data-index="3">
 						<img class="img-fluid w-100" src="//via.placeholder.com/296x296?text=3" alt="slide 3"/>
 					</div>
-					<div class="carousel-item col-9 col-md-3">
+					<div class="carousel-item col-9 col-md-3" data-index="4">
 						<img class="img-fluid w-100" src="//via.placeholder.com/296x296?text=4" alt="slide 4"/>
 					</div>
-					<div class="carousel-item col-9 col-md-3">
+					<div class="carousel-item col-9 col-md-3" data-index="5">
 						<img class="img-fluid w-100" src="//via.placeholder.com/296x296?text=5" alt="slide 5"/>
 					</div>
-					<div class="carousel-item col-9 col-md-3">
+					<div class="carousel-item col-9 col-md-3" data-index="6">
 						<img class="img-fluid w-100" src="//via.placeholder.com/296x296?text=6" alt="slide 6"/>
 					</div>
-					<div class="carousel-item col-9 col-md-3">
+					<div class="carousel-item col-9 col-md-3" data-index="7">
 						<img class="img-fluid w-100" src="//via.placeholder.com/296x296?text=7" alt="slide 7"/>
 					</div>
-					<div class="carousel-item col-9 col-md-3">
+					<div class="carousel-item col-9 col-md-3" data-index="8">
 						<img class="img-fluid w-100" src="//via.placeholder.com/296x296?text=8" alt="slide 8"/>
 					</div>
 				</div>
@@ -86,6 +96,16 @@
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
+		<ol id="carouselLoop2__indicator" class="carousel-indicators position-static my-3 mx-0 carousel-indicators--primary">
+            <li data-target="#carouselLoop2" data-slide-to="1" class="active rounded-circle"></li>
+            <li data-target="#carouselLoop2" data-slide-to="2" class="rounded-circle"></li>
+            <li data-target="#carouselLoop2" data-slide-to="3" class="rounded-circle"></li>
+			<li data-target="#carouselLoop2" data-slide-to="4" class="rounded-circle"></li>
+            <li data-target="#carouselLoop2" data-slide-to="5" class="rounded-circle"></li>
+            <li data-target="#carouselLoop2" data-slide-to="6" class="rounded-circle"></li>
+			<li data-target="#carouselLoop2" data-slide-to="7" class="rounded-circle"></li>
+            <li data-target="#carouselLoop2" data-slide-to="8" class="rounded-circle"></li>
+        </ol>
 	</div>
 
 

@@ -33,11 +33,8 @@ $(document).ready(function () {
 				for (let i = 0; i < it; i += 1) {
 					if (e.direction === 'left') {
 						$(this).find('.carousel-inner').append($(this).find('.carousel-item').eq(0).detach());
-						//$(this).find('.carousel-indicators').append($(this).find('.carousel-indicators li').eq(0).detach());
-
 					} else {
 						$(this).find('.carousel-inner').append($(this).find('.carousel-item').eq(totalItems - 1).detach());
-						//$(this).find('.carousel-indicators').append($(this).find('.carousel-indicators li').eq(totalItems - 1).detach());
 					}
 				}
 
@@ -50,5 +47,6 @@ $(document).ready(function () {
 		$('.carousel--loop').on('slid.bs.carousel', function () {
 			$(this).find('.carousel-item--last').removeClass('carousel-item--last');
 		});
+
 	}
 });

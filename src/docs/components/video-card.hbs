@@ -6,19 +6,24 @@
 </head>
 
 <body>
-    <div class="mt-4 container">
-        <div class="row">
-            <h1 class="col-12">Video Card & Modal</h1>
-        </div>
-    </div>
 	<div class="mt-4 py-4">
         <div class="container">
+            <h1>Video Card & Modal</h1>
             <div class="col-12 col-lg-6 video-card">
                 <picture class="position-relative sni-after sni__play" data-toggle="modal" data-target="#videoCardModal">
                     <source srcset="https://via.placeholder.com/600x600" media="(min-width: 992px)">
                     <img src="https://via.placeholder.com/345x345" alt="Placeholder" class="d-block w-100">
                 </picture>
             </div>
+
+            <h1>Video Card with text</h1>
+            <figure class="position-relative m-0 col-12 col-lg-6 video-card">
+                <picture class="position-relative sni-after sni__play" data-toggle="modal" data-target="#videoCardModal">
+                    <source srcset="https://via.placeholder.com/600x600" media="(min-width: 992px)">
+                    <img src="https://via.placeholder.com/345x345" alt="Placeholder" class="d-block w-100">
+                </picture>
+                <figcaption class="h2 m-0 ml-3 ml-lg-4 text-white position-absolute">Perfection Exfoliating<br>in Action</figcaption>
+            </figure>
 
             {{> components/video-modal}}
         </div>

@@ -22,6 +22,11 @@
             padding: calc-em(16, 24) calc-em(22, 24);
         }
     }
+
+    figcaption {
+        bottom: 0;
+        transform: translateY(-50%);
+    }
 }
 
 .video-modal {

@@ -46,3 +46,12 @@
         }
     }
 }
+
+
+.formula-list {
+
+    li:before {
+        font-size: calc-em(32,16);
+        flex-basis: 25%;
+    }
+}

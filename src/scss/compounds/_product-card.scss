@@ -1,0 +1,11 @@
+.product-card {
+  &--secondary {
+    figcaption {
+      min-height: calc-em(250);
+
+      @include media-breakpoint-up(lg) {
+        min-height: 1em;
+      }
+    }
+  }
+}

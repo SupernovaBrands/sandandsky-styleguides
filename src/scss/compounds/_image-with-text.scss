@@ -1,0 +1,163 @@
+.imagewtext {
+  &__content {
+    background: white;
+    margin-top: -3em;
+
+    @include media-breakpoint-up(lg) {
+      margin-right: -60%;
+      height: 100%;
+      max-width: 140%;
+    }
+  }
+
+  &__content-secondary {
+    margin-top: -3em;
+
+    @include media-breakpoint-up(lg) {
+      margin-right: -15%;
+      height: 100%;
+    }
+
+    p {
+      max-width: calc-em(420);
+      color: $gray-600;
+    }
+  }
+
+  &--reverse {
+    @include media-breakpoint-up(lg) {
+      margin-left: -60%;
+    }
+  }
+
+  &--left-reverse {
+    @include media-breakpoint-up(lg) {
+      margin-left: -15%;
+    }
+  }
+
+  &--right-reverse {
+    @include media-breakpoint-up(lg) {
+      margin-right: -10%;
+    }
+  }
+}
+
+.apc-decoration {
+  .leaf {
+    bottom: calc-em(10);
+    right: calc-em(10);
+  }
+
+  &:before {
+    content: '';
+    background: url('//cdn.shopify.com/s/files/1/0248/5370/8886/t/92/assets/apc-range-fruits-mob.png?v=8971153163189977222');
+    background-size: 100%;
+    position: absolute;
+    width: calc-em(110);
+    height: calc-em(186);
+    right: 0;
+    top: -9%;
+    z-index: -1;
+
+    @include media-breakpoint-up(lg) {
+      background: url('//cdn.shopify.com/s/files/1/0248/5370/8886/t/92/assets/apc-range-fruits.png?v=14522492951760024559');
+      background-size: 100%;
+      width: calc-em(320);
+      height: calc-em(214);
+      right: -10%;
+      top: -10%;
+    }
+  }
+
+  &__content {
+    &:before {
+      content: '';
+      background: url('//cdn.shopify.com/s/files/1/0248/5370/8886/t/92/assets/apc-range-ingredients.png?v=4187447364360423599');
+      position: absolute;
+      background-size: 100%;
+      width: calc-em(260);
+      height: calc-em(88);
+      bottom: -7%;
+      z-index: 1;
+      left: -3%;
+      transform: rotate(-15deg);
+
+      @include media-breakpoint-up(lg) {
+        width: calc-em(380);
+        height: calc-em(132);
+        bottom: -20%;
+        z-index: 1;
+        left: 3%;
+        transform: rotate(0deg);
+      }
+    }
+  }
+}
+
+.aea-decoration {
+  &:before {
+    @include media-breakpoint-up(lg) {
+      content: '';
+      position: absolute;
+      background: url('https://cdn.shopify.com/s/files/1/0248/5370/8886/t/92/assets/pattern-intro-right.svg?v=952177482683771001');
+      background-size: 100%;
+      width: 25.1875em;
+      height: 21.375em;
+      right: -5%;
+      top: 6%;
+    }
+  }
+
+  &:after {
+    @include media-breakpoint-up(lg) {
+      content: '';
+      background: url('https://cdn.shopify.com/s/files/1/0248/5370/8886/t/92/assets/pattern-intro-left.svg?v=952177482683771001');
+      background-size: 100%;
+      position: absolute;
+      width: 25.125em;
+      height: 21.3125em;
+      bottom: -16%;
+      z-index: -1;
+      left: -6%;
+    }
+  }
+}
+
+.tsw-decoration {
+  &:before {
+    @include media-breakpoint-up(lg) {
+      content: '';
+      background: url('https://cdn.shopify.com/s/files/1/0277/5262/8295/files/TSW_RANGE-bubble.png?v=1598005691');
+      background-size: 100%;
+      width: calc-em(163);
+      height: calc-em(215);
+      position: absolute;
+      left: -4%;
+      top: 15%;
+      z-index: 1;
+    }
+  }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 133px 0 0 133px;
+    border-color: transparent transparent transparent #{$tsw-light};
+    position: absolute;
+    top: 0;
+
+    &.left {
+      left: -10%;
+      transform: translateY(-50%);
+      top: -30%;
+    }
+
+    &.right {
+      right: -20%;
+      top: -10%;
+      transform: translateY(-100%);
+    }
+  }
+}

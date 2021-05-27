@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{> html-head title="Collections Product" yotpo_stars="true" }}
+</head>
+
+<body>
+  <div class="mobile-wrapper">
+    <div class="container mt-4">
+      <h1>List Products</h1>
+    </div>
+  </div>
+  <section>
+    {{> filter}}
+    <div class="container mt-4">
+      <div class="row">
+        {{> product-card-secondary class="col-6 col-lg-3" color="ff6f8d" saving="20%" badge="true"}}
+        {{> product-card-secondary class="col-6 col-lg-3" color="cc3195"}}
+        {{> product-card-secondary class="col-6 col-lg-3" color="66b3df"}}
+        {{> product-card-secondary class="col-6 col-lg-3" color="ff6f8d" saving="20%" badge="true"}}
+        {{> product-card-secondary class="col-6 col-lg-3" color="cc3195"}}
+        {{> product-card-secondary class="col-6 col-lg-3" color="66b3df"}}
+        {{> product-card-secondary class="col-6 col-lg-3" color="ff6f8d" saving="20%" badge="true"}}
+        {{> product-card-secondary class="col-6 col-lg-3" color="cc3195"}}
+        {{> product-card-secondary class="col-6 col-lg-3" color="66b3df"}}
+        {{> product-card-secondary class="col-6 col-lg-3" color="ff6f8d" saving="20%" badge="true"}}
+        {{> product-card-secondary class="col-6 col-lg-3" color="cc3195"}}
+        {{> product-card-secondary class="col-6 col-lg-3" color="66b3df"}}
+      </div>
+    </div>
+  </section>
+  {{> js jquery=true bootstrap=true main=true }}
+</body>
+
+</html>

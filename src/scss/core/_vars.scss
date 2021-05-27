@@ -24,6 +24,7 @@ $spacers: (
   3: $spacer * 1.5,
   4: $spacer * 2,
   5: $spacer * 2.5,
+  6: $spacer * 3
 );
 
 // Typography
@@ -48,6 +49,9 @@ $h2-font-size-lg: calc-em(32);
 $h3-font-size-lg: calc-em(24);
 $h4-font-size-lg: calc-em(20);
 
+$font-size-banner: calc-em(40);
+$font-size-banner-lg: calc-em(46);
+
 // Colors
 $primary: #4ACD8A;
 // $primary-light: #F5DADF;
@@ -55,14 +59,24 @@ $primary: #4ACD8A;
 $secondary: #FF798F;
 $secondary-light: #FEEDEF;
 
+$banner-color: #494949;
+
 // Products
 $apc: #FF6F8D;
 $aea: #CC3195;
 $tsw: #66B3DF;
+$aea-light: #f7e3f0;
+$tsw-light: #B3DCF4;
 
 $theme-colors: (
   'primary': $primary,
   'secondary': $secondary,
+  'secondary-light': $secondary-light,
+  'tsw': $tsw,
+  'apc': $apc,
+  'aea': $aea,
+  'aea-light': $aea-light,
+  'tsw-light': $tsw-light
 );
 
 $body-color: #151515;
@@ -159,3 +173,10 @@ $hover-transition-timing: 0.15s ease-in-out;
 // Cart Drawer
 // To be above zendesk help
 $zindex-cartdrawer: 9999991;
+
+
+// badge
+$badge-circle-width: calc-em(75);
+$badge-circle-height: calc-em(75);
+$badge-circle-width-lg: calc-em(100);
+$badge-circle-height-lg: calc-em(100);

@@ -1,0 +1,20 @@
+.collection-banner {
+  figcaption {
+    position: relative;
+    margin: auto;
+    margin-top: calc-em(-60);
+    width: calc(100% - #{$grid-gutter-width});
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      margin-left: calc-em(40);
+      margin-top: calc-em(-110);
+      text-align: left;
+      width: auto;
+    }
+  }
+
+  &__caption-left {
+    max-width: calc-em(462);
+  }
+}

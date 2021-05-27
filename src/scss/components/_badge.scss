@@ -1,0 +1,11 @@
+.circle-badge {
+  width: $badge-circle-width;
+  height: $badge-circle-height;
+  right: 0;
+  top: calc-em(-15);
+
+  @include media-breakpoint-up(lg) {
+    width: $badge-circle-width-lg;
+    height: $badge-circle-height-lg;
+  }
+}

@@ -123,3 +123,19 @@ mark,
     content: "\2014\00A0"; // em dash, nbsp
   }
 }
+
+
+.font-banner {
+  @include font-size($font-size-banner);
+
+  @include media-breakpoint-up(lg) {
+    @include font-size($font-size-banner-lg);
+  }
+
+  &--dark {
+    color: $banner-color;
+    @include media-breakpoint-up(lg) {
+      letter-spacing: calc-em(2);
+    }
+  }
+}

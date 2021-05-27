@@ -1,0 +1,45 @@
+<figure class="product-card product-card--secondary {{ class }} text-center mb-4">
+  {{#if badge}}
+  <picture class="circle-badge position-absolute">
+    <source srcset="https://via.placeholder.com/100x100/F3436C" media="(min-width: 992px)"/>
+    <source srcset="https://via.placeholder.com/75x75/F3436C"/>
+    <img class="img-fluid w-100 rounded-circle" src="https://via.placeholder.com/66x66/F3436C"/>
+  </picture>
+  {{/if}}
+  <picture class="d-block">
+    <img src="https://via.placeholder.com/270x336{{# if color}}/{{ color }}/fff{{/if}}" alt="Placeholder" class="d-block w-100">
+  </picture>
+  <figcaption class="mt-1 d-flex flex-column">
+    <p class="mb-1 text-muted h4 font-weight-normal">Tasmanian Spring Water</p>
+    <p class="mb-1 font-weight-bold h3 px-1">Hydration Boost Cream</p>
+    <div class="mb-1">
+      <div class="yotpo bottomLine new-yotpo-snippet" data-product-id="1621251129453" data-yotpo-element-id="3">
+        <div class="yotpo-display-wrapper" style="">
+          <div class="standalone-bottomline" data-source="offload" tabindex="-1" style="visibility: visible;">
+            <div class="yotpo-bottomline pull-left star-clickable" tabindex="0">
+              <span class="yotpo-stars">
+                <span class="yotpo-icon yotpo-icon-star rating-star pull-left"></span>
+                <span class="yotpo-icon yotpo-icon-star rating-star pull-left"></span>
+                <span class="yotpo-icon yotpo-icon-star rating-star pull-left"></span>
+                <span class="yotpo-icon yotpo-icon-star rating-star pull-left"></span>
+                <span class="yotpo-icon yotpo-icon-star rating-star pull-left"></span>
+                <span class="sr-only">4.9/5 Stars</span>
+              </span>
+              <span class="reviews__count">4.9/5</span>
+              <a href="javascript:void(0)" class="text-m" aria-label="3131 reviews" tabindex="0">(3131)</a>
+              <div class="yotpo-clr"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mb-1">
+      <span class="text-muted text-linethrough">$39.73</span>
+      <span class="font-weight-bold">$39.73</span>
+      {{#if saving }}
+      <span class="text-secondary d-sm-block d-lg-inline">(Save {{saving}})</span>
+      {{/if}}
+    </p>
+    <button class="btn btn-lg btn-block bg-primary rounded-0 text-white mt-auto">Add to cart</button>
+  </figcaption>
+</figure>

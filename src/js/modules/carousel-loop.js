@@ -5,6 +5,7 @@ $(document).ready(function () {
 		// moving element carousel item depending of items per slide
 		// triggered by bootstrap carousel slide event (when transition started)
 		$('.carousel--loop').on('slide.bs.carousel', function (e) {
+
 			const $e = $(e.relatedTarget);
 			let idx = $e.index();
 			let itemsPerSlide = $(this).data('slide-number') ? $(this).data('slide-number') : 3;
@@ -32,25 +33,44 @@ $(document).ready(function () {
 				const it = itemsPerSlide - (totalItems - idx);
 				for (let i = 0; i < it; i += 1) {
 					if (e.direction === 'left') {
-						$(this).find('.carousel-item').eq(i).appendTo($(this).find('.carousel-inner'));
+						$(this).find('.carousel-item').eq(0).appendTo($(this).find('.carousel-inner'));
 					} else {
 						$(this).find('.carousel-item').eq(0).appendTo($(this).find('.carousel-inner'));
 					}
 				}
-
+				const indicator = $(this).data('indicator');
+				const thisLoop = $(this);
+				$(indicator).find('li').each(function(k,v){
+					let slideTo = $(this).data('slide-to');
+					let listIndex = thisLoop.find('.carousel-item[data-index="'+slideTo+'"]');
+					$(v).attr('data-actual-slide', thisLoop.find('.carousel-item').index(listIndex));
+				});
 			}
+
+		});
+
+		$('.carousel--loop').on('slid.bs.carousel', function () {
+			const totalItems = $(this).find('.carousel-item').length;
+			const activeIndex = $(this).find('.active').data('index');
+			let activeItems = (activeIndex > totalItems) ? 1 : activeIndex;
+			activeItems = (activeItems == 0) ? totalItems : activeItems;
+
+			$(this).find('.carousel-item--last').removeClass('carousel-item--last');
 
 			$(this).next('.carousel-indicators').find('li').removeClass('active');
 			$(this).next('.carousel-indicators').find('li[data-slide-to="'+ (activeItems) +'"]').addClass('active');
 		});
 
-		$('.carousel--loop').on('slid.bs.carousel', function () {
-			$(this).find('.carousel-item--last').removeClass('carousel-item--last');
-		});
-
 		$('.carousel-indicators li').on('click', function(){
+			$(this).parent().find('li').removeClass('active');
+			$(this).addClass('active');
+			const target = $(this).parent().data('target');
+			if ($(this).data('actual-slide')) {
+				$(target).carousel($(this).data('actual-slide'));
+			} else {
+				$(target).carousel($(this).data('slide-to') - 1);
+			}
 
-			$('#carouselLoop').carousel($(this).data('slide-to') - 1);
 		});
 
 	}

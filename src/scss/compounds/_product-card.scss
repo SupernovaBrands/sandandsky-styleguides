@@ -4,8 +4,34 @@
       min-height: calc-em(250);
 
       @include media-breakpoint-up(lg) {
-        min-height: 1em;
+        min-height: calc-em(230);
       }
+    }
+
+    .img-hover {
+      visibility: hidden;
+      opacity: 0;
+      top: 0;
+      left: $grid-gutter-width/2;
+      object-fit: contain;
+
+      @include media-breakpoint-up(lg) {
+        left: $grid-gutter-width-lg/2;
+      }
+
+      img {
+        width: calc(100% - #{$grid-gutter-width/2});
+        @include media-breakpoint-up(lg) {
+          width: 100%;
+        }
+      }
+
+    }
+
+    .img-main:hover + .img-hover,
+    .img-hover:hover {
+      visibility: visible;
+      opacity: 1;
     }
   }
 }

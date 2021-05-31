@@ -131,11 +131,18 @@ mark,
   @include media-breakpoint-up(lg) {
     @include font-size($font-size-banner-lg);
   }
+}
 
-  &--dark {
-    color: $banner-color;
-    @include media-breakpoint-up(lg) {
-      letter-spacing: calc-em(2);
-    }
+.font-banner-secondary {
+  color: $banner-color;
+
+  @include font-size($font-size-banner-secondary);
+
+  @include media-breakpoint-up(lg) {
+    @include font-size($font-size-banner-secondary-lg);
   }
+}
+
+.gray-muted {
+  color: $gray-muted;
 }

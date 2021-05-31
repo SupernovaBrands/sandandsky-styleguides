@@ -1,0 +1,98 @@
+.apc-decoration {
+  .container {
+    &:before {
+      content: '';
+      background: url('//cdn.shopify.com/s/files/1/0248/5370/8886/t/92/assets/apc-range-fruits-mob.png?v=8971153163189977222');
+      background-size: 100%;
+      position: absolute;
+      width: calc-em(110);
+      height: calc-em(186);
+      right: 0;
+      top: -9%;
+      z-index: -1;
+
+      @include media-breakpoint-up(lg) {
+        background: url('//cdn.shopify.com/s/files/1/0248/5370/8886/t/92/assets/apc-range-fruits.png?v=14522492951760024559');
+        width: calc-em(416);
+        height: calc-em(278);
+        background-size: cover;
+        right: 0;
+        top: -20%;
+        max-width: calc-em(320);
+      }
+    }
+  }
+}
+
+.aea-decoration {
+  .container {
+    &:before {
+      @include media-breakpoint-up(lg) {
+        content: '';
+        position: absolute;
+        background: url('https://cdn.shopify.com/s/files/1/0248/5370/8886/t/92/assets/pattern-intro-right.svg?v=952177482683771001');
+        background-size: cover;
+        width: 25.1875em;
+        height: 21.375em;
+        right: 0;
+        top: 6%;
+        max-width: calc-em(400);
+      }
+    }
+
+    &:after {
+      @include media-breakpoint-up(lg) {
+        content: '';
+        background: url('https://cdn.shopify.com/s/files/1/0248/5370/8886/t/92/assets/pattern-intro-left.svg?v=952177482683771001');
+        background-size: 100%;
+        position: absolute;
+        width: 25.125em;
+        height: 21.3125em;
+        bottom: -16%;
+        z-index: -1;
+        left: -6%;
+      }
+    }
+  }
+}
+
+.tsw-decoration {
+  .container {
+    &:before {
+      @include media-breakpoint-up(lg) {
+        content: '';
+        background: url('https://cdn.shopify.com/s/files/1/0277/5262/8295/files/TSW_RANGE-bubble.png?v=1598005691');
+        background-size: 100%;
+        width: calc-em(163);
+        height: calc-em(215);
+        position: absolute;
+        left: 0;
+        top: 15%;
+        z-index: 1;
+      }
+    }
+
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 133px 0 0 133px;
+      border-color: transparent transparent transparent #{$tsw-light};
+      position: absolute;
+      top: 0;
+
+      &.left {
+        left: -10%;
+        transform: translateY(-50%);
+        top: -30%;
+      }
+
+      &.right {
+        right: -20%;
+        top: -10%;
+        transform: translateY(-100%);
+      }
+    }
+  }
+}

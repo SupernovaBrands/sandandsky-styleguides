@@ -1,4 +1,10 @@
 <figure class="product-card product-card--secondary {{ class }} text-center mb-4">
+  <picture class="d-block img-main">
+    <img src="https://via.placeholder.com/270x336{{# if color}}/{{ color }}/fff{{/if}}" alt="Placeholder" class="d-block w-100">
+  </picture>
+  <picture class="img-hover position-absolute">
+    <img src="https://via.placeholder.com/270x336/#ff798f" alt="Placeholder" class="d-block">
+  </picture>
   {{#if badge}}
   <picture class="circle-badge position-absolute">
     <source srcset="https://via.placeholder.com/100x100/F3436C" media="(min-width: 992px)"/>
@@ -6,13 +12,16 @@
     <img class="img-fluid w-100 rounded-circle" src="https://via.placeholder.com/66x66/F3436C"/>
   </picture>
   {{/if}}
-  <picture class="d-block">
-    <img src="https://via.placeholder.com/270x336{{# if color}}/{{ color }}/fff{{/if}}" alt="Placeholder" class="d-block w-100">
-  </picture>
   <figcaption class="mt-1 d-flex flex-column">
     <p class="mb-1 text-muted h4 font-weight-normal">Tasmanian Spring Water</p>
-    <p class="mb-1 font-weight-bold h3 px-1">Hydration Boost Cream</p>
-    <div class="mb-1">
+    <p class="mb-1 font-weight-bold h3 px-1">
+      {{#if title }}
+      <a class="text-dark" href="#">{{title}}</a>
+      {{else}}
+      <a class="text-dark" href="#">Hydration Boost Cream</a>
+      {{/if}}
+    </p>
+    <div class="mb-1 mt-auto">
       <div class="yotpo bottomLine new-yotpo-snippet" data-product-id="1621251129453" data-yotpo-element-id="3">
         <div class="yotpo-display-wrapper" style="">
           <div class="standalone-bottomline" data-source="offload" tabindex="-1" style="visibility: visible;">
@@ -40,6 +49,6 @@
       <span class="text-secondary d-sm-block d-lg-inline">(Save {{saving}})</span>
       {{/if}}
     </p>
-    <button class="btn btn-lg btn-block bg-primary rounded-0 text-white mt-auto">Add to cart</button>
+    <button class="btn btn-lg btn-block bg-primary rounded-0 text-white">Add to cart</button>
   </figcaption>
 </figure>

@@ -2,10 +2,10 @@ $supernova-icon-font: "supernova-icon";
 
 @font-face {
 	font-family: $supernova-icon-font;
-	src: url("/sandandsky-styleguides/fonts/supernova-icon.svg?8a0a11cf8341c06a56aba149c94aa882#supernova-icon") format("svg"),
-url("/sandandsky-styleguides/fonts/supernova-icon.ttf?8a0a11cf8341c06a56aba149c94aa882") format("truetype"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?8a0a11cf8341c06a56aba149c94aa882") format("woff"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff2?8a0a11cf8341c06a56aba149c94aa882") format("woff2");
+	src: url("/sandandsky-styleguides/fonts/supernova-icon.svg?d3e429eebd234b828aa081555c7dcbf5#supernova-icon") format("svg"),
+url("/sandandsky-styleguides/fonts/supernova-icon.ttf?d3e429eebd234b828aa081555c7dcbf5") format("truetype"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?d3e429eebd234b828aa081555c7dcbf5") format("woff"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff2?d3e429eebd234b828aa081555c7dcbf5") format("woff2");
 }
 
 .sni,
@@ -27,12 +27,17 @@ url("/sandandsky-styleguides/fonts/supernova-icon.woff2?8a0a11cf8341c06a56aba149
 }
 
 $supernova-icon-map: (
-	"chevron-up": "\f101",
-	"plus": "\f102",
-	"search": "\f103",
-	"ss": "\f104",
+	"checklist": "\f101",
+	"chevron-up": "\f102",
+	"plus": "\f103",
+	"search": "\f104",
+	"ss": "\f105",
 );
 
+.sni.sni__checklist:before,
+.sni-after.sni__checklist:after {
+	content: map-get($supernova-icon-map, "checklist");
+}
 .sni.sni__chevron-up:before,
 .sni-after.sni__chevron-up:after {
 	content: map-get($supernova-icon-map, "chevron-up");

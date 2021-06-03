@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <section class="pb-4">
+  <section class="container-fluid p-0 pb-4">
     {{> collection-banner-all-products }}
   </section>
   <section class="mobile-wrapper mt-4">
@@ -33,24 +33,26 @@
       <h2 class="h1">Section What They Say...</h2>
     </div>
   </div>
-  <div class="container-fluid mt-4 p-lg-0">
-    <figure class="imagewtext row flex-row-reverse position-relative mb-lg-2 mt-5 imagewtext--reverse">
-      <div class="col-12 col-lg-9 order-lg-last">
-        <div class="no-gutters__in-container">
-          <picture>
-            <source srcset="https://via.placeholder.com/800x450/FEEDEF" media="(min-width: 992px)"/>
-            <img src="https://via.placeholder.com/380x336/FEEDEF" class="w-100">
-          </picture>
+  <section class="mobile-wrapper">
+    <div class="container-fluid mt-4 p-lg-0">
+      <figure class="imagewtext row flex-row-reverse mb-lg-2 mt-5 imagewtext--reverse">
+        <div class="col-12 col-lg-9 order-lg-last">
+          <div class="no-gutters__in-container">
+            <picture>
+              <source srcset="https://via.placeholder.com/800x450/FEEDEF" media="(min-width: 992px)"/>
+              <img src="https://via.placeholder.com/380x336/FEEDEF" class="w-100">
+            </picture>
+          </div>
         </div>
-      </div>
-      <figcaption class="col-12 col-lg-3">
-        <div class="imagewtext__content imagewtext__reverse mt-lg-3 p-4 pt-lg-6 pb-lg-6 px-lg-6 bg-aea text-white text-center text-lg-left">
-          <p class="font-banner-secondary text-white font-weight-bold pt-1 pt-lg-2">SAVE 20% with our Perfect Skin Kit</p>
-          <a href="#" class="btn btn-lg btn-primary mt-2 mb-2 rounded-0">Shop Now</a>
-        </div>
-      </figcaption>
-    </figure>
-  </div>
+        <figcaption class="col-12 col-lg-3">
+          <div class="imagewtext__content imagewtext__reverse mt-lg-3 p-4 pt-lg-6 pb-lg-6 px-lg-6 bg-aea text-white text-center text-lg-left">
+            <p class="font-banner-secondary text-white font-weight-bold pt-1 pt-lg-2">SAVE 20% with our Perfect Skin Kit</p>
+            <a href="#" class="btn btn-lg btn-primary mt-2 mb-2 rounded-0">Shop Now</a>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
   <div class="mobile-wrapper my-5 bg-light">
     <div class="container py-5">
       <h2 class="h1">Section Benefits</h2>

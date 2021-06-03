@@ -19,11 +19,18 @@
       overflow-x: hidden;
       border: 0;
       @include media-breakpoint-up(lg) {
-        height: 75vh;
+        height: calc-em(400);
         position: absolute;
         top: calc-em(80);
         right: 0;
         border: 1px solid $gray-400;
+      }
+    }
+
+    & > .collapsing {
+      /* set with important because js collapsing set inline height to the element */
+      @include media-breakpoint-up(lg) {
+        height: calc-em(400) !important;
       }
     }
 

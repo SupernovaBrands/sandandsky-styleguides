@@ -5,12 +5,12 @@
   {{> html-head title="Image With Text" }}
 </head>
 
-<body>
+<body class="mobile-wrapper">
   <div class="container">
     <h1>Image With Text</h1>
   </div>
   <div class="container-fluid mt-4 p-lg-0">
-    <figure class="imagewtext row flex-row-reverse position-relative mb-lg-2 mt-5 imagewtext--reverse">
+    <figure class="imagewtext row flex-row-reverse mb-lg-2 mt-5 imagewtext--reverse">
       <div class="col-12 col-lg-9 order-lg-last">
         <div class="no-gutters__in-container">
           <picture>
@@ -27,9 +27,11 @@
       </figcaption>
     </figure>
   </div>
-  <div class="my-6 d-flex"></div>
+  <div class="my-5">
+    <div class="container py-5"></div>
+  </div>
   <div class="container-fluid mt-4 p-lg-0">
-    <figure class="imagewtext row flex-row-reverse position-relative mb-lg-2 mt-5 imagewtext--reverse align-items-center">
+    <figure class="imagewtext row flex-row-reverse mb-lg-2 mt-5 imagewtext--reverse align-items-center">
       <div class="col-12 col-lg-9 order-lg-last">
         <div class="no-gutters__in-container">
           <picture>
@@ -39,17 +41,19 @@
         </div>
       </div>
       <figcaption class="col-12 col-lg-3">
-        <div class="imagewtext__reverse p-4 pt-lg-6 pb-lg-6 px-lg-6 bg-aea text-white text-center text-lg-left">
+        <div class="imagewtext__content imagewtext__reverse p-4 pt-lg-6 pb-lg-6 px-lg-6 bg-aea text-white text-center text-lg-left">
           <p class="font-banner-secondary text-white font-weight-bold pt-1 pt-lg-2">SAVE 20% with our Perfect Skin Kit</p>
           <a href="#" class="btn btn-lg btn-primary mt-2 mb-2 rounded-0">Shop Now</a>
         </div>
       </figcaption>
     </figure>
   </div>
-  <div class="my-6 d-flex"></div>
+  <div class="my-5">
+    <div class="container py-5"></div>
+  </div>
   <div class="container-fluid mt-4 p-lg-0">
-    <figure class="imagewtext row flex-row-reverse position-relative mb-lg-2 mt-5 imagewtext--reverse">
-      <div class="col-12 col-lg-9 order-lg-last position-relative">
+    <figure class="imagewtext row flex-row-reverse mb-lg-2 mt-5 imagewtext--reverse">
+      <div class="col-12 col-lg-9 order-lg-last">
         <div class="no-gutters__in-container">
           <picture>
             <source srcset="https://via.placeholder.com/800x450/FEEDEF" media="(min-width: 992px)"/>
@@ -71,36 +75,46 @@
       </figcaption>
     </figure>
   </div>
-  <div class="my-6 d-flex"></div>
+  <div class="my-5">
+    <div class="container py-5"></div>
+  </div>
   <div class="container-fluid mt-4 p-lg-0">
-    <figure class="imagewtext row flex-row position-relative mb-lg-2 mt-5 mr-0">
+    <figure class="imagewtext imagewtext--reverse row mb-lg-2 mt-5">
       <div class="col-12 col-lg-9 pr-lg-0">
         <div class="no-gutters__in-container">
           <picture>
-            <source srcset="https://via.placeholder.com/800x450/FEEDEF" media="(min-width: 992px)"/>
+            <source srcset="https://via.placeholder.com/800x375/FEEDEF" media="(min-width: 992px)"/>
             <img src="https://via.placeholder.com/380x336/FEEDEF" class="w-100">
           </picture>
         </div>
       </div>
       <figcaption class="col-12 col-lg-3 order-last order-lg-first">
-        <div class="imagewtext__content imagewtext__content-reverse imagewtext__content-reverse mt-lg-3 p-4 pt-lg-6 pb-lg-6 px-lg-6 bg-apc text-white text-center text-lg-left">
+        <div class="imagewtext__content-reverse mt-lg-3 p-4 pt-lg-6 pb-lg-6 px-lg-6 bg-apc text-white text-center text-lg-left">
           <p class="font-banner-secondary text-white font-weight-bold pt-2">SAVE 20% with our Perfect Skin Kit</p>
           <a href="#" class="btn btn-lg btn-primary mt-2 mb-2 rounded-0">Shop Now</a>
         </div>
       </figcaption>
     </figure>
   </div>
-  <div class="my-6 d-flex"></div>
+  <div class="my-5">
+    <div class="container py-5"></div>
+  </div>
   {{> range-apc }}
-  <div class="my-6 d-flex"></div>
+  <div class="my-5">
+    <div class="container py-5"></div>
+  </div>
   {{> range-aea }}
-  <div class="my-6 d-flex"></div>
+  <div class="my-5">
+    <div class="container py-5"></div>
+  </div>
   {{> range-tsw}}
-  <div class="my-6 d-flex"></div>
+  <div class="my-5">
+    <div class="container py-5"></div>
+  </div>
   <div class="mt-4 p-lg-0 container">
-    <figure class="mobile-wrapper imagewtext imagewtext--large row flex-row-reverse position-relative mb-lg-2 mt-5 justify-content-center align-items-center no-gutters__in-container">
-      <figcaption class="col-12 col-lg-5 order-last position-relative">
-        <div class="imagewtext--large__content mt-lg-0 p-3 pt-lg-6 pb-lg-6 px-lg-6 bg-tsw text-left text-white imagewtext__tsw-decoration">
+    <figure class="imagewtext imagewtext--large row flex-row-reverse mb-lg-2 mt-5 justify-content-center align-items-center">
+      <figcaption class="col-12 col-lg-5 order-last">
+        <div class="imagewtext--large__content mt-lg-0 p-2 pt-lg-6 pb-lg-6 px-lg-6 bg-tsw text-left text-white imagewtext__tsw-decoration">
           <p class="font-banner-secondary text-white font-weight-bold text-center text-lg-left">Take the plunge</p>
           <ul class="list-unstyled py-2 py-lg-4 text-left between-space px-2 px-lg-0">
             <li class="mt-1 h4 d-flex flex-row justify-content-start align-items-center pt-6 pt-lg-0"><i class="h6 sni sni__checklist text-white d-inline mr-1 mb-0 mt-1"></i>Deeply hydrated, healthy skin</li>
@@ -118,11 +132,13 @@
       </div>
     </figure>
   </div>
-  <div class="my-6 d-flex"></div>
+  <div class="my-5">
+    <div class="container py-5"></div>
+  </div>
   <div class="mt-4 p-lg-0 container-fluid">
-    <figure class="mobile-wrapper imagewtext imagewtext--reverse row flex-row-reverse position-relative mb-lg-2 mt-5 justify-content-center align-items-center">
-      <figcaption class="col-12 col-lg-6 position-relative p-0">
-        <div class="imagewtext__content imagewtext__content-reverse-text mt-lg-0 bg-secondary-light text-center text-lg-left">
+    <figure class="imagewtext imagewtext--reverse row flex-row-reverse mb-lg-2 mt-5 justify-content-center align-items-center">
+      <figcaption class="col-12 col-lg-6">
+        <div class="imagewtext__content-reverse-text mt-lg-0 bg-secondary-light text-center text-lg-left">
           <p class="font-banner text-secondary pt-2 pt-lg-0 font-weight-bold">Show your pores who’s boss.</p>
           <ul class="list-unstyled py-2 py-lg-4 text-left">
             <li class="mt-1 h4 d-flex flex-row justify-content-start align-items-center"><i class="h6 sni sni__checklist text-secondary d-inline mr-1 mb-0 mt-1"></i>Deep cleansed, detoxified skin</li>
@@ -146,10 +162,12 @@
       </div>
     </figure>
   </div>
-  <div class="my-6 d-flex"></div>
+  <div class="my-5">
+    <div class="container py-5"></div>
+  </div>
   <div class="mt-4 p-lg-0 container">
-    <figure class="mobile-wrapper imagewtext imagewtext--large row flex-row-reverse position-relative mb-lg-2 mt-5 justify-content-center no-gutters__in-container">
-      <figcaption class="col-12 col-lg-6 order-last position-relative">
+    <figure class="imagewtext imagewtext--large row flex-row-reverse mb-lg-2 mt-5 justify-content-center">
+      <figcaption class="col-12 col-lg-6 order-last">
         <div class="imagewtext--large__content bg-aea-light text-left py-4 py-lg-6 pl-0 pl-lg-6 imagewtext__aea-decoration">
           <p class="font-banner text-aea font-weight-bold text-center text-lg-left">Glow, you good thing!</p>
           <ul class="list-unstyled py-2 py-lg-4 text-left between-space px-2 px-lg-0">
@@ -167,48 +185,6 @@
         </picture>
       </div>
     </figure>
-  </div>
-  <div class="bg-secondary-light">
-    <div class="mt-4 p-lg-0 container">
-      <figure class="mobile-wrapper imagewtext row flex-row position-relative mb-lg-2 mt-5 justify-content-center align-items-center py-4">
-        <figcaption class="col-12 col-lg-6 position-relative font-banner text-secondary font-weight-bold text-center text-lg-left pb-2 pb-lg-0 pr-lg-0">
-          From bush to your bathroom.
-        </figcaption>
-        <div class="col-12 col-lg-6 pl-lg-0 position-relative">
-          <picture class="position-relative">
-            <img src="//cdn.shopify.com/s/files/1/0253/9847/6905/t/115/assets/apc-australia.png?v=16564475171526432524" class="w-100"/>
-          </picture>
-        </div>
-      </figure>
-    </div>
-  </div>
-  <div class="bg-aea-light">
-    <div class="mt-4 p-lg-0 container aea-map position-relative">
-      <figure class="mobile-wrapper imagewtext row flex-row position-relative mb-lg-2 mt-5 justify-content-center align-items-center py-6">
-        <figcaption class="col-12 col-lg-5 position-relative font-banner text-aea font-weight-bold text-center text-lg-left pb-2 pb-lg-0 pr-lg-0">
-          From bush to your bathroom.
-        </figcaption>
-        <div class="col-12 col-lg-5 pl-lg-0 position-relative">
-          <picture class="position-relative">
-            <img src="//cdn.shopify.com/s/files/1/0248/5370/8886/t/92/assets/australia.png?v=3568494905180984101" class="w-100"/>
-          </picture>
-        </div>
-      </figure>
-    </div>
-  </div>
-  <div class="bg-tsw-light">
-    <div class="mt-4 p-lg-0 container tsw-map position-relative">
-      <figure class="mobile-wrapper imagewtext row flex-row position-relative mb-lg-2 mt-5 justify-content-center py-6">
-        <figcaption class="col-12 col-lg-5 position-relative font-banner gray-muted font-weight-bold text-center text-lg-left pb-2 pb-lg-0 pr-lg-0">
-          From bush to your bathroom.
-        </figcaption>
-        <div class="col-12 col-lg-7 pl-lg-0 position-relative text-center">
-          <picture class="position-relative">
-            <img src="//cdn.shopify.com/s/files/1/0248/5370/8886/files/TSW_RANGE-map2_540x.png?v=1598188835" class="img-fluid"/>
-          </picture>
-        </div>
-      </figure>
-    </div>
   </div>
   {{> js jquery=true popper=false bootstrap=false main=true }}
 </body>

@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
 	// video modal
-
 	let $videoSrc;
 	if ($('.video-card').length > 0) {
 		$('.video-card picture').on('click', function () {

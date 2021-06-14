@@ -17,13 +17,16 @@ $container-max-widths: (
   xl: 1200px
 );
 
-$spacer: calc-em(20);
+$spacer: calc-em(20, $context: 16, $unit: 1rem);
 $spacers: (
-  1: $spacer * 0.5,
-  2: $spacer * 1,
-  3: $spacer * 1.5,
-  4: $spacer * 2,
-  5: $spacer * 2.5,
+  1: $spacer * 0.25,      // 5
+  2: $spacer * 0.5,       // 10
+  3: $spacer,             // 20
+  4: $spacer * 1.5,       // 30
+  5: $spacer * 2,         // 40
+  6: $spacer * 3,         // 60
+  7: $spacer * 4,         // 80
+  g: $grid-gutter-width,  // 15
 );
 
 // Typography
@@ -50,15 +53,19 @@ $h4-font-size-lg: calc-em(20);
 
 // Colors
 $primary: #4ACD8A;
-// $primary-light: #F5DADF;
-// $primary-dark: #B22D4B;
-$secondary: #FF798F;
-$secondary-light: #FEEDEF;
+$primary-light: #D2F3E2;
+$primary-dark: #4CB376;
 
 // Products
-$apc: #FF6F8D;
-$aea: #CC3195;
-$tsw: #66B3DF;
+$range-apc: #FF6F8D;
+$range-apc-light: #FFEFF2;
+$range-aea: #CC3195;
+$range-aea-light: #F5E7F3;
+$range-tsw: #42A1CA;
+$range-tsw-light: #DFF4F9;
+
+$secondary: $range-apc;
+$secondary-light: $range-apc-light;
 
 $theme-colors: (
   'primary': $primary,

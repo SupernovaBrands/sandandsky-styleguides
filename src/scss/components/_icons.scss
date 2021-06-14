@@ -2,10 +2,10 @@ $supernova-icon-font: "supernova-icon";
 
 @font-face {
 	font-family: $supernova-icon-font;
-	src: url("/sandandsky-styleguides/fonts/supernova-icon.svg?411abeb92c91bb06aaf6fc05e1acb84c#supernova-icon") format("svg"),
-url("/sandandsky-styleguides/fonts/supernova-icon.ttf?411abeb92c91bb06aaf6fc05e1acb84c") format("truetype"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?411abeb92c91bb06aaf6fc05e1acb84c") format("woff"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff2?411abeb92c91bb06aaf6fc05e1acb84c") format("woff2");
+	src: url("/sandandsky-styleguides/fonts/supernova-icon.svg?194cc9279a1b6e5e799043e5ecb107ed#supernova-icon") format("svg"),
+url("/sandandsky-styleguides/fonts/supernova-icon.ttf?194cc9279a1b6e5e799043e5ecb107ed") format("truetype"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?194cc9279a1b6e5e799043e5ecb107ed") format("woff"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff2?194cc9279a1b6e5e799043e5ecb107ed") format("woff2");
 }
 
 .sni,
@@ -27,10 +27,15 @@ url("/sandandsky-styleguides/fonts/supernova-icon.woff2?411abeb92c91bb06aaf6fc05
 }
 
 $supernova-icon-map: (
-	"search": "\f101",
-	"ss": "\f102",
+	"play": "\f101",
+	"search": "\f102",
+	"ss": "\f103",
 );
 
+.sni.sni__play:before,
+.sni-after.sni__play:after {
+	content: map-get($supernova-icon-map, "play");
+}
 .sni.sni__search:before,
 .sni-after.sni__search:after {
 	content: map-get($supernova-icon-map, "search");

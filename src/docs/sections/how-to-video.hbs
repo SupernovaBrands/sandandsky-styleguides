@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{{> html-head title="Video Card" }}
+</head>
+<body class="mobile-wrapper">
+	<div class="container mt-4">
+		<div class="row">
+			<h1 class="col-12">How to Use Video Modal</h1>
+		</div>
+	</div>
+	<h3 class="container mt-4">APC Range</h3>
+	{{> sections/howto-video bg='howto-video__apc-light'}}
+
+	<h3 class="container mt-4">AEA Range</h3>
+	{{> sections/howto-video bg='howto-video__aea-light'}}
+
+	<h3 class="container mt-4">TSW Range</h3>
+	{{> sections/howto-video bg='howto-video__tsw-light'}}
+
+	{{> components/video-modal}}
+	{{> js jquery=true bootstrap=true main=true }}
+</body>
+</html>

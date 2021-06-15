@@ -24,3 +24,11 @@ h3, .h3 {
 .text-linethrough {
 	text-decoration: line-through;
 }
+
+.icon-size-lg {
+	font-size: calc-em(32) !important;
+}
+
+.icon-size-xl {
+	font-size: calc-em(40) !important;
+}

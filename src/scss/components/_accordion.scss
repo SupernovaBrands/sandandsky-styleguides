@@ -1,5 +1,6 @@
-.accordion button {
-	&:not(.collapsed):after {
+.accordion {
+
+	button:not(.collapsed):after {
 		content: "#{map-get($supernova-icon-map, "minus")}";
 	}
 }

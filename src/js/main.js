@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
 	// video modal
 	let $videoSrc;
 	if ($('.video-card').length > 0) {
@@ -45,5 +44,4 @@ $(document).ready(function () {
 		toggleHTMLVideo($(this).find('video'), false);
 		toggleiFrameVideo($(this).find('iframe'), false);
 	});
-
 });

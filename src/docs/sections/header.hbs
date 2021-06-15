@@ -2,17 +2,19 @@
 <html>
 
 <head>
-  {{> html-head title="Footer" }}
+  {{> html-head title="Header" }}
 </head>
 
 <body>
-  <div class="mobile-wrapper">
-    <div class="container mt-4">
-      <h1>Footer</h1>
+  <div>
+    <div class="container px-g mt-4">
+      <h1>Header</h1>
     </div>
   </div>
 
-  {{> footer}}
+  {{> sections/header}}
+
+  {{> js jquery=true bootstrap=true }}
 </body>
 
 </html>

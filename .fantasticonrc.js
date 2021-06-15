@@ -2,7 +2,7 @@ module.exports = {
 	name: 'supernova-icon',
 	inputDir: './fonts/svgs', // (required)
 	outputDir: './fonts', // (required)
-	fontTypes: ['svg', 'ttf', 'woff', 'woff2'],
+	fontTypes: ['woff2', 'woff'],
 	fontsUrl: '/sandandsky-styleguides/fonts',
 	assetTypes: ['scss', 'html'],
 	normalize: true,
@@ -14,6 +14,6 @@ module.exports = {
 	},
 	pathOptions: {
 		scss: './src/scss/components/_icons.scss',
-		html: './src/hbs/components/icons.hbs',
+		html: './src/docs/components/icons.hbs',
 	}
 };

@@ -8,7 +8,9 @@
     "start": "gulp",
     "build": "gulp build",
     "watch": "gulp watch",
+    "critical": "gulp criticalCss",
     "lint": "eslint .",
+    "prepare": "husky install",
     "server": "gulp server"
   },
   "repository": {
@@ -32,6 +34,7 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-module-resolver": "^4.1.0",
     "browser-sync": "^2.26.14",
+    "critical": "^3.0.1",
     "del": "^5.1.0",
     "eslint": "^7.18.0",
     "eslint-config-airbnb": "^18.2.1",

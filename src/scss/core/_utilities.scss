@@ -1,2 +1,3 @@
 // Light pink background color
 @include bg-variant(".bg-secondary-light", $secondary-light, true);
+@include bg-variant(".bg-gray-100", $gray-100, true);

@@ -1,3 +1,17 @@
 @function calc-em($pixels, $context: 16, $unit: 1em) {
 	@return $pixels / $context * $unit;
 }
+
+@function asset-url($filename) {
+	@return '/sandandsky-styleguides/images/' + $filename;
+
+	// For Shopify
+	// @return "{{ '" + $filename + "' | asset_url }}";
+}
+
+@function font-url($filename) {
+	@return '/sandandsky-styleguides/fonts/' + $filename;
+
+	// For Shopify
+	// @return "{{ '" + $filename + "' | asset_url }}";
+}

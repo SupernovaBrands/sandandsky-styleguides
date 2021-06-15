@@ -1,11 +1,11 @@
 $supernova-icon-font: "supernova-icon";
 
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?b23a91be37c7c412a0fb6b196257f8e1") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?b23a91be37c7c412a0fb6b196257f8e1") format("woff") !default;
+
 @font-face {
 	font-family: $supernova-icon-font;
-	src: url("/sandandsky-styleguides/fonts/supernova-icon.svg?6d919be1300abc09548ae9d6bbdabffd#supernova-icon") format("svg"),
-url("/sandandsky-styleguides/fonts/supernova-icon.ttf?6d919be1300abc09548ae9d6bbdabffd") format("truetype"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?6d919be1300abc09548ae9d6bbdabffd") format("woff"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff2?6d919be1300abc09548ae9d6bbdabffd") format("woff2");
+	src: $supernova-icon-asset;
 }
 
 .sni,
@@ -27,25 +27,85 @@ url("/sandandsky-styleguides/fonts/supernova-icon.woff2?6d919be1300abc09548ae9d6
 }
 
 $supernova-icon-map: (
-	"minus": "\f101",
-	"plus": "\f102",
-	"search": "\f103",
-	"ss": "\f104",
+	"australia": "\f101",
+	"chevron-next": "\f102",
+	"chevron-prev": "\f103",
+	"koala": "\f104",
+	"minus": "\f105",
+	"nasties": "\f106",
+	"plus": "\f107",
+	"range-aea": "\f108",
+	"range-apc": "\f109",
+	"range-tsw": "\f10a",
+	"returns": "\f10b",
+	"search": "\f10c",
+	"shake": "\f10d",
+	"shipping": "\f10e",
+	"ss": "\f10f",
+	"trophy": "\f110",
 );
 
+.sni.sni__australia:before,
+.sni-after.sni__australia:after {
+	content: map-get($supernova-icon-map, "australia");
+}
+.sni.sni__chevron-next:before,
+.sni-after.sni__chevron-next:after {
+	content: map-get($supernova-icon-map, "chevron-next");
+}
+.sni.sni__chevron-prev:before,
+.sni-after.sni__chevron-prev:after {
+	content: map-get($supernova-icon-map, "chevron-prev");
+}
+.sni.sni__koala:before,
+.sni-after.sni__koala:after {
+	content: map-get($supernova-icon-map, "koala");
+}
 .sni.sni__minus:before,
 .sni-after.sni__minus:after {
 	content: map-get($supernova-icon-map, "minus");
+}
+.sni.sni__nasties:before,
+.sni-after.sni__nasties:after {
+	content: map-get($supernova-icon-map, "nasties");
 }
 .sni.sni__plus:before,
 .sni-after.sni__plus:after {
 	content: map-get($supernova-icon-map, "plus");
 }
+.sni.sni__range-aea:before,
+.sni-after.sni__range-aea:after {
+	content: map-get($supernova-icon-map, "range-aea");
+}
+.sni.sni__range-apc:before,
+.sni-after.sni__range-apc:after {
+	content: map-get($supernova-icon-map, "range-apc");
+}
+.sni.sni__range-tsw:before,
+.sni-after.sni__range-tsw:after {
+	content: map-get($supernova-icon-map, "range-tsw");
+}
+.sni.sni__returns:before,
+.sni-after.sni__returns:after {
+	content: map-get($supernova-icon-map, "returns");
+}
 .sni.sni__search:before,
 .sni-after.sni__search:after {
 	content: map-get($supernova-icon-map, "search");
 }
+.sni.sni__shake:before,
+.sni-after.sni__shake:after {
+	content: map-get($supernova-icon-map, "shake");
+}
+.sni.sni__shipping:before,
+.sni-after.sni__shipping:after {
+	content: map-get($supernova-icon-map, "shipping");
+}
 .sni.sni__ss:before,
 .sni-after.sni__ss:after {
 	content: map-get($supernova-icon-map, "ss");
+}
+.sni.sni__trophy:before,
+.sni-after.sni__trophy:after {
+	content: map-get($supernova-icon-map, "trophy");
 }

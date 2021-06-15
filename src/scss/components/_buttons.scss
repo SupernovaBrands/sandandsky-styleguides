@@ -2,4 +2,12 @@
 	&-primary {
 		color: $white;
 	}
+
+	&-outline-primary {
+		background-color: $white;
+
+		&:hover {
+			color: $white;
+		}
+	}
 }

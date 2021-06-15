@@ -1,0 +1,11 @@
+.newsletter-banner {
+	background-image: url(asset-url('newsletter-pattern-mobile.svg'));
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	@include media-breakpoint-up(lg) {
+		background-image: url(asset-url('newsletter-pattern.svg'));
+		background-position: right;
+		background-size: auto 100%;
+	}
+}

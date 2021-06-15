@@ -1,11 +1,11 @@
 $supernova-icon-font: "supernova-icon";
 
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?0cd20839c83c19b5026561f5fc7414dc") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?0cd20839c83c19b5026561f5fc7414dc") format("woff") !default;
+
 @font-face {
 	font-family: $supernova-icon-font;
-	src: url("/sandandsky-styleguides/fonts/supernova-icon.svg?194cc9279a1b6e5e799043e5ecb107ed#supernova-icon") format("svg"),
-url("/sandandsky-styleguides/fonts/supernova-icon.ttf?194cc9279a1b6e5e799043e5ecb107ed") format("truetype"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?194cc9279a1b6e5e799043e5ecb107ed") format("woff"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff2?194cc9279a1b6e5e799043e5ecb107ed") format("woff2");
+	src: $supernova-icon-asset;
 }
 
 .sni,
@@ -27,20 +27,80 @@ url("/sandandsky-styleguides/fonts/supernova-icon.woff2?194cc9279a1b6e5e799043e5
 }
 
 $supernova-icon-map: (
-	"play": "\f101",
-	"search": "\f102",
-	"ss": "\f103",
+	"australia": "\f101",
+	"chevron-next": "\f102",
+	"chevron-prev": "\f103",
+	"koala": "\f104",
+	"nasties": "\f105",
+	"play": "\f106",
+	"range-aea": "\f107",
+	"range-apc": "\f108",
+	"range-tsw": "\f109",
+	"returns": "\f10a",
+	"search": "\f10b",
+	"shake": "\f10c",
+	"shipping": "\f10d",
+	"ss": "\f10e",
+	"trophy": "\f10f",
 );
 
+.sni.sni__australia:before,
+.sni-after.sni__australia:after {
+	content: map-get($supernova-icon-map, "australia");
+}
+.sni.sni__chevron-next:before,
+.sni-after.sni__chevron-next:after {
+	content: map-get($supernova-icon-map, "chevron-next");
+}
+.sni.sni__chevron-prev:before,
+.sni-after.sni__chevron-prev:after {
+	content: map-get($supernova-icon-map, "chevron-prev");
+}
+.sni.sni__koala:before,
+.sni-after.sni__koala:after {
+	content: map-get($supernova-icon-map, "koala");
+}
+.sni.sni__nasties:before,
+.sni-after.sni__nasties:after {
+	content: map-get($supernova-icon-map, "nasties");
+}
 .sni.sni__play:before,
 .sni-after.sni__play:after {
 	content: map-get($supernova-icon-map, "play");
+}
+.sni.sni__range-aea:before,
+.sni-after.sni__range-aea:after {
+	content: map-get($supernova-icon-map, "range-aea");
+}
+.sni.sni__range-apc:before,
+.sni-after.sni__range-apc:after {
+	content: map-get($supernova-icon-map, "range-apc");
+}
+.sni.sni__range-tsw:before,
+.sni-after.sni__range-tsw:after {
+	content: map-get($supernova-icon-map, "range-tsw");
+}
+.sni.sni__returns:before,
+.sni-after.sni__returns:after {
+	content: map-get($supernova-icon-map, "returns");
 }
 .sni.sni__search:before,
 .sni-after.sni__search:after {
 	content: map-get($supernova-icon-map, "search");
 }
+.sni.sni__shake:before,
+.sni-after.sni__shake:after {
+	content: map-get($supernova-icon-map, "shake");
+}
+.sni.sni__shipping:before,
+.sni-after.sni__shipping:after {
+	content: map-get($supernova-icon-map, "shipping");
+}
 .sni.sni__ss:before,
 .sni-after.sni__ss:after {
 	content: map-get($supernova-icon-map, "ss");
+}
+.sni.sni__trophy:before,
+.sni-after.sni__trophy:after {
+	content: map-get($supernova-icon-map, "trophy");
 }

@@ -1,16 +1,25 @@
 @import 'core/functions';
 @import 'core/vars';
 
-@import 'bootstrap/functions';
-@import 'bootstrap/variables';
-@import 'bootstrap/mixins';
+@import 'bootstrap/bootstrap';
+
+@import 'core/fonts';
+@import 'core/type';
+@import 'core/grid';
+@import 'core/utilities';
 
 @import 'components/icons';
 @import 'components/buttons';
+@import 'components/pswp';
+@import 'components/loading-old';
 
 @import 'compounds/upsell';
+@import 'compounds/signup-popup';
 
-@import 'sections/carousel-banner';
+@import 'sections/slick-slider';
+@import 'sections/header';
+@import 'sections/cart-drawer-other';
+@import 'sections/cart-drawer';
 @import 'sections/footer';
 
 @import 'templates/home';

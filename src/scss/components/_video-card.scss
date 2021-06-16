@@ -5,7 +5,7 @@
 		position: absolute;
 		color: #000;
 		font-size: calc-em(12, 16);
-		background-color: white;
+		background-color: $white;
 		border-radius: 100%;
 		right: calc-em(30, 12);
 		bottom: calc-em(15, 12);
@@ -19,13 +19,12 @@
 			bottom: calc-em(30, 16);
 		}
 	}
-
 }
 
 .video-modal {
 
 	.sni-after:after {
-		color: white;
+		color: $white;
 		font-size: calc-em(9, 16);
 		padding: calc-em(5, 9);
 	}

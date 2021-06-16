@@ -25,6 +25,10 @@ h3, .h3 {
 	text-decoration: line-through;
 }
 
+.font-size-sm {
+	font-size: $font-size-sm !important;
+}
+
 .icon-size-lg {
 	font-size: calc-em(32) !important;
 }

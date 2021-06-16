@@ -1,6 +1,13 @@
 // Light pink background color
 @include bg-variant(".bg-secondary-light", $secondary-light, true);
 
+// AEA range background color
+@include bg-variant(".bg-aea", $range-aea, true);
+
+// TSW range background color
+@include bg-variant(".bg-tsw", $range-tsw, true);
+
+
 .rounded-right-0 {
 	border-top-right-radius: 0 !important;
 	border-bottom-right-radius: 0 !important;

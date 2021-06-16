@@ -1,0 +1,330 @@
+%transform-negative {
+	position: relative;
+	transform: translate3d(-100%, 0, 0);
+	visibility: visible;
+}
+
+%transform-positive {
+	position: relative;
+	transform: translate3d(100%, 0, 0);
+	visibility: visible;
+	display: block;
+}
+
+.carousel {
+	&--fixed-height {
+		overflow: hidden;
+		height: 11.875em;
+
+		@include media-breakpoint-up(lg) {
+			height: 25em;
+		}
+
+		.carousel-inner,
+		.carousel-item,
+		figure,
+		img {
+			height: 100%;
+		}
+
+		img {
+			object-fit: cover;
+		}
+	}
+
+	&--sidebar {
+		.carousel-item {
+			@include media-breakpoint-up(lg) {
+				display: block;
+				float: none;
+			}
+		}
+	}
+
+	&--loop {
+		.carousel-item {
+			margin-right: 0;
+		}
+
+		.carousel-item-next,
+		.carousel-item-prev {
+			position: relative;
+			transform: translate3d(0, 0, 0);
+		}
+
+		.carousel-item-prev:not(.carousel-item-right) {
+			transform: translateX(-100%);
+		}
+
+		.active.carousel-item-left + .carousel-item-next.carousel-item-left {
+			@extend %transform-negative;
+		}
+
+		.active.carousel-item-right + .carousel-item-prev.carousel-item-right {
+			@extend %transform-positive;
+		}
+
+		@include carousel-item-level('.carousel-item.active', '.carousel-item', 7) {
+			display: block;
+		}
+
+		@include carousel-item-level('.carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)', '.carousel-item:not(.carousel-item--last)', 7) {
+			transition: none;
+		}
+
+		@include carousel-item-level('.carousel-item-next.carousel-item-left', '.carousel-item', 7, false) {
+			@extend %transform-negative;
+		}
+
+		@include carousel-item-level('.carousel-item-prev.carousel-item-right', '.carousel-item', 7, false) {
+			@extend %transform-positive;
+		}
+
+		.carousel-item-prev.carousel-item-right {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			display: block;
+			visibility: visible;
+		}
+
+		&[data-slide-number="5"] {
+			.carousel-item {
+				@include media-breakpoint-up(lg) {
+					flex: 0 0 20%;
+					max-width: 20%;
+				}
+			}
+		}
+	}
+
+	&--centered {
+		overflow: hidden;
+
+		.carousel-inner {
+  		width: calc(100% + #{$grid-gutter-width});
+			overflow: visible;
+			@include make-carousel-centered(9, $grid-columns);
+
+			@include media-breakpoint-up(md) {
+  			width: calc(100% + #{$grid-gutter-width-lg});
+
+  			transform: none;
+
+				.active + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+					display: block;
+				}
+
+				.carousel-item {
+					&--last {
+						transform: translate3d(100%, 0, 0);
+					}
+				}
+			}
+		}
+
+    [data-slide-number="3"] & {
+      .carousel-inner {
+        transform: translateX(-60.6%);
+
+        @include media-breakpoint-up(lg) {
+          transform: translateX(-10.5%);
+        }
+      }
+    }
+	}
+
+	&--centered-mobile {
+		@include media-breakpoint-down(sm) {
+			overflow: hidden;
+		}
+
+		.carousel-inner {
+			@include media-breakpoint-down(sm) {
+				overflow: visible;
+				transform: translateX(-60.5%);
+			}
+		}
+	}
+}
+
+.carousel-indicators {
+	&--primary {
+		li {
+			background-color: $primary;
+		}
+	}
+
+  &--black {
+    .active {
+      background-color: $body-color;
+    }
+  }
+
+	&--right {
+		justify-content: flex-end;
+		li {
+			&:not(.active) {
+				background: transparent;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.carousel-control {
+	&--background {
+		.sni {
+			content: " ";
+			background-color: $white;
+			width: 2.5em;
+			height: 2.5em;
+			position: absolute;
+			z-index: -1;
+		}
+	}
+
+	&--right-lg {
+		@include media-breakpoint-up(lg) {
+			width: 2.5em;
+			height: 2.5em;
+			top: auto;
+			bottom: 1em;
+			margin: auto;
+			right: 1.5em;
+		}
+
+		&.carousel-control-prev {
+			@include media-breakpoint-up(lg) {
+				right: 5em;
+				left: auto;
+			}
+		}
+	}
+
+	&--loop {
+
+		&.carousel-control-prev,
+		&.carousel-control-next {
+			span[class*=carousel-control] {
+				width: calc-em(30);
+				height: calc-em(60);
+				box-shadow: 0 calc-em(4) calc-em(4) rgba(0,0,0, .2);
+				color: black;
+				opacity: .9;
+        font-size: calc-em(26);
+        color: black;
+
+				@include media-breakpoint-up(lg) {
+					border-radius: 50%;
+          width: calc-em(60);
+				}
+			}
+		}
+
+		&.carousel-control-prev {
+			span[class*=carousel-control] {
+				left: 0;
+				border-radius: 0 calc-em(150) calc-em(150) 0;
+
+				@include media-breakpoint-up(lg) {
+					border-radius: 50%;
+				}
+			}
+
+			&.floating-out-left {
+				@include media-breakpoint-up(lg) {
+					left: -2%;
+				}
+			}
+		}
+
+		&.carousel-control-next {
+			span[class*=carousel-control] {
+				right: 0;
+				border-radius: calc-em(150) 0 0 calc-em(150);
+
+				@include media-breakpoint-up(lg) {
+					border-radius: 50%;
+				}
+			}
+
+			&.floating-out-right {
+				@include media-breakpoint-up(lg) {
+					right: -2%;
+				}
+			}
+		}
+	}
+}
+
+.product-image-carousel__indicator {
+  .carousel-indicator {
+    font-size: calc-em(27);
+  }
+
+  @include media-breakpoint-up(lg) {
+    %transform-negative-y {
+      position: relative;
+      transform: translate3d(0, -100%, 0);
+      visibility: visible;
+    }
+
+    %transform-positive-y {
+      position: relative;
+      transform: translate3d(0, 100%, 0);
+      visibility: visible;
+      display: block;
+    }
+
+    .carousel-inner {
+      height: 0;
+      padding-bottom: calc(500% + (20px * 4));
+    }
+
+    .carousel-item-next.carousel-item-left,
+    .carousel-item-prev.carousel-item-right {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .carousel-item-next,
+    .active.carousel-item-right {
+      transform: translate3d(0, 100% 0);
+    }
+
+    .carousel-item-prev,
+    .active.carousel-item-left {
+      transform: translate3d(0, -100%, 0);
+    }
+
+    .carousel-item-prev:not(.carousel-item-right) {
+      transform: translateY(-100%);
+    }
+
+    .active.carousel-item-left+.carousel-item-next.carousel-item-left {
+      @extend %transform-negative-y;
+    }
+
+    .active.carousel-item-right+.carousel-item-prev.carousel-item-right {
+      @extend %transform-positive-y;
+    }
+
+    @include carousel-item-level('.carousel-item-next.carousel-item-left', '.carousel-item', 6, false) {
+      @extend %transform-negative-y;
+    }
+
+    @include carousel-item-level('.carousel-item-prev.carousel-item-right', '.carousel-item', 6, false) {
+      @extend %transform-positive-y;
+    }
+  }
+}
+
+.result-carousel {
+  .carousel-control-prev {
+    transform: translateX(-50%);
+  }
+  .carousel-control-next {
+    transform: translateX(50%);
+  }
+}

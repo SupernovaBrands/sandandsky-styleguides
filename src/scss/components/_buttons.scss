@@ -1,5 +1,18 @@
 .btn {
-	&-primary {
+	&-primary,
+	&-primary.disabled,
+	&-primary:disabled,
+	&-outline-primary:hover {
 		color: $white;
+	}
+
+	&-outline-primary {
+		border-color: $primary-light;
+
+		&.disabled,
+		&:disabled {
+			border-color: $gray-400;
+			color: $gray-400;
+		}
 	}
 }

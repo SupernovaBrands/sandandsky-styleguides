@@ -1,13 +1,12 @@
 // Light pink background color
 @include bg-variant(".bg-secondary-light", $secondary-light, true);
 
-// To make button looks like text
-.btn-unstyled {
-	border: 0;
-	padding: 0;
-	background: none;
+.rounded-right-0 {
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
 
-	&:focus {
-		outline: none;
-	}
+.rounded-left-0 {
+	border-top-left-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
 }

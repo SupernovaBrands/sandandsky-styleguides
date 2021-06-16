@@ -32,3 +32,18 @@ h3, .h3 {
 .icon-size-xl {
 	font-size: calc-em(40) !important;
 }
+
+.sni.sni__range-aea:before,
+.sni-after.sni__range-aea:after {
+	color: $range-aea;
+}
+
+.sni.sni__range-apc:before,
+.sni-after.sni__range-apc:after {
+	color: $range-apc;
+}
+
+.sni.sni__range-tsw:before,
+.sni-after.sni__range-tsw:after {
+	color: $range-tsw;
+}

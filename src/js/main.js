@@ -13,3 +13,7 @@ if ($('.carousel--scroll').length > 0) {
 if ($('.instagram-carousel').length > 0) {
 	import(/* webpackChunkName: 'instagram' */ '~mod/instagram');
 }
+
+if ($('.a-beauty-review').length > 0) {
+	import(/* webpackChunkName: 'a-beauty-review' */ '~mod/a-beauty-review');
+}

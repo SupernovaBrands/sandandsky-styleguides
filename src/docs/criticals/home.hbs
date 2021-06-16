@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{{> html-head-meta title="Home" }}
+
+	<link rel="stylesheet" href="{{ criticalUrl }}/home.css">
+	{{!-- <link rel="stylesheet" href="{{ cssUrl }}/main.css"> --}}
+</head>
+
+<body>
+	{{> sections/header}}
+
+	{{> sections/hero-carousel totalSlide=3}}
+
+	{{> sections/featured-products}}
+
+	{{!-- {{> js jquery=true bootstrap=true main=true }} --}}
+</body>
+
+</html>

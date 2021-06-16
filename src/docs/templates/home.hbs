@@ -7,12 +7,13 @@
 
 <body>
 	{{> sections/header}}
-	{{> carousel-banner }}
+
+	{{> sections/hero-carousel totalSlide=3}}
 
 	{{> sections/featured-products}}
 
-	<div class="mobile-wrapper my-5 bg-light">
-		<div class="container py-5">
+	<div class="bg-light">
+		<div class="container px-g py-5">
 			<h2 class="h1">Ingredients block</h2>
 		</div>
 	</div>
@@ -29,39 +30,13 @@
 
 	{{> sections/a-beauty-review}}
 
-	<div class="mobile-wrapper bg-secondary-light">
-		<div class="container py-5">
-			<div class="row justify-content-lg-center">
-				<div class="col-4 col-lg-3 text-secondary text-center">
-					<i class="sni-text d-block" aria-hidden="true">ss</i>
-					<span class="d-block mt-2">Easy Returns</span>
-				</div>
-				<div class="col-4 col-lg-3 text-secondary text-center">
-					<i class="sni-text d-block" aria-hidden="true">ss</i>
-					<span class="d-block mt-2">Free Shipping*</span>
-				</div>
-				<div class="col-4 col-lg-3 text-secondary text-center">
-					<i class="sni-text d-block" aria-hidden="true">ss</i>
-					<span class="d-block mt-2">Fast Delivery</span>
-				</div>
-			</div>
-		</div>
-	</div>
+	{{> sections/usp-banner}}
 
-	<div class="mobile-wrapper bg-secondary">
-		<div class="container py-5">
-			<div class="row">
-				<div class="col-12 col-lg-6 text-white">
-					<h3>Join the A-Beauty movement and stay inspired with new content, special deals and more!</h3>
-					<input class="form-control bg-transparent text-white border-white mt-2 mt-lg-3" placeholder="E-mail address" />
-				</div>
-			</div>
-		</div>
-	</div>
+	{{> sections/newsletter-banner}}
 
 	{{> sections/footer}}
 
-	{{> js jquery=false popper=false bootstrap=false main=false }}
+	{{> js jquery=true bootstrap=true main=true }}
 </body>
 
 </html>

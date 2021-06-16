@@ -1,0 +1,23 @@
+.usp-banner {
+	overflow: hidden;
+
+	.decor {
+		height: 60px;
+	}
+
+	.decor-left {
+		left: 0;
+		top: 20px;
+	}
+
+	.decor-right {
+		right: 0px;
+		bottom: 20px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		.decor {
+			height: auto;
+		}
+	}
+}

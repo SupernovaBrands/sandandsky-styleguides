@@ -21,6 +21,10 @@
 		padding-right: $grid-gutter-width-lg / 2;
 		padding-left: $grid-gutter-width-lg / 2;
 	}
+
+	.col-lg-1o5 {
+		@include make-col(1, 5);
+	}
 }
 
 .no-gutters {

@@ -1,11 +1,15 @@
+const screenLG = 991;
+
 $(document).ready( function () {
 
 	$('.product-image-carousel__indicator__item').on('click', function () {
-		const carousel = $(this).data('target');
-		const selectedIndex = $(this).data('index');
-		$(carousel).carousel(selectedIndex - 1);
+		const carousel = $(this).parent().data('target');
+		let selectedIndex = $(this).data('slide-to');
+		if (window.innerWidth > screenLG) {
+			selectedIndex = $(this).data('index');
+		}
+		$(carousel).carousel(selectedIndex);
 		$('.product-image-carousel__indicator__item span').removeClass('border-secondary').addClass('border-white');
-
 		$(this).find('span').addClass('border-secondary').removeClass('border-white');
 
 		const parent = $(this).closest('.carousel');
@@ -20,5 +24,7 @@ $(document).ready( function () {
 				$(parent).carousel(active - 1);
 			}
 		}
+
+		
 	});
 });

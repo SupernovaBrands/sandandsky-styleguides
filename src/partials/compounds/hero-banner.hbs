@@ -1,0 +1,11 @@
+<figure class="hero-banner {{#if reverse}}hero-banner--reverse{{/if}} position-relative mb-0 {{ class }}">
+	<picture class="d-block">
+		<source srcset="https://via.placeholder.com/1810x1020" media="(min-width: 992px)">
+		<img src="https://via.placeholder.com/750x600" alt="Slide {{@index}}" class="d-block w-100">
+	</picture>
+	<figcaption class="mt-n4 my-lg-3 mx-g mx-lg-0 bg-white">
+		<div class="hero-banner__text py-4 text-center text-lg-left">
+			{{#if @partial-block}}{{> @partial-block }}{{/if}}
+		</div>
+	</figcaption>
+</figure>

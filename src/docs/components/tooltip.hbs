@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{{> html-head title="Tooltip" }}
+</head>
+
+<body>
+	<div class="container mt-4">
+		<div class="col-12">
+			<div class="no-gutters__in-container">
+				<h1>Tooltip</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container position-relative">
+		<h3>Tooltip with close button</h3>
+		<div class="col-lg-4 tooltip bg-primary text-white text-center py-2 show rounded">
+			<i id="tooltip__close" class="sni sni__close-circle"></i>
+			Item added to cart
+			<a href="#" class="d-block text-white text-underline">Proceed to checkout</a>
+		</div>
+	</div>
+
+	{{> js jquery=true bootstrap=true main=true }}
+</body>
+
+</html>

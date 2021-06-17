@@ -6,8 +6,7 @@
 </head>
 
 <body>
-	{{> sections/header}}
-	{{!-- {{> carousel-banner }} --}}
+	{{> sections/hero-carousel totalSlide=3}}
 
 	{{> sections/featured-products}}
 
@@ -122,9 +121,7 @@
 		</div>
 	</div>
 
-	{{> sections/footer}}
-
-	{{> js jquery=false popper=false bootstrap=false main=false }}
+	{{> js jquery=true bootstrap=true main=true }}
 </body>
 
 </html>

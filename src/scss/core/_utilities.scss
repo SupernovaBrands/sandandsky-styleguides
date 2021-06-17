@@ -1,6 +1,9 @@
 // Light pink background color
 @include bg-variant(".bg-secondary-light", $secondary-light, true);
 
+// Gray 100 background color
+@include bg-variant(".bg-gray-100", $gray-100, true);
+
 .rounded-right-0 {
 	border-top-right-radius: 0 !important;
 	border-bottom-right-radius: 0 !important;

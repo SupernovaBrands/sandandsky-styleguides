@@ -17,10 +17,11 @@
 			</div>
 
 			<div class="row">
-				{{> product-card class="col-6 col-lg-3" color="ff6f8d"}}
-				{{> product-card class="col-6 col-lg-3" color="cc3195"}}
-				{{> product-card class="col-6 col-lg-3 d-none d-lg-block" color="66b3df"}}
-				{{> product-card class="col-6 col-lg-3 d-none d-lg-block" color="ff6f8d"}}
+				{{> compounds/product-card class="col-6" color="ff6f8d"}}
+				{{> compounds/product-card class="col-6" color="cc3195"}}
+				{{> compounds/product-card class="col-6 d-none d-lg-block" color="66b3df"}}
+				{{> compounds/product-card class="col-6 d-none d-lg-block" color="ff6f8d"}}
+				{{> compounds/product-card class="col-6 d-none d-lg-block" color="cc3195"}}
 			</div>
 
 			<div class="d-flex justify-content-center d-lg-none">
@@ -35,11 +36,11 @@
 		</div>
 	</div>
 
-	{{> collection-section class="my-5" color="ff6f8d" title="Detoxify with Australian Pink Clay" button="Shop all Detoxify"}}
+	{{> sections/collection-section class="my-5" color="ff6f8d" range="apc" header="Detoxify with Australian Pink Clay" button="Shop all Detoxify"}}
 
-	{{> collection-section class="my-5" color="cc3195" title="Brighten with Australian Emu Apple" button="Shop all Brighten"}}
+	{{> sections/collection-section class="my-5" color="cc3195" range="aea" header="Brighten with Australian Emu Apple" button="Shop all Brighten"}}
 
-	{{> collection-section class="my-5" color="66b3df" title="Hydrate with Tasmanian Spring Water" button="Shop all Hydrate"}}
+	{{> sections/collection-section class="my-5" color="66b3df" range="tsw" header="Hydrate with Tasmanian Spring Water" button="Shop all Hydrate"}}
 
 	<div class="mobile-wrapper my-5">
 		<div class="container">

@@ -1,0 +1,45 @@
+.product-card {
+	&--new {
+		@include media-breakpoint-up(lg) {
+			@include make-col(1, 5);
+		}
+	}
+
+	.badge {
+		top: calc-em(5, 12);
+		left: calc-em(12.5, 12);
+		padding: calc-em(5, 12) calc-em(10, 12);
+		@include media-breakpoint-up(lg) {
+			top: calc-em(10, 12);
+			left: calc-em(25, 12);
+		}
+	}
+
+	&__text {
+		font-size: $font-size-sm;
+		@include media-breakpoint-up(lg) {
+			font-size: $font-size-base;
+		}
+	}
+
+	&__text-sm,
+	.yotpo &__text-sm {
+		font-size: $font-size-xs;
+		@include media-breakpoint-up(lg) {
+			font-size: $font-size-sm;
+		}
+	}
+
+	.yotpo &__text-sm {
+		color: $body-color !important;
+		cursor: default !important;
+		white-space: nowrap;
+		&:hover {
+			color: $body-color !important;
+		}
+	}
+
+	.yotpo-stars {
+		display: none;
+	}
+}

@@ -7,6 +7,8 @@
 // TSW range background color
 @include bg-variant(".bg-tsw", $range-tsw, true);
 
+// Gray 100 background color
+@include bg-variant(".bg-gray-100", $gray-100, true);
 
 .rounded-right-0 {
 	border-top-right-radius: 0 !important;

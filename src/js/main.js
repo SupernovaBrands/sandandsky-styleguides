@@ -1,30 +1,19 @@
-const screenLG = 991;
+if ($('.hero-carousel').length > 0) {
+	import(/* webpackChunkName: 'hero-carousel' */ '~mod/hero-carousel');
+}
 
-$(document).ready( function () {
+if ($('.product-card').length > 0) {
+	import(/* webpackChunkName: 'product-card' */ '~mod/product-card');
+}
 
-	$('.product-image-carousel__indicator__item').on('click', function () {
-		const carousel = $(this).parent().data('target');
-		let selectedIndex = $(this).data('slide-to');
-		if (window.innerWidth > screenLG) {
-			selectedIndex = $(this).data('index');
-		}
-		$(carousel).carousel(selectedIndex);
-		$('.product-image-carousel__indicator__item span').removeClass('border-secondary').addClass('border-white');
-		$(this).find('span').addClass('border-secondary').removeClass('border-white');
+if ($('.carousel--scroll').length > 0) {
+	import(/* webpackChunkName: 'carousel-scroll' */ '~mod/carousel-scroll');
+}
 
-		const parent = $(this).closest('.carousel');
-		const index = $(this).index();
-		const active = parent.find('.active').index();
-		const total = parent.find('.carousel-item').length;
-		if (total > 5) {
-			if ((index - active === 4) && (index < total - 1)) {
-				$(parent).carousel(active + 1);
-			}
-			if (index === active && active !== 0) {
-				$(parent).carousel(active - 1);
-			}
-		}
+if ($('.product-image-carousel').length > 0) {
+	import(/* webpackChunkName: 'carousel-product-image' */ '~mod/carousel-product-image');
+}
 
-		
-	});
-});
+if ($('.instagram-carousel').length > 0) {
+	import(/* webpackChunkName: 'instagram' */ '~mod/instagram');
+}

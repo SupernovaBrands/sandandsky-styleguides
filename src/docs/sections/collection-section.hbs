@@ -2,18 +2,12 @@
 <html>
 
 <head>
-	{{> html-head title="Home" }}
+	{{> html-head title="Collection Section" }}
 </head>
 
 <body>
-	{{> sections/hero-carousel totalSlide=3}}
-
-	{{> sections/featured-products}}
-
-	<div class="bg-light">
-		<div class="container px-g py-5">
-			<h2 class="h1">Ingredients block</h2>
-		</div>
+	<div class="container px-g mt-4">
+		<h1>Collection Section</h1>
 	</div>
 
 	{{> sections/collection-section class="my-5" color="ff6f8d" range="apc" header="Detoxify with Australian Pink Clay" button="Shop all Detoxify"}}
@@ -21,20 +15,6 @@
 	{{> sections/collection-section class="my-5" color="cc3195" range="aea" header="Brighten with Australian Emu Apple" button="Shop all Brighten"}}
 
 	{{> sections/collection-section class="my-5" color="66b3df" range="tsw" header="Hydrate with Tasmanian Spring Water" button="Shop all Hydrate"}}
-
-	{{> sections/a-beauty-banner}}
-
-	{{> sections/instagram}}
-
-	<div class="mobile-wrapper my-5 bg-light">
-		<div class="container py-5">
-			<h2 class="h1">Recognized A-Beauty leader by…</h2>
-		</div>
-	</div>
-
-	{{> sections/usp-banner}}
-
-	{{> sections/newsletter-banner}}
 
 	{{> js jquery=true bootstrap=true main=true }}
 </body>

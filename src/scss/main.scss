@@ -1,5 +1,6 @@
 @import 'core/functions';
 @import 'core/vars';
+@import 'mixins/carousel';
 
 @import 'bootstrap/bootstrap';
 
@@ -10,19 +11,24 @@
 
 @import 'components/icons';
 @import 'components/buttons';
-@import 'components/pswp';
-@import 'components/loading-old';
+@import 'components/tabs';
 @import 'components/forms';
+@import 'components/carousel';
+@import 'components/product-image-carousel';
 
+@import 'compounds/hero-banner';
+@import 'compounds/product-card';
 @import 'compounds/upsell';
-@import 'compounds/signup-popup';
 
-@import 'sections/slick-slider';
 @import 'sections/header';
-@import 'sections/cart-drawer-other';
 @import 'sections/cart-drawer';
+@import 'sections/hero-carousel';
+@import 'sections/featured-products';
+@import 'sections/collection-section';
+@import 'sections/instagram';
 @import 'sections/usp-banner';
 @import 'sections/newsletter-banner';
+@import 'sections/yotpo';
 @import 'sections/footer';
 
 @import 'templates/home';

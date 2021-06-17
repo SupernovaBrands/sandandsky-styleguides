@@ -5,14 +5,14 @@
 	{{> html-head title="Product Card" yotpo_stars="true"}}
 </head>
 
-<body class="mobile-wrapper">
-	<div class="container mt-4">
+<body>
+	<div class="container px-g mt-4">
 		<h1>Product Card</h1>
 
 		<div class="row">
-			{{> product-card class="col-6 col-lg-3" color="ff6f8d"}}
-			{{> product-card class="col-6 col-lg-3" color="cc3195"}}
-			{{> product-card class="col-6 col-lg-3" color="66b3df"}}
+			{{> compounds/product-card color="ff6f8d"}}
+			{{> compounds/product-card color="cc3195"}}
+			{{> compounds/product-card color="66b3df" badge="Best Seller"}}
 		</div>
     <h1>Product Card Secondary</h1>
 
@@ -22,6 +22,8 @@
       {{> product-card-secondary class="col-6 col-lg-3" color="66b3df"}}
     </div>
 	</div>
+
+	{{> js jquery=true main=true }}
 </body>
 
 </html>

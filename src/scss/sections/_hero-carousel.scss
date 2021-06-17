@@ -1,0 +1,8 @@
+.hero-carousel {
+	.carousel-indicators {
+		@include media-breakpoint-down(md) {
+			top: 55%;
+			bottom: auto;
+		}
+	}
+}

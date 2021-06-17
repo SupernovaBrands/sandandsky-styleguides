@@ -1,9 +1,32 @@
 // Light pink background color
 @include bg-variant(".bg-secondary-light", $secondary-light, true);
-@include bg-variant(".bg-tsw", $tsw, true);
-@include bg-variant(".bg-tsw-light", $tsw-light, true);
-@include bg-variant(".bg-apc", $apc, true);
-@include bg-variant(".bg-aea", $aea, true);
-@include bg-variant(".bg-aea-light", $aea-light, true);
 
-@include text-emphasis-variant(".text-aea", $aea, true);
+// APC background color
+@include bg-variant(".bg-apc", $range-apc, true);
+
+// AEA range background color
+@include bg-variant(".bg-aea", $range-aea, true);
+
+// AEA Light background color
+@include bg-variant(".bg-aea-light", $range-aea-light, true);
+
+// TSW range background color
+@include bg-variant(".bg-tsw", $range-tsw, true);
+
+// TSW Light background color
+@include bg-variant(".bg-tsw-light", $range-tsw-light, true);
+
+// Gray 100 background color
+@include bg-variant(".bg-gray-100", $gray-100, true);
+
+@include text-emphasis-variant(".text-aea", $range-aea, true);
+
+.rounded-right-0 {
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+
+.rounded-left-0 {
+	border-top-left-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+}

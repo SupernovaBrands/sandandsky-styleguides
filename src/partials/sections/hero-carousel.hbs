@@ -1,0 +1,25 @@
+<section id="hero-carousel{{#if num}}{{num}}{{/if}}" class="hero-carousel carousel slide {{ class }}" data-interval="7000" data-pause="false">
+	<ol class="carousel-indicators carousel-indicators--timer mb-0">
+		{{#times totalSlide}}
+		<li data-target="#hero-carousel{{#if num}}{{num}}{{/if}}" data-slide-to="{{minus @index 1}}" class="border-0 mb-3 mx-1 {{#if @first}}active{{/if}}"></li>
+		{{/times}}
+	</ol>
+
+	<div class="carousel-inner" role="listbox">
+		{{#times totalSlide}}
+		{{#if @first}}
+		{{#> compounds/hero-banner class="carousel-item active" }}
+			<p class="h1 mb-2">Dive into deep hydration</p>
+			<p class="mb-2">Meet Tasmanian Spring Water - Slide {{@index}}</p>
+			<a href="" class="btn btn-lg btn-primary">Shop the range</a>
+		{{/ compounds/hero-banner}}
+		{{else}}
+		{{#> compounds/hero-banner class="carousel-item" }}
+			<p class="h1 mb-2">Dive into deep hydration</p>
+			<p class="mb-2">Meet Tasmanian Spring Water - Slide {{@index}}</p>
+			<a href="" class="btn btn-lg btn-primary">Shop the range</a>
+		{{/ compounds/hero-banner}}
+		{{/if}}
+		{{/times}}
+	</div>
+</section>

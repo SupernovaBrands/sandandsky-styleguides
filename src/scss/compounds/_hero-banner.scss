@@ -1,0 +1,62 @@
+.hero-banner {
+	$grid-column-width-lg: minmax(0, (map-get($container-max-widths, lg) - $grid-gutter-width-lg * $grid-columns) / $grid-columns);
+	$grid-column-width-xl: minmax(0, (map-get($container-max-widths, xl) - $grid-gutter-width-lg * $grid-columns) / $grid-columns);
+
+	figcaption {
+		position: relative;
+	}
+
+	@include media-breakpoint-up(lg) {
+		&:not(.carousel-item),
+		&.carousel-item-left,
+		&.carousel-item-right,
+		&.active {
+			display: grid;
+		}
+
+		grid-template-columns: [grid-start] 1fr repeat($grid-columns, [col-start] $grid-column-width-lg) 1fr [grid-end];
+		column-gap: $grid-gutter-width-lg;
+
+		picture {
+			grid-column-start: col-start 5;
+			grid-column-end: grid-end;
+		}
+
+		figcaption {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			grid-column-start: col-start 1;
+			grid-column-end: span 5;
+			align-content: center;
+
+			display: grid;
+			grid-template-columns: repeat(4, [col-start] 1fr [gutter-start] $grid-gutter-width-lg) [gutter-end] 1fr;
+		}
+
+		&__text {
+			grid-column-start: col-start 2;
+			grid-column-end: span 6;
+		}
+
+		&--reverse {
+			picture {
+				grid-column-start: grid-start;
+				grid-column-end: col-start 9;
+			}
+
+			figcaption {
+				grid-column-start: col-start 8;
+			}
+		}
+		&--reverse &__text {
+			grid-column-start: gutter-start 1;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {
+		grid-template-columns: [grid-start] 1fr repeat($grid-columns, [col-start] $grid-column-width-xl) 1fr [grid-end];
+	}
+}

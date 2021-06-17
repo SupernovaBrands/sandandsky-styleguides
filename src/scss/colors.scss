@@ -22,12 +22,16 @@
 }
 
 @include make-box('primary', $primary);
-// @include make-box('primary-light', $primary-light);
-// @include make-box('primary-dark', $primary-dark);
-@include make-box('secondary', $secondary);
-@include make-box('secondary-light', $secondary-light);
+@include make-box('primary-light', $primary-light);
+@include make-box('primary-dark', $primary-dark);
+@include make-box('range-apc', $range-apc);
+@include make-box('range-apc-light', $range-apc-light);
+@include make-box('range-aea', $range-aea);
+@include make-box('range-aea-light', $range-aea-light);
+@include make-box('range-tsw', $range-tsw);
+@include make-box('range-tsw-light', $range-tsw-light);
 @include make-box('body-color', $body-color);
 @include make-box('secondary-body', $gray-600);
-@include make-box('gray-500', $gray-500);
+@include make-box('white', #FFFFFF);
 @include make-box('gray-400', $gray-400);
 @include make-box('gray-100', $gray-100);

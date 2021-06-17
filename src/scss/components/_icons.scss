@@ -1,7 +1,7 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?63862872377b5d84703019c9b00f1d8f") format("woff2"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?63862872377b5d84703019c9b00f1d8f") format("woff") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?b23a91be37c7c412a0fb6b196257f8e1") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?b23a91be37c7c412a0fb6b196257f8e1") format("woff") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -31,16 +31,18 @@ $supernova-icon-map: (
 	"chevron-next": "\f102",
 	"chevron-prev": "\f103",
 	"koala": "\f104",
-	"nasties": "\f105",
-	"range-aea": "\f106",
-	"range-apc": "\f107",
-	"range-tsw": "\f108",
-	"returns": "\f109",
-	"search": "\f10a",
-	"shake": "\f10b",
-	"shipping": "\f10c",
-	"ss": "\f10d",
-	"trophy": "\f10e",
+	"minus": "\f105",
+	"nasties": "\f106",
+	"plus": "\f107",
+	"range-aea": "\f108",
+	"range-apc": "\f109",
+	"range-tsw": "\f10a",
+	"returns": "\f10b",
+	"search": "\f10c",
+	"shake": "\f10d",
+	"shipping": "\f10e",
+	"ss": "\f10f",
+	"trophy": "\f110",
 );
 
 .sni.sni__australia:before,
@@ -59,9 +61,17 @@ $supernova-icon-map: (
 .sni-after.sni__koala:after {
 	content: map-get($supernova-icon-map, "koala");
 }
+.sni.sni__minus:before,
+.sni-after.sni__minus:after {
+	content: map-get($supernova-icon-map, "minus");
+}
 .sni.sni__nasties:before,
 .sni-after.sni__nasties:after {
 	content: map-get($supernova-icon-map, "nasties");
+}
+.sni.sni__plus:before,
+.sni-after.sni__plus:after {
+	content: map-get($supernova-icon-map, "plus");
 }
 .sni.sni__range-aea:before,
 .sni-after.sni__range-aea:after {

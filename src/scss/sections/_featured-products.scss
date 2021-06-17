@@ -1,0 +1,10 @@
+.featured-products-carousel {
+	.carousel-control-prev,
+	.carousel-control-next {
+		top: 30%;
+
+		@include media-breakpoint-up(lg) {
+			top: 26%;
+		}
+	}
+}

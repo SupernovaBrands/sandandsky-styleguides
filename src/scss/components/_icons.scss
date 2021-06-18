@@ -1,7 +1,7 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?63862872377b5d84703019c9b00f1d8f") format("woff2"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?63862872377b5d84703019c9b00f1d8f") format("woff") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?f535571d62437ab9ebe1908c8bd71e1a") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?f535571d62437ab9ebe1908c8bd71e1a") format("woff") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -31,16 +31,20 @@ $supernova-icon-map: (
 	"chevron-next": "\f102",
 	"chevron-prev": "\f103",
 	"koala": "\f104",
-	"nasties": "\f105",
-	"range-aea": "\f106",
-	"range-apc": "\f107",
-	"range-tsw": "\f108",
-	"returns": "\f109",
-	"search": "\f10a",
-	"shake": "\f10b",
-	"shipping": "\f10c",
-	"ss": "\f10d",
-	"trophy": "\f10e",
+	"minus": "\f105",
+	"nasties": "\f106",
+	"play": "\f107",
+	"plus": "\f108",
+	"range-aea": "\f109",
+	"range-apc": "\f10a",
+	"range-tsw": "\f10b",
+	"returns": "\f10c",
+	"search": "\f10d",
+	"shake": "\f10e",
+	"shipping": "\f10f",
+	"ss": "\f110",
+	"times": "\f111",
+	"trophy": "\f112",
 );
 
 .sni.sni__australia:before,
@@ -59,9 +63,21 @@ $supernova-icon-map: (
 .sni-after.sni__koala:after {
 	content: map-get($supernova-icon-map, "koala");
 }
+.sni.sni__minus:before,
+.sni-after.sni__minus:after {
+	content: map-get($supernova-icon-map, "minus");
+}
 .sni.sni__nasties:before,
 .sni-after.sni__nasties:after {
 	content: map-get($supernova-icon-map, "nasties");
+}
+.sni.sni__play:before,
+.sni-after.sni__play:after {
+	content: map-get($supernova-icon-map, "play");
+}
+.sni.sni__plus:before,
+.sni-after.sni__plus:after {
+	content: map-get($supernova-icon-map, "plus");
 }
 .sni.sni__range-aea:before,
 .sni-after.sni__range-aea:after {
@@ -94,6 +110,10 @@ $supernova-icon-map: (
 .sni.sni__ss:before,
 .sni-after.sni__ss:after {
 	content: map-get($supernova-icon-map, "ss");
+}
+.sni.sni__times:before,
+.sni-after.sni__times:after {
+	content: map-get($supernova-icon-map, "times");
 }
 .sni.sni__trophy:before,
 .sni-after.sni__trophy:after {

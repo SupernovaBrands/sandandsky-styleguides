@@ -1,12 +1,5 @@
-.mobile-wrapper {
-	@include media-breakpoint-down(md) {
-		padding-right: $grid-gutter-width / 2;
-		padding-left: $grid-gutter-width / 2;
-	}
-}
-
 @include media-breakpoint-up(lg) {
-	.container {
+	.container, .container-fluid {
 		padding-right: $grid-gutter-width;
 		padding-left: $grid-gutter-width;
 	}
@@ -25,13 +18,4 @@
 	.col-lg-1o5 {
 		@include make-col(1, 5);
 	}
-}
-
-.no-gutters {
-  &__in-container {
-    @include media-breakpoint-down(md) {
-      margin-right: -$grid-gutter-width;
-      margin-left: -$grid-gutter-width;
-    }
-  }
 }

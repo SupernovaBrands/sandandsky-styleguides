@@ -18,7 +18,7 @@
 
   &--large {
     &__content {
-      margin-top: -140%;
+      margin-top: -128%;
       height: auto;
 
       @include media-breakpoint-up(lg) {
@@ -36,7 +36,7 @@
     }
 
     .between-space {
-      margin-top: 120%;
+      margin-top: 115%;
       @include media-breakpoint-up(lg) {
         margin-top: 0;
       }
@@ -165,7 +165,7 @@
       width: calc-em(170);
       height: calc-em(170);
       top: 8%;
-      left: 72%;
+      left: 70%;
     }
   }
 }

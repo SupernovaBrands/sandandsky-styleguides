@@ -38,18 +38,16 @@
 			color: $body-color !important;
 		}
 	}
-
-	.yotpo-stars {
-		display: none;
-	}
+  
+  &:not(&--secondary) {
+		.yotpo-stars {
+			display: none;
+	  }
+  }
 
   &--secondary {
     figcaption {
-      min-height: calc-em(250);
-
-      @include media-breakpoint-up(lg) {
-        min-height: calc-em(230);
-      }
+      min-height: calc-em(200);
     }
 
     .img-hover {

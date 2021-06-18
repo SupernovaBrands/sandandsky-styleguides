@@ -22,19 +22,19 @@
   </section>
   <section class="tsw-decoration position-relative">
     <div class="container">
-      <p class="mt-4 h4 font-banner-dark">The power of Tasmanian water to</p>
-      <p class="font-banner font-weight-bold mb-2 font-banner--dark">Strengthen and hydrate</p>
+      <p class="mt-4 h4 pl-4 pl-lg-0 text-dark font-weight-normal">The power of Tasmanian water to</p>
+      <p class="pl-4 pl-lg-0 font-banner font-weight-bold mb-2 text-dark pr-2">Strengthen and hydrate</p>
       {{> range-tsw }}
     </div>
   </section>
-  <section class="mobile-wrapper pt-6">
-    <h1 class="h1 text-center mb-2">Tasmanian Spring Water</h1>
+  <section class="mobile-wrapper mobile-wrapper mt-0 mt-lg-6 pt-4 pt-lg-6">
+    <h1 class="h1 text-center mb-6">Tasmanian Spring Water</h1>
     <div class="container">
       <div class="row justify-content-center">
-        {{> product-card-secondary class="col-6 col-lg-3" color="ff6f8d" saving="20%" badge="true"}}
-        {{> product-card-secondary class="col-6 col-lg-3" color="cc3195" title="Porefining Face Mask"}}
-        {{> product-card-secondary class="col-6 col-lg-3" color="66b3df"}}
-        {{> product-card-secondary class="col-6 col-lg-3" color="ff6f8d" saving="20%" badge="true"}}
+        {{> compounds/product-card-secondary class="col-6 col-lg-3" color="ff6f8d" saving="20%" badge="true"}}
+        {{> compounds/product-card-secondary class="col-6 col-lg-3" color="cc3195" title="Porefining Face Mask"}}
+        {{> compounds/product-card-secondary class="col-6 col-lg-3" color="66b3df"}}
+        {{> compounds/product-card-secondary class="col-6 col-lg-3" color="ff6f8d" saving="20%" badge="true"}}
       </div>
     </div>
   </section>
@@ -54,17 +54,17 @@
       </div>
     </div>
   </section>
-  <section class="mobile-wrapper pt-4 pt-lg-0 pb-lg-2">
+  <section class="mobile-wrapper pt-4 pt-lg-0 pb-lg-2 mt-4">
     <div class="mt-4 p-lg-0 container">
       <figure class="imagewtext imagewtext--large row flex-row-reverse mb-lg-2 mt-5 justify-content-center align-items-center">
         <figcaption class="col-12 col-lg-5 order-last">
           <div class="imagewtext--large__content mt-lg-0 p-2 pt-lg-6 pb-lg-6 px-lg-6 bg-tsw text-left text-white imagewtext__tsw-decoration">
             <p class="font-banner-secondary text-white font-weight-bold text-center text-lg-left">Take the plunge</p>
             <ul class="list-unstyled py-2 py-lg-4 text-left between-space px-2 px-lg-0">
-              <li class="mt-1 h4 d-flex flex-row justify-content-start align-items-center pt-6 pt-lg-0"><i class="h6 sni sni__checklist text-white d-inline mr-1 mb-0 mt-1"></i>Deeply hydrated, healthy skin</li>
-              <li class="mt-1 h4 d-flex flex-row justify-content-start align-items-center"><i class="h6 sni sni__checklist text-white d-inline mr-1 mb-0 mt-1"></i>Repaired skin barrier + reduced moisture loss</li>
-              <li class="mt-1 h4 d-flex flex-row justify-content-start align-items-center"><i class="h6 sni sni__checklist text-white d-inline mr-1 mb-0 mt-1"></i>Smooth texture & even skin tone</li>
-              <li class="mt-1 h4 d-flex flex-row justify-content-start align-items-center"><i class="h6 sni sni__checklist text-white d-inline mr-1 mb-0 mt-1"></i>Skin so soft, you could dive right i</li>
+              <li class="mt-1 h4 d-flex flex-row justify-content-start align-items-center pt-3 pt-lg-0 font-weight-normal"><i class="h6 sni sni__checklist text-white d-inline mr-1 mb-0 mt-1"></i>Deeply hydrated, healthy skin</li>
+              <li class="mt-1 h4 d-flex flex-row justify-content-start align-items-center font-weight-normal"><i class="h6 sni sni__checklist text-white d-inline mr-1 mb-0 mt-1"></i>Repaired skin barrier + reduced moisture loss</li>
+              <li class="mt-1 h4 d-flex flex-row justify-content-start align-items-center font-weight-normal"><i class="h6 sni sni__checklist text-white d-inline mr-1 mb-0 mt-1"></i>Smooth texture & even skin tone</li>
+              <li class="mt-1 h4 d-flex flex-row justify-content-start align-items-center font-weight-normal"><i class="h6 sni sni__checklist text-white d-inline mr-1 mb-0 mt-1"></i>Skin so soft, you could dive right i</li>
             </ul>
           </div>
         </figcaption>
@@ -83,7 +83,7 @@
     </div>
   </div>
   <section class="mobile-wrapper">
-    <div class="container-fluid mt-4 p-lg-0">
+    <div class="container-fluid mt-4 p-lg-0 mb-6 mb-lg-7">
       <figure class="imagewtext row flex-row-reverse mb-lg-2 mt-5 imagewtext--reverse">
         <div class="col-12 col-lg-9 order-lg-last">
           <div class="no-gutters__in-container">
@@ -108,16 +108,8 @@
       </figure>
     </div>
   </section>
-  <div class="mobile-wrapper my-5 bg-light">
-    <div class="container py-5">
-      <h2 class="h1">Section Benefits</h2>
-    </div>
-  </div>
-  <div class="mobile-wrapper my-5 bg-light">
-    <div class="container py-5">
-      <h2 class="h1">Section Email Signup</h2>
-    </div>
-  </div>
+  {{> sections/usp-banner}}
+  {{> sections/newsletter-banner}}
   {{> js jquery=true bootstrap=true main=true }}
 </body>
 </html>

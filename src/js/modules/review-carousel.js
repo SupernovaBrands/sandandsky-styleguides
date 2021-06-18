@@ -5,8 +5,7 @@ const hideReviewText = (elem) => {
 
 	const figCaption = elem.closest('figcaption');
 	figCaption.find('i').removeClass('position-absolute bg-secondary-light px-g pb-g');
-	figCaption.removeClass('position-relative');
-	figCaption.removeClass('show');
+	figCaption.removeClass('position-relative show');
 	figCaption.find('.review-card__more-text').addClass('d-none');
 	figCaption.find('.review-card__more').removeClass('d-none');
 };
@@ -17,9 +16,8 @@ $('.review-card__more').on('click', function () {
 	$(this).addClass('d-none');
 
 	const figCaption = $(this).closest('figcaption');
-	figCaption.find('i').addClass('position-absolute').addClass('bg-secondary-light').addClass('px-g')
-	.addClass('pb-g');
-	figCaption.addClass('show').addClass('position-relative');
+	figCaption.find('i').addClass('position-absolute bg-secondary-light px-g pb-g');
+	figCaption.addClass('show position-relative');
 	figCaption.find('.review-card__more-text').removeClass('d-none');
 	figCaption.find('.review-card__less').removeClass('d-none');
 });

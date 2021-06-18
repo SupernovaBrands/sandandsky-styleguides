@@ -1,9 +1,49 @@
 .mega-menu {
-  a {
-    color: $body-color;
-  }
+	a {
+		color: $body-color;
+	}
 
-  &__tag {
-    
-  }
+	h4 {
+		color: $gray-600;
+	}
+
+	&__tag {
+		
+	}
+
+	&__range {
+		small {
+			font-size: 1em;
+		}
+
+		h4 {
+			color: $body-color;
+		}
+	}
+
+	.sni__range-apc,
+	.sni__range-aea,
+	.sni__range-tsw {
+		&:before {
+			font-size: 1.5em;
+		}
+	}
+
+	.sni__range-apc {
+		small {
+			color: $range-apc;
+		}
+	}
+
+	.sni__range-aea {
+		small {
+			color: $range-aea;
+		}
+	}
+
+	.sni__range-tsw {
+		small {
+			color: $range-tsw;
+		}
+	}
 }

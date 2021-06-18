@@ -11,11 +11,13 @@
 
 @import 'components/icons';
 @import 'components/buttons';
+@import 'components/video-card';
 @import 'components/accordion';
 @import 'components/tabs';
 @import 'components/forms';
 @import 'components/carousel';
 @import 'components/product-image-carousel';
+@import 'components/announcement-bar';
 @import 'components/tooltip';
 
 @import 'compounds/hero-banner';
@@ -33,5 +35,6 @@
 @import 'sections/newsletter-banner';
 @import 'sections/yotpo';
 @import 'sections/footer';
+@import 'sections/how-to-video';
 
 @import 'templates/home';

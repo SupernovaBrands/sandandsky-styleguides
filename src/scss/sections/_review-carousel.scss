@@ -1,0 +1,14 @@
+.review-carousel {
+
+	&__visible {
+		.carousel--scroll,
+		.carousel-inner {
+			overflow: visible;
+		}
+	}
+
+	.sni__apc-leaf {
+		font-size: calc-em(60, 16);
+		right: -(calc-em(5, 16));
+	}
+}

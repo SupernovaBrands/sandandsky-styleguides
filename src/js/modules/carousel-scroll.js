@@ -18,6 +18,8 @@ $('.carousel--scroll').each((index, carousel) => {
 	const prevButton = carousel.querySelector('.carousel-control-prev');
 	const nextButton = carousel.querySelector('.carousel-control-next');
 
+	console.log('inner', inner.clientWidth);
+
 	carousel.addEventListener('adjustThumb', () => { adjustScrollThumb(scrollThumb, inner); });
 	adjustScrollThumb(scrollThumb, inner);
 	carousels.push(carousel);
@@ -85,6 +87,7 @@ $('.carousel--scroll').each((index, carousel) => {
 
 	const scrollItem = (direction) => (e) => {
 		e.preventDefault();
+
 		const item = carousel.querySelector('.carousel-item');
 		itemIndex = Math.round(inner.scrollLeft / item.clientWidth) + (direction === 'left' ? -2 : 2);
 		left = itemIndex * item.clientWidth;

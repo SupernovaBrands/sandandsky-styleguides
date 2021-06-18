@@ -1,0 +1,38 @@
+.video-card {
+
+	.sni-after:after {
+		cursor: pointer;
+		position: absolute;
+		color: #000;
+		font-size: calc-em(12, 16);
+		background-color: $white;
+		border-radius: 100%;
+		right: calc-em(30, 12);
+		bottom: calc-em(15, 12);
+		width: calc-em(30, 12);
+		height: calc-em(30, 12);
+		padding: calc-em(9, 12) calc-em(12, 12);
+
+		@include media-breakpoint-up(lg) {
+			font-size: calc-em(16, 16);
+			right: calc-em(45, 16);
+			bottom: calc-em(30, 16);
+		}
+	}
+}
+
+.video-modal {
+
+	.sni-after:after {
+		color: $white;
+		font-size: calc-em(9, 16);
+		padding: calc-em(5, 9);
+	}
+
+	.close {
+		right: calc-em(20, 16);
+		top: 0;
+		transform: translateY(-50%);
+		opacity: 1;
+	}
+}

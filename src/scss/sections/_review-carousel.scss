@@ -1,9 +1,7 @@
 .review-carousel {
 
 	&__visible {
-		.carousel-inner {
-			z-index: 1;
-		}
+		z-index: 1;
 	}
 
 	&__scroll {

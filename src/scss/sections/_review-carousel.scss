@@ -1,9 +1,5 @@
 .review-carousel {
 
-	&__visible {
-		z-index: 1; //to be above scrollbar
-	}
-
 	&__scroll {
 		position: absolute;
 		left: 0;

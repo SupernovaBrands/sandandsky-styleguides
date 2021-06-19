@@ -4,7 +4,6 @@ const toggleReview = (elem, mode) => {
 
 	if (mode === 'expand') {
 		moreBtn.removeClass('d-none');
-		figCaption.find('.review-card__less').removeClass('d-none');
 	} else {
 		moreBtn.addClass('d-none');
 		figCaption.find('.review-card__more').removeClass('d-none');

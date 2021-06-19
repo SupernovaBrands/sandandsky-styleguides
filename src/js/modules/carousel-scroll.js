@@ -85,7 +85,6 @@ $('.carousel--scroll').each((index, carousel) => {
 
 	const scrollItem = (direction) => (e) => {
 		e.preventDefault();
-
 		const item = carousel.querySelector('.carousel-item');
 		itemIndex = Math.round(inner.scrollLeft / item.clientWidth) + (direction === 'left' ? -2 : 2);
 		left = itemIndex * item.clientWidth;

@@ -6,26 +6,26 @@
 </head>
 <body>
 	<div class="mt-4">
-		<h1 class="container">Review Carousel</h1>
+		<h1 class="container">Review Carousel - variable content height</h1>
 		<div class="review-carousel my-6 my-lg-7 mb-lg-7">
 			<div class="d-flex justify-content-between align-items-center position-relative overflow-hidden">
 				<h2 class="h1 pl-g col-10 mb-3">Don’t take our word for it…</h2>
 				<i class="sni sni__apc-leaf position-absolute text-secondary"></i>
 			</div>
 
-			<div class="carousel--scroll position-relative px-1 overflow-hidden">
-				<div class="carousel-inner d-flex flex-nowrap mx-ng px-g w-auto" role="listbox">
-					{{> review-card class="pl-g"}}
-					{{> review-card}}
-					{{> review-card}}
-					{{> review-card}}
-					{{> review-card}}
-					{{> review-card}}
-					{{> review-card}}
-					{{> review-card class="pr-g"}}
+			<div class="carousel--scroll position-relative px-1 px-lg-0 overflow-hidden">
+				<div class="carousel-inner d-flex flex-nowrap mx-ng px-g w-auto pb-4" role="listbox">
+					{{> review-card content="I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother" reveal="hood I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother. "}}
+					{{> review-card content="I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother" reveal="hood I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother. I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother"}}
+					{{> review-card content="I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother" reveal="hood I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother. I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother. I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother"}}
+					{{> review-card content="I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother" reveal="hood I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother. I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother"}}
+					{{> review-card content="I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother" reveal="hood I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother. "}}
+					{{> review-card content="I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother" reveal="hood I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother. I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother"}}
+					{{> review-card content="I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother" reveal="hood I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother. I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother. I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother"}}
+					{{> review-card content="I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother" reveal="hood I absolutely love to pamper my skin with the amazing pink clay mask from @sandandskyaus I wouldn’t have ended my Mother. "}}
 				</div>
-				<div class="px-1 px-lg-g">
-					<div class="scrollbar mt-3">
+				<div class="px-g review-carousel__scroll">
+					<div class="scrollbar">
 						<div class="scrollbar--thumb"></div>
 					</div>
 				</div>

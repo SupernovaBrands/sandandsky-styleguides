@@ -18,8 +18,6 @@ $('.carousel--scroll').each((index, carousel) => {
 	const prevButton = carousel.querySelector('.carousel-control-prev');
 	const nextButton = carousel.querySelector('.carousel-control-next');
 
-	console.log('inner', inner.clientWidth);
-
 	carousel.addEventListener('adjustThumb', () => { adjustScrollThumb(scrollThumb, inner); });
 	adjustScrollThumb(scrollThumb, inner);
 	carousels.push(carousel);

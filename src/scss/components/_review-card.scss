@@ -2,13 +2,4 @@
 	@include media-breakpoint-up(lg) {
 		@include make-col(1, 5);
 	}
-
-	.position-absolute {
-		left: 0;
-		right: 0;
-	}
-
-	.show {
-		z-index: 1;
-	}
 }

@@ -12,11 +12,15 @@
 @import 'components/icons';
 @import 'components/buttons';
 @import 'components/badge';
+@import 'components/video-card';
 @import 'components/accordion';
 @import 'components/tabs';
 @import 'components/forms';
 @import 'components/carousel';
 @import 'components/product-image-carousel';
+@import 'components/announcement-bar';
+@import 'components/tooltip';
+@import 'components/dropdown';
 
 @import 'compounds/hero-banner';
 @import 'compounds/product-card';
@@ -26,6 +30,7 @@
 @import 'compounds/product-card';
 @import 'compounds/image-with-text';
 @import 'compounds/map-with-text';
+@import 'compounds/mega-menu-post-card';
 
 @import 'sections/range-info';
 @import 'sections/header';
@@ -39,5 +44,6 @@
 @import 'sections/newsletter-banner';
 @import 'sections/yotpo';
 @import 'sections/footer';
+@import 'sections/how-to-video';
 
 @import 'templates/home';

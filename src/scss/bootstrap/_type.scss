@@ -134,8 +134,6 @@ mark,
 }
 
 .font-banner-secondary {
-  color: $banner-color;
-
   @include font-size($font-size-banner-secondary);
 
   @include media-breakpoint-up(lg) {

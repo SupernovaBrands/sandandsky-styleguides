@@ -5,17 +5,17 @@
   {{> html-head title="Collection Banner" }}
 </head>
 
-<body class="container-fluid p-0">
-  <div class="container mt-4">
+<body>
+  <div class="container my-4">
     <h1>Collection Banner All Products</h1>
   </div>
   {{> collection-banner-all-products }}
-  <div class="container mt-4">
+  <div class="container my-4 pt-4">
     <h1>Collection Banner TSW Caption</h1>
   </div>
   <figure class="collection-banner text-center">
     <a href="/">
-      <picture class="no-gutters__in-container">
+      <picture>
         <source srcset="https://via.placeholder.com/1280x320" media="(min-width: 992px)"/>
         <source srcset="https://via.placeholder.com/375x394"/>
         <img class="w-100" src="https://via.placeholder.com/375x394"/>
@@ -25,12 +25,12 @@
       <p class="h1 m-0 px-2">TASMANIAN SPRING WATER</p>
     </figcaption>
   </figure>
-  <div class="container mt-4">
+  <div class="container my-4 pt-4">
     <h1>Collection Banner AEA Caption</h1>
   </div>
   <figure class="collection-banner text-center">
     <a href="/">
-      <picture class="no-gutters__in-container">
+      <picture>
         <source srcset="https://via.placeholder.com/1280x320" media="(min-width: 992px)"/>
         <source srcset="https://via.placeholder.com/375x394"/>
         <img class="w-100" src="https://via.placeholder.com/375x394"/>
@@ -40,12 +40,12 @@
       <p class="h1 m-0 px-2">Australian Emu Apple and Glow Berries™</p>
     </figcaption>
   </figure>
-  <div class="container mt-4">
+  <div class="container my-4 pt-4">
     <h1>Collection Banner APC Caption</h1>
   </div>
   <figure class="collection-banner text-center">
     <a href="/">
-      <picture class="no-gutters__in-container">
+      <picture>
         <source srcset="https://via.placeholder.com/1280x320" media="(min-width: 992px)"/>
         <source srcset="https://via.placeholder.com/375x394"/>
         <img class="w-100" src="https://via.placeholder.com/375x394"/>
@@ -55,5 +55,21 @@
       <p class="h1 m-0 px-2">Australian Pink Clay</p>
     </figcaption>
   </figure>
+  <div class="container my-4 pt-4">
+    <h1>Collection Banner Image wit Block Text</h1>
+  </div>
+  {{> compounds/collection-banner reverse="true" background="bg-aea" }}
+  <div class="container my-4 pt-4">
+    <h1>Collection Banner Image wit Block Text</h1>
+  </div>
+  {{> compounds/collection-banner reverse="true" background="bg-apc" }}
+  <div class="container my-4 pt-4">
+    <h1>Collection Banner Image wit Block Text</h1>
+  </div>
+  {{> compounds/collection-banner background="bg-apc" }}
+  <div class="container my-4 pt-4">
+    <h1>Collection Banner Image wit Block Text</h1>
+  </div>
+  {{> compounds/collection-banner badge="true" background="bg-tsw" reverse="true" }}
 </body>
 </html>

@@ -9,21 +9,14 @@
     }
   }
 
-  &__reverse {
-    @include media-breakpoint-up(lg) {
-      margin-left: -70%;
-      margin-right: 20%;
-    }
-  }
-
   &--large {
     &__content {
-      margin-top: -128%;
+      margin-top: -120%;
       height: auto;
 
       @include media-breakpoint-up(lg) {
         height: 100%;
-        margin-right: -60%;
+        margin-right: -60% !important;
         padding-right: 75%;
         margin-top: -3em;
       }
@@ -36,7 +29,7 @@
     }
 
     .between-space {
-      margin-top: 115%;
+      margin-top: 110%;
       @include media-breakpoint-up(lg) {
         margin-top: 0;
       }
@@ -97,7 +90,6 @@
       width: calc-em(260);
       height: calc-em(88);
       bottom: -15%;
-      z-index: 1;
       left: -2%;
       transform: rotate(-15deg);
 
@@ -105,7 +97,6 @@
         width: calc-em(380);
         height: calc-em(132);
         bottom: -20%;
-        z-index: 1;
         left: -10%;
         transform: rotate(0deg);
       }
@@ -124,7 +115,7 @@
     }
 
     &:before {
-      top: -190%;
+      top: -240%;
       left: -3%;
 
       @include media-breakpoint-up(lg) {
@@ -151,21 +142,6 @@
         width: calc-em(233);
         height: calc-em(216);
       }
-    }
-  }
-
-  &__badge {
-    width: calc-em(120);
-    height: calc-em(120);
-    z-index: 1;
-    top: 68%;
-    left: 10%;
-
-    @include media-breakpoint-up(lg) {
-      width: calc-em(170);
-      height: calc-em(170);
-      top: 8%;
-      left: 70%;
     }
   }
 }

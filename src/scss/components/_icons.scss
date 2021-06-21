@@ -1,7 +1,7 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?f535571d62437ab9ebe1908c8bd71e1a") format("woff2"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?f535571d62437ab9ebe1908c8bd71e1a") format("woff") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?3d43e9f5fef5122a7a52b744d8b86aad") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?3d43e9f5fef5122a7a52b744d8b86aad") format("woff") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -30,21 +30,26 @@ $supernova-icon-map: (
 	"australia": "\f101",
 	"chevron-next": "\f102",
 	"chevron-prev": "\f103",
-	"koala": "\f104",
-	"minus": "\f105",
-	"nasties": "\f106",
-	"play": "\f107",
-	"plus": "\f108",
-	"range-aea": "\f109",
-	"range-apc": "\f10a",
-	"range-tsw": "\f10b",
-	"returns": "\f10c",
-	"search": "\f10d",
-	"shake": "\f10e",
-	"shipping": "\f10f",
-	"ss": "\f110",
-	"times": "\f111",
-	"trophy": "\f112",
+	"close-circle": "\f104",
+	"five-stars": "\f105",
+	"koala": "\f106",
+	"minus": "\f107",
+	"nasties": "\f108",
+	"play": "\f109",
+	"plus": "\f10a",
+	"range-aea": "\f10b",
+	"range-apc": "\f10c",
+	"range-tsw": "\f10d",
+	"returns": "\f10e",
+	"search": "\f10f",
+	"shake": "\f110",
+	"shipping": "\f111",
+	"ss": "\f112",
+	"thumbs-down": "\f113",
+	"thumbs-up": "\f114",
+	"times": "\f115",
+	"trophy": "\f116",
+	"verified": "\f117",
 );
 
 .sni.sni__australia:before,
@@ -58,6 +63,14 @@ $supernova-icon-map: (
 .sni.sni__chevron-prev:before,
 .sni-after.sni__chevron-prev:after {
 	content: map-get($supernova-icon-map, "chevron-prev");
+}
+.sni.sni__close-circle:before,
+.sni-after.sni__close-circle:after {
+	content: map-get($supernova-icon-map, "close-circle");
+}
+.sni.sni__five-stars:before,
+.sni-after.sni__five-stars:after {
+	content: map-get($supernova-icon-map, "five-stars");
 }
 .sni.sni__koala:before,
 .sni-after.sni__koala:after {
@@ -111,6 +124,14 @@ $supernova-icon-map: (
 .sni-after.sni__ss:after {
 	content: map-get($supernova-icon-map, "ss");
 }
+.sni.sni__thumbs-down:before,
+.sni-after.sni__thumbs-down:after {
+	content: map-get($supernova-icon-map, "thumbs-down");
+}
+.sni.sni__thumbs-up:before,
+.sni-after.sni__thumbs-up:after {
+	content: map-get($supernova-icon-map, "thumbs-up");
+}
 .sni.sni__times:before,
 .sni-after.sni__times:after {
 	content: map-get($supernova-icon-map, "times");
@@ -118,4 +139,8 @@ $supernova-icon-map: (
 .sni.sni__trophy:before,
 .sni-after.sni__trophy:after {
 	content: map-get($supernova-icon-map, "trophy");
+}
+.sni.sni__verified:before,
+.sni-after.sni__verified:after {
+	content: map-get($supernova-icon-map, "verified");
 }

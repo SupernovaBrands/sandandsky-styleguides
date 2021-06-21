@@ -69,3 +69,7 @@ if ($('.instagram-carousel').length > 0) {
 if ($('.a-beauty-review').length > 0) {
 	import(/* webpackChunkName: 'a-beauty-review' */ '~mod/a-beauty-review');
 }
+
+if ($('.yotpo__product').length > 0) {
+	import(/* webpackChunkName: 'yotpo-product' */ '~mod/yotpo-product');
+}

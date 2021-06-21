@@ -6,9 +6,105 @@
 </head>
 
 <body>
+	<section class="container px-g my-5 my-lg-7 yotpo__product" data-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU" data-product="4633315409991">
+		<h2 class="h1 mb-3">Customer Reviews</h2>
+		<div class="d-flex align-items-end mb-1">
+			<h2 class="h1 mb-0 yotpo__avg-score">4.1</h2>
+			<span class="font-size-sm ml-2 mb-1">Average rating</span>
+		</div>
+		<div class="d-flex align-items-center yotpo__stars">
+			<i class="sni sni__five-stars text-secondary"></i>
+			<span class="font-size-sm ml-1 text-underline"><span class="yotpo__total-reviews">220</span> Reviews</span>
+		</div>
+
+		<form action="" class="my-3 my-lg-0">
+			<div class="row justify-content-end">
+				<div class="form-group col-6 col-lg-3">
+					<button class="btn btn-outline-primary btn-block" type="button">Write a review</button>
+				</div>
+				<div class="form-group col-6 col-lg-3">
+					<button class="btn btn-outline-primary btn-block" type="button">Ask a question</button>
+				</div>
+			</div>
+		</form>
+
+		<ul class="tab nav nav-tabs" id="tab" role="tablist">
+			<li class="nav-item text-center">
+				<a class="nav-link border-0 pb-2 px-0 text-body active" data-toggle="tab" href="#yotpo__tab-review" role="tab" aria-controls="yotpo__tab-review" aria-selected="true">Reviews</a>
+			</li>
+			<li class="nav-item text-center ml-g">
+				<a class="nav-link border-0 pb-2 px-0 text-body" data-toggle="tab" href="#yotpo__tab-question" role="tab" aria-controls="yotpo__tab-question" aria-selected="false">Questions</a>
+			</li>
+		</ul>
+		<div class="tab-content mt-3" id="tabContent">
+			<div id="yotpo__tab-review" class="tab-pane fade show active" role="tabpanel" aria-labelledby="yotpo__tab-review">
+				<!-- tab list review -->
+				<p class="font-weight-bold mb-3">Filter reviews</p>
+				<form action="" class="yotpo__filter">
+					<div class="input-group col-lg-5 px-lg-0">
+						<input type="text" class="form-control border-right-0" aria-label="Search reviews" placeholder="Search reviews">
+						<div class="input-group-append">
+							<span class="input-group-text sni sni__search"></span>
+						</div>
+					</div>
+					<div class="input-group mt-3 yotpo__tags col-lg-5 px-lg-0"></div>
+					<div class="input-group row mt-1">
+						<div class="col-6 col-lg-3">
+							<select class="rounded custom-select my-1">
+								<option selected>Rating</option>
+								<option>5 Stars</option>
+								<option>4 Stars</option>
+								<option>3 Stars</option>
+								<option>2 Stars</option>
+								<option>1 Star</option>
+							</select>
+						</div>
+						<div class="col-6 col-lg-3">
+							<select class="rounded custom-select my-1">
+								<option selected>Images & Videos</option>
+								<option>All</option>
+								<option>With Images & Videos</option>
+							</select>
+						</div>
+						<div class="col-6 col-lg-3">
+							<select class="rounded custom-select my-1">
+								<option selected>Skin type</option>
+								<option>All</option>
+								<option>Oil</option>
+								<option>Dry</option>
+							</select>
+						</div>
+						<div class="col-6 col-lg-3">
+							<select class="rounded custom-select my-1">
+								<option selected>Age</option>
+								<option>Option 1</option>
+								<option>Option 2</option>
+								<option>Option 3</option>
+							</select>
+						</div>
+					</div>
+					<hr >
+				</form>
+				<p class="font-weight-bold mb-0"><span class="yotpo__total-reviews">220</span> Reviews</p>
+				<div class="yotpo__review"></div>
+				<ul class="list-unstyled yotpo__pagination d-flex justify-content-center align-items-center">
+					<li><a href="#" class="px-2 sni sni__chevron-prev text-secondary"></a></li>
+					<li><a href="#" class="px-2 text-secondary">1</a></li>
+					<li><a href="#" class="px-2 text-secondary">2</a></li>
+					<li><a href="#" class="px-2 text-secondary">3</a></li>
+					<li><a href="#" class="px-2 sni sni__chevron-next text-secondary"></a></li>
+				</ul>
+			</div>
+			<div id="yotpo__tab-question" class="tab-pane fade" role="tabpanel" aria-labelledby="yotpo__tab-question">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
+
+	</section>
+
 	<section class="container px-0 my-5 my-lg-7">
 		<h2 class="h1 mb-0 px-g">Customer Reviews</h2>
-		<div class="yotpo yotpo-main-widget new-yotpo-snippet px-2" data-product-id="4633315409991"
+		<div class="yotpo yotpo-main-widget new-yotpo-snippet px-2 yotpo__product" data-product-id="4633315409991"
 			data-name="Australian Pink Clay Porefining Face Mask"
 			data-url="https://dev.sandandsky.com/products/porefining-face-mask"
 			data-image-url="https://cdn.shopify.com/s/files/1/0093/6096/5717/products/SS_Web_APCPFM_Ecom_Carousel_900x1121_SB_290820.jpg"
@@ -16,7 +112,6 @@
 			data-yotpo-element-id="1">
 		</div>
 	</section>
-
 	{{> js jquery=true bootstrap=true main=true yotpo=true }}
 </body>
 

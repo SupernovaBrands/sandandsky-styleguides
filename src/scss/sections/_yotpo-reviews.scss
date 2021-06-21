@@ -1,0 +1,21 @@
+.yotpo {
+
+	&__review-author:after {
+		color: $range-tsw;
+		font-size: calc-em(20, 16);
+	}
+
+	&__filter .sni__search:before {
+		font-size: calc-em(19, 16);
+	}
+
+	&__likes {
+		:before {
+			margin-right: calc-em(5, 16);
+		}
+
+		.sni {
+			cursor: pointer;
+		}
+	}
+}

@@ -31,19 +31,17 @@ $.post(`https://api.yotpo.com/v1/topic/${appKey}/topics.json`, { domain_key: pro
 $.get(apiUrl, function (data) {
 	const currPage = data.response.pagination.page;
 	const totalPage = Math.floor(data.response.pagination.total / data.response.pagination.per_page);
-	
 	const avg = Math.round(data.response.bottomline.average_score * 10) / 10;
 	$('.yotpo__avg-score').text(avg);
 	$('.yotpo__total-reviews').text(data.response.bottomline.total_review);
 	if (data.response.reviews.length > 0) {
-
 		// paginagion
 		const maxPage = totalPage > 9 ? 9 : totalPage;
 		let active;
 		let paginationHtml = '';
 		paginationHtml += '<li><a href="#" class="px-2 sni sni__chevron-prev text-secondary"></a></li>';
-		for (let i = 1;i <=maxPage; i++) {
-			active = i === currPage ? 'font-weight-bold': '';
+		for (let i = 1; i <= maxPage; i += 1) {
+			active = i === currPage ? 'font-weight-bold' : '';
 			paginationHtml += `<li><a href="#" data-page="${i}" class="px-2 text-secondary ${active}">${i}</a></li>`;
 		}
 		paginationHtml += '<li><a href="#" class="px-2 sni sni__chevron-next text-secondary"></a></li>';

@@ -10,11 +10,13 @@ const toggleReview = (elem) => {
 	}
 };
 
-$('.review-card__more').on('click', function () {
+$('.review-card__more').on('click', function (e) {
+	e.preventDefault();
 	$(this).addClass('d-none');
 	toggleReview($(this));
 });
 
-$('.review-card__less').on('click', function () {
+$('.review-card__less').on('click', function (e) {
+	e.preventDefault();
 	toggleReview($(this));
 });

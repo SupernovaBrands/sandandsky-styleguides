@@ -29,10 +29,26 @@ $.post(`https://api.yotpo.com/v1/topic/${appKey}/topics.json`, { domain_key: pro
 });
 
 $.get(apiUrl, function (data) {
+	const currPage = data.response.pagination.page;
+	const totalPage = Math.floor(data.response.pagination.total / data.response.pagination.per_page);
+	
 	const avg = Math.round(data.response.bottomline.average_score * 10) / 10;
 	$('.yotpo__avg-score').text(avg);
 	$('.yotpo__total-reviews').text(data.response.bottomline.total_review);
 	if (data.response.reviews.length > 0) {
+
+		// paginagion
+		const maxPage = totalPage > 9 ? 9 : totalPage;
+		let active;
+		let paginationHtml = '';
+		paginationHtml += '<li><a href="#" class="px-2 sni sni__chevron-prev text-secondary"></a></li>';
+		for (let i = 1;i <=maxPage; i++) {
+			active = i === currPage ? 'font-weight-bold': '';
+			paginationHtml += `<li><a href="#" data-page="${i}" class="px-2 text-secondary ${active}">${i}</a></li>`;
+		}
+		paginationHtml += '<li><a href="#" class="px-2 sni sni__chevron-next text-secondary"></a></li>';
+		$('.yotpo__pagination').html(paginationHtml);
+
 		$.each(data.response.reviews, function (k, review) {
 			const isLastElement = (k === data.response.reviews.length - 1) ? '' : 'border-bottom';
 			const verifiedBuyer = review.verified_buyer ? 'sni__verified' : '';
@@ -51,7 +67,7 @@ $.get(apiUrl, function (data) {
 			if (review.images_data.length > 0) {
 				mediaImages += '<div class="yotpo__images">';
 				$.each(review.images_data, function (k2, image) {
-					mediaImages += `<img src="${image.thumb_url}" class="mr-g" alt="Image Review of ${review.user.display_name}">`;
+					mediaImages += `<a href="#" class="d-inline-block mr-g"><img src="${image.thumb_url}" alt="Image Review of ${review.user.display_name}"></a>`;
 				});
 				mediaImages += '</div>';
 			}
@@ -61,7 +77,7 @@ $.get(apiUrl, function (data) {
 				${verifiedBuyerLabel}
 				<p class="font-size-sm mb-3">${formatDate(review.created_at)}</p>
 				${customFields}
-				<div class="sni sni__five-stars  text-secondary mt-3"></div>
+				<div class="sni sni__five-stars text-secondary mt-3"></div>
 				<h4 class="mb-3 mt-2">${review.title}</h4>
 				<p class="mb-3">${review.content}</p>
 				${mediaImages}

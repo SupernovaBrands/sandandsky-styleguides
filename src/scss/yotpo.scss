@@ -880,6 +880,7 @@
 }
 .yotpo .yotpo-logo-link-new {
   padding: 0;
+	display: none;
 }
 .yotpo .yotpo-logo-link-new > * {
   color: #ff7b90;
@@ -2491,6 +2492,7 @@
 .yotpo .yotpo-onsite-upload .rest-content-collapsed {
   display: none;
   color: inherit;
+	font-size: 16px;
 }
 .yotpo .yotpo-review .yotpo-comments-box,
 .yotpo .yotpo-review .yotpo-show-more,

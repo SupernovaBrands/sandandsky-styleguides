@@ -21,7 +21,7 @@ const formatDate = (serverDate) => {
 $.post(`https://api.yotpo.com/v1/topic/${appKey}/topics.json`, { domain_key: productId }, function (data) {
 	for (let i = 0; i <= 5; i += 1) {
 		const tagname = data.response.top_topics.top_mention_topics[i].name;
-		const tag = `<a href="#" class="badge badge-gray font-size-sm mr-1 mb-2" data-name="${tagname}">${tagname}</a>`;
+		const tag = `<a href="#" class="badge badge-gray font-size-sm mr-1 mb-2 text-capitalize" data-name="${tagname}">${tagname}</a>`;
 		$('.yotpo__tags').append(tag);
 	}
 	// append ellipsis

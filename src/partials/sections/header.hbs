@@ -1,0 +1,348 @@
+<header class="main-header">
+	{{> components/announcement-bar}}
+	<nav class="bg-white navbar navbar-expand-lg">
+		<div class="container">
+			<button class="navbar-toggler" type="button">
+				<span class="d-block"></span>
+			</button>
+			<ul class="navbar-nav align-items-center d-none d-lg-flex">
+				<li class="nav-item nav-item--mega-menu">
+					<a href="#" class="nav-link font-weight-bold align-items-center mr-1 sni-after sni__chevron-down m-0">Shop</a>
+					<div class="mega-menu position-absolute bg-white w-100">
+						<!-- added padding for temporary -->
+						<div class="container" style="padding: 100px 0">
+							MEGA MENU SHOP CONTENT
+						</div>
+					</div>
+				</li>
+				<li class="nav-item nav-item--mega-menu">
+					<a class="nav-link font-weight-bold align-items-center mr-1 sni-after sni__chevron-down m-0" href="#">About</a>
+					<div class="mega-menu position-absolute bg-white w-100">
+						<!-- added padding for temporary -->
+						<div class="container" style="padding: 100px 0">
+							MEGA MENU ABOUT CONTENT
+						</div>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link h4 m-0 font-weight-bold" href="#">Blog</a>
+				</li>
+			</ul>
+			<a href="#" class="navbar-brand mx-auto">
+				{{> components/svg-logo}}
+			</a>
+			<ul class="navbar-nav d-none d-lg-flex justify-content-end">
+				<li class="nav-item">
+					<a class="nav-link h4 font-weight-bold m-0" href="#">Track My Order</a>
+				</li>
+				<li class="nav-item">
+					<div class="dropdown">
+						<a class="dropdown-toggle font-weight-bold m-0 nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							US (USD)
+						</a>
+						<div class="dropdown-menu p-0 text-right" aria-labelledby="dropdownMenuLink">
+							<a class="dropdown-item position-relative pt-2 pb-2 pr-5 active" href="#">United Kingdom (GBP)</a>
+							<a class="dropdown-item position-relative pt-2 pb-2 pr-5" href="#">USA (USD)</a>
+							<a class="dropdown-item position-relative pt-2 pb-2 pr-5" href="#">Canada (CAD)</a>
+							<a class="dropdown-item position-relative pt-2 pb-2 pr-5" href="#">Australia (AUD)</a>
+							<a class="dropdown-item position-relative pt-2 pb-2 pr-5" href="#">Europe (EUR)</a>
+							<a class="dropdown-item position-relative pt-2 pb-2 pr-5" href="#">Rest of the World (USD)</a>
+						</div>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link h4 m-0 font-weight-normal sni sni__user position-relative"></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link h4 m-0 font-weight-normal sni sni__cart position-relative" data-toggle="modal" data-target="#cart-drawer" role="button"><span class="cart-drawer__count text-secondary">0</span></a>
+				</li>
+			</ul>
+			<a class="nav-link justify-content-end sni sni__cart px-0 d-lg-none position-relative" data-toggle="modal" data-target="#cart-drawer" role="button">
+				<span class="cart-drawer__count text-secondary">0</span>
+			</a>
+			<div class="col-lg-4 tooltip bg-primary text-white text-center py-2">
+        		<i id="tooltip__close" class="sni sni__close-circle"></i>
+				Item added to cart
+				<a href="#" class="d-block text-white text-underline">Proceed to checkout</a>
+			</div>
+		</div>
+	</nav>
+
+	<nav class="mobile-nav position-fixed d-lg-none sni sni__times show">
+		<ul id="mobileMenu" class="mobile-nav__menu h-100 col-12 bg-white list-unstyled p-0">
+			<li class="d-flex justify-content-center w-100">
+				<a href="#" class="navbar-brand mx-auto sni sni__ss text-secondary"></a>
+			</li>
+			<li class="px-3 py-2 sni sni__chevron-next align-items-center w-100">
+				<input type="radio" name="menu" class="d-none" id="products">
+				<label class="position-relative m-0 w-100" for="products">Products</label>
+				<ul class="mobile-nav__menu-child position-absolute bg-white col-12 list-unstyled p-0 h-100">
+					<input type="radio" name="menu" id="back-to-menu-products" class="d-none">
+					<label for="back-to-menu-products" class="mobile-nav__back p-3 m-0 position-absolute d-flex align-items-center"><i class="sni sni__chevron-prev mr-1 bg-white"></i>Back</label>
+					<li class="px-3 py-2"><h4>Products</h4></li>
+					<li class="px-4 py-2 sni sni__chevron-next align-items-center w-100">
+						<input type="radio" name="child" class="d-none" id="products-face-masks">
+						<label class="position-relative m-0 w-100" for="products-face-masks">Face Masks</label>
+						<ul class="mobile-nav__menu-grandchild position-absolute bg-white col-12 list-unstyled p-0 h-100">
+							<input type="radio" name="child" id="back-to-child-face-masks" class="d-none">
+							<label for="back-to-child-face-masks" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white"><i class="sni sni__chevron-prev mr-1 bg-white"></i>Back</label>
+							<li class="px-3 py-2">
+								<h4>Face Masks<h4>
+							</li>
+							<li class="px-4 py-2 align-items-center w-100">
+								<input type="radio" name="child" class="d-none">
+								<label class="position-relative m-0 w-100">Australian Pink Clay Porefining Face Mask</label>
+							</li>
+							<li class="px-4 py-2 align-items-center w-100">
+								<input type="radio" name="child" class="d-none">
+								<label class="position-relative m-0 w-100">Super Bounce Hydrating Mask</label>
+							</li>
+						</ul>
+					</li>
+					<li class="px-4 py-2 sni sni__chevron-next align-items-center w-100">
+						<input type="radio" name="child" class="d-none" id="products-cleanser">
+						<label class="position-relative m-0 w-100" for="products-cleanser">Cleanser & Exfoliators</label>
+						<ul class="mobile-nav__menu-grandchild position-absolute bg-white col-12 list-unstyled p-0 h-100">
+							<input type="radio" name="child" id="back-to-child-cleanser" class="d-none">
+							<label for="back-to-child-cleanser" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white"><i class="sni sni__chevron-prev mr-1 bg-white"></i>Back</label>
+							<li class="px-3 py-2">
+								<h4>Cleanser & Exfoliators<h4>
+							</li>
+							<li class="px-4 py-2 align-items-center w-100">
+								<input type="radio" name="child" class="d-none">
+								<label class="position-relative m-0 w-100">Australian Pink Clay Porefining Face Mask</label>
+							</li>
+							<li class="px-4 py-2 align-items-center w-100">
+								<input type="radio" name="child" class="d-none">
+								<label class="position-relative m-0 w-100">Super Bounce Hydrating Mask</label>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li class="px-3 py-2 sni sni__chevron-next align-items-center">
+				<input type="radio" name="menu" class="d-none" id="skin-benefits">
+				<label class="position-relative m-0 w-100" for="skin-benefits">Skin Benefits</label>
+				<ul class="mobile-nav__menu-child position-absolute bg-white col-12 list-unstyled p-0 h-100">
+					<input type="radio" name="menu" id="back-to-menu-skin-benefits" class="d-none">
+					<label for="back-to-menu-skin-benefits" class="mobile-nav__back p-3 m-0 position-absolute d-flex align-items-center"><i class="sni sni__chevron-prev mr-1 bg-white"></i>Back</label>
+					<li class="px-3 py-2"><h4>Skin Benefits</h4></li>
+					<li class="px-4 py-2 sni sni__chevron-next align-items-center w-100">
+						<input type="radio" name="child" class="d-none" id="skin-benefits-detoxify">
+						<i class="sni sni__range-apc mr-2"></i>
+						<label class="position-relative m-0 w-100" for="skin-benefits-detoxify">
+							<h4 class="d-block font-weight-bold m-0">Detoxify</h4>
+							<h5 class="font-weight-normal mb-0">Australia Pink Clay</h5>
+						</label>
+						<ul class="mobile-nav__menu-grandchild position-absolute bg-white col-12 list-unstyled p-0 h-100">
+							<input type="radio" name="child" id="back-to-child-face-masks" class="d-none">
+							<label for="back-to-child-face-masks" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white"><i class="sni sni__chevron-prev mr-1 bg-white"></i>Back</label>
+							<li class="px-3 py-2">
+								<h4>Skin Benefits > Detoxify - Australian Pink Clay<h4>
+							</li>
+							<li class="px-4 py-2 align-items-center w-100">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/58x58/EFADBA">
+										<figcaption class="ml-2">
+											<small>Australian Pink Clay</small>
+											<h4 class="m-0 font-weight-bold text-body">Australian Pink Clay Porefining Face Mask</h4>
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+							<li class="px-4 py-2 align-items-center w-100">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/58x58/EFADBA">
+										<figcaption class="ml-2">
+											<small>Australian Pink Clay</small>
+											<h4 class="m-0 font-weight-bold text-body">Super Bounce Hydrating Mask</h4>
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+							<li class="px-4 py-2 align-items-center w-100">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/58x58/EFADBA">
+										<figcaption class="ml-2">
+											<small>Australian Pink Clay</small>
+											<h4 class="m-0 font-weight-bold text-body">Super Bounce Hydrating Mask</h4>
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+							<li class="px-4 py-2 align-items-center w-100 border-0">
+								<a href=""><u>See all</u></a>
+							</li>
+						</ul>
+					</li>
+					<li class="px-4 py-2 sni sni__chevron-next align-items-center w-100">
+						<input type="radio" name="child" class="d-none" id="skin-benefits-brighten">
+						<i class="sni sni__range-aea mr-2"></i>
+						<label class="position-relative m-0 w-100" for="skin-benefits-brighten">
+							<h4 class="d-block font-weight-bold m-0">Brighten</h4>
+							<h5 class="font-weight-normal mb-0">Australia Emu Apple</h5>
+						</label>
+						<ul class="mobile-nav__menu-grandchild position-absolute bg-white col-12 list-unstyled p-0 h-100">
+							<input type="radio" name="child" id="back-to-child-face-masks" class="d-none">
+							<label for="back-to-child-face-masks" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white"><i class="sni sni__chevron-prev mr-1 bg-white"></i>Back</label>
+							<li class="px-3 py-2">
+								<h4>Skin Benefits > Brighten - Australian Emu Apple<h4>
+							</li>
+							<li class="px-4 py-2 align-items-center w-100">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/58x58/EFADBA">
+										<figcaption class="ml-2">
+											<small>Australia Emu Apple</small>
+											<h4 class="m-0 font-weight-bold text-body">Australia Emu Apple Porefining Face Mask</h4>
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+							<li class="px-4 py-2 align-items-center w-100">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/58x58/EFADBA">
+										<figcaption class="ml-2">
+											<small>Australia Emu Apple</small>
+											<h4 class="m-0 font-weight-bold text-body">Super Bounce Hydrating Mask</h4>
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+							<li class="px-4 py-2 align-items-center w-100">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/58x58/EFADBA">
+										<figcaption class="ml-2">
+											<small>Australia Emu Apple</small>
+											<h4 class="m-0 font-weight-bold text-body">Super Bounce Hydrating Mask</h4>
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+							<li class="px-4 py-2 align-items-center w-100 border-0">
+								<a href=""><u>See all</u></a>
+							</li>
+						</ul>
+					</li>
+					<li class="px-4 py-2 sni sni__chevron-next align-items-center w-100">
+						<input type="radio" name="child" class="d-none" id="skin-benefits-hydrate">
+						<i class="sni sni__range-tsw mr-2"></i>
+						<label class="position-relative m-0 w-100" for="skin-benefits-hydrate">
+							<h4 class="d-block font-weight-bold m-0">Hydrate</h4>
+							<h5 class="font-weight-normal mb-0">Tasmanian Spring Water</h5>
+						</label>
+						<ul class="mobile-nav__menu-grandchild position-absolute bg-white col-12 list-unstyled p-0 h-100">
+							<input type="radio" name="child" id="back-to-child-face-masks" class="d-none">
+							<label for="back-to-child-face-masks" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white"><i class="sni sni__chevron-prev mr-1 bg-white"></i>Back</label>
+							<li class="px-3 py-2">
+								<h4>Skin Benefits > Hydrate - Tasmanian Spring Water<h4>
+							</li>
+							<li class="px-4 py-2 align-items-center w-100">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/58x58/EFADBA">
+										<figcaption class="ml-2">
+											<small>Tasmanian Spring Water</small>
+											<h4 class="m-0 font-weight-bold text-body">Australian Pink Clay Porefining Face Mask</h4>
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+							<li class="px-4 py-2 align-items-center w-100">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/58x58/EFADBA">
+										<figcaption class="ml-2">
+											<small>Tasmanian Spring Water</small>
+											<h4 class="m-0 font-weight-bold text-body">Super Bounce Hydrating Mask</h4>
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+							<li class="px-4 py-2 align-items-center w-100">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/58x58/EFADBA">
+										<figcaption class="ml-2">
+											<small>Tasmanian Spring Water</small>
+											<h4 class="m-0 font-weight-bold text-body">Super Bounce Hydrating Mask</h4>
+										</figcaption>
+									</figure>
+								</a>
+							</li>
+							<li class="px-4 py-2 align-items-center w-100 border-0">
+								<a href=""><u>See all</u></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li class="px-3 py-2 align-items-center">
+				<a class="position-relative m-0">Gift & Kits</a>
+			</li>
+			<li class="px-3 py-2 align-items-center">
+				<a class="position-relative m-0">Travel Size</a>
+			</li>
+			<li class="px-3 py-2 align-items-center">
+				<a class="position-relative m-0">Accesories</a>
+			</li>
+			<li class="px-3 py-2 align-items-center">
+				<a class="position-relative m-0">Gift Cards</a>
+			</li>
+			<li class="px-3 py-3 align-items-center">
+				<a class="position-relative m-0 btn btn-lg btn-primary w-100 rounded-0">Shop All</a>
+			</li>
+			<li class="px-3 py-2 align-items-center sni sni__chevron-next align-items-center w-100">
+				<input type="radio" name="menu" class="d-none" id="countries">
+				<label class="position-relative m-0 w-100 sni sni__australia" for="countries">US (USD)</label>
+				<ul class="mobile-nav__menu-child position-absolute bg-white col-12 list-unstyled p-0 h-100">
+					<input type="radio" name="menu" id="back-to-menu" class="d-none">
+					<label for="back-to-menu" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white"><i class="sni sni__chevron-prev mr-1 bg-white"></i>Back</label>
+					<li class="px-3 py-2"><h4>Language / Currency</h4></li>
+					<li class="px-4 py-2 sni sni__chevron-next align-items-center w-100">
+						<input type="radio" name="seq-nav-1" class="d-none">
+						<label class="position-relative m-0 w-100">USA (USD)</label>
+					</li>
+					<li class="px-4 py-2 sni sni__chevron-next align-items-center w-100">
+						<input type="radio" name="seq-nav-1" class="d-none">
+						<label class="position-relative m-0 w-100">Australia (AUD)</label>
+					</li>
+				</ul>
+			</li>
+			<li class="mobile-nav__other-menu w-100">
+				<ul class="row list-unstyled px-3 my-2">
+					<li class="col-6 px-3 py-2 border-0">
+						<a href="" class="position-relative m-0 text-secondary">Login</a>
+					</li>
+					<li class="col-6 px-3 py-2 border-0">
+						<a href="" class="position-relative m-0 text-secondary">A Beauty</a>
+					</li>
+					<li class="col-6 px-3 py-2 border-0">
+						<a href="" class="position-relative m-0 text-secondary">Sustainability</a>
+					</li>
+					<li class="col-6 px-3 py-2 border-0">
+						<a href="" class="position-relative m-0 text-secondary">Our Mission</a>
+					</li>
+					<li class="col-6 px-3 py-2 border-0">
+						<a href="" class="position-relative m-0 text-secondary">Rewards <span class="bg-secondary px-1 rounded text-white">New</span></a>
+					</li>
+					<li class="col-6 px-3 py-2 border-0">
+						<a href="" class="position-relative m-0 text-secondary">FAQ</a>
+					</li>
+					<li class="col-6 px-3 py-2 border-0">
+						<a href="" class="position-relative m-0 text-secondary">Track My Order</a>
+					</li>
+					<li class="col-6 px-3 py-2 border-0">
+						<a href="" class="position-relative m-0 text-secondary">Blog</a>
+					</li>
+				</ul>
+			</li>
+			
+		</ul>
+	</nav>
+</header>

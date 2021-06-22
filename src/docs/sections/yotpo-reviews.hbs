@@ -35,6 +35,9 @@
 			<li class="nav-item text-center ml-g">
 				<a class="nav-link border-0 pb-2 px-0 text-body" data-toggle="tab" href="#yotpo__tab-question" role="tab" aria-controls="yotpo__tab-question" aria-selected="false">Questions</a>
 			</li>
+			<li class="nav-item text-center ml-auto d-none">
+				<a class="nav-link border-0 pb-2 px-0 text-body font-weight-bold yotpo__clear-all" aria-selected="false">Clear All</a>
+			</li>
 		</ul>
 		<div class="tab-content mt-3" id="tabContent">
 			<div id="yotpo__tab-review" class="tab-pane fade show active" role="tabpanel" aria-labelledby="yotpo__tab-review">
@@ -62,33 +65,51 @@
 						<div class="col-6 col-lg-3">
 							<select class="rounded custom-select my-1">
 								<option selected>Images & Videos</option>
-								<option>All</option>
 								<option>With Images & Videos</option>
 							</select>
 						</div>
 						<div class="col-6 col-lg-3">
 							<select class="rounded custom-select my-1">
 								<option selected>Skin type</option>
-								<option>All</option>
-								<option>Oil</option>
 								<option>Dry</option>
+								<option>Oily</option>
+								<option>Combination</option>
+								<option value="">Sensitive</option>
+								<option value="">Normal</option>
 							</select>
 						</div>
 						<div class="col-6 col-lg-3">
 							<select class="rounded custom-select my-1">
 								<option selected>Age</option>
-								<option>Option 1</option>
-								<option>Option 2</option>
-								<option>Option 3</option>
+								<option>&lt; 18 years old</option>
+								<option>18 - 24 years old</option>
+								<option>25 - 35 years old</option>
+								<option value="">35 - 44 years old</option>
+								<option value="">&gt; 45 years old</option>
+							</select>
+						</div>
+						<div class="col-6 col-lg-3">
+							<select class="rounded custom-select my-1">
+								<option selected>Skin Concerns</option>
+								<option>Redness</option>
+								<option>Fine lines & wrinkles</option>
+								<option>Oiliness & large pores</option>
+								<option value="">Acne & blemishes</option>
+								<option value="">Dryness & dehydration</option>
+								<option value="">Hyper-pigmentation</option>
+								<option value="">Ageing</option>
+								<option value="">Pores</option>
 							</select>
 						</div>
 					</div>
 					<hr >
 				</form>
 				<p class="font-weight-bold mb-0"><span class="yotpo__total-reviews">220</span> Reviews</p>
-				<div class="yotpo__review"></div>
-				<ul class="list-unstyled yotpo__pagination d-flex justify-content-center align-items-center">
-				</ul>
+				<div class="yotpo__review">
+					<button class="btn btn-primary my-4">be the first to write a review</button>
+				</div>
+				<p class="mb-2 mt-3 text-center text-lg-right mx-lg-n2"><strong class="yotpo__offset">1 - 10</strong> Reviews displayed</p>
+				<ul class="list-unstyled yotpo__pagination d-flex justify-content-center justify-content-lg-end align-items-center mx-lg-ng"></ul>
 			</div>
 			<div id="yotpo__tab-question" class="tab-pane fade" role="tabpanel" aria-labelledby="yotpo__tab-question">
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

@@ -1,11 +1,5 @@
 .review-carousel {
 
-	.carousel-item {
-		@include media-breakpoint-up(lg) {
-			@include make-col(1, 5);
-		}
-	}
-
 	&__scroll {
 		position: absolute;
 		left: 0;
@@ -17,9 +11,24 @@
 		}
 	}
 
-	.sni__apc-leaf {
+	&__decoration {
 		font-size: calc-em(60, 16);
 		right: -(calc-em(5, 16));
 		left: auto;
+
+		@include media-breakpoint-up(lg) {
+			font-size: calc-em(94, 16);
+
+			&-top {
+				right: 0;
+				transform: scaleY(-1);
+				z-index: 1; //to be above carousel
+			}
+
+			&-bottom {
+				transform: scaleY(-1) rotate(180deg);
+			}
+		}
 	}
+
 }

@@ -1,5 +1,11 @@
 .review-carousel {
 
+	.carousel-item {
+		@include media-breakpoint-up(lg) {
+			@include make-col(1, 5);
+		}
+	}
+
 	&__scroll {
 		position: absolute;
 		left: 0;

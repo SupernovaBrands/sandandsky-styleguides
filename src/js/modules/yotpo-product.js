@@ -93,15 +93,15 @@ $.post(`https://api.yotpo.com/v1/topic/${appKey}/topics.json`, { domain_key: pro
 	for (let i = 0; i <= data.response.top_topics.top_mention_topics.length - 1; i += 1) {
 		const hideTag = (i > 5) ? 'd-none' : '';
 		const tagname = data.response.top_topics.top_mention_topics[i].name;
-		const tag = `<a href="#" class="badge badge-gray font-size-sm mr-1 mb-2 text-capitalize ${hideTag}" data-name="${tagname}">${tagname}</a>`;
+		const tag = `<a href="#" class="badge badge-gray font-size-sm mr-2 mb-2 text-capitalize ${hideTag}" data-name="${tagname}">${tagname}</a>`;
 		$('.yotpo__tags').append(tag);
 	}
 	// append ellipsis
-	$('.yotpo__tags').append('<a href="#" class="badge badge-gray font-size-sm mr-1 mb-2 yotpo__tags-expand" data-name="">...</a>');
+	$('.yotpo__tags').append('<a href="#" class="badge badge-gray font-size-sm mr-2 mb-2 yotpo__tags-expand" data-name="">...</a>');
 });
 
 // Initial build
-$.get(`https://api.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.json`, { page: 9 }, function (data) {
+$.get(`https://api.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.json`, { page: 1 }, function (data) {
 	const avg = Math.round(data.response.bottomline.average_score * 10) / 10;
 	$('.yotpo__avg-score').text(avg);
 	$('.yotpo__total-reviews').text(data.response.bottomline.total_review);
@@ -126,4 +126,39 @@ $('.yotpo__tags').on('click', '.yotpo__tags-expand', function (e) {
 	e.preventDefault();
 	$(this).closest('.yotpo__tags').find('.badge-gray.d-none').removeClass('d-none');
 	$(this).addClass('d-none');
+});
+
+// QA tabs, call QA api
+$('.yotpo__tab-question').on('click', function () {
+	$.get(`https://api.yotpo.com/products/${appKey}/${productId}/questions.json`, function (data) {
+		if (data.response.questions.length > 0) {
+			$('.yotpo__tab-qna').html('');
+			$.each(data.response.questions, function (k, question) {
+				const isLastElement = k === data.response.questions.length - 1 ? '' : 'border-bottom';
+				let answerTemplate = '';
+				if (question.sorted_public_answers.length > 0) {
+					$.each(question.sorted_public_answers, function (l, answers) {
+						answerTemplate += `<p class="font-size-sm">Answer (${question.sorted_public_answers.length})</p><div class="yotpo__review-answer ml-4 mt-3 border-left pl-3">
+							<h4 class="mb-0">Store Owner</h4>
+							<p class="font-size-sm">${formatDate(answers.created_at)}</p>
+							<p class="mt-2">A: ${answers.content}</p>
+							<div class="d-flex justify-content-end align-items-center mt-3 yotpo__likes">
+								<p class="font-size-sm mr-1 mb-0">Was This Answer Helpful?</p>
+								<span class="font-size-sm sni sni__thumbs-up align-items-center mx-1">${answers.votes_up}</span>
+								<span class="font-size-sm sni sni__thumbs-down align-items-center ml-1">${answers.votes_down}</span>
+							</div>
+						</div>`;
+					});
+				}
+				const qnaTemplate = `<div class="yotpo__review-qna pt-2 pb-4 ${isLastElement}">
+					<h4 class="mb-0">${question.asker.display_name}</h4>
+					<p class="font-size-sm mb-0">Verified Reviewer</p>
+					<p class="font-size-sm ml-auto">${formatDate(question.created_at)}</p>
+					<p class="font-weight-bold">Q: ${question.content}</p>
+					${answerTemplate}
+				</div>`;
+				$('.yotpo__tab-qna').append(qnaTemplate);
+			});
+		}
+	});
 });

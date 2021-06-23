@@ -9,7 +9,7 @@
 	<section class="container px-g my-5 my-lg-7 yotpo__product" data-key="dOcI3ASUcbvj6UfBgUgc4vNa8mUvGSZ5PRhyddZw" data-product="2670706131029">
 		<h2 class="h1 mb-3">Customer Reviews - API</h2>
 		<div class="d-flex align-items-end mb-1">
-			<h2 class="h1 mb-0 yotpo__avg-score">4.1</h2>
+			<h2 class="h1 mb-0 yotpo__avg-score">5.0</h2>
 			<span class="font-size-sm ml-2 mb-1">Average rating</span>
 		</div>
 		<div class="d-flex align-items-center yotpo__stars">
@@ -17,14 +17,155 @@
 			<span class="font-size-sm ml-1 text-underline"><span class="yotpo__total-reviews">220</span> Reviews</span>
 		</div>
 
-		<form action="" class="my-3 my-lg-0">
+		<form action="" class="my-3 my-lg-0" id="yotpoFormCollapse">
 			<div class="row justify-content-end">
 				<div class="form-group col-6 col-lg-3">
-					<button class="btn btn-outline-primary btn-block" type="button">Write a review</button>
+					<button class="btn btn-outline-primary btn-block" type="button" data-toggle="collapse" data-target="#collapseReviewForm" role="button" aria-expanded="false" aria-controls="collapseReviewForm">Write a review</button>
 				</div>
 				<div class="form-group col-6 col-lg-3">
-					<button class="btn btn-outline-primary btn-block" type="button">Ask a question</button>
+					<button class="btn btn-outline-primary btn-block" type="button" data-toggle="collapse" data-target="#collapseQuestionForm" role="button" aria-expanded="false" aria-controls="collapseQuestionForm">Ask a question</button>
 				</div>
+			</div>
+			<div id="collapseReviewForm" class="collapse mt-3 px-g" data-parent="#yotpoFormCollapse">
+				<div class="row flex-column form-group">
+					<h4 class="mb-3">Write a Review</h4>
+				  <label class="font-size-sm"><span class="text-secondary">*</span> Indicates a required field</label>
+				</div>
+			  <div class="row form-group">
+			    <label class="font-size-sm" for="yotpoFormScore"><span class="text-secondary">*</span> Score:</label>
+			    <select class="custom-select form-control" id="yotpoFormScore">
+			      <option>1 Star</option>
+			      <option>2 Stars</option>
+			      <option>3 Stars</option>
+			      <option>4 Stars</option>
+			      <option>5 Stars</option>
+			    </select>
+			  </div>
+				<div class="row form-group">
+			    <label class="font-size-sm" for="yotpoFormTitle"><span class="text-secondary">*</span>Title:</label>
+			    <input type="text" class="form-control" id="yotpoFormTitle">
+			  </div>
+			  <div class="row form-group">
+			    <label class="font-size-sm" for="yotpoFormReview"><span class="text-secondary">*</span>Review:</label>
+			    <textarea class="form-control" id="yotpoFormReview" rows="5"></textarea>
+			  </div>
+				<div class="row flex-column form-group">
+			    <label class="mt-3 font-size-sm" for="yotpoFormReview">What is your skin type?</label>
+			    <div class="form-check">
+					  <input class="form-check-input" type="radio" name="--24600" id="Dry" value="Dry">
+					  <label class="form-check-label font-size-sm" for="Dry">Dry</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="--24600" id="Oily" value="Oily">
+					  <label class="form-check-label font-size-sm" for="Oily">Oily</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="--24600" id="Combination" value="Combination">
+					  <label class="form-check-label font-size-sm" for="Combination">Combination</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="--24600" id="Sensitive" value="Sensitive">
+					  <label class="form-check-label font-size-sm" for="Sensitive">Sensitive</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="--24600" id="Normal" value="Normal">
+					  <label class="form-check-label font-size-sm" for="Normal">Normal</label>
+					</div>
+			  </div>
+				<div class="row flex-column form-group">
+					<label class="mt-3 font-size-sm" for="yotpoFormReview">What are your skin concerns?</label>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="" id="Redness">
+					  <label class="form-check-label font-size-sm" for="Redness">Redness</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="" id="Fine lines & wrinkles">
+					  <label class="form-check-label font-size-sm" for="Fine lines & wrinkles">Fine lines & wrinkles</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="" id="Oiliness & large pores">
+					  <label class="form-check-label font-size-sm" for="Oiliness & large pores">Oiliness & large pores</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="" id="Acne & blemishes">
+					  <label class="form-check-label font-size-sm" for="Acne & blemishes">Acne & blemishes</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="" id="Dryness & dehydration">
+					  <label class="form-check-label font-size-sm" for="Dryness & dehydration">Dryness & dehydration</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="" id="Hyper-pigmentation">
+					  <label class="form-check-label font-size-sm" for="Hyper-pigmentation">Hyper-pigmentation</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="" id="Ageing">
+					  <label class="form-check-label font-size-sm" for="Ageing">Ageing</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="" id="Pores">
+					  <label class="form-check-label font-size-sm" for="Pores">Pores</label>
+					</div>
+				</div>
+				<div class="row flex-column form-group">
+					<label class="mt-3 font-size-sm" for="yotpoFormReview">How old are you?</label>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" value="" name="--24602" id="Age1">
+					  <label class="form-check-label font-size-sm" for="Age1">&lt; 18 years old</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" value="" name="--24602" id="Age2">
+					  <label class="form-check-label font-size-sm" for="Age2">18 - 24 years old</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" value="" name="--24602" id="Age3">
+					  <label class="form-check-label font-size-sm" for="Age3">25 - 34 years old</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" value="" name="--24602" id="Age4">
+					  <label class="form-check-label font-size-sm" for="Age4">35 - 44 years old</label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" value="" name="--24602" id="Age5">
+					  <label class="form-check-label font-size-sm" for="Age5">&gt; 45 years old</label>
+					</div>
+				</div>
+				<div class="row mt-3 justify-content-lg-end">
+			    <div class="col-lg-3 px-0 px-lg-g">
+						<label for="userName" class="font-size-sm"><span class="text-secondary">*</span> Use your name:</label>
+			      <input type="text" class="form-control" id="userName" placeholder="Your name">
+			    </div>
+			    <div class="col-lg-3 px-0 px-lg-g">
+						<label for="yotpoEmail" class="font-size-sm"><span class="text-secondary">*</span> Email:</label>
+			      <input type="text" id="yotpoEmail" class="form-control" placeholder="Email">
+			    </div>
+			  </div>
+				<div class="mt-3 px-lg-g row form-group justify-content-end">
+			    <button type="button" class="btn btn-secondary">Submit</button>
+			  </div>
+			</div>
+			<div id="collapseQuestionForm" class="collapse mt-3 px-g" data-parent="#yotpoFormCollapse">
+				<div class="row flex-column form-group">
+					<h4 class="mb-3">Ask a question</h4>
+				  <label class="font-size-sm"><span class="text-secondary">*</span> Indicates a required field</label>
+				</div>
+			  <div class="row form-group">
+			    <label class="font-size-sm" for="yotpoFormQuestion"><span class="text-secondary">*</span> Question:</label>
+			    <textarea class="form-control" id="yotpoFormQuestion" rows="5"></textarea>
+			  </div>
+				<div class="row mt-3 justify-content-lg-end">
+			    <div class="col-lg-3 px-0 px-lg-g">
+						<label for="userName" class="font-size-sm"><span class="text-secondary">*</span> Use your name:</label>
+			      <input type="text" class="form-control" id="userName" placeholder="Your name">
+			    </div>
+			    <div class="col-lg-3 px-0 px-lg-g">
+						<label for="yotpoEmail" class="font-size-sm"><span class="text-secondary">*</span> Email:</label>
+			      <input type="text" id="yotpoEmail" class="form-control" placeholder="Email">
+			    </div>
+			  </div>
+				<div class="mt-3 px-lg-g row form-group justify-content-end">
+			    <button type="button" class="btn btn-secondary">Submit</button>
+			  </div>
 			</div>
 		</form>
 
@@ -33,7 +174,7 @@
 				<a class="nav-link border-0 pb-2 px-0 text-body active" data-toggle="tab" href="#yotpo__tab-review" role="tab" aria-controls="yotpo__tab-review" aria-selected="true">Reviews</a>
 			</li>
 			<li class="nav-item text-center ml-g">
-				<a class="nav-link border-0 pb-2 px-0 text-body" data-toggle="tab" href="#yotpo__tab-question" role="tab" aria-controls="yotpo__tab-question" aria-selected="false">Questions</a>
+				<a class="nav-link border-0 pb-2 px-0 text-body yotpo__tab-question" data-toggle="tab" href="#yotpo__tab-question" role="tab" aria-controls="yotpo__tab-question" aria-selected="false">Questions</a>
 			</li>
 			<li class="nav-item text-center ml-auto d-none">
 				<a class="nav-link border-0 pb-2 px-0 text-body font-weight-bold yotpo__clear-all" aria-selected="false">Clear All</a>
@@ -44,16 +185,16 @@
 				<!-- tab list review -->
 				<p class="font-weight-bold mb-3">Filter reviews</p>
 				<form action="" class="yotpo__filter">
-					<div class="input-group col-lg-5 px-lg-0">
+					<div class="input-group col-lg-6 px-lg-0">
 						<input type="text" class="form-control border-right-0" aria-label="Search reviews" placeholder="Search reviews">
 						<div class="input-group-append">
 							<span class="input-group-text sni sni__search"></span>
 						</div>
 					</div>
-					<div class="input-group mt-3 yotpo__tags col-lg-5 px-lg-0"></div>
+					<div class="input-group mt-3 yotpo__tags col-lg-6 px-lg-0"></div>
 					<div class="input-group row mt-1">
 						<div class="col-6 col-lg-3">
-							<select class="rounded custom-select my-1">
+							<select class="custom-select my-1">
 								<option selected>Rating</option>
 								<option>5 Stars</option>
 								<option>4 Stars</option>
@@ -63,13 +204,13 @@
 							</select>
 						</div>
 						<div class="col-6 col-lg-3">
-							<select class="rounded custom-select my-1">
+							<select class="custom-select my-1">
 								<option selected>Images & Videos</option>
 								<option>With Images & Videos</option>
 							</select>
 						</div>
 						<div class="col-6 col-lg-3">
-							<select class="rounded custom-select my-1">
+							<select class="custom-select my-1">
 								<option selected>Skin type</option>
 								<option>Dry</option>
 								<option>Oily</option>
@@ -79,7 +220,7 @@
 							</select>
 						</div>
 						<div class="col-6 col-lg-3">
-							<select class="rounded custom-select my-1">
+							<select class="custom-select my-1">
 								<option selected>Age</option>
 								<option>&lt; 18 years old</option>
 								<option>18 - 24 years old</option>
@@ -106,13 +247,30 @@
 				</form>
 				<p class="font-weight-bold mb-0"><span class="yotpo__total-reviews">220</span> Reviews</p>
 				<div class="yotpo__review">
-					<button class="btn btn-primary my-4">be the first to write a review</button>
+					<button class="btn btn-primary d-block mx-auto my-4">Be the first to write a review</button>
 				</div>
-				<p class="mb-2 mt-3 text-center text-lg-right mx-lg-n2"><strong class="yotpo__offset">1 - 10</strong> Reviews displayed</p>
+				<p class="mb-2 mt-3 text-center text-lg-right mx-lg-n2"><strong class="yotpo__offset">1 - 5</strong> Reviews displayed</p>
 				<ul class="list-unstyled yotpo__pagination d-flex justify-content-center justify-content-lg-end align-items-center mx-lg-ng"></ul>
 			</div>
-			<div id="yotpo__tab-question" class="tab-pane fade" role="tabpanel" aria-labelledby="yotpo__tab-question">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<div id="yotpo__tab-question" class="tab-pane fade yotpo__tab-qna" role="tabpanel" aria-labelledby="yotpo__tab-question">
+				<button class="btn btn-primary d-block mx-auto my-4">Be the first to ask a question</button>
+				<div class="yotpo__review-qna pt-2 pb-4 border-bottom">
+					<h4 class="mb-0">Fiona</h4>
+					<p class="font-size-sm mb-0">Verified Reviewer</p>
+					<p class="font-size-sm ml-auto">09/11/20</p>
+					<p class="font-weight-bold">Q: Would this help my 12 year old daughter? She is going through puberty and getting quite bad breakouts on her t zone.</p>
+					<p class="font-size-sm">Answer (1)</p>
+					<div class="yotpo__review-answer ml-4 mt-3 border-left pl-3">
+						<h4 class="mb-0">Store Owner</h4>
+						<p class="font-size-sm">09/14/20</p>
+						<p class="mt-2">A: Hi Fiona 👋 <br> <br>Thanks for reaching out! <br> <br>Yes, our Porefining Face Mask is safe for teenage skin! Puberty has enough pitfalls, and we know what it’s like to have oily, acne prone skin. <br> <br>Our Face Mask contains Australian Pink Clay which helps to detoxify the skin by drawing out toxins, pollutants and oils that clog the pores. When your skin overproduces oil it becomes more prone to acne and breakouts. By absorbing excess sebum on the skin (The oily, waxy substance your face produces) it helps to regulate its production. <br> <br>Our Australian Pink Clay Flash Perfection Exfoliator also works hand in hand with our Face Mask. It absorbs excess oil and mattifies the skin by removing dead skin cells. <br> <br>Bonus tip for your daughter: Use the Porefining Face Mask as a spot treatment for any acne or spots and leave it overnight to help draw out all the gunk ✨ <br> <br>As always, we recommend doing a patch test 48 hours prior to use to make sure this product is right for your daughter (or even yourself if you feel like sneaking on a mask while she’s asleep). <br> <br>Please let us know if you have any other questions - We’re here to help! <br> <br>Big Love, <br>Team Sand &amp; Sky 💖</p>
+						<div class="d-flex justify-content-end align-items-center mt-3 yotpo__likes">
+							<p class="font-size-sm mr-1 mb-0">Was This Answer Helpful?</p>
+							<span class="font-size-sm sni sni__thumbs-up align-items-center mx-1">1</span>
+							<span class="font-size-sm sni sni__thumbs-down align-items-center ml-1">0</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 

@@ -184,9 +184,9 @@
 			<div id="yotpo__tab-review" class="tab-pane fade show active" role="tabpanel" aria-labelledby="yotpo__tab-review">
 				<!-- tab list review -->
 				<p class="font-weight-bold mb-3">Filter reviews</p>
-				<form action="" class="yotpo__filter">
+				<form action="" class="yotpo__filter-form">
 					<div class="input-group col-lg-6 px-lg-0">
-						<input type="text" class="form-control border-right-0" aria-label="Search reviews" placeholder="Search reviews">
+						<input id="yotpo__free-text" type="text" class="form-control border-right-0" aria-label="Search reviews" placeholder="Search reviews">
 						<div class="input-group-append">
 							<span class="input-group-text sni sni__search"></span>
 						</div>
@@ -194,52 +194,52 @@
 					<div class="input-group mt-3 yotpo__tags col-lg-6 px-lg-0"></div>
 					<div class="input-group row mt-1">
 						<div class="col-6 col-lg-3">
-							<select class="custom-select my-1">
-								<option selected>Rating</option>
-								<option>5 Stars</option>
-								<option>4 Stars</option>
-								<option>3 Stars</option>
-								<option>2 Stars</option>
-								<option>1 Star</option>
+							<select class="custom-select my-1 yotpo__filter yotpo__filter-rating">
+								<option value="" selected>Rating</option>
+								<option value="5">5 Stars</option>
+								<option value="4">4 Stars</option>
+								<option value="3">3 Stars</option>
+								<option value="2">2 Stars</option>
+								<option value="1">1 Star</option>
 							</select>
 						</div>
 						<div class="col-6 col-lg-3">
-							<select class="custom-select my-1">
-								<option selected>Images & Videos</option>
-								<option>With Images & Videos</option>
+							<select class="custom-select my-1 yotpo__filter yotpo__filter-picture">
+								<option value="" selected>Images & Videos</option>
+								<option value="true">With Images & Videos</option>
 							</select>
 						</div>
 						<div class="col-6 col-lg-3">
-							<select class="custom-select my-1">
-								<option selected>Skin type</option>
-								<option>Dry</option>
-								<option>Oily</option>
-								<option>Combination</option>
-								<option value="">Sensitive</option>
-								<option value="">Normal</option>
+							<select class="custom-select my-1 yotpo__filter yotpo__filter-type" data-qid="24600">
+								<option value="" selected>Skin type</option>
+								<option value="Dry">Dry</option>
+								<option value="Oily">Oily</option>
+								<option value="Combination">Combination</option>
+								<option value="Sensitive">Sensitive</option>
+								<option value="Normal">Normal</option>
 							</select>
 						</div>
 						<div class="col-6 col-lg-3">
-							<select class="custom-select my-1">
-								<option selected>Age</option>
-								<option>&lt; 18 years old</option>
-								<option>18 - 24 years old</option>
-								<option>25 - 35 years old</option>
-								<option value="">35 - 44 years old</option>
-								<option value="">&gt; 45 years old</option>
+							<select class="custom-select my-1 yotpo__filter yotpo__filter-age" data-qid="24602">
+								<option value="" selected>Age</option>
+								<option value="< 18 years old">&lt; 18 years old</option>
+								<option value="18 - 24 years old">18 - 24 years old</option>
+								<option value="25 - 34 years old">25 - 35 years old</option>
+								<option value="35 - 44 years old">35 - 44 years old</option>
+								<option value="> 45 years old">&gt; 45 years old</option>
 							</select>
 						</div>
 						<div class="col-6 col-lg-3">
-							<select class="rounded custom-select my-1">
-								<option selected>Skin Concerns</option>
-								<option>Redness</option>
-								<option>Fine lines & wrinkles</option>
-								<option>Oiliness & large pores</option>
-								<option value="">Acne & blemishes</option>
-								<option value="">Dryness & dehydration</option>
-								<option value="">Hyper-pigmentation</option>
-								<option value="">Ageing</option>
-								<option value="">Pores</option>
+							<select class="rounded custom-select my-1 yotpo__filter yotpo__filter-concern" data-qid="24601">
+								<option value="" selected>Skin Concerns</option>
+								<option value="Redness">Redness</option>
+								<option value="Fine lines & wrinkles">Fine lines & wrinkles</option>
+								<option value="Oiliness & large pores">Oiliness & large pores</option>
+								<option value="Acne & blemishes">Acne & blemishes</option>
+								<option value="Dryness & dehydration">Dryness & dehydration</option>
+								<option value="Hyper-pigmentation">Hyper-pigmentation</option>
+								<option value="Ageing">Ageing</option>
+								<option value="Pores">Pores</option>
 							</select>
 						</div>
 					</div>
@@ -249,7 +249,7 @@
 				<div class="yotpo__review">
 					<button class="btn btn-primary d-block mx-auto my-4">Be the first to write a review</button>
 				</div>
-				<p class="mb-2 mt-3 text-center text-lg-right mx-lg-n2"><strong class="yotpo__offset">1 - 5</strong> Reviews displayed</p>
+				<p class="mb-2 mt-3 text-center text-lg-right mx-lg-n2 yotpo__offset"><strong>1 - 5</strong> Reviews displayed</p>
 				<ul class="list-unstyled yotpo__pagination d-flex justify-content-center justify-content-lg-end align-items-center mx-lg-ng"></ul>
 			</div>
 			<div id="yotpo__tab-question" class="tab-pane fade yotpo__tab-qna" role="tabpanel" aria-labelledby="yotpo__tab-question">

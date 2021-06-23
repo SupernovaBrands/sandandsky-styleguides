@@ -1,7 +1,7 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?b4eb19728beaf48676ddd38215c5fa8c") format("woff2"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?b4eb19728beaf48676ddd38215c5fa8c") format("woff") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?b1637435d3074e68e01e98b7ca9bc9fc") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?b1637435d3074e68e01e98b7ca9bc9fc") format("woff") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -47,11 +47,12 @@ $supernova-icon-map: (
 	"ss": "\f112",
 	"star-full": "\f113",
 	"star-half": "\f114",
-	"thumbs-down": "\f115",
-	"thumbs-up": "\f116",
-	"times": "\f117",
-	"trophy": "\f118",
-	"verified": "\f119",
+	"star-hollow": "\f115",
+	"thumbs-down": "\f116",
+	"thumbs-up": "\f117",
+	"times": "\f118",
+	"trophy": "\f119",
+	"verified": "\f11a",
 );
 
 .sni.sni__australia:before,
@@ -133,6 +134,10 @@ $supernova-icon-map: (
 .sni.sni__star-half:before,
 .sni-after.sni__star-half:after {
 	content: map-get($supernova-icon-map, "star-half");
+}
+.sni.sni__star-hollow:before,
+.sni-after.sni__star-hollow:after {
+	content: map-get($supernova-icon-map, "star-hollow");
 }
 .sni.sni__thumbs-down:before,
 .sni-after.sni__thumbs-down:after {

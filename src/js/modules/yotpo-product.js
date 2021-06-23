@@ -2,6 +2,60 @@ const yotpoProduct = $('.yotpo__product');
 const appKey = yotpoProduct.data('key');
 const productId = yotpoProduct.data('product');
 
+const checkFilterParams = () => {
+	const params = {
+		domain_key: productId,
+	};
+	const crfs = [];
+	if ($('#yotpo__free-text').val() !== '') {
+		params.free_text_search = $('#yotpo__free-text').val();
+	}
+	if ($('.yotpo__tags').find('.active').length > 0) {
+		params.topic_names = [$('.yotpo__tags').find('.active').data('name')];
+	}
+	if ($('.yotpo__filter-rating').val() !== '') {
+		params.scores = [$('.yotpo__filter-rating').val()];
+	}
+	if ($('.yotpo__filter-picture').val() !== '') {
+		params.pictured = true;
+	}
+	if ($('.yotpo__filter-type').val() !== '') {
+		crfs.push({
+			question_id: Number($('.yotpo__filter-type').data('qid')),
+			answers: [$('.yotpo__filter-type').val()],
+		});
+	}
+	if ($('.yotpo__filter-age').val() !== '') {
+		crfs.push({
+			question_id: Number($('.yotpo__filter-age').data('qid')),
+			answers: [$('.yotpo__filter-age').val()],
+		});
+	}
+	if ($('.yotpo__filter-concern').val() !== '') {
+		crfs.push({
+			question_id: Number($('.yotpo__filter-concern').data('qid')),
+			answers: [$('.yotpo__filter-concern').val()],
+		});
+	}
+	if (crfs.length > 0) {
+		params.crfs = crfs;
+	}
+	return params;
+};
+
+const buildStars = (score) => {
+	const fullStars = score;
+	const hollowStars = 5 - fullStars;
+	let stars = '';
+	for (let s = 1; s <= fullStars; s += 1) {
+		stars += '<i class="sni sni__star-full"></i>';
+	}
+	for (let t = 1; t <= hollowStars; t += 1) {
+		stars += '<i class="sni sni__star-hollow"></i>';
+	}
+	return stars;
+};
+
 const formatDate = (serverDate) => {
 	const d = new Date(serverDate);
 	let month = (d.getMonth() + 1);
@@ -16,7 +70,6 @@ const formatDate = (serverDate) => {
 	return [day, month, year].join('/');
 };
 
-// loop trough reviews response
 const renderReviews = (reviews) => {
 	$('.yotpo__review').html('');
 	$.each(reviews, function (k, review) {
@@ -33,14 +86,16 @@ const renderReviews = (reviews) => {
 
 		// media image
 		let mediaImages = '';
-		if (review.images_data.length > 0) {
-			mediaImages += '<div class="yotpo__images d-flex flex-nowrap row w-auto overflow-auto px-lg-2">';
+		if (review.images_data && review.images_data.length > 0) {
+			mediaImages += `<div class="yotpo__images d-flex flex-nowrap row w-auto overflow-auto px-lg-2" data-review-id="${review.id}">`;
 			$.each(review.images_data, function (k2, image) {
-				mediaImages += `<a href="#" class="d-inline-block mx-1 mb-g" data-toggle="modal" data-target="#yotpoImageModal"><img src="${image.thumb_url.replace('https:', '')}" alt="Image Review of ${review.user.display_name}"></a>`;
+				mediaImages += `<a href="#" class="d-inline-block mx-1 mb-g" data-toggle="modal" data-target="#yotpoImageModal"><img data-original="${image.original_url.replace('https:', '')}" src="${image.thumb_url.replace('https:', '')}" alt="Image Review of ${review.user.display_name}"></a>`;
 			});
 			mediaImages += '</div>';
 		}
 
+		// build stars
+		const stars = buildStars(review.score);
 		const yotpoReviewTemplate = `<div class="yotpo__review-content border-bottom py-3 row">
 		<div class="col-lg-3">
 			<h4 class="mb-0 sni-after align-items-center yotpo__review-author ${verifiedBuyer} ">${review.user.display_name}</h4>
@@ -49,17 +104,11 @@ const renderReviews = (reviews) => {
 			${customFields}
 		</div>
 		<div class="col-lg-9">
-			<div class="d-flex text-secondary mt-3 mt-lg-0">
-				<i class="sni sni__star-full"></i>
-				<i class="sni sni__star-full"></i>
-				<i class="sni sni__star-full"></i>
-				<i class="sni sni__star-half"></i>
-				<i class="sni sni__star-half"></i>
-			</div>
+			<div class="d-flex text-secondary mt-3 mt-lg-0">${stars}</div>
 			<h4 class="mb-3 mt-2">${review.title}</h4>
 			<p class="mb-3">${review.content}</p>
 			${mediaImages}
-			<div class="d-flex justify-content-end align-items-center mt-3 yotpo__likes">
+			<div class="d-flex justify-content-end align-items-center mt-3 yotpo__likes" data-id="${review.id}">
 				<p class="font-size-sm mr-1 mb-0">Was this review helpful?</p>
 				<span class="font-size-sm sni sni__thumbs-up align-items-center mx-1">${review.votes_up}</span>
 				<span class="font-size-sm sni sni__thumbs-down align-items-center ml-1">${review.votes_down}</span>
@@ -69,15 +118,22 @@ const renderReviews = (reviews) => {
 	});
 };
 
-// Render pagination
 const renderPagination = (pagination) => {
-	$('.yotpo__pagination').html('');
+	$('.yotpo__pagination').addClass('d-flex').removeClass('d-none').html('');
+	$('.yotpo__offset').removeClass('d-none');
 	const currPage = pagination.page;
-	const totalPage = Math.floor(pagination.total / pagination.per_page);
+	const totalPage = Math.ceil(pagination.total / pagination.per_page);
 
 	const pageStart = (currPage - 4 < 1) ? 1 : currPage - 4;
-	const pageEnd = (currPage + 4 > 9) ? currPage + 4 : 9;
+	let pageEnd = (currPage + 4 > 9) ? currPage + 4 : 9;
+	pageEnd = (totalPage < 9) ? totalPage : pageEnd;
+	pageEnd = (pageEnd > totalPage) ? totalPage : pageEnd;
 
+	if (pageEnd <= 1) {
+		return;
+	}
+
+	$('.yotpo__total-reviews').html(pagination.total);
 	let active;
 	let paginationHtml = '';
 	if (currPage > 1) {
@@ -87,16 +143,52 @@ const renderPagination = (pagination) => {
 		active = i === currPage ? 'font-weight-bold text-secondary' : 'text-body';
 		paginationHtml += `<li><a href="#" data-page="${i}" class="px-1 ${active}">${i}</a></li>`;
 	}
-	if (currPage <= totalPage) {
+	if (currPage < totalPage) {
 		paginationHtml += `<li><a href="#" data-page="${currPage + 1}" class="px-1 pr-lg-0 text-body sni sni__chevron-next"></a></li>`;
 	}
+
+	const offsetMax = pagination.per_page * currPage;
+	const offsetEnd = (offsetMax > pagination.total) ? pagination.total : offsetMax;
+
 	$('.yotpo__pagination').html(paginationHtml);
-	$('.yotpo__offset').html(`${(pagination.per_page * (currPage - 1)) + 1} - ${(pagination.per_page * currPage)}`);
+	$('.yotpo__offset strong').html(`${(pagination.per_page * (currPage - 1)) + 1} - ${offsetEnd}`);
+};
+
+const ajaxPost = (page = null) => {
+	const filterParams = checkFilterParams();
+	if (page !== null) {
+		filterParams.page = page;
+	}
+	$.ajax({
+		crossDomain: true,
+		contentType: 'application/json',
+		url: `https://api.yotpo.com/v1/reviews/${appKey}/filter.json`,
+		method: 'POST',
+		headers: {
+			'content-type': 'application/json',
+			'cache-control': 'no-cache',
+		},
+		processData: false,
+		data: JSON.stringify(filterParams),
+	}).done(function (response) {
+		$('.yotpo__total-reviews').html(response.response.pagination.total);
+		if (response.response.reviews.length > 0) {
+			renderPagination(response.response.pagination);
+			renderReviews(response.response.reviews);
+		} else {
+			$('.yotpo__offset').addClass('d-none');
+			$('.yotpo__pagination').removeClass('d-flex').addClass('d-none');
+			$('.yotpo__review').html('');
+			$('.yotpo__review').html('<p class="text-center">Sorry, no reviews match your criteria. Clear or modify your filters and try again.<p>');
+		}
+	});
 };
 
 // Build topics tag
 $.post(`https://api.yotpo.com/v1/topic/${appKey}/topics.json`, { domain_key: productId }, function (data) {
-	for (let i = 0; i <= data.response.top_topics.top_mention_topics.length - 1; i += 1) {
+	const tagLength = data.response.top_topics.top_mention_topics.length;
+	const maxTags = tagLength < 24 ? tagLength : 24;
+	for (let i = 0; i <= maxTags - 1; i += 1) {
 		const hideTag = (i > 5) ? 'd-none' : '';
 		const tagname = data.response.top_topics.top_mention_topics[i].name;
 		const tag = `<a href="#" class="badge badge-gray font-size-sm mr-2 mb-2 text-capitalize ${hideTag}" data-name="${tagname}">${tagname}</a>`;
@@ -120,12 +212,17 @@ $.get(`https://api.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.j
 // Pagination handle
 $('.yotpo__pagination').on('click', 'a', function (e) {
 	e.preventDefault();
-	$.get(`https://api.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.json`, { page: $(this).data('page') }, function (data) {
-		if (data.response.reviews.length > 0) {
-			renderPagination(data.response.pagination);
-			renderReviews(data.response.reviews);
-		}
-	});
+	const filterParams = checkFilterParams();
+	if (Object.keys(filterParams).length > 0) {
+		ajaxPost($(this).data('page'));
+	} else {
+		$.get(`https://api.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.json`, { page: $(this).attr('data-page') }, function (data) {
+			if (data.response.reviews.length > 0) {
+				renderPagination(data.response.pagination);
+				renderReviews(data.response.reviews);
+			}
+		});
+	}
 });
 
 $('.yotpo__tags').on('click', '.yotpo__tags-expand', function (e) {
@@ -148,7 +245,7 @@ $('.yotpo__tab-question').on('click', function () {
 							<h4 class="mb-0">Store Owner</h4>
 							<p class="font-size-sm">${formatDate(answers.created_at)}</p>
 							<p class="mt-2">A: ${answers.content}</p>
-							<div class="d-flex justify-content-end align-items-center mt-3 yotpo__likes">
+							<div class="d-flex justify-content-end align-items-center mt-3 yotpo__likes" data-id="${answers.id}">
 								<p class="font-size-sm mr-1 mb-0">Was This Answer Helpful?</p>
 								<span class="font-size-sm sni sni__thumbs-up align-items-center mx-1">${answers.votes_up}</span>
 								<span class="font-size-sm sni sni__thumbs-down align-items-center ml-1">${answers.votes_down}</span>
@@ -165,6 +262,52 @@ $('.yotpo__tab-question').on('click', function () {
 				</div>`;
 				$('.yotpo__tab-qna').append(qnaTemplate);
 			});
+		}
+	});
+});
+
+// topics filter
+$('.yotpo__tags').on('click', '.badge', function (e) {
+	e.preventDefault();
+	if ($(this).data('name') !== '') {
+		$('.yotpo__tags').find('.badge').removeClass('active');
+		$(this).addClass('active');
+	}
+	ajaxPost();
+});
+
+$('.yotpo__filter').on('change', function () {
+	ajaxPost();
+});
+
+$('.yotpo__filter-form').on('submit', function (e) {
+	e.preventDefault();
+	ajaxPost();
+});
+
+// lightbox
+$('#yotpoImageModal').on('shown.bs.modal', function (event) {
+	const triggerBtn = $(event.relatedTarget);
+	const imgElem = triggerBtn.closest('.yotpo__images');
+	const yotpoReviewID = imgElem.attr('data-review-id');
+	const imgs = [];
+	imgElem.find('img').each(function (i, obj) {
+		imgs[i] = $(obj).attr('data-original');
+	});
+
+	$.get(`https://api.yotpo.com/reviews/${yotpoReviewID}`, function (data) {
+		if (data.status.code === 200) {
+			const stars = buildStars(data.response.review.score);
+			$('.yotpo__modal-name').html(data.response.review.user.display_name);
+			if (data.response.review.verified_buyer) {
+				$('.yotpo__modal-verified').removeClass('d-none');
+			}
+			$('.yotpo__modal-created').html(formatDate(data.response.review.created_at));
+			$('.yotpo__modal-title').html(data.response.review.title);
+			$('.yotpo__modal-content').html(data.response.review.content);
+			$('.yotpo__likes .sni__thumbs-up').html(data.response.review.votes_up);
+			$('.yotpo__likes .sni__thumbs-down').html(data.response.review.votes_down);
+			$('.yotpo__modal-score').html(stars);
 		}
 	});
 });

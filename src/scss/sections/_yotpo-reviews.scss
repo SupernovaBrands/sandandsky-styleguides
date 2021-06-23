@@ -19,8 +19,15 @@
 		}
 	}
 
-	&__clear-all {
+	&__lightbox {
+		.position-absolute {
+			right: calc-em(6, 18);;
+			top: calc-em(6, 18);;
 
+			&:after {
+				font-size: calc-em(12, 18);
+			}
+		}
 	}
 
 	&__images img {

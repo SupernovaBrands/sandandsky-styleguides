@@ -36,7 +36,7 @@ const renderReviews = (reviews) => {
 		if (review.images_data.length > 0) {
 			mediaImages += '<div class="yotpo__images d-flex flex-nowrap row w-auto overflow-auto px-lg-2">';
 			$.each(review.images_data, function (k2, image) {
-				mediaImages += `<a href="#" class="d-inline-block mx-1 mb-g"><img src="${image.thumb_url.replace('https:', '')}" alt="Image Review of ${review.user.display_name}"></a>`;
+				mediaImages += `<a href="#" class="d-inline-block mx-1 mb-g" data-toggle="modal" data-target="#yotpoImageModal"><img src="${image.thumb_url.replace('https:', '')}" alt="Image Review of ${review.user.display_name}"></a>`;
 			});
 			mediaImages += '</div>';
 		}
@@ -49,7 +49,13 @@ const renderReviews = (reviews) => {
 			${customFields}
 		</div>
 		<div class="col-lg-9">
-			<div class="sni sni__five-stars text-secondary mt-3 mt-lg-0"></div>
+			<div class="d-flex text-secondary mt-3 mt-lg-0">
+				<i class="sni sni__star-full"></i>
+				<i class="sni sni__star-full"></i>
+				<i class="sni sni__star-full"></i>
+				<i class="sni sni__star-half"></i>
+				<i class="sni sni__star-half"></i>
+			</div>
 			<h4 class="mb-3 mt-2">${review.title}</h4>
 			<p class="mb-3">${review.content}</p>
 			${mediaImages}

@@ -1,6 +1,16 @@
+window.validateEmail = function (t) {
+	// eslint-disable-next-line no-useless-escape
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(String(t).toLowerCase());
+};
+
 const yotpoProduct = $('.yotpo__product');
 const appKey = yotpoProduct.data('key');
 const productId = yotpoProduct.data('product');
+const productTitle = yotpoProduct.data('product-title');
+const productUrl = yotpoProduct.data('product-url');
+const devKey = yotpoProduct.data('dev-key');
+const devId = yotpoProduct.data('dev-id');
+const productDesc = yotpoProduct.data('desc');
 
 const checkFilterParams = () => {
 	const params = {
@@ -334,4 +344,175 @@ $('#yotpoImageModal').on('shown.bs.modal', function (event) {
 			$('.yotpo__modal-score').html(stars);
 		}
 	});
+});
+
+// submit review
+$('#yotpo__review-submit').on('click', function () {
+	$(this).closest('.yotpo__review-fields').find('small').addClass('d-none');
+	const score = $('#yotpoFormScore').val();
+	const title = $('#yotpoFormTitle');
+	const review = $('#yotpoFormReview');
+	const custom24600 = $('input[name="--24600"]:checked').val();
+	const custom24602 = $('input[name="--24602"]:checked').val();
+	const custom24601 = $('.yotpo__review-fields input[name="--24601"]');
+	const emailField = $('#yotpoReviewEmail');
+	const usernameField = $('#yotpoReviewName');
+
+	let valid = true;
+
+	if (title.val() === '') {
+		title.parent().find('small').text('Title Field Required');
+		title.parent().find('small').removeClass('d-none');
+		valid = false;
+	}
+	if (review.val() === '') {
+		review.parent().find('small').text('Title Field Required');
+		review.parent().find('small').removeClass('d-none');
+		valid = false;
+	}
+	if (!window.validateEmail(emailField.val())) {
+		emailField.parent().find('small').text('Invalid Email');
+		emailField.parent().find('small').removeClass('d-none');
+		valid = false;
+	}
+	if (emailField.val() === '') {
+		emailField.parent().find('small').text('Email Field Required');
+		emailField.parent().find('small').removeClass('d-none');
+		valid = false;
+	}
+	if (usernameField.val() === '') {
+		usernameField.parent().find('small').text('Username Field Required');
+		usernameField.parent().find('small').removeClass('d-none');
+		valid = false;
+	}
+
+	if (!valid) {
+		return false;
+	}
+
+	// submit to dev store
+	const formData = {
+		appkey: devKey,
+		sku: devId,
+		product_title: productTitle,
+		product_image_url: '//cdn.shopify.com/s/files/1/0093/6096/5717/products/SS_Web_APCPFM_Ecom_Carousel_900x1121_SB_290820_large.jpg%3Fv=1611892289',
+		product_url: 'https://dev.sandandsky.com/products/porefining-face-mask',
+		product_description: productDesc,
+		display_name: usernameField.val(),
+		email: emailField.val(),
+		review_content: review.val(),
+		review_title: title.val(),
+		review_score: score,
+	};
+
+	if (custom24601.length > 0) {
+		formData.custom_fields = {};
+		const val24601 = [];
+		custom24601.each(function (k, obj) {
+			if ($(obj).is(':checked')) {
+				val24601[k] = true;
+			} else {
+				val24601[k] = 'empty';
+			}
+		});
+		formData.custom_fields['--24601'] = val24601.join(' ');
+	}
+
+	if (custom24600 !== '' && typeof custom24600 !== 'undefined') {
+		formData.custom_fields['--24600'] = custom24600;
+	}
+
+	if (custom24602 !== '' && typeof custom24602 !== 'undefined') {
+		formData.custom_fields['--24602'] = custom24602;
+	}
+
+	$.ajax({
+		crossDomain: true,
+		dataType: 'json',
+		url: 'https://api.yotpo.com/v1/widget/reviews',
+		contentType: 'application/json',
+		type: 'POST',
+		headers: {
+			'content-type': 'application/json',
+			'cache-control': 'no-cache',
+		},
+		processData: false,
+		data: JSON.stringify(formData),
+	}).done(function () {
+		$('.yotpo__review-fields').addClass('d-none');
+		$('.yotpo__review-success').removeClass('d-none');
+	});
+
+	return false;
+});
+
+// submit question
+$('#yotpo__question-submit').on('click', function () {
+	let valid = true;
+	const emailField = $('#yotpoQuestionEmail');
+	const usernameField = $('#yotpoQuestionName');
+	const questionField = $('#yotpoFormQuestion');
+
+	$(this).closest('.yotpo__question-fields').find('small').addClass('d-none');
+
+	if (!window.validateEmail(emailField.val())) {
+		emailField.parent().find('small').text('Invalid Email');
+		emailField.parent().find('small').removeClass('d-none');
+		valid = false;
+	}
+	if (emailField.val() === '') {
+		emailField.parent().find('small').text('Email Field Required');
+		emailField.parent().find('small').removeClass('d-none');
+		valid = false;
+	}
+	if (usernameField.val() === '') {
+		usernameField.parent().find('small').text('Username Field Required');
+		usernameField.parent().find('small').removeClass('d-none');
+		valid = false;
+	}
+	if (questionField.val() === '') {
+		questionField.parent().find('small').text('Question field required');
+		questionField.parent().find('small').removeClass('d-none');
+		valid = false;
+	}
+
+	if (!valid) {
+		return false;
+	}
+
+	const questionData = {
+		review_content: questionField.val(),
+		display_name: usernameField.val(),
+		email: emailField.val(),
+		appkey: devKey,
+		sku: devId,
+		product_title: productTitle,
+		product_url: 'https://dev.sandandsky.com/products/porefining-face-mask',
+		product_description: productDesc,
+		product_image_url: '//cdn.shopify.com/s/files/1/0093/6096/5717/products/SS_Web_APCPFM_Ecom_Carousel_900x1121_SB_290820_large.jpg%3Fv=1611892289',
+		prevent_duplicate_review: true,
+	};
+
+	$.ajax({
+		crossDomain: true,
+		dataType: 'json',
+		url: '//api.yotpo.com/questions/send_confirmation_mail',
+		contentType: 'application/json',
+		type: 'POST',
+		headers: {
+			'content-type': 'application/json',
+			'cache-control': 'no-cache',
+		},
+		processData: false,
+		data: JSON.stringify(questionData),
+		complete: () => {
+			$('.yotpo__question-fields').addClass('d-none');
+			$('.yotpo__question-success').removeClass('d-none');
+		},
+	}).done(function () {
+		$('.yotpo__question-fields').addClass('d-none');
+		$('.yotpo__question-success').removeClass('d-none');
+	});
+
+	return false;
 });

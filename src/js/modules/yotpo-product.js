@@ -291,9 +291,33 @@ $('#yotpoImageModal').on('shown.bs.modal', function (event) {
 	const imgElem = triggerBtn.closest('.yotpo__images');
 	const yotpoReviewID = imgElem.attr('data-review-id');
 	const imgs = [];
+	let imgsTag = '';
 	imgElem.find('img').each(function (i, obj) {
 		imgs[i] = $(obj).attr('data-original');
+		imgsTag += `<img src="${imgs[i]}" alt="Slide ${i}" class="d-block w-100" >`;
 	});
+
+	$('.yotpo__modal-carousel').html('');
+	if (imgs.length === 1) {
+		$('.yotpo__modal-carousel').append(imgsTag);
+	} else {
+		// build carousel
+		let carouselSlide = '';
+		for (let i = 0; i <= imgs.length - 1; i += 1) {
+			carouselSlide += `<div class="carousel-item ${(i === 0) ? 'active' : ''}"><img src="${imgs[i]}" alt="Slide ${i + 1}" class="d-block w-100"></div>`;
+		}
+		const carouselHtml = `<div id="carouselYotpoImage" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+		${carouselSlide}
+		</div></div>
+		<a class="carousel-control-prev text-secondary sni sni__chevron-prev" href="#carouselYotpoImage" role="button" data-slide="prev">
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next text-secondary sni sni__chevron-next" href="#carouselYotpoImage" role="button" data-slide="next">
+			<span class="sr-only">Next</span>
+		</a>`;
+		$('.yotpo__modal-carousel').append(carouselHtml);
+	}
 
 	$.get(`https://api.yotpo.com/reviews/${yotpoReviewID}`, function (data) {
 		if (data.status.code === 200) {

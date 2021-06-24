@@ -70,6 +70,11 @@ if ($('.a-beauty-review').length > 0) {
 	import(/* webpackChunkName: 'a-beauty-review' */ '~mod/a-beauty-review');
 }
 
+<<<<<<< HEAD
 if ($('.yotpo__product').length > 0) {
 	import(/* webpackChunkName: 'yotpo-product' */ '~mod/yotpo-product');
+=======
+if ($('.review-carousel').length > 0) {
+	import(/* webpackChunkName: 'review-carousel' */ '~mod/review-carousel');
+>>>>>>> master
 }

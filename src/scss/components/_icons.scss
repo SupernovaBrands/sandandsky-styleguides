@@ -1,7 +1,7 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?b1637435d3074e68e01e98b7ca9bc9fc") format("woff2"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?b1637435d3074e68e01e98b7ca9bc9fc") format("woff") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?b7fe5d57a6fe6ae3f66e8b53d948c15b") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?b7fe5d57a6fe6ae3f66e8b53d948c15b") format("woff") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -27,34 +27,40 @@ url("/sandandsky-styleguides/fonts/supernova-icon.woff?b1637435d3074e68e01e98b7c
 }
 
 $supernova-icon-map: (
-	"australia": "\f101",
-	"chevron-next": "\f102",
-	"chevron-prev": "\f103",
-	"close-circle": "\f104",
-	"five-stars": "\f105",
-	"koala": "\f106",
-	"minus": "\f107",
-	"nasties": "\f108",
-	"play": "\f109",
-	"plus": "\f10a",
-	"range-aea": "\f10b",
-	"range-apc": "\f10c",
-	"range-tsw": "\f10d",
-	"returns": "\f10e",
-	"search": "\f10f",
-	"shake": "\f110",
-	"shipping": "\f111",
-	"ss": "\f112",
-	"star-full": "\f113",
-	"star-half": "\f114",
-	"star-hollow": "\f115",
-	"thumbs-down": "\f116",
-	"thumbs-up": "\f117",
-	"times": "\f118",
-	"trophy": "\f119",
-	"verified": "\f11a",
+	"apc-leaf": "\f101",
+	"australia": "\f102",
+	"chevron-next": "\f103",
+	"chevron-prev": "\f104",
+	"close-circle": "\f105",
+	"five-stars": "\f106",
+	"koala": "\f107",
+	"long-arrow-right": "\f108",
+	"minus": "\f109",
+	"nasties": "\f10a",
+	"play": "\f10b",
+	"plus": "\f10c",
+	"range-aea": "\f10d",
+	"range-apc": "\f10e",
+	"range-tsw": "\f10f",
+	"returns": "\f110",
+	"search": "\f111",
+	"shake": "\f112",
+	"shipping": "\f113",
+	"ss": "\f114",
+	"star-full": "\f115",
+	"star-half": "\f116",
+	"star-hollow": "\f117",
+	"thumbs-down": "\f118",
+	"thumbs-up": "\f119",
+	"times": "\f11a",
+	"trophy": "\f11b",
+	"verified": "\f11c",
 );
 
+.sni.sni__apc-leaf:before,
+.sni-after.sni__apc-leaf:after {
+	content: map-get($supernova-icon-map, "apc-leaf");
+}
 .sni.sni__australia:before,
 .sni-after.sni__australia:after {
 	content: map-get($supernova-icon-map, "australia");
@@ -78,6 +84,10 @@ $supernova-icon-map: (
 .sni.sni__koala:before,
 .sni-after.sni__koala:after {
 	content: map-get($supernova-icon-map, "koala");
+}
+.sni.sni__long-arrow-right:before,
+.sni-after.sni__long-arrow-right:after {
+	content: map-get($supernova-icon-map, "long-arrow-right");
 }
 .sni.sni__minus:before,
 .sni-after.sni__minus:after {

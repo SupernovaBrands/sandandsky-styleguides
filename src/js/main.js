@@ -73,3 +73,7 @@ if ($('.a-beauty-review').length > 0) {
 if ($('.review-carousel').length > 0) {
 	import(/* webpackChunkName: 'review-carousel' */ '~mod/review-carousel');
 }
+
+if ($('.tab-ingredient').length > 0) {
+	import(/* webpackChunkName: 'ingredient-api' */ '~mod/ingredient-api');
+}

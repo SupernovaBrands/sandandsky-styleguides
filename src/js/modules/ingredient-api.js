@@ -57,7 +57,6 @@ $('#collapseIngredients').on('show.bs.collapse', function () {
 });
 
 $('#ingredientModal').on('show.bs.modal', function (event) {
-
 	$('.tab-ingredient__modal-title').addClass('d-none');
 	$('.tab-ingredient__modal-definition').addClass('d-none');
 	$('.tab-ingredient__modal-note').addClass('d-none');

@@ -1,12 +1,25 @@
 .yotpo {
 
+	&__avg-score {
+		height: calc-em(30, 24);
+		width: calc-em(35, 24);
+		@include media-breakpoint-up(lg) {
+			height: calc-em(45, 36);
+			width: calc-em(53, 36);
+		}
+	}
+
 	&__review-author:after {
 		color: $range-tsw;
 		font-size: calc-em(20, 16);
 	}
 
-	&__filter .sni__search:before {
-		font-size: calc-em(19, 16);
+	&__filter-form .sni__search {
+		cursor: pointer;
+
+		&:before {
+			font-size: calc-em(19, 16);
+		}
 	}
 
 	&__likes {

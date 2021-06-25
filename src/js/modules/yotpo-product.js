@@ -11,6 +11,7 @@ const productUrl = yotpoProduct.data('product-url');
 const devKey = yotpoProduct.data('dev-key');
 const devId = yotpoProduct.data('dev-id');
 const productDesc = yotpoProduct.data('desc');
+const store = 'dev';
 
 const checkFilterParams = () => {
 	const params = {
@@ -82,6 +83,7 @@ const formatDate = (serverDate) => {
 
 const renderReviews = (reviews) => {
 	$('.yotpo__review').html('');
+	const voteSession = window.localStorage.getItem('vote_session') ? JSON.parse(window.localStorage.getItem('vote_session')) : [];
 	$.each(reviews, function (k, review) {
 		const verifiedBuyer = review.verified_buyer ? 'sni__verified' : '';
 		const verifiedBuyerLabel = '<p class="font-size-sm mb-0">Verified buyer</p>';
@@ -104,6 +106,15 @@ const renderReviews = (reviews) => {
 			mediaImages += '</div>';
 		}
 
+		const filteredVoteUp = voteSession.filter(function (obj) {
+			return obj.id === review.id && obj.store === store && obj.type === 'up';
+		});
+		const filteredVoteDown = voteSession.filter(function (obj) {
+			return obj.id === review.id && obj.store === store && obj.type === 'down';
+		});
+		const voteupDisabled = filteredVoteUp.length > 0 ? 'yotpo__likes-disabled' : '';
+		const votedownDisabled = filteredVoteDown.length > 0 ? 'yotpo__likes-disabled' : '';
+
 		// build stars
 		const stars = buildStars(review.score);
 		const yotpoReviewTemplate = `<div class="yotpo__review-content border-bottom py-3 row">
@@ -118,10 +129,10 @@ const renderReviews = (reviews) => {
 			<h4 class="mb-3 mt-2">${review.title}</h4>
 			<p class="mb-3">${review.content}</p>
 			${mediaImages}
-			<div class="d-flex justify-content-end align-items-center mt-3 yotpo__likes" data-id="${review.id}">
+			<div class="d-flex justify-content-end align-items-center mt-3 yotpo__likes" data-id="${review.id}" data-vote="review">
 				<p class="font-size-sm mr-1 mb-0">Was this review helpful?</p>
-				<span class="font-size-sm sni sni__thumbs-up align-items-center mx-1">${review.votes_up}</span>
-				<span class="font-size-sm sni sni__thumbs-down align-items-center ml-1">${review.votes_down}</span>
+				<span data-type="up" class="font-size-sm sni sni__thumbs-up align-items-center mx-1 ${voteupDisabled}">${review.votes_up}</span>
+				<span data-type="down" class="font-size-sm sni sni__thumbs-down align-items-center ml-1 ${votedownDisabled}">${review.votes_down}</span>
 			</div>
 		</div></div>`;
 		$('.yotpo__review').append(yotpoReviewTemplate);
@@ -140,10 +151,11 @@ const renderPagination = (pagination) => {
 	pageEnd = (pageEnd > totalPage) ? totalPage : pageEnd;
 
 	if (pageEnd <= 1) {
+		$('.yotpo__offset strong').html(`${(pagination.per_page * (currPage - 1)) + 1} - ${pagination.total}`);
 		return;
 	}
 
-	$('.yotpo__total-reviews').html(pagination.total);
+	$('.yotpo__total-reviews').html(`${pagination.total} ${(pagination.total > 1) ? 'Reviews' : 'Review'}`);
 	let active;
 	let paginationHtml = '';
 	if (currPage > 1) {
@@ -164,7 +176,13 @@ const renderPagination = (pagination) => {
 	$('.yotpo__offset strong').html(`${(pagination.per_page * (currPage - 1)) + 1} - ${offsetEnd}`);
 };
 
+const showLoader = () => {
+	$('.yotpo__review').html('');
+	$('.yotpo__review').append('<div class="text-center"><div class="spinner-border text-secondary" role="status"><span class="sr-only">Loading...</span></div></div>');
+};
+
 const ajaxPost = (page = null) => {
+	showLoader();
 	const filterParams = checkFilterParams();
 	if (page !== null) {
 		filterParams.page = page;
@@ -181,7 +199,7 @@ const ajaxPost = (page = null) => {
 		processData: false,
 		data: JSON.stringify(filterParams),
 	}).done(function (response) {
-		$('.yotpo__total-reviews').html(response.response.pagination.total);
+		$('.yotpo__total-reviews').html(`${response.response.pagination.total} ${(response.response.pagination.total > 1) ? 'Reviews' : 'Review'}`);
 		if (response.response.reviews.length > 0) {
 			renderPagination(response.response.pagination);
 			renderReviews(response.response.reviews);
@@ -209,10 +227,10 @@ $.post(`https://api.yotpo.com/v1/topic/${appKey}/topics.json`, { domain_key: pro
 });
 
 // Initial build
-$.get(`https://api.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.json`, { page: 1 }, function (data) {
+$.get(`https://api.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.json`, { page: 13 }, function (data) {
 	const avg = Math.round(data.response.bottomline.average_score * 10) / 10;
 	$('.yotpo__avg-score').text(avg);
-	$('.yotpo__total-reviews').text(data.response.bottomline.total_review);
+	$('.yotpo__total-reviews').text(`${data.response.bottomline.total_review} ${(data.response.bottomline.total_review > 1) ? 'Reviews' : 'Review'}`);
 	if (data.response.reviews.length > 0) {
 		renderPagination(data.response.pagination);
 		renderReviews(data.response.reviews);
@@ -243,6 +261,7 @@ $('.yotpo__tags').on('click', '.yotpo__tags-expand', function (e) {
 
 // QA tabs, call QA api
 $('.yotpo__tab-question').on('click', function () {
+	const voteSession = window.localStorage.getItem('vote_session') ? JSON.parse(window.localStorage.getItem('vote_session')) : [];
 	$.get(`https://api.yotpo.com/products/${appKey}/${productId}/questions.json`, function (data) {
 		if (data.response.questions.length > 0) {
 			$('.yotpo__tab-qna').html('');
@@ -251,14 +270,23 @@ $('.yotpo__tab-question').on('click', function () {
 				let answerTemplate = '';
 				if (question.sorted_public_answers.length > 0) {
 					$.each(question.sorted_public_answers, function (l, answers) {
+						const filteredVoteUp = voteSession.filter(function (obj) {
+							return obj.id === answers.id && obj.store === store && obj.type === 'up';
+						});
+						const filteredVoteDown = voteSession.filter(function (obj) {
+							return obj.id === answers.id && obj.store === store && obj.type === 'down';
+						});
+						const voteupDisabled = filteredVoteUp.length > 0 ? 'yotpo__likes-disabled' : '';
+						const votedownDisabled = filteredVoteDown.length > 0 ? 'yotpo__likes-disabled' : '';
+
 						answerTemplate += `<p class="font-size-sm">Answer (${question.sorted_public_answers.length})</p><div class="yotpo__review-answer ml-4 mt-3 border-left pl-3">
 							<h4 class="mb-0">Store Owner</h4>
 							<p class="font-size-sm">${formatDate(answers.created_at)}</p>
 							<p class="mt-2">A: ${answers.content}</p>
-							<div class="d-flex justify-content-end align-items-center mt-3 yotpo__likes" data-id="${answers.id}">
+							<div class="d-flex justify-content-end align-items-center mt-3 yotpo__likes" data-id="${answers.id}" data-vote="answer">
 								<p class="font-size-sm mr-1 mb-0">Was This Answer Helpful?</p>
-								<span class="font-size-sm sni sni__thumbs-up align-items-center mx-1">${answers.votes_up}</span>
-								<span class="font-size-sm sni sni__thumbs-down align-items-center ml-1">${answers.votes_down}</span>
+								<span data-type="up" class="font-size-sm sni sni__thumbs-up align-items-center mx-1 ${voteupDisabled}">${answers.votes_up}</span>
+								<span data-type="down" class="font-size-sm sni sni__thumbs-down align-items-center ml-1 ${votedownDisabled}">${answers.votes_down}</span>
 							</div>
 						</div>`;
 					});
@@ -282,8 +310,8 @@ $('.yotpo__tags').on('click', '.badge', function (e) {
 	if ($(this).data('name') !== '') {
 		$('.yotpo__tags').find('.badge').removeClass('active');
 		$(this).addClass('active');
+		ajaxPost();
 	}
-	ajaxPost();
 });
 
 $('.yotpo__filter').on('change', function () {
@@ -292,6 +320,13 @@ $('.yotpo__filter').on('change', function () {
 
 $('.yotpo__filter-form').on('submit', function (e) {
 	e.preventDefault();
+	ajaxPost();
+});
+
+$('.yotpo__filter-form .input-group-append').on('click', function (e) {
+	if ($('#yotpo__free-text').val() === '') {
+		return false;
+	}
 	ajaxPost();
 });
 
@@ -342,6 +377,7 @@ $('#yotpoImageModal').on('shown.bs.modal', function (event) {
 			$('.yotpo__likes .sni__thumbs-up').html(data.response.review.votes_up);
 			$('.yotpo__likes .sni__thumbs-down').html(data.response.review.votes_down);
 			$('.yotpo__modal-score').html(stars);
+			$('.yotpo__likes').attr('data-id', yotpoReviewID);
 		}
 	});
 });
@@ -515,4 +551,63 @@ $('#yotpo__question-submit').on('click', function () {
 	});
 
 	return false;
+});
+
+const voteSession = (window.localStorage.getItem('vote_session')) ? JSON.parse(window.localStorage.getItem('vote_session')) : [];
+const voteitem = (elem) => {
+	const type = elem.data('type');
+	const endPoint = elem.closest('.yotpo__likes').data('vote');
+	const id = elem.closest('.yotpo__likes').data('id');
+	const txtNum = Number(elem.text());
+
+	if (endPoint === 'review') {
+		// vote review
+		if (elem.hasClass('yotpo__likes-disabled')) {
+			// undo action
+			elem.text(txtNum - 1);
+			elem.removeClass('yotpo__likes-disabled');
+			$.post(`https://api.yotpo.com/reviews/${id}/vote/${type}/true`, function () {
+				elem.text(txtNum - 1);
+				return true;
+			});
+			const removeIndex = voteSession.map((item) => item.id).indexOf(id);
+			voteSession.splice(removeIndex, 1);
+		} else {
+			// post action
+			$.post(`https://api.yotpo.com/reviews/${id}/vote/${type}`, function () {
+				elem.text(txtNum + 1);
+				return true;
+			});
+			elem.text(txtNum + 1);
+			elem.addClass('yotpo__likes-disabled');
+			voteSession.push({
+				id,
+				type,
+				store,
+			});
+		}
+	} else {
+		// vote answer
+		if (elem.hasClass('yotpo__likes-disabled')) {
+			return false;
+		}
+		elem.text(txtNum + 1);
+		elem.addClass('yotpo__likes-disabled');
+		$.post(`https://api.yotpo.com/answers/${id}/vote/${type}`, function () {
+			elem.text(txtNum + 1);
+			return true;
+		});
+		voteSession.push({
+			id,
+			type,
+			store,
+		});
+	}
+	window.localStorage.setItem('vote_session', JSON.stringify(voteSession));
+	return true;
+};
+
+// vote handler
+$('.yotpo__product').on('click', '.yotpo__likes .sni', function () {
+	voteitem($(this));
 });

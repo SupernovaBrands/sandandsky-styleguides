@@ -137,6 +137,7 @@ const renderReviews = (reviews) => {
 		</div></div>`;
 		$('.yotpo__review').append(yotpoReviewTemplate);
 	});
+	$('.yotpo__filter-form').removeClass('d-none');
 };
 
 const renderPagination = (pagination) => {
@@ -230,7 +231,9 @@ $.post(`https://api.yotpo.com/v1/topic/${appKey}/topics.json`, { domain_key: pro
 $.get(`https://api.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.json`, { page: 1 }, function (data) {
 	const avg = Math.round(data.response.bottomline.average_score * 10) / 10;
 	$('.yotpo__avg-score').text(avg);
+	$('.yotpo__avg-score-label').text('Average rating');
 	$('.yotpo__total-reviews').text(`${data.response.bottomline.total_review} ${(data.response.bottomline.total_review > 1) ? 'Reviews' : 'Review'}`);
+	$('.yotpo__stars').removeClass('d-none').addClass('d-flex');
 	if (data.response.reviews.length > 0) {
 		renderPagination(data.response.pagination);
 		renderReviews(data.response.reviews);

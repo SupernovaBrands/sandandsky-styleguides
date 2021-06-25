@@ -10,9 +10,9 @@
 		<h2 class="h1 mb-3">Customer Reviews - API</h2>
 		<div class="d-flex align-items-end mb-1">
 			<h2 class="h1 mb-0 yotpo__avg-score"></h2>
-			<span class="font-size-sm ml-2 mb-1">Average rating</span>
+			<span class="font-size-sm ml-2 mb-1 yotpo__avg-score-label"></span>
 		</div>
-		<div class="d-flex align-items-center yotpo__stars">
+		<div class="align-items-center yotpo__stars d-none">
 			<i class="sni sni__five-stars text-secondary"></i>
 			<span class="font-size-sm ml-1 text-underline yotpo__total-reviews"></span>
 		</div>
@@ -203,8 +203,8 @@
 		<div class="tab-content mt-3" id="tabContent">
 			<div id="yotpo__tab-review" class="tab-pane fade show active" role="tabpanel" aria-labelledby="yotpo__tab-review">
 				<!-- tab list review -->
-				<p class="font-weight-bold mb-3">Filter reviews</p>
-				<form action="" class="yotpo__filter-form">
+				<form action="" class="yotpo__filter-form d-none">
+					<p class="font-weight-bold mb-3">Filter reviews</p>
 					<div class="input-group col-lg-6 px-lg-0">
 						<input id="yotpo__free-text" type="text" class="form-control border-right-0" aria-label="Search reviews" placeholder="Search reviews">
 						<div class="input-group-append">
@@ -265,15 +265,15 @@
 					</div>
 					<hr >
 				</form>
-				<p class="font-weight-bold mb-0 yotpo__total-reviews">220 Reviews</p>
+				<p class="font-weight-bold mb-0 yotpo__total-reviews"></p>
 				<div class="yotpo__review">
-					<button class="btn btn-primary d-block mx-auto my-4">Be the first to write a review</button>
+					<button type="button" class="btn btn-primary d-block mx-auto my-4" data-toggle="collapse" data-target="#collapseReviewForm" role="button" aria-expanded="true" aria-controls="collapseReviewForm">Be the first to write a review</button>
 				</div>
-				<p class="mb-2 mt-3 text-center text-lg-right mx-lg-n2 yotpo__offset"><strong>1 - 5</strong> Reviews displayed</p>
+				<p class="mb-2 mt-3 text-center text-lg-right mx-lg-n2 yotpo__offset d-none"><strong>1 - 5</strong> Reviews displayed</p>
 				<ul class="list-unstyled yotpo__pagination d-flex justify-content-center justify-content-lg-end align-items-center mx-lg-ng"></ul>
 			</div>
 			<div id="yotpo__tab-question" class="tab-pane fade yotpo__tab-qna" role="tabpanel" aria-labelledby="yotpo__tab-question">
-				<button class="btn btn-primary d-block mx-auto my-4">Be the first to ask a question</button>
+				<button type="button" class="btn btn-primary d-block mx-auto my-4" data-toggle="collapse" data-target="#collapseQuestionForm" role="button" aria-expanded="false" aria-controls="collapseQuestionForm">Be the first to ask a question</button>
 			</div>
 		</div>
 

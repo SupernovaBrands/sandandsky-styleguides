@@ -36,14 +36,14 @@ const parseIngredients = (responseData) => {
 };
 
 // test mode data
-$('#collapseIngredients').on('show.bs.collapse', function () {
+$(document).ready(function () {
 	const sku = $('#collapseIngredients').data('sku');
 	const cname = $('#collapseIngredients').data('cname');
 	const params = {
 		async: true,
 		crossDomain: true,
 		contentType: 'application/json',
-		url: `//server.clearforme.com/api/app/products/details?sku=${sku}&clientname=${cname}`,
+		url: `https://server.clearforme.com/api/app/products/details?sku=${sku}&clientname=${cname}`,
 		method: 'GET',
 		beforeSend: (xhr) => {
 			xhr.setRequestHeader('Authorization', `Bearer ${token}`);

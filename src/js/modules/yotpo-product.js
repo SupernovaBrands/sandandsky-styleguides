@@ -54,6 +54,19 @@ const checkFilterParams = () => {
 	return params;
 };
 
+const filterLikes = (id) => {
+	const sessionData = window.localStorage.getItem('vote_session') ? JSON.parse(window.localStorage.getItem('vote_session')) : [];
+	const filteredVoteUp = sessionData.filter(function (obj) {
+		return obj.id === id && obj.store === store && obj.type === 'up';
+	});
+	const filteredVoteDown = sessionData.filter(function (obj) {
+		return obj.id === id && obj.store === store && obj.type === 'down';
+	});
+	const voteupDisabled = filteredVoteUp.length > 0 ? 'yotpo__likes-disabled' : '';
+	const votedownDisabled = filteredVoteDown.length > 0 ? 'yotpo__likes-disabled' : '';
+	return { vote_up: voteupDisabled, vote_down: votedownDisabled };
+};
+
 const buildStars = (score) => {
 	const fullStars = score;
 	const hollowStars = 5 - fullStars;
@@ -83,7 +96,6 @@ const formatDate = (serverDate) => {
 
 const renderReviews = (reviews) => {
 	$('.yotpo__review').html('');
-	const voteSession = window.localStorage.getItem('vote_session') ? JSON.parse(window.localStorage.getItem('vote_session')) : [];
 	$.each(reviews, function (k, review) {
 		const verifiedBuyer = review.verified_buyer ? 'sni__verified' : '';
 		const verifiedBuyerLabel = '<p class="font-size-sm mb-0">Verified buyer</p>';
@@ -106,14 +118,7 @@ const renderReviews = (reviews) => {
 			mediaImages += '</div>';
 		}
 
-		const filteredVoteUp = voteSession.filter(function (obj) {
-			return obj.id === review.id && obj.store === store && obj.type === 'up';
-		});
-		const filteredVoteDown = voteSession.filter(function (obj) {
-			return obj.id === review.id && obj.store === store && obj.type === 'down';
-		});
-		const voteupDisabled = filteredVoteUp.length > 0 ? 'yotpo__likes-disabled' : '';
-		const votedownDisabled = filteredVoteDown.length > 0 ? 'yotpo__likes-disabled' : '';
+		const voteFilter = filterLikes(review.id);
 
 		// build stars
 		const stars = buildStars(review.score);
@@ -131,8 +136,8 @@ const renderReviews = (reviews) => {
 			${mediaImages}
 			<div class="d-flex justify-content-end align-items-center mt-3 yotpo__likes" data-id="${review.id}" data-vote="review">
 				<p class="font-size-sm mr-1 mb-0">Was this review helpful?</p>
-				<span data-type="up" class="font-size-sm sni sni__thumbs-up align-items-center mx-1 ${voteupDisabled}">${review.votes_up}</span>
-				<span data-type="down" class="font-size-sm sni sni__thumbs-down align-items-center ml-1 ${votedownDisabled}">${review.votes_down}</span>
+				<span data-type="up" class="font-size-sm sni sni__thumbs-up align-items-center mx-1 ${voteFilter.vote_up}">${review.votes_up}</span>
+				<span data-type="down" class="font-size-sm sni sni__thumbs-down align-items-center ml-1 ${voteFilter.vote_down}">${review.votes_down}</span>
 			</div>
 		</div></div>`;
 		$('.yotpo__review').append(yotpoReviewTemplate);
@@ -264,7 +269,6 @@ $('.yotpo__tags').on('click', '.yotpo__tags-expand', function (e) {
 
 // QA tabs, call QA api
 $('.yotpo__tab-question').on('click', function () {
-	const voteSession = window.localStorage.getItem('vote_session') ? JSON.parse(window.localStorage.getItem('vote_session')) : [];
 	$.get(`https://api.yotpo.com/products/${appKey}/${productId}/questions.json`, function (data) {
 		if (data.response.questions.length > 0) {
 			$('.yotpo__tab-qna').html('');
@@ -273,23 +277,15 @@ $('.yotpo__tab-question').on('click', function () {
 				let answerTemplate = '';
 				if (question.sorted_public_answers.length > 0) {
 					$.each(question.sorted_public_answers, function (l, answers) {
-						const filteredVoteUp = voteSession.filter(function (obj) {
-							return obj.id === answers.id && obj.store === store && obj.type === 'up';
-						});
-						const filteredVoteDown = voteSession.filter(function (obj) {
-							return obj.id === answers.id && obj.store === store && obj.type === 'down';
-						});
-						const voteupDisabled = filteredVoteUp.length > 0 ? 'yotpo__likes-disabled' : '';
-						const votedownDisabled = filteredVoteDown.length > 0 ? 'yotpo__likes-disabled' : '';
-
+						const voteFilter = filterLikes(answers.id);
 						answerTemplate += `<p class="font-size-sm">Answer (${question.sorted_public_answers.length})</p><div class="yotpo__review-answer ml-4 mt-3 border-left pl-3">
 							<h4 class="mb-0">Store Owner</h4>
 							<p class="font-size-sm">${formatDate(answers.created_at)}</p>
 							<p class="mt-2">A: ${answers.content}</p>
 							<div class="d-flex justify-content-end align-items-center mt-3 yotpo__likes" data-id="${answers.id}" data-vote="answer">
 								<p class="font-size-sm mr-1 mb-0">Was This Answer Helpful?</p>
-								<span data-type="up" class="font-size-sm sni sni__thumbs-up align-items-center mx-1 ${voteupDisabled}">${answers.votes_up}</span>
-								<span data-type="down" class="font-size-sm sni sni__thumbs-down align-items-center ml-1 ${votedownDisabled}">${answers.votes_down}</span>
+								<span data-type="up" class="font-size-sm sni sni__thumbs-up align-items-center mx-1 ${voteFilter.vote_up}">${answers.votes_up}</span>
+								<span data-type="down" class="font-size-sm sni sni__thumbs-down align-items-center ml-1 ${voteFilter.vote_down}">${answers.votes_down}</span>
 							</div>
 						</div>`;
 					});

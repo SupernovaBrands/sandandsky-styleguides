@@ -227,7 +227,7 @@ $.post(`https://api.yotpo.com/v1/topic/${appKey}/topics.json`, { domain_key: pro
 });
 
 // Initial build
-$.get(`https://api.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.json`, { page: 13 }, function (data) {
+$.get(`https://api.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.json`, { page: 1 }, function (data) {
 	const avg = Math.round(data.response.bottomline.average_score * 10) / 10;
 	$('.yotpo__avg-score').text(avg);
 	$('.yotpo__total-reviews').text(`${data.response.bottomline.total_review} ${(data.response.bottomline.total_review > 1) ? 'Reviews' : 'Review'}`);
@@ -323,11 +323,12 @@ $('.yotpo__filter-form').on('submit', function (e) {
 	ajaxPost();
 });
 
-$('.yotpo__filter-form .input-group-append').on('click', function (e) {
+$('.yotpo__filter-form .input-group-append').on('click', function () {
 	if ($('#yotpo__free-text').val() === '') {
 		return false;
 	}
 	ajaxPost();
+	return true;
 });
 
 // lightbox

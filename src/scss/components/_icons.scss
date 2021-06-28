@@ -1,7 +1,7 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?6d3e902712d850a4388ca805b8e684e9") format("woff2"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?6d3e902712d850a4388ca805b8e684e9") format("woff") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?d1329a36aebf73f6fdb0ad895e0cfc3a") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?d1329a36aebf73f6fdb0ad895e0cfc3a") format("woff") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -29,23 +29,32 @@ url("/sandandsky-styleguides/fonts/supernova-icon.woff?6d3e902712d850a4388ca805b
 $supernova-icon-map: (
 	"apc-leaf": "\f101",
 	"australia": "\f102",
-	"chevron-next": "\f103",
-	"chevron-prev": "\f104",
-	"koala": "\f105",
-	"minus": "\f106",
-	"nasties": "\f107",
-	"play": "\f108",
-	"plus": "\f109",
-	"range-aea": "\f10a",
-	"range-apc": "\f10b",
-	"range-tsw": "\f10c",
-	"returns": "\f10d",
-	"search": "\f10e",
-	"shake": "\f10f",
-	"shipping": "\f110",
-	"ss": "\f111",
-	"times": "\f112",
-	"trophy": "\f113",
+	"check": "\f103",
+	"chevron-next": "\f104",
+	"chevron-prev": "\f105",
+	"close-circle": "\f106",
+	"gluten": "\f107",
+	"koala": "\f108",
+	"long-arrow-right": "\f109",
+	"minus": "\f10a",
+	"nasties": "\f10b",
+	"paraben": "\f10c",
+	"pegs": "\f10d",
+	"phthalates": "\f10e",
+	"play": "\f10f",
+	"plus": "\f110",
+	"range-aea": "\f111",
+	"range-apc": "\f112",
+	"range-tsw": "\f113",
+	"returns": "\f114",
+	"search": "\f115",
+	"shake": "\f116",
+	"shipping": "\f117",
+	"silicone": "\f118",
+	"ss": "\f119",
+	"sulfate": "\f11a",
+	"times": "\f11b",
+	"trophy": "\f11c",
 );
 
 .sni.sni__apc-leaf:before,
@@ -56,6 +65,10 @@ $supernova-icon-map: (
 .sni-after.sni__australia:after {
 	content: map-get($supernova-icon-map, "australia");
 }
+.sni.sni__check:before,
+.sni-after.sni__check:after {
+	content: map-get($supernova-icon-map, "check");
+}
 .sni.sni__chevron-next:before,
 .sni-after.sni__chevron-next:after {
 	content: map-get($supernova-icon-map, "chevron-next");
@@ -64,9 +77,21 @@ $supernova-icon-map: (
 .sni-after.sni__chevron-prev:after {
 	content: map-get($supernova-icon-map, "chevron-prev");
 }
+.sni.sni__close-circle:before,
+.sni-after.sni__close-circle:after {
+	content: map-get($supernova-icon-map, "close-circle");
+}
+.sni.sni__gluten:before,
+.sni-after.sni__gluten:after {
+	content: map-get($supernova-icon-map, "gluten");
+}
 .sni.sni__koala:before,
 .sni-after.sni__koala:after {
 	content: map-get($supernova-icon-map, "koala");
+}
+.sni.sni__long-arrow-right:before,
+.sni-after.sni__long-arrow-right:after {
+	content: map-get($supernova-icon-map, "long-arrow-right");
 }
 .sni.sni__minus:before,
 .sni-after.sni__minus:after {
@@ -75,6 +100,18 @@ $supernova-icon-map: (
 .sni.sni__nasties:before,
 .sni-after.sni__nasties:after {
 	content: map-get($supernova-icon-map, "nasties");
+}
+.sni.sni__paraben:before,
+.sni-after.sni__paraben:after {
+	content: map-get($supernova-icon-map, "paraben");
+}
+.sni.sni__pegs:before,
+.sni-after.sni__pegs:after {
+	content: map-get($supernova-icon-map, "pegs");
+}
+.sni.sni__phthalates:before,
+.sni-after.sni__phthalates:after {
+	content: map-get($supernova-icon-map, "phthalates");
 }
 .sni.sni__play:before,
 .sni-after.sni__play:after {
@@ -112,9 +149,17 @@ $supernova-icon-map: (
 .sni-after.sni__shipping:after {
 	content: map-get($supernova-icon-map, "shipping");
 }
+.sni.sni__silicone:before,
+.sni-after.sni__silicone:after {
+	content: map-get($supernova-icon-map, "silicone");
+}
 .sni.sni__ss:before,
 .sni-after.sni__ss:after {
 	content: map-get($supernova-icon-map, "ss");
+}
+.sni.sni__sulfate:before,
+.sni-after.sni__sulfate:after {
+	content: map-get($supernova-icon-map, "sulfate");
 }
 .sni.sni__times:before,
 .sni-after.sni__times:after {

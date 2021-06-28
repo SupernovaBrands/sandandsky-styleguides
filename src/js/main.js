@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import QuantityBox from '~comp/quantity-box';
 $(document).ready(function () {
 	// video modal
 	let $videoSrc;
@@ -44,6 +47,14 @@ $(document).ready(function () {
 		toggleHTMLVideo($(this).find('video'), false);
 		toggleiFrameVideo($(this).find('iframe'), false);
 	});
+});
+
+const qtyBoxes = document.querySelectorAll('.react-quantity-box');
+qtyBoxes.forEach((el) => {
+	ReactDOM.render(
+		React.createElement(QuantityBox, { name: 'quantity', quantity: 1, editable: true }, null),
+		el,
+	);
 });
 
 if ($('.hero-carousel').length > 0) {

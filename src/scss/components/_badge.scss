@@ -1,0 +1,7 @@
+.badge-gray {
+  @include badge-variant($gray-100);
+
+	&.active {
+		@include badge-variant($gray-400);
+	}
+}

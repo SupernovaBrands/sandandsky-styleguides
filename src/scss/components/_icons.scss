@@ -1,7 +1,7 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?d1329a36aebf73f6fdb0ad895e0cfc3a") format("woff2"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?d1329a36aebf73f6fdb0ad895e0cfc3a") format("woff") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?169b38c32fd7d1754437f0ad839d4795") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?169b38c32fd7d1754437f0ad839d4795") format("woff") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -33,28 +33,35 @@ $supernova-icon-map: (
 	"chevron-next": "\f104",
 	"chevron-prev": "\f105",
 	"close-circle": "\f106",
-	"gluten": "\f107",
-	"koala": "\f108",
-	"long-arrow-right": "\f109",
-	"minus": "\f10a",
-	"nasties": "\f10b",
-	"paraben": "\f10c",
-	"pegs": "\f10d",
-	"phthalates": "\f10e",
-	"play": "\f10f",
-	"plus": "\f110",
-	"range-aea": "\f111",
-	"range-apc": "\f112",
-	"range-tsw": "\f113",
-	"returns": "\f114",
-	"search": "\f115",
-	"shake": "\f116",
-	"shipping": "\f117",
-	"silicone": "\f118",
-	"ss": "\f119",
-	"sulfate": "\f11a",
-	"times": "\f11b",
-	"trophy": "\f11c",
+	"five-stars": "\f107",
+	"gluten": "\f108",
+	"koala": "\f109",
+	"long-arrow-right": "\f10a",
+	"minus": "\f10b",
+	"nasties": "\f10c",
+	"paraben": "\f10d",
+	"pegs": "\f10e",
+	"phthalates": "\f10f",
+	"play": "\f110",
+	"plus": "\f111",
+	"range-aea": "\f112",
+	"range-apc": "\f113",
+	"range-tsw": "\f114",
+	"returns": "\f115",
+	"search": "\f116",
+	"shake": "\f117",
+	"shipping": "\f118",
+	"silicone": "\f119",
+	"ss": "\f11a",
+	"star-full": "\f11b",
+	"star-half": "\f11c",
+	"star-hollow": "\f11d",
+	"sulfate": "\f11e",
+	"thumbs-down": "\f11f",
+	"thumbs-up": "\f120",
+	"times": "\f121",
+	"trophy": "\f122",
+	"verified": "\f123",
 );
 
 .sni.sni__apc-leaf:before,
@@ -80,6 +87,10 @@ $supernova-icon-map: (
 .sni.sni__close-circle:before,
 .sni-after.sni__close-circle:after {
 	content: map-get($supernova-icon-map, "close-circle");
+}
+.sni.sni__five-stars:before,
+.sni-after.sni__five-stars:after {
+	content: map-get($supernova-icon-map, "five-stars");
 }
 .sni.sni__gluten:before,
 .sni-after.sni__gluten:after {
@@ -157,9 +168,29 @@ $supernova-icon-map: (
 .sni-after.sni__ss:after {
 	content: map-get($supernova-icon-map, "ss");
 }
+.sni.sni__star-full:before,
+.sni-after.sni__star-full:after {
+	content: map-get($supernova-icon-map, "star-full");
+}
+.sni.sni__star-half:before,
+.sni-after.sni__star-half:after {
+	content: map-get($supernova-icon-map, "star-half");
+}
+.sni.sni__star-hollow:before,
+.sni-after.sni__star-hollow:after {
+	content: map-get($supernova-icon-map, "star-hollow");
+}
 .sni.sni__sulfate:before,
 .sni-after.sni__sulfate:after {
 	content: map-get($supernova-icon-map, "sulfate");
+}
+.sni.sni__thumbs-down:before,
+.sni-after.sni__thumbs-down:after {
+	content: map-get($supernova-icon-map, "thumbs-down");
+}
+.sni.sni__thumbs-up:before,
+.sni-after.sni__thumbs-up:after {
+	content: map-get($supernova-icon-map, "thumbs-up");
 }
 .sni.sni__times:before,
 .sni-after.sni__times:after {
@@ -168,4 +199,8 @@ $supernova-icon-map: (
 .sni.sni__trophy:before,
 .sni-after.sni__trophy:after {
 	content: map-get($supernova-icon-map, "trophy");
+}
+.sni.sni__verified:before,
+.sni-after.sni__verified:after {
+	content: map-get($supernova-icon-map, "verified");
 }

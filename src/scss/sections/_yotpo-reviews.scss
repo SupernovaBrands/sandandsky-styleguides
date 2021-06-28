@@ -1,0 +1,49 @@
+.yotpo {
+
+	&__avg-score {
+		height: calc-em(30, 24);
+		width: calc-em(35, 24);
+		@include media-breakpoint-up(lg) {
+			height: calc-em(45, 36);
+			width: calc-em(53, 36);
+		}
+	}
+
+	&__review-author:after {
+		color: $range-tsw;
+		font-size: calc-em(20, 16);
+	}
+
+	&__filter-form .sni__search {
+		cursor: pointer;
+
+		&:before {
+			font-size: calc-em(19, 16);
+		}
+	}
+
+	&__likes {
+		:before {
+			margin-right: calc-em(5, 16);
+		}
+
+		.sni {
+			cursor: pointer;
+		}
+	}
+
+	&__lightbox {
+		.position-absolute {
+			right: calc-em(6, 18);;
+			top: calc-em(6, 18);;
+
+			&:after {
+				font-size: calc-em(12, 18);
+			}
+		}
+	}
+
+	&__images img {
+		max-height: calc-em(100, 16);
+	}
+}

@@ -12,13 +12,3 @@ input.text-white::placeholder {
 		}
 	}
 }
-
-.custom-checkbox {
-	width: calc-em(19, 16);
-	height: calc-em(19, 16);
-	cursor: pointer;
-
-    &:before {
-        font-size: calc-em(11, 16)
-    }
-}

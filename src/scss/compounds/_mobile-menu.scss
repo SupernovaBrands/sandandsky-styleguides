@@ -91,10 +91,6 @@
 				color: $range-tsw;
 			}
 		}
-
-		.active {
-
-		}
 	}
 
 	&__currency-active {
@@ -124,10 +120,6 @@
 		z-index: $zindex-sticky;
 		height: 100vh !important;
 		top: 0;
-
-		figure {
-			
-		}
 	}
 
 	input:checked {

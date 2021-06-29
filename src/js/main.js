@@ -115,6 +115,16 @@ $(document).ready(function () {
 			}
 		}
 	});
+
+	// tooltip
+	$('#tooltip__close').on('click', function () {
+		$(this).parent().removeClass('show');
+	});
+
+	$('#tooltip__show').on('click', function () {
+		$('.navbar > .container').addClass('position-relative');
+		$('.tooltip').addClass('show');
+	});
 });
 
 if ($('.hero-carousel').length > 0) {

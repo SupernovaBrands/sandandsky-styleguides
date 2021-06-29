@@ -50,11 +50,8 @@
 			<a class="nav-link justify-content-end sni sni__cart px-0 d-lg-none position-relative" data-toggle="modal" data-target="#cart-drawer" role="button">
 				<span class="cart-drawer__count text-secondary">0</span>
 			</a>
-			<div class="col-lg-4 tooltip bg-primary text-white text-center py-2">
-				<i id="tooltip__close" class="sni sni__close-circle"></i>
-				Item added to cart
-				<a href="#" class="d-block text-white text-underline">Proceed to checkout</a>
-			</div>
+			{{> components/tooltip}}
 		</div>
 	</nav>
+	{{> compounds/mobile-menu}}
 </header>

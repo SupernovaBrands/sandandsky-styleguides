@@ -140,3 +140,15 @@ if ($('.instagram-carousel').length > 0) {
 if ($('.a-beauty-review').length > 0) {
 	import(/* webpackChunkName: 'a-beauty-review' */ '~mod/a-beauty-review');
 }
+
+if ($('.yotpo__product').length > 0) {
+	import(/* webpackChunkName: 'yotpo-product' */ '~mod/yotpo-product');
+}
+
+if ($('.review-carousel').length > 0) {
+	import(/* webpackChunkName: 'review-carousel' */ '~mod/review-carousel');
+}
+
+if ($('.tab-ingredient').length > 0) {
+	import(/* webpackChunkName: 'ingredient-api' */ '~mod/ingredient-api');
+}

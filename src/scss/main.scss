@@ -21,6 +21,8 @@
 @import 'components/tooltip';
 @import 'components/dropdown';
 @import 'components/nav';
+@import 'components/ingredient';
+@import 'components/badge';
 
 @import 'compounds/hero-banner';
 @import 'compounds/product-card';
@@ -37,8 +39,9 @@
 @import 'sections/a-beauty-review';
 @import 'sections/usp-banner';
 @import 'sections/newsletter-banner';
-@import 'sections/yotpo';
 @import 'sections/footer';
 @import 'sections/how-to-video';
+@import 'sections/yotpo-reviews';
+@import 'sections/review-carousel';
 
 @import 'templates/home';

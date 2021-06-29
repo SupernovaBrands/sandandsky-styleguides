@@ -1,0 +1,34 @@
+.review-carousel {
+
+	&__scroll {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: calc-em(425, 16);
+
+		@include media-breakpoint-up(lg) {
+			top: calc-em(410, 16);
+		}
+	}
+
+	&__decoration {
+		font-size: calc-em(60, 16);
+		right: -(calc-em(5, 16));
+		left: auto;
+
+		@include media-breakpoint-up(lg) {
+			font-size: calc-em(94, 16);
+
+			&-top {
+				right: 0;
+				transform: scaleY(-1);
+				z-index: 1; //to be above carousel
+			}
+
+			&-bottom {
+				transform: scaleY(-1) rotate(180deg);
+			}
+		}
+	}
+
+}

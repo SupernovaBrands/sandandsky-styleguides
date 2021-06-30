@@ -1,0 +1,25 @@
+.tab-ingredient {
+
+	.sni__plus {
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		&:before {
+			font-size: calc-em(12, 16);
+		}
+
+		&:not(.collapsed):before {
+			content: "#{map-get($supernova-icon-map, "minus")}";
+		}
+
+	}
+
+	&__modal .close {
+		right: calc-em(15, 16);
+		top:  calc-em(15, 16);
+		opacity: 1;
+	}
+
+}

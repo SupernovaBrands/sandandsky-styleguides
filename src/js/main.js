@@ -119,6 +119,9 @@ $(document).ready(function () {
 	// tooltip
 	$('#tooltip__close').on('click', function () {
 		$(this).parent().removeClass('show');
+		setTimeout(function() {
+			$('.navbar > .container').removeClass('position-relative');
+		}, 300);
 	});
 
 	$('#tooltip__show').on('click', function () {

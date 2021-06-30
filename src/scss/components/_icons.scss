@@ -1,7 +1,7 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?7d11d0adca74da9b433a3c55972ae9ac") format("woff2"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?7d11d0adca74da9b433a3c55972ae9ac") format("woff") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?286cd373e6b2f24cb19f9209988bddab") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?286cd373e6b2f24cb19f9209988bddab") format("woff") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -35,30 +35,31 @@ $supernova-icon-map: (
 	"chevron-prev": "\f106",
 	"chevron-up": "\f107",
 	"close-circle": "\f108",
-	"five-stars": "\f109",
-	"koala": "\f10a",
-	"long-arrow-right": "\f10b",
-	"minus": "\f10c",
-	"nasties": "\f10d",
-	"play": "\f10e",
-	"plus": "\f10f",
-	"range-aea": "\f110",
-	"range-apc": "\f111",
-	"range-tsw": "\f112",
-	"returns": "\f113",
-	"search": "\f114",
-	"shake": "\f115",
-	"shipping": "\f116",
-	"ss": "\f117",
-	"star-full": "\f118",
-	"star-half": "\f119",
-	"star-hollow": "\f11a",
-	"thumbs-down": "\f11b",
-	"thumbs-up": "\f11c",
-	"times": "\f11d",
-	"trophy": "\f11e",
-	"user": "\f11f",
-	"verified": "\f120",
+	"earth": "\f109",
+	"five-stars": "\f10a",
+	"koala": "\f10b",
+	"long-arrow-right": "\f10c",
+	"minus": "\f10d",
+	"nasties": "\f10e",
+	"play": "\f10f",
+	"plus": "\f110",
+	"range-aea": "\f111",
+	"range-apc": "\f112",
+	"range-tsw": "\f113",
+	"returns": "\f114",
+	"search": "\f115",
+	"shake": "\f116",
+	"shipping": "\f117",
+	"ss": "\f118",
+	"star-full": "\f119",
+	"star-half": "\f11a",
+	"star-hollow": "\f11b",
+	"thumbs-down": "\f11c",
+	"thumbs-up": "\f11d",
+	"times": "\f11e",
+	"trophy": "\f11f",
+	"user": "\f120",
+	"verified": "\f121",
 );
 
 .sni.sni__apc-leaf:before,
@@ -92,6 +93,10 @@ $supernova-icon-map: (
 .sni.sni__close-circle:before,
 .sni-after.sni__close-circle:after {
 	content: map-get($supernova-icon-map, "close-circle");
+}
+.sni.sni__earth:before,
+.sni-after.sni__earth:after {
+	content: map-get($supernova-icon-map, "earth");
 }
 .sni.sni__five-stars:before,
 .sni-after.sni__five-stars:after {

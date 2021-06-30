@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="18" height="22">
-  <defs>
-    <style>
-      .aacc{fill:none;stroke:#494949;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}
-    </style>
-  </defs>
-  <path class="aacc" d="M17 21v-2.667C17 15.387 15.209 13 13 13H5c-2.209 0-4 2.388-4 5.333V21M13 5a4 4 0 11-4-4 4 4 0 014 4z"/>
-</svg>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 18 22" xml:space="preserve"><style>.st0{fill:#494949}</style><path class="st0" d="M13 12H5c-2.8 0-5 2.8-5 6.3V21c0 .6.4 1 1 1s1-.4 1-1v-2.7C2 16 3.4 14 5 14h8c1.6 0 3 2 3 4.3V21c0 .6.4 1 1 1s1-.4 1-1v-2.7c0-3.5-2.2-6.3-5-6.3zM9 10c2.8 0 5-2.2 5-5s-2.2-5-5-5-5 2.2-5 5 2.2 5 5 5zm0-8c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3z"/></svg>

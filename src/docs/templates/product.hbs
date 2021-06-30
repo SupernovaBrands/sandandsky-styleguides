@@ -5,7 +5,7 @@
 	{{> html-head title="Product Section" yotpocss=true }}
 </head>
 
-<body>
+<body class="template-product">
 	<section class="container mt-4">
 		<div class="row align-items-start">
 			{{> product-image-carousel rangeclass="bg-aea" gutter=""}}
@@ -60,30 +60,26 @@
 							<li class="my-2">Ultra-lightweight gel-cream – ideal for all skin types</li>
 						</ul>
 					</div>
-					<div id="tab-2" class="tab-pane fade product__ingredients" role="tabpanel" aria-labelledby="tab-2">
+					<div id="tab-2" class="tab-pane fade tab-ingredient" role="tabpanel" aria-labelledby="tab-2">
 						<figure class="media mb-3">
-							<img src="https://via.placeholder.com/40x40" alt="Generic placeholder image">
-							<figcaption class="media-body ml-2">
-								<strong>Australian Pink Clay:</strong> A magnet for toxins, our hero ingredient deeply cleanses the skin. Purifying and tightening pores before your eyes, it’s our key to clearing congestion and battling breakouts.
-							</figcaption>
+						  <img src="https://via.placeholder.com/40x40?text=1" alt="Placeholder">
+						  <figcaption class="media-body ml-2">
+						    <strong>Australian Pink Clay:</strong> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labor et dolore magna.
+						  </figcaption>
 						</figure>
 						<figure class="media mb-3">
-							<img src="https://via.placeholder.com/40x40" alt="Generic placeholder image">
-							<figcaption class="media-body ml-2">
-								<strong>Australian Pink Clay:</strong> A magnet for toxins, our hero ingredient deeply cleanses the skin. Purifying and tightening pores before your eyes, it’s our key to clearing congestion and battling breakouts.
-							</figcaption>
-						</figure>
-						<figure class="media mb-3">
-							<img src="https://via.placeholder.com/40x40" alt="Generic placeholder image">
-							<figcaption class="media-body ml-2">
-								<strong>Australian Pink Clay:</strong> A magnet for toxins, our hero ingredient deeply cleanses the skin. Purifying and tightening pores before your eyes, it’s our key to clearing congestion and battling breakouts.
-							</figcaption>
+						  <img src="https://via.placeholder.com/40x40?text=2" alt="Placeholder">
+						  <figcaption class="media-body ml-2">
+						    <strong>Australian Pink Clay:</strong> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labor et dolore magna.
+						  </figcaption>
 						</figure>
 						<a class="text-body sni sni__plus collapsed align-items-center" data-toggle="collapse" href="#collapseIngredients" role="button" aria-expanded="false" aria-controls="collapseIngredients">
 							<span class="text-underline ml-1">Full ingredients list</span>
 						</a>
-						<div class="collapse font-size-sm" id="collapseIngredients">
-							<p class="mt-4">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
+						<div class="collapse" id="collapseIngredients" data-sku="Test234" data-cname="sand and sky">
+							<p class="font-size-sm mt-3">(Click or tap on the ingredients to learn more)</p>
+							<p class="font-size-sm mt-2 tab-ingredient__content"></p>
+							{{> components/ingredient-modal}}
 						</div>
 					</div>
 					<div id="tab-3" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-3">

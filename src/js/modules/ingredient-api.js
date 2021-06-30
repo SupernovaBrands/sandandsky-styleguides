@@ -15,7 +15,8 @@ const listIngredients = (ingredientArray) => {
 			const note = ingredientArray[i].retailerNote;
 			const upperCase = toCapitalize(ingName);
 			const speciality = ingredientArray[i].specialty;
-			serialize += `<a href="#" class="d-inline-block text-body text-capitalize mr-1" data-toggle="modal" data-target="#ingredientModal" data-name="${ingName}" data-note="${note}" data-speciality="${speciality}">${upperCase},</a>`;
+			const isLast = (ingredientArray.length - 1) === i;
+			serialize += `<a href="#" class="d-inline-block text-body text-capitalize mr-1" data-toggle="modal" data-target="#ingredientModal" data-name="${ingName}" data-note="${note}" data-speciality="${speciality}">${upperCase}${isLast ? '' : ','}</a>`;
 		}
 	}
 	return serialize;
@@ -92,6 +93,7 @@ $('#ingredientModal').on('show.bs.modal', function (event) {
 		if (dataNote !== '') {
 			$('.tab-ingredient__modal-note').html(`<strong>Note:</strong> ${dataNote}`).removeClass('d-none');
 		}
+
 		if (cfmAttributesString.length > 0) {
 			$('.tab-ingredient__modal-func').html(`<strong>Functions: </strong>${cfmAttributesString.join(', ')}.`).removeClass('d-none');
 		}

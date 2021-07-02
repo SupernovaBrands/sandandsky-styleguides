@@ -1,0 +1,28 @@
+.search-box {
+
+  &__top {
+    border-bottom: 1px solid $gray-400;
+
+    input {
+      &:focus,
+      &:active {
+        box-shadow: none;
+        outline: 0;
+      }
+    }
+
+    .sni__times {
+      right: 0;
+      color: $gray-500;
+
+      &:after {
+        font-size: calc-em(12, 16);
+        margin-left: 1em;
+      }
+    }
+  }
+
+  &__tag {
+    background-color: $gray-100;
+  }
+}

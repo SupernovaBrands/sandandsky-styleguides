@@ -42,4 +42,10 @@
 	.yotpo-stars {
 		display: none;
 	}
+
+  &--search-result {
+    picture {
+      flex-basis: 20%;
+    }
+  }
 }

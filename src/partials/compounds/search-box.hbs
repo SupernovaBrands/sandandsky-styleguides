@@ -1,0 +1,39 @@
+<div class="search-box__top w-100">
+    <div class="container px-g mt-4">
+        <div class="row position-relative d-flex align-items-center">
+            <input type="text" placeholder="Type search terms here" name="q" class="col-12  border-0 py-3">
+            <a class="sni-after sni__times position-absolute align-items-center font-weight-bold" href="javascript:void(0)">Clear</a>
+        </div>
+    </div>
+</div>
+<p class="text-center py-3">Your search returned no results</p>
+<div class="search-box__home container px-g">
+    <div class="row">
+        <h5 class="col-12 col-lg-4 mb-lg-4 font-weight-normal order-1">Popular searched here</h5>
+        <h5 class="col-12 col-lg-8 mb-lg-4 font-weight-normal order-3 order-lg-2">Popular searched products</h5>
+        <div class="col-12 col-lg-4 order-2 mb-2">
+            <span class="search-box__tag p-2 mr-1 d-inline-block mb-2">exfoliator</span>
+            <span class="search-box__tag p-2 mr-1 d-inline-block mb-2">moisturizer</span>
+            <span class="search-box__tag p-2 mr-1 d-inline-block mb-2">hydrate</span>
+            <span class="search-box__tag p-2 mr-1 d-inline-block mb-2">cream</span>
+            <span class="search-box__tag p-2 mr-1 d-inline-block mb-2">serum</span>
+        </div>
+        {{> compounds/search-box-product-card class="mb-2 order-4" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)"}}
+        {{> compounds/search-box-product-card class="mb-2  order-4" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)"}}
+        {{> compounds/search-box-product-card class=" mb-2  order-4" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)"}}
+        {{> compounds/search-box-product-card class=" mb-2  order-4" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)"}}
+</div>
+<div class="search-box__result container px-g mt-4">
+    <div class="row">
+        {{#> sections/carousel-scroll class="my-5 my-lg-7" id="search-products"}}
+            {{> compounds/search-box-product-card class="mb-2 order-4" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)"}}
+            {{> compounds/search-box-product-card class="mb-2  order-4" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)"}}
+            {{> compounds/search-box-product-card class=" mb-2  order-4" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)"}}
+            {{> compounds/search-box-product-card class=" mb-2  order-4" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)"}}
+            {{> compounds/search-box-product-card class=" mb-2  order-4" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)"}}
+            {{> compounds/search-box-product-card class=" mb-2  order-4" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)"}}
+            {{> compounds/search-box-product-card class=" mb-2  order-4" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)"}}
+            {{> compounds/search-box-product-card class=" mb-2  order-4" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)"}}
+        {{/ sections/carousel-scroll}}
+    </div>
+</div>

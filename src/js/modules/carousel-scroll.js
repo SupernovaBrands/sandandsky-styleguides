@@ -1,10 +1,18 @@
 const carousels = [];
 
-const adjustScrollThumb = (thumb, inner) => {
+const adjustScrollThumb = (thumb, inner, scrollParent) => {
 	// eslint-disable-next-line no-param-reassign
 	thumb.style.width = `${(inner.clientWidth / inner.scrollWidth) * 100}%`;
 	// eslint-disable-next-line no-param-reassign
 	thumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
+
+	if (inner.clientWidth === inner.scrollWidth) {
+		inner.classList.add('justify-content-center');
+		scrollParent.classList.add('d-none');
+	} else {
+		inner.classList.remove('justify-content-center');
+		scrollParent.classList.remove('d-none');
+	}
 };
 
 window.addEventListener('resize', () => {
@@ -18,8 +26,8 @@ $('.carousel--scroll').each((index, carousel) => {
 	const prevButton = carousel.querySelector('.carousel-control-prev');
 	const nextButton = carousel.querySelector('.carousel-control-next');
 
-	carousel.addEventListener('adjustThumb', () => { adjustScrollThumb(scrollThumb, inner); });
-	adjustScrollThumb(scrollThumb, inner);
+	carousel.addEventListener('adjustThumb', () => { adjustScrollThumb(scrollThumb, inner, scrollbar.parentNode); });
+	adjustScrollThumb(scrollThumb, inner, scrollbar.parentNode);
 	carousels.push(carousel);
 
 	let x = 0;
@@ -39,6 +47,7 @@ $('.carousel--scroll').each((index, carousel) => {
 			$(nextButton).removeClass('d-none');
 		}
 	};
+	checkButton();
 
 	const innerDrag = (e) => {
 		inner.scrollLeft = left - (e.pageX || e.touches[0].pageX) + x;

@@ -1,4 +1,4 @@
-<div {{#if id}}id="{{ id }}"{{/if}} class="container px-g {{ class }}">
+<div {{#if id}}id="{{ id }}"{{/if}} class="container {{#if (eq id 'search-products')}}{{else}}px-g{{/if}} {{ class }}">
 	<div class="d-flex justify-content-between align-items-start mb-3">
 		<h2 class="h1 mb-0">{{ header }}</h2>
 		{{#if button}}
@@ -10,18 +10,20 @@
 		<div class="carousel-inner d-flex flex-nowrap row w-auto" role="listbox">
 			{{#if @partial-block}}{{> @partial-block }}{{/if}}
 		</div>
-
+		{{#if no-scrollbar}}
+		{{else}}
 		<div class="scrollbar mt-3">
 			<div class="scrollbar--thumb"></div>
 		</div>
+		{{/if}}
 
-		<a class="carousel-control-prev text-body ml-ng d-none" role="button">
+		<a class="carousel-control-prev {{#if (eq id 'search-products')}}carousel-control-prev--always-show{{else}}d-none{{/if}} text-body ml-ng " role="button">
 			<span
 				class="carousel-control-prev-icon carousel-control--background sni sni__chevron-prev justify-content-center align-items-center"
 				aria-hidden="true"></span>
 			<span class="sr-only">Previous</span>
 		</a>
-		<a class="carousel-control-next text-body mr-ng" role="button">
+		<a class="carousel-control-next {{#if (eq id 'search-products')}}carousel-control-prev--always-show{{else}}{{/if}} text-body mr-ng" role="button">
 			<span
 				class="carousel-control-next-icon carousel-control--background sni sni__chevron-next justify-content-center align-items-center"
 				aria-hidden="true"></span>

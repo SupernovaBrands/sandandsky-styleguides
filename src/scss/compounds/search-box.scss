@@ -1,28 +1,66 @@
 .search-box {
+	box-shadow: 0 4px 6px #0000000d;
 
-  &__top {
-    border-bottom: 1px solid $gray-400;
+	&__top {
+		border-bottom: 1px solid $gray-400;
 
-    input {
-      &:focus,
-      &:active {
-        box-shadow: none;
-        outline: 0;
-      }
-    }
+		input {
+			&:focus,
+			&:active {
+				box-shadow: none;
+				outline: 0;
+			}
+		}
 
-    .sni__times {
-      right: 0;
-      color: $gray-500;
+		.sni__times {
+			right: 0;
+			color: $gray-500;
 
-      &:after {
-        font-size: calc-em(12, 16);
-        margin-left: 1em;
-      }
-    }
-  }
+			&:after {
+				font-size: calc-em(12, 16);
+				margin-left: 1em;
+			}
+		}
+	}
 
-  &__tag {
-    background-color: $gray-100;
-  }
+	&__tag {
+		background-color: $gray-100;
+		cursor: pointer;
+	}
+
+	&__clear {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	.carousel-inner {
+		@include media-breakpoint-down(md) {
+			flex-wrap: wrap !important;
+		}
+	}
+
+	.carousel-control-next {
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+
+		@include media-breakpoint-up(lg) {
+			top: auto;
+			bottom: -27%;
+		}
+	}
+
+	.carousel-control-prev {
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+		
+		@include media-breakpoint-up(lg) {
+			top: auto;
+			bottom: -27%;
+			left: auto;
+			right: 3%;
+		}
+	}
 }

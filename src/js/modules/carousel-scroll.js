@@ -19,7 +19,7 @@ $('.carousel--scroll').each((index, carousel) => {
 	const nextButton = carousel.querySelector('.carousel-control-next');
 
 	carousel.addEventListener('adjustThumb', () => { adjustScrollThumb(scrollThumb, inner); });
-	adjustScrollThumb(scrollThumb, inner);
+	if (scrollThumb) adjustScrollThumb(scrollThumb, inner);
 	carousels.push(carousel);
 
 	let x = 0;
@@ -27,13 +27,13 @@ $('.carousel--scroll').each((index, carousel) => {
 	let itemIndex = 0;
 
 	const checkButton = () => {
-		if (inner.scrollLeft === 0) {
+		if (inner.scrollLeft === 0 && !$(prevButton).hasClass('carousel-control-prev--always-show')) {
 			$(prevButton).addClass('d-none');
 		} else {
 			$(prevButton).removeClass('d-none');
 		}
 
-		if (inner.scrollLeft + inner.clientWidth === inner.scrollWidth) {
+		if (inner.scrollLeft + inner.clientWidth === inner.scrollWidth && !$(prevButton).hasClass('carousel-control-prev--always-show')) {
 			$(nextButton).addClass('d-none');
 		} else {
 			$(nextButton).removeClass('d-none');
@@ -42,18 +42,18 @@ $('.carousel--scroll').each((index, carousel) => {
 
 	const innerDrag = (e) => {
 		inner.scrollLeft = left - (e.pageX || e.touches[0].pageX) + x;
-		scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
+		if (scrollThumb) scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
 		checkButton();
 	};
 
 	const scrollDrag = (e) => {
 		inner.scrollLeft = left + ((e.pageX || e.touches[0].pageX) - x) * (inner.scrollWidth / scrollbar.clientWidth);
-		scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
+		if (scrollThumb) scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
 		checkButton();
 	};
 
 	inner.addEventListener('scroll', () => {
-		scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
+		if (scrollThumb) scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
 		checkButton();
 	});
 
@@ -69,9 +69,10 @@ $('.carousel--scroll').each((index, carousel) => {
 	};
 
 	inner.addEventListener('mousedown', eventStart, true);
-
-	scrollThumb.addEventListener('mousedown', eventStart, true);
-	scrollThumb.addEventListener('touchstart', eventStart, true);
+	if (scrollThumb) {
+		scrollThumb.addEventListener('mousedown', eventStart, true);
+		scrollThumb.addEventListener('touchstart', eventStart, true);
+	}
 
 	document.addEventListener('mouseup', () => {
 		document.removeEventListener('mousemove', innerDrag);

@@ -81,3 +81,8 @@ if ($('.review-carousel').length > 0) {
 if ($('.tab-ingredient').length > 0) {
 	import(/* webpackChunkName: 'ingredient-api' */ '~mod/ingredient-api');
 }
+
+if ($('.search-box').length > 0) {
+	import(/* webpackChunkName: 'ingredient-api' */ '~mod/predictive-search');
+}
+

@@ -1,14 +1,15 @@
-<div class="search-box pb-3">
-	<div class="search-box__top w-100 mb-3">
-		<div class="container px-g mt-4">
+<div class="search-box pb-3 w-100">
+	<div class="search-box__top w-100">
+		<div class="container px-g">
 			<div class="row position-relative d-flex align-items-center">
 				<input type="text" placeholder="Type search terms here" name="q" class="col-12  border-0 py-3">
-				<a class="search-box__clear sni-after sni__times position-absolute align-items-center font-weight-bold" href="javascript:void(0)">Clear</a>
+				<a class="search-box__clear position-absolute align-items-center font-weight-bold" href="javascript:void(0)">Clear</a>
+				<a class="sni-after sni__times position-absolute align-items-center font-weight-bold" href="javascript:void(0)"></a>
 			</div>
 		</div>
 	</div>
-	<h5 class="search-box__no-result text-center pb-3">Your search returned no results</h5>
-	<div class="search-box__home container px-g">
+	<h5 class="search-box__no-result text-center pb-3 d-none">Your search returned no results</h5>
+	<div class="search-box__home container px-g pt-3">
 		<div class="row">
 			<h5 class="col-12 col-lg-4 mb-lg-4 font-weight-normal order-1 font-weight-normal">Popular searched here</h5>
 			<h5 class="col-12 col-lg-8 mb-lg-4 font-weight-normal order-3 order-lg-2 font-weight-normal">Popular searched products</h5>
@@ -27,7 +28,7 @@
 	</div>
 	<div class="search-box__result container mt-lg-4 px-g" style="display: none;">
 		<div class="row">
-			<h4 class="container">X Results</h4>
+			<h4 class="container mt-3 mt-lg-0">X Results</h4>
 			{{#> sections/carousel-scroll class="" id="search-products" no-scrollbar="true"}}
 				{{> compounds/search-box-product-card class="carousel-item mb-2 order-4" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)"}}
 				{{> compounds/search-box-product-card class="carousel-item mb-2  order-4" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)"}}

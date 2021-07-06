@@ -27,16 +27,33 @@ $('.carousel--scroll').each((index, carousel) => {
 	let itemIndex = 0;
 
 	const checkButton = () => {
-		if (inner.scrollLeft === 0 && !$(prevButton).hasClass('carousel-control-prev--always-show')) {
-			$(prevButton).addClass('d-none');
+
+		if (inner.scrollLeft === 0) {
+			if (!$(prevButton).hasClass('carousel-control-prev--always-show')) {
+				$(prevButton).addClass('d-none');
+			} else {
+				$(prevButton).addClass('disabled');
+			}
 		} else {
-			$(prevButton).removeClass('d-none');
+			if (!$(prevButton).hasClass('carousel-control-prev--always-show')) {
+				$(prevButton).removeClass('d-none');
+			} else {
+				$(prevButton).removeClass('disabled');
+			}
 		}
 
-		if (inner.scrollLeft + inner.clientWidth === inner.scrollWidth && !$(prevButton).hasClass('carousel-control-prev--always-show')) {
-			$(nextButton).addClass('d-none');
+		if (inner.scrollLeft + inner.clientWidth === inner.scrollWidth) {
+			if (!$(nextButton).hasClass('carousel-control-prev--always-show')) {
+				$(nextButton).addClass('d-none');
+			} else {
+				$(nextButton).addClass('disabled');
+			}
 		} else {
-			$(nextButton).removeClass('d-none');
+			if (!$(nextButton).hasClass('carousel-control-prev--always-show')) {
+				$(nextButton).removeClass('d-none');
+			} else {
+				$(nextButton).removeClass('disabled');
+			}
 		}
 	};
 

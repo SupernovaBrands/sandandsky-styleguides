@@ -47,5 +47,14 @@
 		picture {
 			flex-basis: 20%;
 		}
+
+		img {
+			max-height: calc-em(85, 16);
+			object-fit: cover;
+
+			@include media-breakpoint-up(lg) {
+				max-height: none;
+			}
+		}
 	}
 }

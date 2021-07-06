@@ -1,6 +1,12 @@
 .search-box {
 	box-shadow: 0 4px 6px #0000000d;
 
+	@include media-breakpoint-down(md) {
+		position: fixed;
+		height: 100vh;
+		top: 0;
+	}
+
 	&__top {
 		border-bottom: 1px solid $gray-400;
 
@@ -13,13 +19,26 @@
 		}
 
 		.sni__times {
-			right: 0;
-			color: $gray-500;
+			right: calc-em(16, 16);
+			color: $body-color;
 
 			&:after {
 				font-size: calc-em(12, 16);
 				margin-left: 1em;
 			}
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	&__result {
+		overflow-y: scroll;
+		max-height: calc(100vh - 2.5rem);
+
+		@include media-breakpoint-up(lg) {
+			overflow-y: unset;
 		}
 	}
 
@@ -29,8 +48,16 @@
 	}
 
 	&__clear {
+		right: calc-em(42, 16);
+		color: $body-color;
+
 		&:hover {
 			text-decoration: none;
+		}
+
+		&.disabled {
+			opacity: .5;
+			pointer-events: none;
 		}
 	}
 

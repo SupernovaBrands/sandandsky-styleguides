@@ -44,6 +44,18 @@ $(document).ready(function () {
 		toggleHTMLVideo($(this).find('video'), false);
 		toggleiFrameVideo($(this).find('iframe'), false);
 	});
+
+	const announcementBar = $('#announcementBar');
+	if (announcementBar.length) {
+		const announcement_items = announcementBar.find('.carousel-item');
+		let barHeight = 0;
+		announcement_items.each(function() {
+			barHeight = ($(this).outerHeight() > barHeight) ? $(this).outerHeight() : barHeight;
+		})
+		announcementBar.find('a').css({
+			'height': barHeight + 'px'
+		})
+	}
 });
 
 if ($('.hero-carousel').length > 0) {

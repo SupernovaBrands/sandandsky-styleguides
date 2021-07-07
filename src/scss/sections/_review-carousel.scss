@@ -1,16 +1,5 @@
 .review-carousel {
 
-	&__scroll {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: calc-em(425, 16);
-
-		@include media-breakpoint-up(lg) {
-			top: calc-em(445, 16);
-		}
-	}
-
 	&__decoration {
 		font-size: calc-em(60, 16);
 		right: -(calc-em(5, 16));
@@ -27,11 +16,16 @@
 
 			&-bottom {
 				transform: scaleY(-1) rotate(180deg);
-				position: absolute;
-				left: 0;
-				right: auto;
-				top: calc-em(95, 16);
 			}
+		}
+	}
+
+	.carousel-control-next,
+	.carousel-control-prev {
+		top: calc-em(260, 16);
+
+		@include media-breakpoint-up(lg) {
+			top: calc-em(245, 16);
 		}
 	}
 

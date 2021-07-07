@@ -3,4 +3,17 @@
 		font-size: calc-em(32,16);
 		flex-basis: 25%;
 	}
+
+	&-swatch-mobile {
+		visibility: hidden;
+		opacity: 0;
+		z-index: $zindex-dropdown !important;
+		transition: opacity .25s linear;
+
+		&.show {
+			transition: opacity .25s linear;
+			opacity: 1;
+			visibility: visible;
+		}
+	}
 }

@@ -26,8 +26,10 @@ $('.carousel--scroll').each((index, carousel) => {
 	const prevButton = carousel.querySelector('.carousel-control-prev');
 	const nextButton = carousel.querySelector('.carousel-control-next');
 
-	carousel.addEventListener('adjustThumb', () => { adjustScrollThumb(scrollThumb, inner, scrollbar.parentNode); });
-	adjustScrollThumb(scrollThumb, inner, scrollbar.parentNode);
+	if (scrollbar) {
+		carousel.addEventListener('adjustThumb', () => { adjustScrollThumb(scrollThumb, inner, scrollbar.parentNode); });
+		adjustScrollThumb(scrollThumb, inner, scrollbar.parentNode);
+	}
 	carousels.push(carousel);
 
 	let x = 0;
@@ -51,18 +53,24 @@ $('.carousel--scroll').each((index, carousel) => {
 
 	const innerDrag = (e) => {
 		inner.scrollLeft = left - (e.pageX || e.touches[0].pageX) + x;
-		scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
+		if (scrollThumb) {
+			scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
+		}
 		checkButton();
 	};
 
 	const scrollDrag = (e) => {
 		inner.scrollLeft = left + ((e.pageX || e.touches[0].pageX) - x) * (inner.scrollWidth / scrollbar.clientWidth);
-		scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
+		if (scrollThumb) {
+			scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
+		}
 		checkButton();
 	};
 
 	inner.addEventListener('scroll', () => {
-		scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
+		if (scrollThumb) {
+			scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
+		}
 		checkButton();
 	});
 
@@ -79,8 +87,10 @@ $('.carousel--scroll').each((index, carousel) => {
 
 	inner.addEventListener('mousedown', eventStart, true);
 
-	scrollThumb.addEventListener('mousedown', eventStart, true);
-	scrollThumb.addEventListener('touchstart', eventStart, true);
+	if (scrollThumb) {
+		scrollThumb.addEventListener('mousedown', eventStart, true);
+		scrollThumb.addEventListener('touchstart', eventStart, true);
+	}
 
 	document.addEventListener('mouseup', () => {
 		document.removeEventListener('mousemove', innerDrag);
@@ -95,7 +105,8 @@ $('.carousel--scroll').each((index, carousel) => {
 	const scrollItem = (direction) => (e) => {
 		e.preventDefault();
 		const item = carousel.querySelector('.carousel-item');
-		itemIndex = Math.round(inner.scrollLeft / item.clientWidth) + (direction === 'left' ? -2 : 2);
+		const itemToScroll = $(carousel).parent().hasClass('review-carousel') ? 1 : 2;
+		itemIndex = Math.round(inner.scrollLeft / item.clientWidth) + (direction === 'left' ? -(itemToScroll) : itemToScroll);
 		left = itemIndex * item.clientWidth;
 		if (left < 0) left = 0;
 		else if (left > inner.scrollWidth - inner.clientWidth) left = inner.scrollWidth - inner.clientWidth;
@@ -103,6 +114,11 @@ $('.carousel--scroll').each((index, carousel) => {
 		$(scrollThumb).animate({ left: `${(left / inner.scrollWidth) * 100}%` }, 300);
 	};
 
-	prevButton.addEventListener('mousedown', scrollItem('left'));
-	nextButton.addEventListener('mousedown', scrollItem('right'));
+	if (prevButton) {
+		prevButton.addEventListener('mousedown', scrollItem('left'));
+	}
+
+	if (nextButton) {
+		nextButton.addEventListener('mousedown', scrollItem('right'));
+	}
 });

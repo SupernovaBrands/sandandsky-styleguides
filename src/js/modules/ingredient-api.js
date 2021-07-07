@@ -1,4 +1,5 @@
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjQzZGQ4MzdjMzAxMzM2OWM4ODJlYjQiLCJjbGllbnRuYW1lIjoic2FuZCBhbmQgc2t5IiwidXNlcm5hbWUiOiJzYW5kc2t5IiwicGFzc3dvcmQiOiIkMmEkMTAkWjNwRzNkUG8vUW16MjVLeTRFbUFUdVJDV1MzL0ZndHRUVHRwd2xxaFZmb1pMNmxBWThyL08iLCJlbWFpbCI6InJoaWFubmUuY2xpZmZvcmRAc3VwZXJub3ZhYnJhbmRzLmNvbSIsInBhY2thZ2UiOiJ1bHRhIGNvbnNjaW91cyBiZWF1dHkiLCJwZXJtaXNzaW9uIjoib3duZXIiLCJpYXQiOjE2MjQzODk4MjZ9.fxRhjKnsENhUOivqcDzzzzTZtBaeEy6l3Qp5j43d3Tg';
+const cname = 'sand and sky';
 
 const toCapitalize = (text) => {
 	const upperCase = text.toLowerCase().replace(/\b[a-z]/g, function (letter) {
@@ -39,7 +40,6 @@ const parseIngredients = (responseData) => {
 // test mode data
 $(document).ready(function () {
 	const sku = $('#collapseIngredients').data('sku');
-	const cname = $('#collapseIngredients').data('cname');
 	const params = {
 		async: true,
 		crossDomain: true,
@@ -50,6 +50,9 @@ $(document).ready(function () {
 			xhr.setRequestHeader('Authorization', `Bearer ${token}`);
 		},
 		processData: false,
+		error: () => {
+			console.log('api cfm error - sku not found');
+		},
 	};
 	$.ajax(params).done(function (response) {
 		const ingredientHtml = parseIngredients(response);
@@ -67,7 +70,6 @@ $('#ingredientModal').on('show.bs.modal', function (event) {
 	const triggerBtn = $(event.relatedTarget).attr('data-name');
 	const dataNote = $(event.relatedTarget).attr('data-note');
 	const sku = $('#collapseIngredients').data('sku');
-	const cname = $('#collapseIngredients').data('cname');
 	const dataSp = $(event.relatedTarget).attr('data-speciality');
 	const params = {
 		async: true,

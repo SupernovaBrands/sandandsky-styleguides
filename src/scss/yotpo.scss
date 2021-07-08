@@ -1,0 +1,13 @@
+@import 'core/functions';
+@import 'core/vars';
+
+.yotpo .standalone-bottomline.star-clickable, .yotpo .standalone-bottomline .star-clickable {
+	align-items: center;
+}
+
+.yotpo .text-m {
+	color: $body-color !important;
+	text-decoration: underline !important;
+	margin-left: 5px;
+	font-family: "sofia-pro","Helvetica Neue",Arial,sans-serif;
+}

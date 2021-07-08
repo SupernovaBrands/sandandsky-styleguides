@@ -1,6 +1,8 @@
 .accordion {
-
-	span:not(.collapsed):after {
-		content: "#{map-get($supernova-icon-map, "minus")}";
+	span {
+		cursor: pointer;
+		&:not(.collapsed):after {
+			content: "#{map-get($supernova-icon-map, "minus")}";
+		}
 	}
 }

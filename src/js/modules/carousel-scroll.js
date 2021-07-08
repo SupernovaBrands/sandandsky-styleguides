@@ -1,10 +1,18 @@
 const carousels = [];
 
-const adjustScrollThumb = (thumb, inner) => {
+const adjustScrollThumb = (thumb, inner, scrollParent) => {
 	// eslint-disable-next-line no-param-reassign
 	thumb.style.width = `${(inner.clientWidth / inner.scrollWidth) * 100}%`;
 	// eslint-disable-next-line no-param-reassign
 	thumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
+
+	if (inner.clientWidth === inner.scrollWidth) {
+		inner.classList.add('justify-content-center');
+		scrollParent.classList.add('d-none');
+	} else {
+		inner.classList.remove('justify-content-center');
+		scrollParent.classList.remove('d-none');
+	}
 };
 
 window.addEventListener('resize', () => {
@@ -18,8 +26,10 @@ $('.carousel--scroll').each((index, carousel) => {
 	const prevButton = carousel.querySelector('.carousel-control-prev');
 	const nextButton = carousel.querySelector('.carousel-control-next');
 
-	carousel.addEventListener('adjustThumb', () => { adjustScrollThumb(scrollThumb, inner); });
-	adjustScrollThumb(scrollThumb, inner);
+	if (scrollbar) {
+		carousel.addEventListener('adjustThumb', () => { adjustScrollThumb(scrollThumb, inner, scrollbar.parentNode); });
+		if (scrollThumb) adjustScrollThumb(scrollThumb, inner, scrollbar.parentNode);
+	}
 	carousels.push(carousel);
 
 	let x = 0;
@@ -27,18 +37,36 @@ $('.carousel--scroll').each((index, carousel) => {
 	let itemIndex = 0;
 
 	const checkButton = () => {
+
 		if (inner.scrollLeft === 0) {
-			$(prevButton).addClass('d-none');
+			if (!$(prevButton).hasClass('carousel-control-prev--always-show')) {
+				$(prevButton).addClass('d-none');
+			} else {
+				$(prevButton).addClass('disabled');
+			}
 		} else {
-			$(prevButton).removeClass('d-none');
+			if (!$(prevButton).hasClass('carousel-control-prev--always-show')) {
+				$(prevButton).removeClass('d-none');
+			} else {
+				$(prevButton).removeClass('disabled');
+			}
 		}
 
 		if (inner.scrollLeft + inner.clientWidth === inner.scrollWidth) {
-			$(nextButton).addClass('d-none');
+			if (!$(nextButton).hasClass('carousel-control-prev--always-show')) {
+				$(nextButton).addClass('d-none');
+			} else {
+				$(nextButton).addClass('disabled');
+			}
 		} else {
-			$(nextButton).removeClass('d-none');
+			if (!$(nextButton).hasClass('carousel-control-prev--always-show')) {
+				$(nextButton).removeClass('d-none');
+			} else {
+				$(nextButton).removeClass('disabled');
+			}
 		}
 	};
+	checkButton();
 
 	const innerDrag = (e) => {
 		inner.scrollLeft = left - (e.pageX || e.touches[0].pageX) + x;
@@ -69,6 +97,10 @@ $('.carousel--scroll').each((index, carousel) => {
 	};
 
 	inner.addEventListener('mousedown', eventStart, true);
+	if (scrollThumb) {
+		scrollThumb.addEventListener('mousedown', eventStart, true);
+		scrollThumb.addEventListener('touchstart', eventStart, true);
+	}
 
 	scrollThumb.addEventListener('mousedown', eventStart, true);
 	scrollThumb.addEventListener('touchstart', eventStart, true);
@@ -86,7 +118,8 @@ $('.carousel--scroll').each((index, carousel) => {
 	const scrollItem = (direction) => (e) => {
 		e.preventDefault();
 		const item = carousel.querySelector('.carousel-item');
-		itemIndex = Math.round(inner.scrollLeft / item.clientWidth) + (direction === 'left' ? -2 : 2);
+		const itemToScroll = $(carousel).parent().hasClass('review-carousel') ? 1 : 2;
+		itemIndex = Math.round(inner.scrollLeft / item.clientWidth) + (direction === 'left' ? -(itemToScroll) : itemToScroll);
 		left = itemIndex * item.clientWidth;
 		if (left < 0) left = 0;
 		else if (left > inner.scrollWidth - inner.clientWidth) left = inner.scrollWidth - inner.clientWidth;
@@ -94,6 +127,11 @@ $('.carousel--scroll').each((index, carousel) => {
 		$(scrollThumb).animate({ left: `${(left / inner.scrollWidth) * 100}%` }, 300);
 	};
 
-	prevButton.addEventListener('mousedown', scrollItem('left'));
-	nextButton.addEventListener('mousedown', scrollItem('right'));
+	if (prevButton) {
+		prevButton.addEventListener('mousedown', scrollItem('left'));
+	}
+
+	if (nextButton) {
+		nextButton.addEventListener('mousedown', scrollItem('right'));
+	}
 });

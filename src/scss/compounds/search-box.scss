@@ -1,0 +1,93 @@
+.search-box {
+	box-shadow: 0 4px 6px #0000000d;
+
+	@include media-breakpoint-down(md) {
+		position: fixed;
+		height: 100vh;
+		top: 0;
+	}
+
+	&__top {
+		border-bottom: 1px solid $gray-400;
+
+		input {
+			&:focus,
+			&:active {
+				box-shadow: none;
+				outline: 0;
+			}
+		}
+
+		.sni__times {
+			right: calc-em(16, 16);
+			color: $body-color;
+
+			&:after {
+				font-size: calc-em(12, 16);
+				margin-left: 1em;
+			}
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	&__result {
+		overflow-y: scroll;
+		max-height: calc(100vh - 2.5rem);
+
+		@include media-breakpoint-up(lg) {
+			overflow-y: unset;
+		}
+	}
+
+	&__tag {
+		background-color: $gray-100;
+		cursor: pointer;
+	}
+
+	&__clear {
+		right: calc-em(42, 16);
+		color: $body-color;
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		&.disabled {
+			opacity: .5;
+			pointer-events: none;
+		}
+	}
+
+	.carousel-inner {
+		@include media-breakpoint-down(md) {
+			flex-wrap: wrap !important;
+		}
+	}
+
+	.carousel-control-next {
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+
+		@include media-breakpoint-up(lg) {
+			top: auto;
+			bottom: -27%;
+		}
+	}
+
+	.carousel-control-prev {
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+		
+		@include media-breakpoint-up(lg) {
+			top: auto;
+			bottom: -27%;
+			left: auto;
+			right: 3%;
+		}
+	}
+}

@@ -66,9 +66,8 @@
 		overflow: hidden;
 
 		.carousel-inner {
-  			width: calc(100% + #{$grid-gutter-width});
+				width: calc(100% + #{$grid-gutter-width});
 			overflow: visible;
-			@include make-carousel-centered(9, $grid-columns);
 
 			@include media-breakpoint-up(md) {
 				width: calc(100% + #{$grid-gutter-width-lg});
@@ -175,6 +174,16 @@
 				animation-duration: 7s;
 				animation-timing-function: linear;
 			}
+		}
+	}
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+	&--always-show {
+		&.disabled {
+			opacity: .5;
+			pointer-events: none;
 		}
 	}
 }

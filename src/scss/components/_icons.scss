@@ -1,7 +1,7 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?286cd373e6b2f24cb19f9209988bddab") format("woff2"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?286cd373e6b2f24cb19f9209988bddab") format("woff") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?9da53fc36d89c80809d40c131ab85e7f") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?9da53fc36d89c80809d40c131ab85e7f") format("woff") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -29,37 +29,41 @@ url("/sandandsky-styleguides/fonts/supernova-icon.woff?286cd373e6b2f24cb19f92099
 $supernova-icon-map: (
 	"apc-leaf": "\f101",
 	"australia": "\f102",
-	"cart": "\f103",
-	"chevron-down": "\f104",
-	"chevron-next": "\f105",
-	"chevron-prev": "\f106",
-	"chevron-up": "\f107",
-	"close-circle": "\f108",
-	"earth": "\f109",
-	"five-stars": "\f10a",
-	"koala": "\f10b",
-	"long-arrow-right": "\f10c",
-	"minus": "\f10d",
-	"nasties": "\f10e",
-	"play": "\f10f",
-	"plus": "\f110",
-	"range-aea": "\f111",
-	"range-apc": "\f112",
-	"range-tsw": "\f113",
-	"returns": "\f114",
-	"search": "\f115",
-	"shake": "\f116",
-	"shipping": "\f117",
-	"ss": "\f118",
-	"star-full": "\f119",
-	"star-half": "\f11a",
-	"star-hollow": "\f11b",
-	"thumbs-down": "\f11c",
-	"thumbs-up": "\f11d",
-	"times": "\f11e",
-	"trophy": "\f11f",
-	"user": "\f120",
-	"verified": "\f121",
+	"check": "\f103",
+	"chevron-next": "\f104",
+	"chevron-prev": "\f105",
+	"close-circle": "\f106",
+	"dermatologist": "\f107",
+	"five-stars": "\f108",
+	"gluten": "\f109",
+	"koala": "\f10a",
+	"long-arrow-right": "\f10b",
+	"minus": "\f10c",
+	"nasties": "\f10d",
+	"paraben": "\f10e",
+	"pegs": "\f10f",
+	"peta": "\f110",
+	"phthalates": "\f111",
+	"play": "\f112",
+	"plus": "\f113",
+	"range-aea": "\f114",
+	"range-apc": "\f115",
+	"range-tsw": "\f116",
+	"returns": "\f117",
+	"search": "\f118",
+	"shake": "\f119",
+	"shipping": "\f11a",
+	"silicone": "\f11b",
+	"ss": "\f11c",
+	"star-full": "\f11d",
+	"star-half": "\f11e",
+	"star-hollow": "\f11f",
+	"sulfate": "\f120",
+	"thumbs-down": "\f121",
+	"thumbs-up": "\f122",
+	"times": "\f123",
+	"trophy": "\f124",
+	"verified": "\f125",
 );
 
 .sni.sni__apc-leaf:before,
@@ -70,13 +74,9 @@ $supernova-icon-map: (
 .sni-after.sni__australia:after {
 	content: map-get($supernova-icon-map, "australia");
 }
-.sni.sni__cart:before,
-.sni-after.sni__cart:after {
-	content: map-get($supernova-icon-map, "cart");
-}
-.sni.sni__chevron-down:before,
-.sni-after.sni__chevron-down:after {
-	content: map-get($supernova-icon-map, "chevron-down");
+.sni.sni__check:before,
+.sni-after.sni__check:after {
+	content: map-get($supernova-icon-map, "check");
 }
 .sni.sni__chevron-next:before,
 .sni-after.sni__chevron-next:after {
@@ -94,13 +94,17 @@ $supernova-icon-map: (
 .sni-after.sni__close-circle:after {
 	content: map-get($supernova-icon-map, "close-circle");
 }
-.sni.sni__earth:before,
-.sni-after.sni__earth:after {
-	content: map-get($supernova-icon-map, "earth");
+.sni.sni__dermatologist:before,
+.sni-after.sni__dermatologist:after {
+	content: map-get($supernova-icon-map, "dermatologist");
 }
 .sni.sni__five-stars:before,
 .sni-after.sni__five-stars:after {
 	content: map-get($supernova-icon-map, "five-stars");
+}
+.sni.sni__gluten:before,
+.sni-after.sni__gluten:after {
+	content: map-get($supernova-icon-map, "gluten");
 }
 .sni.sni__koala:before,
 .sni-after.sni__koala:after {
@@ -117,6 +121,22 @@ $supernova-icon-map: (
 .sni.sni__nasties:before,
 .sni-after.sni__nasties:after {
 	content: map-get($supernova-icon-map, "nasties");
+}
+.sni.sni__paraben:before,
+.sni-after.sni__paraben:after {
+	content: map-get($supernova-icon-map, "paraben");
+}
+.sni.sni__pegs:before,
+.sni-after.sni__pegs:after {
+	content: map-get($supernova-icon-map, "pegs");
+}
+.sni.sni__peta:before,
+.sni-after.sni__peta:after {
+	content: map-get($supernova-icon-map, "peta");
+}
+.sni.sni__phthalates:before,
+.sni-after.sni__phthalates:after {
+	content: map-get($supernova-icon-map, "phthalates");
 }
 .sni.sni__play:before,
 .sni-after.sni__play:after {
@@ -154,6 +174,10 @@ $supernova-icon-map: (
 .sni-after.sni__shipping:after {
 	content: map-get($supernova-icon-map, "shipping");
 }
+.sni.sni__silicone:before,
+.sni-after.sni__silicone:after {
+	content: map-get($supernova-icon-map, "silicone");
+}
 .sni.sni__ss:before,
 .sni-after.sni__ss:after {
 	content: map-get($supernova-icon-map, "ss");
@@ -169,6 +193,10 @@ $supernova-icon-map: (
 .sni.sni__star-hollow:before,
 .sni-after.sni__star-hollow:after {
 	content: map-get($supernova-icon-map, "star-hollow");
+}
+.sni.sni__sulfate:before,
+.sni-after.sni__sulfate:after {
+	content: map-get($supernova-icon-map, "sulfate");
 }
 .sni.sni__thumbs-down:before,
 .sni-after.sni__thumbs-down:after {

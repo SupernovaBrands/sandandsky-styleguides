@@ -1,0 +1,13 @@
+.list-check li {
+	position: relative;
+
+	&:before {
+		font-family: $supernova-icon-font;
+		content: "\a0#{map-get($supernova-icon-map, "check")}";
+		color: $secondary;
+		font-size: calc-em(12, 16);
+		position: absolute;
+		left: - map-get($spacers, 4);
+		top: calc-em(5, 16);
+	}
+}

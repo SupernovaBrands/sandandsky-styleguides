@@ -22,4 +22,8 @@
 		opacity: 1;
 	}
 
+	&__content {
+		line-height: calc-em(24, $context: 16, $unit: 1);
+	}
+
 }

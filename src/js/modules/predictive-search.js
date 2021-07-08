@@ -26,6 +26,14 @@ var _Search = {
 		searchClear.on('click', function() {
 			_Search.clear()
 		})
+
+		$('header .sni__search, .search-box__top .sni__times').on('click', function () {
+			_Search.searchBoxToggle()
+		})
+	},
+	searchBoxToggle() {
+		$('.search-box').toggleClass('show');
+		$('body').toggleClass('search-box-active');
 	},
 	keywordListener: function(input) {
 		searchTag.on('click', function(evt) {

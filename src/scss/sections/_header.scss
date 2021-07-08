@@ -36,12 +36,15 @@
 		}
 	}
 
-	.sni__chevron-down {
-		&:after {
-			padding-left: calc-em(10);
-			font-size: calc-em(12);
+	.sni__search {
+		&:before {
+			cursor: pointer;
 		}
 	}
+
+  .sni__chevron-down {
+
+  }
 
 	.nav-link {
 		&:hover {

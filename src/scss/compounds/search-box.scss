@@ -1,11 +1,23 @@
 .search-box {
 	box-shadow: 0 4px 6px #0000000d;
+  transition: all 0.3s;
+  opacity: 0;
+  height: 0;
 
-	@include media-breakpoint-down(md) {
-		position: fixed;
-		height: 100vh;
-		top: 0;
-	}
+  @include media-breakpoint-down(md) {
+    position: fixed;
+    top: 0;
+  }
+
+  &.show {
+    transition: all .5s ease;
+    opacity: 1;
+    height: 33em;
+
+    @include media-breakpoint-down(md) {
+      height: 100vh;
+    }
+  }
 
 	&__top {
 		border-bottom: 1px solid $gray-400;
@@ -74,7 +86,7 @@
 
 		@include media-breakpoint-up(lg) {
 			top: auto;
-			bottom: -27%;
+			bottom: -21%;
 		}
 	}
 
@@ -85,7 +97,7 @@
 		
 		@include media-breakpoint-up(lg) {
 			top: auto;
-			bottom: -27%;
+			bottom: -21%;
 			left: auto;
 			right: 3%;
 		}

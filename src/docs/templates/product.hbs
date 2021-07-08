@@ -84,7 +84,7 @@
 							<span class="text-underline ml-1">Full ingredients list</span>
 						</a>
 						<div class="collapse" id="collapseIngredients" data-sku="Test234">
-							<p class="font-size-sm mt-3">(Click or tap on the ingredients to learn more)</p>
+							<p class="font-size-sm mt-3 d-none tab-ingredient__learn-more">(Click or tap on the ingredients to learn more)</p>
 							<p class="font-size-sm mt-2 tab-ingredient__content"></p>
 							{{> components/ingredient-modal}}
 						</div>
@@ -99,12 +99,30 @@
 						<span class="py-4 w-100 justify-content-between align-items-center collapsed font-weight-bold sni-after sni__plus" data-toggle="collapse" data-target="#collapsible1" aria-expanded="true" aria-controls="collapsible1">Formula Facts</span>
 						<div id="collapsible1" class="collapse" data-parent="#accordion">
 							<ul class="row list-unstyled pb-3 m-0 formula-list">
-								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__sulfate">No sulfates</li>
-								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__silicone">No silicones</li>
-								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__paraben">No parabens</li>
-								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__phthalates">No phthalates</li>
-								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__pegs">No PEGs</li>
-								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__gluten">No gluten</li>
+								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__sulfate">
+									<p class="mb-0 ml-2 text-left">No sulfates</p>
+								</li>
+								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__silicone">
+									<p class="mb-0 ml-2 text-left">No silicones</p>
+								</li>
+								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__paraben">
+									<p class="mb-0 ml-2 text-left">No parabens</p>
+									</li>
+								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__phthalates">
+									<p class="mb-0 ml-2 text-left">No phthalates</p>
+								</li>
+								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__pegs">
+									<p class="mb-0 ml-2 text-left">No PEGs</p>
+								</li>
+								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__gluten">
+									<p class="mb-0 ml-2 text-left">No gluten</p>
+								</li>
+								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__peta">
+									<p class="mb-0 ml-2 text-left">Cruelty-free.<br>PETA approved</p>
+								</li>
+								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__dermatologist">
+									<p class="mb-0 ml-2 text-left">Dermatologist<br>approved</p>
+								</li>
 							</ul>
 						</div>
 					</li>

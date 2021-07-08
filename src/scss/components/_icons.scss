@@ -1,7 +1,7 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?169b38c32fd7d1754437f0ad839d4795") format("woff2"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?169b38c32fd7d1754437f0ad839d4795") format("woff") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?9da53fc36d89c80809d40c131ab85e7f") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?9da53fc36d89c80809d40c131ab85e7f") format("woff") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -33,35 +33,37 @@ $supernova-icon-map: (
 	"chevron-next": "\f104",
 	"chevron-prev": "\f105",
 	"close-circle": "\f106",
-	"five-stars": "\f107",
-	"gluten": "\f108",
-	"koala": "\f109",
-	"long-arrow-right": "\f10a",
-	"minus": "\f10b",
-	"nasties": "\f10c",
-	"paraben": "\f10d",
-	"pegs": "\f10e",
-	"phthalates": "\f10f",
-	"play": "\f110",
-	"plus": "\f111",
-	"range-aea": "\f112",
-	"range-apc": "\f113",
-	"range-tsw": "\f114",
-	"returns": "\f115",
-	"search": "\f116",
-	"shake": "\f117",
-	"shipping": "\f118",
-	"silicone": "\f119",
-	"ss": "\f11a",
-	"star-full": "\f11b",
-	"star-half": "\f11c",
-	"star-hollow": "\f11d",
-	"sulfate": "\f11e",
-	"thumbs-down": "\f11f",
-	"thumbs-up": "\f120",
-	"times": "\f121",
-	"trophy": "\f122",
-	"verified": "\f123",
+	"dermatologist": "\f107",
+	"five-stars": "\f108",
+	"gluten": "\f109",
+	"koala": "\f10a",
+	"long-arrow-right": "\f10b",
+	"minus": "\f10c",
+	"nasties": "\f10d",
+	"paraben": "\f10e",
+	"pegs": "\f10f",
+	"peta": "\f110",
+	"phthalates": "\f111",
+	"play": "\f112",
+	"plus": "\f113",
+	"range-aea": "\f114",
+	"range-apc": "\f115",
+	"range-tsw": "\f116",
+	"returns": "\f117",
+	"search": "\f118",
+	"shake": "\f119",
+	"shipping": "\f11a",
+	"silicone": "\f11b",
+	"ss": "\f11c",
+	"star-full": "\f11d",
+	"star-half": "\f11e",
+	"star-hollow": "\f11f",
+	"sulfate": "\f120",
+	"thumbs-down": "\f121",
+	"thumbs-up": "\f122",
+	"times": "\f123",
+	"trophy": "\f124",
+	"verified": "\f125",
 );
 
 .sni.sni__apc-leaf:before,
@@ -87,6 +89,10 @@ $supernova-icon-map: (
 .sni.sni__close-circle:before,
 .sni-after.sni__close-circle:after {
 	content: map-get($supernova-icon-map, "close-circle");
+}
+.sni.sni__dermatologist:before,
+.sni-after.sni__dermatologist:after {
+	content: map-get($supernova-icon-map, "dermatologist");
 }
 .sni.sni__five-stars:before,
 .sni-after.sni__five-stars:after {
@@ -119,6 +125,10 @@ $supernova-icon-map: (
 .sni.sni__pegs:before,
 .sni-after.sni__pegs:after {
 	content: map-get($supernova-icon-map, "pegs");
+}
+.sni.sni__peta:before,
+.sni-after.sni__peta:after {
+	content: map-get($supernova-icon-map, "peta");
 }
 .sni.sni__phthalates:before,
 .sni-after.sni__phthalates:after {

@@ -57,6 +57,7 @@ $(document).ready(function () {
 	$.ajax(params).done(function (response) {
 		const ingredientHtml = parseIngredients(response);
 		$('.tab-ingredient__content').html(ingredientHtml);
+		$('.tab-ingredient__learn-more').removeClass('d-none');
 	});
 });
 

@@ -3,7 +3,7 @@
 	.sni-after:after {
 		cursor: pointer;
 		position: absolute;
-		color: #000;
+		color: $body-color;
 		font-size: calc-em(12, 16);
 		background-color: $white;
 		border-radius: 100%;
@@ -34,5 +34,6 @@
 		top: 0;
 		transform: translateY(-50%);
 		opacity: 1;
+		z-index: 1; //above frame onload
 	}
 }

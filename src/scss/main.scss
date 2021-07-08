@@ -20,9 +20,11 @@
 @import 'components/announcement-bar';
 @import 'components/tooltip';
 @import 'components/dropdown';
+@import 'components/list';
 @import 'components/nav';
 @import 'components/ingredient';
 @import 'components/badge';
+@import 'components/product-variant';
 
 @import 'compounds/hero-banner';
 @import 'compounds/product-card';
@@ -46,3 +48,4 @@
 @import 'sections/review-carousel';
 
 @import 'templates/home';
+@import 'templates/product';

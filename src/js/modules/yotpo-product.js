@@ -228,8 +228,10 @@ $.post(`https://api.yotpo.com/v1/topic/${appKey}/topics.json`, { domain_key: pro
 		const tag = `<a href="#" class="badge badge-gray font-size-sm mr-2 mb-2 text-capitalize ${hideTag}" data-name="${tagname}">${tagname}</a>`;
 		$('.yotpo__tags').append(tag);
 	}
-	// append ellipsis
-	$('.yotpo__tags').append('<a href="#" class="badge badge-gray font-size-sm mr-2 mb-2 yotpo__tags-expand" data-name="">...</a>');
+	if (tagLength > 5) {
+		// append ellipsis
+		$('.yotpo__tags').append('<a href="#" class="badge badge-gray font-size-sm mr-2 mb-2 yotpo__tags-expand" data-name="">...</a>');
+	}
 });
 
 // Initial build
@@ -242,12 +244,18 @@ $.get(`https://api.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.j
 	if (data.response.reviews.length > 0) {
 		renderPagination(data.response.pagination);
 		renderReviews(data.response.reviews);
+	} else {
+		$('.yotpo__avg-score').parent().removeClass('d-flex').addClass('d-none');
+		$('.yotpo__total-reviews').addClass('d-none');
 	}
 });
 
 // Pagination handle
 $('.yotpo__pagination').on('click', 'a', function (e) {
 	e.preventDefault();
+	$('html, body').animate({
+		scrollTop: $('.yotpo__review').offset().top,
+	}, 500);
 	const filterParams = checkFilterParams();
 	if (Object.keys(filterParams).length > 0) {
 		ajaxPost($(this).data('page'));

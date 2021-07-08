@@ -41,3 +41,7 @@ if ($('.template-product').length > 0) {
 if ($('.video-card').length > 0) {
 	import(/* webpackChunkName: 'video-card' */ '~mod/video-card');
 }
+
+if ($('.search-box').length > 0) {
+	import(/* webpackChunkName: 'ingredient-api' */ '~mod/predictive-search');
+}

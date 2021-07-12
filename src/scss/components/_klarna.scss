@@ -1,0 +1,42 @@
+.klarna {
+
+	&__list {
+		li:before {
+			top: calc-em(5, 10);
+			position: relative;
+			margin-right: $grid-gutter-width;
+			font-size: calc-em(10, 16);
+			z-index: 1;
+		}
+
+		li:not(:last-child):after {
+			top: calc-em(5, 16);
+			left: calc-em(4, 16);
+			height: 100%;
+			border: 1px solid $gray-100;
+			position: absolute;
+			content: '';
+		}
+
+		.sni__klarna-logo{
+			top: -(calc-em(5, 16));
+			&:before {
+				font-size: calc-em(11, 16);
+			}
+		}
+	}
+
+	.sni__times {
+		top: $grid-gutter-width;
+		right: calc-em(10, 20);
+		opacity: 1;
+		&:after {
+			font-size: calc-em(11, 18);
+		}
+	}
+
+	.modal-header:before {
+		color: $gray-600;
+		font-size: calc-em(18, 16);
+	}
+}

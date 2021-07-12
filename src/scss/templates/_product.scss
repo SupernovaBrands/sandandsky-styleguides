@@ -16,4 +16,15 @@
 			visibility: visible;
 		}
 	}
+
+	&__klarna {
+
+		.sni__klarna-logo:before {
+			font-size: calc-em(12, 14);
+		}
+
+		.sni__info-circle:before {
+			cursor: pointer;
+		}
+	}
 }

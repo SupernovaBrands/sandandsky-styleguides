@@ -1,7 +1,7 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?9da53fc36d89c80809d40c131ab85e7f") format("woff2"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?9da53fc36d89c80809d40c131ab85e7f") format("woff") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?ab864e5cea7ee2bb92c8fda20dc66fe3") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?ab864e5cea7ee2bb92c8fda20dc66fe3") format("woff") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -36,34 +36,37 @@ $supernova-icon-map: (
 	"dermatologist": "\f107",
 	"five-stars": "\f108",
 	"gluten": "\f109",
-	"koala": "\f10a",
-	"long-arrow-right": "\f10b",
-	"minus": "\f10c",
-	"nasties": "\f10d",
-	"paraben": "\f10e",
-	"pegs": "\f10f",
-	"peta": "\f110",
-	"phthalates": "\f111",
-	"play": "\f112",
-	"plus": "\f113",
-	"range-aea": "\f114",
-	"range-apc": "\f115",
-	"range-tsw": "\f116",
-	"returns": "\f117",
-	"search": "\f118",
-	"shake": "\f119",
-	"shipping": "\f11a",
-	"silicone": "\f11b",
-	"ss": "\f11c",
-	"star-full": "\f11d",
-	"star-half": "\f11e",
-	"star-hollow": "\f11f",
-	"sulfate": "\f120",
-	"thumbs-down": "\f121",
-	"thumbs-up": "\f122",
-	"times": "\f123",
-	"trophy": "\f124",
-	"verified": "\f125",
+	"info-circle": "\f10a",
+	"klarna-logo": "\f10b",
+	"koala": "\f10c",
+	"long-arrow-right": "\f10d",
+	"minus": "\f10e",
+	"nasties": "\f10f",
+	"paraben": "\f110",
+	"pegs": "\f111",
+	"peta": "\f112",
+	"phthalates": "\f113",
+	"play": "\f114",
+	"plus": "\f115",
+	"range-aea": "\f116",
+	"range-apc": "\f117",
+	"range-tsw": "\f118",
+	"returns": "\f119",
+	"search": "\f11a",
+	"shake": "\f11b",
+	"shipping": "\f11c",
+	"silicone": "\f11d",
+	"square": "\f11e",
+	"ss": "\f11f",
+	"star-full": "\f120",
+	"star-half": "\f121",
+	"star-hollow": "\f122",
+	"sulfate": "\f123",
+	"thumbs-down": "\f124",
+	"thumbs-up": "\f125",
+	"times": "\f126",
+	"trophy": "\f127",
+	"verified": "\f128",
 );
 
 .sni.sni__apc-leaf:before,
@@ -101,6 +104,14 @@ $supernova-icon-map: (
 .sni.sni__gluten:before,
 .sni-after.sni__gluten:after {
 	content: map-get($supernova-icon-map, "gluten");
+}
+.sni.sni__info-circle:before,
+.sni-after.sni__info-circle:after {
+	content: map-get($supernova-icon-map, "info-circle");
+}
+.sni.sni__klarna-logo:before,
+.sni-after.sni__klarna-logo:after {
+	content: map-get($supernova-icon-map, "klarna-logo");
 }
 .sni.sni__koala:before,
 .sni-after.sni__koala:after {
@@ -173,6 +184,10 @@ $supernova-icon-map: (
 .sni.sni__silicone:before,
 .sni-after.sni__silicone:after {
 	content: map-get($supernova-icon-map, "silicone");
+}
+.sni.sni__square:before,
+.sni-after.sni__square:after {
+	content: map-get($supernova-icon-map, "square");
 }
 .sni.sni__ss:before,
 .sni-after.sni__ss:after {

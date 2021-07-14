@@ -43,6 +43,10 @@ $('.carousel--scroll').each((index, carousel) => {
 			} else {
 				$(prevButton).addClass('disabled');
 			}
+		} else if (!$(prevButton).hasClass('carousel-control-prev--always-show')) {
+			$(prevButton).removeClass('d-none');
+		} else {
+			$(prevButton).removeClass('disabled');
 		}
 
 		if (inner.scrollLeft + inner.clientWidth === inner.scrollWidth) {
@@ -51,6 +55,10 @@ $('.carousel--scroll').each((index, carousel) => {
 			} else {
 				$(nextButton).addClass('disabled');
 			}
+		} else if (!$(nextButton).hasClass('carousel-control-prev--always-show')) {
+			$(nextButton).removeClass('d-none');
+		} else {
+			$(nextButton).removeClass('disabled');
 		}
 	};
 	checkButton();

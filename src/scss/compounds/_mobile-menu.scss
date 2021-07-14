@@ -130,7 +130,7 @@
 		}
 	}
 
-	&.show {
+	.mobile-nav-show & {
 		transform: translateX(0%);
 	}
 }

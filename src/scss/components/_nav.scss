@@ -39,31 +39,24 @@
 			}
 		}
 
-    &.sni__search {
-      font-size: calc-em(16, 16);
-      flex-basis: 10%;
+		&.sni__search {
+			font-size: calc-em(16, 16);
+			flex-basis: 10%;
 
-      &:before {
-        font-size: calc-em(20);
-        margin-right: calc-em(3, 16);
-      }
+			&:before {
+				font-size: calc-em(20);
+				margin-right: calc-em(3, 16);
+			}
 
-      &:focus,
-      &:active {
-        outline: none;
-      }
-    }
+			&:focus,
+			&:active {
+				outline: none;
+			}
+		}
 	}
 }
 
 .navbar-brand {
-	&:before {
-		font-size: calc-em(34, 20);
-		@include media-breakpoint-up(xl) {
-			font-size: calc-em(41, 20);
-		}
-	}
-
 	@include media-breakpoint-up(lg) {
 		svg {
 			height: calc-em(33, 16);
@@ -87,8 +80,8 @@
 		}
 
 		.nav-item {
-			padding-left: $grid-gutter-width / 2;
-			padding-right: $grid-gutter-width / 2;
+			padding-left: $grid-gutter-width;
+			padding-right: $grid-gutter-width;
 
 			&:first-child {
 				padding-left: 0;

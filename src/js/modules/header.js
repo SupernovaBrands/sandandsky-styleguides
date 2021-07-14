@@ -1,8 +1,7 @@
 $(document).ready(function () {
 	// mobile menu toggle
 	function mobileMenuToggler() {
-		$('.mobile-nav').toggleClass('show');
-		$('body').toggleClass('offcanvas-active');
+		$('body').toggleClass('offcanvas-active mobile-nav-show');
 	}
 
 	$('.navbar-toggler').on('click', function () {

@@ -37,18 +37,11 @@ $('.carousel--scroll').each((index, carousel) => {
 	let itemIndex = 0;
 
 	const checkButton = () => {
-
 		if (inner.scrollLeft === 0) {
 			if (!$(prevButton).hasClass('carousel-control-prev--always-show')) {
 				$(prevButton).addClass('d-none');
 			} else {
 				$(prevButton).addClass('disabled');
-			}
-		} else {
-			if (!$(prevButton).hasClass('carousel-control-prev--always-show')) {
-				$(prevButton).removeClass('d-none');
-			} else {
-				$(prevButton).removeClass('disabled');
 			}
 		}
 
@@ -57,12 +50,6 @@ $('.carousel--scroll').each((index, carousel) => {
 				$(nextButton).addClass('d-none');
 			} else {
 				$(nextButton).addClass('disabled');
-			}
-		} else {
-			if (!$(nextButton).hasClass('carousel-control-prev--always-show')) {
-				$(nextButton).removeClass('d-none');
-			} else {
-				$(nextButton).removeClass('disabled');
 			}
 		}
 	};
@@ -81,7 +68,9 @@ $('.carousel--scroll').each((index, carousel) => {
 	};
 
 	inner.addEventListener('scroll', () => {
-		scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
+		if (scrollThumb) {
+			scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
+		}
 		checkButton();
 	});
 
@@ -100,10 +89,9 @@ $('.carousel--scroll').each((index, carousel) => {
 	if (scrollThumb) {
 		scrollThumb.addEventListener('mousedown', eventStart, true);
 		scrollThumb.addEventListener('touchstart', eventStart, true);
+		scrollThumb.addEventListener('mousedown', eventStart, true);
+		scrollThumb.addEventListener('touchstart', eventStart, true);
 	}
-
-	scrollThumb.addEventListener('mousedown', eventStart, true);
-	scrollThumb.addEventListener('touchstart', eventStart, true);
 
 	document.addEventListener('mouseup', () => {
 		document.removeEventListener('mousemove', innerDrag);

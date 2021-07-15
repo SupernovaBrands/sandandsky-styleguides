@@ -109,7 +109,7 @@ eval("if ($('.hero-carousel').length > 0) {\n  __webpack_require__.e(/*! import(
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "chunk." + chunkId + ".js?h=" + {"hero-carousel":"6ade9096f343162ef10a","product-card":"cdcee08c133cdbd72f3e","carousel-scroll":"1a322654b430186dae1a","carousel-product-image":"1c1693d07165bc0bba8c","instagram":"3aec0301b262c6028dad","a-beauty-review":"ab38c95dc552009a4583","yotpo-product":"6a29d04180e53ec657e7","review-carousel":"2cfbc4393333356f73d5","ingredient-api":"609f797e866f41bc51e7","product-template":"ebb29f140b5e6c801371","video-card":"8d469de7bce5d2d2b762"}[chunkId] + "";
+/******/ 			return "chunk." + chunkId + ".js?h=" + {"hero-carousel":"6ade9096f343162ef10a","product-card":"cdcee08c133cdbd72f3e","carousel-scroll":"831b477af53c9c183c49","carousel-product-image":"1c1693d07165bc0bba8c","instagram":"3aec0301b262c6028dad","a-beauty-review":"ab38c95dc552009a4583","yotpo-product":"6a29d04180e53ec657e7","review-carousel":"2cfbc4393333356f73d5","ingredient-api":"609f797e866f41bc51e7","product-template":"943c8992d224b75c40aa","video-card":"8d469de7bce5d2d2b762"}[chunkId] + "";
 /******/ 		};
 /******/ 	})();
 /******/ 	

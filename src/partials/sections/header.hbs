@@ -1,62 +1,60 @@
-<header class="main-header">
+<header class="main-header bg-white">
 	{{> components/announcement-bar}}
-	<nav class="bg-white navbar navbar-expand-lg px-g">
-		<div class="container">
-			<button class="navbar-toggler" type="button">
-				<span class="d-block"></span>
-			</button>
-			<ul class="navbar-nav align-items-center d-none d-lg-flex">
-				<li class="nav-item nav-item--mega-menu">
-					<a href="#" class="nav-link font-weight-bold align-items-center mr-1 sni-after sni__chevron-down m-0">Shop</a>
-					{{> compounds/mega-menu-shop}}
-				</li>
-				<li class="nav-item nav-item--mega-menu">
-					<a class="nav-link font-weight-bold align-items-center mr-1 sni-after sni__chevron-down m-0" href="#">About</a>
-					{{> compounds/mega-menu-about}}
-				</li>
-				<li class="nav-item">
-					<a class="nav-link h4 m-0 font-weight-bold" href="#">Blog</a>
-				</li>
-			</ul>
-			<a href="#" class="navbar-brand mx-auto">
-				{{> components/svg-logo}}
-			</a>
-			<ul class="navbar-nav d-none d-lg-flex justify-content-end">
-				<li class="nav-item">
-					<a class="nav-link h4 font-weight-bold m-0" href="#">Track My Order</a>
-				</li>
-				<li class="nav-item">
-					<div class="dropdown dropdown--onhover">
-						<a class="dropdown-toggle font-weight-bold m-0 nav-link sni-after sni__chevron-down align-items-center mr-1" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							US (USD)
-						</a>
-						<div class="dropdown-menu border-0 p-0 text-right pt-2 pb-2 overflow-hidden d-block" aria-labelledby="dropdownMenuLink">
-							<a class="dropdown-item pt-2 pb-2 pr-5 active" href="#">United Kingdom (GBP)</a>
-							<a class="dropdown-item pt-2 pb-2 pr-5" href="#">USA (USD)</a>
-							<a class="dropdown-item pt-2 pb-2 pr-5" href="#">Canada (CAD)</a>
-							<a class="dropdown-item pt-2 pb-2 pr-5" href="#">Australia (AUD)</a>
-							<a class="dropdown-item pt-2 pb-2 pr-5" href="#">Europe (EUR)</a>
-							<a class="dropdown-item pt-2 pb-2 pr-5" href="#">Rest of the World (USD)</a>
-						</div>
+	<nav class="navbar navbar-expand-lg px-g container">
+		<button class="navbar-toggler" type="button">
+			<span class="d-block"></span>
+		</button>
+		<ul class="navbar-nav align-items-center d-none d-lg-flex">
+			<li class="nav-item nav-item--mega-menu">
+				<a href="#" class="nav-link font-weight-bold align-items-center mr-1 sni-after sni__chevron-down m-0">Shop</a>
+				{{> compounds/mega-menu-shop}}
+			</li>
+			<li class="nav-item nav-item--mega-menu">
+				<a class="nav-link font-weight-bold align-items-center mr-1 sni-after sni__chevron-down m-0" href="#">About</a>
+				{{> compounds/mega-menu-about}}
+			</li>
+			<li class="nav-item">
+				<a class="nav-link h4 m-0 font-weight-bold" href="#">Blog</a>
+			</li>
+		</ul>
+		<a href="#" class="navbar-brand mx-auto">
+			{{> components/svg-logo}}
+		</a>
+		<ul class="navbar-nav d-none d-lg-flex justify-content-end">
+			<li class="nav-item">
+				<a class="nav-link h4 font-weight-bold m-0" href="#">Track My Order</a>
+			</li>
+			<li class="nav-item">
+				<div class="dropdown dropdown--onhover">
+					<a class="dropdown-toggle font-weight-bold m-0 nav-link sni-after sni__chevron-down align-items-center mr-1" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						US (USD)
+					</a>
+					<div class="dropdown-menu border-0 p-0 text-right pt-2 pb-2 overflow-hidden d-block" aria-labelledby="dropdownMenuLink">
+						<a class="dropdown-item pt-2 pb-2 pr-5 active" href="#">United Kingdom (GBP)</a>
+						<a class="dropdown-item pt-2 pb-2 pr-5" href="#">USA (USD)</a>
+						<a class="dropdown-item pt-2 pb-2 pr-5" href="#">Canada (CAD)</a>
+						<a class="dropdown-item pt-2 pb-2 pr-5" href="#">Australia (AUD)</a>
+						<a class="dropdown-item pt-2 pb-2 pr-5" href="#">Europe (EUR)</a>
+						<a class="dropdown-item pt-2 pb-2 pr-5" href="#">Rest of the World (USD)</a>
 					</div>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link h4 m-0 font-weight-normal sni sni__search position-relative"></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link h4 m-0 font-weight-normal sni sni__user position-relative"></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link h4 m-0 font-weight-normal sni sni__cart position-relative" data-toggle="modal" data-target="#cart-drawer" role="button"><span class="cart-drawer__count text-secondary">0</span></a>
-				</li>
-			</ul>
-			<a class="nav-link justify-content-end sni sni__search px-0 d-lg-none position-relative" data-toggle="modal" data-target="#cart-drawer" role="button">
-			</a>
-			<a class="nav-link justify-content-end sni sni__cart px-0 d-lg-none position-relative" data-toggle="modal" data-target="#cart-drawer" role="button">
-				<span class="cart-drawer__count text-secondary">0</span>
-			</a>
-			{{> components/tooltip}}
-		</div>
+				</div>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link h4 m-0 font-weight-normal sni sni__search position-relative"></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link h4 m-0 font-weight-normal sni sni__user position-relative"></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link h4 m-0 font-weight-normal sni sni__cart position-relative" data-toggle="modal" data-target="#cart-drawer" role="button"><span class="cart-drawer__count text-secondary">0</span></a>
+			</li>
+		</ul>
+		<a class="nav-link justify-content-end sni sni__search px-0 d-lg-none position-relative" data-toggle="modal" data-target="#cart-drawer" role="button">
+		</a>
+		<a class="nav-link justify-content-end sni sni__cart px-0 d-lg-none position-relative" data-toggle="modal" data-target="#cart-drawer" role="button">
+			<span class="cart-drawer__count text-secondary">0</span>
+		</a>
+		{{> components/tooltip}}
 	</nav>
 	{{> compounds/mobile-menu}}
 	{{> compounds/search-box}}

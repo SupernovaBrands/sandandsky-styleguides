@@ -1,0 +1,14 @@
+footer {
+	.sni__ss {
+		font-size: calc-em(70, 16);
+	}
+
+	.sni__square {
+		font-size: calc-em(24, 16);
+	}
+
+	a,
+	small {
+		color: $gray-600;
+	}
+}

@@ -1,27 +1,27 @@
 .product-variant {
 
-	&:before {
-		content: '';
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		border: 1px solid $body-color;
-		position: absolute;
-		border-radius: calc-em(4, 16);
-	}
-
-	&__active:before {
-		border-color: $primary;
-		border-width: 2px;
-	}
-
 	.custom-control-label {
 		padding-left: calc-em(50);
 		&::before {
 			left: calc-em(20);
 			top: calc-em(25);
 			transition: none;
+		}
+	}
+
+	.custom-control-input {
+		~ .border {
+			content: '';
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			border-color: $body-color !important;
+		}
+
+		&:checked ~ .border {
+			border-width: 2px !important;
+			border-color: $primary !important;
 		}
 	}
 }

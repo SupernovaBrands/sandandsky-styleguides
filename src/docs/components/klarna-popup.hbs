@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{{> html-head title="Klarna Popup" }}
+</head>
+
+<body>
+	<div class="container px-g mt-4">
+		<h1>Klarna Popup</h1>
+		<button class="btn btn-primary mb-2" data-toggle="modal" data-target="#KlarnaModal">Launch Modal</button>
+		{{> components/klarna-modal}}
+
+	</div>
+	{{> js jquery=true bootstrap=true main=true }}
+</body>
+
+</html>

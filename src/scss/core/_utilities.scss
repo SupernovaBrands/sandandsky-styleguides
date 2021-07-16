@@ -10,6 +10,9 @@
 // Gray 100 background color
 @include bg-variant(".bg-gray-100", $gray-100, true);
 
+// bg body color
+@include bg-variant(".bg-body-color", $body-color, true);
+
 .rounded-right-0 {
 	border-top-right-radius: 0 !important;
 	border-bottom-right-radius: 0 !important;

@@ -40,8 +40,3 @@ $('.product-form .sni__plus').on('click', function () {
 	}
 	return false;
 });
-
-$('.product-form [name=product-variant]').on('change', function () {
-	$('.product-form').find('.product-variant').removeClass('product-variant__active');
-	$(this).closest('.product-variant').addClass('product-variant__active');
-});

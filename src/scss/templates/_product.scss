@@ -28,3 +28,13 @@
 		}
 	}
 }
+
+.sni__hyperlink {
+	text-decoration: underline;
+	
+	&:before {
+		position: absolute;
+		right: calc-em(-22, 16);
+		font-size: calc-em(14, 16);
+	}
+}

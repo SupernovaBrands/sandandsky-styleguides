@@ -1,7 +1,7 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?ab864e5cea7ee2bb92c8fda20dc66fe3") format("woff2"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?ab864e5cea7ee2bb92c8fda20dc66fe3") format("woff") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?e36298e31bf974ee3b5113d524fa344e") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?e36298e31bf974ee3b5113d524fa344e") format("woff") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -36,37 +36,38 @@ $supernova-icon-map: (
 	"dermatologist": "\f107",
 	"five-stars": "\f108",
 	"gluten": "\f109",
-	"info-circle": "\f10a",
-	"klarna-logo": "\f10b",
-	"koala": "\f10c",
-	"long-arrow-right": "\f10d",
-	"minus": "\f10e",
-	"nasties": "\f10f",
-	"paraben": "\f110",
-	"pegs": "\f111",
-	"peta": "\f112",
-	"phthalates": "\f113",
-	"play": "\f114",
-	"plus": "\f115",
-	"range-aea": "\f116",
-	"range-apc": "\f117",
-	"range-tsw": "\f118",
-	"returns": "\f119",
-	"search": "\f11a",
-	"shake": "\f11b",
-	"shipping": "\f11c",
-	"silicone": "\f11d",
-	"square": "\f11e",
-	"ss": "\f11f",
-	"star-full": "\f120",
-	"star-half": "\f121",
-	"star-hollow": "\f122",
-	"sulfate": "\f123",
-	"thumbs-down": "\f124",
-	"thumbs-up": "\f125",
-	"times": "\f126",
-	"trophy": "\f127",
-	"verified": "\f128",
+	"hyperlink": "\f10a",
+	"info-circle": "\f10b",
+	"klarna-logo": "\f10c",
+	"koala": "\f10d",
+	"long-arrow-right": "\f10e",
+	"minus": "\f10f",
+	"nasties": "\f110",
+	"paraben": "\f111",
+	"pegs": "\f112",
+	"peta": "\f113",
+	"phthalates": "\f114",
+	"play": "\f115",
+	"plus": "\f116",
+	"range-aea": "\f117",
+	"range-apc": "\f118",
+	"range-tsw": "\f119",
+	"returns": "\f11a",
+	"search": "\f11b",
+	"shake": "\f11c",
+	"shipping": "\f11d",
+	"silicone": "\f11e",
+	"square": "\f11f",
+	"ss": "\f120",
+	"star-full": "\f121",
+	"star-half": "\f122",
+	"star-hollow": "\f123",
+	"sulfate": "\f124",
+	"thumbs-down": "\f125",
+	"thumbs-up": "\f126",
+	"times": "\f127",
+	"trophy": "\f128",
+	"verified": "\f129",
 );
 
 .sni.sni__apc-leaf:before,
@@ -104,6 +105,10 @@ $supernova-icon-map: (
 .sni.sni__gluten:before,
 .sni-after.sni__gluten:after {
 	content: map-get($supernova-icon-map, "gluten");
+}
+.sni.sni__hyperlink:before,
+.sni-after.sni__hyperlink:after {
+	content: map-get($supernova-icon-map, "hyperlink");
 }
 .sni.sni__info-circle:before,
 .sni-after.sni__info-circle:after {

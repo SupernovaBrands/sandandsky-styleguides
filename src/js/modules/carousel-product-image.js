@@ -38,3 +38,24 @@ $('.product-image-carousel__indicator__item').on('click', function () {
 		}
 	}
 });
+
+const scrollIndicator = $('#product-image-carousel__indicator-scroll .carousel-inner');
+const scrollIndicatorItem = $('#product-image-carousel__indicator-scroll .carousel-item');
+const scrollIndicatorLength = scrollIndicator.find('.carousel-item').length - 1;
+$('#product-image-carousel').on('slid.bs.carousel', function (e) {
+	scrollIndicatorItem.removeClass('active');
+	scrollIndicatorItem.find('img').removeClass('border-secondary').addClass('border-white');
+	scrollIndicator.find(`.carousel-item[data-slide-to="${e.to}"]`).addClass('active');
+	scrollIndicator.find(`.carousel-item[data-slide-to="${e.to}"] img`).removeClass('border-white').addClass('border-secondary');
+
+	const gap = (e.direction === 'left') ? 3 : 2;
+	if (e.to === 0) {
+		$(scrollIndicator).animate({ scrollLeft: 0 }, 300);
+	} else if (e.to >= gap && e.to < scrollIndicatorLength) {
+		if (e.direction === 'left') scrollThumb('right');
+		else scrollThumb('left');
+	} else if (e.to === scrollIndicatorLength) {
+		const leftPos = scrollIndicatorItem.width() * (scrollIndicatorLength - 3);
+		$(scrollIndicator).animate({ scrollLeft: leftPos }, 300);
+	}
+});

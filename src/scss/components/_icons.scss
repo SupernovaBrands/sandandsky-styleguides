@@ -1,7 +1,7 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?ab864e5cea7ee2bb92c8fda20dc66fe3") format("woff2"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?ab864e5cea7ee2bb92c8fda20dc66fe3") format("woff") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?7a2e7eb87bbc4d1912d959d826a491be") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?7a2e7eb87bbc4d1912d959d826a491be") format("woff") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -34,39 +34,45 @@ $supernova-icon-map: (
 	"chevron-prev": "\f105",
 	"close-circle": "\f106",
 	"dermatologist": "\f107",
-	"five-stars": "\f108",
-	"gluten": "\f109",
-	"info-circle": "\f10a",
-	"klarna-logo": "\f10b",
-	"koala": "\f10c",
-	"long-arrow-right": "\f10d",
-	"minus": "\f10e",
-	"nasties": "\f10f",
-	"paraben": "\f110",
-	"pegs": "\f111",
-	"peta": "\f112",
-	"phthalates": "\f113",
-	"play": "\f114",
-	"plus": "\f115",
-	"range-aea": "\f116",
-	"range-apc": "\f117",
-	"range-tsw": "\f118",
-	"returns": "\f119",
-	"search": "\f11a",
-	"shake": "\f11b",
-	"shipping": "\f11c",
-	"silicone": "\f11d",
-	"square": "\f11e",
-	"ss": "\f11f",
-	"star-full": "\f120",
-	"star-half": "\f121",
-	"star-hollow": "\f122",
-	"sulfate": "\f123",
-	"thumbs-down": "\f124",
-	"thumbs-up": "\f125",
-	"times": "\f126",
-	"trophy": "\f127",
-	"verified": "\f128",
+	"facebook": "\f108",
+	"five-stars": "\f109",
+	"gluten": "\f10a",
+	"info-circle": "\f10b",
+	"instagram": "\f10c",
+	"klarna-logo": "\f10d",
+	"koala": "\f10e",
+	"long-arrow-right": "\f10f",
+	"minus": "\f110",
+	"nasties": "\f111",
+	"paraben": "\f112",
+	"pegs": "\f113",
+	"peta": "\f114",
+	"phthalates": "\f115",
+	"pinterest": "\f116",
+	"play": "\f117",
+	"plus": "\f118",
+	"range-aea": "\f119",
+	"range-apc": "\f11a",
+	"range-tsw": "\f11b",
+	"returns": "\f11c",
+	"search": "\f11d",
+	"shake": "\f11e",
+	"shipping": "\f11f",
+	"silicone": "\f120",
+	"snapchat": "\f121",
+	"square": "\f122",
+	"ss": "\f123",
+	"star-full": "\f124",
+	"star-half": "\f125",
+	"star-hollow": "\f126",
+	"sulfate": "\f127",
+	"thumbs-down": "\f128",
+	"thumbs-up": "\f129",
+	"tiktok": "\f12a",
+	"times": "\f12b",
+	"trophy": "\f12c",
+	"verified": "\f12d",
+	"youtube": "\f12e",
 );
 
 .sni.sni__apc-leaf:before,
@@ -97,6 +103,10 @@ $supernova-icon-map: (
 .sni-after.sni__dermatologist:after {
 	content: map-get($supernova-icon-map, "dermatologist");
 }
+.sni.sni__facebook:before,
+.sni-after.sni__facebook:after {
+	content: map-get($supernova-icon-map, "facebook");
+}
 .sni.sni__five-stars:before,
 .sni-after.sni__five-stars:after {
 	content: map-get($supernova-icon-map, "five-stars");
@@ -108,6 +118,10 @@ $supernova-icon-map: (
 .sni.sni__info-circle:before,
 .sni-after.sni__info-circle:after {
 	content: map-get($supernova-icon-map, "info-circle");
+}
+.sni.sni__instagram:before,
+.sni-after.sni__instagram:after {
+	content: map-get($supernova-icon-map, "instagram");
 }
 .sni.sni__klarna-logo:before,
 .sni-after.sni__klarna-logo:after {
@@ -144,6 +158,10 @@ $supernova-icon-map: (
 .sni.sni__phthalates:before,
 .sni-after.sni__phthalates:after {
 	content: map-get($supernova-icon-map, "phthalates");
+}
+.sni.sni__pinterest:before,
+.sni-after.sni__pinterest:after {
+	content: map-get($supernova-icon-map, "pinterest");
 }
 .sni.sni__play:before,
 .sni-after.sni__play:after {
@@ -185,6 +203,10 @@ $supernova-icon-map: (
 .sni-after.sni__silicone:after {
 	content: map-get($supernova-icon-map, "silicone");
 }
+.sni.sni__snapchat:before,
+.sni-after.sni__snapchat:after {
+	content: map-get($supernova-icon-map, "snapchat");
+}
 .sni.sni__square:before,
 .sni-after.sni__square:after {
 	content: map-get($supernova-icon-map, "square");
@@ -217,6 +239,10 @@ $supernova-icon-map: (
 .sni-after.sni__thumbs-up:after {
 	content: map-get($supernova-icon-map, "thumbs-up");
 }
+.sni.sni__tiktok:before,
+.sni-after.sni__tiktok:after {
+	content: map-get($supernova-icon-map, "tiktok");
+}
 .sni.sni__times:before,
 .sni-after.sni__times:after {
 	content: map-get($supernova-icon-map, "times");
@@ -228,4 +254,8 @@ $supernova-icon-map: (
 .sni.sni__verified:before,
 .sni-after.sni__verified:after {
 	content: map-get($supernova-icon-map, "verified");
+}
+.sni.sni__youtube:before,
+.sni-after.sni__youtube:after {
+	content: map-get($supernova-icon-map, "youtube");
 }

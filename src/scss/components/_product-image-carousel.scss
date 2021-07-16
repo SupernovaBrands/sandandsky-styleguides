@@ -13,4 +13,14 @@
 			}
 		}
 	}
+
+	figcaption {
+		bottom: 0;
+		left: 0;
+		right: 0;
+		@include media-breakpoint-up(lg) {
+			top: 0;
+			bottom: auto;
+		}
+	}
 }

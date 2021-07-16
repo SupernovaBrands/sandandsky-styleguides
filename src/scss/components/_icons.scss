@@ -1,7 +1,12 @@
 $supernova-icon-font: "supernova-icon";
 
+<<<<<<< HEAD
 $supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?7a2e7eb87bbc4d1912d959d826a491be") format("woff2"),
 url("/sandandsky-styleguides/fonts/supernova-icon.woff?7a2e7eb87bbc4d1912d959d826a491be") format("woff") !default;
+=======
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?e36298e31bf974ee3b5113d524fa344e") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?e36298e31bf974ee3b5113d524fa344e") format("woff") !default;
+>>>>>>> master
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -34,6 +39,7 @@ $supernova-icon-map: (
 	"chevron-prev": "\f105",
 	"close-circle": "\f106",
 	"dermatologist": "\f107",
+<<<<<<< HEAD
 	"facebook": "\f108",
 	"five-stars": "\f109",
 	"gluten": "\f10a",
@@ -73,6 +79,42 @@ $supernova-icon-map: (
 	"trophy": "\f12c",
 	"verified": "\f12d",
 	"youtube": "\f12e",
+=======
+	"five-stars": "\f108",
+	"gluten": "\f109",
+	"hyperlink": "\f10a",
+	"info-circle": "\f10b",
+	"klarna-logo": "\f10c",
+	"koala": "\f10d",
+	"long-arrow-right": "\f10e",
+	"minus": "\f10f",
+	"nasties": "\f110",
+	"paraben": "\f111",
+	"pegs": "\f112",
+	"peta": "\f113",
+	"phthalates": "\f114",
+	"play": "\f115",
+	"plus": "\f116",
+	"range-aea": "\f117",
+	"range-apc": "\f118",
+	"range-tsw": "\f119",
+	"returns": "\f11a",
+	"search": "\f11b",
+	"shake": "\f11c",
+	"shipping": "\f11d",
+	"silicone": "\f11e",
+	"square": "\f11f",
+	"ss": "\f120",
+	"star-full": "\f121",
+	"star-half": "\f122",
+	"star-hollow": "\f123",
+	"sulfate": "\f124",
+	"thumbs-down": "\f125",
+	"thumbs-up": "\f126",
+	"times": "\f127",
+	"trophy": "\f128",
+	"verified": "\f129",
+>>>>>>> master
 );
 
 .sni.sni__apc-leaf:before,
@@ -83,9 +125,17 @@ $supernova-icon-map: (
 .sni-after.sni__australia:after {
 	content: map-get($supernova-icon-map, "australia");
 }
+.sni.sni__cart:before,
+.sni-after.sni__cart:after {
+	content: map-get($supernova-icon-map, "cart");
+}
 .sni.sni__check:before,
 .sni-after.sni__check:after {
 	content: map-get($supernova-icon-map, "check");
+}
+.sni.sni__chevron-down:before,
+.sni-after.sni__chevron-down:after {
+	content: map-get($supernova-icon-map, "chevron-down");
 }
 .sni.sni__chevron-next:before,
 .sni-after.sni__chevron-next:after {
@@ -95,6 +145,10 @@ $supernova-icon-map: (
 .sni-after.sni__chevron-prev:after {
 	content: map-get($supernova-icon-map, "chevron-prev");
 }
+.sni.sni__chevron-up:before,
+.sni-after.sni__chevron-up:after {
+	content: map-get($supernova-icon-map, "chevron-up");
+}
 .sni.sni__close-circle:before,
 .sni-after.sni__close-circle:after {
 	content: map-get($supernova-icon-map, "close-circle");
@@ -103,9 +157,15 @@ $supernova-icon-map: (
 .sni-after.sni__dermatologist:after {
 	content: map-get($supernova-icon-map, "dermatologist");
 }
+<<<<<<< HEAD
 .sni.sni__facebook:before,
 .sni-after.sni__facebook:after {
 	content: map-get($supernova-icon-map, "facebook");
+=======
+.sni.sni__earth:before,
+.sni-after.sni__earth:after {
+	content: map-get($supernova-icon-map, "earth");
+>>>>>>> master
 }
 .sni.sni__five-stars:before,
 .sni-after.sni__five-stars:after {
@@ -114,6 +174,10 @@ $supernova-icon-map: (
 .sni.sni__gluten:before,
 .sni-after.sni__gluten:after {
 	content: map-get($supernova-icon-map, "gluten");
+}
+.sni.sni__hyperlink:before,
+.sni-after.sni__hyperlink:after {
+	content: map-get($supernova-icon-map, "hyperlink");
 }
 .sni.sni__info-circle:before,
 .sni-after.sni__info-circle:after {
@@ -250,6 +314,10 @@ $supernova-icon-map: (
 .sni.sni__trophy:before,
 .sni-after.sni__trophy:after {
 	content: map-get($supernova-icon-map, "trophy");
+}
+.sni.sni__user:before,
+.sni-after.sni__user:after {
+	content: map-get($supernova-icon-map, "user");
 }
 .sni.sni__verified:before,
 .sni-after.sni__verified:after {

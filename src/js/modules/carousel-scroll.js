@@ -61,24 +61,24 @@ $('.carousel--scroll').each((index, carousel) => {
 			$(nextButton).removeClass('disabled');
 		}
 	};
-	checkButton();
+	if (scrollThumb) {
+		checkButton();
+	}
 
 	const innerDrag = (e) => {
 		inner.scrollLeft = left - (e.pageX || e.touches[0].pageX) + x;
-		scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
+		if (scrollThumb) scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
 		checkButton();
 	};
 
 	const scrollDrag = (e) => {
 		inner.scrollLeft = left + ((e.pageX || e.touches[0].pageX) - x) * (inner.scrollWidth / scrollbar.clientWidth);
-		scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
+		if (scrollThumb) scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
 		checkButton();
 	};
 
 	inner.addEventListener('scroll', () => {
-		if (scrollThumb) {
-			scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
-		}
+		if (scrollThumb) scrollThumb.style.left = `${(inner.scrollLeft / inner.scrollWidth) * 100}%`;
 		checkButton();
 	});
 

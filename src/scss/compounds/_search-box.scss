@@ -1,10 +1,39 @@
+.search-box-active {
+	overflow: hidden;
+
+	@include media-breakpoint-up(lg) {
+		overflow: auto;
+	}
+}
+
 .search-box {
 	box-shadow: 0 4px 6px #0000000d;
+	transition: all 0.3s;
+	position: fixed;
+	top: 0;
+	height: 100vh;
+	opacity: 1;
+	transform: translateX(100%);
+	z-index: $zindex-dropdown;
 
-	@include media-breakpoint-down(md) {
-		position: fixed;
+	@include media-breakpoint-up(lg) {
+		opacity: 0;
+		height: 0;
+		position: absolute;
+		transform: none;
+		top: auto;
+	}
+
+	&.show {
+		transition: all .5s ease;
+		opacity: 1;
 		height: 100vh;
-		top: 0;
+		transform: translateX(0);
+
+		@include media-breakpoint-up(lg) {
+			height: 33em;
+			transform: none;
+		}
 	}
 
 	&__top {
@@ -51,8 +80,10 @@
 		right: calc-em(42, 16);
 		color: $body-color;
 
-		&:hover {
+		&:hover,
+		&:focus {
 			text-decoration: none;
+			color: $body-color;
 		}
 
 		&.disabled {
@@ -74,7 +105,7 @@
 
 		@include media-breakpoint-up(lg) {
 			top: auto;
-			bottom: -27%;
+			bottom: -21%;
 		}
 	}
 
@@ -85,7 +116,7 @@
 		
 		@include media-breakpoint-up(lg) {
 			top: auto;
-			bottom: -27%;
+			bottom: -21%;
 			left: auto;
 			right: 3%;
 		}

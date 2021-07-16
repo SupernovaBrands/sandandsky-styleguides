@@ -1,7 +1,7 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?e36298e31bf974ee3b5113d524fa344e") format("woff2"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?e36298e31bf974ee3b5113d524fa344e") format("woff") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?db9c0f930f0572bf77ea8be21a995234") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?db9c0f930f0572bf77ea8be21a995234") format("woff") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -29,45 +29,56 @@ url("/sandandsky-styleguides/fonts/supernova-icon.woff?e36298e31bf974ee3b5113d52
 $supernova-icon-map: (
 	"apc-leaf": "\f101",
 	"australia": "\f102",
-	"check": "\f103",
-	"chevron-next": "\f104",
-	"chevron-prev": "\f105",
-	"close-circle": "\f106",
-	"dermatologist": "\f107",
-	"five-stars": "\f108",
-	"gluten": "\f109",
-	"hyperlink": "\f10a",
-	"info-circle": "\f10b",
-	"klarna-logo": "\f10c",
-	"koala": "\f10d",
-	"long-arrow-right": "\f10e",
-	"minus": "\f10f",
-	"nasties": "\f110",
-	"paraben": "\f111",
-	"pegs": "\f112",
-	"peta": "\f113",
-	"phthalates": "\f114",
-	"play": "\f115",
-	"plus": "\f116",
-	"range-aea": "\f117",
-	"range-apc": "\f118",
-	"range-tsw": "\f119",
-	"returns": "\f11a",
-	"search": "\f11b",
-	"shake": "\f11c",
-	"shipping": "\f11d",
-	"silicone": "\f11e",
-	"square": "\f11f",
-	"ss": "\f120",
-	"star-full": "\f121",
-	"star-half": "\f122",
-	"star-hollow": "\f123",
-	"sulfate": "\f124",
-	"thumbs-down": "\f125",
-	"thumbs-up": "\f126",
-	"times": "\f127",
-	"trophy": "\f128",
-	"verified": "\f129",
+	"cart": "\f103",
+	"check": "\f104",
+	"chevron-down": "\f105",
+	"chevron-next": "\f106",
+	"chevron-prev": "\f107",
+	"chevron-up": "\f108",
+	"close-circle": "\f109",
+	"dermatologist": "\f10a",
+	"earth": "\f10b",
+	"facebook": "\f10c",
+	"five-stars": "\f10d",
+	"gluten": "\f10e",
+	"hyperlink": "\f10f",
+	"info-circle": "\f110",
+	"instagram": "\f111",
+	"klarna-logo": "\f112",
+	"koala": "\f113",
+	"long-arrow-right": "\f114",
+	"minus": "\f115",
+	"nasties": "\f116",
+	"paraben": "\f117",
+	"pegs": "\f118",
+	"peta": "\f119",
+	"phthalates": "\f11a",
+	"pinterest": "\f11b",
+	"play": "\f11c",
+	"plus": "\f11d",
+	"range-aea": "\f11e",
+	"range-apc": "\f11f",
+	"range-tsw": "\f120",
+	"returns": "\f121",
+	"search": "\f122",
+	"shake": "\f123",
+	"shipping": "\f124",
+	"silicone": "\f125",
+	"snapchat": "\f126",
+	"square": "\f127",
+	"ss": "\f128",
+	"star-full": "\f129",
+	"star-half": "\f12a",
+	"star-hollow": "\f12b",
+	"sulfate": "\f12c",
+	"thumbs-down": "\f12d",
+	"thumbs-up": "\f12e",
+	"tiktok": "\f12f",
+	"times": "\f130",
+	"trophy": "\f131",
+	"user": "\f132",
+	"verified": "\f133",
+	"youtube": "\f134",
 );
 
 .sni.sni__apc-leaf:before,
@@ -114,6 +125,10 @@ $supernova-icon-map: (
 .sni-after.sni__earth:after {
 	content: map-get($supernova-icon-map, "earth");
 }
+.sni.sni__facebook:before,
+.sni-after.sni__facebook:after {
+	content: map-get($supernova-icon-map, "facebook");
+}
 .sni.sni__five-stars:before,
 .sni-after.sni__five-stars:after {
 	content: map-get($supernova-icon-map, "five-stars");
@@ -129,6 +144,10 @@ $supernova-icon-map: (
 .sni.sni__info-circle:before,
 .sni-after.sni__info-circle:after {
 	content: map-get($supernova-icon-map, "info-circle");
+}
+.sni.sni__instagram:before,
+.sni-after.sni__instagram:after {
+	content: map-get($supernova-icon-map, "instagram");
 }
 .sni.sni__klarna-logo:before,
 .sni-after.sni__klarna-logo:after {
@@ -165,6 +184,10 @@ $supernova-icon-map: (
 .sni.sni__phthalates:before,
 .sni-after.sni__phthalates:after {
 	content: map-get($supernova-icon-map, "phthalates");
+}
+.sni.sni__pinterest:before,
+.sni-after.sni__pinterest:after {
+	content: map-get($supernova-icon-map, "pinterest");
 }
 .sni.sni__play:before,
 .sni-after.sni__play:after {
@@ -206,6 +229,10 @@ $supernova-icon-map: (
 .sni-after.sni__silicone:after {
 	content: map-get($supernova-icon-map, "silicone");
 }
+.sni.sni__snapchat:before,
+.sni-after.sni__snapchat:after {
+	content: map-get($supernova-icon-map, "snapchat");
+}
 .sni.sni__square:before,
 .sni-after.sni__square:after {
 	content: map-get($supernova-icon-map, "square");
@@ -238,6 +265,10 @@ $supernova-icon-map: (
 .sni-after.sni__thumbs-up:after {
 	content: map-get($supernova-icon-map, "thumbs-up");
 }
+.sni.sni__tiktok:before,
+.sni-after.sni__tiktok:after {
+	content: map-get($supernova-icon-map, "tiktok");
+}
 .sni.sni__times:before,
 .sni-after.sni__times:after {
 	content: map-get($supernova-icon-map, "times");
@@ -253,4 +284,8 @@ $supernova-icon-map: (
 .sni.sni__verified:before,
 .sni-after.sni__verified:after {
 	content: map-get($supernova-icon-map, "verified");
+}
+.sni.sni__youtube:before,
+.sni-after.sni__youtube:after {
+	content: map-get($supernova-icon-map, "youtube");
 }

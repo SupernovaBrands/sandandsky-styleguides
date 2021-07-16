@@ -77,9 +77,17 @@ $supernova-icon-map: (
 .sni-after.sni__australia:after {
 	content: map-get($supernova-icon-map, "australia");
 }
+.sni.sni__cart:before,
+.sni-after.sni__cart:after {
+	content: map-get($supernova-icon-map, "cart");
+}
 .sni.sni__check:before,
 .sni-after.sni__check:after {
 	content: map-get($supernova-icon-map, "check");
+}
+.sni.sni__chevron-down:before,
+.sni-after.sni__chevron-down:after {
+	content: map-get($supernova-icon-map, "chevron-down");
 }
 .sni.sni__chevron-next:before,
 .sni-after.sni__chevron-next:after {
@@ -89,6 +97,10 @@ $supernova-icon-map: (
 .sni-after.sni__chevron-prev:after {
 	content: map-get($supernova-icon-map, "chevron-prev");
 }
+.sni.sni__chevron-up:before,
+.sni-after.sni__chevron-up:after {
+	content: map-get($supernova-icon-map, "chevron-up");
+}
 .sni.sni__close-circle:before,
 .sni-after.sni__close-circle:after {
 	content: map-get($supernova-icon-map, "close-circle");
@@ -96,6 +108,10 @@ $supernova-icon-map: (
 .sni.sni__dermatologist:before,
 .sni-after.sni__dermatologist:after {
 	content: map-get($supernova-icon-map, "dermatologist");
+}
+.sni.sni__earth:before,
+.sni-after.sni__earth:after {
+	content: map-get($supernova-icon-map, "earth");
 }
 .sni.sni__five-stars:before,
 .sni-after.sni__five-stars:after {
@@ -224,6 +240,10 @@ $supernova-icon-map: (
 .sni.sni__trophy:before,
 .sni-after.sni__trophy:after {
 	content: map-get($supernova-icon-map, "trophy");
+}
+.sni.sni__user:before,
+.sni-after.sni__user:after {
+	content: map-get($supernova-icon-map, "user");
 }
 .sni.sni__verified:before,
 .sni-after.sni__verified:after {

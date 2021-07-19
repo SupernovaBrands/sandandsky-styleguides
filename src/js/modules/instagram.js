@@ -15,13 +15,14 @@ const fillCarousel = (items) => {
 	});
 	$('.instagram-carousel .carousel--scroll').each((index, carousel) => {
 		carousel.dispatchEvent(new CustomEvent('adjustThumb'));
+		carousel.querySelector('.carousel-control-next').classList.remove('d-none');
 	});
 };
 
 if (existingData) {
 	fillCarousel(JSON.parse(existingData));
 } else {
-	$.get('http://cdn.sandandsky.com/instagram/sandandsky.json').then(function (data) {
+	$.get('https://cdn.sandandsky.com/instagram/sandandsky.json').then(function (data) {
 		const dataMedia = [];
 		for (let i = 0; i < 15; i += 1) {
 			const d = data[i];

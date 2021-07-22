@@ -25,7 +25,7 @@
 		</a>
 		<a class="carousel-control-next {{#if (eq id 'search-products')}}carousel-control-prev--always-show{{else}}{{/if}} text-body mr-ng" role="button">
 			<span
-				class="carousel-control-next-icon carousel-control--background sni sni__chevron-next justify-content-center align-items-center"
+				class="carousel-control-next-icon carousel-control--background {{#if (eq id 'search-products')}}carousel-control--transparent{{else}}{{/if}} sni sni__chevron-next justify-content-center align-items-center"
 				aria-hidden="true"></span>
 			<span class="sr-only">Next</span>
 		</a>

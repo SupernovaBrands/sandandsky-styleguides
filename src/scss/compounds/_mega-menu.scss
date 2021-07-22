@@ -1,4 +1,10 @@
 .mega-menu {
+  &:before {
+    content: ' ';
+    width: 100%;
+    height: 1em;
+    margin-top: -0.5em;
+  }
 	a {
 		color: $body-color;
 	}

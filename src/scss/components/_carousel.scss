@@ -114,6 +114,10 @@
 			height: calc-em(60);
 		}
 	}
+
+  &--transparent {
+    background-color: transparent;
+  }
 }
 
 @keyframes fill-timer {

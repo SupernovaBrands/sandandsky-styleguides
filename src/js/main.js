@@ -1,4 +1,15 @@
-import(/* webpackChunkName: 'hero-carousel' */ '~mod/header');
+import '~mod/header';
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Cart from '~comp/cart';
+
+if ($('#cart-drawer').length > 0) {
+	ReactDOM.render(
+		React.createElement(Cart, {}, null),
+		document.querySelector('#cart-drawer'),
+	);
+}
 
 if ($('.hero-carousel').length > 0) {
 	import(/* webpackChunkName: 'hero-carousel' */ '~mod/hero-carousel');

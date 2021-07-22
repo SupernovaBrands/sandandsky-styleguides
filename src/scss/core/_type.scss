@@ -21,6 +21,13 @@ h3, .h3 {
 	}
 }
 
+.link-secondary {
+	color: $body-color;
+	&:hover {
+		color: $primary;
+	}
+}
+
 .text-linethrough {
 	text-decoration: line-through;
 }

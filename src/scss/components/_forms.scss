@@ -24,3 +24,46 @@ input[type=number] {
 		}
 	}
 }
+
+.quantity-box {
+	.form-control {
+		width: 2em;
+	}
+
+	button {
+		padding: $input-padding-y-sm $input-padding-x-sm;
+		&:focus {
+			outline: none;
+		}
+
+		&[disabled] {
+			color: transparent;
+		}
+	}
+}
+
+.floating-label {
+	input {
+		padding-top: calc-em(20.5, 14);
+		padding-bottom: calc-em(10, 14);
+		&::placeholder {
+			color: transparent;
+		}
+	}
+
+	&__text {
+		top: 50%;
+		left: $input-padding-x;
+		color: $gray-400;
+		transform: translateY(-50%);
+		transform-origin: left;
+		transition: transform 100ms linear,
+		top 100ms linear;
+	}
+
+	input:focus + &__text,
+	input:not(:placeholder-shown) + &__text {
+		top: calc-em(15, 14);
+		transform: translateY(-50%) scale(0.85);
+	}
+}

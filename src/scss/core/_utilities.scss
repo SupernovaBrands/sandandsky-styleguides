@@ -22,3 +22,13 @@
 	border-top-left-radius: 0 !important;
 	border-bottom-left-radius: 0 !important;
 }
+
+// To make button looks like text
+.btn-unstyled {
+	border: 0;
+	padding: 0;
+	background: none;
+	&:focus {
+		outline: none;
+	}
+}

@@ -63,3 +63,10 @@ h3, .h3 {
 .sni-after.sni__range-tsw:after {
 	color: $range-tsw;
 }
+
+.link-secondary {
+	color: $body-color;
+	&:hover {
+		color: $secondary;
+	}
+}

@@ -12,6 +12,26 @@
 }
 
 .carousel {
+	&--fixed-height {
+		overflow: hidden;
+		height: 11.875em;
+
+		@include media-breakpoint-up(lg) {
+			height: 25em;
+		}
+
+		.carousel-inner,
+		.carousel-item,
+		figure,
+		img {
+			height: 100%;
+		}
+
+		img {
+			object-fit: cover;
+		}
+	}
+
 	&--loop {
 		.carousel-item {
 			margin-right: 0;
@@ -112,6 +132,28 @@
 
 		@include media-breakpoint-up(lg) {
 			height: calc-em(60);
+		}
+	}
+
+	&--right-lg {
+		top: 50%;
+		transform: translateY(-50%);
+
+		@include media-breakpoint-up(lg) {
+			width: 2.5em;
+			height: 2.5em;
+			top: auto;
+			bottom: 1em;
+			margin: auto;
+			right: 1.5em;
+			transform: none;
+		}
+
+		&.carousel-control-prev {
+			@include media-breakpoint-up(lg) {
+				right: 5em;
+				left: auto;
+			}
 		}
 	}
 }

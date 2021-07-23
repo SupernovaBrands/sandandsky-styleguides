@@ -101,6 +101,12 @@
 			transform: translateY(-50%);
 		}
 	}
+
+	&--sidebar {
+		@include media-breakpoint-down(sm) {
+			min-height: 17em;
+		}
+	}
 }
 
 .carousel-control {

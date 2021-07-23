@@ -1,5 +1,4 @@
 .sidebar {
-  padding: map-get($spacers, 3) $grid-gutter-width;
   width: -webkit-fill-available;
 
 	@include media-breakpoint-up(lg) {

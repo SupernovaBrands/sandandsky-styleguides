@@ -1,7 +1,0 @@
-.sidebar {
-	width: -webkit-fill-available;
-
-	@include media-breakpoint-up(lg) {
-		padding: calc-em(40) calc-em(25);
-	}
-}

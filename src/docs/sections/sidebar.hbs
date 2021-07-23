@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{{> html-head title="Sidebar" }}
+</head>
+
+<body>
+	<div class="container">
+		<h1>SIDEBAR</h1>
+		<div class="col-12 col-lg-4">
+			<aside class="position-sticky sticky-top sidebar bg-secondary-light mx-ng mx-lg-auto">
+				<h2 class="mb-3 text-center text-lg-left d-block d-lg-none">You may also like</h2>
+				<h2 class="mb-3 text-center text-lg-left d-none d-lg-block">Popular Reads</h2>
+				<div class="slide carousel--sidebar">
+					<ol class="carousel-indicators carousel-indicators--primary mb-0 d-lg-none">
+						<li data-target=".carousel--sidebar" data-slide-to="0" class="rounded-circle active"></li>
+						<li data-target=".carousel--sidebar" data-slide-to="1" class="rounded-circle"></li>
+					</ol>
+					<ul class="list-unstyled carousel-inner mb-0 pb-1">
+						<li class="carousel-item active">
+							<article class="post-card mb-2 mb-lg-3">
+								<h2>
+									<a href="#" class="link-secondary">Your essential guide to exfoliation</a>
+								</h2>
+								<p class="mt-1 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</article>
+							<article class="post-card mb-2 mb-lg-3">
+								<h2>
+									<a href="#" class="link-secondary">Your essential guide to exfoliation Your essential guide to exfoliation</a>
+								</h2>
+								<p class="mt-1 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</article>
+						</li>
+						<li class="carousel-item">
+							<article class="post-card mb-2 mb-lg-0">
+								<h2>
+									<a href="#" class="link-secondary">Your essential guide to exfoliation Your essential guide to exfoliation</a>
+								</h2>
+								<p class="mt-1 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</article>
+						</li>
+					</ul>
+				</div>
+			</aside>
+		</div>
+	</div>
+	{{> js jquery=true bootstrap=true main=true }}
+</body>
+
+</html>

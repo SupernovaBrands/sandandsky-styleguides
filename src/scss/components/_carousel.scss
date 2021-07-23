@@ -12,6 +12,7 @@
 }
 
 .carousel {
+	// carousel with different size of image
 	&--fixed-height {
 		overflow: hidden;
 		height: 11.875em;
@@ -135,6 +136,7 @@
 		}
 	}
 
+	// blog carousel arrow position bottom right
 	&--right-lg {
 		top: 50%;
 		transform: translateY(-50%);

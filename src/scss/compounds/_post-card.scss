@@ -6,7 +6,7 @@
     overflow: hidden;
 
 		// fix height for long & short text title
-    @include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(lg) {
 			height: 2em * $line-height-base;
 		}
   }

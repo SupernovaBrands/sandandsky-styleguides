@@ -45,7 +45,11 @@ if ($('.video-card').length > 0) {
 }
 
 if ($('.search-box').length > 0) {
-	import(/* webpackChunkName: 'ingredient-api' */ '~mod/predictive-search');
+	import(/* webpackChunkName: 'predictive-search' */ '~mod/predictive-search');
+}
+
+if ($('.stockist').length > 0) {
+	import(/* webpackChunkName: 'stockist' */ '~mod/stockist');
 }
 
 if ($('.carousel--loop').length > 0) {

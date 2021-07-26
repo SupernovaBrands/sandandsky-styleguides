@@ -9,6 +9,14 @@
 		}
 	}
 
+	.carousel-control .sni {
+		content: " ";
+		background-color: $white;
+		width: 2.5em;
+		height: 2.5em;
+		position: absolute;
+	}
+
 	.carousel-control-prev .sni {
 		top: 30.5%;
 		left: 60%;
@@ -79,14 +87,5 @@
 		h2 {
 			min-height: calc-em(90, 16);
 		}
-	}
-
-
-	.carousel-control .sni {
-		content: " ";
-			background-color: $white;
-			width: 2.5em;
-			height: 2.5em;
-			position: absolute;
 	}
 }

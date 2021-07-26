@@ -102,6 +102,32 @@
 		}
 	}
 
+	&--centered {
+		overflow: hidden;
+
+		.carousel-inner {
+			width: calc(100% + #{$grid-gutter-width});
+			overflow: visible;
+			@include make-carousel-centered(9, $grid-columns);
+
+			@include media-breakpoint-up(md) {
+  			width: calc(100% + #{$grid-gutter-width-lg});
+
+  			@include make-carousel-centered(3, $grid-columns);
+
+				.active + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+					display: block;
+				}
+
+				.carousel-item {
+					&--last {
+						transform: translate3d(100%, 0, 0);
+					}
+				}
+			}
+		}
+	}
+
 	&--sidebar {
 		@include media-breakpoint-down(sm) {
 			min-height: 17em;

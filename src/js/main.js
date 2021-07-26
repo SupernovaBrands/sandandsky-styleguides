@@ -47,3 +47,7 @@ if ($('.video-card').length > 0) {
 if ($('.search-box').length > 0) {
 	import(/* webpackChunkName: 'ingredient-api' */ '~mod/predictive-search');
 }
+
+if ($('.carousel--loop').length > 0) {
+	import(/* webpackChunkName: 'carousel-loop' */ '~mod/carousel-loop');
+}

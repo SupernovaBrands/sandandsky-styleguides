@@ -19,6 +19,14 @@
 			bottom: calc-em(30, 16);
 		}
 	}
+
+	&--centered {
+		.sni-after:after {
+			right: auto;
+			bottom: 50%;
+			transform: translateY(50%);
+		}
+	}
 }
 
 .video-modal {

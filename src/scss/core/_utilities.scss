@@ -22,3 +22,20 @@
 	border-top-left-radius: 0 !important;
 	border-bottom-left-radius: 0 !important;
 }
+
+// Hover overlay for blog image
+.hover-overlay {
+	position: relative;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		transition: background-color $hover-transition-timing;
+	}
+	&:hover:after {
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+}

@@ -7,3 +7,5 @@ window.theme = {
 		}
 	},
 };
+
+window.screenLG = 992;

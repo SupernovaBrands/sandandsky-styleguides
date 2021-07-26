@@ -1,0 +1,20 @@
+.breadcrumb {
+	flex-wrap: nowrap;
+
+	@include media-breakpoint-up(lg) {
+		@include font-size($font-size-base);
+	}
+}
+
+.breadcrumb-item {
+
+	&__link {
+		color: $body-color;
+	}
+
+	&:last-child {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+}

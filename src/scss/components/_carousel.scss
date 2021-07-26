@@ -146,19 +146,6 @@
 			}
 		}
 	}
-
-	&--centered-mobile {
-		@include media-breakpoint-down(sm) {
-			overflow: hidden;
-		}
-
-		.carousel-inner {
-			@include media-breakpoint-down(sm) {
-				overflow: visible;
-				transform: translateX(-60.5%);
-			}
-		}
-	}
 }
 
 .carousel-control {

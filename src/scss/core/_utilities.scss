@@ -39,3 +39,20 @@
 		background-color: rgba(255, 255, 255, 0.2);
 	}
 }
+
+// Sticky sidebar at bottom
+.sticky-bottom {
+	top: auto;
+	bottom: map-get($spacers, 3);
+
+	&__container {
+		display: flex;
+		align-items: flex-end;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.position-lg-sticky {
+		position: sticky !important;
+	}
+}

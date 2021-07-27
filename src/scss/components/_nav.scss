@@ -15,6 +15,10 @@
 .nav-link {
 	color: $body-color;
 
+	&.active {
+		color: $secondary;
+	}
+
 	&.sni:before {
 		font-size: calc-em(22, 16);
 

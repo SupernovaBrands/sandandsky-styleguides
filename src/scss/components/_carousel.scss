@@ -151,7 +151,7 @@
 
 	&--sidebar {
 		@include media-breakpoint-down(sm) {
-			min-height: 17em;
+			min-height: 15em;
 		}
 	}
 }

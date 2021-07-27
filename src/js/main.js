@@ -55,3 +55,7 @@ if ($('.stockist').length > 0) {
 if ($('.carousel--loop').length > 0) {
 	import(/* webpackChunkName: 'carousel-loop' */ '~mod/carousel-loop');
 }
+
+if ($('.reading-proggress-bar').length > 0) {
+	import(/* webpackChunkName: 'article-progress-bar' */ '~mod/article-progress-bar');
+}

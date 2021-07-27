@@ -41,7 +41,6 @@ const requestCfm = (params, targetId) => {
 	$.ajax(params).done(function (response) {
 		const ingredientHtml = parseIngredients(response);
 		$(`#${targetId} .tab-ingredient__content`).html(ingredientHtml);
-		$(`#${targetId} .tab-ingredient__learn-more`).removeClass('d-none');
 	});
 };
 

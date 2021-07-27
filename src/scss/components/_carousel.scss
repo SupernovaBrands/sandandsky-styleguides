@@ -154,7 +154,52 @@
 			min-height: 17em;
 		}
 	}
+
+	// Source: https://codepen.io/glebkema/pen/daLzpL
+	$fragment_width: percentage((3 / 12) / 2);
+	&--preview {
+		overflow: hidden;
+
+		.carousel-indicators {
+			margin-right: $fragment_width;
+			margin-left: $fragment_width;
+		}
+
+		.carousel-control-prev,
+		.carousel-control-next {
+			background: rgba(255, 255, 255, 0.3);
+			width: $fragment_width;
+			z-index: 11;
+			/* .carousel-caption has z-index 10 */
+		}
+
+		.carousel-inner {
+			width: (100% - 2 * $fragment_width) * 3;
+			left: 3 * $fragment_width - 100%;
+		}
+
+		.carousel-item-next:not(.carousel-item-left),
+		.carousel-item-right.active {
+			-webkit-transform: translate3d(33%, 0, 0);
+			transform: translate3d(33%, 0, 0);
+		}
+
+		.carousel-item-prev:not(.carousel-item-right),
+		.carousel-item-left.active {
+			-webkit-transform: translate3d(-33%, 0, 0);
+			transform: translate3d(-33%, 0, 0);
+		}
+
+		.item__third {
+			display: block;
+			float: left;
+			position: relative;
+			/* captions can now be added */
+			width: 33.33333333%;
+		}
+	}
 }
+
 
 .carousel-control {
 	&--background {

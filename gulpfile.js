@@ -10,6 +10,7 @@ const handlebars = require('gulp-compile-handlebars');
 const rename = require('gulp-rename');
 const critical = require('critical').stream;
 const cleancss = require('gulp-clean-css');
+const injectSvg = require('gulp-inject-svg');
 const fs = require('fs');
 const path = require('path');
 
@@ -28,6 +29,7 @@ const files = {
 	allScss: ['src/scss/**/*', '!src/scss/critical-css/*.scss'],
 	scss: ['src/scss/*.scss'],
 	criticalScss: ['src/scss/critical-css/*.scss'],
+	includes: ['fonts/*.svg'],
 	static: [
 		// fonts
 		'fonts/*.svg',
@@ -107,6 +109,9 @@ const hbsFiles = function () {
 	return src(files.hbs)
 		.pipe(handlebars(hbsVars, { batch: ['src/partials'], helpers: hbsHelpers }))
 		.pipe(rename({ extname: '.html' }))
+		.pipe(injectSvg({
+			base: './fonts/svgs/',
+		}))
 		.pipe(dest('dist'))
 		.pipe(browserSync.stream());
 };

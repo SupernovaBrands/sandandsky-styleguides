@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>Announcement Bar | Sand and Sky Style Guides</title>
+	<title>Cart Drawer | Sand and Sky Style Guides</title>
 	
 	<link rel="shortcut icon" href="/sandandsky-styleguides/images/favicon.png" type="image/png">
 	
@@ -14,20 +14,29 @@
 	
 </head>
 
-<body>
+<body class="mobile-wrapper">
 	<div class="container mt-4">
-		<h1>Announcement Bar</h1>
-	</div>
-	<div id="announcementBar" class="announcement-bar bg-secondary carousel slide" data-ride="carousel">
-		<div class="carousel-inner container">
-			<div class="carousel-item active text-center font-weight-bold text-white">
-				<a href="#" class="d-flex align-items-center justify-content-center">Holiday Shopping? Check out our limited edition kits</a>
+		<h1>Cart Drawer</h1>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart-drawer">Open modal</button>
+		<p class="mt-2">Item Count: <span class="cart-drawer__count">0</span></p>
+		<div class="row mb-2">
+			<div class="col-12 col-lg-4 mb-1">
+				<select id="product-select" class="form-control"></select>
 			</div>
-			<div class="carousel-item text-center font-weight-bold text-white align-items-center justify-content-center">
-				<a href="#" class="d-flex align-items-center justify-content-center">Slide 2</a>
+			<div class="col-12 col-lg-4">
+				<button id="product-add" type="button" class="btn btn-primary">Add Product</button>
 			</div>
 		</div>
+		<p>Products are copied from Dev store</p>
+		<p>"Australian Emu Apple Enzyme Powder Polish" will give auto discount code "TESTAUTO"</p>
+		<p>Valid discount code: "VALID", "MINIMAL50"</p>
+		<p>No GWP type discount</p>
+		<p>Free shipping minimal purchase is $70.00</p>
+		<p>Manual GWP minimal purchase is $30.00</p>
 	</div>
+
+	<div class="modal fade cart-drawer" id="cart-drawer" tabindex="-1" aria-hidden="true"></div>
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
 	
 	<script src="/sandandsky-styleguides/js/bootstrap.js" defer></script>

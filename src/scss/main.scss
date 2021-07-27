@@ -26,6 +26,7 @@
 @import 'components/badge';
 @import 'components/product-variant';
 @import 'components/klarna';
+@import 'components/breadcrumb';
 
 @import 'compounds/hero-banner';
 @import 'compounds/product-card';
@@ -34,6 +35,7 @@
 @import 'compounds/mega-menu';
 @import 'compounds/mobile-menu';
 @import 'compounds/search-box';
+@import 'compounds/post-card';
 
 @import 'sections/header';
 @import 'sections/cart-drawer';
@@ -48,6 +50,8 @@
 @import 'sections/how-to-video';
 @import 'sections/yotpo-reviews';
 @import 'sections/review-carousel';
+@import 'sections/how-to-carousel';
 
 @import 'templates/home';
 @import 'templates/product';
+@import 'templates/stockist';

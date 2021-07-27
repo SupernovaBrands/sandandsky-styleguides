@@ -25,6 +25,8 @@ $(document).ready(function () {
 	const productSwatchMobile = $('.product-swatch-mobile');
 	const productSwatchTrigger = $('.product-swatch-mobile__trigger');
 
+	const readingStickyScrolledDown = $('.reading-proggress-bar--scrolled-down');
+
 	$(window).on('scroll', function () {
 		scrollTop = $(this).scrollTop();
 
@@ -47,6 +49,9 @@ $(document).ready(function () {
 						announceBar.removeClass('d-none');
 					}
 				}
+				if (readingStickyScrolledDown.length) {
+					readingStickyScrolledDown.removeClass('position-fixed').addClass('d-none');
+				}
 			} else if (scrollTop <= 0) {
 				// safari fix bounce effect
 				navbarEl.removeClass('position-fixed').removeClass('scrolled-up');
@@ -54,6 +59,10 @@ $(document).ready(function () {
 				navbarEl.removeClass('scrolled-up').addClass('scrolled-down');
 				if (announceBar.length > 0 && scrollTop > navbarHeight) {
 					announceBar.addClass('d-none');
+				}
+
+				if (readingStickyScrolledDown.length) {
+					readingStickyScrolledDown.addClass('position-fixed').removeClass('d-none');
 				}
 			}
 		}
@@ -73,7 +82,7 @@ $(document).ready(function () {
 	// tooltip
 	$('#tooltip__close').on('click', function () {
 		$(this).parent().removeClass('show');
-		setTimeout(function() {
+		setTimeout(function () {
 			$('.navbar > .container').removeClass('position-relative');
 		}, 300);
 	});
@@ -85,13 +94,13 @@ $(document).ready(function () {
 
 	const announcementBar = $('#announcementBar');
 	if (announcementBar.length) {
-		const announcement_items = announcementBar.find('.carousel-item');
+		const announcementItems = announcementBar.find('.carousel-item');
 		let barHeight = 0;
-		announcement_items.each(function() {
+		announcementItems.each(function () {
 			barHeight = ($(this).outerHeight() > barHeight) ? $(this).outerHeight() : barHeight;
-		})
+		});
 		announcementBar.find('a').css({
-			'height': barHeight + 'px'
-		})
+			height: `${barHeight} px`,
+		});
 	}
 });

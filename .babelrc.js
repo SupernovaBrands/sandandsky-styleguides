@@ -21,6 +21,7 @@ module.exports = {
 					'~mod': './src/js/modules',
 					'~comp': './src/js/components',
 					'~rt': './src/js/templates',
+					'~svg': './fonts/svgs',
 					'testHelpers': './__tests__/testHelpers'
 				}
 			}

@@ -37,28 +37,36 @@ const parseIngredients = (responseData) => {
 	return html;
 };
 
-// test mode data
-$(document).ready(function () {
-	const sku = $('#collapseIngredients').data('sku');
-	const params = {
-		async: true,
-		crossDomain: true,
-		contentType: 'application/json',
-		url: `https://server.clearforme.com/api/app/products/details?sku=${sku}&clientname=${cname}`,
-		method: 'GET',
-		beforeSend: (xhr) => {
-			xhr.setRequestHeader('Authorization', `Bearer ${token}`);
-		},
-		processData: false,
-		error: () => {
-			console.log('api cfm error - sku not found');
-		},
-	};
+const requestCfm = (params, targetId) => {
 	$.ajax(params).done(function (response) {
 		const ingredientHtml = parseIngredients(response);
-		$('.tab-ingredient__content').html(ingredientHtml);
-		$('.tab-ingredient__learn-more').removeClass('d-none');
+		$(`#${targetId} .tab-ingredient__content`).html(ingredientHtml);
 	});
+};
+
+// test mode data
+$(document).ready(function () {
+	if ($('.collapse--ingredients').length > 0) {
+		$('.collapse--ingredients').each(function (k, obj) {
+			const sku = $(obj).data('sku');
+			const targetId = $(obj).attr('id');
+			const params = {
+				async: true,
+				crossDomain: true,
+				contentType: 'application/json',
+				url: `https://server.clearforme.com/api/app/products/details?sku=${sku}&clientname=${cname}`,
+				method: 'GET',
+				beforeSend: (xhr) => {
+					xhr.setRequestHeader('Authorization', `Bearer ${token}`);
+				},
+				processData: false,
+				error: () => {
+					console.log(`api cfm error - sku not found - ${k}`);
+				},
+			};
+			requestCfm(params, targetId);
+		});
+	}
 });
 
 $('#ingredientModal').on('show.bs.modal', function (event) {
@@ -70,7 +78,7 @@ $('#ingredientModal').on('show.bs.modal', function (event) {
 
 	const triggerBtn = $(event.relatedTarget).attr('data-name');
 	const dataNote = $(event.relatedTarget).attr('data-note');
-	const sku = $('#collapseIngredients').data('sku');
+	const sku = $(event.relatedTarget).closest('.collapse--ingredients').data('sku');
 	const dataSp = $(event.relatedTarget).attr('data-speciality');
 	const params = {
 		async: true,

@@ -1,0 +1,6 @@
+// safari 100vh bug : modal overlay cutoff on in-app browser fix
+@include media-breakpoint-down(sm) {
+	.modal-backdrop {
+		min-height: 100%;
+	}
+}

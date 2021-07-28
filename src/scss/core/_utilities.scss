@@ -40,6 +40,23 @@
 	}
 }
 
+// Sticky sidebar at bottom
+.sticky-bottom {
+	top: auto;
+	bottom: map-get($spacers, 3);
+
+	&__container {
+		display: flex;
+		align-items: flex-end;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.position-lg-sticky {
+		position: sticky !important;
+	}
+}
+
 // To make button looks like text
 .btn-unstyled {
 	border: 0;

@@ -5,8 +5,9 @@
 	{{> html-head title="Product Section" yotpocss=true }}
 </head>
 
-<body class="template-product mb-7 mt-lg-7">
-	<section class="container mb-4 mb-lg-7">
+<body class="template-product">
+	{{> sections/header}}
+	<section class="container mb-4 mb-lg-7 mt-lg-5">
 		<div class="row align-items-start">
 			{{> product-image-carousel rangeclass="bg-aea" gutter=""}}
 			<div class="col-12 col-lg-5 d-flex flex-column order-lg-3 px-g">
@@ -88,7 +89,7 @@
 						<a class="text-body sni sni__plus collapsed align-items-center" data-toggle="collapse" href="#collapseIngredients" role="button" aria-expanded="false" aria-controls="collapseIngredients">
 							<span class="text-underline ml-1">Full ingredients list</span>
 						</a>
-						<div class="collapse" id="collapseIngredients" data-sku="Test234">
+						<div class="collapse collapse--ingredients" id="collapseIngredients" data-sku="SS0000012020" data-cname="sand and sky">
 							<p class="font-size-sm mt-3 d-none tab-ingredient__learn-more">(Click or tap on the ingredients to learn more)</p>
 							<p class="font-size-sm mt-2 tab-ingredient__content"></p>
 							{{> components/ingredient-modal}}
@@ -175,6 +176,7 @@
 		{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller"}}
 	{{/ sections/carousel-scroll}}
 	{{> sections/newsletter-banner}}
+	{{> sections/footer}}
 	{{> js jquery=true bootstrap=true main=true yotpo=true }}
 </body>
 </html>

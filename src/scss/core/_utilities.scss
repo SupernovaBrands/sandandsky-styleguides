@@ -4,8 +4,14 @@
 // AEA range background color
 @include bg-variant(".bg-aea", $range-aea, true);
 
+// AEA light range background color
+@include bg-variant(".bg-aea-light", $range-aea-light, true);
+
 // TSW range background color
 @include bg-variant(".bg-tsw", $range-tsw, true);
+
+// TSW range background color
+@include bg-variant(".bg-tsw-light", $range-tsw-light, true);
 
 // Gray 100 background color
 @include bg-variant(".bg-gray-100", $gray-100, true);

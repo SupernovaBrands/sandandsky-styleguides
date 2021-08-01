@@ -2,28 +2,24 @@
 <html>
 
 <head>
-	{{> html-head title="Product Card" yotpostars="true"}}
+	{{> html-head title="Range Products" yotpostars="true"}}
 </head>
 
 <body>
 	<div class="container px-g mt-4">
-		<h1>Product Card</h1>
+		<h1>Range Products</h1>
+	</div>
 
-		<div class="row">
-			{{> compounds/product-card color="ff6f8d"}}
-			{{> compounds/product-card color="cc3195"}}
-			{{> compounds/product-card color="66b3df" badge="Best Seller"}}
-		</div>
-
-		<h1>Product Card Secondary</h1>
-
-		<div class="row">
+	<div class="container px-g mt-4">
+		<p class="h1 text-center my-6">Our Range Products</p>
+		<div class="row justify-content-center">
 			{{> compounds/product-card-secondary class="col-6 col-lg-3" color="ff6f8d" saving="20%" badge="true"}}
 			{{> compounds/product-card-secondary class="col-6 col-lg-3" color="cc3195"}}
 			{{> compounds/product-card-secondary class="col-6 col-lg-3" color="66b3df"}}
 		</div>
 	</div>
-	{{> js jquery=true main=true }}
+
+	{{> js jquery=true bootstrap=true main=true }}
 </body>
 
 </html>

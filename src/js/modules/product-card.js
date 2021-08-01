@@ -10,8 +10,8 @@ if ($('.product-card-form').length > 0) {
 	});
 }
 
-if ($('.product-card .yotpo.bottomLine').length > 0) {
-	$('.product-card .yotpo.bottomLine').each((i, el) => {
+if ($('.product-card:not(.product-card--secondary) .yotpo.bottomLine').length > 0) {
+	$('.product-card:not(.product-card--secondary) .yotpo.bottomLine').each((i, el) => {
 		waitFor(() => $(el).find('.yotpo-display-wrapper').length > 0, () => {
 			const stars = $(el).find('.yotpo-stars');
 			if (stars.length > 0) {

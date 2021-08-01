@@ -57,4 +57,53 @@
 			}
 		}
 	}
+
+	&--secondary {
+		.yotpo-stars {
+			display: block;
+		}
+
+		figcaption {
+			min-height: calc-em(220);
+		}
+
+		.img-hover {
+			visibility: hidden;
+			opacity: 0;
+			top: 0;
+			left: $grid-gutter-width/2;
+			object-fit: contain;
+
+			@include media-breakpoint-up(lg) {
+				left: $grid-gutter-width-lg/2;
+			}
+
+			img {
+				width: calc(100% - #{$grid-gutter-width/2});
+				@include media-breakpoint-up(lg) {
+					width: 100%;
+				}
+			}
+
+		}
+
+		.img-main:hover + .img-hover,
+		.img-hover:hover {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	.circle-badge {
+		width: $badge-circle-width;
+		height: $badge-circle-height;
+		right: 0;
+		top: calc-em(-15);
+
+		@include media-breakpoint-up(lg) {
+			width: $badge-circle-width-lg;
+			height: $badge-circle-height-lg;
+		}
+	}
+
 }

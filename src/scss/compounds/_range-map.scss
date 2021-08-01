@@ -1,0 +1,32 @@
+.aea-map {
+  &:before {
+    @include media-breakpoint-up(lg) {
+      content: '';
+      background: url('//cdn.shopify.com/s/files/1/0248/5370/8886/t/92/assets/pattern-product.svg?v=2288417693121673159');
+      position: absolute;
+      background-size: cover;
+      width: calc-em(250);
+      height: calc-em(375);
+      right: -3%;
+      top: -30%;
+    }
+  }
+
+  &:after {
+    content: '';
+    background: url("../images/aea-decoration.svg") no-repeat;
+    background-position: initial;
+    position: absolute;
+    width: calc-em(70);
+    height: calc-em(75);
+    bottom: -6%;
+    left: 6%;
+    @include media-breakpoint-up(lg) {
+      background-position: center;
+      width: calc-em(300);
+      height: calc-em(150);
+      bottom: -5%;
+      left: 0;
+    }
+  }
+}

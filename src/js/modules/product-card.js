@@ -4,6 +4,26 @@ import {
 	waitFor,
 } from '~mod/utils';
 
+const buildStars = (score) => {
+	let stars = '';
+	const maxScore = 5;
+	const hollow = maxScore - (maxScore - score);
+
+	for (let s = 1; s <= 5; s += 1) {
+		const se = hollow - s + 1;
+		const seFloor = se - Math.floor(se);
+		if ((s > hollow && se < 0) || (s > hollow && se > 0 && seFloor < 0.5)) {
+			stars += '<i class="sni sni__star-hollow"></i>';
+		} else if (s > hollow && se > 0 && seFloor >= 0.5) {
+			stars += '<i class="sni sni__star-half"></i>';
+		} else {
+			stars += '<i class="sni sni__star-full"></i>';
+		}
+	}
+
+	return stars;
+};
+
 if ($('.product-card-form').length > 0) {
 	$('.product-card-form').each((index, el) => {
 		const productCardForm = new theme.AjaxProduct($(el)); // eslint-disable-line no-unused-vars
@@ -23,6 +43,22 @@ if ($('.product-card:not(.product-card--secondary) .yotpo.bottomLine').length > 
 					.addClass('product-card__text-sm')
 					.removeAttr('href');
 				$(el).before('<div class="yotpo"><span class="d-block yotpo-icon yotpo-icon-star text-secondary mr-1"></span></div>');
+			}
+		});
+	});
+}
+
+if ($('.product-card--secondary .yotpo-product-stars').length > 0) {
+	$('.product-card--secondary .yotpo-product-stars').each((index, el) => {
+		const appKey = $(el).data('key');
+		const productId = $(el).data('product');
+
+		$.get(`https://api.yotpo.com/products/${appKey}/${productId}/bottomline`).done((res) => {
+			if (res.status.code === 200) {
+				const response = res.response.bottomline;
+				const { average_score: averageScore } = response;
+				const stars = buildStars(averageScore);
+				$(el).html(stars);
 			}
 		});
 	});

@@ -1,5 +1,5 @@
-<section id="hero-carousel{{#if num}}{{num}}{{/if}}" class="hero-carousel carousel slide {{ class }}" data-interval="7000" data-pause="false">
-	<ol class="carousel-indicators carousel-indicators--timer mb-0">
+<section id="hero-carousel{{#if num}}{{num}}{{/if}}{{#if num}}{{num}}{{/if}}" class="hero-carousel {{#if fullimage}}hero-carousel--fullimage{{/if}} carousel slide {{ class }}" data-interval="7000" data-pause="false">
+	<ol class="carousel-indicators {{#if indicator-timer}}carousel-indicators--timer{{/if}} mb-0">
 		{{#times totalSlide}}
 		<li data-target="#hero-carousel{{#if num}}{{num}}{{/if}}" data-slide-to="{{minus @index 1}}" class="border-0 mb-3 mx-1 {{#if @first}}active{{/if}}"></li>
 		{{/times}}
@@ -8,15 +8,19 @@
 	<div class="carousel-inner" role="listbox">
 		{{#times totalSlide}}
 		{{#if @first}}
-		{{#> compounds/hero-banner class="carousel-item active" }}
-			<p class="h1 mb-2">Dive into deep hydration</p>
-			<p class="mb-2">Meet Tasmanian Spring Water - Slide {{@index}}</p>
+		{{#> compounds/hero-banner class="carousel-item active" fullimage="true" }}
+			<p class="h1 mb-2 d-none d-lg-block">Dive into deep hydration (D)</p>
+			<p class="h1 mb-2  d-lg-none">Dive into deep hydration (M)</p>
+			<p class="mb-2 d-none d-lg-block">Meet Tasmanian Spring Water - Slide {{@index}} (D)</p>
+			<p class="mb-2  d-lg-none">Meet Tasmanian Spring Water - Slide {{@index}} (M)</p>
 			<a href="" class="btn btn-lg btn-primary">Shop the range</a>
 		{{/ compounds/hero-banner}}
 		{{else}}
-		{{#> compounds/hero-banner class="carousel-item" }}
-			<p class="h1 mb-2">Dive into deep hydration</p>
-			<p class="mb-2">Meet Tasmanian Spring Water - Slide {{@index}}</p>
+		{{#> compounds/hero-banner class="carousel-item" fullimage="true" }}
+			<p class="h1 mb-2 d-none d-lg-block">Dive into deep hydration (D)</p>
+			<p class="h1 mb-2  d-lg-none">Dive into deep hydration (M)</p>
+			<p class="mb-2 d-none d-lg-block">Meet Tasmanian Spring Water - Slide {{@index}}  (D)</p>
+			<p class="mb-2  d-lg-none">Meet Tasmanian Spring Water - Slide {{@index}} (M)</p>
 			<a href="" class="btn btn-lg btn-primary">Shop the range</a>
 		{{/ compounds/hero-banner}}
 		{{/if}}

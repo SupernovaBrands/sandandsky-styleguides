@@ -1,3 +1,11 @@
+{{#if fullimage}}
+<a href="" class="carousel-item  {{ class }}">
+    <picture class="embed-responsive bg-shimmer">
+        <source srcset="https://via.placeholder.com/1810x1020" media="(min-width: 992px)">
+        <img src="https://via.placeholder.com/750x840" alt="Slide {{@index}}" class="d-block w-100 embed-responsive-item fit--cover">
+    </picture>
+</a>
+{{else}}
 <figure class="hero-banner {{#if reverse}}hero-banner--reverse{{/if}} position-relative mb-0 {{ class }}">
 	<picture class="d-block">
 		<source srcset="https://via.placeholder.com/1810x1020" media="(min-width: 992px)">
@@ -9,3 +17,4 @@
 		</div>
 	</figcaption>
 </figure>
+{{/if}}

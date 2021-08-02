@@ -8,6 +8,7 @@
 	background-color: rgba(0, 0, 0, 0.6);
 	z-index: $zindex-tooltip;
 	transform: translateX(-100%);
+	overflow: hidden scroll;
 
 	&:before {
 		position: absolute;

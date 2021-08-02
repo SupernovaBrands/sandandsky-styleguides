@@ -98,25 +98,17 @@
 		}
 	}
 
-	.carousel-control-next {
-		@include media-breakpoint-down(md) {
-			display: none;
+	@include media-breakpoint-up(lg) {
+		.carousel-control {
+			transform: none;
 		}
 
-		@include media-breakpoint-up(lg) {
+		.carousel-control-next {
 			top: auto;
-			bottom: -21%;
 		}
-	}
 
-	.carousel-control-prev {
-		@include media-breakpoint-down(md) {
-			display: none;
-		}
-		
-		@include media-breakpoint-up(lg) {
+		.carousel-control-prev {
 			top: auto;
-			bottom: -21%;
 			left: auto;
 			right: 3%;
 		}

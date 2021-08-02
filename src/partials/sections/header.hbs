@@ -1,7 +1,7 @@
 <header class="main-header bg-white">
 	{{> components/announcement-bar}}
-	<nav class="navbar navbar-expand-lg">
-		<div class=" px-g container">
+	<nav class="navbar navbar-expand-lg px-g">
+		<div class="container">
 			<button class="navbar-toggler" type="button">
 				<span class="d-block"></span>
 			</button>
@@ -63,5 +63,9 @@
 
 	{{#if blognav}}
 	{{> compounds/blog-nav}}
+	{{/if}}
+
+	{{#if secondnav}}
+	{{> compounds/secondary-nav gridclass="px-g"}}
 	{{/if}}
 </header>

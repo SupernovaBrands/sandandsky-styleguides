@@ -29,6 +29,24 @@
 	border-bottom-left-radius: 0 !important;
 }
 
+// Half gutter padding
+@include media-breakpoint-down(md) {
+	.pr-hg, .px-hg {
+		padding-right: $grid-gutter-width * 0.5 !important;
+	}
+	.pl-hg, .px-hg {
+		padding-left: $grid-gutter-width * 0.5 !important;
+	}
+}
+@include media-breakpoint-up(lg) {
+	.pr-lg-hg, .px-lg-hg {
+		padding-right: $grid-gutter-width * 0.5 !important;
+	}
+	.pl-lg-hg, .px-lg-hg {
+		padding-left: $grid-gutter-width * 0.5 !important;
+	}
+}
+
 // Hover overlay for blog image
 .hover-overlay {
 	position: relative;

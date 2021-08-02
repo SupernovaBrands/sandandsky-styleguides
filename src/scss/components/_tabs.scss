@@ -4,4 +4,12 @@
 		border-bottom: 2px solid $secondary !important;
 		font-weight: bold;
 	}
+
+	&--scroll {
+		overflow: auto hidden;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
 }

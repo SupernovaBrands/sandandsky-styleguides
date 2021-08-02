@@ -258,6 +258,8 @@
 			width: 30px;
 			opacity: 1;
 			background-color: transparentize(#FFFFFF, 0.5);
+      border-radius: 5px;
+      overflow: hidden;
 
 			&::before {
 				content: '';
@@ -266,6 +268,9 @@
 				height: 100%;
 				background-color: #fff;
 			}
+
+      &.active::before {
+      }
 		}
 
 		&--start {

@@ -124,7 +124,7 @@ $('.carousel--scroll').each((index, carousel) => {
 	const scrollItem = (direction) => (e) => {
 		e.preventDefault();
 		const item = carousel.querySelector('.carousel-item');
-		const itemToScroll = $(carousel).parent().hasClass('review-carousel') ? 1 : 2;
+		const itemToScroll = $(carousel).parent().hasClass('review-carousel') || $(carousel).parent().hasClass('instagram-carousel') ? 1 : 2;
 		itemIndex = Math.round(inner.scrollLeft / item.clientWidth) + (direction === 'left' ? -(itemToScroll) : itemToScroll);
 		left = itemIndex * item.clientWidth;
 		if (left < 0) left = 0;

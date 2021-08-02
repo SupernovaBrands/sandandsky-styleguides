@@ -6,3 +6,45 @@
 		}
 	}
 }
+
+.hero-carousel--fullimage {
+  .embed-responsive::before {
+    padding-top: percentage(420 / 375);
+    @include media-breakpoint-up(lg) {
+      padding-top: percentage(550 / 1440);
+    }
+  }
+
+  .carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin-right: 10%;
+    margin-left: 10%;
+    list-style: none;
+    justify-content: flex-end;
+    top: auto;
+  }
+
+  .carousel-indicators li {
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    background-color: #fff;
+    border: 1px solid;
+
+    &:not(.active) {
+      background: 0 0;
+      opacity: 1;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}

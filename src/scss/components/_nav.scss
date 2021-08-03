@@ -21,10 +21,6 @@
 
 	&.sni:before {
 		font-size: calc-em(22, 16);
-
-		@include media-breakpoint-up(lg) {
-			margin-right: calc-em(5, 16);
-		}
 	}
 
 	@include media-breakpoint-down(md) {

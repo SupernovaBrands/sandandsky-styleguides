@@ -12,4 +12,8 @@
 			display: none;
 		}
 	}
+
+	&--filter {
+		min-width: calc-em(270, 16);
+	}
 }

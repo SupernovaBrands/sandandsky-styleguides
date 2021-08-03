@@ -17,6 +17,7 @@
 		right: 0;
 		outline: none;
 		opacity: 1;
+
 		svg path {
 			fill: $body-color;
 		}
@@ -31,6 +32,7 @@
 	}
 
 	&__shopify-icon {
+
 		&:before,
 		&:after {
 			content: '';
@@ -41,6 +43,26 @@
 
 	.modal-footer>* {
 		margin: 0;
+	}
+}
+
+#dynamic-checkout-cart {
+	ul {
+		margin: 0px !important;
+	}
+	li {
+		display: none !important;
+		margin: 0px !important;
+		flex-basis: 100% !important;
+		height: 50px !important;
+		&.show {
+			display: block !important;
+		}
+	}
+	.paypalLight {
+		min-height: 50px !important;
+		max-height: 50px !important;
+		height: 50px !important;
 	}
 }
 
@@ -79,7 +101,6 @@
 		}
 
 		button {
-
 			&:focus,
 			&:active {
 				box-shadow: none !important;

@@ -1,14 +1,6 @@
-/* global theme */
-
 import {
 	waitFor,
 } from '~mod/utils';
-
-if ($('.product-card-form').length > 0) {
-	$('.product-card-form').each((index, el) => {
-		const productCardForm = new theme.AjaxProduct($(el)); // eslint-disable-line no-unused-vars
-	});
-}
 
 if ($('.product-card .yotpo.bottomLine').length > 0) {
 	$('.product-card .yotpo.bottomLine').each((i, el) => {

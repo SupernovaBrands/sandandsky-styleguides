@@ -26,7 +26,6 @@
 	@include media-breakpoint-down(md) {
 		&.sni__cart {
 			font-size: calc-em(20, 16);
-			flex-basis: 10%;
 
 			&:before {
 				font-size: calc-em(20);

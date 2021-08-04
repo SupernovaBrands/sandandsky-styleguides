@@ -1,4 +1,4 @@
-$('.tab--scroll a[data-toggle="tab"]').on('shown.bs.tab', function () {
+$('.tab--scroll a[data-toggle="tab"]').on('show.bs.tab', function () {
 	$('.tab-pane').addClass('fade').removeClass('active');
 	const targetId = $(this).attr('href');
 	const titleText = $(this).text();

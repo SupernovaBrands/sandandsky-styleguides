@@ -1,8 +1,10 @@
+@charset 'UTF-8';
+
 @import 'core/functions';
 @import 'core/vars';
 @import 'mixins/carousel';
 
-@import 'bootstrap/bootstrap';
+@import 'bootstrap/main';
 
 @import 'core/fonts';
 @import 'core/type';

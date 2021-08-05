@@ -27,26 +27,27 @@ export default class CartItem extends React.Component {
 							<img src={models.image} className="w-100" alt={item.product_title} />
 						</picture>
 					</ConditionWrapper>
-					<figcaption className="col-9">
+					<figcaption className="col-9 pl-lg-0">
 						<p className="font-size-xs text-muted mb-2">{models.range}</p>
 
 						<div className="d-flex align-items-start mb-2">
-							<h5 className="flex-grow-1 mr-1 mb-0">
-								<ConditionWrapper
-									condition={!models.isFree}
-									wrapper={(children) => <a href={item.url} >{children}</a>}
-								>
-									{models.title}
-								</ConditionWrapper>
-							</h5>
+							<div className="flex-grow-1 mr-1">
+								<h5 className="mb-0">
+									<ConditionWrapper
+										condition={!models.isFree}
+										wrapper={(children) => <a href={item.url}>{children}</a>}
+									>
+										{models.title}
+									</ConditionWrapper>
+								</h5>
+								{models.notes && models.notes.map((note) => (<span className="font-size-sm text-secondary">{note}</span>))}
+							</div>
 							<div className="d-flex flex-column text-right font-size-sm">
 								{models.comparePrice > 0 && (
 									<span className="text-linethrough text-muted">{formatMoney(models.comparePrice)}</span>)}
-								<span className={`font-weight-bold ${item.original_price === 0 ? 'text-secondary' : ''}`}>{formatMoney(item.original_price)}</span>
+								<span className={`font-weight-bold ${models.price === 0 ? 'text-secondary' : ''}`}>{formatMoney(models.price)}</span>
 							</div>
 						</div>
-
-						{models.properties && Object.keys(models.properties).map((key) => (<p key={key} className="mb-1">{`${key}: ${item.properties[key]}`}</p>))}
 
 						<div className="d-flex justify-content-between">
 							<QuantityBox

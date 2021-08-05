@@ -34,13 +34,12 @@
 	.sni-after:after {
 		color: $white;
 		font-size: calc-em(9, 16);
-		padding: calc-em(5, 9);
 	}
 
 	.close {
-		right: calc-em(20, 16);
+		right: $grid-gutter-width;
 		top: 0;
-		transform: translateY(-50%);
+		transform: translateY(-60%);
 		opacity: 1;
 		z-index: 1; //above frame onload
 	}

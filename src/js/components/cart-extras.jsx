@@ -1,4 +1,4 @@
-/* global tSettings tStrings assetUrl Afterpay */
+/* global tSettings tStrings cartSettings assetUrl Afterpay */
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import {
 	formatMoney,
 } from '~mod/utils';
+
+import SvgCard from '~svg/credit-card.svg';
 
 let currency;
 let locale;
@@ -26,9 +28,9 @@ export default class CartExtras extends React.Component {
 		super(props);
 		this.state = {
 			totalPrice: props.totalPrice,
-			afterpay: tSettings.payment.afterpay,
-			klarna: tSettings.payment.klarna,
-			klarna_installment: tSettings.payment.klarna_installment,
+			afterpay: cartSettings.payment.afterpay,
+			klarna: cartSettings.payment.klarna,
+			klarna_installment: cartSettings.payment.klarna_installment,
 		};
 
 		$('#modal-klarna').on('show.bs.modal', function () {
@@ -75,9 +77,9 @@ export default class CartExtras extends React.Component {
 	}
 
 	render() {
-		const klarnaIns = tStrings.cart_installment_by
+		const klarnaIns = this.state.klarna ? cartSettings.payment.installment_by_text
 			.replace('[amount]', formatMoney(Math.ceil(this.state.totalPrice / this.state.klarna_installment)))
-			.replace('[num]', this.state.klarna_installment);
+			.replace('[num]', this.state.klarna_installment) : '';
 		return (
 			<>
 				{this.state.afterpay && (
@@ -94,15 +96,12 @@ export default class CartExtras extends React.Component {
 				)}
 
 				{!this.state.afterpay && !this.state.klarna && (
-					<a href="/checkout" className="text-center">
-						<div className="cart-drawer__shopify-icon d-flex align-items-center justify-content-center">
-							<img className="d-block mx-1" src={assetUrl('shopify-payment.svg')} width="112" alt="Shopify Icon" />
+					<div className="font-size-sm text-center border-top mt-2 pt-2 pb-3 text center">
+						<div className="bg-light rounded-pill py-2 d-flex justify-content-center align-items-center">
+							<SvgCard />
+							<span className="ml-2">{tStrings.cartAcceptCards}</span>
 						</div>
-
-						{tSettings.cart_payment_icons && (
-							<img className="d-block mx-auto my-2" src={tSettings.cart_payment_icons} width="240" alt="Payments" />
-						)}
-					</a>
+					</div>
 				)}
 			</>
 		);

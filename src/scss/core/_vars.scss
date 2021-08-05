@@ -199,11 +199,19 @@ $close-text-shadow: none;
 // Select
 $custom-select-indicator: url("data:image/svg+xml,<svg width='28' height='12' viewBox='0 0 28 12' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(#clip0)'><path d='M-4.76837e-07 -1.22392e-06L14 12L28 0L-4.76837e-07 -1.22392e-06Z' fill='black'/></g><defs><clipPath id='clip0'><rect width='12' height='28' fill='white' transform='translate(28) rotate(90)'/></clipPath></defs></svg>");
 $custom-select-bg-size: calc-em(10) calc-em(9);
+$custom-select-font-size: $font-size-base;
 
 // Badge
 $badge-font-weight: normal;
 $badge-padding-y: calc-em(8, 16);
 $badge-padding-x: calc-em(15, 16);
+
+// Custom switch
+$custom-switch-indicator-size-height: calc-em(42);
+$custom-switch-width: calc-em(82);
+$custom-switch-indicator-border-radius: 2em;
+$custom-control-indicator-checked-disabled-bg: $gray-400;
+$custom-control-indicator-border-color: white;
 
 // A
 $link-color: $body-color;

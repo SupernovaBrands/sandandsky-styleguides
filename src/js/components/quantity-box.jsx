@@ -15,7 +15,7 @@ export default class QuantityBox extends React.Component {
 	}
 
 	static getDerivedStateFromProps(nextProps, prevState) {
-		if (nextProps.quantity && prevState.prevQuantity != nextProps.quantity) {
+		if (nextProps.quantity && prevState.prevQuantity !== nextProps.quantity) {
 			return {
 				prevQuantity: nextProps.quantity,
 				quantity: `${nextProps.quantity}`,

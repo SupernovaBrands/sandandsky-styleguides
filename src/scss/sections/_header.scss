@@ -87,6 +87,10 @@
 			transform: rotate(180deg) translateX(0%);
 		}
 	}
+
+  .sni__cart:before {
+    margin: 0;
+  }
 }
 
 .navbar-toggler {
@@ -123,14 +127,17 @@
 	}
 }
 
+.navbar-nav {
+  flex-basis: 20%;
+}
+
 .cart-drawer {
 	&__count {
 		position: absolute;
 		font-size: calc-em(10);
 		top: calc-em(20);
-		// fix center cart counter > 9
-		right: 0;
-		left: 0;
+		right: calc-em(8);
+    left: 0;
 
 		@include media-breakpoint-up(lg) {
 			font-size: calc-em(12);

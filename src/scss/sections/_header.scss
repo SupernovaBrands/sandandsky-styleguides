@@ -123,6 +123,10 @@
 	}
 }
 
+.navbar-nav {
+  flex-basis: 20%;
+}
+
 .cart-drawer {
 	&__count {
 		position: absolute;

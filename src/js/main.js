@@ -70,3 +70,7 @@ if ($('.carousel--loop').length > 0) {
 if ($('.reading-proggress-bar').length > 0) {
 	import(/* webpackChunkName: 'article-progress-bar' */ '~mod/article-progress-bar');
 }
+
+if ($('.collection-template').length > 0) {
+	import(/* webpackChunkName: 'collection-template' */ '~mod/collection-template');
+}

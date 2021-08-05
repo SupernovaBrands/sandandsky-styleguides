@@ -1,7 +1,7 @@
 .dropdown-menu {
 	left: auto;
 	right: 0;
-	transition: all 0.3s;
+	transition: height 0.3s;
 	height: 0;
 	visibility: hidden;
 }
@@ -38,7 +38,7 @@
 			}
 			
 			.dropdown-menu {
-				transition: all .5s ease;
+				transition: height .5s ease;
 				height: 16.5em;
 				visibility: visible;
 			}

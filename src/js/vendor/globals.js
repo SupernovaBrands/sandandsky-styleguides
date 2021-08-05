@@ -1,182 +1,272 @@
 window.useLazyload = false;
 
-window.theme = {
-	AjaxProduct: class AjaxProduct {
-		constructor(el) {
-			this.el = el;
-		}
-	},
-};
-
-
 window.assetUrl = function (filename) {
 	return `/images/${filename}`;
 };
 
+window.renderLazyImages = () => {
+	function removeBg(e) {
+		const parent = e.target.parentElement;
+		if (parent.classList.contains('bg-shimmer')) {
+			parent.classList.remove('bg-shimmer');
+		}
+		e.target.removeEventListener('load', removeBg);
+	}
+
+	function loadImage(img) {
+		const parent = img.parentElement;
+		let hasSource = parent.tagName == 'PICTURE' && parent.querySelectorAll('source').length > 0;
+		let dataSrc = img.dataset.src;
+		const hasDataSrc = dataSrc && img.src !== dataSrc;
+		const sources = parent.querySelectorAll('source');
+
+		if (img.complete && !hasDataSrc) {
+			removeBg({ target: img });
+		} else {
+			img.addEventListener('load', removeBg);
+		}
+
+		if (hasDataSrc) {
+			img.src = dataSrc;
+			if (hasSource && typeof sources !== 'undefined') {
+				sources.forEach(source => {
+					if (source.dataset.srcset) source.srcset = source.dataset.srcset;
+				});
+			}
+		}
+	}
+
+	const io = new IntersectionObserver(entries => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				setTimeout(() => {
+					loadImage(entry.target);
+				}, 1000);
+				entry.target.classList.remove('lazyload');
+				io.unobserve(entry.target);
+			}
+		});
+	}, {
+		rootMargin: '300px 0px',
+	});
+
+	document.querySelectorAll('img.lazyload').forEach((img) => {
+		io.observe(img);
+	});
+}
+
+window.productFormSubmit = (e) => {
+	e.preventDefault();
+	const form = e.target;
+	const id = form.querySelector('input[name=id]').value;
+	const quantity = form.querySelector('input[name=quantity]').value;
+	const submitBtn = form.querySelectorAll('.btn__submit');
+	const loadingBtn = form.querySelectorAll('.btn__loading');
+
+	submitBtn.forEach((btn) => {
+		btn.classList.add('d-none')
+	});
+	loadingBtn.forEach((btn) => {
+		btn.classList.remove('d-none')
+	});
+	window.snCart.addItem(id, quantity).then(() => {
+		submitBtn.forEach((btn) => {
+			btn.classList.remove('d-none')
+		});
+		loadingBtn.forEach((btn) => {
+			btn.classList.add('d-none')
+		});
+	});
+}
+
+window.customerEmail = "";
+window.customerTags = "";
+
 window.screenLG = 992;
+
 window.tStrings = {
-	addToCart: 'Add To Cart',
-	soldOut: 'Out of stock',
-	waitlistTxt: 'Waitlist Me',
-	unavailable: 'Unavailable',
-	shopAll: 'Shop All',
-	shopLabel: 'Shop',
-	estimated_delivery_text: '*Estimated delivery 28 Jan',
-	cart_drawer_title: 'Your Cart',
-	cart_empty: 'Your cart is currently empty.',
-	cart_subtotal: 'Subtotal',
-	cart_shipping: 'Shipping',
-	cart_coupon_txt: '',
-	cart_discount_text: 'Apply a promo code',
-	cart_discount_input: 'Enter promo code here',
-	cart_discount_apply: 'Apply',
-	cart_discount_remove: 'Remove',
-	cart_total: 'Total',
-	cart_question: '<p>Got a question? Email us at: <a href="mailto:hello@cocoandeve.com" title="mailto:hello@cocoandeve.com">hello@cocoandeve.com</a></p>',
-	cart_checkout: 'Secure Checkout',
-	discount_error: 'Oops, this code cannot be applied to your order.',
-	discount_min_spend: 'This coupon code is eligible for orders over',
-	items_selected: 'items selected',
-	add: 'Add',
-	remove: 'Remove',
-	thankyou_shipping_text: "<p>You'll get shipping and delivery updates by email.<br>In addition you can:</p>",
-	shade_note: 'Shade',
-	code_replacing_error: 'Limited to 1 code per order. [previous_code] is removed. [new_code] is applied.',
-	discount_title: 'Discount',
-	cart_installment_by: 'or [num] interest-free installments of <b>[amount]</b> by',
+	"addToCart": "Add to cart",
+	"quickBuy": "Quick Buy",
+	"soldOut": "Sold Out",
+	"unavailable": "Unavailable",
+	"stockLabel": "[count] in stock",
+	"savePrice": "Save [saved_amount]",
+	"cartSavings": "You're saving [savings]",
+	"cartTermsConfirmation": "You must agree with the terms and conditions of sales to check out",
+	"soldOutWaitlist": "Waitlist Me",
+	"addressError": "Error looking up that address",
+	"addressNoResults": "No results for that address",
+	"addressQueryLimit": "You have exceeded the Google API usage limit. Consider upgrading to a <a href=\"https://developers.google.com/maps/premium/usage-limits\">Premium Plan</a>.",
+	"authError": "There was a problem authenticating your Google Maps account. Create and enable the <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">JavaScript API</a> and <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">Geocoding API</a> permissions of your app.",
+	"cartDrawerTitle": "Your Cart",
+	"cartEmpty": "Your cart is currently empty.",
+	"cartBundleOffer": "Bundle offer",
+	"cartSubtotal": "Subtotal",
+	"cartBundleDiscount": "Bundle Discount",
+	"cartDiscount": "Discount",
+	"cartDiscountApplied": "Promo code applied:",
+	"cartShipping": "Shipping",
+	"cartTotal": "Total",
+	"cartDiscountInput": "Promo code",
+	"cartDiscountApply": "Apply",
+	"cartCheckout": "Secure Checkout",
+	"cartTaxMessage": "Taxes and reward points calculated in checkout",
+	"cartAcceptCards": "We accept all major credit cards",
+	"add": "Add",
+	"remove": "Remove",
+	"items_selected": "items selected"
 };
 
 window.tSettings = {
-	domain: 'dev.cocoandeve.com',
-	store: 'dev',
-	locale: 'en',
-	currency: 'USD',
-	// eslint-disable-next-line no-template-curly-in-string
-	moneyFormat: '${{amount}}',
-	// eslint-disable-next-line no-template-curly-in-string
-	moneyWithCurrencyFormat: '${{amount}} USD',
-	currencyFormat: 'money_format',
-	variantNotification: [
-		32068892688419,
-		32068892721187,
-		32068891574307,
-		32363243831331,
-	],
-	range_placeholder: 'Aussie Skincare Essentials',
-	launch_wl_submit_event: '',
-	gdpr_performace_list: '_ga;_gid;_gat',
-	gdpr_ads_list: '_gads;__cfduid;ghostmonitor_sesion_id;liveconnect;postie;_fbp',
-	chk_medium: true,
-	chk_dark: false,
-	chk_ultra: true,
-	chk_medium_bundle: false,
-	chk_dark_bundle: false,
-	chk_ultra_bundle: false,
-	enable_tan_change: true,
-	variant_color_add_to_cart: 'Add To Cart',
-	tan_single_variant_id: '',
-	tan_bundle_variant_id: '',
-	tan_masque_glossy_bundle: '',
-	tan_deluxe_travel_kit: '',
-	enable_free_shipping_measure: true,
-	checkout_agreeement: 'By clicking complete order, you agree to our <a href="/pages/terms-conditions">Terms and Conditions</a>',
-	checkout_agreeement_de: 'Wenn Sie auf Bestellung abschließen klicken, stimmen Sie unseren <a href="/pages/terms-conditions">Geschäftsbedingungen zu</a>',
-	return_link_en: 'Return to Shop',
-	return_link_de: 'Zurück zum Shop',
-	ab_checkout_express: '',
-	upsell_header_title: 'Add these bestsellers',
-	upsell_shade: 'Medium,Dark,Ultra Dark',
-	upsell_shade_label: 'Shade',
-	upsell_auto: true,
-	upsell_max_item: 2,
-	upsell_btn_label: 'Add to Cart',
-	enable_custom_codes: true,
-	custom_codes_code: 'SECRET25',
-	custom_error_codes_msg: 'Oops, this code cannot be applied to new products and bundles.',
-	custom_error_handles: 'bronzing-self-tanner-drops,glow-essentials,glowy-face-tan-set,miracle-elixir-hair-oil-treatment,clean-scalp-treatment,silky-hair-set,healthy-hair-bundle',
-	cartShippingMeter: {
-		enable: true,
-		inProgressText: '#{shipping_price} away from free shipping',
-		finalText: 'Congrats! Your order qualifies for free shipping!',
-		barColor: '#f4436c',
+	"brand": "sandandsky_shopify_dev",
+	"cartType": "page",
+	"moneyFormat": "${{amount}}",
+	"moneyFormatNoDecimal": "${{amount_no_decimals}}",
+	"moneyWithCurrencyFormat": "${{amount}} USD",
+	"currency": "USD",
+	"recentlyViewedEnabled": false,
+	"quickView": false,
+	"themeVersion": "1.3.2",
+	"money": "USD",
+	"yotpo": "fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU",
+	"permanent_domain": "dev-sandandsky.myshopify.com",
+	"enable_swell": true,
+	"exit_intent_enable": false,
+	"range_placeholder": "Aussie Skincare Essentials",
+	"tracking_url": "https://shipping-api-production.herokuapp.com/track_order.json",
+	"tracking_store": "sandandsky_shopify_int"
+};
+
+window.cartSettings = {
+	"extraButtons": false,
+	"recentlyViewedEnabled": false,
+	"shippingMeter": {
+		"enabled": true,
+		"inProgressText": "You are {{freeShippingBarRemaining}} away from free shipping",
+		"finalText": "You've unlocked free shipping"
 	},
-	cart_payment_icons: '//cdn.shopify.com/s/files/1/0286/1327/9779/files/ShopifyPaymentLogos.png?v=1599485964',
-	cartUpsellCollection: [],
-	cartUpsell: [
-		{
-			upgrade_bundle_method: 'keep',
-			when_contain_product: '32068891541539,32068891607075,32068891639843',
-			replace_product_bundle: '32068891246627,32068891279395,32068891312163',
-			bundle_front_image_200: '//cdn.shopify.com/s/files/1/0286/1327/9779/files/unnamed-_1_200x200.jpg?v=1600406474',
-			bundle_front_image: '//cdn.shopify.com/s/files/1/0286/1327/9779/files/unnamed-_1_{width}x.jpg?v=1600406474',
-			product_handle: 'get-glossy-glowy-kit',
-			bundle_ad_product_name: 'Get Glossy & Glow Kit',
-			bundle_ad_product_desc: '1 x Like A Virgin Hair Masque <br> 1 x Bali Bronzing Foam',
-			bundle_txt_button: 'Add to cart',
-		},
-		{
-			upgrade_bundle_method: 'keep',
-			when_contain_product: '32068892688419',
-			replace_product_bundle: '32374478176291',
-			bundle_front_image_200: '//cdn.shopify.com/s/files/1/0286/1327/9779/files/Main-pdp_200x200.jpg?v=1600406215',
-			bundle_front_image: '//cdn.shopify.com/s/files/1/0286/1327/9779/files/Main-pdp_{width}x.jpg?v=1600406215',
-			product_handle: 'healthy-hair-bundle',
-			bundle_ad_product_name: 'Healthy Hair Bundle',
-			bundle_ad_product_desc: '1 x Deep Clean Scalp Scrub <br>1 x Super Nourishing Hair Masque (212ml)',
-			bundle_txt_button: 'Add to cart',
-		},
-		{
-			upgrade_bundle_method: 'keep',
-			when_contain_product: '32363243831331',
-			replace_product_bundle: '32891615510563',
-			bundle_front_image_200: '//cdn.shopify.com/s/files/1/0286/1327/9779/files/03--Mixing-with-Moisturiser_1000x-2_200x200.png?v=1606804632',
-			bundle_front_image: '//cdn.shopify.com/s/files/1/0286/1327/9779/files/03--Mixing-with-Moisturiser_1000x-2_{width}x.png?v=1606804632',
-			product_handle: 'glow-essentials',
-			bundle_ad_product_name: 'Glow Essentials Bundle',
-			bundle_ad_product_desc: '1x Bronzing Face Drops Medium Shade (30ml)',
-			bundle_txt_button: 'Add to cart',
-		},
-	],
-	autoGwp: {
-		enabled: true,
-		isBuyAny: false,
-		prerequisiteIds: '32068892426275',
-		freeItemIds: '32068890624035',
-		freeQuantity: 1,
-		minPurchase: '0',
-	},
-	manualGwp: {
-		enabled: true,
-		title: 'Select your free gift',
-		minPurchase: 3000,
-		maxSelected: 1,
-		items: [
-			{
-				id: 32986612924451,
-				title: 'FREE Silky Face Mask',
-				price: '$11.90',
-				image: '//cdn.shopify.com/s/files/1/0286/1327/9779/products/FaceMask-Productshot2_6fbd178a-651d-46f2-b0ad-aa804e876470_120x.jpg?v=1608195616',
+	"discountTiers": {
+		"enabled": false,
+		"code": "vipsale",
+		"tiers": [{
+				"percentage": "0",
+				"text": "You're $XX away from unlocking $10 off!",
+				"min_spend": "0",
+				"free_item": ""
 			},
 			{
-				id: 39294074257443,
-				title: 'FREE Satin Eye Mask - Pink',
-				price: '$15.90',
-				image: '//cdn.shopify.com/s/files/1/0286/1327/9779/products/C7-EyeMask-pinkprint_1_95ff7d2f-1b6d-4a2b-9175-d6971675e65f_120x.jpg?v=1618989343',
+				"percentage": "10",
+				"text": "You're $XX away from unlocking $25 off!",
+				"min_spend": "50",
+				"free_item": ""
 			},
 			{
-				id: 39295700959267,
-				title: 'FREE Satin Eye Mask - Green',
-				price: '$15.90',
-				image: '//cdn.shopify.com/s/files/1/0286/1327/9779/products/C7-EyeMask-baliprint_1_9e4ee86a-c606-49f9-bc1f-72d22646ded5_120x.jpg?v=1619061719',
+				"percentage": "25",
+				"text": "You're $XX away from unlocking $35 off",
+				"min_spend": "100",
+				"free_item": ""
 			},
-		],
+			{
+				"percentage": "35",
+				"text": "Congratulations! You have unlocked the maximum offer",
+				"min_spend": "150",
+				"free_item": ""
+			}
+		]
 	},
-	payment: {
-		klarna: true,
-		klarna_installment: 3,
-		afterpay: false,
-	},
-	surveyCodes: [
-		'thankyou50',
+	"autoGwp": [{
+			"enabled": true,
+			"title": "Auto Add 1",
+			"minPurchase": 0,
+			"buyIds": "",
+			"buySpecialIds": "39409197580359",
+			"buyInvalidIds": "32588237766727, 32588237799495, 32588237832263, 32566347530311, 32714813833287, 32782314569799, 32227652567111, 32714693869639",
+			"getIds": "32782237696071",
+			"getItemQty": 1
+		},
+		{
+			"enabled": true,
+			"title": "Your Free Mitt Kit",
+			"minPurchase": 0,
+			"buyIds": "32613130600519, 32616597913671",
+			"buySpecialIds": "",
+			"buyInvalidIds": "",
+			"getIds": "32578002845767",
+			"getItemQty": 1
+		},
+		{
+			"enabled": false,
+			"title": "Auto Add 3",
+			"minPurchase": 0,
+			"buyIds": "32227653910599,32227653222471",
+			"buySpecialIds": "",
+			"buyInvalidIds": "",
+			"getIds": "32717118734407",
+			"getItemQty": 1
+		},
+		{
+			"enabled": false,
+			"title": "FREE Holiday Pouch",
+			"minPurchase": 30,
+			"buyIds": "",
+			"buySpecialIds": "",
+			"buyInvalidIds": "",
+			"getIds": "32765064413255",
+			"getItemQty": 1
+		}
 	],
+	"manualGwp": {
+		"enabled": true,
+		"title": "Select your free travel serum",
+		"minPurchase": 3000,
+		"maxSelected": 1,
+		"items": [{
+				"id": 32766113579079,
+				"title": "Travel Size Splash Serum",
+				"price": "",
+				"image": "//cdn.shopify.com/s/files/1/0277/5262/8295/files/select-travel-tsw_120x120_crop_center.jpg?v=1616387848"
+			},
+			{
+				"id": 32766173806663,
+				"title": "Travel Size Dreamy Glow Drops",
+				"price": "$49.90",
+				"image": "//cdn.shopify.com/s/files/1/0277/5262/8295/files/select-travel-dreamy_ac3374fd-1559-4e91-94b4-c8052097b191_120x120_crop_center.jpg?v=1616388135"
+			},
+			{
+				"id": 39409242931271,
+				"title": "Australian Emu Apple Dreamy Glow Drops Travel Size",
+				"price": "",
+				"image": "//cdn.shopify.com/s/files/1/0277/5262/8295/products/SS_Direct_Website_Carousel_DGD_Mini_1_AS_24032021_1312x_76c204bd-e21d-4e53-b0c7-56287c4848d3_120x120_crop_center.jpg?v=1625735752"
+			},
+			{
+				"id": 39409242931271,
+				"title": "Free Australian Emu Apple Dreamy Glow Drops",
+				"price": "",
+				"image": "//cdn.shopify.com/s/files/1/0277/5262/8295/products/SS_Direct_Website_Carousel_DGD_Mini_1_AS_24032021_1312x_76c204bd-e21d-4e53-b0c7-56287c4848d3_120x120_crop_center.jpg?v=1625735752"
+			}
+		]
+	},
+	"payment": {
+		"afterpay": false,
+		"klarna": false,
+		"klarna_installment": 4,
+		"installment_by_text": "translation missing: en.cart.general.installment_by_html"
+	},
+	"surveyCodes": [],
+	"enable_custom_codes": false,
+	"custom_codes_code": "",
+	"custom_error_handles": "",
+	"custom_error_codes_msg": "",
+	"cart_code_rejection": false,
+	"cart_code_rejection_msg": "",
+	"swellDiscounts": [{
+			"prefix": "vip2",
+			"variant_id": "32782213120071"
+		},
+		{
+			"prefix": "vip3",
+			"variant_id": "32227653681223"
+		}
+	],
+	"freeItemSKUs": {}
 };

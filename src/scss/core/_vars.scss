@@ -204,3 +204,10 @@ $custom-select-bg-size: calc-em(10) calc-em(9);
 $badge-font-weight: normal;
 $badge-padding-y: calc-em(8, 16);
 $badge-padding-x: calc-em(15, 16);
+
+// Custom switch
+$custom-switch-indicator-size-height: calc-em(42);
+$custom-switch-width: calc-em(82);
+$custom-switch-indicator-border-radius: 2em;
+$custom-control-indicator-checked-disabled-bg: $gray-400;
+$custom-control-indicator-border-color: white;

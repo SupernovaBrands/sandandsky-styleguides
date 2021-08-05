@@ -1,6 +1,7 @@
-/* global tSettings tStrings */
+/* global cartSettings tStrings customerTags */
 
 import React from 'react';
+import { getSizedImageUrl } from '@shopify/theme-images';
 
 import CartItem from '~comp/cart-item';
 import CartDiscountMeter from '~comp/cart-discount-meter';
@@ -17,8 +18,10 @@ import {
 	isItemHasProp,
 	isSameText,
 	kebabCase,
-	intersectTwo,
 	formatMoney,
+	getItemRange,
+	waitFor,
+	getCookie,
 } from '~mod/utils';
 
 import SvgClose from '~svg/close.svg';
@@ -45,18 +48,38 @@ export default class Cart extends React.Component {
 			loadingManualGwp: { loading: false, id: -1 },
 			shippingData: {},
 			discountMeter: {},
+
+			recentProducts: [],
+
+			loadingExtraButtons: true,
+			walletHeader: null,
+			walletBody: null,
+			walletToken: null,
 		};
 	}
 
 	componentDidMount() {
 		this.setCartData();
+		this.setRecentProducts();
 		document.addEventListener('snCart.requestComplete', this.setCartData);
 		document.addEventListener('snCart.requestDone', this.setCartCount);
+		document.addEventListener('snCart.recentProducts', this.setRecentProducts);
+
+		if (cartSettings.extraButtons) {
+			this.modifyExtraButtons();
+			window.addEventListener('resize', this.checkExtraButtons);
+			this.injectWalletListener();
+		}
 	}
 
 	componentWillUnmount() {
 		document.removeEventListener('snCart.requestComplete', this.setCartData);
 		document.removeEventListener('snCart.requestDone', this.setCartCount);
+		document.removeEventListener('snCart.recentProducts', this.setRecentProducts);
+
+		if (cartSettings.extraButtons) {
+			window.removeEventListener('resize', this.checkExtraButtons);
+		}
 	}
 
 	setCartCount = (e) => {
@@ -66,7 +89,7 @@ export default class Cart extends React.Component {
 			if (detail && detail.action === 'add') {
 				const item = detail.result;
 				if (!isItemHasProp(item, '_campaign_type', 'manual_gwp')) {
-					count = prevState.itemCount + detail.quantity;
+					count = prevState.itemCount + parseInt(detail.quantity, 10);
 				}
 			} else {
 				count = detail.result.item_count - prevState.manualGwpCount;
@@ -98,9 +121,10 @@ export default class Cart extends React.Component {
 				manualGwpCount += items[i].quantity;
 			} else {
 				count += items[i].quantity;
-				comparePriceDiff += items[i].models.comparePriceDiff;
+				comparePriceDiff += items[i].models.comparePriceDiff * items[i].quantity;
 			}
 		}
+
 		models.itemCount = count;
 		models.manualGwpCount = manualGwpCount;
 		models.comparePriceDiff = comparePriceDiff;
@@ -108,8 +132,8 @@ export default class Cart extends React.Component {
 
 		models.upsellData = await this.getUpsell(items);
 
-		models.totalPrice = cart.items_subtotal_price;
-		models.subtotalPrice = models.totalPrice + comparePriceDiff;
+		models.totalPrice = cart.original_total_price;
+		models.subtotalPrice = cart.original_total_price + comparePriceDiff;
 
 		await snCart.checkAppliedDiscount(cart).then((discountData) => {
 			models.discountData = this.getDiscountDataDisplay({
@@ -128,11 +152,22 @@ export default class Cart extends React.Component {
 			return getShippingPrice(models.totalPrice);
 		}).then((shippingData) => {
 			models.shippingData = {
-				show: shippingData.shipping != null,
+				show: shippingData.shipping !== null,
 				amount: shippingData.shipping || 0,
 			};
 
-			if (shippingData.freeRate && models.totalPrice > 0) {
+			if (customerTags.indexOf('swell_vip_level 2') >= 0 || customerTags.indexOf('swell_vip_level 3') >= 0 || customerTags.indexOf('swell_loyalty_has_account') >= 0) {
+				models.shippingData = {
+					show: true,
+					amount: 0,
+				};
+
+				models.discountMeter = {
+					enabled: true,
+					target: 1,
+					current: 1,
+				};
+			} else if (shippingData.freeRate && models.totalPrice > 0) {
 				const rate = shippingData.freeRate;
 				models.discountMeter = {
 					enabled: true,
@@ -147,6 +182,8 @@ export default class Cart extends React.Component {
 			models.totalPrice += models.shippingData.amount;
 		});
 
+		this.updateWalletInfo();
+
 		this.setState({
 			loadingInit: false,
 			loadingDiscount: false,
@@ -159,36 +196,34 @@ export default class Cart extends React.Component {
 		const productData = await snCart.getProductInfo(item.handle);
 
 		const models = {
-			range: tSettings.range_placeholder,
+			range: getItemRange(item.product_title),
 			title: item.variant_title,
 			isFree: isFreeItem(item),
 			isManualGwp: isItemHasProp(item, '_campaign_type', 'manual_gwp'),
 			image: item.image ? item.image.replace(/(\.[^.]*)$/, '_medium$1').replace('http:', '') : '//cdn.shopify.com/s/assets/admin/no-image-medium-cc9732cb976dd349a0df1d39816fbcc7.gif',
-			comparePrice: productData.comparePrices[item.id],
+			price: item.original_price,
+			comparePrice: productData ? productData.comparePrices[item.id] : 0,
 			color: (item.options_with_values.find((opt) => isSameText(opt.name, 'color')) || { value: false }).value,
 			style: (item.options_with_values.find((opt) => isSameText(opt.name, 'style')) || { value: false }).value,
-			showPreorderNotif: tSettings.variantNotification.indexOf(item.id) !== -1 && tSettings.enable_tan_change,
 		};
 
 		models.url = models.free ? undefined : item.url;
-		models.comparePriceDiff = models.comparePrice > 0 ? models.comparePrice - item.original_price : 0;
-
-		models.properties = {};
+		models.notes = [];
 		if (item.properties) {
 			Object.keys(item.properties).forEach((key) => {
-				if (!key.startsWith('_') && item.properties[key]) {
-					models.properties[key] = item.properties[key];
+				if (key === '_bundle' && item.properties[key]) {
+					models.notes.push(tStrings.cartBundleOffer);
+					if (models.comparePrice === 0) models.comparePrice = models.price;
+					models.price -= item.discounts[0].amount / item.quantity;
+				} else if (key === '_campaign_name' && item.properties[key]) {
+					models.notes.push(item.properties[key]);
+				} else if (!key.startsWith('_') && item.properties[key]) {
+					models.notes.push(`${key}: ${item.properties[key]}`);
 				}
 			});
 		}
 
-		if (item.product_title.includes('Tasmanian Spring Water')) {
-			models.range = 'Tasmanian Spring Water';
-		} else if (item.product_title.includes('Australian Pink Clay')) {
-			models.range = 'Australian Pink Clay';
-		} else if (item.product_title.includes('Australian Emu Apple')) {
-			models.range = 'Australian Emu Apple';
-		}
+		models.comparePriceDiff = models.comparePrice > 0 ? models.comparePrice - models.price : 0;
 
 		if (models.color) {
 			models.variantHandle = kebabCase(models.color);
@@ -206,115 +241,69 @@ export default class Cart extends React.Component {
 		return models;
 	}
 
-	/* -------------------
-		Variant options
-	------------------- */
-	async getColorOptions(handle, variantOptions) {
-		const { variants, options } = (await snCart.getProductInfo(handle)).product;
-		const allOptions = [];
-		const optionPos = options.find((opt) => isSameText(opt.name, 'color')).position;
-		const option = `option${optionPos}`;
-		variants.forEach((variant) => {
-			// If all option other than color is the same, show the variant
-			let showOption = true;
-			variantOptions.forEach((opt, index) => {
-				if (index + 1 !== optionPos) {
-					showOption = showOption && opt === variant[`option${index + 1}`];
+	setRecentProducts = async () => {
+		const { recentProducts } = snCart;
+		const products = [];
+
+		for (let i = 0; i < recentProducts.length; i += 1) {
+			// eslint-disable-next-line no-await-in-loop
+			const productData = await snCart.getProductInfo(recentProducts[i]);
+			if (productData) {
+				const range = getItemRange(productData.product.title);
+				const variant = productData.product.variants[0];
+				if (variant && variant.available) {
+					products.push({
+						upsellId: variant.id,
+						range,
+						title: productData.product.title.replace(range, '').trim(),
+						image: getSizedImageUrl(productData.product.featured_image, '444x558'),
+						price: variant.price,
+						comparePrice: variant.compare_at_price || 0,
+					});
 				}
-			});
-			if (showOption) {
-				allOptions.push({
-					id: variant.id,
-					available: variant.available,
-					color: variant[option],
-					variantHandle: kebabCase(variant[option]),
-				});
 			}
+		}
+
+		this.setState({
+			recentProducts: products,
 		});
-		return allOptions;
 	}
 
 	/* -------------------
 		Upsell
 	------------------- */
 	async getUpsell(items) {
-		const settings = tSettings.cartUpsell;
+		const enable = window.cartUpsellEnable;
+		const upsellItems = window.cartUpsellItems || [];
 		const variantIds = items.map((item) => item.id);
-		const autoUpsell = tSettings.upsell_auto;
-		const upsellCollections = tSettings.cartUpsellCollection;
-		const maxUpsells = tSettings.upsell_max_item;
 		let upsell = false;
-		const upsellItems = [];
 
-		if (autoUpsell && upsellCollections.length > 0) {
-			const handles = items.map((item) => item.handle);
-			let maxItem = 0;
-			for (let i = 0; i < upsellCollections.length; i += 1) {
-				const targetId = upsellCollections[i].target_id;
-				// eslint-disable-next-line no-await-in-loop
-				const productData = await snCart.getProductInfo(upsellCollections[i].handle);
-				if (handles.indexOf(upsellCollections[i].handle) < 0) {
-					upsell = {
-						targetId,
-						replaceToId: targetId,
-						productTitle: upsellCollections[i].title,
-						url: upsellCollections[i].url,
-						price: productData.prices[targetId],
-						comparePrice: productData.comparePrices[targetId],
-						settings: {
-							bundle_txt_button: tSettings.upsell_btn_label,
-							bundle_ad_product_name: upsellCollections[i].title,
-							bundle_ad_product_desc: upsellCollections[i].variant_title,
-							bundle_front_image_200: upsellCollections[i].bundle_front_image_200,
-							bundle_front_image: upsellCollections[i].bundle_front_image,
-						},
-						option1: false,
-						option2: false,
-					};
-					upsellItems.push(upsell);
-					maxItem += 1;
-				}
+		if (enable && upsellItems.length > 0) {
+			const upsellItem = upsellItems.find((item) => (
+				!variantIds.includes(item.upsell_item)
+				&& (
+					item.cart_item === 'any' || (item.cart_item !== 'any' && variantIds.includes(item.cart_item))
+				)
+			));
 
-				if (maxItem >= maxUpsells) {
-					break;
-				}
-			}
-		} else if (settings.length > 0) {
-			for (let i = 0; i < settings.length; i += 1) {
-				const setting = settings[i];
-				const prerequisite = setting.when_contain_product.split(',').map((v) => parseInt(v, 10));
-				const upsellVariants = setting.replace_product_bundle.split(',').map((v) => parseInt(v, 10));
-				const intersect = intersectTwo(prerequisite, variantIds);
-				if (intersect.length > 0) {
-					// eslint-disable-next-line no-await-in-loop
-					const productData = await snCart.getProductInfo(setting.product_handle);
-					const targetId = intersect[0];
-					const replaceToId = upsellVariants[prerequisite.indexOf(targetId)];
-					const upsellItemInCart = upsellVariants.filter((value) => variantIds.includes(value));
-					const productVariants = productData.product.variants.filter((value) => value.id === replaceToId);
-					const option1 = productVariants.length > 0 && tSettings.upsell_shade.split(',').includes(productVariants[0].option1) ? productVariants[0].option1 : false;
-					const option2 = productVariants.length > 0 && tSettings.upsell_shade.split(',').includes(productVariants[0].option2) ? productVariants[0].option2 : false;
-
-					if (productData.product.available && upsellItemInCart.length <= 0) {
-						upsell = {
-							targetId,
-							replaceToId,
-							productTitle: productData.product.title,
-							url: productData.product.url,
-							price: productData.prices[replaceToId],
-							comparePrice: productData.comparePrices[replaceToId],
-							settings: setting,
-							option1,
-							option2,
-							optLabel: tSettings.upsell_shade_label,
-						};
-						upsellItems.push(upsell);
-					}
-				}
+			if (upsellItem) {
+				upsell = {
+					targetId: upsellItem.cart_item,
+					upsellId: upsellItem.upsell_item,
+					topbar: upsellItem.topbar,
+					productTitle: upsellItem.upsell_item_title,
+					title: upsellItem.title,
+					description: upsellItem.description,
+					url: upsellItem.url,
+					price: upsellItem.upsell_price,
+					comparePrice: upsellItem.upsell_compare_price,
+					image: upsellItem.upsell_image,
+					image2x: upsellItem.upsell_image_2x,
+				};
 			}
 		}
 
-		return (upsellItems.length > 0) ? upsellItems : false;
+		return upsell;
 	}
 
 	/* -------------------
@@ -327,13 +316,13 @@ export default class Cart extends React.Component {
 
 		let isItemsInCart = false;
 		for (let i = 0; i < items.length; i += 1) {
-			if (tSettings.custom_error_handles.includes(items[i].handle)) {
+			if (cartSettings.custom_error_handles.includes(items[i].handle)) {
 				isItemsInCart = true;
 				break;
 			}
 		}
 
-		if (tSettings.enable_custom_codes && isItemsInCart && isSameText(data.code, tSettings.custom_codes_code)) {
+		if (cartSettings.enable_custom_codes && isItemsInCart && isSameText(data.code, cartSettings.custom_codes_code)) {
 			return true;
 		}
 
@@ -345,7 +334,7 @@ export default class Cart extends React.Component {
 		if (data.reason) {
 			switch (data.reason) {
 				case 'purchase':
-					error = `${tStrings.discount_min_spend} ${formatMoney(data.minPurchase, $('#shop_currency_val').text())}`;
+					error = `${tStrings.discount_min_spend} ${formatMoney(data.minPurchase)}`;
 					break;
 				case 'product':
 					error = tStrings.discount_error;
@@ -359,20 +348,29 @@ export default class Cart extends React.Component {
 		}
 
 		// to set custom code error message from theme settings when disccode is match
-		const customCodes = tSettings.custom_codes_code.toUpperCase();
-		if (!data.valid && data.discode && data.discode.toUpperCase() === customCodes && tSettings.enable_custom_codes) {
-			error = tSettings.custom_error_codes_msg;
+		const customCodes = cartSettings.custom_codes_code.toUpperCase();
+		if (!data.valid && data.discode && data.discode.toUpperCase() === customCodes && cartSettings.enable_custom_codes) {
+			error = cartSettings.custom_error_codes_msg;
 		}
 
-		if (data.reason && data.reason === 'product' && data.code && data.code.toUpperCase() === customCodes && tSettings.enable_custom_codes) {
-			error = tSettings.custom_error_codes_msg;
+		if (data.reason && data.reason === 'product' && data.code && data.code.toUpperCase() === customCodes && cartSettings.enable_custom_codes) {
+			error = cartSettings.custom_error_codes_msg;
+		}
+
+		if (data.code_reject) {
+			error = cartSettings.cart_code_rejection_msg;
+		}
+
+		let amount = data.discount < 0 ? (data.discount * -1) : (data.discount || 0);
+		if (!amount) {
+			amount = data.amount;
 		}
 
 		return {
-			applied: data.valid === true && data.code && data.code !== '' && !error,
+			applied: data.valid && data.code && data.code !== '' && !error && !cartSettings.cart_code_rejection,
 			code: !error ? (data.code || '').toUpperCase() : '',
 			isAuto: !!data.isAuto,
-			amount: data.discount < 0 ? (data.discount * -1) : (data.discount || 0),
+			amount,
 			error,
 			errorExtra: data.errorExtra ? data.errorExtra : false,
 		};
@@ -384,8 +382,8 @@ export default class Cart extends React.Component {
 
 	onChangeQuantity = (item, qty, callback) => {
 		this.setState({ isLastStockKey: '' }, () => {
-			snCart.changeQuantity(item, qty, (newQty) => {
-				this.setState({ isLastStockKey: item.key });
+			snCart.changeQuantity(item, qty, (newQty, isQtyCorrect) => {
+				if (!isQtyCorrect) this.setState({ isLastStockKey: item.key });
 				callback(newQty);
 			});
 		});
@@ -398,35 +396,45 @@ export default class Cart extends React.Component {
 	}
 
 	onRemoveItem = (item) => {
-		snCart.removeItem(item.id);
+		snCart.removeItem(item.key);
 	}
 
 	onAddUpsell = (upsell) => {
 		if (upsell.upgrade_bundle_method === 'replace') {
-			return snCart.replaceItem(upsell.targetId, upsell.replaceToId, 1);
+			return snCart.replaceItem(upsell.targetId, upsell.upsellId, 1);
 		}
-		return snCart.addItem(upsell.replaceToId, 1);
+		return snCart.addItem(upsell.upsellId, 1);
 	}
 
 	onApplyDiscountCode = (code) => {
 		this.setState({ loadingDiscount: true }, () => {
-			snCart.applyDiscountCode(code).then((discountData) => {
-				if (discountData.enabled === false || discountData.isValid === false) {
-					this.setState({
+			if (!cartSettings.cart_code_rejection) {
+				snCart.applyDiscountCode(code).then((discountData) => {
+					if (discountData.enabled === false || discountData.isValid === false) {
+						this.setState({
+							loadingDiscount: false,
+							discountData: this.getDiscountDataDisplay({ reason: discountData.error, discode: discountData.code }),
+						});
+					} else {
+						this.setState({
+							loadingDiscount: false,
+							discountData: this.getDiscountDataDisplay({
+								...discountData,
+								valid: true,
+								error: '',
+								errorExtra: this.getDiscountErrorExtra(discountData),
+							}),
+						});
+					}
+				});
+			} else {
+				snCart.applyDiscountCode(code).then(() => {
+					this.setState((prevState) => ({
 						loadingDiscount: false,
-						discountData: this.getDiscountDataDisplay({ reason: discountData.error }),
-					});
-				} else {
-					this.setState({
-						loadingDiscount: false,
-						discountData: this.getDiscountDataDisplay({
-							...discountData,
-							valid: true,
-							error: '',
-						}),
-					});
-				}
-			});
+						discountData: this.getDiscountDataDisplay({ ...prevState.discountData, code_reject: true }),
+					}));
+				});
+			}
 		});
 	}
 
@@ -461,10 +469,100 @@ export default class Cart extends React.Component {
 		}
 	}
 
-	submitForm() {
-		if (this.formRef) {
-			this.formRef.submit();
+	checkExtraButtons = () => {
+		if (this.extraBtnsRef) {
+			waitFor(() => this.extraBtnsRef.querySelector('.paypalLight'), () => {
+				const paypal = this.extraBtnsRef.querySelector('.paypalLight');
+				if (!paypal.parentElement.classList.contains('show')) {
+					this.setState({ loadingExtraButtons: true }, () => {
+						this.modifyExtraButtons();
+					});
+				}
+			});
 		}
+	}
+
+	modifyExtraButtons = () => {
+		if (this.extraBtnsRef) {
+			waitFor(() => this.extraBtnsRef.querySelector('.paypalLight'), () => {
+				const toBeInjected = 'div { height: 50px; }';
+				const paypal = this.extraBtnsRef.querySelector('.paypalLight');
+				const style = paypal.contentDocument.querySelector('style');
+				if (!style.innerHTML.includes(toBeInjected)) {
+					style.innerHTML += toBeInjected;
+				}
+
+				const iframeEl = paypal.contentDocument.querySelector('iframe.zoid-component-frame');
+				iframeEl.src = iframeEl.src.replace(/&style.height=[0-9]*&/, '&style.height=50&');
+				setTimeout(() => {
+					this.setState({ loadingExtraButtons: false }, () => {
+						paypal.parentElement.classList.add('show');
+					});
+				}, 1500);
+			});
+		}
+	}
+
+	injectWalletListener = () => {
+		// Inject discount code for wallet
+		if (typeof window.fetch === 'function') {
+			const oldFetch = window.fetch;
+			window.fetch = function (...args) {
+				let header; let body;
+				if (args[0].indexOf('wallets/checkouts.json') > -1 && args[1] && args[1].body) {
+					header = args[1].headers;
+					body = args[1].body;
+					if (getCookie('currentDiscount')) {
+						body.checkout.discount_code = getCookie('currentDiscount');
+						// eslint-disable-next-line no-param-reassign
+						args[1].body = JSON.stringify(body);
+					}
+					this.setState({
+						walletHeader: header,
+						walletBody: body,
+					});
+				}
+
+				return oldFetch.apply(this, args).then(function (e) {
+					if (e.url.indexOf('wallets/checkouts.json') > -1) {
+						e.clone().json().then(function (e2) {
+							this.setState({
+								walletToken: e2.checkout.token,
+							});
+						});
+					}
+					return e;
+				});
+			};
+		}
+	}
+
+	updateWalletInfo = () => {
+		const { walletHeader, walletBody, walletToken } = this.state;
+		if (!cartSettings.extraButtons || walletBody === null || walletToken === null) return;
+
+		const url = `https://dev.sandandsky.com/wallets/checkouts/${walletToken}.json`;
+		const discountCode = getCookie('currentDiscount') || '';
+		if (walletBody.checkout.discount_code !== discountCode) {
+			walletBody.checkout.discount_code = discountCode;
+
+			window.fetch(url, {
+				method: 'PATCH',
+				headers: walletHeader,
+				credentials: 'same-origin',
+				body: JSON.stringify(walletBody),
+			}).then((response) => response.json())
+				.then((e) => {
+					this.setState({
+						walletBody,
+						walletToken: e.checkout.token,
+					});
+				});
+		}
+	}
+
+	submitForm() {
+		$('#cart-drawer-form').trigger('submit');
 	}
 
 	render() {
@@ -483,19 +581,21 @@ export default class Cart extends React.Component {
 			upsellData,
 			shippingData,
 			discountMeter,
+			recentProducts,
+			loadingExtraButtons,
 		} = this.state;
 		return (
 			<div className="modal-dialog modal-dialog-scrollable modal-md m-0 w-100 mh-100 float-right">
 				<div className="modal-content vh-100 mh-100 border-0 rounded-0">
 					<div className="modal-body pt-0 px-0">
 						<div className="container px-g d-flex flex-column align-items-stretch text-center pt-3">
-							<h5>{tStrings.cart_drawer_title}</h5>
+							<h5>{tStrings.cartDrawerTitle}</h5>
 							<button type="button" className="close text-body m-0 p-3 position-absolute" data-dismiss="modal" aria-label="Close">
 								{/* <span className="sni sni__close" aria-hidden="true" /> */}
 								<SvgClose aria-hidden="true" className="d-flex" />
 							</button>
 
-							{tSettings.cartShippingMeter.enable && discountMeter.enabled && (
+							{discountMeter.enabled && itemCount > 0 && (
 								<CartDiscountMeter
 									target={discountMeter.target}
 									current={discountMeter.current}
@@ -513,22 +613,28 @@ export default class Cart extends React.Component {
 							<div className="pt-3 text-center">
 								<div className="container px-g">
 									<SvgSS width="45" />
-									<p className="my-3 text-center">{tStrings.cart_empty}</p>
+									<p className="my-3 text-center">{tStrings.cartEmpty}</p>
 									<a href="/collections" className="btn btn-primary">Shop all products</a>
-									<hr />
 								</div>
-								<CartRecentProducts />
+								{recentProducts.length > 0 && (
+									<>
+										<hr />
+										<CartRecentProducts products={recentProducts} onAddToCart={this.onAddUpsell} />
+									</>
+								)}
 							</div>
 						) : (
 							// eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
 							<form
+								id="cart-drawer-form"
 								className="container px-g"
 								action="/cart"
 								method="post"
 								noValidate
 								onKeyDown={this.handleKeyDown}
-								ref={(r) => { this.formRef = r; }}
 							>
+								<input type="hidden" name="checkout" value="Checkout" />
+
 								<div className="list-unstyled" role="list">
 									{cart.items.map((item) => !!item.models && !item.models.isManualGwp && (
 										<CartItem
@@ -542,8 +648,7 @@ export default class Cart extends React.Component {
 									))}
 								</div>
 
-								<CartUpsell upsell={upsellData} onAddUpsell={this.onAddUpsell} />
-								{/* {upsellData && (<CartUpsell upsell={upsellData} onAddUpsell={this.onAddUpsell} />)} */}
+								{upsellData && (<CartUpsell upsell={upsellData} onAddUpsell={this.onAddUpsell} />)}
 
 								{manualGwp.enabled && (
 									<>
@@ -575,31 +680,31 @@ export default class Cart extends React.Component {
 								<hr />
 
 								<div className="row">
-									<h5 className="col-8 font-weight-bold">{tStrings.cart_subtotal}</h5>
+									<h5 className="col-8 font-weight-bold">{tStrings.cartSubtotal}</h5>
 									<h5 className="col-4 text-right">{formatMoney(subtotalPrice)}</h5>
 
 									{comparePriceDiff > 0 && (
 										<>
-											<h5 className="col-8">Bundle Discount</h5>
+											<h5 className="col-8">{tStrings.cartBundleDiscount}</h5>
 											<h5 className="col-4 text-right">{`-${formatMoney(comparePriceDiff)}`}</h5>
 										</>
 									)}
 
 									{discountData.amount > 0 && (
 										<>
-											<h5 className="col-8">Discount</h5>
+											<h5 className="col-8">{tStrings.cartDiscount}</h5>
 											<h5 className="col-4 text-right">{`-${formatMoney(discountData.amount)}`}</h5>
 										</>
 									)}
 
 									{shippingData.show && (
 										<>
-											<h5 className="col-8">{tStrings.cart_shipping}</h5>
+											<h5 className="col-8">{tStrings.cartShipping}</h5>
 											<h5 className="col-4 text-right text-secondary">{shippingData.amount > 0 ? formatMoney(shippingData.amount) : 'Free'}</h5>
 										</>
 									)}
 
-									<p className="col-12 font-size-sm mt-2 mb-2 text-muted">Taxes and reward points calculated in checkout</p>
+									<p className="col-12 font-size-sm mt-2 mb-2 text-muted">{tStrings.cartTaxMessage}</p>
 								</div>
 
 								<CartExtras />
@@ -607,24 +712,28 @@ export default class Cart extends React.Component {
 						))}
 					</div>
 
-					{!loadingInit && itemCount > 0 && (
-						<div className="modal-footer">
-							<div className="row w-100">
-								<h4 className="col-8 mb-1">{tStrings.cart_total}</h4>
-								<h4 className="col-4 mb-1 text-right">{formatMoney(totalPrice)}</h4>
-								<div className="col-12 my-1">
-									<button
-										type="button"
-										className="btn btn-lg btn-block btn-primary px-1"
-										disabled={loadingDiscount || manualGwp.loading}
-										onClick={this.submitForm}
-									>
-										{tStrings.cart_checkout}
-									</button>
+					<div className={`modal-footer px-hg px-lg-0 ${!loadingInit && itemCount > 0 ? '' : 'd-none'}`}>
+						<div className="row w-100">
+							<h4 className="col-8 mb-1">{tStrings.cartTotal}</h4>
+							<h4 className="col-4 mb-1 text-right">{formatMoney(totalPrice)}</h4>
+							{cartSettings.extraButtons && (
+								<div className={`col-6 my-1 pr-lg-hg ${loadingExtraButtons && 'd-flex justify-content-center align-items-center'}`} ref={(node) => { this.extraBtnsRef = node; }}>
+									{loadingExtraButtons && (<div className="spinner-border" role="status" />)}
+									<div className="dynamic-checkout__content" id="dynamic-checkout-cart" data-shopify="dynamic-checkout-cart" />
 								</div>
+							)}
+							<div className={`${cartSettings.extraButtons ? 'col-6 pl-lg-hg' : 'col-12'} my-1`}>
+								<button
+									type="button"
+									className="btn btn-lg btn-block btn-primary px-1"
+									disabled={loadingDiscount || manualGwp.loading}
+									onClick={this.submitForm}
+								>
+									{tStrings.cartCheckout}
+								</button>
 							</div>
 						</div>
-					)}
+					</div>
 				</div>
 			</div>
 		);

@@ -22,25 +22,11 @@
 		}
 	}
 
-	&__text-sm,
-	.yotpo &__text-sm {
+	&__text-sm {
 		font-size: $font-size-xs;
 		@include media-breakpoint-up(lg) {
 			font-size: $font-size-sm;
 		}
-	}
-
-	.yotpo &__text-sm {
-		color: $body-color !important;
-		cursor: default !important;
-		white-space: nowrap;
-		&:hover {
-			color: $body-color !important;
-		}
-	}
-
-	.yotpo-stars {
-		display: none;
 	}
 
 	&--search-result {

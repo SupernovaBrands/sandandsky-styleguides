@@ -1,7 +1,7 @@
 $supernova-icon-font: "supernova-icon";
 
-$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?db9c0f930f0572bf77ea8be21a995234") format("woff2"),
-url("/sandandsky-styleguides/fonts/supernova-icon.woff?db9c0f930f0572bf77ea8be21a995234") format("woff") !default;
+$supernova-icon-asset: url("/sandandsky-styleguides/fonts/supernova-icon.woff2?54740775808e0e8bf724493f76165a00") format("woff2"),
+url("/sandandsky-styleguides/fonts/supernova-icon.woff?54740775808e0e8bf724493f76165a00") format("woff") !default;
 
 @font-face {
 	font-family: $supernova-icon-font;
@@ -31,54 +31,58 @@ $supernova-icon-map: (
 	"australia": "\f102",
 	"cart": "\f103",
 	"check": "\f104",
-	"chevron-down": "\f105",
-	"chevron-next": "\f106",
-	"chevron-prev": "\f107",
-	"chevron-up": "\f108",
-	"close-circle": "\f109",
-	"dermatologist": "\f10a",
-	"earth": "\f10b",
-	"facebook": "\f10c",
-	"five-stars": "\f10d",
-	"gluten": "\f10e",
-	"hyperlink": "\f10f",
-	"info-circle": "\f110",
-	"instagram": "\f111",
-	"klarna-logo": "\f112",
-	"koala": "\f113",
-	"long-arrow-right": "\f114",
-	"minus": "\f115",
-	"nasties": "\f116",
-	"paraben": "\f117",
-	"pegs": "\f118",
-	"peta": "\f119",
-	"phthalates": "\f11a",
-	"pinterest": "\f11b",
-	"play": "\f11c",
-	"plus": "\f11d",
-	"range-aea": "\f11e",
-	"range-apc": "\f11f",
-	"range-tsw": "\f120",
-	"returns": "\f121",
-	"search": "\f122",
-	"shake": "\f123",
-	"shipping": "\f124",
-	"silicone": "\f125",
-	"snapchat": "\f126",
-	"square": "\f127",
-	"ss": "\f128",
-	"star-full": "\f129",
-	"star-half": "\f12a",
-	"star-hollow": "\f12b",
-	"sulfate": "\f12c",
-	"thumbs-down": "\f12d",
-	"thumbs-up": "\f12e",
-	"tiktok": "\f12f",
-	"times": "\f130",
-	"trophy": "\f131",
-	"user": "\f132",
-	"verified": "\f133",
-	"youtube": "\f134",
+	"checklist": "\f105",
+	"chevron-down": "\f106",
+	"chevron-next": "\f107",
+	"chevron-prev": "\f108",
+	"chevron-up": "\f109",
+	"close-circle": "\f10a",
+	"close": "\f10b",
+	"credit-card": "\f10c",
+	"dermatologist": "\f10d",
+	"earth": "\f10e",
+	"facebook": "\f10f",
+	"five-stars": "\f110",
+	"gluten": "\f111",
+	"hyperlink": "\f112",
+	"info-circle": "\f113",
+	"instagram": "\f114",
+	"klarna-logo": "\f115",
+	"koala": "\f116",
+	"leaf": "\f117",
+	"long-arrow-right": "\f118",
+	"minus": "\f119",
+	"nasties": "\f11a",
+	"paraben": "\f11b",
+	"pegs": "\f11c",
+	"peta": "\f11d",
+	"phthalates": "\f11e",
+	"pinterest": "\f11f",
+	"play": "\f120",
+	"plus": "\f121",
+	"range-aea": "\f122",
+	"range-apc": "\f123",
+	"range-tsw": "\f124",
+	"returns": "\f125",
+	"search": "\f126",
+	"shake": "\f127",
+	"shipping": "\f128",
+	"silicone": "\f129",
+	"snapchat": "\f12a",
+	"square": "\f12b",
+	"ss": "\f12c",
+	"star-full": "\f12d",
+	"star-half": "\f12e",
+	"star-hollow": "\f12f",
+	"sulfate": "\f130",
+	"thumbs-down": "\f131",
+	"thumbs-up": "\f132",
+	"tiktok": "\f133",
+	"times": "\f134",
+	"trophy": "\f135",
+	"user": "\f136",
+	"verified": "\f137",
+	"youtube": "\f138",
 );
 
 .sni.sni__apc-leaf:before,
@@ -96,6 +100,10 @@ $supernova-icon-map: (
 .sni.sni__check:before,
 .sni-after.sni__check:after {
 	content: map-get($supernova-icon-map, "check");
+}
+.sni.sni__checklist:before,
+.sni-after.sni__checklist:after {
+	content: map-get($supernova-icon-map, "checklist");
 }
 .sni.sni__chevron-down:before,
 .sni-after.sni__chevron-down:after {
@@ -116,6 +124,14 @@ $supernova-icon-map: (
 .sni.sni__close-circle:before,
 .sni-after.sni__close-circle:after {
 	content: map-get($supernova-icon-map, "close-circle");
+}
+.sni.sni__close:before,
+.sni-after.sni__close:after {
+	content: map-get($supernova-icon-map, "close");
+}
+.sni.sni__credit-card:before,
+.sni-after.sni__credit-card:after {
+	content: map-get($supernova-icon-map, "credit-card");
 }
 .sni.sni__dermatologist:before,
 .sni-after.sni__dermatologist:after {
@@ -156,6 +172,10 @@ $supernova-icon-map: (
 .sni.sni__koala:before,
 .sni-after.sni__koala:after {
 	content: map-get($supernova-icon-map, "koala");
+}
+.sni.sni__leaf:before,
+.sni-after.sni__leaf:after {
+	content: map-get($supernova-icon-map, "leaf");
 }
 .sni.sni__long-arrow-right:before,
 .sni-after.sni__long-arrow-right:after {

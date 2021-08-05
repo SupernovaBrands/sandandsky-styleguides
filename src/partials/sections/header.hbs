@@ -5,13 +5,13 @@
 			<button class="navbar-toggler" type="button">
 				<span class="d-block"></span>
 			</button>
-			<ul class="navbar-nav align-items-center d-none d-lg-flex">
+			<ul class="navbar-nav align-items-center d-none d-lg-flex ml-lg-n2">
 				<li class="nav-item nav-item--mega-menu">
-					<a href="#" class="nav-link font-weight-bold align-items-center mr-1 sni-after sni__chevron-down m-0">Shop</a>
+					<a href="#" class="nav-link font-weight-bold align-items-center sni-after sni__chevron-down m-0">Shop</a>
 					{{> compounds/mega-menu-shop}}
 				</li>
 				<li class="nav-item nav-item--mega-menu">
-					<a class="nav-link font-weight-bold align-items-center mr-1 sni-after sni__chevron-down m-0" href="#">About</a>
+					<a class="nav-link font-weight-bold align-items-center sni-after sni__chevron-down m-0" href="#">About</a>
 					{{> compounds/mega-menu-about}}
 				</li>
 				<li class="nav-item">
@@ -21,13 +21,13 @@
 			<a href="#" class="navbar-brand mx-auto">
 				{{> components/svg-logo}}
 			</a>
-			<ul class="navbar-nav d-none d-lg-flex justify-content-end">
+			<ul class="navbar-nav d-none d-lg-flex justify-content-end mr-lg-n2">
 				<li class="nav-item">
 					<a class="nav-link h4 font-weight-bold m-0" href="#">Track My Order</a>
 				</li>
 				<li class="nav-item">
 					<div class="dropdown dropdown--onhover">
-						<a class="dropdown-toggle font-weight-bold m-0 nav-link sni-after sni__chevron-down align-items-center mr-1" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a class="dropdown-toggle font-weight-bold m-0 nav-link sni-after sni__chevron-down align-items-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							US (USD)
 						</a>
 						<div class="dropdown-menu border-0 p-0 text-right pt-2 pb-2 overflow-hidden d-block" aria-labelledby="dropdownMenuLink">
@@ -47,12 +47,12 @@
 					<a class="nav-link h4 m-0 font-weight-normal sni sni__user position-relative"></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link h4 m-0 font-weight-normal sni sni__cart position-relative" data-toggle="modal" data-target="#cart-drawer" role="button"><span class="cart-drawer__count text-secondary">0</span></a>
+					<a class="nav-link h4 m-0 font-weight-normal sni sni__cart position-relative text-center" data-toggle="modal" data-target="#cart-drawer" role="button"><span class="cart-drawer__count text-secondary">0</span></a>
 				</li>
 			</ul>
 			<a class="nav-link justify-content-end sni sni__search px-0 d-lg-none position-relative" data-toggle="modal" data-target="#cart-drawer" role="button">
 			</a>
-			<a class="nav-link justify-content-end sni sni__cart px-0 d-lg-none position-relative" data-toggle="modal" data-target="#cart-drawer" role="button">
+			<a class="nav-link justify-content-end sni sni__cart px-0 d-lg-none position-relative ml-3 text-center" data-toggle="modal" data-target="#cart-drawer" role="button">
 				<span class="cart-drawer__count text-secondary">0</span>
 			</a>
 			{{> components/tooltip}}

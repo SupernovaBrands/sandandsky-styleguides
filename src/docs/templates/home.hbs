@@ -6,15 +6,11 @@
 </head>
 
 <body>
+  {{> sections/header}}
+
 	{{> sections/hero-carousel totalSlide=3 fullimage="true" indicator-timer="true"}}
 
 	{{> sections/featured-products}}
-
-	<div class="bg-light">
-		<div class="container px-g py-5">
-			<h2 class="h1">Ingredients block</h2>
-		</div>
-	</div>
 
 	{{> sections/collection-section class="my-5" color="ff6f8d" range="apc" header="Detoxify with Australian Pink Clay" button="Shop all Detoxify"}}
 
@@ -31,6 +27,10 @@
 	{{> sections/usp-banner}}
 
 	{{> sections/newsletter-banner}}
+
+  {{> sections/footer}}
+
+  <div class="modal fade cart-drawer" id="cart-drawer" tabindex="-1" aria-hidden="true"></div>
 
 	{{> js jquery=true bootstrap=true main=true }}
 </body>

@@ -1,4 +1,4 @@
-/* global tSettings */
+/* global cartSettings */
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -16,7 +16,7 @@ const CartDiscountMeter = (props) => {
 	const remaining = target - current;
 	const progress = remaining <= 0 ? 100 : Math.floor((current / target) * 100);
 	const amount = formatMoney(remaining);
-	const text = remaining <= 0 ? finalText : progressText.replace('#{shipping_price}', amount).replace('#{amount}', amount);
+	const text = remaining <= 0 ? finalText : progressText.replace('{{freeShippingBarRemaining}}', amount);
 
 	return (
 		<div className="bg-secondary-light mx-ng mb-2 px-4 py-2">
@@ -46,8 +46,8 @@ CartDiscountMeter.propTypes = {
 CartDiscountMeter.defaultProps = {
 	target: 0,
 	current: 0,
-	progressText: tSettings.cartShippingMeter.inProgressText,
-	finalText: tSettings.cartShippingMeter.finalText,
+	progressText: cartSettings.shippingMeter.inProgressText,
+	finalText: cartSettings.shippingMeter.finalText,
 };
 
 export default CartDiscountMeter;

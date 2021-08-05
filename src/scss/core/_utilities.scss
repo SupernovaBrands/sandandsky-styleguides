@@ -61,9 +61,6 @@
 	background: $gray-600;
 	background: linear-gradient(130deg, $gray-600 33%, $gray-100 50%, $gray-600 67%);
 	background-size: 1000% 1000%;
-
-	-webkit-animation: gradient-shimmer 2.5s ease infinite;
-	-moz-animation: gradient-shimmer 2.5s ease infinite;
 	animation: gradient-shimmer 2.5s ease infinite;
 }
 

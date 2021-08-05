@@ -59,7 +59,7 @@
 .mega-menu {
 	visibility: hidden;
 	max-height: 0;
-	transition: all .5s ease;
+	transition: max-height .8s ease;
 	left: 0;
 	top: 90%;
 	box-shadow: 0 calc-em(4) calc-em(5) 0 rgba(0, 0, 0, .06);
@@ -77,7 +77,7 @@
 	.nav-item--mega-menu:hover & {
 		max-height: 100vh;
 		visibility: visible;
-    transition: max-height .5s ease;
+    transition: max-height .8s ease;
 	}
 }
 

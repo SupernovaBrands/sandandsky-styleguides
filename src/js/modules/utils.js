@@ -150,7 +150,10 @@ export const isFreeItem = (item) => (
 	|| isItemHasProp(item, '_discount_code')
 	|| isItemHasProp(item, '_auto_discount_code')
 	|| isItemHasProp(item, '_auto_gwp')
-	|| isItemHasProp(item, '_campaign_type', 'auto_gwp')
+	|| isItemHasProp(item, '_campaign_type', 'auto_gwp_1')
+	|| isItemHasProp(item, '_campaign_type', 'auto_gwp_2')
+	|| isItemHasProp(item, '_campaign_type', 'auto_gwp_3')
+	|| isItemHasProp(item, '_campaign_type', 'auto_gwp_4')
 	|| isItemHasProp(item, '_campaign_type', 'manual_gwp')
 	|| isItemHasProp(item, '_campaign_type', 'discount_code')
 	|| isItemHasProp(item, '_campaign_type', 'auto_discount_code')
@@ -160,8 +163,20 @@ export const isItemIdInKey = (key, id) => (
 	`${key.split(':')[0]}` === `${id}`
 );
 
-export const formatMoney = (cents) => {
-	const formatString = tSettings.moneyFormat;
+export const getItemRange = (itemTitle) => {
+	let range = tSettings.range_placeholder;
+	if (itemTitle.includes('Tasmanian Spring Water')) {
+		range = 'Tasmanian Spring Water';
+	} else if (itemTitle.includes('Australian Pink Clay')) {
+		range = 'Australian Pink Clay';
+	} else if (itemTitle.includes('Australian Emu Apple')) {
+		range = 'Australian Emu Apple';
+	}
+	return range;
+};
+
+export const formatMoney = (cents, format = tSettings.moneyFormat) => {
+	const formatString = format;
 	if (typeof cents === 'string') {
 		// eslint-disable-next-line no-param-reassign
 		cents = cents.replace('.', '');
@@ -222,6 +237,27 @@ export const validateEmail = function (t) {
 };
 
 export const validatePhone = (phone) => /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s./0-9]*$/g.test(phone);
+
+export const subscribeBluecoreWaitlist = (email, productId, variantID, regSource, phone) => {
+	const country = getCookie('_shopify_country');
+	const data = {
+		email,
+		country,
+		brand: 'sandandsky',
+		domain: window.location.hostname,
+		product: productId,
+		phone: phone || '',
+	};
+
+	if (regSource) {
+		data.reg_source = regSource;
+	}
+
+	if (variantID) {
+		data.variant = variantID;
+	}
+	$.post('https://shipping-api-production.herokuapp.com/bluecore/waitlist.json', data);
+};
 
 export const scrollToElement = (targetSelector, offset = -70) => {
 	$('html, body').animate({ scrollTop: $(targetSelector).offset().top + offset }, 600);

@@ -1,4 +1,5 @@
-/* global tSettings */
+/* eslint-disable no-param-reassign */
+/* global cartSettings */
 
 /*
 	DO NOT COPY THIS FILE TO THEME
@@ -18,16 +19,14 @@ const varIdtoHandle = {};
 products.forEach((product) => {
 	const prices = {};
 	const comparePrices = {};
-	// eslint-disable-next-line no-param-reassign
 	product.available = false;
+	product.featured_image = product.image ? product.image.src : '';
 	product.variants.forEach((variant) => {
 		prices[variant.id] = typeof variant.price === 'string' ? parseInt(variant.price.replace('.', ''), 10) : 0;
 		comparePrices[variant.id] = typeof variant.compare_at_price === 'string' ? parseInt(variant.compare_at_price.replace('.', ''), 10) : 0;
 		productQuantities[variant.id] = variant.inventory_quantity;
 		varIdtoHandle[variant.id] = product.handle;
-		// eslint-disable-next-line no-param-reassign
 		variant.available = variant.inventory_quantity > 0;
-		// eslint-disable-next-line no-param-reassign
 		product.available = product.available || variant.available;
 
 		if (product.product_type === 'HERO' || product.product_type === 'BUNDLE') {
@@ -61,7 +60,9 @@ class SNCart {
 			items: [],
 			item_count: 0,
 			items_subtotal_price: 0,
+			original_total_price: 0,
 		};
+		this.recentProducts = ['porefining-face-mask', 'australian-pink-clay-smoothing-body-sand-scrub', 'flash-perfection-exfoliating-treatment'];
 
 		this.manualGwpSelected = [];
 
@@ -78,6 +79,7 @@ class SNCart {
 		});
 		this.cart.item_count = count;
 		this.cart.items_subtotal_price = subtotal;
+		this.cart.original_total_price = subtotal;
 		document.dispatchEvent(new CustomEvent('snCart.requestDone', { detail: { result: this.cart } }));
 		document.dispatchEvent(new CustomEvent('snCart.requestComplete'));
 	}
@@ -161,13 +163,11 @@ class SNCart {
 			return;
 		}
 		if (qty > maxQty) {
-			// eslint-disable-next-line no-param-reassign
 			item.quantity = maxQty;
 			if (typeof callback === 'function') {
 				callback(maxQty);
 			}
 		} else {
-			// eslint-disable-next-line no-param-reassign
 			item.quantity = qty;
 		}
 		this.calculateCart();
@@ -191,7 +191,7 @@ class SNCart {
 		Manual Gwp
 	------------------- */
 	async getManualGwp(cart) {
-		const { manualGwp } = tSettings;
+		const { manualGwp } = cartSettings;
 		if (cart.items_subtotal_price >= manualGwp.minPurchase) {
 			if (this.manualGwpSelected.length > manualGwp.maxSelected) {
 				this.manualGwpSelected = this.toggleManualGwp({
@@ -246,7 +246,7 @@ class SNCart {
 				this.calculateCart();
 			} else {
 				resolve({
-					enabled: false, code: this.appliedCode, error: 'Server return error: min purhcase $50.00',
+					enabled: false, code: this.appliedCode, error: 'Server return error: min purchase $50.00',
 				});
 				this.appliedCode = '';
 			}
@@ -289,8 +289,5 @@ window.snCart = snCart;
 $('#product-add').on('click', function () {
 	snCart.addItem(parseInt($('#product-select').val(), 10), 1);
 });
-
-// snCart.addItem(39409199218759, 1);
-// snCart.addItem(39409261805639, 1);
 
 export default snCart;

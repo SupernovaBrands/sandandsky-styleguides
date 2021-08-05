@@ -27,8 +27,8 @@ export default class CartManualGwp extends React.Component {
 			<div className="mb-3 position-relative">
 				<h4 className="font-size-sm font-weight-bold mb-1">{title}</h4>
 				<p className="font-size-sm text-muted">{`${selectedKey.length}/${maxSelected} ${tStrings.items_selected}`}</p>
-				<button className="position-absolute btn-unstyled text-primary manual-gwp__left sni sni__chevron-prev" aria-hidden="true" type="button" onClick={() => this.scroll('left')} />
-				<button className="position-absolute btn-unstyled text-primary manual-gwp__right sni sni__chevron-next" aria-hidden="true" type="button" onClick={() => this.scroll('right')} />
+				<button className={`position-absolute btn-unstyled text-primary manual-gwp__left sni sni__chevron-prev ${items.length > 3 ? '' : 'd-none'}`} aria-hidden="true" type="button" onClick={() => this.scroll('left')} />
+				<button className={`position-absolute btn-unstyled text-primary manual-gwp__right sni sni__chevron-next ${items.length > 3 ? '' : 'd-none'}`} aria-hidden="true" type="button" onClick={() => this.scroll('right')} />
 				<ul className="list-unstyled manual-gwp__container d-flex mt-3 mb-0 text-center" ref={(r) => { this.scrollRef = r; }}>
 					{items.map((item) => {
 						const isSelected = !!(selectedKey.find((key) => isItemIdInKey(key, item.id)));

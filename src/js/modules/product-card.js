@@ -1,11 +1,3 @@
-/* global theme */
-
-if ($('.product-card-form').length > 0) {
-	$('.product-card-form').each((index, el) => {
-		const productCardForm = new theme.AjaxProduct($(el)); // eslint-disable-line no-unused-vars
-	});
-}
-
 if ($('.product-card__rating').length > 0) {
 	$('.product-card__rating').each((i, el) => {
 		const appKey = $(el).data('app-key');

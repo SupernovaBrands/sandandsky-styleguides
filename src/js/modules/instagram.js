@@ -1,11 +1,9 @@
-/* global useLazyload */
-
 import { getCookie, setCookie } from '~mod/utils';
 
 const existingData = getCookie('ig_media');
 
 const carouselSlide = (item) => (
-	`<div class="carousel-item col-9"><a href="${item.link}" target="_blank"><img class="d-block w-100 ${useLazyload ? 'lazyload' : ''}" ${useLazyload ? 'data-' : ''}src="${item.image}" /></a></div>`
+	`<div class="carousel-item col-9 col-lg-1o5"><a href="${item.link}" target="_blank" class="embed-responsive embed-responsive-1by1 bg-shimmer"><img class="d-block w-100 lazyload embed-responsive-item fit--cover" data-src="${item.image}" /></a></div>`
 );
 
 const fillCarousel = (items) => {
@@ -13,9 +11,9 @@ const fillCarousel = (items) => {
 	items.forEach((item) => {
 		$('.instagram-carousel .carousel-inner').append(carouselSlide(item));
 	});
+	window.renderLazyImages();
 	$('.instagram-carousel .carousel--scroll').each((index, carousel) => {
 		carousel.dispatchEvent(new CustomEvent('adjustThumb'));
-		carousel.querySelector('.carousel-control-next').classList.remove('d-none');
 	});
 };
 
@@ -36,6 +34,7 @@ if (existingData) {
 		}
 		setCookie('ig_media', JSON.stringify(dataMedia));
 		fillCarousel(dataMedia);
+		$('.instagram-carousel .carousel-control-next').removeClass('d-none');
 	}).catch(function () {
 		fillCarousel([
 			{ image: 'https://via.placeholder.com/255x255/?text=1' },

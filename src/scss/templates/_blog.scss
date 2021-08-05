@@ -46,6 +46,14 @@
 
 	&__content {
 		grid-area: content;
+
+		a {
+			color: $secondary;
+
+			&:hover {
+				color: $primary;
+			}
+		}
 	}
 
 	&__comment {
@@ -54,11 +62,5 @@
 
 	&__sidebar {
 		grid-area: sidebar;
-	}
-}
-
-.article__content {
-	img, iframe {
-		max-width: 100%;
 	}
 }

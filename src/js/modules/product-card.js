@@ -48,6 +48,20 @@ if ($('.product-card:not(.product-card--secondary) .yotpo.bottomLine').length > 
 	});
 }
 
+if ($('.product-card__rating').length > 0) {
+	$('.product-card__rating').each((i, el) => {
+		const appKey = $(el).data('app-key');
+		const productId = $(el).data('product-id');
+		$.get(`https://api.yotpo.com/products/${appKey}/${productId}/bottomline`).done(function (data) {
+			const avg = Math.round(data.response.bottomline.average_score * 10) / 10;
+			const totalReviewsText = data.response.bottomline.total_reviews > 1 ? 'Reviews' : 'Review';
+			$(el).find('.product-card__review-text').text(`${avg}/5.0 - ${data.response.bottomline.total_reviews} ${totalReviewsText}`);
+			$(el).prepend('<div class="yotpo"><span class="d-block yotpo-icon yotpo-icon-star text-secondary mr-1"></span></div>');
+			$(el).removeClass('d-none').addClass('d-flex');
+		});
+	});
+}
+
 if ($('.product-card--secondary .yotpo-product-stars').length > 0) {
 	$('.product-card--secondary .yotpo-product-stars').each((index, el) => {
 		const appKey = $(el).data('key');

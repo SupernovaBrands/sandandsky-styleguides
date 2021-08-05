@@ -128,12 +128,13 @@
 		position: absolute;
 		font-size: calc-em(10);
 		top: calc-em(20);
-		right: calc-em(8);
+		// fix center cart counter > 9
+		right: 0;
+		left: 0;
 
 		@include media-breakpoint-up(lg) {
 			font-size: calc-em(12);
 			top: calc-em(11);
-			right: calc-em(29);
 		}
 	}
 }

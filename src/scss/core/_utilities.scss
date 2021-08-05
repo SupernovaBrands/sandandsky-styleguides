@@ -1,16 +1,16 @@
 // Light pink background color
 @include bg-variant(".bg-secondary-light", $secondary-light, true);
 
+// APC range background color
+@include bg-variant(".bg-apc", $secondary, true);
+@include bg-variant(".bg-apc-light", $secondary-light, true);
+
 // AEA range background color
 @include bg-variant(".bg-aea", $range-aea, true);
-
-// AEA light range background color
 @include bg-variant(".bg-aea-light", $range-aea-light, true);
 
 // TSW range background color
 @include bg-variant(".bg-tsw", $range-tsw, true);
-
-// TSW light range background color
 @include bg-variant(".bg-tsw-light", $range-tsw-light, true);
 
 // Gray 100 background color
@@ -18,6 +18,7 @@
 
 // bg body color
 @include bg-variant(".bg-body-color", $body-color, true);
+
 
 .rounded-right-0 {
 	border-top-right-radius: 0 !important;
@@ -44,6 +45,32 @@
 	}
 	.pl-lg-hg, .px-lg-hg {
 		padding-left: $grid-gutter-width * 0.5 !important;
+	}
+}
+
+.fit--cover {
+	object-fit: cover;
+}
+
+@keyframes gradient-shimmer {
+	0%{background-position: 100% 50%}
+	100%{background-position: 0% 50%}
+}
+
+.bg-shimmer {
+	background: $gray-600;
+	background: linear-gradient(130deg, $gray-600 33%, $gray-100 50%, $gray-600 67%);
+	background-size: 1000% 1000%;
+	animation: gradient-shimmer 2.5s ease infinite;
+}
+
+// To make button looks like text
+.btn-unstyled {
+	border: 0;
+	padding: 0;
+	background: none;
+	&:focus {
+		outline: none;
 	}
 }
 
@@ -78,15 +105,5 @@
 @include media-breakpoint-up(lg) {
 	.position-lg-sticky {
 		position: sticky !important;
-	}
-}
-
-// To make button looks like text
-.btn-unstyled {
-	border: 0;
-	padding: 0;
-	background: none;
-	&:focus {
-		outline: none;
 	}
 }

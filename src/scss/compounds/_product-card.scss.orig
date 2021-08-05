@@ -26,6 +26,7 @@
 			font-size: $font-size-sm;
 		}
 	}
+<<<<<<< HEAD
 
 	&--search-result {
 		picture {
@@ -41,4 +42,6 @@
 			}
 		}
 	}
+=======
+>>>>>>> 13b06d97a18e4cdb4872c3700e5bdc37e9f0056b
 }

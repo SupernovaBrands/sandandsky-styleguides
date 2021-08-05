@@ -12,12 +12,6 @@
 
 	{{> sections/featured-products}}
 
-	<div class="bg-light">
-		<div class="container px-g py-5">
-			<h2 class="h1">Ingredients block</h2>
-		</div>
-	</div>
-
 	{{> sections/collection-section class="my-5" color="ff6f8d" range="apc" header="Detoxify with Australian Pink Clay" button="Shop all Detoxify"}}
 
 	{{> sections/collection-section class="my-5" color="cc3195" range="aea" header="Brighten with Australian Emu Apple" button="Shop all Brighten"}}
@@ -34,9 +28,11 @@
 
 	{{> sections/newsletter-banner}}
 
-	{{> sections/footer}}
+  {{> sections/footer}}
 
-	{{> js jquery=true bootstrap=true main=true yotpo=true }}
+  <div class="modal fade cart-drawer" id="cart-drawer" tabindex="-1" aria-hidden="true"></div>
+
+	{{> js jquery=true bootstrap=true main=true }}
 </body>
 
 </html>

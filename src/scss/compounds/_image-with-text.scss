@@ -23,8 +23,6 @@
 
       @include media-breakpoint-up(lg) {
         height: 100%;
-        margin-right: -60% !important;
-        padding-right: 75%;
         margin-top: -3em;
       }
     }
@@ -156,6 +154,7 @@
 .dots-decoration {
   top: -20%;
   left: -60%;
+
   img {
     width: calc-em(366);
     @include media-breakpoint-up(lg) {

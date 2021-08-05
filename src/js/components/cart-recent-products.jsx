@@ -11,7 +11,7 @@ const RecentProducts = (props) => (
 			</a>
 			<figcaption className="mt-2 flex-grow-1 d-flex flex-column">
 				<p className="product-card__text-sm mb-2 text-muted">Tasmanian Spring Water</p>
-				<a href="/" className="product-card__text mb-2 font-weight-bold text-body">{`Hydration Boost Cream ${props.number}`}</a>
+				<a href="/" className="product-card__text mb-2 font-weight-bold text-body link-secondary">{`Hydration Boost Cream ${props.number}`}</a>
 
 				<p className="product-card__text mb-2">
 					<span className="text-muted text-linethrough mr-1">$39.73</span>

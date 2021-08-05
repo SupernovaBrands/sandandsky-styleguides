@@ -35,7 +35,7 @@ export default class CartItem extends React.Component {
 								<h5 className="mb-0">
 									<ConditionWrapper
 										condition={!models.isFree}
-										wrapper={(children) => <a href={item.url} className="link-secondary">{children}</a>}
+										wrapper={(children) => <a href={item.url}>{children}</a>}
 									>
 										{models.title}
 									</ConditionWrapper>

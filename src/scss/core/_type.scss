@@ -21,13 +21,6 @@ h3, .h3 {
 	}
 }
 
-.link-secondary {
-	color: $body-color;
-	&:hover {
-		color: $primary;
-	}
-}
-
 .text-linethrough {
 	text-decoration: line-through;
 }
@@ -69,13 +62,6 @@ h3, .h3 {
 .sni.sni__range-tsw:before,
 .sni-after.sni__range-tsw:after {
 	color: $range-tsw;
-}
-
-.link-secondary {
-	color: $body-color;
-	&:hover {
-		color: $secondary;
-	}
 }
 
 @include text-emphasis-variant(".text-aea", $range-aea, true);

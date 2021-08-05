@@ -66,4 +66,10 @@ input[type=number] {
 		top: calc-em(15, 14);
 		transform: translateY(-50%) scale(0.85);
 	}
+
+	select + &__text {
+		left: calc-em(11, 12);
+		top: calc-em(8, 12);
+		transform: none;
+	}
 }

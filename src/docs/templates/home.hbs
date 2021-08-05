@@ -6,6 +6,8 @@
 </head>
 
 <body>
+	{{> sections/header}}
+
 	{{> sections/hero-carousel totalSlide=3 fullimage="true" indicator-timer="true"}}
 
 	{{> sections/featured-products}}
@@ -32,7 +34,9 @@
 
 	{{> sections/newsletter-banner}}
 
-	{{> js jquery=true bootstrap=true main=true }}
+	{{> sections/footer}}
+
+	{{> js jquery=true bootstrap=true main=true yotpo=true }}
 </body>
 
 </html>

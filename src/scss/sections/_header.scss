@@ -65,14 +65,7 @@
 	box-shadow: 0 calc-em(4) calc-em(5) 0 rgba(0, 0, 0, .06);
 	z-index: $zindex-sticky;
   overflow: hidden;
-
-	&:before {
-		content: '';
-		display: block;
-		width: 100%;
-		height: $grid-gutter-width;
-		transform: translateY(-50%);
-	}
+  margin-top: -1em;
 
 	.nav-item--mega-menu:hover & {
 		max-height: 100vh;

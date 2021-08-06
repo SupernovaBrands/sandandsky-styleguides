@@ -18,12 +18,11 @@
 	}
 
 	&__klarna {
-
 		.sni__klarna-logo:before {
 			font-size: calc-em(12, 14);
 		}
 
-		.sni__info-circle:before {
+		.sni__info-circle {
 			cursor: pointer;
 		}
 	}
@@ -31,7 +30,7 @@
 
 .sni__hyperlink {
 	text-decoration: underline;
-	
+
 	&:before {
 		position: absolute;
 		right: calc-em(-22, 16);

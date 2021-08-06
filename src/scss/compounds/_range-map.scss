@@ -14,7 +14,7 @@
 
   &:after {
     content: '';
-    background: url("../images/aea-decoration.svg") no-repeat;
+    background: url(asset-url("aea-decoration.svg")) no-repeat;
     background-position: initial;
     position: absolute;
     width: calc-em(70);

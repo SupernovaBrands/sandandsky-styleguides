@@ -3,7 +3,9 @@
 	&-secondary,
 	&-primary.disabled,
 	&-primary:disabled,
-	&-outline-primary:hover {
+	&-outline-primary:hover,
+	&-outline-primary:not(:disabled):not(.disabled).active,
+	&-outline-primary:not(:disabled):not(.disabled):active {
 		color: $white;
 	}
 

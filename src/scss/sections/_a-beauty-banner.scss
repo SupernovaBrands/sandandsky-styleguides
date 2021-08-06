@@ -1,0 +1,8 @@
+.a-beauty-banner {
+	.embed-responsive::before {
+		padding-top: percentage(420 / 690);
+		@include media-breakpoint-up(lg) {
+			padding-top: percentage(1);
+		}
+	}
+}

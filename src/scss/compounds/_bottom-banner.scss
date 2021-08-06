@@ -42,7 +42,7 @@
 
 
   @include media-breakpoint-up(lg) {
-    display: grid;    
+    display: grid;
     grid-template-columns: [grid-start] 1fr repeat($grid-columns, [col-start] $grid-column-width-lg) 1fr [grid-end];
     column-gap: $grid-gutter-width-lg;
 
@@ -89,4 +89,3 @@
     grid-template-columns: [grid-start] 1fr repeat($grid-columns, [col-start] $grid-column-width-xl) 1fr [grid-end];
   }
 }
-

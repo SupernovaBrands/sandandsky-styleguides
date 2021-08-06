@@ -1,4 +1,4 @@
-.post-card {
+.post-card:not(.post-card__featured) {
 	h2 {
 		display: -webkit-box;
 		-webkit-line-clamp: 2;

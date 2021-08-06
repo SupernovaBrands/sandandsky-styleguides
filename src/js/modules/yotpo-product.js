@@ -1,7 +1,4 @@
-window.validateEmail = function (t) {
-	// eslint-disable-next-line no-useless-escape
-	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(String(t).toLowerCase());
-};
+import { buildStars, validateEmail } from '~mod/utils';
 
 const yotpoProduct = $('.yotpo__product');
 const appKey = yotpoProduct.data('key');
@@ -65,19 +62,6 @@ const filterLikes = (id) => {
 	const voteupDisabled = filteredVoteUp.length > 0 ? 'yotpo__likes-disabled' : '';
 	const votedownDisabled = filteredVoteDown.length > 0 ? 'yotpo__likes-disabled' : '';
 	return { vote_up: voteupDisabled, vote_down: votedownDisabled };
-};
-
-const buildStars = (score) => {
-	const fullStars = score;
-	const hollowStars = 5 - fullStars;
-	let stars = '';
-	for (let s = 1; s <= fullStars; s += 1) {
-		stars += '<i class="sni sni__star-full"></i>';
-	}
-	for (let t = 1; t <= hollowStars; t += 1) {
-		stars += '<i class="sni sni__star-hollow"></i>';
-	}
-	return stars;
 };
 
 const formatDate = (serverDate) => {
@@ -237,6 +221,10 @@ $.post(`https://api.yotpo.com/v1/topic/${appKey}/topics.json`, { domain_key: pro
 // Initial build
 $.get(`https://api.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.json`, { page: 1 }, function (data) {
 	const avg = Math.round(data.response.bottomline.average_score * 10) / 10;
+	const stars = buildStars(avg);
+	const totalReviewsText = `${data.response.bottomline.total_review} ${(data.response.bottomline.total_review > 1) ? 'Reviews' : 'Review'}`;
+	const starsAndTotalReview = `${stars}<a href="javascript:void(0)" class="text-m" aria-label="${totalReviewsText}"><span class="ml-1 text-dark">${totalReviewsText}</span></a>`;
+	$('.yotpo__stars').html(starsAndTotalReview);
 	$('.yotpo__avg-score').text(avg);
 	$('.yotpo__avg-score-label').text('Average rating');
 	$('.yotpo__total-reviews').text(`${data.response.bottomline.total_review} ${(data.response.bottomline.total_review > 1) ? 'Reviews' : 'Review'}`);
@@ -414,7 +402,7 @@ $('#yotpo__review-submit').on('click', function () {
 		review.parent().find('small').removeClass('d-none');
 		valid = false;
 	}
-	if (!window.validateEmail(emailField.val())) {
+	if (!validateEmail(emailField.val())) {
 		emailField.parent().find('small').text('Invalid Email');
 		emailField.parent().find('small').removeClass('d-none');
 		valid = false;
@@ -499,7 +487,7 @@ $('#yotpo__question-submit').on('click', function () {
 
 	$(this).closest('.yotpo__question-fields').find('small').addClass('d-none');
 
-	if (!window.validateEmail(emailField.val())) {
+	if (!validateEmail(emailField.val())) {
 		emailField.parent().find('small').text('Invalid Email');
 		emailField.parent().find('small').removeClass('d-none');
 		valid = false;
@@ -618,4 +606,11 @@ const voteitem = (elem) => {
 // vote handler
 $('.yotpo__product').on('click', '.yotpo__likes .sni', function () {
 	voteitem($(this));
+});
+
+// scroll to review section
+$(document).on('click', '.yotpo__stars .text-m', () => {
+	$('html, body').animate({
+		scrollTop: $('.yotpo__review').offset().top,
+	}, 500);
 });

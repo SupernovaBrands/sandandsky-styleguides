@@ -262,3 +262,22 @@ export const subscribeBluecoreWaitlist = (email, productId, variantID, regSource
 export const scrollToElement = (targetSelector, offset = -70) => {
 	$('html, body').animate({ scrollTop: $(targetSelector).offset().top + offset }, 600);
 };
+
+export const buildStars = (score) => {
+	let stars = '';
+	const maxScore = 5;
+	const hollow = maxScore - (maxScore - score);
+
+	for (let s = 1; s <= 5; s += 1) {
+		const se = hollow - s + 1;
+		const seFloor = se - Math.floor(se);
+		if ((s > hollow && se < 0) || (s > hollow && se > 0 && seFloor < 0.5)) {
+			stars += '<i class="sni sni__star-hollow"></i>';
+		} else if (s > hollow && se > 0 && seFloor >= 0.5) {
+			stars += '<i class="sni sni__star-half"></i>';
+		} else {
+			stars += '<i class="sni sni__star-full"></i>';
+		}
+	}
+	return stars;
+};

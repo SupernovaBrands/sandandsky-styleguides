@@ -2,10 +2,14 @@
 	@include media-breakpoint-up(lg) {
 		&__cover {
 			@include make-col(2, 5);
+
+			picture::before {
+				padding-top: 522 / 900 * 100%;
+			}
 		}
 	}
 
-	.sni:before {
+	.sni:not(.sni__star-full):before {
 		font-size: calc-em(22);
 		margin-top: calc-em(8, 22);
 		margin-right: calc-em(14, 22);

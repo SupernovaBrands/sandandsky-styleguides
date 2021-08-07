@@ -1,51 +1,28 @@
-@import 'core/functions';
-@import 'core/vars';
-@import 'mixins/carousel';
+@import 'common';
 
-@import 'bootstrap/bootstrap';
-
-@import 'core/fonts';
-@import 'core/type';
-@import 'core/grid';
-@import 'core/utilities';
-
-@import 'components/icons';
-@import 'components/buttons';
 @import 'components/video-card';
 @import 'components/accordion';
 @import 'components/tabs';
-@import 'components/forms';
 @import 'components/carousel';
 @import 'components/product-image-carousel';
-@import 'components/announcement-bar';
-@import 'components/tooltip';
-@import 'components/dropdown';
 @import 'components/list';
-@import 'components/nav';
 @import 'components/ingredient';
 @import 'components/badge';
 @import 'components/product-variant';
 @import 'components/klarna';
 @import 'components/breadcrumb';
 @import 'components/article-progress-bar';
-@import 'components/modal';
 @import 'components/custom-forms';
 
 @import 'compounds/hero-banner';
 @import 'compounds/product-card';
 @import 'compounds/upsell';
-@import 'compounds/mega-menu-post-card';
-@import 'compounds/mega-menu';
-@import 'compounds/mobile-menu';
-@import 'compounds/search-box';
 @import 'compounds/post-card';
 @import 'compounds/bottom-banner';
 @import 'compounds/range-banner';
 @import 'compounds/image-with-text';
 @import 'compounds/range-map';
 
-@import 'sections/header';
-@import 'sections/cart-drawer';
 @import 'sections/hero-carousel';
 @import 'sections/featured-products';
 @import 'sections/collection-section';
@@ -53,7 +30,6 @@
 @import 'sections/a-beauty-review';
 @import 'sections/usp-banner';
 @import 'sections/newsletter-banner';
-@import 'sections/footer';
 @import 'sections/how-to-video';
 @import 'sections/yotpo-reviews';
 @import 'sections/review-carousel';

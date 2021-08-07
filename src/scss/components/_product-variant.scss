@@ -10,18 +10,20 @@
 	}
 
 	.custom-control-input {
-		~ .border {
+		~ .active-border {
 			content: '';
 			left: 0;
 			right: 0;
 			top: 0;
 			bottom: 0;
-			border-color: $body-color !important;
+			border: 1px solid $body-color;
+			position: absolute;
+			border-radius: calc-em(4, 16);
 		}
 
-		&:checked ~ .border {
-			border-width: 2px !important;
-			border-color: $primary !important;
+		&:checked ~ .active-border {
+			border-width: 2px;
+			border-color: $primary;
 		}
 	}
 }

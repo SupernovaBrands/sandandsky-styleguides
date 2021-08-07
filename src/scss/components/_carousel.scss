@@ -12,27 +12,6 @@
 }
 
 .carousel {
-	// carousel with different size of image
-	&--fixed-height {
-		overflow: hidden;
-		height: 11.875em;
-
-		@include media-breakpoint-up(lg) {
-			height: 25em;
-		}
-
-		.carousel-inner,
-		.carousel-item,
-		figure,
-		img {
-			height: 100%;
-		}
-
-		img {
-			object-fit: cover;
-		}
-	}
-
 	&--loop {
 		.carousel-item {
 			margin-right: 0;
@@ -56,7 +35,7 @@
 			@extend %transform-positive;
 		}
 
-		@include carousel-item-level('.carousel-item.active', '.carousel-item', 7) {
+		@include carousel-item-level('.carousel-item.active', '.carousel-item', 8) {
 			display: block;
 		}
 
@@ -64,11 +43,11 @@
 			transition: none;
 		}
 
-		@include carousel-item-level('.carousel-item-next.carousel-item-left', '.carousel-item', 7, false) {
+		@include carousel-item-level('.carousel-item-next.carousel-item-left', '.carousel-item', 8, false) {
 			@extend %transform-negative;
 		}
 
-		@include carousel-item-level('.carousel-item-prev.carousel-item-right', '.carousel-item', 7, false) {
+		@include carousel-item-level('.carousel-item-prev.carousel-item-right', '.carousel-item', 8, false) {
 			@extend %transform-positive;
 		}
 
@@ -80,6 +59,7 @@
 			display: block;
 			visibility: visible;
 		}
+
 	}
 
 	&--scroll {
@@ -151,7 +131,7 @@
 
 	&--sidebar {
 		@include media-breakpoint-down(sm) {
-			min-height: 15em;
+			min-height: 24em;
 		}
 	}
 
@@ -258,8 +238,8 @@
 			width: 30px;
 			opacity: 1;
 			background-color: transparentize(#FFFFFF, 0.5);
-      border-radius: 5px;
-      overflow: hidden;
+			border-radius: 5px;
+			overflow: hidden;
 
 			&::before {
 				content: '';
@@ -268,9 +248,6 @@
 				height: 100%;
 				background-color: #fff;
 			}
-
-      &.active::before {
-      }
 		}
 
 		&--start {

@@ -64,3 +64,9 @@
 		grid-area: sidebar;
 	}
 }
+
+@include media-breakpoint-down(md) {
+	.article__content img {
+		width: 100%;
+	}
+}

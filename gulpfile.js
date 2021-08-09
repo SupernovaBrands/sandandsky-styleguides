@@ -4,6 +4,8 @@ const {
 const browserSync = require('browser-sync');
 const del = require('del');
 const sass = require('gulp-sass');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const nodeSass = require('node-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const handlebars = require('gulp-compile-handlebars');
@@ -133,6 +135,10 @@ const scssFiles = function () {
 		.pipe(sass({
 			includePaths: ['node_modules/'],
 			outputStyle: 'compressed',
+			functions: {
+				'asset-url($filename)': function (filename) { return new nodeSass.types.String(`'/sandandsky-styleguides/images/${filename.getValue()}'`); },
+				'font-url($filename)': function (filename) { return new nodeSass.types.String(`'/sandandsky-styleguides/fonts/${filename.getValue()}'`); },
+			},
 		}).on('error', errorHandler))
 		.pipe(autoprefixer())
 		.pipe(sourcemaps.write('.'))

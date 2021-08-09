@@ -10,6 +10,21 @@ Once the HTML and SCSS is fine a works well, code is integrate in Shopify repo w
 
 URL for viewing HTML in browser: https://supernovabrands.github.io/sandandsky-styleguides/
 
+## Setup
+1. Run `npm install` to install dependencies
+2. Run `npm start` to start gulp server and watch files
+
+## Updating version
+In master branch run these commands to update the package version and add tags to the commit.
+- Use `major` if the changes are very big, and involve breaking changes
+- Use `minor` if the changes are kind of new features
+- Use `patch` if the changes are small like bug fixes or adjustments
+```
+npm version [major | minor | patch]
+git push
+git push --tags
+```
+
 ## HTML
 __DO NOT__ modify any html files, these will be generated from their `.hbs`, including `index.html`.
 
@@ -23,9 +38,6 @@ See the [Handlebars Helpers](#handlebars-helpers) below for custom helpers
 Run `npm run critical` after building the files.
 The critical css will be created from html in `dist/templates/` folder and outputed in `dist/critical/` folder.
 
-## Setup
-1. Run `npm install` to install dependencies
-2. Run `npm start` to start gulp server and watch files
 
 ## Images
 Can use https://placeholder.com/ for placeholder images. i.e:

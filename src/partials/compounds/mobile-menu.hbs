@@ -1,4 +1,5 @@
 <nav class="mobile-nav bg-white position-fixed d-lg-none sni sni__times">
+	{{#unless critical}}
 	<ul id="mobileMenu" class="mobile-nav__menu h-100 col-12 bg-white list-unstyled p-0">
 		<li class="d-flex justify-content-center w-100">
 			<a href="#" class="navbar-brand mx-auto sni sni__ss text-secondary"></a>
@@ -280,6 +281,6 @@
 				</li>
 			</ul>
 		</li>
-
 	</ul>
+	{{/unless}}
 </nav>

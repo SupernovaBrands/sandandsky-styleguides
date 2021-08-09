@@ -28,7 +28,7 @@ const files = {
 	vendorJs: ['src/js/vendor/*'],
 	allScss: ['src/scss/**/*', '!src/scss/critical-css/*.scss'],
 	scss: ['src/scss/*.scss'],
-	criticalScss: ['src/scss/critical-css/*.scss'],
+	criticalScss: ['src/critical-css/*.css'],
 	includes: ['fonts/*.svg'],
 	static: [
 		// fonts
@@ -142,12 +142,6 @@ const scssFiles = function () {
 
 const criticalFiles = function () {
 	return src(files.criticalScss)
-		.pipe(sass({ outputStyle: 'compressed' }).on('error', errorHandler))
-		.pipe(cleancss({
-			format: 'keep-breaks',
-			level: 2,
-		}))
-		.pipe(dest('src/critical-css'))
 		.pipe(dest('dist/critical-css'))
 		.pipe(browserSync.stream());
 };
@@ -159,7 +153,7 @@ const staticFiles = function () {
 };
 
 const extractCriticalCss = function () {
-	return src(['dist/criticals/*.html', '!dist/criticals/header.html'])
+	return src(['dist/criticals/*.html'])
 		.pipe(
 			critical({
 				base: 'dist/',
@@ -185,11 +179,10 @@ const extractCriticalCss = function () {
 			format: 'keep-breaks',
 			level: 2,
 		}))
-		.pipe(rename({ extname: '.scss' }))
 		.on('error', (err) => {
 			console.error(err.message);
 		})
-		.pipe(dest('src/scss/critical-css'));
+		.pipe(dest('src/critical-css'));
 };
 
 const webpackBuild = (isWatch = false) => function () {

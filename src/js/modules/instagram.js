@@ -14,6 +14,9 @@ const fillCarousel = (items) => {
 	window.renderLazyImages();
 	$('.instagram-carousel .carousel--scroll').each((index, carousel) => {
 		carousel.dispatchEvent(new CustomEvent('adjustThumb'));
+		if (items.length > 5) {
+			carousel.querySelector('.carousel-control-next').classList.remove('d-none');
+		}
 	});
 };
 
@@ -24,12 +27,7 @@ if (existingData) {
 		const dataMedia = [];
 		for (let i = 0; i < 15; i += 1) {
 			const d = data[i];
-			let obj;
-			if (d.media_type === 'VIDEO') {
-				obj = { link: d.permalink, image: d.thumbnail_url };
-			} else {
-				obj = { link: d.permalink, image: d.media_url };
-			}
+			const obj = { link: d.permalink, image: d.thumbnail_url };
 			dataMedia.push(obj);
 		}
 		setCookie('ig_media', JSON.stringify(dataMedia));

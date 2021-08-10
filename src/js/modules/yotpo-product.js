@@ -223,7 +223,7 @@ $.get(`https://api.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.j
 	const avg = Math.round(data.response.bottomline.average_score * 10) / 10;
 	const stars = buildStars(avg);
 	const totalReviewsText = `${data.response.bottomline.total_review} ${(data.response.bottomline.total_review > 1) ? 'Reviews' : 'Review'}`;
-	const starsAndTotalReview = `${stars}<a href="javascript:void(0)" class="text-m" aria-label="${totalReviewsText}"><span class="ml-1 text-dark ml-1 text-dark text-underline">${totalReviewsText}</span></a>`;
+	const starsAndTotalReview = `${stars}<a href="javascript:void(0)" class="text-m" aria-label="${totalReviewsText}"><span class="ml-1 text-dark text-underline">${totalReviewsText}</span></a>`;
 	$('.yotpo__stars').html(starsAndTotalReview);
 	$('.yotpo__avg-score').text(avg);
 	$('.yotpo__avg-score-label').text('Average rating');

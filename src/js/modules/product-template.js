@@ -6,7 +6,7 @@ $('.yotpo').on('click', '.text-m', function () {
 });
 
 if (window.location.hash === '#write-a-review') {
-	$('.yotpo-display-wrapper .text-m').click();
+	$('.yotpo__stars .text-m').click();
 }
 
 const mobileSwatch = $('.product-swatch-mobile');

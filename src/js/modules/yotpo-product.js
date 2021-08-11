@@ -611,6 +611,6 @@ $('.yotpo__product').on('click', '.yotpo__likes .sni', function () {
 // scroll to review section
 $(document).on('click', '.yotpo__stars .text-m', () => {
 	$('html, body').animate({
-		scrollTop: $('.yotpo__review').offset().top,
+		scrollTop: $('.yotpo__product').offset().top,
 	}, 500);
 });

@@ -44,3 +44,17 @@ $('.product-form .sni__plus').on('click', function () {
 	}
 	return false;
 });
+
+// open shipping table accordion
+$('.product-form__shipping a').on('click', function (e) {
+	e.preventDefault();
+	e.stopPropagation();
+
+	const dataTarget = $(this).parent().data('target');
+	$(`[data-target="${dataTarget}"]`).removeClass('collapsed').attr('aria-expanded', true);
+	$(dataTarget).addClass('show');
+
+	$('html, body').animate({
+		scrollTop: $('.product-form__shipping-accordion').offset().top - 70,
+	}, 500);
+});

@@ -12,4 +12,8 @@ $('.tab--scroll a[data-toggle="tab"]').on('show.bs.tab', function () {
 		$('.tab-pane h4.h2').addClass('d-lg-block');
 	}
 	$('#collection__title').text(titleText);
+
+	$('html, body').animate({
+		scrollTop: 0,
+	}, 500);
 });

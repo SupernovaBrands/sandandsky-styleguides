@@ -1,8 +1,12 @@
 .tab {
 
-	.nav-link.active {
-		border-bottom: 2px solid $secondary !important;
-		font-weight: bold;
+	.nav-link{
+		border-bottom: 2px solid transparent !important;
+
+		&.active {
+			border-bottom-color: $secondary !important;
+			font-weight: bold;
+		}
 	}
 
 	&--scroll {

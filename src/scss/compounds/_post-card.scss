@@ -1,5 +1,5 @@
 .post-card:not(.post-card__featured) {
-	h2 {
+	h2, p {
 		display: -webkit-box;
 		-webkit-line-clamp: 2;
 		-webkit-box-orient: vertical;

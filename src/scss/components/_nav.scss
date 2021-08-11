@@ -1,6 +1,6 @@
 .navbar-brand {
 	z-index: $zindex-sticky;
-	
+
 	&:before {
 		font-size: calc-em(34, 20);
 		@include media-breakpoint-up(xl) {
@@ -89,4 +89,8 @@
 			}
 		}
 	}
+}
+
+.nav__secondary {
+	box-shadow: 0 calc-em(4) calc-em(5) 0 rgba(0, 0, 0, .06);
 }

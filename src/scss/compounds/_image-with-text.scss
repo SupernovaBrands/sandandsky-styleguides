@@ -64,7 +64,7 @@
     padding: map-get($spacers, 2);
 
     @include media-breakpoint-up(lg) {
-      min-height: calc-em(500);
+      min-height: calc-em(760);
       margin-left: -20%;
       padding: calc-em(100) calc-em(170) calc-em(100) calc-em(230);
       margin-right: -#{$grid-gutter-width-lg/2};
@@ -82,7 +82,10 @@
 
     p {
       max-width: calc-em(420);
-      color: $gray-600;
+
+      @include media-breakpoint-up(lg) {
+        line-height: calc-em(30); // custom line height because of old design
+      }
     }
   }
 

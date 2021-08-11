@@ -5,6 +5,10 @@ $('.yotpo').on('click', '.text-m', function () {
 	}, 500);
 });
 
+if (window.location.hash === '#write-a-review') {
+	$('.yotpo__stars .text-m').click();
+}
+
 const mobileSwatch = $('.product-swatch-mobile');
 const mobileSwatchTrigger = document.querySelector('.product-swatch-mobile__trigger');
 if (mobileSwatchTrigger && mobileSwatch.length > 0) {
@@ -39,4 +43,18 @@ $('.product-form .sni__plus').on('click', function () {
 		inputElem.val(Number(num) + 1);
 	}
 	return false;
+});
+
+// open shipping table accordion
+$('.product-form__shipping a').on('click', function (e) {
+	e.preventDefault();
+	e.stopPropagation();
+
+	const dataTarget = $(this).parent().data('target');
+	$(`[data-target="${dataTarget}"]`).removeClass('collapsed').attr('aria-expanded', true);
+	$(dataTarget).addClass('show');
+
+	$('html, body').animate({
+		scrollTop: $('.product-form__shipping-accordion').offset().top - 70,
+	}, 500);
 });

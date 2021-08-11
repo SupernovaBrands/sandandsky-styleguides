@@ -37,9 +37,15 @@
 	}
 
 	.sni__search {
+		z-index: $zindex-sticky;
+
 		&:before {
 			cursor: pointer;
 		}
+	}
+
+	.sni__user {
+		z-index: $zindex-sticky;
 	}
 
 	.sni__chevron-down {
@@ -81,8 +87,12 @@
 		}
 	}
 
-	.sni__cart:before {
-		margin: 0;
+	.sni__cart {
+		z-index: $zindex-sticky;
+
+		&:before {
+			margin: 0;
+		}
 	}
 }
 

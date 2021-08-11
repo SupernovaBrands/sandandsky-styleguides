@@ -1,6 +1,6 @@
 .navbar-brand {
 	z-index: $zindex-sticky;
-	
+
 	&:before {
 		font-size: calc-em(34, 20);
 		@include media-breakpoint-up(xl) {
@@ -87,6 +87,16 @@
 			&:last-child {
 				padding-right: 0;
 			}
+		}
+	}
+}
+
+.nav-blog {
+
+	a {
+		&.active,
+		&:hover {
+			text-decoration: underline;
 		}
 	}
 }

@@ -102,19 +102,19 @@
 		.carousel-control {
 			transform: none;
 		}
-    
-    .carousel--scroll {
-      .carousel-control-next {
-        top: auto;
-        bottom: -27%;
-      }
+		
+		.carousel--scroll {
+			.carousel-control-next {
+				top: auto;
+				bottom: -27%;
+			}
 
-      .carousel-control-prev {
-        top: auto;
-        left: auto;
-        right: 3%;
-        bottom: -27%;
-      }
-    }
+			.carousel-control-prev {
+				top: auto;
+				left: auto;
+				right: 3%;
+				bottom: -27%;
+			}
+		}
 	}
 }

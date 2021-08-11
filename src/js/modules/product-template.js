@@ -5,6 +5,10 @@ $('.yotpo').on('click', '.text-m', function () {
 	}, 500);
 });
 
+if (window.location.hash === '#write-a-review') {
+	$('.yotpo__stars .text-m').click();
+}
+
 const mobileSwatch = $('.product-swatch-mobile');
 const mobileSwatchTrigger = document.querySelector('.product-swatch-mobile__trigger');
 if (mobileSwatchTrigger && mobileSwatch.length > 0) {

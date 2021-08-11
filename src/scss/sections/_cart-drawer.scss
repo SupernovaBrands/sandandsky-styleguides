@@ -68,8 +68,14 @@
 
 .manual-gwp {
 	&__container {
-		overflow: hidden;
+		overflow: auto hidden;
 		scroll-behavior: smooth;
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
 	}
 
 	&__left,

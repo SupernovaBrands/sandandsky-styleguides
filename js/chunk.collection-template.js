@@ -14,7 +14,7 @@
   \***********************************************/
 /***/ (() => {
 
-eval("$('.tab--scroll a[data-toggle=\"tab\"]').on('show.bs.tab', function () {\n  $('.tab-pane').addClass('fade').removeClass('active');\n  var targetId = $(this).attr('href');\n  var titleText = $(this).text();\n\n  if (targetId !== '#collection__all') {\n    $(\"\".concat(targetId)).addClass('active show');\n    $('.tab-pane h4.d-lg-none').addClass('d-none');\n    $('.tab-pane h4.h2').removeClass('d-lg-block');\n  } else {\n    $('.tab-pane').addClass('active show');\n    $('.tab-pane h4.d-lg-none').removeClass('d-none');\n    $('.tab-pane h4.h2').addClass('d-lg-block');\n  }\n\n  $('#collection__title').text(titleText);\n});\n\n//# sourceURL=webpack://sandandsky-styleguides/./src/js/modules/collection-template.js?");
+eval("$('.tab--scroll a[data-toggle=\"tab\"]').on('show.bs.tab', function () {\n  $('.tab-pane').addClass('fade').removeClass('active');\n  var targetId = $(this).attr('href');\n  var titleText = $(this).text();\n\n  if (targetId !== '#collection__all') {\n    $(\"\".concat(targetId)).addClass('active show');\n    $('.tab-pane h4.d-lg-none').addClass('d-none');\n    $('.tab-pane h4.h2').removeClass('d-lg-block');\n  } else {\n    $('.tab-pane').addClass('active show');\n    $('.tab-pane h4.d-lg-none').removeClass('d-none');\n    $('.tab-pane h4.h2').addClass('d-lg-block');\n  }\n\n  $('#collection__title').text(titleText);\n  $('html, body').animate({\n    scrollTop: 0\n  }, 500);\n});\n\n//# sourceURL=webpack://sandandsky-styleguides/./src/js/modules/collection-template.js?");
 
 /***/ })
 

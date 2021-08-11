@@ -42,3 +42,13 @@
 		}
 	}
 }
+
+// secondary image
+.img--hover {
+	opacity: 0;
+
+	a:hover & {
+		opacity: 1;
+		transition: opacity .2s;
+	}
+}

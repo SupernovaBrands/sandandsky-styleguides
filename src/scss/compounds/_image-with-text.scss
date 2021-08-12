@@ -1,4 +1,10 @@
 .imagewtext {
+  .wrapper {
+    @include media-breakpoint-down(lg) {
+      max-height: calc-em(375);
+    }
+  }
+
   .sni__checklist {
     font-size: $font-size-xs;
   }

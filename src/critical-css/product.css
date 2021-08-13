@@ -369,10 +369,3 @@ input[type=number]{-moz-appearance:textfield}
 .product__klarna .sni__klarna-logo:before{font-size:.85714em}
 .sni__hyperlink{text-decoration:underline}
 .sni__hyperlink:before{position:absolute;right:-1.375em;font-size:.875em}
-.blog-grid__post1{grid-area:post1}
-.blog-grid__post2{grid-area:post2}
-.blog-grid__post3{grid-area:post3}
-.blog-grid__sidebar{grid-area:sidebar;top:0;z-index:1000}
-.blog-post-grid__content{grid-area:content}
-.blog-post-grid__comment{grid-area:comment}
-.blog-post-grid__sidebar{grid-area:sidebar}

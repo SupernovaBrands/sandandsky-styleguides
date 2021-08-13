@@ -78,7 +78,3 @@ if ($('.cookies-banner').length > 0) {
 if ($('.collection-template').length > 0) {
 	import(/* webpackChunkName: 'collection-template' */ '~mod/collection-template');
 }
-
-if ($('.nav__secondary').length > 0) {
-	import(/* webpackChunkName: 'secondary-nav' */ '~mod/secondary-nav');
-}

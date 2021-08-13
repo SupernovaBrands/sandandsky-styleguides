@@ -58,6 +58,10 @@ small{font-size:80%;font-weight:400}
 .order-lg-5{order:5}
 .order-lg-6{order:6}
 .order-lg-7{order:7}
+.order-lg-8{order:8}
+.order-lg-9{order:9}
+.order-lg-10{order:10}
+.order-lg-11{order:11}
 }
 .form-control{display:block;width:100%;height:calc(1.25em + 2em + 2px);padding:1em;font-size:.875em;font-weight:400;line-height:1.25;color:#484848;background-color:#fff;background-clip:padding-box;border:1px solid #969696;border-radius:.25rem}
 .form-control::-ms-expand{background-color:transparent;border:0}

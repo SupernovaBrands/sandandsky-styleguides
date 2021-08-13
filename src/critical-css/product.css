@@ -58,10 +58,6 @@ small{font-size:80%;font-weight:400}
 .order-lg-5{order:5}
 .order-lg-6{order:6}
 .order-lg-7{order:7}
-.order-lg-8{order:8}
-.order-lg-9{order:9}
-.order-lg-10{order:10}
-.order-lg-11{order:11}
 }
 .form-control{display:block;width:100%;height:calc(1.25em + 2em + 2px);padding:1em;font-size:.875em;font-weight:400;line-height:1.25;color:#484848;background-color:#fff;background-clip:padding-box;border:1px solid #969696;border-radius:.25rem}
 .form-control::-ms-expand{background-color:transparent;border:0}
@@ -202,7 +198,6 @@ button.close{padding:0;background-color:transparent;border:0}
 .py-5{padding-top:2.5rem!important}
 .pb-5,.py-5{padding-bottom:2.5rem!important}
 .px-g{padding-right:15px!important;padding-left:15px!important}
-.mx-ng{margin-right:-15px!important;margin-left:-15px!important}
 .m-auto{margin:auto!important}
 .mx-auto{margin-right:auto!important;margin-left:auto!important}
 .text-left{text-align:left!important}

@@ -31,8 +31,13 @@
 		border-color: $border-color;
 	}
 
-	&__shopify-icon {
+	.cart-item {
+		picture::before {
+			padding-top: percentage(95 / 75);
+		}
+	}
 
+	&__shopify-icon {
 		&:before,
 		&:after {
 			content: '';

@@ -27,6 +27,8 @@ import {
 import SvgClose from '~svg/close.svg';
 import SvgSS from '~svg/ss.svg';
 
+import { blogUpsellBtn } from '~mod/blog-upsell';
+
 export default class Cart extends React.Component {
 	constructor(props) {
 		super(props);
@@ -397,12 +399,14 @@ export default class Cart extends React.Component {
 
 	onRemoveItem = (item) => {
 		snCart.removeItem(item.key);
+		blogUpsellBtn(item.id, 'remove');
 	}
 
 	onAddUpsell = (upsell) => {
 		if (upsell.upgrade_bundle_method === 'replace') {
 			return snCart.replaceItem(upsell.targetId, upsell.upsellId, 1);
 		}
+		blogUpsellBtn(upsell.upsellId, 'add');
 		return snCart.addItem(upsell.upsellId, 1);
 	}
 

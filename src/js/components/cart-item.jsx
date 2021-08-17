@@ -18,16 +18,16 @@ export default class CartItem extends React.Component {
 		const { models } = item;
 		return (
 			<div role="listitem">
-				<figure className="row py-2 mb-0 align-items-start">
+				<figure className="row py-2 px-lg-hg mb-0 align-items-start">
 					<ConditionWrapper
 						condition={!models.isFree}
-						wrapper={(children) => <a href={item.url} className="col-3">{children}</a>}
+						wrapper={(children) => <a href={item.url} className="col-3 px-lg-hg">{children}</a>}
 					>
-						<picture className={models.isFree ? 'col-3' : ''}>
-							<img src={models.image} className="w-100" alt={item.product_title} />
+						<picture className={models.isFree ? 'col-3 d-block' : 'd-block'}>
+							<img src={models.image} className="w-auto" alt={item.product_title} />
 						</picture>
 					</ConditionWrapper>
-					<figcaption className="col-9 pl-lg-0">
+					<figcaption className="col-9 px-lg-hg">
 						<p className="font-size-xs text-muted mb-2">{models.range}</p>
 
 						<div className="d-flex align-items-start mb-2">

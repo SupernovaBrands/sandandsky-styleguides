@@ -49,6 +49,10 @@
 	.modal-footer>* {
 		margin: 0;
 	}
+
+	&__item {
+		min-height: calc-em(34);
+	}
 }
 
 #dynamic-checkout-cart {

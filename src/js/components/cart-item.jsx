@@ -30,7 +30,7 @@ export default class CartItem extends React.Component {
 					<figcaption className="col-9 px-lg-hg">
 						<p className="font-size-xs text-muted mb-2">{models.range}</p>
 
-						<div className="d-flex align-items-start mb-2">
+						<div className="d-flex align-items-start mb-2 cart-drawer__item">
 							<div className="flex-grow-1 mr-1">
 								<h5 className="mb-0">
 									<ConditionWrapper

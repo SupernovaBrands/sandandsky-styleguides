@@ -28,12 +28,12 @@
 	}
 
 	&--search-result {
-    & > a {
-      @include media-breakpoint-up(lg) {
-        flex: none;
-        max-width: none;
-      }
-    }
+		& > a {
+			@include media-breakpoint-up(lg) {
+				flex: none;
+				max-width: none;
+			}
+		}
 
 		picture {
 			flex-basis: 20%;

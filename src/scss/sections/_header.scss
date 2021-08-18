@@ -25,6 +25,10 @@
 
 		.tooltip.show {
 			transform: translateY(calc-em(33, 16));
+
+			@include media-breakpoint-up(lg) {
+				transform: translateY(0);
+			}
 		}
 	}
 

@@ -65,10 +65,11 @@ h3, .h3 {
 }
 
 .link-secondary {
-  color: $secondary;
-  
-  &:hover {
-    color: $secondary;
-  }
+	color: $secondary;
+	
+	&:hover {
+		color: $secondary;
+	}
+}
 
 @include text-emphasis-variant(".text-aea", $range-aea, true);

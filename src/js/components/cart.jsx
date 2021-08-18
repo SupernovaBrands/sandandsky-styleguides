@@ -200,7 +200,7 @@ export default class Cart extends React.Component {
 			title: item.variant_title,
 			isFree: isFreeItem(item),
 			isManualGwp: isItemHasProp(item, '_campaign_type', 'manual_gwp'),
-			image: item.image ? item.image.replace(/(\.[^.]*)$/, '_medium$1').replace('http:', '') : '//cdn.shopify.com/s/assets/admin/no-image-medium-cc9732cb976dd349a0df1d39816fbcc7.gif',
+			image: item.image ? item.image.replace(/(\.[^.]*)$/, '_75x100_crop_center$1').replace('http:', '') : '//cdn.shopify.com/s/assets/admin/no-image-medium-cc9732cb976dd349a0df1d39816fbcc7.gif',
 			price: item.original_price,
 			comparePrice: productData ? productData.comparePrices[item.id] : 0,
 			color: (item.options_with_values.find((opt) => isSameText(opt.name, 'color')) || { value: false }).value,

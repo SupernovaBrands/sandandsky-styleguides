@@ -42,7 +42,9 @@ $(document).ready(function () {
 });
 
 document.addEventListener('snCart.requestComplete', function () {
-	$('#cart-drawer').modal({
-		show: true,
-	});
+	if ($('.upsell__article').length > 0) {
+		$('#cart-drawer').modal({
+			show: true,
+		});
+	}
 });

@@ -102,5 +102,24 @@
 
 	&__secondary {
 		box-shadow: 0 calc-em(4) calc-em(5) 0 rgba(0, 0, 0, .06);
+
+		&:before,
+		&:after {
+			content: '';
+			width: $grid-gutter-width;
+			top: 0;
+			bottom: 0;
+			position: absolute;
+		}
+
+		&:before {
+			background: linear-gradient(90deg, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
+			left: 0;
+		}
+
+		&:after {
+			background: linear-gradient(270deg, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
+			right: 0;
+		}
 	}
 }

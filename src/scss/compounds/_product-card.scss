@@ -28,7 +28,7 @@
 	}
 
 	&--search-result {
-		& > a {
+		> a {
 			@include media-breakpoint-up(lg) {
 				flex: none;
 				max-width: none;

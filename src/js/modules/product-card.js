@@ -2,7 +2,7 @@ if ($('.product-card__rating').length > 0) {
 	$('.product-card__rating').each((i, el) => {
 		const appKey = $(el).data('app-key');
 		const productId = $(el).data('product-id');
-		$.get(`https://api.yotpo.com/products/${appKey}/${productId}/bottomline`).done(function (data) {
+		$.get(`https://api-cdn.yotpo.com/products/${appKey}/${productId}/bottomline`).done(function (data) {
 			console.log(data, 'testing');
 			const avg = Math.round(data.response.bottomline.average_score * 10) / 10;
 			const totalReviewsText = data.response.bottomline.total_reviews > 1 ? 'Reviews' : 'Review';

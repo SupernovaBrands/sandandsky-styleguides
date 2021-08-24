@@ -180,7 +180,7 @@ const ajaxPost = (page = null) => {
 	$.ajax({
 		crossDomain: true,
 		contentType: 'application/json',
-		url: `https://api.yotpo.com/v1/reviews/${appKey}/filter.json`,
+		url: `https://api-cdn.yotpo.com/v1/reviews/${appKey}/filter.json`,
 		method: 'POST',
 		headers: {
 			'content-type': 'application/json',
@@ -203,7 +203,7 @@ const ajaxPost = (page = null) => {
 };
 
 // Build topics tag
-$.post(`https://api.yotpo.com/v1/topic/${appKey}/topics.json`, { domain_key: productId }, function (data) {
+$.post(`https://api-cdn.yotpo.com/v1/topic/${appKey}/topics.json`, { domain_key: productId }, function (data) {
 	const tagLength = data.response.top_topics.top_mention_topics.length;
 	const maxTags = tagLength < 24 ? tagLength : 24;
 	for (let i = 0; i <= maxTags - 1; i += 1) {
@@ -219,7 +219,7 @@ $.post(`https://api.yotpo.com/v1/topic/${appKey}/topics.json`, { domain_key: pro
 });
 
 // Initial build
-$.get(`https://api.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.json`, { page: 1 }, function (data) {
+$.get(`https://api-cdn.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.json`, { page: 1 }, function (data) {
 	const avg = Math.round(data.response.bottomline.average_score * 10) / 10;
 	const stars = buildStars(avg);
 	const totalReviewsText = `${data.response.bottomline.total_review} ${(data.response.bottomline.total_review > 1) ? 'Reviews' : 'Review'}`;
@@ -248,7 +248,7 @@ $('.yotpo__pagination').on('click', 'a', function (e) {
 	if (Object.keys(filterParams).length > 0) {
 		ajaxPost($(this).data('page'));
 	} else {
-		$.get(`https://api.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.json`, { page: $(this).attr('data-page') }, function (data) {
+		$.get(`https://api-cdn.yotpo.com/v1/widget/${appKey}/products/${productId}/reviews.json`, { page: $(this).attr('data-page') }, function (data) {
 			if (data.response.reviews.length > 0) {
 				renderPagination(data.response.pagination);
 				renderReviews(data.response.reviews);
@@ -265,7 +265,7 @@ $('.yotpo__tags').on('click', '.yotpo__tags-expand', function (e) {
 
 // QA tabs, call QA api
 $('.yotpo__tab-question').on('click', function () {
-	$.get(`https://api.yotpo.com/products/${appKey}/${productId}/questions.json`, function (data) {
+	$.get(`https://api-cdn.yotpo.com/products/${appKey}/${productId}/questions.json`, function (data) {
 		if (data.response.questions.length > 0) {
 			$('.yotpo__tab-qna').html('');
 			$.each(data.response.questions, function (k, question) {
@@ -360,7 +360,7 @@ $('#yotpoImageModal').on('shown.bs.modal', function (event) {
 		$('.yotpo__modal-carousel').append(carouselHtml);
 	}
 
-	$.get(`https://api.yotpo.com/reviews/${yotpoReviewID}`, function (data) {
+	$.get(`https://api-cdn.yotpo.com/reviews/${yotpoReviewID}`, function (data) {
 		if (data.status.code === 200) {
 			const stars = buildStars(data.response.review.score);
 			$('.yotpo__modal-name').html(data.response.review.user.display_name);
@@ -461,7 +461,7 @@ $('#yotpo__review-submit').on('click', function () {
 	$.ajax({
 		crossDomain: true,
 		dataType: 'json',
-		url: 'https://api.yotpo.com/v1/widget/reviews',
+		url: 'https://api-cdn.yotpo.com/v1/widget/reviews',
 		contentType: 'application/json',
 		type: 'POST',
 		headers: {
@@ -528,7 +528,7 @@ $('#yotpo__question-submit').on('click', function () {
 	$.ajax({
 		crossDomain: true,
 		dataType: 'json',
-		url: '//api.yotpo.com/questions/send_confirmation_mail',
+		url: '//api-cdn.yotpo.com/questions/send_confirmation_mail',
 		contentType: 'application/json',
 		type: 'POST',
 		headers: {
@@ -562,7 +562,7 @@ const voteitem = (elem) => {
 			// undo action
 			elem.text(txtNum - 1);
 			elem.removeClass('yotpo__likes-disabled');
-			$.post(`https://api.yotpo.com/reviews/${id}/vote/${type}/true`, function () {
+			$.post(`https://api-cdn.yotpo.com/reviews/${id}/vote/${type}/true`, function () {
 				elem.text(txtNum - 1);
 				return true;
 			});
@@ -570,7 +570,7 @@ const voteitem = (elem) => {
 			voteSession.splice(removeIndex, 1);
 		} else {
 			// post action
-			$.post(`https://api.yotpo.com/reviews/${id}/vote/${type}`, function () {
+			$.post(`https://api-cdn.yotpo.com/reviews/${id}/vote/${type}`, function () {
 				elem.text(txtNum + 1);
 				return true;
 			});
@@ -589,7 +589,7 @@ const voteitem = (elem) => {
 		}
 		elem.text(txtNum + 1);
 		elem.addClass('yotpo__likes-disabled');
-		$.post(`https://api.yotpo.com/answers/${id}/vote/${type}`, function () {
+		$.post(`https://api-cdn.yotpo.com/answers/${id}/vote/${type}`, function () {
 			elem.text(txtNum + 1);
 			return true;
 		});

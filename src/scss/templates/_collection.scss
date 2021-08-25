@@ -1,5 +1,9 @@
 .collection-banner {
 	picture::before {
-		padding-top: percentage(5/20);
+		padding-top: percentage(5/13);
+
+    @include media-breakpoint-up(lg) {
+      padding-top: percentage(5/25);
+    }
 	}
 }

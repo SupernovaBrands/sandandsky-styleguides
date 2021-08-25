@@ -159,6 +159,11 @@ export const isFreeItem = (item) => (
 	|| isItemHasProp(item, '_campaign_type', 'auto_discount_code')
 );
 
+export const isGiftCardOnly = (items) => {
+	const giftCards = items.filter((i) => i.handle.includes('gift-card'));
+	return items.length === giftCards.length;
+};
+
 export const isItemIdInKey = (key, id) => (
 	`${key.split(':')[0]}` === `${id}`
 );

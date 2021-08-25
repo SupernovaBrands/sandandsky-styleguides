@@ -1,4 +1,4 @@
-/* global cartSettings tStrings customerTags */
+/* global tSettings tStrings customerTags */
 
 import React from 'react';
 import { getSizedImageUrl } from '@shopify/theme-images';
@@ -22,6 +22,7 @@ import {
 	getItemRange,
 	waitFor,
 	getCookie,
+	isGiftCardOnly,
 } from '~mod/utils';
 
 import SvgClose from '~svg/close.svg';
@@ -37,6 +38,7 @@ export default class Cart extends React.Component {
 			isLastStockKey: '',
 			cart: { items: [] },
 			loadingInit: true,
+			loadingCart: true,
 
 			itemCount: 0,
 			manualGwpCount: 0,
@@ -54,6 +56,7 @@ export default class Cart extends React.Component {
 			recentProducts: [],
 
 			loadingExtraButtons: true,
+			displayExtraButtons: false,
 			walletHeader: null,
 			walletBody: null,
 			walletToken: null,
@@ -63,23 +66,25 @@ export default class Cart extends React.Component {
 	componentDidMount() {
 		this.setCartData();
 		this.setRecentProducts();
-		document.addEventListener('snCart.requestComplete', this.setCartData);
+		document.addEventListener('snCart.requestComplete', this.getDiscountAndShipping);
 		document.addEventListener('snCart.requestDone', this.setCartCount);
 		document.addEventListener('snCart.recentProducts', this.setRecentProducts);
 
-		if (cartSettings.extraButtons) {
-			this.modifyExtraButtons();
-			window.addEventListener('resize', this.checkExtraButtons);
+		if (tSettings.extraButtons) {
+			setTimeout(() => {
+				this.modifyExtraButtons();
+				window.addEventListener('resize', this.checkExtraButtons);
+			}, 3000);
 			this.injectWalletListener();
 		}
 	}
 
 	componentWillUnmount() {
-		document.removeEventListener('snCart.requestComplete', this.setCartData);
+		document.removeEventListener('snCart.requestComplete', this.getDiscountAndShipping);
 		document.removeEventListener('snCart.requestDone', this.setCartCount);
 		document.removeEventListener('snCart.recentProducts', this.setRecentProducts);
 
-		if (cartSettings.extraButtons) {
+		if (tSettings.extraButtons) {
 			window.removeEventListener('resize', this.checkExtraButtons);
 		}
 	}
@@ -95,6 +100,7 @@ export default class Cart extends React.Component {
 				}
 			} else {
 				count = detail.result.item_count - prevState.manualGwpCount;
+				this.setCartData(detail.result);
 			}
 			count = count > 0 ? count : 0;
 			$('.cart-drawer__count').text(count);
@@ -108,8 +114,9 @@ export default class Cart extends React.Component {
 	/* -------------------
 		Process cart data for display
 	------------------- */
-	setCartData = async () => {
-		const { cart } = snCart;
+	setCartData = async (cartResult = null) => {
+		const cart = cartResult !== null ? cartResult : snCart.cart;
+		if (!cart) return;
 		const models = {};
 		const { items } = cart;
 
@@ -134,8 +141,28 @@ export default class Cart extends React.Component {
 
 		models.upsellData = await this.getUpsell(items);
 
-		models.totalPrice = cart.original_total_price;
-		models.subtotalPrice = cart.original_total_price + comparePriceDiff;
+		models.totalPrice = cart.items_subtotal_price;
+		models.subtotalPrice = cart.items_subtotal_price + comparePriceDiff;
+
+		const isCartInit = this.state.loadingInit;
+		this.setState({
+			loadingInit: false,
+			loadingDiscount: false,
+			loadingCart: true,
+			cart,
+			...models,
+		}, () => {
+			if (isCartInit) {
+				this.getDiscountAndShipping();
+			}
+		});
+	}
+
+	getDiscountAndShipping = async () => {
+		const { cart, totalPrice } = this.state;
+		const models = {
+			totalPrice,
+		};
 
 		await snCart.checkAppliedDiscount(cart).then((discountData) => {
 			models.discountData = this.getDiscountDataDisplay({
@@ -146,50 +173,55 @@ export default class Cart extends React.Component {
 			if (models.discountData.amount > 0) {
 				models.totalPrice -= models.discountData.amount;
 			}
-
-			return snCart.getManualGwp(cart);
-		}).then((manualGwp) => {
-			models.manualGwp = manualGwp;
-
-			return getShippingPrice(models.totalPrice);
-		}).then((shippingData) => {
-			models.shippingData = {
-				show: shippingData.shipping !== null,
-				amount: shippingData.shipping || 0,
-			};
-
-			if (customerTags.indexOf('swell_vip_level 2') >= 0 || customerTags.indexOf('swell_vip_level 3') >= 0 || customerTags.indexOf('swell_loyalty_has_account') >= 0) {
-				models.shippingData = {
-					show: true,
-					amount: 0,
-				};
-
-				models.discountMeter = {
-					enabled: true,
-					target: 1,
-					current: 1,
-				};
-			} else if (shippingData.freeRate && models.totalPrice > 0) {
-				const rate = shippingData.freeRate;
-				models.discountMeter = {
-					enabled: true,
-					target: rate.min_order_subtotal ? parseFloat(rate.min_order_subtotal) * 100 : 0,
-					current: models.totalPrice,
-				};
-			} else {
-				models.discountMeter = {
-					enabled: false,
-				};
+		}).then(() => {
+			if (isGiftCardOnly(cart.items)) {
+				models.manualGwp = { enabled: false };
+				models.shippingData = { show: false };
+				models.discountMeter = { enabled: false };
+				return Promise.resolve();
 			}
-			models.totalPrice += models.shippingData.amount;
+
+			return snCart.getManualGwp(cart)
+				.then((manualGwp) => {
+					models.manualGwp = manualGwp;
+					return getShippingPrice(models.totalPrice);
+				}).then((shippingData) => {
+					models.shippingData = {
+						show: shippingData.shipping !== null,
+						amount: shippingData.shipping || 0,
+					};
+
+					if (customerTags.indexOf('swell_vip_level 2') >= 0 || customerTags.indexOf('swell_vip_level 3') >= 0 || customerTags.indexOf('swell_loyalty_has_account') >= 0) {
+						models.shippingData = {
+							show: true,
+							amount: 0,
+						};
+
+						models.discountMeter = {
+							enabled: true,
+							target: 1,
+							current: 1,
+						};
+					} else if (shippingData.freeRate && models.totalPrice > 0) {
+						const rate = shippingData.freeRate;
+						models.discountMeter = {
+							enabled: true,
+							target: rate.min_order_subtotal ? parseFloat(rate.min_order_subtotal) * 100 : 0,
+							current: models.totalPrice,
+						};
+					} else {
+						models.discountMeter = {
+							enabled: false,
+						};
+					}
+					models.totalPrice += models.shippingData.amount;
+				});
 		});
 
 		this.updateWalletInfo();
 
 		this.setState({
-			loadingInit: false,
-			loadingDiscount: false,
-			cart,
+			loadingCart: false,
 			...models,
 		});
 	}
@@ -318,13 +350,13 @@ export default class Cart extends React.Component {
 
 		let isItemsInCart = false;
 		for (let i = 0; i < items.length; i += 1) {
-			if (cartSettings.custom_error_handles.includes(items[i].handle)) {
+			if (tSettings.custom_error_handles.includes(items[i].handle)) {
 				isItemsInCart = true;
 				break;
 			}
 		}
 
-		if (cartSettings.enable_custom_codes && isItemsInCart && isSameText(data.code, cartSettings.custom_codes_code)) {
+		if (tSettings.enable_custom_codes && isItemsInCart && isSameText(data.code, tSettings.custom_codes_code)) {
 			return true;
 		}
 
@@ -350,17 +382,17 @@ export default class Cart extends React.Component {
 		}
 
 		// to set custom code error message from theme settings when disccode is match
-		const customCodes = cartSettings.custom_codes_code.toUpperCase();
-		if (!data.valid && data.discode && data.discode.toUpperCase() === customCodes && cartSettings.enable_custom_codes) {
-			error = cartSettings.custom_error_codes_msg;
+		const customCodes = tSettings.custom_codes_code.toUpperCase();
+		if (!data.valid && data.discode && data.discode.toUpperCase() === customCodes && tSettings.enable_custom_codes) {
+			error = tSettings.custom_error_codes_msg;
 		}
 
-		if (data.reason && data.reason === 'product' && data.code && data.code.toUpperCase() === customCodes && cartSettings.enable_custom_codes) {
-			error = cartSettings.custom_error_codes_msg;
+		if (data.reason && data.reason === 'product' && data.code && data.code.toUpperCase() === customCodes && tSettings.enable_custom_codes) {
+			error = tSettings.custom_error_codes_msg;
 		}
 
 		if (data.code_reject) {
-			error = cartSettings.cart_code_rejection_msg;
+			error = tSettings.cart_code_rejection_msg;
 		}
 
 		let amount = data.discount < 0 ? (data.discount * -1) : (data.discount || 0);
@@ -369,7 +401,7 @@ export default class Cart extends React.Component {
 		}
 
 		return {
-			applied: data.valid && data.code && data.code !== '' && !error && !cartSettings.cart_code_rejection,
+			applied: data.valid && data.code && data.code !== '' && !error && !tSettings.cart_code_rejection,
 			code: !error ? (data.code || '').toUpperCase() : '',
 			isAuto: !!data.isAuto,
 			amount,
@@ -412,7 +444,7 @@ export default class Cart extends React.Component {
 
 	onApplyDiscountCode = (code) => {
 		this.setState({ loadingDiscount: true }, () => {
-			if (!cartSettings.cart_code_rejection) {
+			if (!tSettings.cart_code_rejection) {
 				snCart.applyDiscountCode(code).then((discountData) => {
 					if (discountData.enabled === false || discountData.isValid === false) {
 						this.setState({
@@ -488,21 +520,14 @@ export default class Cart extends React.Component {
 
 	modifyExtraButtons = () => {
 		if (this.extraBtnsRef) {
-			waitFor(() => this.extraBtnsRef.querySelector('.paypalLight'), () => {
-				const toBeInjected = 'div { height: 50px; }';
+			if (!this.state.displayExtraButtons) {
+				this.setState({ displayExtraButtons: true });
+			}
+			waitFor(() => this.state.displayExtraButtons && this.extraBtnsRef.querySelector('.paypalLight'), () => {
 				const paypal = this.extraBtnsRef.querySelector('.paypalLight');
-				const style = paypal.contentDocument.querySelector('style');
-				if (!style.innerHTML.includes(toBeInjected)) {
-					style.innerHTML += toBeInjected;
-				}
-
-				const iframeEl = paypal.contentDocument.querySelector('iframe.zoid-component-frame');
-				iframeEl.src = iframeEl.src.replace(/&style.height=[0-9]*&/, '&style.height=50&');
-				setTimeout(() => {
-					this.setState({ loadingExtraButtons: false }, () => {
-						paypal.parentElement.classList.add('show');
-					});
-				}, 1500);
+				this.setState({ loadingExtraButtons: false }, () => {
+					paypal.parentElement.classList.add('show');
+				});
 			});
 		}
 	}
@@ -543,7 +568,7 @@ export default class Cart extends React.Component {
 
 	updateWalletInfo = () => {
 		const { walletHeader, walletBody, walletToken } = this.state;
-		if (!cartSettings.extraButtons || walletBody === null || walletToken === null) return;
+		if (!tSettings.extraButtons || walletBody === null || walletToken === null) return;
 
 		const url = `https://dev.sandandsky.com/wallets/checkouts/${walletToken}.json`;
 		const discountCode = getCookie('currentDiscount') || '';
@@ -573,6 +598,7 @@ export default class Cart extends React.Component {
 		const {
 			cart,
 			loadingInit,
+			loadingCart,
 			isLastStockKey,
 			itemCount,
 			subtotalPrice,
@@ -587,6 +613,7 @@ export default class Cart extends React.Component {
 			discountMeter,
 			recentProducts,
 			loadingExtraButtons,
+			displayExtraButtons,
 		} = this.state;
 		return (
 			<div className="modal-dialog modal-dialog-scrollable modal-md m-0 w-100 mh-100 float-right">
@@ -594,8 +621,7 @@ export default class Cart extends React.Component {
 					<div className="modal-body pt-0 px-0">
 						<div className="container px-g d-flex flex-column align-items-stretch text-center pt-3">
 							<h5>{tStrings.cartDrawerTitle}</h5>
-							<button type="button" className="close text-body m-0 p-3 position-absolute" data-dismiss="modal" aria-label="Close">
-								{/* <span className="sni sni__close" aria-hidden="true" /> */}
+							<button type="button" className="close text-body m-0 p-3 position-absolute font-size-xs" data-dismiss="modal" aria-label="Close">
 								<SvgClose aria-hidden="true" className="d-flex" />
 							</button>
 
@@ -694,14 +720,20 @@ export default class Cart extends React.Component {
 										</>
 									)}
 
-									{discountData.amount > 0 && (
+									{loadingCart && (
+										<div className="col-12 mb-2 d-flex justify-content-center">
+											<div className="spinner-border spinner-border-sm" role="status" />
+										</div>
+									)}
+
+									{!loadingCart && discountData.amount > 0 && (
 										<>
 											<h5 className="col-8">{tStrings.cartDiscount}</h5>
 											<h5 className="col-4 text-right">{`-${formatMoney(discountData.amount)}`}</h5>
 										</>
 									)}
 
-									{shippingData.show && (
+									{!loadingCart && shippingData.show && (
 										<>
 											<h5 className="col-8">{tStrings.cartShipping}</h5>
 											<h5 className="col-4 text-right text-secondary">{shippingData.amount > 0 ? formatMoney(shippingData.amount) : 'Free'}</h5>
@@ -711,7 +743,7 @@ export default class Cart extends React.Component {
 									<p className="col-12 font-size-sm mt-2 mb-2 text-muted">{tStrings.cartTaxMessage}</p>
 								</div>
 
-								<CartExtras />
+								<CartExtras totalPrice={totalPrice} />
 							</form>
 						))}
 					</div>
@@ -719,14 +751,19 @@ export default class Cart extends React.Component {
 					<div className={`modal-footer px-hg px-lg-0 ${!loadingInit && itemCount > 0 ? '' : 'd-none'}`}>
 						<div className="row w-100">
 							<h4 className="col-8 mb-1">{tStrings.cartTotal}</h4>
-							<h4 className="col-4 mb-1 text-right">{formatMoney(totalPrice)}</h4>
-							{cartSettings.extraButtons && (
-								<div className={`col-6 my-1 pr-lg-hg ${loadingExtraButtons && 'd-flex justify-content-center align-items-center'}`} ref={(node) => { this.extraBtnsRef = node; }}>
-									{loadingExtraButtons && (<div className="spinner-border" role="status" />)}
-									<div className="dynamic-checkout__content" id="dynamic-checkout-cart" data-shopify="dynamic-checkout-cart" />
+							<h4 className="col-4 mb-1 d-flex justify-content-end align-items-center">
+								{!loadingCart && formatMoney(totalPrice)}
+								{loadingCart && (<div className="spinner-border spinner-border-sm" role="status" />)}
+							</h4>
+							{tSettings.extraButtons && (
+								<div className="col-6 my-1 pr-lg-hg" ref={(node) => { this.extraBtnsRef = node; }}>
+									<div className="extra-checkout position-relative btn border-0 p-0 d-flex justify-content-center align-items-center">
+										{loadingExtraButtons && (<div className="spinner-border position-absolute" role="status" />)}
+										{displayExtraButtons && (<div className="dynamic-checkout__content" id="dynamic-checkout-cart" data-shopify="dynamic-checkout-cart" />)}
+									</div>
 								</div>
 							)}
-							<div className={`${cartSettings.extraButtons ? 'col-6 pl-lg-hg' : 'col-12'} my-1`}>
+							<div className={`${tSettings.extraButtons ? 'col-6 pl-lg-hg' : 'col-12'} my-1`}>
 								<button
 									type="button"
 									className="btn btn-lg btn-block btn-primary px-1"

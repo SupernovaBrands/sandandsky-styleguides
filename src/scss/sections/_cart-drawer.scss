@@ -53,6 +53,12 @@
 	&__item {
 		min-height: calc-em(34);
 	}
+
+	.extra-checkout {
+		overflow: hidden;
+		background: #ffc439;
+		height: 50px;
+	}
 }
 
 #dynamic-checkout-cart {
@@ -63,15 +69,9 @@
 		display: none !important;
 		margin: 0px !important;
 		flex-basis: 100% !important;
-		height: 50px !important;
 		&.show {
-			display: block !important;
+			display: flex !important;
 		}
-	}
-	.paypalLight {
-		min-height: 50px !important;
-		max-height: 50px !important;
-		height: 50px !important;
 	}
 }
 

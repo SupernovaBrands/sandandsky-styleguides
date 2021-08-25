@@ -58,6 +58,9 @@
 		overflow: hidden;
 		background: #ffc439;
 		height: 50px;
+		&:hover {
+			box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.05);
+		}
 	}
 }
 

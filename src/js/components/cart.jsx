@@ -536,17 +536,18 @@ export default class Cart extends React.Component {
 		// Inject discount code for wallet
 		if (typeof window.fetch === 'function') {
 			const oldFetch = window.fetch;
+			const this1 = this;
 			window.fetch = function (...args) {
 				let header; let body;
 				if (args[0].indexOf('wallets/checkouts.json') > -1 && args[1] && args[1].body) {
 					header = args[1].headers;
-					body = args[1].body;
+					body = JSON.parse(args[1].body);
 					if (getCookie('currentDiscount')) {
 						body.checkout.discount_code = getCookie('currentDiscount');
 						// eslint-disable-next-line no-param-reassign
 						args[1].body = JSON.stringify(body);
 					}
-					this.setState({
+					this1.setState({
 						walletHeader: header,
 						walletBody: body,
 					});
@@ -555,7 +556,7 @@ export default class Cart extends React.Component {
 				return oldFetch.apply(this, args).then(function (e) {
 					if (e.url.indexOf('wallets/checkouts.json') > -1) {
 						e.clone().json().then(function (e2) {
-							this.setState({
+							this1.setState({
 								walletToken: e2.checkout.token,
 							});
 						});

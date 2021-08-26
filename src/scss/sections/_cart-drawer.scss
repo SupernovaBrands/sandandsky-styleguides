@@ -1,6 +1,8 @@
 .cart-drawer {
-	.modal-dialog {
-		max-width: calc-em(375);
+	@include media-breakpoint-up(lg) {
+		.modal-dialog {
+			max-width: calc-em(375);
+		}
 	}
 
 	.modal-dialog,
@@ -53,6 +55,15 @@
 	&__item {
 		min-height: calc-em(34);
 	}
+
+	.extra-checkout {
+		overflow: hidden;
+		background: #ffc439;
+		height: 50px;
+		&:hover {
+			box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.05);
+		}
+	}
 }
 
 #dynamic-checkout-cart {
@@ -63,15 +74,9 @@
 		display: none !important;
 		margin: 0px !important;
 		flex-basis: 100% !important;
-		height: 50px !important;
 		&.show {
-			display: block !important;
+			display: flex !important;
 		}
-	}
-	.paypalLight {
-		min-height: 50px !important;
-		max-height: 50px !important;
-		height: 50px !important;
 	}
 }
 

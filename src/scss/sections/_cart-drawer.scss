@@ -1,6 +1,8 @@
 .cart-drawer {
-	.modal-dialog {
-		max-width: calc-em(375);
+	@include media-breakpoint-up(lg) {
+		.modal-dialog {
+			max-width: calc-em(375);
+		}
 	}
 
 	.modal-dialog,

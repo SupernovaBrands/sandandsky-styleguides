@@ -62,6 +62,17 @@
 	background: linear-gradient(130deg, $gray-600 33%, $gray-100 50%, $gray-600 67%);
 	background-size: 1000% 1000%;
 	animation: gradient-shimmer 2.5s ease infinite;
+
+	img {
+		transition: opacity 0.4s linear;
+		opacity: 0;
+	}
+
+	&--loaded {
+		img {
+			opacity: 1;
+		}
+	}
 }
 
 // To make button looks like text

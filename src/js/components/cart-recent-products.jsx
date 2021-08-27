@@ -14,7 +14,7 @@ const RecentProducts = (props) => {
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
-		window.renderLazyImages();
+		window.checkLazyImages();
 	});
 
 	return (

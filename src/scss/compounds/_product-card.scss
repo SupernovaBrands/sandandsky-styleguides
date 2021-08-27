@@ -11,6 +11,15 @@
 			top: calc-em(10, 12);
 			left: calc-em(25, 12);
 		}
+
+		&--image {
+			top: -($grid-gutter-width * 0.5);
+			right: 0;
+
+			@include media-breakpoint-up(lg) {
+				top: -$grid-gutter-width;
+			}
+		}
 	}
 
 	&__text {

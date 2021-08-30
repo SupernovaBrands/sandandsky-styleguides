@@ -6,8 +6,10 @@
 
 	<div class="row">
 		<div class="collection-section__cover d-none d-lg-block col-lg-3">
-			<img src="https://via.placeholder.com/900x522/" alt="Placeholder" class="d-block w-100">
-			<img src="{{ imageUrl }}/decor-range-{{ range }}.svg" data-skip-inject-svg="true" alt="Decor" class=" mt-n3">
+			<noscript class="loading-lazy">
+			<img src="https://via.placeholder.com/900x522/" alt="Placeholder" class="d-block w-100" loading="lazy">
+			<img src="{{ imageUrl }}/decor-range-{{ range }}.svg" data-skip-inject-svg="true" alt="Decor" class="mt-n3" loading="lazy">
+			</noscript>
 		</div>
 		{{> compounds/product-card class="col-6 col-lg-3 mb-3" color=color}}
 		{{> compounds/product-card class="col-6 col-lg-3 mb-3" title="Hydration Boost Cream Moisturiser (2 lines)" color=color}}

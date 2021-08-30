@@ -77,6 +77,8 @@ h2{font-size:1.25em}
 .d-none{display:none!important}
 .d-block{display:block!important}
 .d-flex{display:flex!important}
+.embed-responsive{position:relative;display:block;width:100%;padding:0;overflow:hidden}
+.embed-responsive::before{display:block;content:""}
 .flex-row{flex-direction:row!important}
 .justify-content-end{justify-content:flex-end!important}
 .justify-content-center{justify-content:center!important}
@@ -147,6 +149,17 @@ h2{font-size:1.5em}
 .text-underline{text-decoration:underline}
 .font-size-sm{font-size:.875em!important}
 .bg-secondary-light{background-color:#ffeff2!important}
+.fit--cover{-o-object-fit:cover;object-fit:cover}
+@-webkit-keyframes gradient-shimmer{
+0%{background-position:100% 50%}
+100%{background-position:0 50%}
+}
+@keyframes gradient-shimmer{
+0%{background-position:100% 50%}
+100%{background-position:0 50%}
+}
+.bg-shimmer{background:#969696;background:linear-gradient(130deg,#969696 33%,#f8f8f8 50%,#969696 67%);background-size:1000% 1000%;-webkit-animation:2.5s infinite gradient-shimmer;animation:2.5s infinite gradient-shimmer}
+.bg-shimmer img{opacity:0}
 .hover-overlay{position:relative}
 .hover-overlay:after{content:"";position:absolute;top:0;bottom:0;left:0;right:0}
 .sni,.sni-after{display:flex}

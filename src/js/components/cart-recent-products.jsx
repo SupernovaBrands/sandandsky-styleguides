@@ -14,7 +14,7 @@ const RecentProducts = (props) => {
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
-		window.renderLazyImages();
+		window.checkLazyImages();
 	});
 
 	return (
@@ -22,7 +22,7 @@ const RecentProducts = (props) => {
 			<figure className="product-card position-relative d-flex flex-column">
 				<a href="/">
 					<picture className="embed-responsive bg-shimmer">
-						<img data-src={product.image} alt={product.title} className="d-block w-100 lazyload embed-responsive-item fit--cover" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" />
+						<img src={product.image} alt={product.title} className="d-block w-100 embed-responsive-item fit--cover" />
 					</picture>
 				</a>
 				<figcaption className="mt-2 flex-grow-1 d-flex flex-column">

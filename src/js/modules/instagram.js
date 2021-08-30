@@ -3,7 +3,7 @@ import { getCookie, setCookie } from '~mod/utils';
 const existingData = getCookie('ig_media');
 
 const carouselSlide = (item) => (
-	`<div class="carousel-item col-9 col-lg-1o5"><a href="${item.link}" target="_blank" class="embed-responsive embed-responsive-1by1 bg-shimmer"><img class="d-block w-100 lazyload embed-responsive-item fit--cover" data-src="${item.image}" /></a></div>`
+	`<div class="carousel-item col-9 col-lg-1o5"><a href="${item.link}" target="_blank" class="embed-responsive embed-responsive-1by1 bg-shimmer"><noscript class="loading-lazy"><img class="d-block w-100 embed-responsive-item fit--cover" src="${item.image}" loading="lazy" /></noscript></a></div>`
 );
 
 const fillCarousel = (items) => {
@@ -11,7 +11,7 @@ const fillCarousel = (items) => {
 	items.forEach((item) => {
 		$('.instagram-carousel .carousel-inner').append(carouselSlide(item));
 	});
-	window.renderLazyImages();
+	window.checkLazyImages();
 	$('.instagram-carousel .carousel--scroll').each((index, carousel) => {
 		carousel.dispatchEvent(new CustomEvent('adjustThumb'));
 		if (items.length > 5) {

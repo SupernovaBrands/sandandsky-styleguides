@@ -23,6 +23,7 @@ const webpackCfg = {
 	},
 	entry: {
 		main: './src/js/main.js',
+		lazyload: './src/js/lazyload.js',
 	},
 	output: {
 		filename: '[name].js',

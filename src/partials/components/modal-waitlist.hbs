@@ -7,18 +7,19 @@
         </span>
       </div>
       <div class="modal-body pt-0 container">
+        <p class="h2 d-lg-none text-center mb-3">Restock coming soon!</p>
         <figure class="row">
           <picture class="col-4">
             <img src="https://via.placeholder.com/160x200?text=Product" class="w-100" alt="Product Image" loading="lazy">
           </picture>
-          <figcaption class="col-8 d-flex flex-wrap align-content-center">
-            <p class="h2">Restock coming soon!</p>
+          <figcaption class="col-8 d-flex flex-wrap align-content-center pl-lg-0">
+            <p class="h2 d-none d-lg-block">Restock coming soon!</p>
             <p class="h4">Australian Pink Flash Perfection Exfoliator</p>
-            <p class="font-size-sm mb-3">Leave us your email address and we'll let you know when it's back!</p>
-            <form action="/">
+            <p class="font-size-sm">Leave us your email address and we'll let you know when it's back!</p>
+            <form action="/" class="d-none d-lg-block">
               <div class="input-group mb-2">
-                <input type="text" class="form-control col-7 rounded" placeholder="Email address" aria-label="Email address" aria-describedby="Email address">
-                <div class="input-group-append col-5">
+                <input type="text" class="form-control col-9 rounded" placeholder="Email address" aria-label="Email address" aria-describedby="Email address">
+                <div class="input-group-append col-3">
                   <button class="btn btn-primary rounded" type="button">Submit</button>
                 </div>
               </div>
@@ -26,11 +27,18 @@
             <p class="h4 font-weight-normal text-danger message-error d-none font-size-sm ">Invalid Email Address</p>
           </figcaption>
           <figcaption class="col-8 flex-wrap align-content-center d-none">
-            <p class="h2">Thank you</p>
             <p class="font-size-sm mb-3">We have received your email and will notifiy you when this item is back in stock!</p>
             <button class="btn btn-primary rounded" type="button">Shop other products</button>
           </figcaption>
         </figure>
+        <form action="/" class="d-lg-none">
+          <div class="input-group mb-2">
+            <input type="text" class="form-control col-8 rounded" placeholder="Email address" aria-label="Email address" aria-describedby="Email address">
+            <div class="input-group-append col-4">
+              <button class="btn btn-primary rounded" type="button">Submit</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>

@@ -13,14 +13,16 @@
 		}
 
 		&--image {
-			top: -(calc-em(30));
-			right: 0;
-			width: calc-em(75);
-			height: calc-em(75);
+			top: -$grid-gutter-width;
+			right: -($grid-gutter-width * 0.5);
+			width: calc-em(71.5);
+			height: calc-em(71.5);
 
 			@include media-breakpoint-up(lg) {
-				width: calc-em(95);
-				height: calc-em(95);
+				top: -(calc-em(20));
+				right: -(calc-em(5));
+				width: calc-em(90.5);
+				height: calc-em(90.5);
 			}
 		}
 	}

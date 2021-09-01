@@ -1,0 +1,16 @@
+<article class="post-card {{ class }}">
+	{{#if img}}
+	<figure class="mb-3 mx-ng mx-lg-auto">
+		<a href="#" class="d-block hover-overlay">
+			<picture class="embed-responsive bg-shimmer">
+				<img src="https://via.placeholder.com/828x420.jpg?text={{ img }}" class="embed-responsive-item fit--cover">
+			</picture>
+		</a>
+	</figure>
+	{{/if}}
+	{{#if time}}<time>05 Apr, 2021</time>{{/if}}
+	<h2 class="my-2">
+		<a href="#">{{ title }}</a>
+	</h2>
+	<p>{{#if content}}{{content}}{{else}}Lorem ipsum dolor sit amet, consectetur adipiscing elit.{{/if}}</p>
+</article>

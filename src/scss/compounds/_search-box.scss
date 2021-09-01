@@ -11,28 +11,26 @@
 	transition: all 0.3s;
 	position: fixed;
 	top: 0;
+	left: 100%;
 	height: 100vh;
-	opacity: 1;
-	transform: translateX(100%);
+	opacity: 0;
 	z-index: $zindex-sticky;
 
 	@include media-breakpoint-up(lg) {
-		opacity: 0;
 		height: 0;
 		position: absolute;
-		transform: none;
 		top: auto;
+		left: 0;
 	}
 
 	&.show {
 		transition: all .5s ease;
 		opacity: 1;
 		height: 100vh;
-		transform: translateX(0);
+		left: 0;
 
 		@include media-breakpoint-up(lg) {
 			height: 33em;
-			transform: none;
 		}
 	}
 
@@ -102,7 +100,7 @@
 		.carousel-control {
 			transform: none;
 		}
-		
+
 		.carousel--scroll {
 			.carousel-control-next {
 				top: auto;

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Video Card | Sand and Sky Style Guides</title>
+	
+	<link rel="shortcut icon" href="/sandandsky-styleguides/images/favicon.png" type="image/png">
+	
+	<link rel="preload" href="https://p.typekit.net/p.css?s=1&k=bys6mnm&ht=tk&f=24537.24538.24539.24540.24541.24542.24543.24544.24545.24546.24547.24548.24549.24550.24551.24552&a=12606089&app=typekit&e=css" as="style" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="/sandandsky-styleguides/css/main.css">
+</head>
+<body>
+	<div class="container mt-4">
+		<h1>Video Card & Modal</h1>
+		<div class="row my-3 video-card">
+			<picture class="col-12 col-lg-6 sni-after sni__play" data-toggle="modal" data-target="#videoCardModal" data-src="https://cdn.shopify.com/s/files/1/0277/5262/8295/files/Cleanser-How-To.mp4?v=1618379350">
+				<source srcset="https://via.placeholder.com/600x600" media="(min-width: 992px)">
+				<img src="https://via.placeholder.com/345x345" alt="Placeholder" class="d-block w-100">
+			</picture>
+		</div>
+
+		<h1>Video Card Icon Centered (Blog)</h1>
+		<div class="row my-3 video-card video-card--centered">
+			<picture class="col-12 col-lg-6 sni-after sni__play justify-content-center" data-toggle="modal" data-target="#videoCardModal" data-src="https://cdn.shopify.com/s/files/1/0277/5262/8295/files/Cleanser-How-To.mp4?v=1618379350">
+				<source srcset="https://via.placeholder.com/700x700" media="(min-width: 992px)">
+				<img src="https://via.placeholder.com/345x345" alt="Placeholder" class="d-block w-100">
+			</picture>
+		</div>
+		<div class="modal fade" id="videoCardModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-dialog-centered video-modal" role="document">
+				<div class="modal-content">
+					<div class="modal-body embed-responsive embed-responsive-16by9">
+						<video controls>
+							<source src type="video/mp4">
+						</video>
+						<iframe class="d-none embed-responsive-item" src></iframe>
+					</div>
+					<button type="button" class="close position-absolute bg-primary sni-after sni__times p-2" data-dismiss="modal" aria-label="Close"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/sandandsky-styleguides/js/globals.js"></script>
+	<script src="/sandandsky-styleguides/js/lazyload.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+	
+	<script src="/sandandsky-styleguides/js/bootstrap.js" defer></script>
+	<script src="/sandandsky-styleguides/js/main.js" defer></script>
+</body>
+
+</html>

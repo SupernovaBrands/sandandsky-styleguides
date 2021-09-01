@@ -79,6 +79,7 @@ h2{font-size:1.25em}
 .d-flex{display:flex!important}
 .embed-responsive{position:relative;display:block;width:100%;padding:0;overflow:hidden}
 .embed-responsive::before{display:block;content:""}
+.embed-responsive .embed-responsive-item{position:absolute;top:0;bottom:0;left:0;width:100%;height:100%;border:0}
 .flex-row{flex-direction:row!important}
 .justify-content-end{justify-content:flex-end!important}
 .justify-content-center{justify-content:center!important}
@@ -206,9 +207,9 @@ h2{font-size:1.5em}
 .mobile-nav{top:0;bottom:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);z-index:1070;transform:translateX(-100%);overflow:hidden scroll}
 .mobile-nav:before{position:absolute;right:3%;top:.875em;font-size:.875em}
 .mobile-nav.sni__times:before{z-index:1030}
-.search-box{box-shadow:0 4px 6px #0000000d;position:fixed;top:0;height:100vh;opacity:1;transform:translateX(100%);z-index:1020}
+.search-box{box-shadow:0 4px 6px #0000000d;position:fixed;top:0;left:100%;height:100vh;opacity:0;z-index:1020}
 @media (min-width:992px){
-.search-box{opacity:0;height:0;position:absolute;transform:none;top:auto}
+.search-box{height:0;position:absolute;top:auto;left:0}
 }
 .main-header{z-index:1020}
 @media (max-width:1259.98px){
@@ -226,6 +227,7 @@ h2{font-size:1.5em}
 .navbar-toggler span::after{width:.95em;top:.4em}
 .navbar-nav{flex-basis:20%}
 .cart-drawer__count{position:absolute;font-size:.625em;top:1.25em;right:.5em;left:0}
+.post-card picture{padding-top:50.72464%}
 .post-card:not(.post-card__featured) h2,.post-card:not(.post-card__featured) p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 @media (min-width:992px){
 .cart-drawer__count{font-size:.75em;top:.6875em}

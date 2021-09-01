@@ -13,11 +13,16 @@
 		}
 
 		&--image {
-			top: -($grid-gutter-width * 0.5);
-			right: 0;
+			top: -$grid-gutter-width;
+			right: -($grid-gutter-width * 0.5);
+			width: calc-em(71.5);
+			height: calc-em(71.5);
 
 			@include media-breakpoint-up(lg) {
-				top: -$grid-gutter-width;
+				top: -(calc-em(22.5));
+				right: -(calc-em(5));
+				width: calc-em(90.5);
+				height: calc-em(90.5);
 			}
 		}
 	}

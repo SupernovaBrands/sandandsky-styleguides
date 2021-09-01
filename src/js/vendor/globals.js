@@ -1,59 +1,6 @@
-window.useLazyload = false;
-
 window.assetUrl = function (filename) {
 	return `/images/${filename}`;
 };
-
-window.renderLazyImages = () => {
-	function removeBg(e) {
-		const parent = e.target.parentElement;
-		if (parent.classList.contains('bg-shimmer')) {
-			parent.classList.remove('bg-shimmer');
-		}
-		e.target.removeEventListener('load', removeBg);
-	}
-
-	function loadImage(img) {
-		const parent = img.parentElement;
-		let hasSource = parent.tagName == 'PICTURE' && parent.querySelectorAll('source').length > 0;
-		let dataSrc = img.dataset.src;
-		const hasDataSrc = dataSrc && img.src !== dataSrc;
-		const sources = parent.querySelectorAll('source');
-
-		if (img.complete && !hasDataSrc) {
-			removeBg({ target: img });
-		} else {
-			img.addEventListener('load', removeBg);
-		}
-
-		if (hasDataSrc) {
-			img.src = dataSrc;
-			if (hasSource && typeof sources !== 'undefined') {
-				sources.forEach(source => {
-					if (source.dataset.srcset) source.srcset = source.dataset.srcset;
-				});
-			}
-		}
-	}
-
-	const io = new IntersectionObserver(entries => {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				setTimeout(() => {
-					loadImage(entry.target);
-				}, 1000);
-				entry.target.classList.remove('lazyload');
-				io.unobserve(entry.target);
-			}
-		});
-	}, {
-		rootMargin: '300px 0px',
-	});
-
-	document.querySelectorAll('img.lazyload').forEach((img) => {
-		io.observe(img);
-	});
-}
 
 window.productFormSubmit = (e) => {
 	e.preventDefault();

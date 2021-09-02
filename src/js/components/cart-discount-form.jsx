@@ -79,10 +79,10 @@ export default class CartDiscountForm extends React.Component {
 		) : (
 			<div className="d-flex flex-wrap mt-1">
 				<label htmlFor="cart-discount" className="floating-label position-relative flex-grow-1 mr-1 mb-0">
-					<input id="cart-discount" type="text" name="discount" className="form-control form-control-lg text-body" placeholder={tStrings.cartDiscountInput} value={code} onChange={this.onTextChange} onKeyUp={this.onKeyUp} readOnly={loading} />
+					<input id="cart-discount" type="text" name="discount" className="form-control form-control-lg text-body" placeholder={tStrings.cartDiscountInput} value={code} onChange={this.onTextChange} onKeyUp={this.onKeyUp} readOnly={loading} data-cy="cart-discount" />
 					<span className="floating-label__text position-absolute font-size-sm">{tStrings.cartDiscountInput}</span>
 				</label>
-				<button className="btn btn-lg btn-outline-primary" type="button" onClick={this.applyDiscount} disabled={!code}>
+				<button className="btn btn-lg btn-outline-primary" type="button" onClick={this.applyDiscount} disabled={!code} data-cy="apply-btn">
 					{loading ? (<div className="spinner-border spinner-border-sm" role="status" />) : tStrings.cartDiscountApply}
 				</button>
 				{error && (

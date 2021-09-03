@@ -622,7 +622,7 @@ export default class Cart extends React.Component {
 					<div className="modal-body pt-0 px-0">
 						<div className="container px-g d-flex flex-column align-items-stretch text-center pt-3">
 							<h5>{tStrings.cartDrawerTitle}</h5>
-							<button type="button" className="close text-body m-0 p-3 position-absolute font-size-xs" data-dismiss="modal" aria-label="Close">
+							<button type="button" className="close text-body m-0 p-3 position-absolute font-size-xs" data-dismiss="modal" aria-label="Close" data-cy="close-icon">
 								<SvgClose aria-hidden="true" className="d-flex" />
 							</button>
 
@@ -645,7 +645,7 @@ export default class Cart extends React.Component {
 								<div className="container px-g">
 									<SvgSS width="45" />
 									<p className="my-3 text-center">{tStrings.cartEmpty}</p>
-									<a href="/collections" className="btn btn-primary">Shop all products</a>
+									<a href="/collections" className="btn btn-primary" data-cy="shop-all-btn">Shop all products</a>
 								</div>
 								{recentProducts.length > 0 && (
 									<>
@@ -711,8 +711,8 @@ export default class Cart extends React.Component {
 								<hr />
 
 								<div className="row">
-									<h5 className="col-8 font-weight-bold">{tStrings.cartSubtotal}</h5>
-									<h5 className="col-4 text-right">{formatMoney(subtotalPrice)}</h5>
+									<h5 className="col-8 font-weight-bold" data-cy="cart-subtotal-label">{tStrings.cartSubtotal}</h5>
+									<h5 className="col-4 text-right" data-cy="cart-subtotal-value">{formatMoney(subtotalPrice)}</h5>
 
 									{comparePriceDiff > 0 && (
 										<>
@@ -751,8 +751,8 @@ export default class Cart extends React.Component {
 
 					<div className={`modal-footer px-hg px-lg-0 ${!loadingInit && itemCount > 0 ? '' : 'd-none'}`}>
 						<div className="row w-100">
-							<h4 className="col-8 mb-1">{tStrings.cartTotal}</h4>
-							<h4 className="col-4 mb-1 d-flex justify-content-end align-items-center">
+							<h4 className="col-8 mb-1" data-cy="cart-total-label">{tStrings.cartTotal}</h4>
+							<h4 className="col-4 mb-1 d-flex justify-content-end align-items-center" data-cy="cart-total-value">
 								{!loadingCart && formatMoney(totalPrice)}
 								{loadingCart && (<div className="spinner-border spinner-border-sm" role="status" />)}
 							</h4>
@@ -770,6 +770,7 @@ export default class Cart extends React.Component {
 									className="btn btn-lg btn-block btn-primary px-1"
 									disabled={loadingDiscount || manualGwp.loading}
 									onClick={this.submitForm}
+									data-cy="checkout-btn"
 								>
 									{tStrings.cartCheckout}
 								</button>

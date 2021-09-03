@@ -26,7 +26,7 @@
 			</a>
 			<ul class="navbar-nav d-lg-flex justify-content-end flex-row">
 				<li class="nav-item d-none d-lg-block">
-					<a class="nav-link h4 font-weight-bold m-0" href="#">Track My Order</a>
+					<a class="nav-link h4 font-weight-bold m-0" href="#" data-cy="tracking-order">Track My Order</a>
 				</li>
 				<li class="nav-item d-none d-lg-block">
 					<div class="dropdown dropdown--onhover">
@@ -49,10 +49,10 @@
 					<a class="nav-link h4 m-0 font-weight-normal sni sni__search position-relative"></a>
 				</li>
 				<li class="nav-item d-none d-lg-block">
-					<a class="nav-link h4 m-0 font-weight-normal sni sni__user position-relative"></a>
+					<a class="nav-link h4 m-0 font-weight-normal sni sni__user position-relative" data-cy="account-icon"></a>
 				</li>
 				<li class="nav-item pl-3 pl-lg-2">
-					<a class="nav-link h4 m-0 font-weight-normal sni sni__cart position-relative px-0" data-toggle="modal" data-target="#cart-drawer" role="button"><span class="cart-drawer__count text-secondary d-block w-100 text-center">0</span></a>
+					<a class="nav-link h4 m-0 font-weight-normal sni sni__cart position-relative px-0" data-toggle="modal" data-target="#cart-drawer" role="button" data-cy="cart-icon"><span class="cart-drawer__count text-secondary d-block w-100 text-center">0</span></a>
 				</li>
 			</ul>
 			{{> components/tooltip}}
@@ -74,5 +74,5 @@
 
 {{!-- Adding this to include bg-shimmer related classes in critical css --}}
 {{#if critical}}
-<div class="d-none embed-responsive bg-shimmer embed-responsive-item fit--cover"><img /></div>
+<div class="d-none embed-responsive bg-shimmer"><img class="embed-responsive-item fit--cover" /></div>
 {{/if}}

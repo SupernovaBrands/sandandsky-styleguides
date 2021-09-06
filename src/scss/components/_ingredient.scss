@@ -1,19 +1,10 @@
 .tab-ingredient {
+	.plus { display: none; }
+	.minus { display: block; }
 
-	.sni__plus {
-
-		&:hover {
-			text-decoration: none;
-		}
-
-		&:before {
-			font-size: calc-em(12, 16);
-		}
-
-		&:not(.collapsed):before {
-			content: "#{map-get($supernova-icon-map, "minus")}";
-		}
-
+	.collapsed {
+		.plus { display: block; }
+		.minus { display: none; }
 	}
 
 	&__modal .close {

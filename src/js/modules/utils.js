@@ -1,5 +1,9 @@
 /* global tSettings */
 
+import SvgStarFull from '~svg/star-full.svg';
+import SvgStarHalf from '~svg/star-half.svg';
+import SvgStarHollow from '~svg/star-hollow.svg';
+
 export const get = (obj, path, defValue) => {
 	if (!path) return undefined;
 	const pathArray = Array.isArray(path) ? path : path.match(/([^[.\]])+/g);
@@ -268,6 +272,8 @@ export const scrollToElement = (targetSelector, offset = -70) => {
 	$('html, body').animate({ scrollTop: $(targetSelector).offset().top + offset }, 600);
 };
 
+export const injectSvgClass = (svg, extraClass = '') => svg.replace('<svg ', `<svg class="svg ${extraClass}" `);
+
 export const buildStars = (score) => {
 	let stars = '';
 	const maxScore = 5;
@@ -277,11 +283,11 @@ export const buildStars = (score) => {
 		const se = hollow - s + 1;
 		const seFloor = se - Math.floor(se);
 		if ((s > hollow && se < 0) || (s > hollow && se > 0 && seFloor < 0.5)) {
-			stars += '<i class="sni sni__star-hollow"></i>';
+			stars += injectSvgClass(SvgStarHollow);
 		} else if (s > hollow && se > 0 && seFloor >= 0.5) {
-			stars += '<i class="sni sni__star-half"></i>';
+			stars += injectSvgClass(SvgStarHalf);
 		} else {
-			stars += '<i class="sni sni__star-full"></i>';
+			stars += injectSvgClass(SvgStarFull);
 		}
 	}
 	return stars;

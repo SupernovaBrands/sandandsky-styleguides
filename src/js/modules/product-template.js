@@ -27,7 +27,7 @@ if (mobileSwatchTrigger && mobileSwatch.length > 0) {
 	observer.observe(mobileSwatchTrigger);
 }
 
-$('.product-form .sni__minus').on('click', function () {
+$('.product-form .quantity--minus').on('click', function () {
 	const inputElem = $(this).parent().find('input[name="quantity"]');
 	const num = inputElem.val();
 	if (num > 1) {
@@ -36,7 +36,7 @@ $('.product-form .sni__minus').on('click', function () {
 	return false;
 });
 
-$('.product-form .sni__plus').on('click', function () {
+$('.product-form quantity--plus').on('click', function () {
 	const inputElem = $(this).parent().find('input[name="quantity"]');
 	const num = inputElem.val();
 	if (num > 0 && num < 99) {

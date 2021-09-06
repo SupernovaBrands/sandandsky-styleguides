@@ -44,20 +44,11 @@
 				outline: 0;
 			}
 		}
+	}
 
-		.sni__close {
-			right: calc-em(16, 16);
-			color: $body-color;
-
-			&:after {
-				font-size: calc-em(12, 16);
-				margin-left: 1em;
-			}
-
-			&:hover {
-				text-decoration: none;
-			}
-		}
+	&__close {
+		right: calc-em(16, 16);
+		color: $body-color;
 	}
 
 	&__result {

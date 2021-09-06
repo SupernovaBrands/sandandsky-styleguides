@@ -1,17 +1,35 @@
 <div class="modal fade" id="KlarnaModal" tabindex="-1" role="dialog" aria-labelledby="KlarnaModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered klarna" role="document">
 		<div class="modal-content p-4 rounded-0">
-			<div class="modal-header position-relative text-center py-0 border-0 sni sni__klarna-logo justify-content-center">
-				<button type="button" class="close position-absolute text-body sni-after sni__close p-0" data-dismiss="modal" aria-label="Close"></button>
+			<div class="modal-header position-relative text-center py-0 border-0 justify-content-center">
+				<img class="svg" src="icons/logo-klarna.svg" replace-to-svg />
+				<button type="button" class="close position-absolute text-body p-0 d-flex font-size-sm" data-dismiss="modal" aria-label="Close">
+					<img class="svg" src="icons/close.svg" replace-to-svg />
+				</button>
 			</div>
 			<div class="modal-body px-1 px-lg-3">
 				<h2>4 interest-free payments of <br><span id="modal-price">£9.22</span></h2>
 				<p class="mb-3">Buy what you love and split the cost. It’s easy and interest-free.</p>
 				<ul class="list-unstyled klarna__list">
-					<li class="sni sni__square pb-3 position-relative">Add item(s) to your cart</li>
-					<li class="sni sni__square pb-2 position-relative">Go to checkout and choose <i class="sni sni__klarna-logo align-items-center ml-1 bg-secondary-light rounded px-1 py-2 position-relative"></i></li>
-					<li class="sni sni__square pb-3 position-relative">Enter your debit or credit card information</li>
-					<li class="sni sni__square pb-2 position-relative">Your first payment is taken when the order is processed and the remaining 3 are automatically taken every two weeks</li>
+					<li class="pb-3 d-flex position-relative">
+						<img class="svg square flex-shrink-0" src="icons/square.svg" replace-to-svg />
+						Add item(s) to your cart
+					</li>
+					<li class="pb-2 d-flex position-relative">
+						<img class="svg square flex-shrink-0" src="icons/square.svg" replace-to-svg />
+						Go to checkout and choose
+						<i class="d-flex logo align-items-center ml-1 bg-secondary-light rounded px-1 py-2 position-relative">
+							<img class="svg" src="icons/logo-klarna.svg" replace-to-svg />
+						</i>
+					</li>
+					<li class="pb-3 d-flex position-relative">
+						<img class="svg square flex-shrink-0" src="icons/square.svg" replace-to-svg />
+						Enter your debit or credit card information
+					</li>
+					<li class="pb-2 d-flex position-relative">
+						<img class="svg square flex-shrink-0" src="icons/square.svg" replace-to-svg />
+						Your first payment is taken when the order is processed and the remaining 3 are automatically taken every two weeks
+					</li>
 				</ul>
 				<p class="font-size-sm">See payment <a tabindex="0" href="https://cdn.klarna.com/1.0/shared/content/legal/terms/0/en_us/sliceitinx" target="_blank">terms</a>. A
 					higher initial payment may be required for some consumers. CA residents:

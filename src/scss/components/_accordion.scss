@@ -1,8 +1,12 @@
 .accordion {
 	span {
 		cursor: pointer;
-		&:not(.collapsed):after {
-			content: "#{map-get($supernova-icon-map, "minus")}";
+		.plus { display: none; }
+		.minus { display: block; }
+
+		&.collapsed {
+			.plus { display: block; }
+			.minus { display: none; }
 		}
 	}
 }

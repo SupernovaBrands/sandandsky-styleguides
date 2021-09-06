@@ -1,22 +1,33 @@
-<nav class="mobile-nav bg-white position-fixed d-lg-none sni sni__close">
+<nav class="mobile-nav bg-white position-fixed d-lg-none">
 	{{#unless critical}}
+	<img class="svg mobile-nav__close" src="icons/close.svg" replace-to-svg />
 	<ul id="mobileMenu" class="mobile-nav__menu h-100 col-12 bg-white list-unstyled p-0">
 		<li class="d-flex justify-content-center w-100">
-			<a href="#" class="navbar-brand mx-auto sni sni__ss text-secondary"></a>
+			<a href="#" class="navbar-brand mx-auto d-flex text-secondary">
+				<img class="svg" src="icons/logo-ss.svg" replace-to-svg />
+			</a>
 		</li>
-		<li class="px-3 py-2 sni sni__chevron-next align-items-center w-100">
+		<li class="px-3 py-2 d-flex align-items-center w-100">
+			<img class="svg" src="icons/chevron-next.svg" replace-to-svg />
 			<input type="radio" name="menu" class="d-none" id="products">
 			<label class="position-relative m-0 w-100" for="products">Products</label>
 			<ul class="mobile-nav__menu-child position-absolute bg-white col-12 list-unstyled p-0 h-100">
 				<input type="radio" name="menu" id="back-to-menu-products" class="d-none">
-				<label for="back-to-menu-products" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center"><i class="sni sni__chevron-prev mr-1 bg-white"></i>Back</label>
+				<label for="back-to-menu-products" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center">
+					<img class="svg font-size-sm mr-1" src="icons/chevron-prev.svg" replace-to-svg />
+					Back
+				</label>
 				<li class="px-3 py-2"><h4>Products</h4></li>
-				<li class="px-4 py-2 sni sni__chevron-next align-items-center w-100">
+				<li class="px-4 py-2 d-flex align-items-center w-100">
+					<img class="svg" src="icons/chevron-next.svg" replace-to-svg />
 					<input type="radio" name="child" class="d-none" id="products-face-masks">
 					<label class="position-relative m-0 w-100" for="products-face-masks">Face Masks</label>
 					<ul class="mobile-nav__menu-grandchild position-absolute bg-white col-12 list-unstyled p-0 h-100">
 						<input type="radio" name="child" id="back-to-child-face-masks" class="d-none">
-						<label for="back-to-child-face-masks" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white"><i class="sni sni__chevron-prev mr-1 bg-white"></i>Back</label>
+						<label for="back-to-child-face-masks" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white">
+							<img class="svg font-size-sm mr-1" src="icons/chevron-prev.svg" replace-to-svg />
+							Back
+						</label>
 						<li class="px-3 py-2">
 							<h4>Face Masks<h4>
 						</li>
@@ -30,12 +41,16 @@
 						</li>
 					</ul>
 				</li>
-				<li class="px-4 py-2 sni sni__chevron-next align-items-center w-100">
+				<li class="px-4 py-2 d-flex align-items-center w-100">
+					<img class="svg" src="icons/chevron-next.svg" replace-to-svg />
 					<input type="radio" name="child" class="d-none" id="products-cleanser">
 					<label class="position-relative m-0 w-100" for="products-cleanser">Cleanser & Exfoliators</label>
 					<ul class="mobile-nav__menu-grandchild position-absolute bg-white col-12 list-unstyled p-0 h-100">
 						<input type="radio" name="child" id="back-to-child-cleanser" class="d-none">
-						<label for="back-to-child-cleanser" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white"><i class="sni sni__chevron-prev mr-1 bg-white"></i>Back</label>
+						<label for="back-to-child-cleanser" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white">
+							<img class="svg font-size-sm mr-1" src="icons/chevron-prev.svg" replace-to-svg />
+							Back
+						</label>
 						<li class="px-3 py-2">
 							<h4>Cleanser & Exfoliators<h4>
 						</li>
@@ -51,23 +66,31 @@
 				</li>
 			</ul>
 		</li>
-		<li class="px-3 py-2 sni sni__chevron-next align-items-center">
+		<li class="px-3 py-2 d-flex align-items-center">
+			<img class="svg" src="icons/chevron-next.svg" replace-to-svg />
 			<input type="radio" name="menu" class="d-none" id="skin-benefits">
 			<label class="position-relative m-0 w-100" for="skin-benefits">Skin Benefits</label>
 			<ul class="mobile-nav__menu-child position-absolute bg-white col-12 list-unstyled p-0 h-100">
 				<input type="radio" name="menu" id="back-to-menu-skin-benefits" class="d-none">
-				<label for="back-to-menu-skin-benefits" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center"><i class="sni sni__chevron-prev mr-1 bg-white"></i>Back</label>
+				<label for="back-to-menu-skin-benefits" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center">
+					<img class="svg font-size-sm mr-1" src="icons/chevron-prev.svg" replace-to-svg />
+					Back
+				</label>
 				<li class="px-3 py-2"><h4>Skin Benefits</h4></li>
-				<li class="px-4 py-2 sni sni__chevron-next align-items-center w-100">
+				<li class="px-4 py-2 d-flex align-items-center w-100">
+					<img class="svg" src="icons/chevron-next.svg" replace-to-svg />
 					<input type="radio" name="child" class="d-none" id="skin-benefits-detoxify">
-					<i class="sni sni__range-apc mr-2"></i>
+					<img class="svg range-icon text-secondary mr-2" src="icons/range-apc.svg" replace-to-svg />
 					<label class="position-relative m-0 w-100" for="skin-benefits-detoxify">
-						<h4 class="d-block font-weight-bold m-0">Detoxify</h4>
+						<h4 class="d-block font-weight-bold m-0 text-secondary">Detoxify</h4>
 						<h5 class="font-weight-normal mb-0">Australia Pink Clay</h5>
 					</label>
 					<ul class="mobile-nav__menu-grandchild position-absolute bg-white col-12 list-unstyled p-0 h-100">
 						<input type="radio" name="child" id="back-to-child-face-masks" class="d-none">
-						<label for="back-to-child-face-masks" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white"><i class="sni sni__chevron-prev mr-1 bg-white"></i>Back</label>
+						<label for="back-to-child-face-masks" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white">
+							<img class="svg font-size-sm mr-1" src="icons/chevron-prev.svg" replace-to-svg />
+							Back
+						</label>
 						<li class="px-3 py-2">
 							<h4>Skin Benefits > Detoxify - Australian Pink Clay<h4>
 						</li>
@@ -109,16 +132,20 @@
 						</li>
 					</ul>
 				</li>
-				<li class="px-4 py-2 sni sni__chevron-next align-items-center w-100">
+				<li class="px-4 py-2 d-flex align-items-center w-100">
+					<img class="svg" src="icons/chevron-next.svg" replace-to-svg />
 					<input type="radio" name="child" class="d-none" id="skin-benefits-brighten">
-					<i class="sni sni__range-aea mr-2"></i>
+					<img class="svg range-icon text-aea mr-2" src="icons/range-aea.svg" replace-to-svg />
 					<label class="position-relative m-0 w-100" for="skin-benefits-brighten">
-						<h4 class="d-block font-weight-bold m-0">Brighten</h4>
+						<h4 class="d-block font-weight-bold m-0 text-aea">Brighten</h4>
 						<h5 class="font-weight-normal mb-0">Australia Emu Apple</h5>
 					</label>
 					<ul class="mobile-nav__menu-grandchild position-absolute bg-white col-12 list-unstyled p-0 h-100">
 						<input type="radio" name="child" id="back-to-child-face-masks" class="d-none">
-						<label for="back-to-child-face-masks" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white"><i class="sni sni__chevron-prev mr-1 bg-white"></i>Back</label>
+						<label for="back-to-child-face-masks" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white">
+							<img class="svg font-size-sm mr-1" src="icons/chevron-prev.svg" replace-to-svg />
+							Back
+						</label>
 						<li class="px-3 py-2">
 							<h4>Skin Benefits > Brighten - Australian Emu Apple<h4>
 						</li>
@@ -160,16 +187,20 @@
 						</li>
 					</ul>
 				</li>
-				<li class="px-4 py-2 sni sni__chevron-next align-items-center w-100">
+				<li class="px-4 py-2 d-flex align-items-center w-100">
+					<img class="svg" src="icons/chevron-next.svg" replace-to-svg />
 					<input type="radio" name="child" class="d-none" id="skin-benefits-hydrate">
-					<i class="sni sni__range-tsw mr-2"></i>
+					<img class="svg range-icon text-tsw mr-2" src="icons/range-tsw.svg" replace-to-svg />
 					<label class="position-relative m-0 w-100" for="skin-benefits-hydrate">
-						<h4 class="d-block font-weight-bold m-0">Hydrate</h4>
+						<h4 class="d-block font-weight-bold m-0 text-tsw">Hydrate</h4>
 						<h5 class="font-weight-normal mb-0">Tasmanian Spring Water</h5>
 					</label>
 					<ul class="mobile-nav__menu-grandchild position-absolute bg-white col-12 list-unstyled p-0 h-100">
 						<input type="radio" name="child" id="back-to-child-face-masks" class="d-none">
-						<label for="back-to-child-face-masks" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white"><i class="sni sni__chevron-prev mr-1 bg-white"></i>Back</label>
+						<label for="back-to-child-face-masks" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white">
+							<img class="svg font-size-sm mr-1" src="icons/chevron-prev.svg" replace-to-svg />
+							Back
+						</label>
 						<li class="px-3 py-2">
 							<h4>Skin Benefits > Hydrate - Tasmanian Spring Water<h4>
 						</li>
@@ -231,12 +262,19 @@
 		<li class="px-3 py-3 align-items-center">
 			<a class="position-relative m-0 btn btn-lg btn-primary w-100">Shop All</a>
 		</li>
-		<li class="px-3 py-2 align-items-center sni sni__chevron-next align-items-center w-100">
+		<li class="px-3 py-2 align-items-center d-flex align-items-center w-100">
+			<img class="svg" src="icons/chevron-next.svg" replace-to-svg />
 			<input type="radio" name="menu" class="d-none" id="countries">
-			<label class="position-relative m-0 w-100 sni sni__earth" for="countries">US (USD)</label>
+			<label class="position-relative m-0 w-100 d-flex countries" for="countries">
+				<img class="svg mr-2" src="icons/earth.svg" replace-to-svg />
+				US (USD)
+			</label>
 			<ul class="mobile-nav__menu-child position-absolute bg-white col-12 list-unstyled p-0 h-100">
 				<input type="radio" name="menu" id="back-to-menu" class="d-none">
-				<label for="back-to-menu" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white"><i class="sni sni__chevron-prev mr-1 bg-white"></i>Back</label>
+				<label for="back-to-menu" class="mobile-nav__back px-3 py-2 m-0 position-absolute d-flex align-items-center bg-white">
+					<img class="svg font-size-sm mr-1" src="icons/chevron-prev.svg" replace-to-svg />
+					Back
+				</label>
 				<li class="px-3 py-2"><h4>Language / Currency</h4></li>
 				<li class="px-4 py-2 align-items-center w-100">
 

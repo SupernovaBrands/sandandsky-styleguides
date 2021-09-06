@@ -25,7 +25,8 @@ const SearchBox = {
 			SearchBox.clear();
 		});
 
-		$('header .sni__search, .search-box__top .sni__close').on('click', function () {
+		$('.search-box__open, .search-box__close').on('click', function (e) {
+			e.preventDefault();
 			SearchBox.searchBoxToggle();
 		});
 	},

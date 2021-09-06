@@ -32,7 +32,7 @@
 .dropdown {
 	&--onhover {
 		&:hover {
-			.sni__chevron-down:after {
+			.svg {
 				transform: rotate(180deg) translateX(0%);
 			}
 

@@ -33,6 +33,10 @@ h3, .h3 {
 	font-size: $font-size-lg !important;
 }
 
+.font-size-base {
+	font-size: $font-size-base !important;
+}
+
 .font-size-sm {
 	font-size: $font-size-sm !important;
 }
@@ -41,36 +45,19 @@ h3, .h3 {
 	font-size: $font-size-xs !important;
 }
 
-.icon-size-lg {
-	font-size: calc-em(32) !important;
-}
-
 .icon-size-xl {
 	font-size: calc-em(40) !important;
 }
 
-.sni.sni__range-aea:before,
-.sni-after.sni__range-aea:after {
-	color: $range-aea;
-}
-
-.sni.sni__range-apc:before,
-.sni-after.sni__range-apc:after {
-	color: $range-apc;
-}
-
-.sni.sni__range-tsw:before,
-.sni-after.sni__range-tsw:after {
-	color: $range-tsw;
-}
+// Range color text
+@include text-emphasis-variant(".text-aea", $range-aea, true);
+@include text-emphasis-variant(".text-tsw", $range-tsw, true);
 
 .link-secondary {
 	color: $secondary;
-	
+
 	&:hover {
 		color: $secondary;
 		text-decoration: underline;
 	}
 }
-
-@include text-emphasis-variant(".text-aea", $range-aea, true);

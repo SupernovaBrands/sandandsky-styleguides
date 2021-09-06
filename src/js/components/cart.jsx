@@ -1,4 +1,4 @@
-/* global tSettings tStrings customerTags */
+/* global tSettings tStrings customerTags ga */
 
 import React from 'react';
 import { getSizedImageUrl } from '@shopify/theme-images';
@@ -25,8 +25,8 @@ import {
 	isGiftCardOnly,
 } from '~mod/utils';
 
-import SvgClose from '~svg/close.svg';
-import SvgSS from '~svg/ss.svg';
+import SvgClose from '~svg/close.svg?react';
+import SvgSS from '~svg/logo-ss.svg?react';
 
 import { blogUpsellBtn } from '~mod/blog-upsell';
 
@@ -74,6 +74,7 @@ export default class Cart extends React.Component {
 			setTimeout(() => {
 				this.modifyExtraButtons();
 				window.addEventListener('resize', this.checkExtraButtons);
+				this.trackPaypal();
 			}, 3000);
 			this.injectWalletListener();
 		}
@@ -86,6 +87,7 @@ export default class Cart extends React.Component {
 
 		if (tSettings.extraButtons) {
 			window.removeEventListener('resize', this.checkExtraButtons);
+			window.removeEventListener('blur');
 		}
 	}
 
@@ -368,10 +370,10 @@ export default class Cart extends React.Component {
 		if (data.reason) {
 			switch (data.reason) {
 				case 'purchase':
-					error = `${tStrings.discount_min_spend} ${formatMoney(data.minPurchase)}`;
+					error = `${tStrings.discountErrorMinSpend} ${formatMoney(data.minPurchase)}`;
 					break;
 				case 'product':
-					error = tStrings.discount_error;
+					error = tStrings.discountError;
 					break;
 				default:
 					error = data.reason;
@@ -595,6 +597,31 @@ export default class Cart extends React.Component {
 		$('#cart-drawer-form').trigger('submit');
 	}
 
+	trackPaypal() {
+		let iframeMouseOver = false;
+
+		window.addEventListener('blur',	() => {
+			if (iframeMouseOver) {
+				ga('send', {
+					hitType: 'event',
+					eventCategory: 'paypal-cartdrawer',
+					eventAction: 'click',
+					eventLabel: 'Paypal CartDrawer',
+				});
+			}
+		});
+
+		document.getElementById('dynamic-checkout-cart')
+			.addEventListener('mouseover',	() => {
+				iframeMouseOver = true;
+			});
+
+		document.getElementById('dynamic-checkout-cart')
+			.addEventListener('mouseout',	() => {
+				iframeMouseOver = false;
+			});
+	}
+
 	render() {
 		const {
 			cart,
@@ -622,8 +649,8 @@ export default class Cart extends React.Component {
 					<div className="modal-body pt-0 px-0">
 						<div className="container px-g d-flex flex-column align-items-stretch text-center pt-3">
 							<h5>{tStrings.cartDrawerTitle}</h5>
-							<button type="button" className="close text-body m-0 p-3 position-absolute font-size-xs" data-dismiss="modal" aria-label="Close">
-								<SvgClose aria-hidden="true" className="d-flex" />
+							<button type="button" className="close text-body m-0 p-3 position-absolute font-size-xs" data-dismiss="modal" aria-label="Close" data-cy="close-icon">
+								<SvgClose className="d-flex svg" />
 							</button>
 
 							{discountMeter.enabled && itemCount > 0 && (
@@ -643,9 +670,9 @@ export default class Cart extends React.Component {
 						{!loadingInit && (itemCount === 0 ? (
 							<div className="pt-3 text-center">
 								<div className="container px-g">
-									<SvgSS width="45" />
+									<SvgSS class="svg logo text-secondary" />
 									<p className="my-3 text-center">{tStrings.cartEmpty}</p>
-									<a href="/collections" className="btn btn-primary">Shop all products</a>
+									<a href="/collections" className="btn btn-primary" data-cy="shop-all-btn">Shop all products</a>
 								</div>
 								{recentProducts.length > 0 && (
 									<>
@@ -711,13 +738,13 @@ export default class Cart extends React.Component {
 								<hr />
 
 								<div className="row">
-									<h5 className="col-8 font-weight-bold">{tStrings.cartSubtotal}</h5>
-									<h5 className="col-4 text-right">{formatMoney(subtotalPrice)}</h5>
+									<h5 className="col-8 font-weight-bold" data-cy="cart-subtotal-label">{tStrings.cartSubtotal}</h5>
+									<h5 className="col-4 text-right" data-cy="cart-subtotal-value">{formatMoney(subtotalPrice)}</h5>
 
 									{comparePriceDiff > 0 && (
 										<>
-											<h5 className="col-8">{tStrings.cartBundleDiscount}</h5>
-											<h5 className="col-4 text-right">{`-${formatMoney(comparePriceDiff)}`}</h5>
+											<h5 className="col-8" data-cy="cart-bundledisount-label">{tStrings.cartBundleDiscount}</h5>
+											<h5 className="col-4 text-right" data-cy="cart-bundledisount-value">{`-${formatMoney(comparePriceDiff)}`}</h5>
 										</>
 									)}
 
@@ -729,8 +756,8 @@ export default class Cart extends React.Component {
 
 									{!loadingCart && discountData.amount > 0 && (
 										<>
-											<h5 className="col-8">{tStrings.cartDiscount}</h5>
-											<h5 className="col-4 text-right">{`-${formatMoney(discountData.amount)}`}</h5>
+											<h5 className="col-8" data-cy="cart-discount-label">{tStrings.cartDiscount}</h5>
+											<h5 className="col-4 text-right" data-cy="cart-discount-value">{`-${formatMoney(discountData.amount)}`}</h5>
 										</>
 									)}
 
@@ -751,8 +778,8 @@ export default class Cart extends React.Component {
 
 					<div className={`modal-footer px-hg px-lg-0 ${!loadingInit && itemCount > 0 ? '' : 'd-none'}`}>
 						<div className="row w-100">
-							<h4 className="col-8 mb-1">{tStrings.cartTotal}</h4>
-							<h4 className="col-4 mb-1 d-flex justify-content-end align-items-center">
+							<h4 className="col-8 mb-1" data-cy="cart-total-label">{tStrings.cartTotal}</h4>
+							<h4 className="col-4 mb-1 d-flex justify-content-end align-items-center" data-cy="cart-total-value">
 								{!loadingCart && formatMoney(totalPrice)}
 								{loadingCart && (<div className="spinner-border spinner-border-sm" role="status" />)}
 							</h4>
@@ -770,6 +797,7 @@ export default class Cart extends React.Component {
 									className="btn btn-lg btn-block btn-primary px-1"
 									disabled={loadingDiscount || manualGwp.loading}
 									onClick={this.submitForm}
+									data-cy="checkout-btn"
 								>
 									{tStrings.cartCheckout}
 								</button>

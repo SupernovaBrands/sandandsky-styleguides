@@ -16,6 +16,7 @@ const replace = require('gulp-replace');
 const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
+const svgmin = require('gulp-svgmin');
 
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
@@ -242,6 +243,19 @@ const webpackBuild = (isWatch = false) => function () {
 	});
 };
 
+const optimizeSvg = function () {
+	return src('images/**/*.svg')
+		.pipe(svgmin({
+			plugins: [
+				{ name: 'removeDimensions', active: true },
+				{ name: 'removeViewBox', active: false },
+				{ name: 'convertStyleToAttrs', active: true },
+				{ name: 'removeStyleElement', active: true },
+			],
+		}))
+		.pipe(dest('images'));
+};
+
 const watchFiles = function (done) {
 	watch(files.allScss, scssFiles);
 	watch(files.index, indexFile);
@@ -281,6 +295,7 @@ task(indexFile);
 task(scssFiles);
 task(initServer);
 task(extractCriticalCss);
+task(optimizeSvg);
 task('webpack', webpackBuild());
 task('webpackWatch', webpackBuild(true));
 task(

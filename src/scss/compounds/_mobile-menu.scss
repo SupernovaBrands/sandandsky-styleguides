@@ -17,7 +17,7 @@
 		font-size: calc-em(14);
 	}
 
-	&.sni__times {
+	&.sni__close {
 		&:before {
 			z-index: $zindex-fixed;
 		}

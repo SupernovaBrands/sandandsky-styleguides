@@ -289,8 +289,8 @@ $supernova-icon-map: (
 .sni-after.sni__tiktok:after {
 	content: map-get($supernova-icon-map, "tiktok");
 }
-.sni.sni__times:before,
-.sni-after.sni__times:after {
+.sni.sni__close:before,
+.sni-after.sni__close:after {
 	content: map-get($supernova-icon-map, "times");
 }
 .sni.sni__trophy:before,

@@ -240,7 +240,7 @@ select+.floating-label__text{left:.91667em;top:.75em;transform:none}
 .mega-menu .sni__range-tsw small{color:#42a1ca}
 .mobile-nav{top:0;bottom:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);z-index:1070;transform:translateX(-100%);overflow:hidden scroll}
 .mobile-nav:before{position:absolute;right:3%;top:.875em;font-size:.875em}
-.mobile-nav.sni__times:before{z-index:1030}
+.mobile-nav.sni__close:before{z-index:1030}
 .search-box{box-shadow:0 4px 6px #0000000d;position:fixed;top:0;left:100%;height:100vh;opacity:0;z-index:1020}
 @media (min-width:992px){
 .search-box{height:0;position:absolute;top:auto;left:0}

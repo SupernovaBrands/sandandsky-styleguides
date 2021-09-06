@@ -25,7 +25,7 @@ const SearchBox = {
 			SearchBox.clear();
 		});
 
-		$('header .sni__search, .search-box__top .sni__times').on('click', function () {
+		$('header .sni__search, .search-box__top .sni__close').on('click', function () {
 			SearchBox.searchBoxToggle();
 		});
 	},

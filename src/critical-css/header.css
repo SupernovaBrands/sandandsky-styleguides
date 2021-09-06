@@ -138,7 +138,7 @@ button{border-radius:0;margin:0;font-family:inherit;font-size:inherit;line-heigh
 .sni-after.sni__chevron-down:after{content:""}
 .sni.sni__close-circle:before{content:""}
 .sni.sni__search:before{content:""}
-.sni.sni__times:before{content:""}
+.sni.sni__close:before{content:""}
 .sni.sni__user:before{content:""}
 .announcement-bar{padding:.59375em 0}
 .announcement-bar a{color:#fff}
@@ -177,7 +177,7 @@ button{border-radius:0;margin:0;font-family:inherit;font-size:inherit;line-heigh
 .mega-menu:before{content:" ";width:100%;height:1em;margin-top:-.5em}
 .mobile-nav{top:0;bottom:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);z-index:1070;transform:translateX(-100%);overflow:hidden scroll}
 .mobile-nav:before{position:absolute;right:3%;top:.875em;font-size:.875em}
-.mobile-nav.sni__times:before{z-index:1030}
+.mobile-nav.sni__close:before{z-index:1030}
 .search-box{box-shadow:0 4px 6px #0000000d;position:fixed;top:0;left:100%;height:100vh;opacity:0;z-index:1020}
 @media (min-width:992px){
 .search-box{height:0;position:absolute;top:auto;left:0}

@@ -28,6 +28,15 @@ const SearchBox = {
 		$('header .sni__search, .search-box__top .sni__times').on('click', function () {
 			SearchBox.searchBoxToggle();
 		});
+
+		$('.nav-item--mega-menu, .dropdown--onhover').hover(function () {
+			if (SearchBox.isSearchOpen()) {
+				SearchBox.searchBoxToggle();
+			}
+		});
+	},
+	isSearchOpen() {
+		return $('.search-box').hasClass('show');
 	},
 	searchBoxToggle() {
 		$('.search-box').toggleClass('show');

@@ -32,6 +32,14 @@
 		@include media-breakpoint-up(lg) {
 			height: 33em;
 		}
+
+    & ~ .search-box-overlay {
+      content: ' ';
+      height: 100%;
+      background: #000;
+      z-index: $zindex-dropdown;
+      opacity: .5;
+    }
 	}
 
 	&__top {

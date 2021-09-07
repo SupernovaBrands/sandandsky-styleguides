@@ -1,9 +1,13 @@
 /* global tStrings */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import { formatMoney } from '~mod/utils';
+
+import SvgChevronPrev from '~svg/chevron-prev.svg?react';
+import SvgChevronNext from '~svg/chevron-next.svg?react';
 
 const RecentProducts = (props) => {
 	const {
@@ -12,17 +16,18 @@ const RecentProducts = (props) => {
 	} = props;
 
 	const [loading, setLoading] = useState(false);
+	const [shimmer, setShimmer] = useState(true);
 
-	useEffect(() => {
-		window.checkLazyImages();
-	});
+	const afterImageLoad = () => {
+		setShimmer(false);
+	};
 
 	return (
 		<div className="item__third bg-white px-g">
 			<figure className="product-card position-relative d-flex flex-column">
 				<a href="/">
-					<picture className="embed-responsive bg-shimmer">
-						<img src={product.image} alt={product.title} className="d-block w-100 embed-responsive-item fit--cover" />
+					<picture className={`embed-responsive ${shimmer ? 'bg-shimmer' : ''}`}>
+						<LazyLoadImage src={product.image} alt={product.title} className="d-block w-100 embed-responsive-item fit--cover" afterLoad={afterImageLoad} />
 					</picture>
 				</a>
 				<figcaption className="mt-2 flex-grow-1 d-flex flex-column">
@@ -81,13 +86,17 @@ const CartRecentProducts = (props) => {
 
 			{withNext && (
 				<a className="carousel-control-prev text-body" href="#cart-recent-products" role="button" data-slide="prev">
-					<span className="carousel-control-prev-icon carousel-control--background sni sni__chevron-prev justify-content-center align-items-center" aria-hidden="true" />
+					<span className="carousel-control-prev-icon carousel-control--background d-flex justify-content-center align-items-center" aria-hidden="true">
+						<SvgChevronPrev class="svg" />
+					</span>
 					<span className="sr-only">Previous</span>
 				</a>
 			)}
 			{withNext && (
 				<a className="carousel-control-next text-body" href="#cart-recent-products" role="button" data-slide="next">
-					<span className="carousel-control-next-icon carousel-control--background sni sni__chevron-next justify-content-center align-items-center" aria-hidden="true" />
+					<span className="carousel-control-next-icon carousel-control--background d-flex justify-content-center align-items-center" aria-hidden="true">
+						<SvgChevronNext class="svg" />
+					</span>
 					<span className="sr-only">Next</span>
 				</a>
 			)}

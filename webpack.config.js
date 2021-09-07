@@ -37,7 +37,7 @@ const webpackCfg = {
 			'~mod': path.resolve(__dirname, './src/js/modules'),
 			'~comp': path.resolve(__dirname, './src/js/components'),
 			'~rt': path.resolve(__dirname, './src/js/templates'),
-			'~svg': path.resolve(__dirname, './fonts/svgs'),
+			'~svg': path.resolve(__dirname, './images/icons'),
 		},
 	},
 	module: {
@@ -52,7 +52,15 @@ const webpackCfg = {
 			},
 			{
 				test: /\.svg$/,
-				use: ['@svgr/webpack'],
+				oneOf: [
+					{
+						resourceQuery: /react/,
+						use: '@svgr/webpack',
+					},
+					{
+						use: 'svg-inline-loader',
+					},
+				],
 			},
 		],
 	},

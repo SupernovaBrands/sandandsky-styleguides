@@ -1,4 +1,10 @@
-import { buildStars, validateEmail } from '~mod/utils';
+import SvgVerified from '~svg/verified.svg';
+import SvgThumbsUp from '~svg/thumbs-up.svg';
+import SvgThumbsDown from '~svg/thumbs-down.svg';
+import SvgChevronPrev from '~svg/chevron-prev.svg';
+import SvgChevronNext from '~svg/chevron-next.svg';
+
+import { buildStars, validateEmail, injectSvgClass } from '~mod/utils';
 
 const yotpoProduct = $('.yotpo__product');
 const appKey = yotpoProduct.data('key');
@@ -81,7 +87,7 @@ const formatDate = (serverDate) => {
 const renderReviews = (reviews) => {
 	$('.yotpo__review').html('');
 	$.each(reviews, function (k, review) {
-		const verifiedBuyer = review.verified_buyer ? 'sni__verified' : '';
+		const verifiedBuyer = review.verified_buyer ? injectSvgClass(SvgVerified, 'text-tsw ml-1 font-size-sm') : '';
 		const verifiedBuyerLabel = '<p class="font-size-sm mb-0">Verified buyer</p>';
 
 		// custom fields
@@ -108,7 +114,7 @@ const renderReviews = (reviews) => {
 		const stars = buildStars(review.score);
 		const yotpoReviewTemplate = `<div class="yotpo__review-content border-bottom py-3 row">
 		<div class="col-lg-3">
-			<h4 class="mb-0 sni-after align-items-center yotpo__review-author ${verifiedBuyer} ">${review.user.display_name}</h4>
+			<h4 class="mb-0 d-flex align-items-center yotpo__review-author">${review.user.display_name} ${verifiedBuyer}</h4>
 			${verifiedBuyerLabel}
 			<p class="font-size-sm mb-3">${formatDate(review.created_at)}</p>
 			${customFields}
@@ -120,8 +126,14 @@ const renderReviews = (reviews) => {
 			${mediaImages}
 			<div class="d-flex justify-content-end align-items-center mt-3 yotpo__likes" data-id="${review.id}" data-vote="review">
 				<p class="font-size-sm mr-1 mb-0">Was this review helpful?</p>
-				<span data-type="up" class="font-size-sm sni sni__thumbs-up align-items-center mx-1 ${voteFilter.vote_up}">${review.votes_up}</span>
-				<span data-type="down" class="font-size-sm sni sni__thumbs-down align-items-center ml-1 ${voteFilter.vote_down}">${review.votes_down}</span>
+				<span data-type="up" class="font-size-sm d-flex align-items-center mx-1 ${voteFilter.vote_up}">
+					${injectSvgClass(SvgThumbsUp, 'mr-1')}
+					<span class="yotpo__likes__up">${review.votes_up}</span>
+				</span>
+				<span data-type="down" class="font-size-sm d-flex align-items-center ml-1 ${voteFilter.vote_down}">
+					${injectSvgClass(SvgThumbsDown, 'mr-1')}
+					<span class="yotpo__likes__down">${review.votes_down}</span>
+				</span>
 			</div>
 		</div></div>`;
 		$('.yotpo__review').append(yotpoReviewTemplate);
@@ -149,14 +161,14 @@ const renderPagination = (pagination) => {
 	let active;
 	let paginationHtml = '';
 	if (currPage > 1) {
-		paginationHtml += `<li><a href="#" data-page="${currPage - 1}" class="px-1 text-body sni sni__chevron-prev"></a></li>`;
+		paginationHtml += `<li><a href="#" data-page="${currPage - 1}" class="px-1 text-body d-flex">${injectSvgClass(SvgChevronPrev)}</a></li>`;
 	}
 	for (let i = pageStart; i <= pageEnd; i += 1) {
 		active = i === currPage ? 'font-weight-bold text-secondary' : 'text-body';
 		paginationHtml += `<li><a href="#" data-page="${i}" class="px-1 ${active}">${i}</a></li>`;
 	}
 	if (currPage < totalPage) {
-		paginationHtml += `<li><a href="#" data-page="${currPage + 1}" class="px-1 pr-lg-0 text-body sni sni__chevron-next"></a></li>`;
+		paginationHtml += `<li><a href="#" data-page="${currPage + 1}" class="px-1 pr-lg-0 text-body d-flex">${injectSvgClass(SvgChevronNext)}</a></li>`;
 	}
 
 	const offsetMax = pagination.per_page * currPage;
@@ -280,8 +292,14 @@ $('.yotpo__tab-question').on('click', function () {
 							<p class="mt-2">A: ${answers.content}</p>
 							<div class="d-flex justify-content-end align-items-center mt-3 yotpo__likes" data-id="${answers.id}" data-vote="answer">
 								<p class="font-size-sm mr-1 mb-0">Was This Answer Helpful?</p>
-								<span data-type="up" class="font-size-sm sni sni__thumbs-up align-items-center mx-1 ${voteFilter.vote_up}">${answers.votes_up}</span>
-								<span data-type="down" class="font-size-sm sni sni__thumbs-down align-items-center ml-1 ${voteFilter.vote_down}">${answers.votes_down}</span>
+								<span data-type="up" class="font-size-sm d-flex align-items-center mx-1 ${voteFilter.vote_up}">
+									${injectSvgClass(SvgThumbsUp, 'mr-1')}
+									<span class="yotpo__likes__up">${answers.votes_up}</span>
+								</span>
+								<span data-type="down" class="font-size-sm d-flex align-items-center ml-1 ${voteFilter.vote_down}">
+									${injectSvgClass(SvgThumbsDown, 'mr-1')}
+									<span class="yotpo__likes__down">${answers.votes_down}</span>
+								</span>
 							</div>
 						</div>`;
 					});
@@ -351,10 +369,12 @@ $('#yotpoImageModal').on('shown.bs.modal', function (event) {
 		<div class="carousel-inner">
 		${carouselSlide}
 		</div></div>
-		<a class="carousel-control-prev text-secondary sni sni__chevron-prev" href="#carouselYotpoImage" role="button" data-slide="prev">
+		<a class="carousel-control-prev text-secondary d-flex" href="#carouselYotpoImage" role="button" data-slide="prev">
+			${injectSvgClass(SvgChevronPrev)}
 			<span class="sr-only">Previous</span>
 		</a>
-		<a class="carousel-control-next text-secondary sni sni__chevron-next" href="#carouselYotpoImage" role="button" data-slide="next">
+		<a class="carousel-control-next text-secondary d-flex" href="#carouselYotpoImage" role="button" data-slide="next">
+			${injectSvgClass(SvgChevronNext)}
 			<span class="sr-only">Next</span>
 		</a>`;
 		$('.yotpo__modal-carousel').append(carouselHtml);
@@ -370,10 +390,10 @@ $('#yotpoImageModal').on('shown.bs.modal', function (event) {
 			$('.yotpo__modal-created').html(formatDate(data.response.review.created_at));
 			$('.yotpo__modal-title').html(data.response.review.title);
 			$('.yotpo__modal-content').html(data.response.review.content);
-			$('.yotpo__likes .sni__thumbs-up').html(data.response.review.votes_up);
-			$('.yotpo__likes .sni__thumbs-down').html(data.response.review.votes_down);
+			$('.yotpo__lightbox .yotpo__likes__up').html(data.response.review.votes_up);
+			$('.yotpo__lightbox .yotpo__likes__down').html(data.response.review.votes_down);
 			$('.yotpo__modal-score').html(stars);
-			$('.yotpo__likes').attr('data-id', yotpoReviewID);
+			$('.yotpo__lightbox .yotpo__likes').attr('data-id', yotpoReviewID);
 		}
 	});
 });

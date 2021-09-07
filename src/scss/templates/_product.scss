@@ -1,5 +1,5 @@
 .product {
-	&__formula-list li:before{
+	&__formula-list .formula-list .svg {
 		font-size: calc-em(32,16);
 		flex-basis: 25%;
 	}
@@ -18,22 +18,8 @@
 	}
 
 	&__klarna {
-		.sni__klarna-logo:before {
-			font-size: calc-em(12, 14);
-		}
-
-		.sni__info-circle {
+		.info {
 			cursor: pointer;
 		}
-	}
-}
-
-.sni__hyperlink {
-	text-decoration: underline;
-
-	&:before {
-		position: absolute;
-		right: calc-em(-22, 16);
-		font-size: calc-em(14, 16);
 	}
 }

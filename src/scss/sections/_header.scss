@@ -44,26 +44,14 @@
 		}
 	}
 
-	.sni__search {
-		z-index: $zindex-sticky;
-
-		&:before {
-			cursor: pointer;
-		}
-	}
-
-	.sni__user {
-		z-index: $zindex-sticky;
-	}
-
-	.sni__chevron-down {
-		&:after {
-			font-size: calc-em(12, 16);
-			margin-left: calc-em(10, 16);
-		}
-	}
-
 	.nav-link {
+		&__icon {
+			font-size: calc-em(20, 16);
+			@include media-breakpoint-up(lg) {
+				font-size: calc-em(22, 16);
+			}
+		}
+
 		&:hover {
 			color: $primary;
 		}
@@ -90,16 +78,8 @@
 
 .nav-item {
 	&--mega-menu:hover {
-		.sni__chevron-down:after {
+		.nav-link .svg {
 			transform: rotate(180deg) translateX(0%);
-		}
-	}
-
-	.sni__cart {
-		z-index: $zindex-sticky;
-
-		&:before {
-			margin: 0;
 		}
 	}
 }

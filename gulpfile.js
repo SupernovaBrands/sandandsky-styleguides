@@ -12,9 +12,11 @@ const handlebars = require('gulp-compile-handlebars');
 const rename = require('gulp-rename');
 const critical = require('critical').stream;
 const cleancss = require('gulp-clean-css');
-const injectSvg = require('gulp-inject-svg');
+const replace = require('gulp-replace');
+const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
+const svgmin = require('gulp-svgmin');
 
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
@@ -31,7 +33,7 @@ const files = {
 	allScss: ['src/scss/**/*', '!src/scss/critical-css/*.scss'],
 	scss: ['src/scss/*.scss'],
 	criticalScss: ['src/critical-css/*.css'],
-	includes: ['fonts/*.svg'],
+	icons: ['images/icons/*'],
 	static: [
 		// fonts
 		'fonts/*.svg',
@@ -107,12 +109,39 @@ const indexFile = function () {
 		.pipe(browserSync.stream());
 };
 
+const getSvg = (attrs = {}, folder = 'images') => {
+	if (attrs.src && attrs.src !== '') {
+		let svg;
+		try {
+			svg = fs.readFileSync(`${folder}/${attrs.src}`, { encoding: 'utf8' });
+		} catch (error) {
+			console.log('Inject SVG error:', `${folder}/${attrs.src}`);
+			return '';
+		}
+		svg = cheerio.load(svg);
+		Object.keys(attrs).forEach((attr) => {
+			if (!['src', 'replace-to-svg'].includes(attr)) {
+				svg('svg').attr(attr, attrs[attr]);
+			}
+		});
+		return svg('svg').prop('outerHTML');
+	}
+	return '';
+};
+
 const hbsFiles = function () {
+	const svgIcons = fs.readdirSync('images/icons')
+		.filter((file) => path.extname(file) === '.svg')
+		.map((file) => file.replace('.svg', ''));
+
 	return src(files.hbs)
-		.pipe(handlebars(hbsVars, { batch: ['src/partials'], helpers: hbsHelpers }))
+		.pipe(handlebars({ ...hbsVars, svgIcons }, { batch: ['src/partials'], helpers: hbsHelpers }))
 		.pipe(rename({ extname: '.html' }))
-		.pipe(injectSvg({
-			base: './fonts/svgs/',
+		.pipe(replace(/<img[^>]*?replace-to-svg[^>]*?>/gi, (match) => {
+			const img = cheerio.load(match);
+			const attrs = img('img').attr();
+			const result = getSvg(attrs);
+			return result === '' ? match : result;
 		}))
 		.pipe(dest('dist'))
 		.pipe(browserSync.stream());
@@ -138,6 +167,15 @@ const scssFiles = function () {
 			functions: {
 				'asset-url($filename)': function (filename) { return new nodeSass.types.String(`'/sandandsky-styleguides/images/${filename.getValue()}'`); },
 				'font-url($filename)': function (filename) { return new nodeSass.types.String(`'/sandandsky-styleguides/fonts/${filename.getValue()}'`); },
+				'icon-svg($filename, $color: "#000", $size: "1em")': function (filename, color, size) {
+					const fill = color.getValue().replace('#', '%23');
+					const svg = getSvg({ src: filename.getValue(), height: size.getValue() }, 'images/icons')
+						.replace(/fill=".*"/g, '')
+						.replace(/<path/g, `<path fill="${fill}"`)
+						.replace(/'/g, '"')
+						.replace(/\n/g, '');
+					return new nodeSass.types.String(`'data:image/svg+xml;utf8,${svg}'`);
+				},
 			},
 		}).on('error', errorHandler))
 		.pipe(autoprefixer())
@@ -205,6 +243,19 @@ const webpackBuild = (isWatch = false) => function () {
 	});
 };
 
+const optimizeSvg = function () {
+	return src('images/**/*.svg')
+		.pipe(svgmin({
+			plugins: [
+				{ name: 'removeDimensions', active: true },
+				{ name: 'removeViewBox', active: false },
+				{ name: 'convertStyleToAttrs', active: true },
+				{ name: 'removeStyleElement', active: true },
+			],
+		}))
+		.pipe(dest('images'));
+};
+
 const watchFiles = function (done) {
 	watch(files.allScss, scssFiles);
 	watch(files.index, indexFile);
@@ -212,6 +263,7 @@ const watchFiles = function (done) {
 		.on('add', indexFile)
 		.on('unlink', indexFile);
 	watch(files.partials, hbsFiles);
+	watch(files.icons, hbsFiles);
 	watch(files.js, jsFiles);
 	watch(files.vendorJs, vendorJsFiles);
 	watch(files.static, staticFiles);
@@ -243,6 +295,7 @@ task(indexFile);
 task(scssFiles);
 task(initServer);
 task(extractCriticalCss);
+task(optimizeSvg);
 task('webpack', webpackBuild());
 task('webpackWatch', webpackBuild(true));
 task(

@@ -2,6 +2,8 @@ window.assetUrl = function (filename) {
 	return `/images/${filename}`;
 };
 
+window.ga = () => {};
+
 window.productFormSubmit = (e) => {
 	e.preventDefault();
 	const form = e.target;
@@ -81,10 +83,7 @@ window.tSettings = {
 	"exit_intent_enable": false,
 	"range_placeholder": "Aussie Skincare Essentials",
 	"tracking_url": "https://shipping-api-production.herokuapp.com/track_order.json",
-	"tracking_store": "sandandsky_shopify_int"
-};
-
-window.cartSettings = {
+	"tracking_store": "sandandsky_shopify_int",
 	"extraButtons": false,
 	"recentlyViewedEnabled": false,
 	"shippingMeter": {

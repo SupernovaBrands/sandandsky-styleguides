@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-/* global cartSettings */
+/* global tSettings */
 
 /*
 	DO NOT COPY THIS FILE TO THEME
@@ -191,7 +191,7 @@ class SNCart {
 		Manual Gwp
 	------------------- */
 	async getManualGwp(cart) {
-		const { manualGwp } = cartSettings;
+		const { manualGwp } = tSettings;
 		if (cart.items_subtotal_price >= manualGwp.minPurchase) {
 			if (this.manualGwpSelected.length > manualGwp.maxSelected) {
 				this.manualGwpSelected = this.toggleManualGwp({

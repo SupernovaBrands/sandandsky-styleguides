@@ -2,12 +2,8 @@
 	position: relative;
 
 	&:before {
-		font-family: $supernova-icon-font;
-		content: "\a0#{map-get($supernova-icon-map, "check")}";
-		color: $secondary;
-		font-size: calc-em(12, 16);
+		content: url(icon-svg('checklist.svg', #{$secondary}, #{calc-em(12, 16)}));
 		position: absolute;
-		left: - map-get($spacers, 4);
-		top: calc-em(5, 16);
+		left: calc-em(-25);
 	}
 }

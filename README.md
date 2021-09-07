@@ -45,10 +45,11 @@ Can use https://placeholder.com/ for placeholder images. i.e:
 - 375x223 jpg: `https://via.placeholder.com/375x223.jpg`
 - 30x30 png: `https://via.placeholder.com/30.png`
 
-## Font Icon
+## SVG Icon
 1. Optimize SVG using this online tool: https://jakearchibald.github.io/svgomg/
-2. Put Optimizes SVG in `fonts/svgs`
-3. Run `npm run buildfont` to build the font icon
+2. Remove `width` and `height` attribute. Use `viewBox` instead for responsiveness.
+3. Remove `fill` attribute.
+4. Put Optimizes SVG in `images/icons`
 
 ## Mobile Grid
 Can use class `px-g` in container to make the padding same as desktop gutter.

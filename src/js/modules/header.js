@@ -4,7 +4,7 @@ $(document).ready(function () {
 		$('body').toggleClass('offcanvas-active mobile-nav-show');
 	}
 
-	$('.navbar-toggler').on('click', function () {
+	$('.navbar-toggler, .mobile-nav__close').on('click', function () {
 		mobileMenuToggler();
 	});
 

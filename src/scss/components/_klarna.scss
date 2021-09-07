@@ -1,7 +1,7 @@
 .klarna {
 
 	&__list {
-		li:before {
+		.square {
 			top: calc-em(5, 10);
 			position: relative;
 			margin-right: $grid-gutter-width;
@@ -18,24 +18,19 @@
 			content: '';
 		}
 
-		.sni__klarna-logo{
+		.logo {
 			top: -(calc-em(5, 16));
-			&:before {
-				font-size: calc-em(11, 16);
-			}
+			font-size: calc-em(11, 16);
 		}
 	}
 
-	.sni__times {
+	.close {
 		top: $grid-gutter-width;
 		right: calc-em(10, 20);
 		opacity: 1;
-		&:after {
-			font-size: calc-em(11, 18);
-		}
 	}
 
-	.modal-header:before {
+	.modal-header > .svg {
 		color: $gray-600;
 		font-size: calc-em(18, 16);
 	}

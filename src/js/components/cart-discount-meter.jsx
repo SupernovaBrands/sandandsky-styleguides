@@ -1,4 +1,4 @@
-/* global cartSettings */
+/* global tSettings */
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -46,8 +46,8 @@ CartDiscountMeter.propTypes = {
 CartDiscountMeter.defaultProps = {
 	target: 0,
 	current: 0,
-	progressText: cartSettings.shippingMeter.inProgressText,
-	finalText: cartSettings.shippingMeter.finalText,
+	progressText: tSettings.shippingMeter.inProgressText,
+	finalText: tSettings.shippingMeter.finalText,
 };
 
 export default CartDiscountMeter;

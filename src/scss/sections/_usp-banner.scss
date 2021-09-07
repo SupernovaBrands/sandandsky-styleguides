@@ -1,6 +1,10 @@
 .usp-banner {
 	overflow: hidden;
 
+	.svg {
+		font-size: calc-em(32);
+	}
+
 	.decor {
 		height: 60px;
 	}

@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
-  <defs>
-    <style>
-      .ase{fill:#494949}
-    </style>
-  </defs>
-  <path class="ase" d="M0 8a8 8 0 118 8 8.009 8.009 0 01-8-8zm14 0a6 6 0 10-6 6 6.007 6.007 0 006-6z"/>
-  <rect class="ase" width="10" height="2" rx="1" transform="rotate(45 -7.435 21.364)"/>
-</svg>

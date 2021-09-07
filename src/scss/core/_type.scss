@@ -51,6 +51,7 @@ h3, .h3 {
 
 // Range color text
 @include text-emphasis-variant(".text-aea", $range-aea, true);
+@include text-emphasis-variant(".text-apc", $range-apc, true);
 @include text-emphasis-variant(".text-tsw", $range-tsw, true);
 
 .link-secondary {

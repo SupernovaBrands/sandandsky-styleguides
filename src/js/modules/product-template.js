@@ -36,7 +36,7 @@ $('.product-form .quantity--minus').on('click', function () {
 	return false;
 });
 
-$('.product-form quantity--plus').on('click', function () {
+$('.product-form .quantity--plus').on('click', function () {
 	const inputElem = $(this).parent().find('input[name="quantity"]');
 	const num = inputElem.val();
 	if (num > 0 && num < 99) {

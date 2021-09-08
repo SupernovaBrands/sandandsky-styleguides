@@ -118,3 +118,12 @@
 		position: sticky !important;
 	}
 }
+
+
+// Percy
+@media only percy {
+    iframe,
+    .instagram-carousel img {
+      visibility: hidden !important;
+    }
+}

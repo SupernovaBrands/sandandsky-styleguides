@@ -5,3 +5,13 @@
 		min-height: 100%;
 	}
 }
+
+.modal--waitlist {
+	.modal-dialog {
+		max-width: 570px;
+	}
+
+	.sni__times {
+		right: 1em;
+	}
+}

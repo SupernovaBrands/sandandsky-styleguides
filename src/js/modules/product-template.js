@@ -58,3 +58,13 @@ $('.product-form__shipping a').on('click', function (e) {
 		scrollTop: $('.product-form__shipping-accordion').offset().top - 70,
 	}, 500);
 });
+
+const productWaitlistForm = $('.product__waitlist-form');
+const productWaitlistSubmitted = $('.product__waitlist-submitted');
+if (productWaitlistForm.length > 0 && productWaitlistSubmitted.length > 0) {
+	productWaitlistForm.find('.btn').on('click', function() {
+		console.log('click');
+		$(this).closest('.product__waitlist-form').addClass('d-none');
+		productWaitlistSubmitted.removeClass('d-none');
+	})
+}

@@ -61,6 +61,7 @@
 	&__menu-child {
 		transform: translateX(100%);
 		transition: transform 0.15s ease-in-out;
+		visibility: hidden;
 		left: 0;
 		z-index: $zindex-dropdown;
 		height: 100vh !important;
@@ -128,6 +129,7 @@
 		& ~ ul {
 			transform: translateX(0);
 			transition: transform 0.15s ease-in-out;
+			visibility: visible;
 		}
 	}
 

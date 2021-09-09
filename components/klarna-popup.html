@@ -8,7 +8,7 @@
 	
 	<link rel="shortcut icon" href="/sandandsky-styleguides/images/favicon.png" type="image/png">
 	
-	<link rel="preload" href="https://p.typekit.net/p.css?s=1&k=bys6mnm&ht=tk&f=24537.24538.24539.24540.24541.24542.24543.24544.24545.24546.24547.24548.24549.24550.24551.24552&a=12606089&app=typekit&e=css" as="style" crossorigin="anonymous">
+	<link rel="preload" href="https://p.typekit.net/p.css?s=1&k=bys6mnm&ht=tk&f=24537.24538.24539.24540.24541.24542.24543.24544.24545.24546.24547.24548.24549.24550.24551.24552&a=12606089&app=typekit&e=css" as="style" crossorigin="anonymous" />
 	
 	<link rel="stylesheet" href="/sandandsky-styleguides/css/main.css">
 </head>
@@ -20,23 +20,42 @@
 		<div class="modal fade" id="KlarnaModal" tabindex="-1" role="dialog" aria-labelledby="KlarnaModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered klarna" role="document">
 				<div class="modal-content p-4 rounded-0">
-					<div class="modal-header position-relative text-center py-0 border-0 sni sni__klarna-logo justify-content-center">
-						<button type="button" class="close position-absolute text-body sni-after sni__times p-0" data-dismiss="modal" aria-label="Close"></button>
+					<div class="modal-header position-relative text-center py-0 border-0 d-flex justify-content-center">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 18" class="svg"><path d="M78.335 13.33a2.295 2.295 0 110 4.59 2.295 2.295 0 010-4.59zm-7.539-7.102v.001a6.445 6.445 0 100 10.653v.78h3.657V5.447h-3.657v.781zm-3.326 8.47v-.001c-1.83 0-3.314-1.407-3.314-3.142 0-1.736 1.484-3.143 3.314-3.143s3.314 1.407 3.314 3.143c0 1.735-1.484 3.143-3.314 3.143zm-13.244-9.58c2.947 0 5.207 1.933 5.207 4.776v7.768h-3.654v-6.445c0-1.781-.923-2.741-2.53-2.741-1.5 0-2.746.909-2.746 2.766v6.42h-3.686V5.447h3.641v1.376c.925-1.251 2.308-1.705 3.768-1.705zm-12.698 1.92h.001c.733-.954 2.099-1.59 3.584-1.59v3.554L45.07 9c-1.448 0-3.534 1.035-3.534 2.959v5.703h-3.753V5.447h3.745v1.591zm-9.315-.81v.001a6.445 6.445 0 100 10.653v.78h3.657V5.447h-3.657v.781zm-3.326 8.47v-.001c-1.83 0-3.314-1.407-3.314-3.142 0-1.736 1.484-3.143 3.314-3.143s3.314 1.407 3.314 3.143c0 1.735-1.484 3.143-3.314 3.143zm-12.072 2.964V.003h3.828v17.659h-3.828zM14.177 0c0 3.825-1.49 7.383-4.146 10.027l5.603 7.64h-5.006l-6.09-8.303L6.11 8.187A10.143 10.143 0 0010.21 0h3.967zM0 17.667V0h4.053v17.667H0z"></path></svg>
+						<button type="button" class="close position-absolute text-body p-0 d-flex font-size-sm" data-dismiss="modal" aria-label="Close">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="svg"><path d="m12 1-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1-5-5z"></path></svg>
+						</button>
 					</div>
 					<div class="modal-body px-1 px-lg-3">
 						<h2>4 interest-free payments of <br><span id="modal-price">£9.22</span></h2>
 						<p class="mb-3">Buy what you love and split the cost. It’s easy and interest-free.</p>
 						<ul class="list-unstyled klarna__list">
-							<li class="sni sni__square pb-3 position-relative">Add item(s) to your cart</li>
-							<li class="sni sni__square pb-2 position-relative">Go to checkout and choose <i class="sni sni__klarna-logo align-items-center ml-1 bg-secondary-light rounded px-1 py-2 position-relative"></i></li>
-							<li class="sni sni__square pb-3 position-relative">Enter your debit or credit card information</li>
-							<li class="sni sni__square pb-2 position-relative">Your first payment is taken when the order is processed and the remaining 3 are automatically taken every two weeks</li>
+							<li class="pb-3 d-flex position-relative">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" class="svg square flex-shrink-0"><path d="M0 0h10v10H0z"></path></svg>
+								Add item(s) to your cart
+							</li>
+							<li class="pb-2 d-flex position-relative">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" class="svg square flex-shrink-0"><path d="M0 0h10v10H0z"></path></svg>
+								Go to checkout and choose
+								<i class="d-flex logo align-items-center ml-1 bg-secondary-light rounded px-1 py-2 position-relative">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 18" class="svg"><path d="M78.335 13.33a2.295 2.295 0 110 4.59 2.295 2.295 0 010-4.59zm-7.539-7.102v.001a6.445 6.445 0 100 10.653v.78h3.657V5.447h-3.657v.781zm-3.326 8.47v-.001c-1.83 0-3.314-1.407-3.314-3.142 0-1.736 1.484-3.143 3.314-3.143s3.314 1.407 3.314 3.143c0 1.735-1.484 3.143-3.314 3.143zm-13.244-9.58c2.947 0 5.207 1.933 5.207 4.776v7.768h-3.654v-6.445c0-1.781-.923-2.741-2.53-2.741-1.5 0-2.746.909-2.746 2.766v6.42h-3.686V5.447h3.641v1.376c.925-1.251 2.308-1.705 3.768-1.705zm-12.698 1.92h.001c.733-.954 2.099-1.59 3.584-1.59v3.554L45.07 9c-1.448 0-3.534 1.035-3.534 2.959v5.703h-3.753V5.447h3.745v1.591zm-9.315-.81v.001a6.445 6.445 0 100 10.653v.78h3.657V5.447h-3.657v.781zm-3.326 8.47v-.001c-1.83 0-3.314-1.407-3.314-3.142 0-1.736 1.484-3.143 3.314-3.143s3.314 1.407 3.314 3.143c0 1.735-1.484 3.143-3.314 3.143zm-12.072 2.964V.003h3.828v17.659h-3.828zM14.177 0c0 3.825-1.49 7.383-4.146 10.027l5.603 7.64h-5.006l-6.09-8.303L6.11 8.187A10.143 10.143 0 0010.21 0h3.967zM0 17.667V0h4.053v17.667H0z"></path></svg>
+								</i>
+							</li>
+							<li class="pb-3 d-flex position-relative">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" class="svg square flex-shrink-0"><path d="M0 0h10v10H0z"></path></svg>
+								Enter your debit or credit card information
+							</li>
+							<li class="pb-2 d-flex position-relative">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" class="svg square flex-shrink-0"><path d="M0 0h10v10H0z"></path></svg>
+								Your first payment is taken when the order is processed and the remaining 3 are automatically taken every two weeks
+							</li>
 						</ul>
 						<p class="font-size-sm">See payment <a tabindex="0" href="https://cdn.klarna.com/1.0/shared/content/legal/terms/0/en_us/sliceitinx" target="_blank">terms</a>. A
 							higher initial payment may be required for some consumers. CA residents:
 							Loans made or arranged pursuant to a California Finance Lenders Law license.</p>
 					</div>
-					<button type="button" class="btn btn-primary btn-block mb-2 rounded-0 bg-body-color border-0" data-dismiss="modal" aria-label="Close">Close</button>
+					<button type="button" class="btn btn-primary btn-block mb-2 rounded-0 bg-body-color border-0" data-dismiss="modal"
+						aria-label="Close">Close</button>
 				</div>
 			</div>
 		</div>

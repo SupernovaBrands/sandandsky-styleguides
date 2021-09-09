@@ -123,7 +123,12 @@
 // Percy
 @media only percy {
     iframe,
-    [loading="lazy"] {
+    [loading="lazy"],
+    .product-card__review-text,
+    .yotpo__review {
       visibility: hidden !important;
+    }
+    .yotpo__stars {
+      display: none;
     }
 }

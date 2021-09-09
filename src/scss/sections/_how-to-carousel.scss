@@ -9,15 +9,15 @@
 		}
 	}
 
-	.carousel-control .sni {
-		content: " ";
+	.carousel-control-prev-icon,
+	.carousel-control-next-icon {
 		background-color: $white;
 		width: 2.5em;
 		height: 2.5em;
 		position: absolute;
 	}
 
-	.carousel-control-prev .sni {
+	.carousel-control-prev-icon {
 		top: 30.5%;
 		left: 60%;
 
@@ -47,7 +47,7 @@
 		}
 	}
 
-	.carousel-control-next .sni {
+	.carousel-control-next-icon {
 		top: 30.5%;
 		right: 60%;
 

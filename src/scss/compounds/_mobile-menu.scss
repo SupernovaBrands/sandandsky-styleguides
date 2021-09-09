@@ -10,25 +10,20 @@
 	transform: translateX(-100%);
 	overflow: hidden scroll;
 
-	&:before {
+	.navbar-brand .svg {
+		font-size: calc-em(34, 20);
+	}
+
+	&__close {
 		position: absolute;
 		right: 3%;
 		top: calc-em(14);
 		font-size: calc-em(14);
+		z-index: $zindex-fixed;
 	}
 
-	&.sni__times {
-		&:before {
-			z-index: $zindex-fixed;
-		}
-	}
-
-	.sni__earth {
-		&:before {
-			margin-right: 1em;
-			display: flex;
-			align-items: center;
-		}
+	.countries {
+		align-items: center;
 	}
 
 	h4 {
@@ -41,7 +36,7 @@
 		li:not(:first-child) {
 			border-bottom: 1px solid #f5f5f5;
 
-			&:before {
+			> .svg:not(.range-icon) {
 				position: absolute;
 				right: calc-em(20);
 				font-size: .75em;
@@ -67,32 +62,8 @@
 		height: 100vh !important;
 		top: 3em;
 
-		.sni__chevron-prev {
-			font-size: calc-em(14);
-		}
-
-		.sni__range-apc,
-		.sni__range-aea,
-		.sni__range-tsw {
+		.range-icon {
 			font-size: calc-em(24);
-		}
-
-		.sni__range-apc {
-			& ~ label h4 {
-				color: $range-apc;
-			}
-		}
-
-		.sni__range-aea {
-			& ~ label h4 {
-				color: $range-aea;
-			}
-		}
-
-		.sni__range-tsw {
-			& ~ label h4 {
-				color: $range-tsw;
-			}
 		}
 	}
 

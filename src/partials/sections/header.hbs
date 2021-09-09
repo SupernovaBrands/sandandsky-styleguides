@@ -7,11 +7,17 @@
 			</button>
 			<ul class="navbar-nav align-items-center d-none d-lg-flex">
 				<li class="nav-item nav-item--mega-menu">
-					<a href="#" class="nav-link font-weight-bold align-items-center mr-1 sni-after sni__chevron-down m-0 pl-0">Shop</a>
+					<a href="#" class="nav-link font-weight-bold d-flex align-items-center mr-1 m-0 pl-0">
+						Shop
+						<img class="svg font-size-xs ml-1" src="icons/chevron-down.svg" replace-to-svg />
+					</a>
 					{{> compounds/mega-menu-shop}}
 				</li>
 				<li class="nav-item nav-item--mega-menu">
-					<a class="nav-link font-weight-bold align-items-center sni-after sni__chevron-down m-0" href="#">About</a>
+					<a class="nav-link font-weight-bold d-flex align-items-center m-0" href="#">
+						About
+						<img class="svg font-size-xs ml-1" src="icons/chevron-down.svg" replace-to-svg />
+					</a>
 					{{> compounds/mega-menu-about}}
 				</li>
 				<li class="nav-item">
@@ -22,7 +28,7 @@
 				</li>
 			</ul>
 			<a href="#" class="navbar-brand mx-auto">
-				{{> components/svg-logo}}
+				<img class="svg" src="icons/logo-ss.svg" replace-to-svg />
 			</a>
 			<ul class="navbar-nav d-lg-flex justify-content-end flex-row">
 				<li class="nav-item d-none d-lg-block">
@@ -30,8 +36,9 @@
 				</li>
 				<li class="nav-item d-none d-lg-block">
 					<div class="dropdown dropdown--onhover">
-						<a class="dropdown-toggle font-weight-bold m-0 nav-link sni-after sni__chevron-down align-items-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a class="dropdown-toggle font-weight-bold m-0 nav-link d-flex align-items-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							US (USD)
+							<img class="svg font-size-xs ml-1" src="icons/chevron-down.svg" replace-to-svg />
 						</a>
 						<div class="dropdown-menu border-0 p-0 text-right pt-2 pb-2 overflow-hidden d-block" aria-labelledby="dropdownMenuLink">
 							{{#unless critical}}
@@ -46,13 +53,16 @@
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link h4 m-0 font-weight-normal sni sni__search position-relative"></a>
+					<a href="#" class="nav-link h4 m-0 d-flex search-box__open"><img class="svg nav-link__icon" src="icons/search.svg" replace-to-svg /></a>
 				</li>
 				<li class="nav-item d-none d-lg-block">
-					<a class="nav-link h4 m-0 font-weight-normal sni sni__user position-relative" data-cy="account-icon"></a>
+					<a href="#" class="nav-link h4 m-0 d-flex" data-cy="account-icon"><img class="svg nav-link__icon" src="icons/user.svg" replace-to-svg /></a>
 				</li>
 				<li class="nav-item pl-3 pl-lg-2">
-					<a class="nav-link h4 m-0 font-weight-normal sni sni__cart position-relative px-0" data-toggle="modal" data-target="#cart-drawer" role="button" data-cy="cart-icon"><span class="cart-drawer__count text-secondary d-block w-100 text-center">0</span></a>
+					<a href="#" class="nav-link h4 m-0 d-flex font-weight-normal position-relative px-0" data-toggle="modal" data-target="#cart-drawer" role="button" data-cy="cart-icon">
+						<img class="svg nav-link__icon" src="icons/cart.svg" replace-to-svg />
+						<span class="cart-drawer__count text-secondary d-block w-100 text-center">0</span>
+					</a>
 				</li>
 			</ul>
 			{{> components/tooltip}}

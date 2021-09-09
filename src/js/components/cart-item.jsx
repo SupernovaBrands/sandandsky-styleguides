@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import ConditionWrapper from '~comp/condition-wrapper';
 import QuantityBox from '~comp/quantity-box';
@@ -17,14 +18,14 @@ export default class CartItem extends React.Component {
 		const { item } = this.props;
 		const { models } = item;
 		return (
-			<div role="listitem">
+			<div className="cart-item" role="listitem">
 				<figure className="row py-2 px-lg-hg mb-0 align-items-start">
 					<ConditionWrapper
 						condition={!models.isFree}
 						wrapper={(children) => <a href={item.url} className="col-3 px-lg-hg">{children}</a>}
 					>
-						<picture className={models.isFree ? 'col-3 d-block' : 'd-block'}>
-							<img src={models.image} className="w-auto" alt={item.product_title} />
+						<picture className={`d-block ${models.isFree ? 'col-3 px-lg-hg' : ''}`}>
+							<LazyLoadImage src={models.image} alt={item.product_title} />
 						</picture>
 					</ConditionWrapper>
 					<figcaption className="col-9 px-lg-hg">
@@ -56,7 +57,7 @@ export default class CartItem extends React.Component {
 								quantity={item.quantity}
 								onChangeQuantity={(newQty, callback) => this.props.onChangeQuantity(item, newQty, callback)}
 							/>
-							{!models.isFree && (<button className="btn-unstyled font-size-sm text-body border-bottom border-dark" type="button" aria-label="Remove" onClick={this.onRemoveItem}>Remove</button>)}
+							{!models.isFree && (<button className="btn-unstyled font-size-sm text-body border-bottom border-dark" type="button" aria-label="Remove" onClick={this.onRemoveItem} data-cy="cart-removeproduct">Remove</button>)}
 						</div>
 
 						{this.props.isLastStock && (

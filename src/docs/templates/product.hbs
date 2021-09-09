@@ -23,9 +23,13 @@
 						</div>
 						<div class="d-flex product-swatch-mobile__trigger">
 							<div class="d-flex">
-								<button class="input-group-text border-right-0 rounded rounded-right-0 border-dark flex-grow-0 sni sni__minus" type="button" aria-label="Add Subtract" data-cy="pdp-subtract-quantity-icon"></button>
+								<button class="quantity--minus input-group-text border-right-0 rounded rounded-right-0 border-dark flex-grow-0" type="button" aria-label="Add Subtract" data-cy="pdp-subtract-quantity-icon">
+									<img class="svg" src="icons/minus.svg" replace-to-svg />
+								</button>
 								<input type="number" name="quantity" class="form-control border-left-0 border-right-0 rounded-0 p-0 text-center flex-grow-0 text-body border-dark font-size-dt-lg" value="1">
-								<button class="input-group-text border-left-0 rounded rounded-left-0 border-dark flex-grow-0 sni sni__plus" type="button" aria-label="Add Quantity" data-cy="pdp-add-quantity-icon"></button>
+								<button class="quantity--plus input-group-text border-left-0 rounded rounded-left-0 border-dark flex-grow-0" type="button" aria-label="Add Quantity" data-cy="pdp-add-quantity-icon">
+									<img class="svg" src="icons/plus.svg" replace-to-svg />
+								</button>
 							</div>
 							<button class="btn btn-primary btn-block ml-g ml-lg-3" type="submit" data-cy="pdp-addtocart-btn">Add to Cart</button>
 						</div>
@@ -35,9 +39,10 @@
 					</form>
 				</div>
 				<p class="mb-3 font-size-sm order-lg-4">Afterpay</p>
-				<p class="mb-3 font-size-sm order-lg-5 d-flex align-items-center product__klarna">
+				<p class="mb-3 font-size-sm order-lg-5 d-flex align-items-center flex-wrap product__klarna">
 					<span>or 4 interest-free installments of <strong>£9.23</strong> by</span>
-					<i class="sni sni__klarna-logo ml-1"></i><i class="sni sni__info-circle ml-1" data-toggle="modal" data-target="#KlarnaModal"></i>
+					<img class="svg font-size-sm ml-1" src="icons/logo-klarna.svg" replace-to-svg />
+					<img class="svg info ml-1" src="icons/info-circle.svg" replace-to-svg data-toggle="modal" data-target="#KlarnaModal" />
 				</p>
 				{{> components/klarna-modal}}
 				<p class="mb-3 font-size-sm order-lg-5 product-form__shipping" data-target="#collapsible4">FREE standard shipping on all orders $40+ View delivery times <a href="#" class="text-primary">here</a></p>
@@ -82,7 +87,9 @@
 								<strong>Australian Pink Clay:</strong> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labor et dolore magna.
 							</figcaption>
 						</figure>
-						<a class="sni sni__plus collapsed align-items-center" data-toggle="collapse" href="#collapseIngredients" role="button" aria-expanded="false" aria-controls="collapseIngredients">
+						<a class="collapsed d-flex align-items-center" data-toggle="collapse" href="#collapseIngredients" role="button" aria-expanded="false" aria-controls="collapseIngredients">
+							<img class="svg font-size-xs plus" src="icons/plus.svg" replace-to-svg />
+							<img class="svg font-size-xs minus" src="icons/minus.svg" replace-to-svg />
 							<span class="text-underline ml-1">Full ingredients list</span>
 						</a>
 						<div class="collapse collapse--ingredients" id="collapseIngredients" data-sku="SS0000012020" data-cname="sand and sky">
@@ -98,45 +105,68 @@
 				</div>
 				<ul id="accordion" class="accordion list-unstyled border-top mt-4 mt-lg-2 order-lg-10 mb-4 product__formula-list">
 					<li class="border-bottom">
-						<span class="py-4 w-100 justify-content-between align-items-center collapsed font-weight-bold sni-after sni__plus" data-toggle="collapse" data-target="#collapsible1" aria-expanded="true" aria-controls="collapsible1">Formula Facts</span>
+						<span class="py-4 w-100 d-flex justify-content-between align-items-center collapsed font-weight-bold" data-toggle="collapse" data-target="#collapsible1" aria-expanded="true" aria-controls="collapsible1">
+							Formula Facts
+							<img class="svg plus" src="icons/plus.svg" replace-to-svg />
+							<img class="svg minus" src="icons/minus.svg" replace-to-svg />
+						</span>
 						<div id="collapsible1" class="collapse" data-parent="#accordion">
 							<ul class="row list-unstyled pb-3 m-0 formula-list">
-								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__sulfate">
+								<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
+									<img class="svg" src="icons/sulfate.svg" replace-to-svg />
 									<p class="mb-0 ml-2 text-left">No sulfates</p>
 								</li>
-								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__silicone">
+								<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
+									<img class="svg" src="icons/silicone.svg" replace-to-svg />
 									<p class="mb-0 ml-2 text-left">No silicones</p>
 								</li>
-								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__paraben">
+								<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
+									<img class="svg" src="icons/paraben.svg" replace-to-svg />
 									<p class="mb-0 ml-2 text-left">No parabens</p>
 									</li>
-								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__phthalates">
+								<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
+									<img class="svg" src="icons/phthalates.svg" replace-to-svg />
 									<p class="mb-0 ml-2 text-left">No phthalates</p>
 								</li>
-								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__pegs">
+								<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
+									<img class="svg" src="icons/pegs.svg" replace-to-svg />
 									<p class="mb-0 ml-2 text-left">No PEGs</p>
 								</li>
-								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__gluten">
+								<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
+									<img class="svg" src="icons/gluten.svg" replace-to-svg />
 									<p class="mb-0 ml-2 text-left">No gluten</p>
 								</li>
-								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__peta">
+								<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
+									<img class="svg" src="icons/peta.svg" replace-to-svg />
 									<p class="mb-0 ml-2 text-left">Cruelty-free.<br>PETA approved</p>
 								</li>
-								<li class="col-6 px-0 py-2 align-items-center text-center sni sni__dermatologist">
+								<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
+									<img class="svg" src="icons/dermatologist.svg" replace-to-svg />
 									<p class="mb-0 ml-2 text-left">Dermatologist<br>approved</p>
 								</li>
 							</ul>
 						</div>
 					</li>
 					<li class="border-bottom">
-						<span class="py-4 w-100 justify-content-between align-items-center collapsed font-weight-bold sni-after sni__plus" data-toggle="collapse" data-target="#collapsible2" aria-expanded="true" aria-controls="collapsible2">FAQs</span>
+						<span class="py-4 w-100 d-flex justify-content-between align-items-center collapsed font-weight-bold" data-toggle="collapse" data-target="#collapsible2" aria-expanded="true" aria-controls="collapsible2">
+							FAQs
+							<img class="svg plus" src="icons/plus.svg" replace-to-svg />
+							<img class="svg minus" src="icons/minus.svg" replace-to-svg />
+						</span>
 						<div id="collapsible2" class="collapse" data-parent="#accordion">
 							<p class="pb-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-							<a href="" class="pb-3 sni sni__hyperlink position-relative d-inline-flex align-items-center">See all product FAQs</a>
+							<a href="" class="pb-3 position-relative d-inline-flex align-items-center text-underline">
+								See all product FAQs
+								<img class="svg font-size-sm ml-1" src="icons/hyperlink.svg" replace-to-svg />
+							</a>
 						</div>
 					</li>
 					<li class="border-bottom product-form__shipping-accordion">
-						<span class="py-4 w-100 justify-content-between align-items-center collapsed font-weight-bold sni-after sni__plus" data-toggle="collapse" data-target="#collapsible4" aria-expanded="true" aria-controls="collapsible4">Shipping & Return</span>
+						<span class="py-4 w-100 d-flex justify-content-between align-items-center collapsed font-weight-bold" data-toggle="collapse" data-target="#collapsible4" aria-expanded="true" aria-controls="collapsible4">
+							Shipping & Return
+							<img class="svg plus" src="icons/plus.svg" replace-to-svg />
+							<img class="svg minus" src="icons/minus.svg" replace-to-svg />
+						</span>
 						<div id="collapsible4" class="collapse" data-parent="#accordion">
 							<p class="pb-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 						</div>

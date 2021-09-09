@@ -9,7 +9,7 @@
 		}
 	}
 
-	.sni:not(.sni__star-full):before {
+	&__header .svg {
 		font-size: calc-em(22);
 		margin-top: calc-em(8, 22);
 		margin-right: calc-em(14, 22);

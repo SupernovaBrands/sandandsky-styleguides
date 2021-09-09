@@ -3,6 +3,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import SvgTag from '~svg/tag.svg?react';
+import SvgCloseCircle from '~svg/close-circle.svg?react';
+
 export default class CartDiscountForm extends React.Component {
 	constructor(props) {
 		super(props);
@@ -65,11 +68,13 @@ export default class CartDiscountForm extends React.Component {
 			<div className="mt-1 d-flex align-items-center">
 				<input type="hidden" name="discount" value={code} />
 				<p className="font-size-sm text-muted mb-0 mr-2">{tStrings.cartDiscountApplied}</p>
-				<div className="bg-light d-flex align-items-center d-inline-block p-1 rounded-lg text-muted">
-					<i className="sni-text mr-1" aria-hidden="true">tag</i>
+				<div className="bg-light d-flex align-items-center p-1 rounded-lg text-muted">
+					<SvgTag className="svg font-size-sm mr-1" />
 					{code}
 					{!isAutoDiscount && (
-						<button className="btn-unstyled ml-1 sni sni__close-circle text-muted" onClick={this.removeDiscount} type="button" aria-label="Remove Discount" />
+						<button className="d-flex btn-unstyled ml-1 text-muted" onClick={this.removeDiscount} type="button" aria-label="Remove Discount" data-cy="cart-removepromo-icon">
+							<SvgCloseCircle class="svg" />
+						</button>
 					)}
 				</div>
 				{errorExtra && (
@@ -79,7 +84,7 @@ export default class CartDiscountForm extends React.Component {
 		) : (
 			<div className="d-flex flex-wrap mt-1">
 				<label htmlFor="cart-discount" className="floating-label position-relative flex-grow-1 mr-1 mb-0">
-					<input id="cart-discount" type="text" name="discount" className="form-control form-control-lg text-body" placeholder={tStrings.cartDiscountInput} value={code} onChange={this.onTextChange} onKeyUp={this.onKeyUp} readOnly={loading} data-cy="cart-discount" />
+					<input id="cart-discount" data-cy="cart-discount" type="text" name="discount" className="form-control form-control-lg text-body" placeholder={tStrings.cartDiscountInput} value={code} onChange={this.onTextChange} onKeyUp={this.onKeyUp} readOnly={loading} />
 					<span className="floating-label__text position-absolute font-size-sm">{tStrings.cartDiscountInput}</span>
 				</label>
 				<button className="btn btn-lg btn-outline-primary" type="button" onClick={this.applyDiscount} disabled={!code} data-cy="apply-btn">

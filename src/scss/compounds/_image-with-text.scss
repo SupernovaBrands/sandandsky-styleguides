@@ -5,14 +5,6 @@
     }
   }
 
-  .sni__checklist {
-    font-size: $font-size-xs;
-  }
-
-  .sni__range-tsw:before {
-    color: $primary;
-  }
-
   &--reverse {
     @include media-breakpoint-up(lg) {
       max-width: calc(100% + #{$grid-gutter-width-lg/2});

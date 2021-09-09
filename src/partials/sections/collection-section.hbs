@@ -1,5 +1,6 @@
 <div class="collection-section container px-g {{ class }}">
-	<div class="d-flex align-items-start mb-3 sni sni__range-{{range}}">
+	<div class="collection-section__header d-flex align-items-start mb-3">
+		<img class="svg text-{{#if (eq range 'apc')}}secondary{{else}}{{range}}{{/if}}" src="icons/range-{{range}}.svg" replace-to-svg />
 		<h2 class="h1 flex-grow-1 mb-0">{{ header }}</h2>
 		<a href="" class="btn btn-lg btn-primary d-none d-lg-block">{{ button }}</a>
 	</div>
@@ -8,7 +9,7 @@
 		<div class="collection-section__cover d-none d-lg-block col-lg-3">
 			<noscript class="loading-lazy">
 			<img src="https://via.placeholder.com/900x522/" alt="Placeholder" class="d-block w-100" loading="lazy">
-			<img src="{{ imageUrl }}/decor-range-{{ range }}.svg" data-skip-inject-svg="true" alt="Decor" class="mt-n3" loading="lazy">
+			<img src="{{ imageUrl }}/decor-range-{{ range }}.svg" alt="Decor" class="mt-n3" loading="lazy">
 			</noscript>
 		</div>
 		{{> compounds/product-card class="col-6 col-lg-3 mb-3" color=color}}

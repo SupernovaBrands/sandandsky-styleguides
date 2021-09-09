@@ -9,37 +9,22 @@
 		}
 	}
 
-	&__review-author:after {
-		color: $range-tsw;
-		font-size: calc-em(20, 16);
-	}
-
-	&__filter-form .sni__search {
+	&__filter-form .svg {
 		cursor: pointer;
-
-		&:before {
-			font-size: calc-em(19, 16);
-		}
+		font-size: calc-em(19, 16);
 	}
 
 	&__likes {
-		:before {
-			margin-right: calc-em(5, 16);
-		}
-
-		.sni {
+		.svg {
 			cursor: pointer;
 		}
 	}
 
 	&__lightbox {
-		.position-absolute {
-			right: calc-em(6, 18);;
-			top: calc-em(6, 18);;
-
-			&:after {
-				font-size: calc-em(12, 18);
-			}
+		.close {
+			z-index: 1;
+			right: calc-em(8);
+			top: calc-em(8);
 		}
 	}
 

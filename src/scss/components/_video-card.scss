@@ -1,6 +1,6 @@
 .video-card {
 
-	.sni-after:after {
+	.play-icon {
 		cursor: pointer;
 		position: absolute;
 		color: $body-color;
@@ -11,7 +11,7 @@
 		bottom: calc-em(15, 12);
 		width: calc-em(30, 12);
 		height: calc-em(30, 12);
-		padding: calc-em(9, 12) calc-em(12, 12);
+		padding-left: 2px;
 
 		@include media-breakpoint-up(lg) {
 			font-size: calc-em(16, 16);
@@ -21,7 +21,7 @@
 	}
 
 	&--centered {
-		.sni-after:after {
+		.play-icon {
 			right: auto;
 			bottom: 50%;
 			transform: translateY(50%);
@@ -30,12 +30,6 @@
 }
 
 .video-modal {
-
-	.sni-after:after {
-		color: $white;
-		font-size: calc-em(9, 16);
-	}
-
 	.close {
 		right: $grid-gutter-width;
 		top: 0;

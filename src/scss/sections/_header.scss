@@ -3,7 +3,7 @@
 }
 
 .main-header {
-	z-index: $zindex-sticky;
+	z-index: $zindex-fixed;
 
 	.offcanvas-active & {
 		height: 100%;
@@ -135,6 +135,10 @@
 			top: calc-em(11);
 		}
 	}
+}
+
+.cookies-banner {
+	z-index: $zindex-modal-backdrop;
 }
 
 .cookies-banner-show {

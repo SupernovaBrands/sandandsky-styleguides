@@ -126,13 +126,13 @@
 	&__count {
 		position: absolute;
 		font-size: calc-em(10);
-		top: calc-em(20);
-		right: calc-em(8);
+		top: calc-em(14, 10);
+		right: calc-em(8, 10);
 		left: 0;
 
 		@include media-breakpoint-up(lg) {
 			font-size: calc-em(12);
-			top: calc-em(11);
+			top: calc-em(10, 12);
 		}
 	}
 }

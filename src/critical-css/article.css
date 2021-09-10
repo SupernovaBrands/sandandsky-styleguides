@@ -98,6 +98,7 @@ h1{font-size:1.5em}
 .justify-content-end{justify-content:flex-end!important}
 .justify-content-center{justify-content:center!important}
 .align-items-center{align-items:center!important}
+.align-items-baseline{align-items:baseline!important}
 .align-self-end{align-self:flex-end!important}
 .overflow-hidden{overflow:hidden!important}
 .position-relative{position:relative!important}
@@ -222,10 +223,10 @@ h1{font-size:2.25em}
 .navbar-toggler span::before{width:1.05em;top:-.4em}
 .navbar-toggler span::after{width:.95em;top:.4em}
 .navbar-nav{flex-basis:20%}
-.cart-drawer__count{position:absolute;font-size:.625em;top:1.25em;right:.5em;left:0}
+.cart-drawer__count{position:absolute;font-size:.625em;top:1.4em;right:.8em;left:0}
 .breadcrumb{flex-wrap:nowrap}
 @media (min-width:992px){
-.cart-drawer__count{font-size:.75em;top:.6875em}
+.cart-drawer__count{font-size:.75em;top:.83333em}
 .breadcrumb{font-size:1em}
 .post-card:not(.post-card__featured) h2,.post-card:not(.post-card__featured) p{height:2.5em}
 .blog-post-grid{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:auto auto;grid-template-areas:"content sidebar" "comment sidebar"}

@@ -29,6 +29,15 @@ const SearchBox = {
 			e.preventDefault();
 			SearchBox.searchBoxToggle();
 		});
+
+		$('.nav-item--mega-menu, .dropdown--onhover').hover(function () {
+			if (SearchBox.isSearchOpen()) {
+				SearchBox.searchBoxToggle();
+			}
+		});
+	},
+	isSearchOpen() {
+		return $('.search-box').hasClass('show');
 	},
 	searchBoxToggle() {
 		$('.search-box').toggleClass('show');

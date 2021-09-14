@@ -4,6 +4,16 @@
 	@include media-breakpoint-up(lg) {
 		overflow: auto;
 	}
+
+	&:before {
+		content: ' ';
+		height: 100%;
+		background: #000;
+		z-index: $zindex-dropdown;
+		opacity: .5;
+		width: 100%;
+		position: fixed;
+	}
 }
 
 .search-box {

@@ -90,6 +90,7 @@ button{border-radius:0;margin:0;font-family:inherit;font-size:inherit;line-heigh
 .justify-content-end{justify-content:flex-end!important}
 .justify-content-center{justify-content:center!important}
 .align-items-center{align-items:center!important}
+.align-items-baseline{align-items:baseline!important}
 .overflow-hidden{overflow:hidden!important}
 .position-relative{position:relative!important}
 .position-absolute{position:absolute!important}
@@ -191,11 +192,11 @@ button{border-radius:0;margin:0;font-family:inherit;font-size:inherit;line-heigh
 .navbar-toggler span::before{width:1.05em;top:-.4em}
 .navbar-toggler span::after{width:.95em;top:.4em}
 .navbar-nav{flex-basis:20%}
-.cart-drawer__count{position:absolute;font-size:.625em;top:1.25em;right:.5em;left:0}
+.cart-drawer__count{position:absolute;font-size:.625em;top:1.4em;right:.8em;left:0}
 .range-banner picture::before{padding-top:79.22705%}
 .range-banner figcaption{width:100%}
 @media (min-width:992px){
-.cart-drawer__count{font-size:.75em;top:.6875em}
+.cart-drawer__count{font-size:.75em;top:.83333em}
 .range-banner picture::before{padding-top:23.61111%}
 .range-banner figcaption{width:auto}
 }

@@ -43,17 +43,22 @@ input[type=number] {
 }
 
 .floating-label {
-	input {
-		padding-top: calc-em(20.5, 14);
-		padding-bottom: calc-em(10, 14);
+	input, select {
+		padding-top: calc-em(20.5);
+		padding-bottom: calc-em(10);
 		&::placeholder {
 			color: transparent;
 		}
 	}
 
+	input.font-size-sm {
+		padding: calc-em(20.5, 14) calc-em(16, 14) calc-em(10, 14);
+		height: calc-em(50, 14);
+	}
+
 	&__text {
 		top: 50%;
-		left: $input-padding-x;
+		left: calc-em(17, 14);
 		color: $gray-400;
 		transform: translateY(-50%);
 		transform-origin: left;
@@ -62,14 +67,39 @@ input[type=number] {
 	}
 
 	input:focus + &__text,
-	input:not(:placeholder-shown) + &__text {
-		top: calc-em(15, 14);
+	input:not(:placeholder-shown) + &__text,
+	select + &__text {
+		top: calc-em(15);
 		transform: translateY(-50%) scale(0.85);
 	}
 
-	select + &__text {
-		left: calc-em(11, 12);
-		top: calc-em(9, 12);
-		transform: none;
+	&.validated {
+		&::after {
+			position: absolute;
+			content: url(icon-svg('check-circle.svg', #{$primary}, #{$font-size-xs}));
+			width: $font-size-xs;
+			height: $font-size-xs;
+			right: calc-em(10);
+			bottom: 1em;
+		}
+	}
+}
+
+.custom-checkbox {
+	.custom-control-label::before {
+		border-color: $text-muted;
+	}
+
+	.custom-control-input:checked~.custom-control-label {
+		&::before {
+			background-color: $primary;
+			border-color: $primary;
+		}
+
+		&::after {
+			background-image: url(icon-svg('checklist.svg', #{$white}));
+			background-size: 70%;
+			background-position: center;
+		}
 	}
 }

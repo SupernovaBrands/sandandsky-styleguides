@@ -42,6 +42,9 @@ const SearchBox = {
 	searchBoxToggle() {
 		$('.search-box').toggleClass('show');
 		$('body').toggleClass('search-box-active');
+		if (SearchBox.isSearchOpen()) {
+			$('.search-box input[name="q"]').focus();
+		}
 	},
 	keywordListener(input) {
 		searchTag.on('click', function (evt) {

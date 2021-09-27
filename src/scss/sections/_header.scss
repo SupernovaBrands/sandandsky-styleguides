@@ -151,6 +151,16 @@
 		}
 	}
 
+	.tooltip.show {
+		top: 0;
+		position: fixed;
+		transform: translateY(0em);
+
+		&.show {
+			transform: translateY(0em);
+		}
+	}
+
 	&--expanded {
 		.main-header,
 		.mobile-nav {

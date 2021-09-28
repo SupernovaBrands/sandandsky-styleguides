@@ -151,13 +151,13 @@
 		}
 	}
 
-	.tooltip.show {
+	.tooltip {
 		top: 0;
 		position: fixed;
 		transform: translateY(0em);
 
 		&.show {
-			transform: translateY(0em);
+			transform: translateY(6em);
 		}
 	}
 

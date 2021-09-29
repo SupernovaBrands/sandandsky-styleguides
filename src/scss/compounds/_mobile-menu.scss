@@ -121,17 +121,48 @@
     }
 
     &__accordion {
-      .plus {
-        position: absolute;
-        right: calc-em(20);
-        font-size: .75em;
-      }
       .range-icon {
         font-size: calc-em(24);
       }
 
       li {
         border-bottom: 1px solid $gray-400;
+      }
+    }
+
+    .card {
+      margin-right: -$grid-gutter-width;
+      ul {
+        border-top: 1px solid $gray-400;
+      }
+    }
+
+    .card__indicator {
+      width: 2em;
+      height: 1.2em;
+
+      &:before, &:after {
+        content: "";
+        position: absolute;
+        background: $body-color;
+      }
+      &:before {
+        right: 11.5px;
+        width: 2px;
+        height: 0px;
+        top: 0px;
+      }
+      &:after {
+        right: 2.5px;
+        width: 20px;
+        height: 2px;
+        top: 9px;
+      }
+    }
+
+    .collapsed {
+      .card__indicator:before {
+        height: 20px;
       }
     }
 
@@ -146,6 +177,10 @@
 
     &.custom-select {
       border: 1px solid $gray-400;
+    }
+
+    .category-icon {
+      height: 1.3em;
     }
   }
 }

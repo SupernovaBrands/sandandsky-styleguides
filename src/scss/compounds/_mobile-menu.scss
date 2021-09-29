@@ -110,77 +110,77 @@
 }
 
 .mobile-menu-type-2 {
-  .mobile-nav {
-    h3 {
-      font-size: 1em;
-    }
-    &__menu {
-      > div {
-        border-bottom: 1px solid $gray-400;
-      }
-    }
+	.mobile-nav {
+		h3 {
+			font-size: 1em;
+		}
+		&__menu {
+			> div {
+				border-bottom: 1px solid $gray-400;
+			}
+		}
 
-    &__accordion {
-      .range-icon {
-        font-size: calc-em(24);
-      }
+		&__accordion {
+			.range-icon {
+				font-size: calc-em(24);
+			}
 
-      li {
-        border-bottom: 1px solid $gray-400;
-      }
-    }
+			li {
+				border-bottom: 1px solid $gray-400;
+			}
+		}
 
-    .card {
-      margin-right: -$grid-gutter-width;
-      ul {
-        border-top: 1px solid $gray-400;
-      }
-    }
+		.card {
+			margin-right: -$grid-gutter-width;
+			ul {
+				border-top: 1px solid $gray-400;
+			}
+		}
 
-    .card__indicator {
-      width: 2em;
-      height: 1.2em;
+		.card__indicator {
+			width: 2em;
+			height: 1.2em;
 
-      &:before, &:after {
-        content: "";
-        position: absolute;
-        background: $body-color;
-      }
-      &:before {
-        right: 11.5px;
-        width: 2px;
-        height: 0px;
-        top: 0px;
-      }
-      &:after {
-        right: 2.5px;
-        width: 20px;
-        height: 2px;
-        top: 9px;
-      }
-    }
+			&:before, &:after {
+				content: "";
+				position: absolute;
+				background: $body-color;
+			}
+			&:before {
+				right: 11.5px;
+				width: 2px;
+				height: 0px;
+				top: 0px;
+			}
+			&:after {
+				right: 2.5px;
+				width: 20px;
+				height: 2px;
+				top: 9px;
+			}
+		}
 
-    .collapsed {
-      .card__indicator:before {
-        height: 20px;
-      }
-    }
+		.collapsed {
+			.card__indicator:before {
+				height: 20px;
+			}
+		}
 
-    u {
-      min-width: 6em;
-    }
+		u {
+			min-width: 6em;
+		}
 
-    &__select,
-    &__other-menu {
-      background-color: $gray-100;
-    }
+		&__select,
+		&__other-menu {
+			background-color: $gray-100;
+		}
 
-    &.custom-select {
-      border: 1px solid $gray-400;
-    }
+		&.custom-select {
+			border: 1px solid $gray-400;
+		}
 
-    .category-icon {
-      height: 1.3em;
-    }
-  }
+		.category-icon {
+			height: 1.3em;
+		}
+	}
 }

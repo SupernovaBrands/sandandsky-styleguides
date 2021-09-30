@@ -111,12 +111,21 @@
 
 .mobile-menu-type-2 {
 	.mobile-nav {
+		&__close {
+			right: $grid-gutter-width;
+		}
+
 		h3 {
 			font-size: 1em;
 		}
 		&__menu {
 			> div {
-				border-bottom: 1px solid $gray-400;
+				border-top: 1px solid $gray-400;
+			}
+
+			li:not(:first-child) {
+				border-top: 1px solid $gray-400;
+				border-bottom: none;
 			}
 		}
 
@@ -126,7 +135,7 @@
 			}
 
 			li {
-				border-bottom: 1px solid $gray-400;
+				border-top: 1px solid $gray-400;
 			}
 		}
 
@@ -138,8 +147,8 @@
 		}
 
 		.card__indicator {
-			width: 2em;
-			height: 1.2em;
+			width: calc-em(20);
+			height: calc-em(20);
 
 			&:before, &:after {
 				content: "";
@@ -147,22 +156,22 @@
 				background: $body-color;
 			}
 			&:before {
-				right: 11.5px;
+				right: 8.5px;
 				width: 2px;
 				height: 0px;
 				top: 0px;
 			}
 			&:after {
-				right: 2.5px;
-				width: 20px;
+				right: 0;
+				width: 18px;
 				height: 2px;
-				top: 9px;
+				top: 8px;
 			}
 		}
 
 		.collapsed {
 			.card__indicator:before {
-				height: 20px;
+				height: 18px;
 			}
 		}
 

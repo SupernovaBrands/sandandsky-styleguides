@@ -112,7 +112,8 @@
 .mobile-menu-type-2 {
 	.mobile-nav {
 		&__close {
-			right: $grid-gutter-width;
+			right: auto;
+			top: auto;
 		}
 
 		> div {

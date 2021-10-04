@@ -1,464 +1,462 @@
-<nav class="mobile-nav bg-white position-fixed d-lg-none">
-	{{#unless critical}}
-	<ul id="mobileMenu" class="mobile-nav__menu h-100 col-12 bg-white list-unstyled pt-1 pb-0 px-0">
-		<li class="col-12 col-lg-5 px-g p-0">
-			<ul class="tab nav nav-tabs border-0 pt-1 pr-3" id="tab" role="tablist">
-				<li class="nav-item flex-grow-1 text-center border-0">
-					<a class="nav-link border-0 pb-2 text-body active px-0" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Products</a>
-				</li>
-				<li class="nav-item flex-grow-1 text-center border-0">
-					<a class="nav-link border-0 pb-2 text-body px-0" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Skin benefits</a>
-				</li>
-				<li class="nav-item flex-grow-1 text-center border-0">
-					<a class="nav-link border-0 pb-2 text-body px-0" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Bestsellers</a>
-				</li>
-			</ul>
-			<img class="svg mobile-nav__close" src="icons/close.svg" replace-to-svg />
-			<div class="tab-content mt-3 p-0" id="tabContentMobileMenu">
-				<div id="tab-1" class="tab-pane fade show active" role="tabpanel">
-					<ul id="products" class="mobile-nav__accordion accordion list-unstyled">
-						<li class="card border-0">
-							<span data-toggle="collapse" data-target="#products-face-masks" class="m-0 py-2  d-flex align-items-center position-relative collapsed"><img class="svg category-icon mr-2" src="icons/facemask.svg" replace-to-svg />Face Masks<i class="card__indicator position-relative ml-auto mr-g"></i></span>
-							<ul id="products-face-masks" class="collapse list-unstyled card-body pb-2 pt-2"
-								role="tabpanel" aria-labelledby="headingHair" data-parent="#mobileMenu">
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href="">
-										<span class="position-absolute bg-white rounded ml-1 mt-1 font-size-xs p-1">New</span>
-										<figure class="d-flex m-0 align-items-center pr-g">
-											<img src="https://via.placeholder.com/75x75/EFADBA">
-											<figcaption class="ml-g flex-grow-1">
-												<h4 class="m-0 text-body">Porefining Face Mask</h4>
-												<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-													<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-												</div>
-												<span class="text-linethrough font-size-xs">$ 39.90</span>
-												<span class="font-weight-bold font-size-xs">$ 39.90</span>
-											</figcaption>
-											<u class="text-primary font-size-xs text-right">See more</u>
-										</figure>
-									</a>
-								</li>
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href="">
-										<figure class="d-flex m-0 align-items-center pr-g">
-											<img src="https://via.placeholder.com/75x75/EFADBA">
-											<figcaption class="ml-g flex-grow-1">
-												<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-												<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-													<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-												</div>
-												<span class="text-linethrough font-size-xs">$ 39.90</span><span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
-											</figcaption>
-											<u class="text-primary font-size-xs text-right">See more</u>
-										</figure>
-									</a>
-								</li>
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href=""><u>See all</u></a>
-								</li>
-							</ul>
-						</li>
-						<li class="card">
-							<span data-toggle="collapse" data-target="#products-cleanser-exfoliator" class="m-0 py-2  d-flex align-items-center position-relative collapsed"><img class="svg category-icon mr-2" src="icons/facemask.svg" replace-to-svg />Cleanser & Exfoliators<i class="card__indicator position-relative ml-auto mr-g"></i></span>
-							<ul id="products-cleanser-exfoliator" class="collapse list-unstyled card-body pb-2 pt-2"
-								role="tabpanel" aria-labelledby="products-cleanser-exfoliator">
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href="">
-										<figure class="d-flex m-0 align-items-center pr-g">
-											<img src="https://via.placeholder.com/75x75/EFADBA">
-											<figcaption class="ml-g flex-grow-1">
-												<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-												<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-													<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-												</div>
-												<span class="font-weight-bold font-size-xs">$ 39.90</span>
-											</figcaption>
-											<u class="text-primary font-size-xs text-right">See more</u>
-										</figure>
-									</a>
-								</li>
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href="">
-										<figure class="d-flex m-0 align-items-center pr-g">
-											<img src="https://via.placeholder.com/75x75/EFADBA">
-											<figcaption class="ml-g flex-grow-1">
-												<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-												<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-													<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-												</div>
-												<span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
-											</figcaption>
-											<u class="text-primary font-size-xs text-right">See more</u>
-										</figure>
-									</a>
-								</li>
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href=""><u>See all</u></a>
-								</li>
-							</ul>
-						</li>
-						<li class="card">
-							<span data-toggle="collapse" data-target="#products-moisturisers" class="m-0 py-2  d-flex align-items-center position-relative collapsed"><img class="svg category-icon mr-2" src="icons/facemask.svg" replace-to-svg />Moisturisers & Serums<i class="card__indicator position-relative ml-auto mr-g"></i></span>
-							<ul id="products-moisturisers" class="collapse list-unstyled card-body pb-2 pt-2"
-								role="tabpanel" aria-labelledby="headingHair" data-parent="#mobileMenu">
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href="">
-										<figure class="d-flex m-0 align-items-center pr-g">
-											<img src="https://via.placeholder.com/75x75/EFADBA">
-											<figcaption class="ml-g flex-grow-1">
-												<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-												<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-													<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-												</div>
-												<span class="font-weight-bold font-size-xs">$ 39.90</span>
-											</figcaption>
-											<u class="text-primary font-size-xs text-right">See more</u>
-										</figure>
-									</a>
-								</li>
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href="">
-										<figure class="d-flex m-0 align-items-center pr-g">
-											<img src="https://via.placeholder.com/75x75/EFADBA">
-											<figcaption class="ml-g flex-grow-1">
-												<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-												<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-													<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-												</div>
-												<span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
-											</figcaption>
-											<u class="text-primary font-size-xs text-right">See more</u>
-										</figure>
-									</a>
-								</li>
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href=""><u>See all</u></a>
-								</li>
-							</ul>
-						</li>
-						<li class="card">
-							<span data-toggle="collapse" data-target="#products-body" class="m-0 py-2  d-flex align-items-center position-relative collapsed"><img class="svg category-icon mr-2" src="icons/facemask.svg" replace-to-svg />Body<i class="card__indicator position-relative ml-auto mr-g"></i></span>
-							<ul id="products-body" class="collapse list-unstyled card-body pb-2 pt-2"
-								role="tabpanel">
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href="">
-										<figure class="d-flex m-0 align-items-center pr-g">
-											<img src="https://via.placeholder.com/75x75/EFADBA">
-											<figcaption class="ml-g flex-grow-1">
-												<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-												<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-													<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-												</div>
-												<span class="font-weight-bold font-size-xs">$ 39.90</span>
-											</figcaption>
-											<u class="text-primary font-size-xs text-right">See more</u>
-										</figure>
-									</a>
-								</li>
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href="">
-										<figure class="d-flex m-0 align-items-center pr-g">
-											<img src="https://via.placeholder.com/75x75/EFADBA">
-											<figcaption class="ml-g flex-grow-1">
-												<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-												<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-													<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-												</div>
-												<span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
-											</figcaption>
-											<u class="text-primary font-size-xs text-right">See more</u>
-										</figure>
-									</a>
-								</li>
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href=""><u>See all</u></a>
-								</li>
-							</ul>
-						</li>
-						<li class="card">
-							<span data-toggle="collapse" data-target="#products-accesories" class="m-0 py-2  d-flex align-items-center position-relative collapsed"><img class="svg category-icon mr-2" src="icons/facemask.svg" replace-to-svg />Accesories<i class="card__indicator position-relative ml-auto mr-g"></i></span>
-							<ul id="products-accesories" class="collapse list-unstyled card-body pb-2 pt-2"
-								role="tabpanel">
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href="">
-										<figure class="d-flex m-0 align-items-center pr-g">
-											<img src="https://via.placeholder.com/75x75/EFADBA">
-											<figcaption class="ml-g flex-grow-1">
-												<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-												<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-													<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-												</div>
-												<span class="font-weight-bold font-size-xs">$ 39.90</span>
-											</figcaption>
-											<u class="text-primary font-size-xs text-right">See more</u>
-										</figure>
-									</a>
-								</li>
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href="">
-										<figure class="d-flex m-0 align-items-center pr-g">
-											<img src="https://via.placeholder.com/75x75/EFADBA">
-											<figcaption class="ml-g flex-grow-1">
-												<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-												<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-													<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-												</div>
-												<span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
-											</figcaption>
-											<u class="text-primary font-size-xs text-right">See more</u>
-										</figure>
-									</a>
-								</li>
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href=""><u>See all</u></a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<div id="tab-2" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-2">
-					<ul id="products" class="mobile-nav__accordion accordion list-unstyled">
-						<li class="card border-0">
-							<span data-toggle="collapse" data-target="#skin-benefits-detoxify" aria-expanded="false" aria-controls="skin-benefits-detoxify" class="py-2 d-flex align-items-center w-100   position-relative collapsed">
-								<img class="svg range-icon text-secondary mr-2" src="icons/range-apc.svg" replace-to-svg />
-								<label class="position-relative m-0 w-100" for="skin-benefits-detoxify">
-									<h3 class="d-block font-weight-bold m-0 text-secondary">Detoxify</h3>
-									<h5 class="font-weight-normal mb-0">Australia Pink Clay</h5>
-								</label>
-								<i class="card__indicator position-relative ml-auto mr-g"></i>
-							</span>
-							<ul id="skin-benefits-detoxify" class="collapse list-unstyled card-body pt-2"
-								role="tabpanel" aria-labelledby="skin-benefits-detoxify">
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href="">
-										<figure class="d-flex m-0 align-items-center pr-g">
-											<img src="https://via.placeholder.com/75x75/EFADBA">
-											<figcaption class="ml-g flex-grow-1">
-												<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-												<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-													<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-												</div>
-												<span class="font-weight-bold font-size-xs">$ 39.90</span>
-											</figcaption>
-											<u class="text-primary font-size-xs text-right">See more</u>
-										</figure>
-									</a>
-								</li>
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href="">
-										<figure class="d-flex m-0 align-items-center pr-g">
-											<img src="https://via.placeholder.com/75x75/EFADBA">
-											<figcaption class="ml-g flex-grow-1">
-												<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-												<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-													<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-												</div>
-												<span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
-											</figcaption>
-											<u class="text-primary font-size-xs text-right">See more</u>
-										</figure>
-									</a>
-								</li>
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href=""><u>See all</u></a>
-								</li>
-							</ul>
-						</li>
-						<li class="card">
-							<span data-toggle="collapse" data-target="#skin-benefits-brighten" aria-expanded="false" aria-controls="skin-benefits-brighten" class="py-2 d-flex align-items-center w-100 position-relative collapsed">
-								<img class="svg range-icon text-aea mr-2" src="icons/range-aea.svg" replace-to-svg />
-								<label class="position-relative m-0 w-100" for="skin-benefits-brighten">
-									<h3 class="d-block font-weight-bold m-0 text-aea">Brighten</h3>
-									<h5 class="font-weight-normal mb-0">Australia Emu Apple</h5>
-								</label>
-								<i class="card__indicator position-relative ml-auto mr-g"></i>
-							</span>
-							<ul id="skin-benefits-brighten" class="collapse list-unstyled card-body pt-2"
-								role="tabpanel" aria-labelledby="skin-benefits-detoxify">
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href="">
-										<figure class="d-flex m-0 align-items-center pr-g">
-											<img src="https://via.placeholder.com/75x75/EFADBA">
-											<figcaption class="ml-g flex-grow-1">
-												<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-												<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-													<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-												</div>
-												<span class="font-weight-bold font-size-xs">$ 39.90</span>
-											</figcaption>
-											<u class="text-primary font-size-xs text-right">See more</u>
-										</figure>
-									</a>
-								</li>
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href="">
-										<figure class="d-flex m-0 align-items-center pr-g">
-											<img src="https://via.placeholder.com/75x75/EFADBA">
-											<figcaption class="ml-g flex-grow-1">
-												<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-												<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-													<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-												</div>
-												<span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
-											</figcaption>
-											<u class="text-primary font-size-xs text-right">See more</u>
-										</figure>
-									</a>
-								</li>
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href=""><u>See all</u></a>
-								</li>
-							</ul>
-						</li>
-						<li class="card">
-							<span data-toggle="collapse" data-target="#skin-benefits-hydrate" aria-expanded="false" aria-controls="skin-benefits-hydrate" class="py-2 d-flex align-items-center w-100 position-relative collapsed">
-								<img class="svg range-icon text-tsw mr-2" src="icons/range-tsw.svg" replace-to-svg />
-								<label class="position-relative m-0 w-100" for="skin-benefits-hydrate">
-									<h3 class="d-block font-weight-bold m-0 text-tsw">hydrate</h3>
-									<h5 class="font-weight-normal mb-0">Tasmanian Spring Water</h5>
-								</label>
-								<i class="card__indicator position-relative ml-auto mr-g"></i>
-							</span>
-							<ul id="skin-benefits-hydrate" class="collapse list-unstyled card-body pt-2"
-								role="tabpanel" aria-labelledby="skin-benefits-detoxify">
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href="">
-										<figure class="d-flex m-0 align-items-center pr-g">
-											<img src="https://via.placeholder.com/75x75/EFADBA">
-											<figcaption class="ml-g flex-grow-1">
-												<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-												<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-													<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-												</div>
-												<span class="font-weight-bold font-size-xs">$ 39.90</span>
-											</figcaption>
-											<u class="text-primary font-size-xs text-right">See more</u>
-										</figure>
-									</a>
-								</li>
-								<li class="py-2 align-items-center w-100">
-									<a href="">
-										<figure class="d-flex m-0 align-items-center pr-g">
-											<img src="https://via.placeholder.com/75x75/EFADBA">
-											<figcaption class="ml-g flex-grow-1">
-												<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-												<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-													<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-												</div>
-												<span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
-											</figcaption>
-											<u class="text-primary font-size-xs text-right">See more</u>
-										</figure>
-									</a>
-								</li>
-								<li class="py-2 align-items-center w-100 border-0">
-									<a href=""><u>See all</u></a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<div id="tab-3" class="tab-pane fade" role="tabpanel">
-					<ul class="list-unstyled p-2" role="tabpanel">
-						<li class="py-2 align-items-center w-100">
-							<a href="">
-								<figure class="d-flex m-0 align-items-center pr-g">
-									<img src="https://via.placeholder.com/75x75/EFADBA">
-									<figcaption class="ml-g flex-grow-1">
-										<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-										<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-											<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-										</div>
-										<span class="font-weight-bold font-size-xs">$ 39.90</span>
-									</figcaption>
-									<u class="text-primary font-size-xs text-right">See more</u>
-								</figure>
-							</a>
-						</li>
-						<li class="py-2 align-items-center w-100 border-0">
-							<a href="">
-								<figure class="d-flex m-0 align-items-center pr-g">
-									<img src="https://via.placeholder.com/75x75/EFADBA">
-									<figcaption class="ml-g flex-grow-1">
-										<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
-										<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
-											<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
-										</div>
-										<span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
-									</figcaption>
-									<u class="text-primary font-size-xs text-right">See more</u>
-								</figure>
-							</a>
-						</li>
-						<li class="py-2 align-items-center w-100 border-0">
-							<a href=""><u>See all</u></a>
-						</li>
-					</ul>
-				</div>
+{{#unless critical}}
+<ul id="mobileMenu" class="mobile-nav bg-white position-fixed d-lg-none h-100 list-unstyled pt-1 pb-0 px-0">
+	<li class="col-12 p-0">
+		<ul class="tab nav nav-tabs border-0 pt-1 px-g" id="tab" role="tablist">
+			<li class="nav-item text-center border-0 pr-4">
+				<a class="nav-link border-0 pb-2 text-body active px-0" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Products</a>
+			</li>
+			<li class="nav-item text-center border-0 px-2">
+				<a class="nav-link border-0 pb-2 text-body px-0" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Skin benefits</a>
+			</li>
+			<li class="nav-item  text-center border-0 pl-3 pr-0">
+				<a class="nav-link border-0 pb-2 text-body px-0" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Bestsellers</a>
+			</li>
+		</ul>
+		<img class="svg mobile-nav__close" src="icons/close.svg" replace-to-svg />
+		<div class="tab-content mt-3 p-0" id="tabContentMobileMenu">
+			<div id="tab-1" class="tab-pane fade show active" role="tabpanel">
+				<ul id="products" class="mobile-nav__accordion accordion list-unstyled">
+					<li class="card border-0">
+						<span data-toggle="collapse" data-target="#products-face-masks" class="m-0 py-2  d-flex align-items-center position-relative collapsed px-g"><img class="svg category-icon mr-2" src="icons/facemask.svg" replace-to-svg />Face Masks<i class="card__indicator position-relative ml-auto"></i></span>
+						<ul id="products-face-masks" class="collapse list-unstyled card-body pb-2 pt-2 px-g"
+							role="tabpanel" aria-labelledby="headingHair" data-parent="#mobileMenu">
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href="">
+									<span class="position-absolute bg-white rounded ml-1 mt-1 font-size-xs p-1">New</span>
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/75x75/EFADBA">
+										<figcaption class="ml-g flex-grow-1">
+											<h4 class="m-0 text-body">Porefining Face Mask</h4>
+											<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+												<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+											</div>
+											<span class="text-linethrough font-size-xs">$ 39.90</span>
+											<span class="font-weight-bold font-size-xs">$ 39.90</span>
+										</figcaption>
+										<u class="text-primary font-size-xs text-right">See more</u>
+									</figure>
+								</a>
+							</li>
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/75x75/EFADBA">
+										<figcaption class="ml-g flex-grow-1">
+											<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+											<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+												<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+											</div>
+											<span class="text-linethrough font-size-xs">$ 39.90</span><span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
+										</figcaption>
+										<u class="text-primary font-size-xs text-right">See more</u>
+									</figure>
+								</a>
+							</li>
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href=""><u>See all</u></a>
+							</li>
+						</ul>
+					</li>
+					<li class="card">
+						<span data-toggle="collapse" data-target="#products-cleanser-exfoliator" class="m-0 py-2  d-flex align-items-center position-relative collapsed px-g"><img class="svg category-icon mr-2" src="icons/facemask.svg" replace-to-svg />Cleanser & Exfoliators<i class="card__indicator position-relative ml-auto"></i></span>
+						<ul id="products-cleanser-exfoliator" class="collapse list-unstyled card-body pb-2 pt-2 px-g"
+							role="tabpanel" aria-labelledby="products-cleanser-exfoliator">
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/75x75/EFADBA">
+										<figcaption class="ml-g flex-grow-1">
+											<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+											<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+												<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+											</div>
+											<span class="font-weight-bold font-size-xs">$ 39.90</span>
+										</figcaption>
+										<u class="text-primary font-size-xs text-right">See more</u>
+									</figure>
+								</a>
+							</li>
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/75x75/EFADBA">
+										<figcaption class="ml-g flex-grow-1">
+											<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+											<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+												<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+											</div>
+											<span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
+										</figcaption>
+										<u class="text-primary font-size-xs text-right">See more</u>
+									</figure>
+								</a>
+							</li>
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href=""><u>See all</u></a>
+							</li>
+						</ul>
+					</li>
+					<li class="card">
+						<span data-toggle="collapse" data-target="#products-moisturisers" class="m-0 py-2  d-flex align-items-center position-relative collapsed px-g"><img class="svg category-icon mr-2" src="icons/facemask.svg" replace-to-svg />Moisturisers & Serums<i class="card__indicator position-relative ml-auto"></i></span>
+						<ul id="products-moisturisers" class="collapse list-unstyled card-body pb-2 pt-2 px-g"
+							role="tabpanel" aria-labelledby="headingHair" data-parent="#mobileMenu">
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/75x75/EFADBA">
+										<figcaption class="ml-g flex-grow-1">
+											<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+											<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+												<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+											</div>
+											<span class="font-weight-bold font-size-xs">$ 39.90</span>
+										</figcaption>
+										<u class="text-primary font-size-xs text-right">See more</u>
+									</figure>
+								</a>
+							</li>
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/75x75/EFADBA">
+										<figcaption class="ml-g flex-grow-1">
+											<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+											<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+												<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+											</div>
+											<span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
+										</figcaption>
+										<u class="text-primary font-size-xs text-right">See more</u>
+									</figure>
+								</a>
+							</li>
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href=""><u>See all</u></a>
+							</li>
+						</ul>
+					</li>
+					<li class="card">
+						<span data-toggle="collapse" data-target="#products-body" class="m-0 py-2  d-flex align-items-center position-relative collapsed px-g"><img class="svg category-icon mr-2" src="icons/facemask.svg" replace-to-svg />Body<i class="card__indicator position-relative ml-auto"></i></span>
+						<ul id="products-body" class="collapse list-unstyled card-body pb-2 pt-2 px-g"
+							role="tabpanel">
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/75x75/EFADBA">
+										<figcaption class="ml-g flex-grow-1">
+											<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+											<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+												<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+											</div>
+											<span class="font-weight-bold font-size-xs">$ 39.90</span>
+										</figcaption>
+										<u class="text-primary font-size-xs text-right">See more</u>
+									</figure>
+								</a>
+							</li>
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/75x75/EFADBA">
+										<figcaption class="ml-g flex-grow-1">
+											<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+											<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+												<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+											</div>
+											<span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
+										</figcaption>
+										<u class="text-primary font-size-xs text-right">See more</u>
+									</figure>
+								</a>
+							</li>
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href=""><u>See all</u></a>
+							</li>
+						</ul>
+					</li>
+					<li class="card">
+						<span data-toggle="collapse" data-target="#products-accesories" class="m-0 py-2  d-flex align-items-center position-relative collapsed px-g"><img class="svg category-icon mr-2" src="icons/facemask.svg" replace-to-svg />Accesories<i class="card__indicator position-relative ml-auto"></i></span>
+						<ul id="products-accesories" class="collapse list-unstyled card-body pb-2 pt-2 px-g"
+							role="tabpanel">
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/75x75/EFADBA">
+										<figcaption class="ml-g flex-grow-1">
+											<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+											<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+												<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+											</div>
+											<span class="font-weight-bold font-size-xs">$ 39.90</span>
+										</figcaption>
+										<u class="text-primary font-size-xs text-right">See more</u>
+									</figure>
+								</a>
+							</li>
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/75x75/EFADBA">
+										<figcaption class="ml-g flex-grow-1">
+											<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+											<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+												<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+											</div>
+											<span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
+										</figcaption>
+										<u class="text-primary font-size-xs text-right">See more</u>
+									</figure>
+								</a>
+							</li>
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href=""><u>See all</u></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
 			</div>
-		</li>
-		<li class="px-g py-2 align-items-center">
-			<a class="position-relative m-0">Gift & Kits</a>
-		</li>
-		<li class="px-g py-2 align-items-center">
-			<a class="position-relative m-0">Travel Size</a>
-		</li>
-		<li class="px-g py-2 align-items-center">
-			<a class="position-relative m-0">Accesories</a>
-		</li>
-		<li class="px-g py-2 align-items-center">
-			<a class="position-relative m-0">Gift Cards</a>
-		</li>
-		<li class="px-3 py-3 align-items-center">
-			<a class="position-relative m-0 btn btn-lg btn-primary w-100">Shop All</a>
-		</li>
-		<li class="mobile-nav__select px-3 py-3 d-flex align-items-center w-100">
-			<select id="currency-picker-mobile" class="custom-select my-0 px-2 h-auto mx-n1">
-		        <option selected="" value="https://us.cocoandeve.com">USA (USD)</option>
-		        <option value="https://uk.cocoandeve.com">United Kingdom (GBP)</option>
-		        <option value="https://ca.cocoandeve.com">Canada (CAD)</option>
-		        <option value="https://au.cocoandeve.com">Australia (AUD)</option>
-		        <option value="https://eu.cocoandeve.com">Europe (EUR)</option>
-		        <option value="https://de.cocoandeve.com">Germany (EUR)</option>
-				<option value="https://fr.cocoandeve.com">France (EUR)</option>
-		        <option value="https://int.cocoandeve.com">Rest of the World (SGD)</option>
-		    </select>
+			<div id="tab-2" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-2">
+				<ul id="products" class="mobile-nav__accordion accordion list-unstyled">
+					<li class="card border-0">
+						<span data-toggle="collapse" data-target="#skin-benefits-detoxify" aria-expanded="false" aria-controls="skin-benefits-detoxify" class="py-2 d-flex align-items-center w-100   position-relative px-g collapsed">
+							<img class="svg range-icon text-secondary mr-2" src="icons/range-apc.svg" replace-to-svg />
+							<label class="position-relative m-0 w-100" for="skin-benefits-detoxify">
+								<h3 class="d-block font-weight-bold m-0 text-secondary">Detoxify</h3>
+								<h5 class="font-weight-normal mb-0">Australia Pink Clay</h5>
+							</label>
+							<i class="card__indicator position-relative ml-auto"></i>
+						</span>
+						<ul id="skin-benefits-detoxify" class="collapse list-unstyled card-body pt-2 px-g"
+							role="tabpanel" aria-labelledby="skin-benefits-detoxify">
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/75x75/EFADBA">
+										<figcaption class="ml-g flex-grow-1">
+											<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+											<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+												<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+											</div>
+											<span class="font-weight-bold font-size-xs">$ 39.90</span>
+										</figcaption>
+										<u class="text-primary font-size-xs text-right">See more</u>
+									</figure>
+								</a>
+							</li>
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/75x75/EFADBA">
+										<figcaption class="ml-g flex-grow-1">
+											<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+											<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+												<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+											</div>
+											<span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
+										</figcaption>
+										<u class="text-primary font-size-xs text-right">See more</u>
+									</figure>
+								</a>
+							</li>
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href=""><u>See all</u></a>
+							</li>
+						</ul>
+					</li>
+					<li class="card">
+						<span data-toggle="collapse" data-target="#skin-benefits-brighten" aria-expanded="false" aria-controls="skin-benefits-brighten" class="py-2 d-flex align-items-center w-100 position-relative px-g collapsed">
+							<img class="svg range-icon text-aea mr-2" src="icons/range-aea.svg" replace-to-svg />
+							<label class="position-relative m-0 w-100" for="skin-benefits-brighten">
+								<h3 class="d-block font-weight-bold m-0 text-aea">Brighten</h3>
+								<h5 class="font-weight-normal mb-0">Australia Emu Apple</h5>
+							</label>
+							<i class="card__indicator position-relative ml-auto"></i>
+						</span>
+						<ul id="skin-benefits-brighten" class="collapse list-unstyled card-body pt-2 px-g"
+							role="tabpanel" aria-labelledby="skin-benefits-detoxify">
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/75x75/EFADBA">
+										<figcaption class="ml-g flex-grow-1">
+											<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+											<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+												<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+											</div>
+											<span class="font-weight-bold font-size-xs">$ 39.90</span>
+										</figcaption>
+										<u class="text-primary font-size-xs text-right">See more</u>
+									</figure>
+								</a>
+							</li>
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/75x75/EFADBA">
+										<figcaption class="ml-g flex-grow-1">
+											<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+											<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+												<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+											</div>
+											<span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
+										</figcaption>
+										<u class="text-primary font-size-xs text-right">See more</u>
+									</figure>
+								</a>
+							</li>
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href=""><u>See all</u></a>
+							</li>
+						</ul>
+					</li>
+					<li class="card">
+						<span data-toggle="collapse" data-target="#skin-benefits-hydrate" aria-expanded="false" aria-controls="skin-benefits-hydrate" class="py-2 d-flex align-items-center w-100 position-relative px-g collapsed">
+							<img class="svg range-icon text-tsw mr-2" src="icons/range-tsw.svg" replace-to-svg />
+							<label class="position-relative m-0 w-100" for="skin-benefits-hydrate">
+								<h3 class="d-block font-weight-bold m-0 text-tsw">hydrate</h3>
+								<h5 class="font-weight-normal mb-0">Tasmanian Spring Water</h5>
+							</label>
+							<i class="card__indicator position-relative ml-auto"></i>
+						</span>
+						<ul id="skin-benefits-hydrate" class="collapse list-unstyled card-body pt-2 px-g"
+							role="tabpanel" aria-labelledby="skin-benefits-detoxify">
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/75x75/EFADBA">
+										<figcaption class="ml-g flex-grow-1">
+											<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+											<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+												<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+											</div>
+											<span class="font-weight-bold font-size-xs">$ 39.90</span>
+										</figcaption>
+										<u class="text-primary font-size-xs text-right">See more</u>
+									</figure>
+								</a>
+							</li>
+							<li class="py-2 align-items-center w-100">
+								<a href="">
+									<figure class="d-flex m-0 align-items-center">
+										<img src="https://via.placeholder.com/75x75/EFADBA">
+										<figcaption class="ml-g flex-grow-1">
+											<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+											<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+												<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+											</div>
+											<span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
+										</figcaption>
+										<u class="text-primary font-size-xs text-right">See more</u>
+									</figure>
+								</a>
+							</li>
+							<li class="py-2 align-items-center w-100 border-0">
+								<a href=""><u>See all</u></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div id="tab-3" class="tab-pane fade" role="tabpanel">
+				<ul class="list-unstyled py-2 px-g" role="tabpanel">
+					<li class="py-2 align-items-center w-100">
+						<a href="">
+							<figure class="d-flex m-0 align-items-center">
+								<img src="https://via.placeholder.com/75x75/EFADBA">
+								<figcaption class="ml-g flex-grow-1">
+									<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+									<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+										<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+									</div>
+									<span class="font-weight-bold font-size-xs">$ 39.90</span>
+								</figcaption>
+								<u class="text-primary font-size-xs text-right">See more</u>
+							</figure>
+						</a>
+					</li>
+					<li class="py-2 align-items-center w-100 border-0">
+						<a href="">
+							<figure class="d-flex m-0 align-items-center">
+								<img src="https://via.placeholder.com/75x75/EFADBA">
+								<figcaption class="ml-g flex-grow-1">
+									<h4 class="m-0 text-body">Australian Pink Clay Porefining Face Mask</h4>
+									<div class="mb-0 flex-grow-1 align-items-center product-card__rating d-none" data-product-id="4633315409991" data-app-key="fsMa7k39L38cMBQ4Js5RqWEWkzwctFnC9qneHywU">
+										<span class="product-card__review-text mt-1 font-size-xs text-body">0.0/5.0 - 0 Review</span>
+									</div>
+									<span class="font-weight-bold font-size-xs text-align-right">$ 39.90</span>
+								</figcaption>
+								<u class="text-primary font-size-xs text-right">See more</u>
+							</figure>
+						</a>
+					</li>
+					<li class="py-2 align-items-center w-100 border-0">
+						<a href=""><u>See all</u></a>
+					</li>
+				</ul>
+			</div>
 		</div>
-		</li>
-		<li class="mobile-nav__other-menu w-100 border-0">
-			<ul class="row list-unstyled px-3 mb-2">
-				<li class="col-6  py-1 border-0">
-					<a href="" class="position-relative m-0">Login</a>
-				</li>
-				<li class="col-6 py-1 border-0">
-					<a href="" class="position-relative m-0">A Beauty</a>
-				</li>
-				<li class="col-6 py-1 border-0">
-					<a href="" class="position-relative m-0">Sustainability</a>
-				</li>
-				<li class="col-6 py-1 border-0">
-					<a href="" class="position-relative m-0">Our Mission</a>
-				</li>
-				<li class="col-6 py-1 border-0">
-					<a href="" class="position-relative m-0">Rewards <span class="bg-secondary px-1 font-size-xs rounded text-white">New</span></a>
-				</li>
-				<li class="col-6 py-1 border-0">
-					<a href="" class="position-relative m-0">FAQ</a>
-				</li>
-				<li class="col-6 py-1 border-0">
-					<a href="" class="position-relative m-0">Track My Order</a>
-				</li>
-				<li class="col-6 py-1 border-0">
-					<a href="" class="position-relative m-0">Blog</a>
-				</li>
-				<li class="col-6 py-1 border-0">
-					<a href="" class="position-relative m-0">Sustainability</a>
-				</li>
-				<li class="col-6 py-1 border-0">
-					<a href="" class="position-relative m-0">Sweepstakes <span class="bg-secondary px-1 font-size-xs rounded text-white">New</span></a>
-				</li>
-			</ul>
-		</li>
-	</ul>
-	{{/unless}}
-</nav>
+	</li>
+	<li class="px-g py-2 align-items-center">
+		<a class="position-relative m-0">Gift & Kits</a>
+	</li>
+	<li class="px-g py-2 align-items-center">
+		<a class="position-relative m-0">Travel Size</a>
+	</li>
+	<li class="px-g py-2 align-items-center">
+		<a class="position-relative m-0">Accesories</a>
+	</li>
+	<li class="px-g py-2 align-items-center">
+		<a class="position-relative m-0">Gift Cards</a>
+	</li>
+	<li class="px-g py-3 align-items-center">
+		<a class="position-relative m-0 btn btn-lg btn-primary w-100">Shop All</a>
+	</li>
+	<li class="mobile-nav__select px-g py-3 d-flex align-items-center w-100">
+		<select id="currency-picker-mobile" class="custom-select my-0 px-2 h-auto mx-n1">
+	        <option selected="" value="https://us.cocoandeve.com">USA (USD)</option>
+	        <option value="https://uk.cocoandeve.com">United Kingdom (GBP)</option>
+	        <option value="https://ca.cocoandeve.com">Canada (CAD)</option>
+	        <option value="https://au.cocoandeve.com">Australia (AUD)</option>
+	        <option value="https://eu.cocoandeve.com">Europe (EUR)</option>
+	        <option value="https://de.cocoandeve.com">Germany (EUR)</option>
+			<option value="https://fr.cocoandeve.com">France (EUR)</option>
+	        <option value="https://int.cocoandeve.com">Rest of the World (SGD)</option>
+	    </select>
+	</div>
+	</li>
+	<li class="mobile-nav__other-menu w-100 border-0">
+		<ul class="row list-unstyled px-3 mb-2">
+			<li class="col-6  py-1 border-0">
+				<a href="" class="position-relative m-0">Login</a>
+			</li>
+			<li class="col-6 py-1 border-0">
+				<a href="" class="position-relative m-0">A Beauty</a>
+			</li>
+			<li class="col-6 py-1 border-0">
+				<a href="" class="position-relative m-0">Sustainability</a>
+			</li>
+			<li class="col-6 py-1 border-0">
+				<a href="" class="position-relative m-0">Our Mission</a>
+			</li>
+			<li class="col-6 py-1 border-0">
+				<a href="" class="position-relative m-0">Rewards <span class="bg-secondary px-1 font-size-xs rounded text-white">New</span></a>
+			</li>
+			<li class="col-6 py-1 border-0">
+				<a href="" class="position-relative m-0">FAQ</a>
+			</li>
+			<li class="col-6 py-1 border-0">
+				<a href="" class="position-relative m-0">Track My Order</a>
+			</li>
+			<li class="col-6 py-1 border-0">
+				<a href="" class="position-relative m-0">Blog</a>
+			</li>
+			<li class="col-6 py-1 border-0">
+				<a href="" class="position-relative m-0">Sustainability</a>
+			</li>
+			<li class="col-6 py-1 border-0">
+				<a href="" class="position-relative m-0">Sweepstakes <span class="bg-secondary px-1 font-size-xs rounded text-white">New</span></a>
+			</li>
+		</ul>
+	</li>
+</ul>
+{{/unless}}

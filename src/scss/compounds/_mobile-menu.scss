@@ -139,10 +139,25 @@
 			}
 		}
 
+    .tab-pane {
+      a:hover {
+        color: $body-color;
+      }
+    }
+
 		.card {
 			ul {
 				border-top: 1px solid $gray-400;
 			}
+
+      &__tag {
+        right: 0;
+        top: 0;
+
+        + u {
+          margin-top: auto;
+        }
+      }
 		}
 
 		.card__indicator {
@@ -157,7 +172,7 @@
 			&:before {
 				right: 8.5px;
 				width: 2px;
-				height: 0px;
+				height: 18px;
 				top: 0px;
 			}
 			&:after {
@@ -168,9 +183,9 @@
 			}
 		}
 
-		.collapsed {
+		span[aria-expanded="true"] {
 			.card__indicator:before {
-				height: 18px;
+				height: 0px;
 			}
 		}
 

@@ -172,7 +172,7 @@
 			&:before {
 				right: 8.5px;
 				width: 2px;
-				height: 18px;
+				height: 0px;
 				top: 0px;
 			}
 			&:after {
@@ -183,9 +183,9 @@
 			}
 		}
 
-		span[aria-expanded="true"] {
+		.card-header.collapsed {
 			.card__indicator:before {
-				height: 0px;
+				height: 18px;
 			}
 		}
 

@@ -6,8 +6,8 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import { isItemIdInKey } from '~mod/utils';
 
-import SvgChevronPrev from '~svg/chevron-prev.svg?react';
-import SvgChevronNext from '~svg/chevron-next.svg?react';
+import SvgChevronPrev from '~svg/chevron-prev.svg';
+import SvgChevronNext from '~svg/chevron-next.svg';
 
 export default class CartManualGwp extends React.Component {
 	scroll = (direction) => {

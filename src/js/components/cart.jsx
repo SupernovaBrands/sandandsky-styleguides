@@ -25,8 +25,8 @@ import {
 	isGiftCardOnly,
 } from '~mod/utils';
 
-import SvgClose from '~svg/close.svg?react';
-import SvgSS from '~svg/logo-ss.svg?react';
+import SvgClose from '~svg/close.svg';
+import SvgSS from '~svg/logo-ss.svg';
 
 import { blogUpsellBtn } from '~mod/blog-upsell';
 

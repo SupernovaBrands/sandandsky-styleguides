@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import { debounce } from '~mod/utils';
 
-import SvgPlus from '~svg/plus.svg?react';
-import SvgMinus from '~svg/minus.svg?react';
+import SvgPlus from '~svg/plus.svg';
+import SvgMinus from '~svg/minus.svg';
 
 export default class QuantityBox extends React.Component {
 	constructor(props) {

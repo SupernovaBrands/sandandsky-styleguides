@@ -1,12 +1,11 @@
+import { scrollToElement } from '~mod/utils';
+
 const screenLG = 991;
-$('.yotpo').on('click', '.text-m', function () {
-	$('html, body').animate({
-		scrollTop: $('.yotpo__product').offset().top,
-	}, 500);
-});
 
 if (window.location.hash === '#write-a-review') {
-	$('.yotpo__stars .text-m').click();
+	setTimeout(function () {
+		scrollToElement('#write-a-review', -130);
+	}, 500);
 }
 
 const mobileSwatch = $('.product-swatch-mobile');

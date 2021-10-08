@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	{{> html-head title="Product Section" yotpocss=true maincss="product" }}
+	{{> html-head title="Product Section" maincss="product" }}
 </head>
 
 <body class="template-product">
@@ -12,7 +12,10 @@
 			{{> product-image-carousel rangeclass="bg-aea" gutter=""}}
 			<div class="col-12 col-lg-5 d-flex flex-column order-lg-3 px-g">
 				<h1 class="mt-4">Australian Pink Clay Porefining Face Mask</h1>
-				<div class="align-items-center yotpo__stars text-secondary mb-2"><!-- content will fill by yotpo api --></div>
+				{{!-- DEV --}}
+				<div class="react-yotpo-star mb-2" data-product-id="4633315409991" data-show-total="true"></div>
+				{{!-- US --}}
+				{{!-- <div class="react-yotpo-star mb-2" data-product-id="3595105992809" data-show-total="true"></div> --}}
 				<p class="my-2 mb-lg-3">Smooth uneven texture and clear congestion with this triple-action facial exfoliator.</p>
 				{{> compounds/product-waitlist}}
 				<div class="d-flex order-lg-3 mb-3">
@@ -189,7 +192,14 @@
 	{{> sections/howto-video bg='howto-video__aea-light'}}
 	{{> components/video-modal}}
 	{{> sections/review-testimonials}}
-	{{> sections/yotpo-review}}
+
+	<section class="py-4" id="write-a-review">
+		<div class="container px-g">
+			<h2 class="h1 mb-3">Customer Reviews</h2>
+		</div>
+		{{> sections/yotpo-review}}
+	</section>
+
 	{{#> sections/carousel-scroll id="featured-products" class="my-5 my-lg-7" header="Some goodies you might be interested in" button="Shop all featured"}}
 		{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)" badge="Best Seller"}}
 		{{> compounds/product-card class="carousel-item mb-0" color="cc3195" badge="Best Seller"}}
@@ -203,6 +213,6 @@
 	{{/ sections/carousel-scroll}}
 	{{> sections/newsletter-banner}}
 	{{> sections/footer footclass="mb-6 mb-lg-0"}}
-	{{> js jquery=true bootstrap=true main=true yotpo=true }}
+	{{> js jquery=true bootstrap=true main=true }}
 </body>
 </html>

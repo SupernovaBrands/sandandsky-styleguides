@@ -15,3 +15,28 @@
 		right: 1em;
 	}
 }
+
+.modal--newsletter {
+	top: 2em;
+
+	.union {
+		height: 2em;
+	}
+
+	.close {
+		right: 1em;
+		top: 1em;
+	}
+
+	.modal-content {
+		top: 0;
+
+		@include media-breakpoint-up(lg) {
+			top: auto;
+		}
+	}
+
+	.bottom-close {
+		background-color: $range-tsw-light;
+	}
+}

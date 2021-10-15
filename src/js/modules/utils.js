@@ -1,9 +1,5 @@
 /* global tSettings */
 
-import SvgStarFull from '~svg/star-full.svg';
-import SvgStarHalf from '~svg/star-half.svg';
-import SvgStarHollow from '~svg/star-hollow.svg';
-
 export const get = (obj, path, defValue) => {
 	if (!path) return undefined;
 	const pathArray = Array.isArray(path) ? path : path.match(/([^[.\]])+/g);
@@ -272,23 +268,18 @@ export const scrollToElement = (targetSelector, offset = -70) => {
 	$('html, body').animate({ scrollTop: $(targetSelector).offset().top + offset }, 600);
 };
 
-export const injectSvgClass = (svg, extraClass = '') => svg.replace('<svg ', `<svg class="svg ${extraClass}" `);
+export const decodeHtml = (html) => {
+	const txt = document.createElement('textarea');
+	txt.innerHTML = html;
+	return txt.value;
+};
 
-export const buildStars = (score) => {
-	let stars = '';
-	const maxScore = 5;
-	const hollow = maxScore - (maxScore - score);
-
-	for (let s = 1; s <= 5; s += 1) {
-		const se = hollow - s + 1;
-		const seFloor = se - Math.floor(se);
-		if ((s > hollow && se < 0) || (s > hollow && se > 0 && seFloor < 0.5)) {
-			stars += injectSvgClass(SvgStarHollow);
-		} else if (s > hollow && se > 0 && seFloor >= 0.5) {
-			stars += injectSvgClass(SvgStarHalf);
-		} else {
-			stars += injectSvgClass(SvgStarFull);
-		}
-	}
-	return stars;
+export const updateItemInArray = (array, compareFunc, modFunc) => {
+	const index = array.findIndex(compareFunc);
+	const item = array[index];
+	return [
+		...array.slice(0, index),
+		modFunc(item),
+		...array.slice(index + 1),
+	];
 };

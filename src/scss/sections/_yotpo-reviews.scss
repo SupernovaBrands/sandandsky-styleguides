@@ -1,34 +1,28 @@
-.yotpo {
-
-	&__avg-score {
+.yotpo-widget {
+	&__score {
+		font-size: calc-em(24);
 		height: calc-em(30, 24);
 		width: calc-em(35, 24);
 		@include media-breakpoint-up(lg) {
+			font-size: calc-em(36);
 			height: calc-em(45, 36);
 			width: calc-em(53, 36);
 		}
 	}
 
-	&__filter-form .svg {
-		cursor: pointer;
-		font-size: calc-em(19, 16);
-	}
+	&__thanks {
+		border-color: $text-muted;
 
-	&__likes {
-		.svg {
-			cursor: pointer;
-		}
-	}
-
-	&__lightbox {
 		.close {
-			z-index: 1;
-			right: calc-em(8);
-			top: calc-em(8);
+			top: map-get($spacers, 2);
+			right: map-get($spacers, 2);
 		}
 	}
 
-	&__images img {
-		max-height: calc-em(100, 16);
+	&__modal {
+		.close {
+			top: map-get($spacers, 1);
+			right: map-get($spacers, 1);
+		}
 	}
 }

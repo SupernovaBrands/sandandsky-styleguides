@@ -52,15 +52,7 @@ const webpackCfg = {
 			},
 			{
 				test: /\.svg$/,
-				oneOf: [
-					{
-						resourceQuery: /react/,
-						use: '@svgr/webpack',
-					},
-					{
-						use: 'svg-inline-loader',
-					},
-				],
+				use: ['@svgr/webpack'],
 			},
 		],
 	},

@@ -122,15 +122,17 @@
 
 // Percy
 @media only percy {
-	iframe,
-	[loading=lazy] {
+	[loading=lazy],
+	picture.embed-responsive {
 		visibility: hidden !important;
 	}
 
 	.react-yotpo-star,
 	.react-yotpo-widget,
 	.popup-email,
-	#cart-recent-products {
+	#cart-recent-products,
+	.swell-rewards,
+	iframe {
 		display: none !important;
 	}
 }

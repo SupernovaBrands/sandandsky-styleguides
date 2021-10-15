@@ -85,6 +85,22 @@ input[type=number] {
 	}
 }
 
+.custom-radio {
+	.custom-control-label::before {
+		border-color: $text-muted;
+	}
+
+	.custom-control-input:checked~.custom-control-label {
+		&::before {
+			box-shadow: inset 0px 0px 0px 2px #fff;
+		}
+
+		&::after {
+			background-image: none;
+		}
+	}
+}
+
 .custom-checkbox {
 	.custom-control-label::before {
 		border-color: $text-muted;

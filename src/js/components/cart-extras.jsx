@@ -7,7 +7,7 @@ import {
 	formatMoney,
 } from '~mod/utils';
 
-import SvgCard from '~svg/credit-card.svg?react';
+import SvgCard from '~svg/credit-card.svg';
 
 let currency;
 let locale;

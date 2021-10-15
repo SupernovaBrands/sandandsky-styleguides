@@ -122,17 +122,17 @@
 
 // Percy
 @media only percy {
-	iframe,
-	[loading=lazy] {
+	[loading=lazy],
+	picture.embed-responsive {
 		visibility: hidden !important;
 	}
 
-	.yotpo__stars,
-	.yotpo__review,
-	.yotpo__total-reviews,
+	.react-yotpo-star,
+	.react-yotpo-widget,
 	.popup-email,
-	.product-card__rating,
-	#cart-recent-products {
+	#cart-recent-products,
+	.swell-rewards,
+	iframe {
 		display: none !important;
 	}
 }

@@ -20,7 +20,6 @@ $(document).ready(function () {
 	const navbarEl = $('.main-header');
 	const announceBar = $('.announcement-bar');
 	const navbarHeight = navbarEl.height();
-	const cookiesBanner = $('.cookies-banner');
 
 	const productSwatchMobile = $('.product-swatch-mobile');
 	const productSwatchTrigger = $('.product-swatch-mobile__trigger');

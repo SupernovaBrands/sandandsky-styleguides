@@ -2,12 +2,8 @@
 	{{#if cookiebanner}}
 	{{> components/cookies-banner }}
 	{{/if}}
-
-	{{#if openNewsletter}}
-		{{> components/announcement-bar-abtest}}
-	{{else}}
-		{{> components/announcement-bar }}
-	{{/if}}
+	{{> components/announcement-bar }}
+	{{> components/announcement-bar-abtest}}
 	<nav class="navbar navbar-expand-lg px-g">
 		<div class="container">
 			<button class="navbar-toggler" type="button">

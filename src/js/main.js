@@ -85,3 +85,7 @@ if ($('.collection-template').length > 0) {
 if ($('.upsell__article').length > 0) {
 	import(/* webpackChunkName: 'blog-upsell' */ '~mod/blog-upsell');
 }
+
+if ($('.announcement-bar--open-modal').length > 0) {
+	import(/* webpackChunkName: 'announcement-bar' */ '~mod/announcement-bar-abtest');
+}

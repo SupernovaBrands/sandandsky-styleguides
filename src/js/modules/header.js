@@ -20,7 +20,6 @@ $(document).ready(function () {
 	const navbarEl = $('.main-header');
 	const announceBar = $('.announcement-bar');
 	const navbarHeight = navbarEl.height();
-	const cookiesBanner = $('.cookies-banner');
 
 	const productSwatchMobile = $('.product-swatch-mobile');
 	const productSwatchTrigger = $('.product-swatch-mobile__trigger');
@@ -30,40 +29,30 @@ $(document).ready(function () {
 	$(window).on('scroll', function () {
 		scrollTop = $(this).scrollTop();
 
-		if ($('.cookies-banner:not(.d-none)').length > 0) {
-			if (cookiesBanner.find('.collapse:not(.show)').length > 0) {
-				$('body').addClass('cookies-banner-show');
-			} else if (cookiesBanner.find('.collapse.show').length > 0) {
-				$('body').addClass('cookies-banner-show--expanded');
-			}
-			navbarEl.removeClass('position-fixed').removeClass('scrolled-up').removeClass('scrolled-down');
-			announceBar.removeClass('d-none');
-		} else {
-			navbarEl.addClass('position-fixed');
-			if (scrollTop < lastScrollTop) {
-				navbarEl.removeClass('scrolled-down').addClass('scrolled-up');
-				if (scrollTop <= 0) {
-					// remove scrolled up for mobile menu show properly
-					navbarEl.removeClass('position-fixed').removeClass('scrolled-up');
-					if (announceBar.length > 0) {
-						announceBar.removeClass('d-none');
-					}
-				}
-				if (readingStickyScrolledDown.length) {
-					readingStickyScrolledDown.removeClass('position-fixed').addClass('d-none');
-				}
-			} else if (scrollTop <= 0) {
-				// safari fix bounce effect
+		navbarEl.addClass('position-fixed');
+		if (scrollTop < lastScrollTop) {
+			navbarEl.removeClass('scrolled-down').addClass('scrolled-up');
+			if (scrollTop <= 0) {
+				// remove scrolled up for mobile menu show properly
 				navbarEl.removeClass('position-fixed').removeClass('scrolled-up');
-			} else {
-				navbarEl.removeClass('scrolled-up').addClass('scrolled-down');
-				if (announceBar.length > 0 && scrollTop > navbarHeight) {
-					announceBar.addClass('d-none');
+				if (announceBar.length > 0) {
+					announceBar.removeClass('d-none');
 				}
+			}
+			if (readingStickyScrolledDown.length) {
+				readingStickyScrolledDown.removeClass('position-fixed').addClass('d-none');
+			}
+		} else if (scrollTop <= 0) {
+			// safari fix bounce effect
+			navbarEl.removeClass('position-fixed').removeClass('scrolled-up');
+		} else {
+			navbarEl.removeClass('scrolled-up').addClass('scrolled-down');
+			if (announceBar.length > 0 && scrollTop > navbarHeight) {
+				announceBar.addClass('d-none');
+			}
 
-				if (readingStickyScrolledDown.length) {
-					readingStickyScrolledDown.addClass('position-fixed').removeClass('d-none');
-				}
+			if (readingStickyScrolledDown.length) {
+				readingStickyScrolledDown.addClass('position-fixed').removeClass('d-none');
 			}
 		}
 

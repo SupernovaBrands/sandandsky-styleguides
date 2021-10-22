@@ -1,4 +1,7 @@
 html.uk-store {
+	.announcement-bar {
+		background-color: $gray-100;
+	}
 	.announcement-bar--open-modal {
 		.chevron-left {
 			height: calc-em(32);
@@ -54,6 +57,22 @@ html.uk-store {
 					position: absolute;
 					left: 0;
 					z-index: $zindex-modal-backdrop;
+				}
+			}
+		}
+
+		.announcement-bar:not(.announcement-bar--open-modal) {
+			&:before {
+				@include media-breakpoint-up(lg) {
+					content: ' ';
+					background-color: black;
+					opacity: .5;
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					left: 0;
+					z-index: $zindex-modal-backdrop;
+					top: 0;
 				}
 			}
 		}

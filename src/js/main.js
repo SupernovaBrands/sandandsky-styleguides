@@ -42,6 +42,14 @@ if ($('.react-yotpo-star').length > 0 || $('.react-yotpo-widget').length > 0) {
 	});
 }
 
+if ($('.react-menu-yotpo-star').length > 0) {
+	import(/* webpackChunkName: 'yotpo' */ '~mod/yotpo').then(({ initMenuYotpoStar }) => {
+		if ($('.react-menu-yotpo-star').length > 0) {
+			initMenuYotpoStar();
+		}
+	});
+}
+
 if ($('.review-carousel').length > 0) {
 	import(/* webpackChunkName: 'review-carousel' */ '~mod/review-carousel');
 }

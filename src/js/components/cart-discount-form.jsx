@@ -3,8 +3,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import SvgTag from '~svg/tag.svg?react';
-import SvgCloseCircle from '~svg/close-circle.svg?react';
+import SvgTag from '~svg/tag.svg';
+import SvgCloseCircle from '~svg/close-circle.svg';
 
 export default class CartDiscountForm extends React.Component {
 	constructor(props) {

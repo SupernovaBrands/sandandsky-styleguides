@@ -17,6 +17,7 @@ if ($('.product-card__rating').length > 0) {
 }
 
 if ($('.menu-product-rating').length > 0) {
+	console.log('product rating')
 	$('.menu-product-rating').each((i, el) => {
 		const appKey = $(el).data('app-key');
 		const productId = $(el).data('product-id');

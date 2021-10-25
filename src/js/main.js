@@ -15,10 +15,6 @@ if ($('.hero-carousel').length > 0) {
 	import(/* webpackChunkName: 'hero-carousel' */ '~mod/hero-carousel');
 }
 
-if ($('.product-card, .menu-product-rating').length > 0) {
-	import(/* webpackChunkName: 'product-card' */ '~mod/product-card');
-}
-
 if ($('.carousel--scroll').length > 0) {
 	import(/* webpackChunkName: 'carousel-scroll' */ '~mod/carousel-scroll');
 }
@@ -35,8 +31,15 @@ if ($('.a-beauty-review').length > 0) {
 	import(/* webpackChunkName: 'a-beauty-review' */ '~mod/a-beauty-review');
 }
 
-if ($('.yotpo__product').length > 0) {
-	import(/* webpackChunkName: 'yotpo-product' */ '~mod/yotpo-product');
+if ($('.react-yotpo-star').length > 0 || $('.react-yotpo-widget').length > 0) {
+	import(/* webpackChunkName: 'yotpo' */ '~mod/yotpo').then(({ initYotpoStar, initReviewWidget }) => {
+		if ($('.react-yotpo-star').length > 0) {
+			initYotpoStar();
+		}
+		if ($('.react-yotpo-widget').length > 0) {
+			initReviewWidget();
+		}
+	});
 }
 
 if ($('.review-carousel').length > 0) {
@@ -81,4 +84,8 @@ if ($('.collection-template').length > 0) {
 
 if ($('.upsell__article').length > 0) {
 	import(/* webpackChunkName: 'blog-upsell' */ '~mod/blog-upsell');
+}
+
+if ($('.announcement-bar--open-modal').length > 0) {
+	import(/* webpackChunkName: 'announcement-bar' */ '~mod/announcement-bar-abtest');
 }

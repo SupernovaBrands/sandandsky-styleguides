@@ -1,0 +1,95 @@
+<div id="announcementBarAbtest" class="announcement-bar announcement-bar--open-modal p-0 bg-tsw carousel slide d-none" data-ride="carousel">
+	<div class="carousel-inner container">
+		<div class="carousel-item active text-center text-white">
+			<img class="svg chevron-left position-absolute d-block d-lg-none" src="icons/grouped-chevron-down.svg" replace-to-svg />
+			<img class="svg chevron-right position-absolute d-block d-lg-none" src="icons/grouped-chevron-down.svg" replace-to-svg />
+			<a data-toggle="modal" data-target="#newsletter-modal" href="javascript:void(0)"  class="d-flex align-items-center justify-content-center font-size-sm">GET FREE FACE MITTS TODAY</a>
+		</div>
+	</div>
+</div>
+<div class="modal modal--newsletter fade" id="newsletter-modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg modal-dialog-centered mt-0" role="document">
+		<div class="modal-content mx-0 position-absolute border-0 rounded-0 overflow-hidden">
+			<div class="row align-items-center">
+				<div class="col-lg-6 pr-lg-0 d-none d-lg-block">
+					<img src="https://via.placeholder.com/393x580?text=Signup" class="w-100" alt="Product Image" loading="lazy">
+				</div>
+				<div id="newsletter-form" class="col-lg-6 pl-lg-0">
+					<div class="px-4 px-lg-5 py-3">
+						<div class="d-flex flex-wrap mb-2 text-center justify-content-center">
+							<img class="svg union mt-4" src="icons/envelope.svg" replace-to-svg />
+							<h2 class="mt-3 mb-2 w-100">Here's free face mitts on us!</h2>
+							<p class="mb-3">We promise we only share the good stuff - think exclusive offers and beauty tips to help you get the most from your skincare.</p>
+							<form class="w-100">
+								<div class="form-group">
+									<input type="email" class="form-control" placeholder="Enter email">
+									<small id="emailHelp" class="form-text text-left text-danger d-none">Invalid email address.</small>
+								</div>
+								<span class="d-block mb-1">And or</span>
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Enter Phoe Number">
+									<small id="emailHelp" class="form-text text-left text-danger d-none">Invalid phone number</small>
+								</div>
+								<p class="w-100 font-size-sm mt-3 mb-3">Our <a href="">Privacy Policy</a> has more information about how we use your data.</p>
+								<div class="row">
+									<div class="form-group col mt-1">
+										<button class="btn btn-lg btn-primary btn-block" type="submit">Submit form</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div id="account-form" class="col-lg-6 pl-lg-0 d-none">
+					<div class="px-4 px-lg-5 py-3">
+						<div class="d-flex flex-wrap mb-2 text-center justify-content-center">
+							<img class="svg union mt-4" src="icons/account-two.svg" replace-to-svg />
+							<h2 class="mt-3 mb-2 w-100">Thanks for subcribing!</h2>
+							<p class="mb-3">To enjoy even MORE benefits, join our Sand & Sky Rewards program today and receive free shipping + 50 POINTS that can be redeemed for exclusive discounts.</p>
+							<form class="w-100">
+								<div class="form-group mb-3">
+									<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+									<small id="emailHelp" class="form-text text-left text-danger d-none">Invalid first name.</small>
+								</div>
+								<div class="form-group mb-3">
+									<input type="text" class="form-control" placeholder="Enter email">
+									<small id="emailHelp" class="form-text text-left text-danger d-none">Invalid last name.</small>
+								</div>
+								<div class="form-group mb-3">
+									<input type="password" class="form-control" placeholder="Enter email">
+									<small id="emailHelp" class="form-text text-left text-danger d-none">Invalid password.</small>
+								</div>
+								<div class="row mb-3">
+									<div class="form-group col mt-1">
+										<button class="btn btn-lg btn-primary btn-block" type="submit">Create an account</button>
+									</div>
+								</div>
+								<a href="javascript:void(0);" class="w-100 font-size-sm mt-3 mb-3" data-dismiss="modal"><u>No thanks, maybe another time.</u></a>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div id="completed-form" class="col-lg-6 pl-lg-0 d-none">
+					<div class="px-4 px-lg-5 py-3">
+						<div class="d-flex flex-wrap mb-2 text-center justify-content-center">
+							<img class="svg union mt-4" src="icons/convetti.svg" replace-to-svg />
+							<h2 class="mt-3 mb-4 w-100">Thanks for subcribing!</h2>
+							<p class="mb-3">Start enjoying your Sand & Sky Rewards!</p>
+							<ul class="list-check ml-2 pl-4 pr-3 pl-lg-5 pr-lg-4 list-unstyled text-left">
+								<li class="mb-3">You’re now registered for Sand & Sky rewards.</li>
+								<li class="mb-3">What does this mean? - You are eligible to receive first hand news about new products, deals and surprises!</li>
+								<li class="mb-3">Check your inbox to activate your account.</li>
+							</ul>
+							<a href="javascript:void(0);" class="btn btn-lg btn-primary btn-block" data-dismiss="modal">Start shopping</a>
+							<a href="javascript:void(0);" class="btn btn-lg btn-outline-primary btn-block" data-dismiss="modal">Learn more about Rewards</a>
+						</div>
+					</div>
+				</div>
+				<div class="bottom-close w-100 text-center d-block d-lg-none" data-dismiss="modal"><img class="svg" src="icons/chevron-up.svg" replace-to-svg /></div>
+			</div>
+			<button type="button" class="close position-absolute font-size-base d-none d-lg-block " data-dismiss="modal">
+				<img class="svg" src="icons/close.svg" replace-to-svg />
+			</button>
+		</div>
+	</div>
+</div>

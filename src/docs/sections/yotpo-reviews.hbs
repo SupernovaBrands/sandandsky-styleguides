@@ -6,7 +6,18 @@
 </head>
 
 <body>
+	<div class="container my-4">
+		<h1>Yotpo Reviews</h1>
+	</div>
+
 	{{> sections/yotpo-review}}
+
+	<div class="container my-4">
+		<h2>Review only (for real result page)</h2>
+	</div>
+
+	{{> sections/yotpo-review reviewOnly=true }}
+
 	{{> js jquery=true bootstrap=true main=true }}
 </body>
 

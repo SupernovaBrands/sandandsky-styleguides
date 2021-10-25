@@ -1,5 +1,9 @@
 <header class="main-header bg-white position-relative">
-	{{> components/announcement-bar}}
+	{{#if cookiebanner}}
+	{{> components/cookies-banner }}
+	{{/if}}
+	{{> components/announcement-bar }}
+	{{> components/announcement-bar-abtest}}
 	<nav class="navbar navbar-expand-lg px-g">
 		<div class="container">
 			<button class="navbar-toggler" type="button">
@@ -65,7 +69,7 @@
 					</a>
 				</li>
 			</ul>
-			{{> components/tooltip}}
+
 		</div>
 	</nav>
 	{{> compounds/mobile-menu-2}}
@@ -78,6 +82,8 @@
 	{{#if secondnav}}
 	{{> compounds/secondary-nav gridclass="px-0"}}
 	{{/if}}
+
+	{{> components/tooltip}}
 </header>
 
 {{> sections/cart-drawer}}

@@ -1,0 +1,61 @@
+html.uk-store {
+	.announcement-bar--open-modal {
+		.chevron-left {
+			height: calc-em(32);
+			left: 1em;
+		}
+
+		.chevron-right {
+			height: calc-em(32);
+			right: 1em;
+		}
+
+		a {
+			padding: calc-em(9.5) 0;
+		}
+	}
+
+	.modal--newsletter {
+		top: 2em;
+
+		.union {
+			height: 2em;
+		}
+
+		.close {
+			right: 1em;
+			top: 1em;
+		}
+
+		.modal-content {
+			top: 0;
+
+			@include media-breakpoint-up(lg) {
+				top: auto;
+			}
+		}
+
+		.bottom-close {
+			background-color: $range-tsw-light;
+		}
+	}
+
+	.modal--newsletter-open .main-header {
+		z-index: $zindex-modal;
+
+		.navbar {
+			&:before {
+				@include media-breakpoint-up(lg) {
+					content: ' ';
+					background-color: black;
+					opacity: .5;
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					left: 0;
+					z-index: $zindex-modal-backdrop;
+				}
+			}
+		}
+	}
+}

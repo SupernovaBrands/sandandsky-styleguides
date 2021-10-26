@@ -1,8 +1,10 @@
+/* eslint-disable import/prefer-default-export */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import YotpoStar from '~comp/mobile-menu-abtest';
 
-const initMenuYotpoStar = () => {
+export const initMenuYotpoStar = () => {
 	const yotpoStars = document.querySelectorAll('.react-menu-yotpo-star');
 	yotpoStars.forEach((el) => {
 		ReactDOM.render(
@@ -18,5 +20,3 @@ const initMenuYotpoStar = () => {
 		);
 	});
 };
-
-export default initMenuYotpoStar;

@@ -28,20 +28,20 @@
 			}
 		}
 
-    .tab-pane {
-      a:hover {
-        color: $body-color;
-      }
-    }
+		.tab-pane {
+			a:hover {
+				color: $body-color;
+			}
+		}
 
 		.card {
 			ul {
 				border-top: 1px solid $gray-400;
 			}
 
-      &__tag{
-        background-color: $primary-light;
-      }
+			&__tag{
+				background-color: $primary-light;
+			}
 		}
 
 		.card__indicator {

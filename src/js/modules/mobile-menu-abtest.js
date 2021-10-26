@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import YotpoStar from '~comp/mobile-menu-abtest';
 
-export const initMenuYotpoStar = () => {
+const initMenuYotpoStar = () => {
 	const yotpoStars = document.querySelectorAll('.react-menu-yotpo-star');
 	yotpoStars.forEach((el) => {
 		ReactDOM.render(
@@ -18,3 +18,5 @@ export const initMenuYotpoStar = () => {
 		);
 	});
 };
+
+export default initMenuYotpoStar;

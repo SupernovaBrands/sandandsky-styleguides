@@ -1,5 +1,17 @@
+.mobile-nav--abtest {
+  display: none;
+}
+
 .mobile-menu-abtest {
 	.mobile-nav {
+    &.mobile-nav--abtest {
+      display: block;
+    }
+
+    &:not(.mobile-nav--abtest) {
+      display: none;
+    }
+
 		&__close {
 			right: auto;
 			top: auto;

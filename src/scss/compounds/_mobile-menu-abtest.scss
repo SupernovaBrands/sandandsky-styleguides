@@ -1,16 +1,10 @@
-.mobile-nav--abtest {
-	display: none;
-}
-
 .mobile-menu-abtest {
 	.mobile-nav {
-		&.mobile-nav--abtest {
-			display: block;
-		}
-
-		&:not(.mobile-nav--abtest) {
-			display: none;
-		}
+		display: none;
+	}
+	
+	.mobile-nav--abtest {
+		display: block !important;
 
 		&__close {
 			right: auto;

@@ -18,9 +18,6 @@ $(document).ready(function () {
 	let scrollTop = 0;
 	const screenLG = 992;
 	const navbarEl = $('.main-header');
-	const announceBar = $('#announcementBar');
-	const navbarHeight = navbarEl.height();
-
 	const productSwatchMobile = $('.product-swatch-mobile');
 	const productSwatchTrigger = $('.product-swatch-mobile__trigger');
 

@@ -22,20 +22,20 @@
 	&.scrolled-down {
 		transform: translateY(-100%);
 		transition: all 0.1s ease-in-out;
-    position: relative;
+		position: relative;
 	}
 
 	&.scrolled-up {
 		transform: translateY(-#{calc-em(36)});
 		transition: all 0.4s ease-in-out, right 0s;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    box-shadow: 0 calc-em(4) calc-em(5) 0 rgba(0, 0, 0, .06);
-    @include media-breakpoint-down(md) {
-      align-items: flex-start;
-    }
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		box-shadow: 0 calc-em(4) calc-em(5) 0 rgba(0, 0, 0, .06);
+		@include media-breakpoint-down(md) {
+			align-items: flex-start;
+		}
 	}
 
 	@include media-breakpoint-down(lg) {

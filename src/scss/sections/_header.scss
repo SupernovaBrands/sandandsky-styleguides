@@ -25,7 +25,7 @@
 	}
 
 	&.scrolled-up {
-		transform: translateY(-36px);
+		transform: translateY(-#{calc-em(36)});
 		transition: all 0.4s ease-in-out, right 0s;
 	}
 

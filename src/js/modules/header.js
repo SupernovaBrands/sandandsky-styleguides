@@ -18,7 +18,7 @@ $(document).ready(function () {
 	let scrollTop = 0;
 	const screenLG = 992;
 	const navbarEl = $('.main-header');
-	const announceBar = $('.announcement-bar');
+	const announceBar = $('#announcementBar');
 	const navbarHeight = navbarEl.height();
 
 	const productSwatchMobile = $('.product-swatch-mobile');
@@ -35,9 +35,6 @@ $(document).ready(function () {
 			if (scrollTop <= 0) {
 				// remove scrolled up for mobile menu show properly
 				navbarEl.removeClass('position-fixed').removeClass('scrolled-up');
-				if (announceBar.length > 0) {
-					announceBar.removeClass('d-none');
-				}
 			}
 			if (readingStickyScrolledDown.length) {
 				readingStickyScrolledDown.removeClass('position-fixed').addClass('d-none');
@@ -47,9 +44,6 @@ $(document).ready(function () {
 			navbarEl.removeClass('position-fixed').removeClass('scrolled-up');
 		} else {
 			navbarEl.removeClass('scrolled-up').addClass('scrolled-down');
-			if (announceBar.length > 0 && scrollTop > navbarHeight) {
-				announceBar.addClass('d-none');
-			}
 
 			if (readingStickyScrolledDown.length) {
 				readingStickyScrolledDown.addClass('position-fixed').removeClass('d-none');
@@ -82,16 +76,4 @@ $(document).ready(function () {
 		}
 		$('.tooltip').addClass('show');
 	});
-
-	const announcementBar = $('#announcementBar');
-	if (announcementBar.length) {
-		const announcementItems = announcementBar.find('.carousel-item');
-		let barHeight = 0;
-		announcementItems.each(function () {
-			barHeight = ($(this).outerHeight() > barHeight) ? $(this).outerHeight() : barHeight;
-		});
-		announcementBar.find('a').css({
-			height: `${barHeight} px`,
-		});
-	}
 });

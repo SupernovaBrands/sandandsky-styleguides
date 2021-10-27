@@ -21,30 +21,20 @@ $(document).ready(function () {
 	const productSwatchMobile = $('.product-swatch-mobile');
 	const productSwatchTrigger = $('.product-swatch-mobile__trigger');
 
-	const readingStickyScrolledDown = $('.reading-proggress-bar--scrolled-down');
-
 	$(window).on('scroll', function () {
 		scrollTop = $(this).scrollTop();
 
-		navbarEl.addClass('position-fixed');
 		if (scrollTop < lastScrollTop) {
 			navbarEl.removeClass('scrolled-down').addClass('scrolled-up');
 			if (scrollTop <= 0) {
 				// remove scrolled up for mobile menu show properly
-				navbarEl.removeClass('position-fixed').removeClass('scrolled-up');
-			}
-			if (readingStickyScrolledDown.length) {
-				readingStickyScrolledDown.removeClass('position-fixed').addClass('d-none');
+				navbarEl.removeClass('scrolled-up');
 			}
 		} else if (scrollTop <= 0) {
 			// safari fix bounce effect
-			navbarEl.removeClass('position-fixed').removeClass('scrolled-up');
+			navbarEl.removeClass('scrolled-up');
 		} else {
 			navbarEl.removeClass('scrolled-up').addClass('scrolled-down');
-
-			if (readingStickyScrolledDown.length) {
-				readingStickyScrolledDown.addClass('position-fixed').removeClass('d-none');
-			}
 		}
 
 		lastScrollTop = scrollTop;

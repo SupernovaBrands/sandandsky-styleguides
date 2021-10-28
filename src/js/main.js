@@ -89,3 +89,11 @@ if ($('.upsell__article').length > 0) {
 if ($('.announcement-bar--open-modal').length > 0) {
 	import(/* webpackChunkName: 'announcement-bar' */ '~mod/announcement-bar-abtest');
 }
+
+if ($('.mobile-nav--abtest').length > 0) {
+	import(/* webpackChunkName: 'mobile-menu-abtest' */ '~mod/mobile-menu-abtest').then(({ initMenuYotpoStar }) => {
+		if ($('.react-menu-yotpo-star').length > 0) {
+			initMenuYotpoStar();
+		}
+	});
+}

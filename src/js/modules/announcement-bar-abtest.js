@@ -20,11 +20,3 @@ $('#account-form form').on('submit', function (e) {
 	$('#account-form').addClass('d-none');
 	$('#completed-form').removeClass('d-none');
 });
-
-$('.countries-options__select').on('change', function () {
-	const val = $(this).val();
-	const maskingEl = $('.countries-options__label');
-	const phoneCode = $(this).find(`option[value='${val}']`).data('code');
-	maskingEl.text(`+${phoneCode}`).addClass('selected');
-	$(this).trigger('mouseleave');
-});

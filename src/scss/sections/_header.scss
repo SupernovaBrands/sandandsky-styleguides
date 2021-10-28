@@ -4,19 +4,11 @@
 
 .main-header {
 	z-index: $zindex-fixed;
+	position: fixed;
+	width: 100%;
 
 	.offcanvas-active & {
 		height: 100%;
-	}
-
-	&.position-fixed {
-		top: 0;
-		right: 0;
-		left: 0;
-		box-shadow: 0 calc-em(4) calc-em(5) 0 rgba(0, 0, 0, .06);
-		@include media-breakpoint-down(md) {
-			align-items: flex-start;
-		}
 	}
 
 	&.scrolled-down {
@@ -25,8 +17,18 @@
 	}
 
 	&.scrolled-up {
-		transform: translateY(0);
 		transition: all 0.4s ease-in-out, right 0s;
+		top: 0;
+		right: 0;
+		left: 0;
+		box-shadow: 0 calc-em(4) calc-em(5) 0 rgba(0, 0, 0, .06);
+		@include media-breakpoint-down(md) {
+			align-items: flex-start;
+		}
+
+		.announcement-bar {
+			display: none;
+		}
 	}
 
 	@include media-breakpoint-down(lg) {

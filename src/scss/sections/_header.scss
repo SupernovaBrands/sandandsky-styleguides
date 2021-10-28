@@ -6,6 +6,7 @@
 	z-index: $zindex-fixed;
 	position: fixed;
 	width: 100%;
+	top: 0;
 
 	.offcanvas-active & {
 		height: 100%;
@@ -49,6 +50,10 @@
 		&:hover {
 			color: $primary;
 		}
+	}
+
+	~ .main-content {
+		margin-top: calc-em(103);
 	}
 }
 

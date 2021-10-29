@@ -54,22 +54,22 @@ html.uk-store {
 				background: $body-color;
 			}
 			&:before {
-				right: 8.5px;
+				right: 7.5px;
 				width: 2px;
 				height: 0px;
 				top: 0px;
 			}
 			&:after {
 				right: 0;
-				width: 18px;
+				width: 16px;
 				height: 2px;
-				top: 8px;
+				top: 7px;
 			}
 		}
 
 		.card-header.collapsed {
 			.card__indicator:before {
-				height: 18px;
+				height: 16px;
 			}
 		}
 

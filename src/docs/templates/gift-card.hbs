@@ -7,79 +7,77 @@
 
 <body>
 	{{> sections/header}}
-	<main class="main-content" id="MainContent">
-		<section class="container mb-4 mb-lg-7 mt-lg-5">
-			<div class="row align-items-start">
-				{{> product-image-carousel rangeclass="bg-secondary" gutter=""}}
-				<div class="col-12 col-lg-5 d-flex flex-column px-g order-lg-3">
-					<h1 class="mt-4">Sand & Sky Gift Card</h1>
-					<p class="mt-2 mb-1">Perfect for fussy friends, last minute gifts, and that one impossible-to-buy-for friend. Redeemable across all of our products, you're one click away from guaranteed gifting glory.</p>
-					<ul class="list-check pl-4 list-unstyled mb-3">
-						<li class="my-1">Valid on all products</li>
-						<li class="my-1">Easy to send, easy to use</li>
-						<li class="my-1">Worry-free gifting guaranteed</li>
-					</ul>
-					<div class="d-flex mb-3 flex-column">
-						<form class="product-form">
-							<select class="custom-select h-auto py-g mb-3 border-dark">
-								<option selected>$50.00 USD</option>
-								<option>$75.00 USD</option>
-								<option>$100.00 USD</option>
-								<option>$150.00 USD</option>
-							</select>
+	<section class="container mb-4 mb-lg-7 mt-lg-5">
+		<div class="row align-items-start">
+			{{> product-image-carousel rangeclass="bg-secondary" gutter=""}}
+			<div class="col-12 col-lg-5 d-flex flex-column px-g order-lg-3">
+				<h1 class="mt-4">Sand & Sky Gift Card</h1>
+				<p class="mt-2 mb-1">Perfect for fussy friends, last minute gifts, and that one impossible-to-buy-for friend. Redeemable across all of our products, you're one click away from guaranteed gifting glory.</p>
+				<ul class="list-check pl-4 list-unstyled mb-3">
+					<li class="my-1">Valid on all products</li>
+					<li class="my-1">Easy to send, easy to use</li>
+					<li class="my-1">Worry-free gifting guaranteed</li>
+				</ul>
+				<div class="d-flex mb-3 flex-column">
+					<form class="product-form">
+						<select class="custom-select h-auto py-g mb-3 border-dark">
+							<option selected>$50.00 USD</option>
+							<option>$75.00 USD</option>
+							<option>$100.00 USD</option>
+							<option>$150.00 USD</option>
+						</select>
+						<div class="d-flex">
 							<div class="d-flex">
-								<div class="d-flex">
-									<button class="quantity--minus input-group-text border-right-0 rounded rounded-right-0 border-dark flex-grow-0" type="button" aria-label="Add Subtract" data-cy="pdp-subtract-quantity-icon">
-										<img class="svg" src="icons/minus.svg" replace-to-svg />
-									</button>
-									<input type="number" name="quantity" class="form-control border-left-0 border-right-0 rounded-0 p-0 text-center flex-grow-0 text-body border-dark font-size-dt-lg" value="1">
-									<button class="quantity--plus input-group-text border-left-0 rounded rounded-left-0 border-dark flex-grow-0" type="button" aria-label="Add Quantity" data-cy="pdp-add-quantity-icon">
-										<img class="svg" src="icons/plus.svg" replace-to-svg />
-									</button>
-								</div>
-								<button class="btn btn-primary btn-block ml-g ml-lg-3" type="submit" data-cy="pdp-addtocart-btn">Add to Cart</button>
+								<button class="quantity--minus input-group-text border-right-0 rounded rounded-right-0 border-dark flex-grow-0" type="button" aria-label="Add Subtract" data-cy="pdp-subtract-quantity-icon">
+									<img class="svg" src="icons/minus.svg" replace-to-svg />
+								</button>
+								<input type="number" name="quantity" class="form-control border-left-0 border-right-0 rounded-0 p-0 text-center flex-grow-0 text-body border-dark font-size-dt-lg" value="1">
+								<button class="quantity--plus input-group-text border-left-0 rounded rounded-left-0 border-dark flex-grow-0" type="button" aria-label="Add Quantity" data-cy="pdp-add-quantity-icon">
+									<img class="svg" src="icons/plus.svg" replace-to-svg />
+								</button>
 							</div>
-						</form>
-					</div>
-					<p class="mb-3 font-size-sm product-form__shipping"><strong>FREE</strong> standard shipping on all orders $40+<br>View delivery times <a href="#" data-target="#shippingModal" class="text-primary" data-toggle="modal">here</a></p>
-					<figure class="mb-3">
-						<picture class="d-block">
-							<source srcset="https://via.placeholder.com/470x120" media="(min-width: 992px)">
-							<img src="https://via.placeholder.com/345x100" alt="Placeholder" class="d-block w-100">
-						</picture>
-					</figure>
-
-					<div class="text-center bg-secondary text-white py-1 font-size-xs">Get the Sand & Sky Best Kit for an amazing complete gift set</div>
-					<figure class="upsell bg-gray-100 media p-g mb-5">
-						<img src="https://via.placeholder.com/100x126/F7E3F0" alt="Generic placeholder image">
-						<figcaption class="media-body pl-g">
-							<p class="font-weight-bold mt-0 mb-2">Dreamy Glow Drops Besties Kit</p>
-							<p class="mb-2">Porefining Face Mask (60g) + FREE applicator brush</p>
-							<span class="font-weight-bold mr-1">$92.50</span><span class="text-linethrough text-muted mr-1">$74.20</span>
-							<button class="btn d-block mt-2 btn-outline-primary">Add to cart</button>
-						</figcaption>
-					</figure>
+							<button class="btn btn-primary btn-block ml-g ml-lg-3" type="submit" data-cy="pdp-addtocart-btn">Add to Cart</button>
+						</div>
+					</form>
 				</div>
+				<p class="mb-3 font-size-sm product-form__shipping"><strong>FREE</strong> standard shipping on all orders $40+<br>View delivery times <a href="#" data-target="#shippingModal" class="text-primary" data-toggle="modal">here</a></p>
+				<figure class="mb-3">
+					<picture class="d-block">
+						<source srcset="https://via.placeholder.com/470x120" media="(min-width: 992px)">
+						<img src="https://via.placeholder.com/345x100" alt="Placeholder" class="d-block w-100">
+					</picture>
+				</figure>
+
+				<div class="text-center bg-secondary text-white py-1 font-size-xs">Get the Sand & Sky Best Kit for an amazing complete gift set</div>
+				<figure class="upsell bg-gray-100 media p-g mb-5">
+					<img src="https://via.placeholder.com/100x126/F7E3F0" alt="Generic placeholder image">
+					<figcaption class="media-body pl-g">
+						<p class="font-weight-bold mt-0 mb-2">Dreamy Glow Drops Besties Kit</p>
+						<p class="mb-2">Porefining Face Mask (60g) + FREE applicator brush</p>
+						<span class="font-weight-bold mr-1">$92.50</span><span class="text-linethrough text-muted mr-1">$74.20</span>
+						<button class="btn d-block mt-2 btn-outline-primary">Add to cart</button>
+					</figcaption>
+				</figure>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		{{> components/shipping-modal}}
+	{{> components/shipping-modal}}
 
-		{{> sections/howto-gift bg="howto-video__apc-light"}}
+	{{> sections/howto-gift bg="howto-video__apc-light"}}
 
-		{{#> sections/carousel-scroll id="featured-products" class="my-5 my-lg-7" header="Some goodies you might be interested in" button="Shop all featured"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)" badge="Best Seller"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="cc3195" badge="Best Seller"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" badge="Best Seller"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="cc3195" badge="Best Seller"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" badge="Best Seller"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="cc3195" badge="Best Seller"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller"}}
-		{{/ sections/carousel-scroll}}
-		{{> sections/newsletter-banner}}
-	</main>
+	{{#> sections/carousel-scroll id="featured-products" class="my-5 my-lg-7" header="Some goodies you might be interested in" button="Shop all featured"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="cc3195" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="cc3195" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="cc3195" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller"}}
+	{{/ sections/carousel-scroll}}
+	{{> sections/newsletter-banner}}
 	{{> sections/footer footclass="mb-6 mb-lg-0"}}
 	{{> js jquery=true bootstrap=true main=true }}
 </body>

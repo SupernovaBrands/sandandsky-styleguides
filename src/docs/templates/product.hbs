@@ -7,213 +7,211 @@
 
 <body class="template-product">
 	{{> sections/header}}
-	<main class="main-content" id="MainContent">
-		<section class="container mb-4">
-			<div class="row align-items-start">
-				{{> product-image-carousel rangeclass="bg-aea" gutter=""}}
-				<div class="col-12 col-lg-5 d-flex flex-column order-lg-3 px-g">
-					<h1 class="mt-4">Australian Pink Clay Porefining Face Mask</h1>
-					{{!-- DEV --}}
-					<div class="react-yotpo-star mb-2" data-product-id="4633315409991" data-show-total="true"></div>
-					{{!-- US --}}
-					{{!-- <div class="react-yotpo-star mb-2" data-product-id="3595105992809" data-show-total="true"></div> --}}
-					<p class="my-2 mb-lg-3">Smooth uneven texture and clear congestion with this triple-action facial exfoliator.</p>
-					{{> compounds/product-waitlist}}
-					<div class="d-flex order-lg-3 mb-3">
-						<form class="product-form">
-							<div class="swatch">
-								{{> components/product-variant name="product-variant" title="Single" value="1-x-sunny-honey-bali-bronzing-foam" checked=true}}
-								{{> components/product-variant name="product-variant" title="Bundle" subtitle=true value="1-x-sunny-honey-bali-bronzing-bundle" compare=true}}
+	<section class="container mb-4">
+		<div class="row align-items-start">
+			{{> product-image-carousel rangeclass="bg-aea" gutter=""}}
+			<div class="col-12 col-lg-5 d-flex flex-column order-lg-3 px-g">
+				<h1 class="mt-4">Australian Pink Clay Porefining Face Mask</h1>
+				{{!-- DEV --}}
+				<div class="react-yotpo-star mb-2" data-product-id="4633315409991" data-show-total="true"></div>
+				{{!-- US --}}
+				{{!-- <div class="react-yotpo-star mb-2" data-product-id="3595105992809" data-show-total="true"></div> --}}
+				<p class="my-2 mb-lg-3">Smooth uneven texture and clear congestion with this triple-action facial exfoliator.</p>
+				{{> compounds/product-waitlist}}
+				<div class="d-flex order-lg-3 mb-3">
+					<form class="product-form">
+						<div class="swatch">
+							{{> components/product-variant name="product-variant" title="Single" value="1-x-sunny-honey-bali-bronzing-foam" checked=true}}
+							{{> components/product-variant name="product-variant" title="Bundle" subtitle=true value="1-x-sunny-honey-bali-bronzing-bundle" compare=true}}
+						</div>
+						<div class="d-flex product-swatch-mobile__trigger">
+							<div class="d-flex">
+								<button class="quantity--minus input-group-text border-right-0 rounded rounded-right-0 border-dark flex-grow-0" type="button" aria-label="Add Subtract" data-cy="pdp-subtract-quantity-icon">
+									<img class="svg" src="icons/minus.svg" replace-to-svg />
+								</button>
+								<input type="number" name="quantity" class="form-control border-left-0 border-right-0 rounded-0 p-0 text-center flex-grow-0 text-body border-dark font-size-dt-lg" value="1">
+								<button class="quantity--plus input-group-text border-left-0 rounded rounded-left-0 border-dark flex-grow-0" type="button" aria-label="Add Quantity" data-cy="pdp-add-quantity-icon">
+									<img class="svg" src="icons/plus.svg" replace-to-svg />
+								</button>
 							</div>
-							<div class="d-flex product-swatch-mobile__trigger">
-								<div class="d-flex">
-									<button class="quantity--minus input-group-text border-right-0 rounded rounded-right-0 border-dark flex-grow-0" type="button" aria-label="Add Subtract" data-cy="pdp-subtract-quantity-icon">
-										<img class="svg" src="icons/minus.svg" replace-to-svg />
-									</button>
-									<input type="number" name="quantity" class="form-control border-left-0 border-right-0 rounded-0 p-0 text-center flex-grow-0 text-body border-dark font-size-dt-lg" value="1">
-									<button class="quantity--plus input-group-text border-left-0 rounded rounded-left-0 border-dark flex-grow-0" type="button" aria-label="Add Quantity" data-cy="pdp-add-quantity-icon">
-										<img class="svg" src="icons/plus.svg" replace-to-svg />
-									</button>
-								</div>
-								<button class="btn btn-primary btn-block ml-g ml-lg-3" type="submit" data-cy="pdp-addtocart-btn">Add to Cart</button>
-							</div>
-							<div class="product-swatch-mobile fixed-bottom d-lg-none px-g py-2 pb-3 bg-white">
-								<button class="btn btn-lg btn-primary btn-block m-0" type="submit">Add to cart</button>
-							</div>
-						</form>
+							<button class="btn btn-primary btn-block ml-g ml-lg-3" type="submit" data-cy="pdp-addtocart-btn">Add to Cart</button>
+						</div>
+						<div class="product-swatch-mobile fixed-bottom d-lg-none px-g py-2 pb-3 bg-white">
+							<button class="btn btn-lg btn-primary btn-block m-0" type="submit">Add to cart</button>
+						</div>
+					</form>
+				</div>
+				<p class="mb-3 font-size-sm order-lg-4">Afterpay</p>
+				<p class="mb-3 font-size-sm order-lg-5 d-flex align-items-center flex-wrap product__klarna">
+					<span>or 4 interest-free installments of <strong>£9.23</strong> by</span>
+					<img class="svg font-size-sm ml-1" src="icons/logo-klarna.svg" replace-to-svg />
+					<img class="svg info ml-1" src="icons/info-circle.svg" replace-to-svg data-toggle="modal" data-target="#KlarnaModal" />
+				</p>
+				{{> components/klarna-modal}}
+				<p class="mb-3 font-size-sm order-lg-5 product-form__shipping" data-target="#collapsible4">FREE standard shipping on all orders $40+ View delivery times <a href="#" class="text-primary">here</a></p>
+				<figure class="order-lg-7">
+					<picture class="d-block">
+						<source srcset="https://via.placeholder.com/470x120" media="(min-width: 992px)">
+						<img src="https://via.placeholder.com/345x100" alt="Placeholder" class="d-block w-100">
+					</picture>
+				</figure>
+				<ul class="tab nav nav-tabs order-lg-8" id="tab" role="tablist">
+					<li class="nav-item flex-grow-1 text-center">
+						<a class="nav-link border-0 pb-2 text-body active" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Benefits</a>
+					</li>
+					<li class="nav-item flex-grow-1 text-center">
+						<a class="nav-link border-0 pb-2 text-body" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Ingredients</a>
+					</li>
+					<li class="nav-item flex-grow-1 text-center">
+						<a class="nav-link border-0 pb-2 text-body" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Routine</a>
+					</li>
+				</ul>
+				<div class="tab-content mt-3 order-lg-9" id="tabContent">
+					<div id="tab-1" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tab-1">
+						<p class="mb-2">Delivering a burst of powerful aquatic ingredients, the luxurious, ultra-lightweight formula smooths and strengthens skin – without weighing it down.</p>
+						<ul class="list-check pl-4 list-unstyled">
+							<li class="my-2">Hydrates & strengthens with Tasmanian Spring Water</li>
+							<li class="my-2">Hyaluronic Acid Complex locks in moisture</li>
+							<li class="my-2">Fermented Sea Kelp smooths skin & targets wrinkles</li>
+							<li class="my-2">Red Seaweed Extract forms ‘second skin’ to prevent dehydration</li>
+							<li class="my-2">Ultra-lightweight gel-cream – ideal for all skin types</li>
+						</ul>
 					</div>
-					<p class="mb-3 font-size-sm order-lg-4">Afterpay</p>
-					<p class="mb-3 font-size-sm order-lg-5 d-flex align-items-center flex-wrap product__klarna">
-						<span>or 4 interest-free installments of <strong>£9.23</strong> by</span>
-						<img class="svg font-size-sm ml-1" src="icons/logo-klarna.svg" replace-to-svg />
-						<img class="svg info ml-1" src="icons/info-circle.svg" replace-to-svg data-toggle="modal" data-target="#KlarnaModal" />
-					</p>
-					{{> components/klarna-modal}}
-					<p class="mb-3 font-size-sm order-lg-5 product-form__shipping" data-target="#collapsible4">FREE standard shipping on all orders $40+ View delivery times <a href="#" class="text-primary">here</a></p>
-					<figure class="order-lg-7">
-						<picture class="d-block">
-							<source srcset="https://via.placeholder.com/470x120" media="(min-width: 992px)">
-							<img src="https://via.placeholder.com/345x100" alt="Placeholder" class="d-block w-100">
-						</picture>
-					</figure>
-					<ul class="tab nav nav-tabs order-lg-8" id="tab" role="tablist">
-						<li class="nav-item flex-grow-1 text-center">
-							<a class="nav-link border-0 pb-2 text-body active" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Benefits</a>
-						</li>
-						<li class="nav-item flex-grow-1 text-center">
-							<a class="nav-link border-0 pb-2 text-body" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Ingredients</a>
-						</li>
-						<li class="nav-item flex-grow-1 text-center">
-							<a class="nav-link border-0 pb-2 text-body" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Routine</a>
-						</li>
-					</ul>
-					<div class="tab-content mt-3 order-lg-9" id="tabContent">
-						<div id="tab-1" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tab-1">
-							<p class="mb-2">Delivering a burst of powerful aquatic ingredients, the luxurious, ultra-lightweight formula smooths and strengthens skin – without weighing it down.</p>
-							<ul class="list-check pl-4 list-unstyled">
-								<li class="my-2">Hydrates & strengthens with Tasmanian Spring Water</li>
-								<li class="my-2">Hyaluronic Acid Complex locks in moisture</li>
-								<li class="my-2">Fermented Sea Kelp smooths skin & targets wrinkles</li>
-								<li class="my-2">Red Seaweed Extract forms ‘second skin’ to prevent dehydration</li>
-								<li class="my-2">Ultra-lightweight gel-cream – ideal for all skin types</li>
+					<div id="tab-2" class="tab-pane fade tab-ingredient" role="tabpanel" aria-labelledby="tab-2">
+						<figure class="media mb-3">
+							<img src="https://via.placeholder.com/40x40?text=1" alt="Placeholder">
+							<figcaption class="media-body ml-2">
+								<strong>Australian Pink Clay:</strong> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labor et dolore magna.
+							</figcaption>
+						</figure>
+						<figure class="media mb-3">
+							<img src="https://via.placeholder.com/40x40?text=2" alt="Placeholder">
+							<figcaption class="media-body ml-2">
+								<strong>Australian Pink Clay:</strong> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labor et dolore magna.
+							</figcaption>
+						</figure>
+						<a class="collapsed d-flex align-items-center" data-toggle="collapse" href="#collapseIngredients" role="button" aria-expanded="false" aria-controls="collapseIngredients">
+							<img class="svg font-size-xs plus" src="icons/plus.svg" replace-to-svg />
+							<img class="svg font-size-xs minus" src="icons/minus.svg" replace-to-svg />
+							<span class="text-underline ml-1">Full ingredients list</span>
+						</a>
+						<div class="collapse collapse--ingredients" id="collapseIngredients" data-sku="SS0000012020" data-cname="sand and sky">
+							<p class="font-size-sm mt-3 d-none tab-ingredient__learn-more">(Click or tap on the ingredients to learn more)</p>
+							<p class="font-size-sm mt-2 tab-ingredient__content"></p>
+							{{> components/ingredient-modal}}
+						</div>
+					</div>
+					<div id="tab-3" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-3">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+				</div>
+				<ul id="accordion" class="accordion list-unstyled border-top mt-4 mt-lg-2 order-lg-10 mb-4 product__formula-list">
+					<li class="border-bottom">
+						<span class="py-4 w-100 d-flex justify-content-between align-items-center collapsed font-weight-bold" data-toggle="collapse" data-target="#collapsible1" aria-expanded="true" aria-controls="collapsible1">
+							Formula Facts
+							<img class="svg plus" src="icons/plus.svg" replace-to-svg />
+							<img class="svg minus" src="icons/minus.svg" replace-to-svg />
+						</span>
+						<div id="collapsible1" class="collapse" data-parent="#accordion">
+							<ul class="row list-unstyled pb-3 m-0 formula-list">
+								<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
+									<img class="svg" src="icons/sulfate.svg" replace-to-svg />
+									<p class="mb-0 ml-2 text-left">No sulfates</p>
+								</li>
+								<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
+									<img class="svg" src="icons/silicone.svg" replace-to-svg />
+									<p class="mb-0 ml-2 text-left">No silicones</p>
+								</li>
+								<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
+									<img class="svg" src="icons/paraben.svg" replace-to-svg />
+									<p class="mb-0 ml-2 text-left">No parabens</p>
+									</li>
+								<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
+									<img class="svg" src="icons/phthalates.svg" replace-to-svg />
+									<p class="mb-0 ml-2 text-left">No phthalates</p>
+								</li>
+								<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
+									<img class="svg" src="icons/pegs.svg" replace-to-svg />
+									<p class="mb-0 ml-2 text-left">No PEGs</p>
+								</li>
+								<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
+									<img class="svg" src="icons/gluten.svg" replace-to-svg />
+									<p class="mb-0 ml-2 text-left">No gluten</p>
+								</li>
+								<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
+									<img class="svg" src="icons/peta.svg" replace-to-svg />
+									<p class="mb-0 ml-2 text-left">Cruelty-free.<br>PETA approved</p>
+								</li>
+								<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
+									<img class="svg" src="icons/dermatologist.svg" replace-to-svg />
+									<p class="mb-0 ml-2 text-left">Dermatologist<br>approved</p>
+								</li>
 							</ul>
 						</div>
-						<div id="tab-2" class="tab-pane fade tab-ingredient" role="tabpanel" aria-labelledby="tab-2">
-							<figure class="media mb-3">
-								<img src="https://via.placeholder.com/40x40?text=1" alt="Placeholder">
-								<figcaption class="media-body ml-2">
-									<strong>Australian Pink Clay:</strong> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labor et dolore magna.
-								</figcaption>
-							</figure>
-							<figure class="media mb-3">
-								<img src="https://via.placeholder.com/40x40?text=2" alt="Placeholder">
-								<figcaption class="media-body ml-2">
-									<strong>Australian Pink Clay:</strong> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labor et dolore magna.
-								</figcaption>
-							</figure>
-							<a class="collapsed d-flex align-items-center" data-toggle="collapse" href="#collapseIngredients" role="button" aria-expanded="false" aria-controls="collapseIngredients">
-								<img class="svg font-size-xs plus" src="icons/plus.svg" replace-to-svg />
-								<img class="svg font-size-xs minus" src="icons/minus.svg" replace-to-svg />
-								<span class="text-underline ml-1">Full ingredients list</span>
+					</li>
+					<li class="border-bottom">
+						<span class="py-4 w-100 d-flex justify-content-between align-items-center collapsed font-weight-bold" data-toggle="collapse" data-target="#collapsible2" aria-expanded="true" aria-controls="collapsible2">
+							FAQs
+							<img class="svg plus" src="icons/plus.svg" replace-to-svg />
+							<img class="svg minus" src="icons/minus.svg" replace-to-svg />
+						</span>
+						<div id="collapsible2" class="collapse" data-parent="#accordion">
+							<p class="pb-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<a href="" class="pb-3 position-relative d-inline-flex align-items-center text-underline">
+								See all product FAQs
+								<img class="svg font-size-sm ml-1" src="icons/hyperlink.svg" replace-to-svg />
 							</a>
-							<div class="collapse collapse--ingredients" id="collapseIngredients" data-sku="SS0000012020" data-cname="sand and sky">
-								<p class="font-size-sm mt-3 d-none tab-ingredient__learn-more">(Click or tap on the ingredients to learn more)</p>
-								<p class="font-size-sm mt-2 tab-ingredient__content"></p>
-								{{> components/ingredient-modal}}
-							</div>
 						</div>
-						<div id="tab-3" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-3">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-							<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</li>
+					<li class="border-bottom product-form__shipping-accordion">
+						<span class="py-4 w-100 d-flex justify-content-between align-items-center collapsed font-weight-bold" data-toggle="collapse" data-target="#collapsible4" aria-expanded="true" aria-controls="collapsible4">
+							Shipping & Return
+							<img class="svg plus" src="icons/plus.svg" replace-to-svg />
+							<img class="svg minus" src="icons/minus.svg" replace-to-svg />
+						</span>
+						<div id="collapsible4" class="collapse" data-parent="#accordion">
+							<p class="pb-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 						</div>
-					</div>
-					<ul id="accordion" class="accordion list-unstyled border-top mt-4 mt-lg-2 order-lg-10 mb-4 product__formula-list">
-						<li class="border-bottom">
-							<span class="py-4 w-100 d-flex justify-content-between align-items-center collapsed font-weight-bold" data-toggle="collapse" data-target="#collapsible1" aria-expanded="true" aria-controls="collapsible1">
-								Formula Facts
-								<img class="svg plus" src="icons/plus.svg" replace-to-svg />
-								<img class="svg minus" src="icons/minus.svg" replace-to-svg />
-							</span>
-							<div id="collapsible1" class="collapse" data-parent="#accordion">
-								<ul class="row list-unstyled pb-3 m-0 formula-list">
-									<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
-										<img class="svg" src="icons/sulfate.svg" replace-to-svg />
-										<p class="mb-0 ml-2 text-left">No sulfates</p>
-									</li>
-									<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
-										<img class="svg" src="icons/silicone.svg" replace-to-svg />
-										<p class="mb-0 ml-2 text-left">No silicones</p>
-									</li>
-									<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
-										<img class="svg" src="icons/paraben.svg" replace-to-svg />
-										<p class="mb-0 ml-2 text-left">No parabens</p>
-										</li>
-									<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
-										<img class="svg" src="icons/phthalates.svg" replace-to-svg />
-										<p class="mb-0 ml-2 text-left">No phthalates</p>
-									</li>
-									<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
-										<img class="svg" src="icons/pegs.svg" replace-to-svg />
-										<p class="mb-0 ml-2 text-left">No PEGs</p>
-									</li>
-									<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
-										<img class="svg" src="icons/gluten.svg" replace-to-svg />
-										<p class="mb-0 ml-2 text-left">No gluten</p>
-									</li>
-									<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
-										<img class="svg" src="icons/peta.svg" replace-to-svg />
-										<p class="mb-0 ml-2 text-left">Cruelty-free.<br>PETA approved</p>
-									</li>
-									<li class="col-6 px-0 py-2 d-flex align-items-center text-center">
-										<img class="svg" src="icons/dermatologist.svg" replace-to-svg />
-										<p class="mb-0 ml-2 text-left">Dermatologist<br>approved</p>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="border-bottom">
-							<span class="py-4 w-100 d-flex justify-content-between align-items-center collapsed font-weight-bold" data-toggle="collapse" data-target="#collapsible2" aria-expanded="true" aria-controls="collapsible2">
-								FAQs
-								<img class="svg plus" src="icons/plus.svg" replace-to-svg />
-								<img class="svg minus" src="icons/minus.svg" replace-to-svg />
-							</span>
-							<div id="collapsible2" class="collapse" data-parent="#accordion">
-								<p class="pb-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-								<a href="" class="pb-3 position-relative d-inline-flex align-items-center text-underline">
-									See all product FAQs
-									<img class="svg font-size-sm ml-1" src="icons/hyperlink.svg" replace-to-svg />
-								</a>
-							</div>
-						</li>
-						<li class="border-bottom product-form__shipping-accordion">
-							<span class="py-4 w-100 d-flex justify-content-between align-items-center collapsed font-weight-bold" data-toggle="collapse" data-target="#collapsible4" aria-expanded="true" aria-controls="collapsible4">
-								Shipping & Return
-								<img class="svg plus" src="icons/plus.svg" replace-to-svg />
-								<img class="svg minus" src="icons/minus.svg" replace-to-svg />
-							</span>
-							<div id="collapsible4" class="collapse" data-parent="#accordion">
-								<p class="pb-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-							</div>
-						</li>
-					</ul>
-					<div class="text-center bg-secondary text-white py-1 font-size-sm order-lg-10">Save 20% with a bundle</div>
-					<figure class="upsell bg-gray-100 media p-g order-lg-11 mb-5">
-						<img src="https://via.placeholder.com/100x126/F7E3F0" alt="Generic placeholder image">
-						<figcaption class="media-body pl-g">
-							<p class="font-weight-bold mt-0 mb-2">Dreamy Glow Drops Besties Kit</p>
-							<p class="mb-2">Porefining Face Mask (60g) + FREE applicator brush</p>
-							<span class="font-weight-bold mr-1">$92.50</span><span class="text-linethrough text-muted mr-1">$74.20</span>
-							<button class="btn d-block mt-2 btn-outline-primary">Add to cart</button>
-						</figcaption>
-					</figure>
-				</div>
+					</li>
+				</ul>
+				<div class="text-center bg-secondary text-white py-1 font-size-sm order-lg-10">Save 20% with a bundle</div>
+				<figure class="upsell bg-gray-100 media p-g order-lg-11 mb-5">
+					<img src="https://via.placeholder.com/100x126/F7E3F0" alt="Generic placeholder image">
+					<figcaption class="media-body pl-g">
+						<p class="font-weight-bold mt-0 mb-2">Dreamy Glow Drops Besties Kit</p>
+						<p class="mb-2">Porefining Face Mask (60g) + FREE applicator brush</p>
+						<span class="font-weight-bold mr-1">$92.50</span><span class="text-linethrough text-muted mr-1">$74.20</span>
+						<button class="btn d-block mt-2 btn-outline-primary">Add to cart</button>
+					</figcaption>
+				</figure>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		{{> sections/howto-video bg='howto-video__aea-light'}}
-		{{> components/video-modal}}
-		{{> sections/review-testimonials}}
+	{{> sections/howto-video bg='howto-video__aea-light'}}
+	{{> components/video-modal}}
+	{{> sections/review-testimonials}}
 
-		<section class="py-4" id="write-a-review">
-			<div class="container px-g">
-				<h2 class="h1 mb-3">Customer Reviews</h2>
-			</div>
-			{{> sections/yotpo-review}}
-		</section>
+	<section class="py-4" id="write-a-review">
+		<div class="container px-g">
+			<h2 class="h1 mb-3">Customer Reviews</h2>
+		</div>
+		{{> sections/yotpo-review}}
+	</section>
 
-		{{#> sections/carousel-scroll id="featured-products" class="my-5 my-lg-7" header="Some goodies you might be interested in" button="Shop all featured"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)" badge="Best Seller"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="cc3195" badge="Best Seller"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" badge="Best Seller"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="cc3195" badge="Best Seller"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" badge="Best Seller"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="cc3195" badge="Best Seller"}}
-			{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller"}}
-		{{/ sections/carousel-scroll}}
-		{{> sections/newsletter-banner}}
-	</main>
+	{{#> sections/carousel-scroll id="featured-products" class="my-5 my-lg-7" header="Some goodies you might be interested in" button="Shop all featured"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines)" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="cc3195" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="cc3195" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="cc3195" badge="Best Seller"}}
+		{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller"}}
+	{{/ sections/carousel-scroll}}
+	{{> sections/newsletter-banner}}
 	{{> sections/footer footclass="mb-6 mb-lg-0"}}
 	{{> js jquery=true bootstrap=true main=true }}
 </body>

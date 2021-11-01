@@ -19,10 +19,12 @@
 				<p class="my-2 mb-lg-3">Smooth uneven texture and clear congestion with this triple-action facial exfoliator.</p>
 				{{> compounds/product-waitlist}}
 				<div class="d-flex order-lg-3 mb-3">
-					<form class="product-form">
+					<form class="product-form w-100">
 						<div class="swatch">
 							{{> components/product-variant name="product-variant" title="Single" value="1-x-sunny-honey-bali-bronzing-foam" checked=true}}
 							{{> components/product-variant name="product-variant" title="Bundle" subtitle=true value="1-x-sunny-honey-bali-bronzing-bundle" compare=true}}
+							{{> components/product-variant-abtest name="product-variant" title="Single" value="1-x-sunny-honey-bali-bronzing-foam-abtest" checked=true}}
+							{{> components/product-variant-abtest name="product-variant" title="Bundle" subtitle=true value="1-x-sunny-honey-bali-bronzing-bundle-abtest" compare=true}}
 						</div>
 						<div class="d-flex product-swatch-mobile__trigger">
 							<div class="d-flex">

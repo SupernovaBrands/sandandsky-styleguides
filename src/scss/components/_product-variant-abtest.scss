@@ -1,0 +1,17 @@
+html.eu-store {
+	.product-variant-abtest {
+		.product-variant {
+			display: none;
+		}
+
+		.product-variant--abtest {
+			display: block !important;
+
+			.custom-control-label {
+				&::before {
+					display: none;
+				}
+			}
+		}
+	}
+}

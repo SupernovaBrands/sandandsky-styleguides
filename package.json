@@ -1,6 +1,10 @@
 {
   "name": "sandandsky-styleguides",
+<<<<<<< HEAD
   "version": "1.2.2",
+=======
+  "version": "1.4.6",
+>>>>>>> master
   "description": "Here we have all the CORE, COMPONENTS, COMPOUND, SECTIONS and TEMPLATE scss-code organized in the same waas is done on the Shopify repo.",
   "main": "index.html",
   "scripts": {

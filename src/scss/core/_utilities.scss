@@ -1,3 +1,6 @@
+// Light green background color
+@include bg-variant(".bg-primary-light", $primary-light, true);
+
 // Light pink background color
 @include bg-variant(".bg-secondary-light", $secondary-light, true);
 

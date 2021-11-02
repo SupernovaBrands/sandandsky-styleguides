@@ -20,3 +20,11 @@ export const initMenuYotpoStar = () => {
 		);
 	});
 };
+
+$('#tab-1').on('show.bs.collapse', function () {
+	$('#tab-1').find('.card-header').addClass('collapsed');
+});
+
+$('#tab-2').on('show.bs.collapse', function () {
+	$('#tab-2').find('.card-header').addClass('collapsed');
+});

@@ -27,7 +27,10 @@ html.us-store {
 			}
 
 			img {
-				width: 18%;
+				width: 24%;
+				@include media-breakpoint-up(lg) {
+					width: 18%;
+				}
 			}
 		}
 	}

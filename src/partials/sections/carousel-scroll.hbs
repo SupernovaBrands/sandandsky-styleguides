@@ -1,7 +1,7 @@
 <div {{#if id}}id="{{ id }}"{{/if}} class="container {{#if (eq id 'search-products')}}{{else}}px-g{{/if}} {{ class }}">
 
 	{{#if header}}
-	<div class="d-flex justify-content-between align-items-start mb-3">
+	<div class="d-flex justify-content-between align-items-start mb-0">
 		<h2 class="h1 mb-0">{{ header }}</h2>
 		{{#if button}}
 		<button class="btn btn-lg btn-primary d-none d-lg-block">{{ button }}</button>
@@ -11,7 +11,7 @@
 
 
 	<div class="carousel--scroll position-relative">
-		<div class="carousel-inner d-flex flex-nowrap row w-auto" role="listbox">
+		<div class="carousel-inner d-flex flex-nowrap row w-auto pt-3 pt-lg-4" role="listbox">
 			{{#if @partial-block}}{{> @partial-block }}{{/if}}
 		</div>
 		{{#if no-scrollbar}}

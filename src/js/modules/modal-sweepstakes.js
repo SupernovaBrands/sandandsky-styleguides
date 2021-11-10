@@ -23,10 +23,8 @@ $('#account-form form').on('submit', function (e) {
 
 $('.countries-options__select').on('change', function () {
 	const val = $(this).val();
-	console.log(val)
 	const maskingEl = $('.countries-options__label');
 	const phoneCode = $(this).find(`option[value='${val}']`).data('code');
-	console.log(phoneCode)
 	maskingEl.text(`+${phoneCode}`).addClass('selected');
 	$(this).trigger('mouseleave');
 });

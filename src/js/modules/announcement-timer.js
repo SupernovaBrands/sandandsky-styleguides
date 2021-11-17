@@ -1,16 +1,12 @@
-const getUtcTime = (date) => {
-	const now = new Date(date);
-	const utcTimestamp = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),
+const utcTimeStamp = (now) => {
+	const timeStamp = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),
 		now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds());
-	return utcTimestamp - (8 * 60 * 60 * 1000);
+	return timeStamp;
 };
 
-const nowUtcTime = () => {
-	const now = new Date();
-	const utcTimestamp = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),
-		now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds());
-	return utcTimestamp - (8 * 60 * 60 * 1000);
-};
+const getUtcTime = (date) => (utcTimeStamp(new Date(date)) - (8 * 60 * 60 * 1000));
+
+const nowUtcTime = () => (utcTimeStamp(new Date()) - (8 * 60 * 60 * 1000));
 
 const startCount = (endAt) => {
 	const end = new Date(getUtcTime(endAt));

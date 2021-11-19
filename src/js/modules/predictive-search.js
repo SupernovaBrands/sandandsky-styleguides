@@ -30,7 +30,7 @@ const SearchBox = {
 			SearchBox.searchBoxToggle();
 		});
 
-		$('.nav-item--mega-menu, .dropdown--onhover').hover(function () {
+		$('.nav-item--mega-menu').hover(function () {
 			if (SearchBox.isSearchOpen()) {
 				SearchBox.searchBoxToggle();
 			}

@@ -15,15 +15,3 @@
 		right: 1em;
 	}
 }
-
-.modal--sweepstakes {
-	.modal-dialog {
-		@include media-breakpoint-up(lg) {
-			max-width: 630px;
-		}
-	}
-
-	.modal-content {
-		border-radius: calc-em(20);
-	}
-}

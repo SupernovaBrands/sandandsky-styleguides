@@ -98,10 +98,6 @@ if ($('.mobile-nav--abtest').length > 0) {
 	});
 }
 
-if ($('.modal--sweepstakes').length > 0) {
-	import(/* webpackChunkName: 'modal' */ '~mod/modal-sweepstakes');
-}
-
 if ($('.announcement-bar__timer').length > 0) {
 	import(/* webpackChunkName: 'announcement-timer' */ '~mod/announcement-timer');
 }

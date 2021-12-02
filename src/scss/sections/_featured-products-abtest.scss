@@ -1,0 +1,20 @@
+html.us-store {
+    .featured-products-abtest,
+    .featured-products-tab-content-abtest {
+        display: none !important;
+    }
+
+    .homepage-abtest {
+        .featured-products-abtest {
+            display: flex !important;
+        }
+
+        .featured-products-tab-content-abtest {
+            display: block !important;
+        }
+
+        .featured-products-carousel:not(.featured-products-carousel-abtest) {
+            display: none !important;
+        }
+    }
+}

@@ -1,19 +1,19 @@
-.collection-section-abtest {
-    display: none !important;
-
-    @include media-breakpoint-down(sm) {
-        .collection-section__header h2, h4 {
-            width: 90%;
+html.us-store {
+    .collection-section-abtest {
+        @include media-breakpoint-down(sm) {
+            .collection-section__header h2, h4 {
+                width: 90%;
+            }
         }
     }
-}
 
-.range-subtitle-abtest {
-    .collection-section-abtest {
-        display: block !important;
-    }
-    
-    .collection-section:not(.collection-section-abtest) {
-        display: none !important;
+    .range-subtitle-abtest {
+        .collection-section-abtest {
+            display: block !important;
+        }
+
+        .collection-section:not(.collection-section-abtest) {
+            display: none !important;
+        }
     }
 }

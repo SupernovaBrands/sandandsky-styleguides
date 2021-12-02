@@ -19,6 +19,10 @@ if ($('.carousel--scroll').length > 0) {
 	import(/* webpackChunkName: 'carousel-scroll' */ '~mod/carousel-scroll');
 }
 
+if ($('#tabFeaturedProductAbTest').length > 0) {
+	import(/* webpackChunkName: 'carousel-scroll' */ '~mod/featured-products-abtest');
+}
+
 if ($('.product-image-carousel').length > 0) {
 	import(/* webpackChunkName: 'carousel-product-image' */ '~mod/carousel-product-image');
 }

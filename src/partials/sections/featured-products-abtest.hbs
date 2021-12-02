@@ -1,9 +1,9 @@
-<div class="container d-flex justify-content-between align-items-start mb-0 mt-7 featured-products-abtest">
+<div class="container d-none justify-content-between align-items-start mb-0 mt-7 featured-products-abtest">
 	<h2 class="h1 mb-3">Find products that would suit you just right</h2>
 	<button class="btn btn-lg btn-primary d-none d-lg-block">Shop all</button>
 </div>
 
-<ul class="tab nav nav-tabs container featured-products-abtest" id="tabFeaturedProductAbTest" role="tablist">
+<ul class="tab nav nav-tabs container featured-products-abtest d-none" id="tabFeaturedProductAbTest" role="tablist">
 	<li class="nav-item text-center">
 		<a class="nav-link border-0 pb-2 text-body active" data-toggle="tab" href="#tab-1-featured" role="tab" aria-controls="tab-1-featured" aria-selected="true">Best sellers</a>
 	</li>
@@ -18,7 +18,7 @@
 	</li>
 </ul>
 
-<div class="tab-content mt-3 featured-products-tab-content-abtest" id="tabFeaturedProductContentFeatured">
+<div class="tab-content mt-3 featured-products-tab-content-abtest d-none" id="tabFeaturedProductContentFeatured">
 	<div id="tab-1-featured" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tab-1-featured">
 		{{#> sections/carousel-scroll id="featured-products-1" class="my-5 my-lg-0 featured-products-carousel featured-products-carousel-abtest" }}
 			{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines) 1"}}

@@ -764,7 +764,7 @@ export default class Cart extends React.Component {
 									{!loadingCart && shippingData.show && (
 										<>
 											<h5 className="col-8">{tStrings.cartShipping}</h5>
-											<h5 className="col-4 text-right text-secondary">{shippingData.amount > 0 ? formatMoney(shippingData.amount) : 'Free'}</h5>
+											<h5 className="col-4 text-right">{shippingData.amount > 0 ? formatMoney(shippingData.amount) : 'Free'}</h5>
 										</>
 									)}
 

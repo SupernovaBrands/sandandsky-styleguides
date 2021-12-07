@@ -140,4 +140,8 @@ $('.carousel--scroll').each((index, carousel) => {
 	if (nextButton) {
 		nextButton.addEventListener('mousedown', scrollItem('right'));
 	}
+
+	window.addEventListener('resize', function () {
+		checkButton();
+	});
 });

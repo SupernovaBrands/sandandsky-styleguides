@@ -1,0 +1,11 @@
+html.us-store {
+    .aea-abtest {
+        .featured-products-aea-abtest {
+            display: block !important;
+        }
+
+        .featured-products-carousel:not(.featured-products-aea-abtest) {
+            display: none !important;
+        }
+    }
+}

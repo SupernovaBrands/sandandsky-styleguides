@@ -67,3 +67,14 @@ if (productWaitlistForm.length > 0 && productWaitlistSubmitted.length > 0) {
 		productWaitlistSubmitted.removeClass('d-none');
 	});
 }
+
+$('.product-form [name=product-variant]').on('change', function () {
+	const carouselIndicator = $('.product-image-carousel__indicator .product-image-carousel__indicator__item');
+	const imageVariant = $(this).data('image');
+	if (imageVariant && carouselIndicator.length) {
+		const targetIndicator = carouselIndicator.find(`img[src='${imageVariant}']`);
+		if (targetIndicator) {
+			$(targetIndicator).closest('.product-image-carousel__indicator__item').trigger('click');
+		}
+	}
+});

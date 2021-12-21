@@ -3,7 +3,6 @@
 		<img class="svg nav-link__icon" src="icons/user.svg" replace-to-svg />
 	</a>
 	<div class="dropdown-menu border-0 rounded-0 pt-g pb-2 d-block" aria-labelledby="dropdownMenuUser">
-		{{#unless critical}}
 		<form id="dropdown__login" class="px-3 py-g collapse show" data-parent="#dropdownMenuForm">
 			<div class="form-group">
 				<label for="dropdownLoginFormEmail" class="font-size-sm">Email</label>
@@ -48,6 +47,5 @@
 			</div>
 			<button type="submit" class="btn btn-primary btn-block mt-g">Create Account</button>
 		</form>
-		{{/unless}}
 	</div>
 </li>

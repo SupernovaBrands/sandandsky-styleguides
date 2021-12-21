@@ -113,3 +113,7 @@ if ($('.modal--sweepstakes').length > 0) {
 if ($('.announcement-bar__timer').length > 0) {
 	import(/* webpackChunkName: 'announcement-timer' */ '~mod/announcement-timer');
 }
+
+if ($('.dropdown-menu--ab-test').length > 0) {
+	import(/* webpackChunkName: 'dropdown-abtest' */ '~mod/dropdown-abtest');
+}

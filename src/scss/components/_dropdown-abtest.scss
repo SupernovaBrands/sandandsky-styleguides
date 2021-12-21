@@ -1,0 +1,32 @@
+html.au-store {
+
+	@include media-breakpoint-up(lg) {
+		#dropdownMenuForm {
+			display: block !important;
+		}
+
+		.nav-item__user {
+			display: none !important;
+		}
+	}
+
+	.dropdown--ab-test {
+
+		.dropdown-toggle:after {
+			content: none;
+		}
+
+		.dropdown-menu {
+			min-width: calc-em(300);
+
+			&.show {
+				visibility: visible;
+				height: auto;
+			}
+		}
+
+		.collapsing {
+			transition: none;
+		}
+	}
+}

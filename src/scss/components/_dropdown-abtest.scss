@@ -1,4 +1,4 @@
-html.au-store {
+html.uk-store {
 
 	@include media-breakpoint-up(lg) {
 		#dropdownMenuForm {
@@ -17,7 +17,9 @@ html.au-store {
 		}
 
 		.dropdown-menu {
-			min-width: calc-em(300);
+			&:not(.dropdown-menu__logged-in) {
+				min-width: calc-em(300);
+			}
 
 			&.show {
 				visibility: visible;
@@ -27,6 +29,11 @@ html.au-store {
 
 		.collapsing {
 			transition: none;
+		}
+
+		label.error {
+			color: $secondary;
+			font-size: $font-size-xs;
 		}
 	}
 }

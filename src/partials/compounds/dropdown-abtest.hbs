@@ -1,0 +1,51 @@
+<li id="dropdownMenuForm" class="nav-item d-none dropdown dropdown--ab-test">
+	<a href="#" class="nav-link h4 m-0 d-flex dropdown-toggle" role="button" id="dropdownMenuUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<img class="svg nav-link__icon" src="icons/user.svg" replace-to-svg />
+	</a>
+	<div class="dropdown-menu border-0 rounded-0 pt-g pb-2 d-block" aria-labelledby="dropdownMenuUser">
+		<form id="dropdown__login" class="px-3 py-g collapse show" data-parent="#dropdownMenuForm">
+			<div class="form-group">
+				<label for="dropdownLoginFormEmail" class="font-size-sm">Email</label>
+				<input type="email" class="form-control" id="dropdownLoginFormEmail" placeholder="Email">
+			</div>
+			<div class="form-group">
+				<label for="dropdownLoginFormPassword" class="font-size-sm">Password</label>
+				<input type="password" class="form-control" id="dropdownLoginFormPassword" placeholder="Password">
+			</div>
+			<div class="form-group font-size-sm d-flex justify-content-between my-g">
+				<a href="#" class="text-underline">Forgot your password?</a>
+				<a href="#dropdown__register" class="text-underline" data-toggle="collapse">Register Account</a>
+			</div>
+			<button type="submit" class="btn btn-primary btn-block mt-g">Log In</button>
+		</form>
+		<form id="dropdown__register" class="px-3 py-g collapse" data-parent="#dropdownMenuForm">
+			<div class="form-group">
+				<label for="dropdownRegisterFormFName" class="font-size-sm">First Name</label>
+				<input type="text" class="form-control" id="dropdownFormFName" placeholder="First Name">
+			</div>
+			<div class="form-group">
+				<label for="dropdownRegisterFormLName" class="font-size-sm">Last Name</label>
+				<input type="text" class="form-control" id="dropdownRegisterFormLName" placeholder="Last Name">
+			</div>
+			<div class="form-group">
+				<label for="dropdownRegisterFormEmail" class="font-size-sm">Email</label>
+				<input type="email" class="form-control" id="dropdownRegisterFormEmail" placeholder="Email">
+			</div>
+			<div class="form-group">
+				<label for="dropdownRegisterFormPassword" class="font-size-sm">Password</label>
+				<input type="text" class="form-control" id="dropdownRegisterFormPassword" placeholder="Password">
+			</div>
+			<div class="custom-control custom-checkbox d-flex justify-content-center mt-g">
+				<input type="checkbox" name="agreement" value="true" class="custom-control-input" id="agreement" required="" aria-required="true" aria-invalid="true">
+				<label class="custom-control-label font-size-sm" for="agreement">
+					By clicking here, I agree to the <a href="/pages/term-condition" class="text-body font-weight-bold">Terms of Use</a> and <a href="/pages/privacy-policy" class="text-body font-weight-bold">Privacy Policy</a>
+				</label>
+			</div>
+			<div class="custom-control custom-checkbox d-flex justify-content-center mt-g">
+				<input type="checkbox" name="customer[accepts_marketing]" class="custom-control-input pristine" value="true" id="accept-marketing" checked="">
+				<label class="custom-control-label font-size-sm" for="accept-marketing">Sign up for exclusive presales, skincare tips, and promotions.</label>
+			</div>
+			<button type="submit" class="btn btn-primary btn-block mt-g">Create Account</button>
+		</form>
+	</div>
+</li>

@@ -7,6 +7,14 @@ html.us-store {
     .homepage-abtest {
         .featured-products-abtest {
             display: flex !important;
+
+            .nav-link:before {
+                display: block;
+                content: attr(title);
+                font-weight: bold;
+                height: 0;
+                visibility: hidden;
+            }
         }
 
         .featured-products-tab-content-abtest {

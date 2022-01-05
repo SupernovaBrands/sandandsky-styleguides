@@ -12,4 +12,8 @@
     width: 3em;
   }
 
+  &:not(.upsell__article) .btn__loading {
+    min-width: calc-em(130, 14);
+  }
+
 }

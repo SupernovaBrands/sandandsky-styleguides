@@ -3,13 +3,16 @@
     width: 3em;
   }
 
-  &__spinner,
-	.btn__loading {
+  &__spinner {
     width: 3em;
   }
 
   &__remove {
     width: 3em;
+  }
+
+  .btn__loading {
+    min-width: calc-em(130, 14);
   }
 
 }

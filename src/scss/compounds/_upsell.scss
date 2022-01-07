@@ -12,4 +12,9 @@
     width: 3em;
   }
 
+  &__pdp .spinner-border {
+    top: calc(50% - 0.5rem);
+    left: calc(50% - 0.5rem);
+  }
+
 }

@@ -17,8 +17,6 @@ window.productFormSubmit = (e) => {
 	const atcText = form.querySelector('.btn__submit-text');
 
 	if (isPdpUpsell) {
-		submitUpsell.classList.add('position-relative');
-		submitUpsell.setAttribute('type', 'button');
 		submitUpsell.setAttribute('disabled', true);
 		spinLoading.classList.remove('d-none');
 		atcText.classList.add('invisible');
@@ -40,8 +38,6 @@ window.productFormSubmit = (e) => {
 
 		if (isPdpUpsell) {
 			spinLoading.classList.add('d-none');
-			submitUpsell.classList.remove('position-relative');
-			submitUpsell.setAttribute('type', 'submit');
 			submitUpsell.setAttribute('disabled', false);
 			atcText.classList.remove('invisible');
 		}

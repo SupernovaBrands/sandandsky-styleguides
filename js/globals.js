@@ -11,6 +11,16 @@ window.productFormSubmit = (e) => {
 	const quantity = form.querySelector('input[name=quantity]').value;
 	const submitBtn = form.querySelectorAll('.btn__submit');
 	const loadingBtn = form.querySelectorAll('.btn__loading');
+	const isPdpUpsell = form.classList.contains('upsell__pdp');
+	const submitUpsell = form.querySelector('.upsell__pdp button[type=submit]');
+	const spinLoading = form.querySelector('button[type=submit] .spinner-border');
+	const atcText = form.querySelector('.btn__submit-text');
+
+	if (isPdpUpsell) {
+		submitUpsell.setAttribute('disabled', true);
+		spinLoading.classList.remove('d-none');
+		atcText.classList.add('invisible');
+	}
 
 	submitBtn.forEach((btn) => {
 		btn.classList.add('d-none')
@@ -25,6 +35,12 @@ window.productFormSubmit = (e) => {
 		loadingBtn.forEach((btn) => {
 			btn.classList.add('d-none')
 		});
+
+		if (isPdpUpsell) {
+			spinLoading.classList.add('d-none');
+			submitUpsell.setAttribute('disabled', false);
+			atcText.classList.remove('invisible');
+		}
 	});
 }
 

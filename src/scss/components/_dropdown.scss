@@ -45,4 +45,30 @@
 			}
 		}
 	}
+
+	&--account {
+		.dropdown-toggle:after {
+			content: none;
+		}
+
+		.dropdown-menu {
+			&:not(.dropdown-menu__logged-in) {
+				min-width: calc-em(300);
+			}
+
+			&.show {
+				visibility: visible;
+				height: auto;
+			}
+		}
+
+		.collapsing {
+			transition: none;
+		}
+
+		label.error {
+			color: $secondary;
+			font-size: $font-size-xs;
+		}
+	}
 }

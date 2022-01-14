@@ -52,6 +52,8 @@
 		}
 
 		.dropdown-menu {
+			border-color: transparent !important;
+
 			&:not(.dropdown-menu__logged-in) {
 				min-width: calc-em(300);
 			}

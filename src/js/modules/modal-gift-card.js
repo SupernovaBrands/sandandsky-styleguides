@@ -9,6 +9,6 @@ $('.product-form').on('submit', function (e) {
 });
 
 $('.carousel-item__giftcard').on('click', function () {
-	$('.carousel-item__giftcard img').removeClass('border-secondary').addClass('border-white');
-	$(this).find('img').addClass('border-secondary').removeClass('border-white');
+	$('.carousel-item__giftcard img').removeClass('border-secondary');
+	$(this).find('img').addClass('border-secondary');
 });

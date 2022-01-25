@@ -15,34 +15,36 @@
 						</div>
 						<div class="form-group row mx-ng mt-3">
 							<label for="chooseDesign" class="col-12 col-lg-2 font-weight-bold px-g mb-2">Choose Design:</label>
-							<div class="col-12 col-lg-10 px-lg-0">
-								<div id="giftcard-carousel__indicator" class="carousel slide carousel--loop" data-interval="false" >
-									<div class="carousel-inner d-flex flex-nowrap" data-target="#giftDesignCarousel">
-										<picture class="carousel-item carousel-item__giftcard active col-3" data-slide-to="0" data-index="1" data-target="#giftDesignCarousel">
-											<img class="m-0 border img-fluid w-100 d-block border-secondary" src="https://via.placeholder.com/150x150/?text=1" alt="Slide 1">
-										</picture>
-										<picture class="carousel-item carousel-item__giftcard col-3" data-slide-to="1" data-index="2" data-target="#giftDesignCarousel">
-											<img class="m-0 border img-fluid w-100 d-block border-white" src="https://via.placeholder.com/150x150/?text=2" alt="Slide 2">
-										</picture>
-										<picture class="carousel-item carousel-item__giftcard col-3" data-slide-to="2" data-index="3" data-target="#giftDesignCarousel">
-											<img class="m-0 border img-fluid w-100 d-block border-white" src="https://via.placeholder.com/150x150/?text=3" alt="Slide 3">
-										</picture>
-										<picture class="carousel-item carousel-item__giftcard col-3" data-slide-to="3" data-index="4" data-target="#giftDesignCarousel">
-											<img class="m-0 border img-fluid w-100 d-block border-white" src="https://via.placeholder.com/150x150/?text=4" alt="Slide 4">
-										</picture>
-									</div>
+							<div id="giftcard-carousel__indicator" class="carousel slide carousel--loop col-12 col-lg-10 px-lg-0" data-interval="false" >
+								<div class="carousel-inner d-flex flex-nowrap" data-target="#giftDesignCarousel">
+									<picture class="carousel-item carousel-item__giftcard active col-3" data-slide-to="0" data-index="1" data-target="#giftDesignCarousel">
+										<source srcset="https://via.placeholder.com/70x70/?text=1" media="(min-width: 992px)">
+										<img class="m-0 border img-fluid w-100 d-block border-secondary" src="https://via.placeholder.com/75x75/?text=1" alt="Slide 1">
+									</picture>
+									<picture class="carousel-item carousel-item__giftcard col-3" data-slide-to="1" data-index="2" data-target="#giftDesignCarousel">
+										<source srcset="https://via.placeholder.com/70x70/?text=2" media="(min-width: 992px)">
+										<img class="m-0 border img-fluid w-100 d-block border-white" src="https://via.placeholder.com/75x75/?text=2" alt="Slide 2">
+									</picture>
+									<picture class="carousel-item carousel-item__giftcard col-3" data-slide-to="2" data-index="3" data-target="#giftDesignCarousel">
+										<source srcset="https://via.placeholder.com/70x70/?text=3" media="(min-width: 992px)">
+										<img class="m-0 border img-fluid w-100 d-block border-white" src="https://via.placeholder.com/75x75/?text=3" alt="Slide 3">
+									</picture>
+									<picture class="carousel-item carousel-item__giftcard col-3" data-slide-to="3" data-index="4" data-target="#giftDesignCarousel">
+										<source srcset="https://via.placeholder.com/70x70/?text=4" media="(min-width: 992px)">
+										<img class="m-0 border img-fluid w-100 d-block border-white" src="https://via.placeholder.com/75x75/?text=4" alt="Slide 4">
+									</picture>
 								</div>
 							</div>
 						</div>
 						<div class="form-group row mt-3">
-							<label for="staticEmail" class="col-12 col-lg-2 font-weight-bold mb-2">Your Message:</label>
+							<label for="giftMessage" class="col-12 col-lg-2 font-weight-bold mb-2">Your Message:</label>
 							<div class="col-12 col-lg-10">
-								<textarea class="form-control" rows="5" placeholder="Enjoy your gift!"></textarea>
+								<textarea id="giftMessage" class="form-control" rows="5" placeholder="Enjoy your gift!"></textarea>
 							</div>
 						</div>
 
 						<div class="form-group row mt-3">
-							<label for="staticEmail" class="col-12 col-lg-2 font-weight-bold mb-2">Send date:</label>
+							<label class="col-12 col-lg-2 font-weight-bold mb-2">Send date:</label>
 							<div class="col-6 col-lg-5">
 								<button type="button" class="btn btn-lg btn-block btn-outline-primary">Now</button>
 							</div>
@@ -52,26 +54,24 @@
 						</div>
 					</div>
 
-					<div class="col-12 col-lg-6">
-						<div id="giftDesignCarousel" class="carousel slide mt-3" data-ride="carousel" data-interval="false">
-							<div class="carousel-inner">
-								<picture class="carousel-item active">
-									<source srcset="https://via.placeholder.com/468x436/?text=1" media="(min-width: 992px)">
-									<img class="w-100" src="https://via.placeholder.com/345x255/?text=1" alt="Design 1">
-								</picture>
-								<picture class="carousel-item">
-									<source srcset="https://via.placeholder.com/468x436/?text=2" media="(min-width: 992px)">
-									<img class="w-100" src="https://via.placeholder.com/345x255/?text=2" alt="Design 2">
-								</picture>
-								<picture class="carousel-item">
-									<source srcset="https://via.placeholder.com/468x436/?text=3" media="(min-width: 992px)">
-									<img class="w-100" src="https://via.placeholder.com/345x255/?text=3" alt="Design 3">
-								</picture>
-								<picture class="carousel-item">
-									<source srcset="https://via.placeholder.com/468x436/?text=4" media="(min-width: 992px)">
-									<img class="w-100" src="https://via.placeholder.com/345x255/?text=4" alt="Design 4">
-								</picture>
-							</div>
+					<div id="giftDesignCarousel" class="carousel slide col-12 col-lg-6 mt-3" data-ride="carousel" data-interval="false">
+						<div class="carousel-inner">
+							<picture class="carousel-item active">
+								<source srcset="https://via.placeholder.com/468x436/?text=1" media="(min-width: 992px)">
+								<img class="w-100" src="https://via.placeholder.com/345x255/?text=1" alt="Design 1">
+							</picture>
+							<picture class="carousel-item">
+								<source srcset="https://via.placeholder.com/468x436/?text=2" media="(min-width: 992px)">
+								<img class="w-100" src="https://via.placeholder.com/345x255/?text=2" alt="Design 2">
+							</picture>
+							<picture class="carousel-item">
+								<source srcset="https://via.placeholder.com/468x436/?text=3" media="(min-width: 992px)">
+								<img class="w-100" src="https://via.placeholder.com/345x255/?text=3" alt="Design 3">
+							</picture>
+							<picture class="carousel-item">
+								<source srcset="https://via.placeholder.com/468x436/?text=4" media="(min-width: 992px)">
+								<img class="w-100" src="https://via.placeholder.com/345x255/?text=4" alt="Design 4">
+							</picture>
 						</div>
 					</div>
 

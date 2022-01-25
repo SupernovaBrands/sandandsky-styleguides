@@ -33,7 +33,8 @@
 		max-width: calc-em(1170);
 	}
 
-	svg {
+	&__close {
+		cursor: pointer;
 		right: $grid-gutter-width;
 		top: calc-em(20);
 

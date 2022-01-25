@@ -20,12 +20,18 @@
 				</ul>
 				<div class="d-flex mb-3 flex-column">
 					<form class="product-form">
-						<select class="custom-select h-auto py-g mb-3 border-dark">
+						<select class="custom-select h-auto py-g mb-3 mb-lg-g border-dark">
 							<option selected>$50.00 USD</option>
 							<option>$75.00 USD</option>
 							<option>$100.00 USD</option>
 							<option>$150.00 USD</option>
 						</select>
+						<div class="custom-control custom-checkbox d-flex mb-g">
+							<input type="checkbox" name="as-gift" value="true" class="custom-control-input" id="asGift">
+							<label class="custom-control-label font-weight-bold" for="asGift">
+								I want to send it as a gift
+							</label>
+						</div>
 						<div class="d-flex">
 							<div class="d-flex">
 								<button class="quantity--minus input-group-text border-right-0 rounded rounded-right-0 border-dark flex-grow-0" type="button" aria-label="Add Subtract" data-cy="pdp-subtract-quantity-icon">
@@ -36,7 +42,7 @@
 									<img class="svg" src="icons/plus.svg" replace-to-svg />
 								</button>
 							</div>
-							<button class="btn btn-primary btn-block ml-g ml-lg-3" type="submit" data-cy="pdp-addtocart-btn">Add to Cart</button>
+							<button id="giftAddToCart" class="btn btn-primary btn-block ml-g ml-lg-3" type="submit" data-cy="pdp-addtocart-btn">Add to Cart</button>
 						</div>
 					</form>
 				</div>
@@ -61,6 +67,8 @@
 			</div>
 		</div>
 	</section>
+
+	{{> components/gift-card-modal}}
 
 	{{> components/shipping-modal}}
 

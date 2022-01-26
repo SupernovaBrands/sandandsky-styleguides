@@ -46,10 +46,11 @@
 						<div class="form-group row mt-3">
 							<label class="col-12 col-lg-2 font-weight-bold mb-2">Send date:</label>
 							<div class="col-6 col-lg-5">
-								<button type="button" class="btn btn-lg btn-block btn-outline-primary">Now</button>
+								<button type="button" class="btn btn-lg btn-block btn-outline-primary btn__send" id="sendNow">Now</button>
 							</div>
 							<div class="col-6 col-lg-5">
-								<button type="button" class="btn btn-lg btn-block btn-outline-primary">Choose date</button>
+								<input type="date" id="chooseDateInput" min="2022-01-26" class="d-none form-control">
+								<button type="button" class="btn btn-lg btn-block btn-outline-primary btn__send" id="chooseDate">Choose Date</button>
 							</div>
 						</div>
 					</div>

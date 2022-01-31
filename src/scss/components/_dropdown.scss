@@ -53,9 +53,14 @@
 
 		.dropdown-menu {
 			border-color: transparent !important;
+			position: fixed;
+			width: 100%;
+			top: 0;
 
 			&:not(.dropdown-menu__logged-in) {
-				min-width: calc-em(300);
+				@include media-breakpoint-up(lg) {
+					width: calc-em(330);
+				}
 			}
 
 			&.show {

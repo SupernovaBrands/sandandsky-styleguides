@@ -1,0 +1,121 @@
+html.us-store {
+	.range-product--abtest {
+		@include media-breakpoint-up(lg) {
+			.carousel-control-next,
+			.carousel-control-prev {
+				top: 27.5%;
+				transform: translateY(-45%);
+			}
+
+			.carousel-control-next {
+				right: $grid-gutter-width * 0.5;
+			}
+
+			.carousel-control-prev {
+				left: calc-em(250);
+			}
+
+			.carousel--scroll .scrollbar {
+				margin-left: auto;
+				max-width: calc(100% - 235px);
+			}
+		}
+	}
+
+	.range-result--abtest {
+
+		&__apc-decoration,
+		&__apc-decoration-mobile {
+			&:after,
+			&:before {
+				position: absolute;
+				background-size: 100%;
+				background-repeat: no-repeat;
+				opacity: .25;
+				content: '';
+			}
+		}
+
+		&__apc-decoration {
+			&:after,
+			&:before {
+				position: absolute;
+				background-size: 100%;
+				background-repeat: no-repeat;
+				opacity: .25;
+				content: '';
+			}
+
+			&:before {
+				background-image: url(asset-url('range-apc-decor1-abtest.svg'));
+				top: 0;
+				width: calc-em(293);
+				height: calc-em(71);
+				left: 0;
+				@include media-breakpoint-up(lg) {
+					left: calc(50% - #{$grid-gutter-width});
+					width: calc-em(468);
+					height: calc-em(126);
+				}
+			}
+
+			&:after {
+				background-image: url(asset-url('range-apc-decor3-abtest.svg'));
+				bottom: 0;
+				width: calc-em(205);
+				height: calc-em(86);
+				left: calc(50% - #{$grid-gutter-width});
+
+				@include media-breakpoint-down(md) {
+					content: none;
+				}
+			}
+		}
+
+		&__apc-decoration-mobile:before {
+			background-image: url(asset-url('range-apc-decor2-abtest.svg'));
+			bottom: 0;
+			right: 0;
+			width: calc-em(155);
+			height: calc-em(84);
+			@include media-breakpoint-up(lg) {
+				content: none;
+			}
+		}
+	}
+
+	.range-breakdown--abtest {
+
+		&__header svg {
+			height: calc-em(30);
+		}
+
+		&__decoration:before {
+			content: none;
+			@include media-breakpoint-up(lg) {
+				content: '';
+				position: absolute;
+				background-image: url(asset-url('apc-stamp-abtest.svg'));
+				bottom: 0;
+				right: 0;
+				width: calc-em(170);
+				height: calc-em(170);
+				right: calc(50% + #{$grid-gutter-width});
+			}
+		}
+	}
+
+	.range-article--abtest {
+		h2 {
+			@include media-breakpoint-down(md) {
+				// fix height for long & short text title
+				height: 2em * $line-height-base;
+			}
+		}
+
+		.carousel-control-next {
+			top: 22.5%;
+			transform: translateY(-33%);
+		}
+	}
+}

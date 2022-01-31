@@ -1,0 +1,20 @@
+<li class="col-11 col-lg-4 carousel-item">
+	<article class="post-card {{ class }}">
+		{{#if img}}
+		<figure class="mb-2">
+			<a href="#" class="d-block hover-overlay">
+				<picture class="">
+					<noscript class="loading-lazy">
+					<img src="https://via.placeholder.com/828x420.jpg?text={{ img }}" class="w-100" loading="lazy">
+					</noscript>
+				</picture>
+			</a>
+		</figure>
+		{{/if}}
+		<h2 class="my-2">
+			<a class="text-secondary" href="#">{{ title }}</a>
+		</h2>
+		<p class="mb-2 font-size-sm">{{#if content}}{{content}}{{else}}Lorem ipsum dolor sit amet, consectetur adipiscing elit...{{/if}}</p>
+		<a class="d-block text-primary text-underline" href="#">Continue reading</a>
+	</article>
+</li>

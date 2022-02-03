@@ -55,7 +55,7 @@
 			border-color: transparent !important;
 			position: fixed;
 			width: 100%;
-			top: 0;
+			top: calc-em(35);
 
 			&:not(.dropdown-menu__logged-in) {
 				@include media-breakpoint-up(lg) {

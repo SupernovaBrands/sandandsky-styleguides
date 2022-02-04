@@ -67,6 +67,17 @@
 				visibility: visible;
 				height: auto;
 			}
+
+
+			@include media-breakpoint-down(lg) {
+				.cookies-banner-show & {
+					top: calc-em(120);
+				}
+			
+				.cookies-banner-show--expanded & {
+					top: calc-em(300);
+				}
+			}
 		}
 
 		.collapsing {

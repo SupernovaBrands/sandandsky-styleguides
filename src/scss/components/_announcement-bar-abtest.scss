@@ -44,14 +44,22 @@ html.uk-store.newsletter-abtest {
 
 		.modal-content {
 			top: 0;
+			background: linear-gradient(rgba(255,129,153,1) 0%, rgba(253,223,229,1) 38%, rgba(255,255,255,0) 43%), url("https://cdn.shopify.com/s/files/1/0277/5262/8295/files/Clear_Skin_Kit_-_Floating_Spills_plain_bg_1.jpg?v=1644221858") no-repeat center bottom;
 
 			@include media-breakpoint-up(lg) {
 				top: auto;
+				background-image: none;
+			}
+
+			.text-white {
+				@include media-breakpoint-up(lg) {
+					color: $body-color !important;
+				}
 			}
 		}
 
 		.bottom-close {
-			background-color: $range-tsw-light;
+			background-color: $range-apc-light;
 		}
 	}
 

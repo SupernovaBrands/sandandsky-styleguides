@@ -65,8 +65,13 @@ html.us-store {
 				opacity: .15;
 			}
 
-			&-apc:before {
+			&-apc:before,
+			&-apc:after {
 				opacity: .25;
+			}
+
+
+			&-apc:before {
 				background-image: url(asset-url('range-apc-decor-1-abtest.svg'));
 				width: calc-em(293);
 				height: calc-em(71);
@@ -79,12 +84,11 @@ html.us-store {
 			}
 
 			&-apc:after {
-				opacity: .25;
 				background-image: url(asset-url('range-apc-decor-3-abtest.svg'));
 				bottom: 0;
+				left: calc(50% - #{$grid-gutter-width});
 				width: calc-em(205);
 				height: calc-em(86);
-				left: calc(50% - #{$grid-gutter-width});
 
 				@include media-breakpoint-down(md) {
 					content: none;

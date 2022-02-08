@@ -1,0 +1,37 @@
+html.us-store {
+
+	.range-breakdown--abtest {
+
+		&__header svg {
+			height: calc-em(30);
+		}
+
+		&__decoration {
+
+			&:before {
+				content: none;
+				@include media-breakpoint-up(lg) {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					width: calc-em(170);
+					height: calc-em(170);
+					right: calc(50% + #{$grid-gutter-width});
+				}
+			}
+
+			&-apc:before {
+				background-image: url(asset-url('range-apc-abtest.svg'));
+			}
+
+			&-aea:before {
+				background-image: url(asset-url('range-aea-abtest.svg'));
+			}
+
+			&-tsw:before {
+				background-image: url(asset-url('range-tsw-abtest.svg'));
+			}
+		}
+	}
+}

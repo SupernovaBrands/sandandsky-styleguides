@@ -1,0 +1,39 @@
+<picture class="flex-grow-1 px-g float-lg-left pl-lg-g pr-lg-hg mb-g">
+	<source srcset="https://via.placeholder.com/219x468" media="(min-width: 992px)"/>
+	<img class="w-100" src="https://via.placeholder.com/346x140"/>
+</picture>
+
+<div {{#if id}}id="{{ id }}"{{/if}} class="{{ class }} px-g px-lg-hg">
+	<div class="carousel--scroll position-relative">
+		<div class="carousel-inner d-flex flex-lg-nowrap row w-auto" role="listbox">
+			{{#if @partial-block}}{{> @partial-block }}{{/if}}
+		</div>
+		<div class="px-lg-hg">
+			<div class="scrollbar mt-3">
+				<div class="scrollbar--thumb"></div>
+			</div>
+		</div>
+
+		<a class="{{controlclass}} carousel-control-prev carousel-control-prev--always-show disabled text-body ml-ng d-none d-lg-flex" role="button">
+			<span
+				class="carousel-control-prev-icon carousel-control--background d-flex justify-content-center align-items-center"
+				aria-hidden="true">
+				<img class="svg" src="icons/chevron-prev.svg" replace-to-svg />
+			</span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="{{controlclass}} carousel-control-next carousel-control-prev--always-show text-body mr-ng d-none d-lg-flex" role="button">
+			<span
+				class="carousel-control-next-icon carousel-control--background d-flex justify-content-center align-items-center"
+				aria-hidden="true">
+				<img class="svg" src="icons/chevron-next.svg" replace-to-svg />
+			</span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	{{#if button}}
+	<div class="d-flex justify-content-center d-lg-none mt-4">
+		<button class="btn btn-lg btn-primary">{{ button }}</button>
+	</div>
+	{{/if}}
+</div>

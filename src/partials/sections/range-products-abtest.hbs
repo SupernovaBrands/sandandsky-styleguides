@@ -1,0 +1,17 @@
+<section class="container mb-5 range-product--abtest">
+	<div class="row d-flex d-lg-block">
+		<p class="h1 px-g mb-3 mb-lg-2">{{ title }}</p>
+		<p class="font-weight-bold px-g mb-3 mb-lg-2 {{ textclass }}">{{ subtitle }}</p>
+		<p class="mb-3 mb-lg-5 px-g">{{ text }}</p>
+		{{#> sections/carousel-scroll-abtest id="range-products-abtest" class="featured-products-carousel" }}
+			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color title="Hydration Boost Cream Moisturiser (2 lines)"}}
+			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
+			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
+			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
+			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
+			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
+			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
+			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
+		{{/ sections/carousel-scroll-abtest}}
+	</div>
+</section>

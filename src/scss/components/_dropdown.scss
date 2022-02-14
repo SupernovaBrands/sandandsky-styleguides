@@ -53,14 +53,31 @@
 
 		.dropdown-menu {
 			border-color: transparent !important;
+			position: fixed;
+			width: 100%;
+			top: calc-em(35);
+			z-index: $zindex-fixed;
 
 			&:not(.dropdown-menu__logged-in) {
-				min-width: calc-em(300);
+				@include media-breakpoint-up(lg) {
+					width: calc-em(330);
+				}
 			}
 
 			&.show {
 				visibility: visible;
 				height: auto;
+			}
+
+
+			@include media-breakpoint-down(lg) {
+				.cookies-banner-show & {
+					top: calc-em(120);
+				}
+			
+				.cookies-banner-show--expanded & {
+					top: calc-em(300);
+				}
 			}
 		}
 

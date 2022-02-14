@@ -3,7 +3,8 @@
 }
 
 html.uk-store {
-	&.newsletter-abtest {
+	&.newsletter-abtest,
+	&.newsletter-without-announcement-abtest {
 		.announcement-bar--abtest-active {
 			display: block;
 		}
@@ -49,7 +50,7 @@ html.uk-store {
 				background-size: contain;
 
 				&.completed-bg {
-					background: linear-gradient(rgba(87, 159, 192, 1) 0%, rgb(87, 159, 192, 0) 38%, rgba(255,255,255,0) 43%), url("https://cdn.shopify.com/s/files/1/0253/9847/6905/files/SS_Content_Mood_Watermelon_SB_231220_1.jpg?v=1644397179") no-repeat center bottom;
+					background: linear-gradient(rgba(87, 159, 192, 1) 0%, rgba(87, 159, 192, 0) 38%, rgba(255,255,255,0) 43%), url("https://cdn.shopify.com/s/files/1/0253/9847/6905/files/SS_Content_Mood_Watermelon_SB_231220_1.jpg?v=1644397179") no-repeat center bottom;
 					background-size: contain;
 				}
 				
@@ -117,6 +118,46 @@ html.uk-store {
 
 			&__select {
 				opacity: 0;
+			}
+		}
+	}
+
+	&.newsletter-without-announcement-abtest {
+		.announcement-bar--abtest-active {
+			display: none !important;
+		}
+
+		@include media-breakpoint-down(md) {
+			.modal--newsletter {
+				top: auto;
+			}
+
+			.modal-content {
+				margin-left: $grid-gutter-width !important;
+				margin-right: $grid-gutter-width !important;
+				top: auto;
+				position: relative !important;
+				border-radius: 0.3rem !important;
+			}
+
+			.bottom-close {
+				display: none !important;
+			}
+
+			.close {
+				display: block !important;
+			}
+
+			.modal--newsletter-open .navbar:before {
+				top: 0;
+				left: 0;
+				z-index: 1040;
+				width: 100vw;
+				height: 100%;
+				background-color: #000;
+				opacity: .5;
+				position: fixed;
+				content: ' ';
 			}
 		}
 	}

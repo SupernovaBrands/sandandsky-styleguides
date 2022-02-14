@@ -19,6 +19,7 @@ $('#account-form form').on('submit', function (e) {
 	e.preventDefault();
 	$('#account-form').addClass('d-none');
 	$('#completed-form').removeClass('d-none');
+	$('.modal--newsletter .modal-content').addClass('completed-bg');
 });
 
 $('.countries-options__select').on('change', function () {

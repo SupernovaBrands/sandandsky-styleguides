@@ -51,7 +51,6 @@ html.uk-store {
 
 				&.completed-bg {
 					background: linear-gradient(rgba(87, 159, 192, 1) 0%, rgba(87, 159, 192, 0) 38%, rgba(255,255,255,0) 43%), url("https://cdn.shopify.com/s/files/1/0253/9847/6905/files/SS_Content_Mood_Watermelon_SB_231220_1.jpg?v=1644397179") no-repeat center bottom;
-					background-size: contain;
 				}
 				
 				@include media-breakpoint-up(lg) {
@@ -75,7 +74,8 @@ html.uk-store {
 		.modal--newsletter-open .main-header {
 			z-index: $zindex-modal;
 
-			.navbar {
+			.navbar,
+			.announcement-bar:not(.announcement-bar--open-modal) {
 				&:before {
 					@include media-breakpoint-up(lg) {
 						content: ' ';
@@ -93,14 +93,6 @@ html.uk-store {
 			.announcement-bar:not(.announcement-bar--open-modal) {
 				&:before {
 					@include media-breakpoint-up(lg) {
-						content: ' ';
-						background-color: black;
-						opacity: .5;
-						width: 100%;
-						height: 100%;
-						position: absolute;
-						left: 0;
-						z-index: $zindex-modal-backdrop;
 						top: 0;
 					}
 				}

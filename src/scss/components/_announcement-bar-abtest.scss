@@ -63,10 +63,10 @@ html.uk-store {
 			z-index: $zindex-modal;
 		}
 
-		.navbar,
-		.announcement-bar:not(.announcement-bar--open-modal) {
-			&:before {
-				@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(lg) {
+			.navbar,
+			.announcement-bar:not(.announcement-bar--open-modal) {
+				&:before {
 					content: ' ';
 					background-color: black;
 					opacity: .5;
@@ -77,11 +77,9 @@ html.uk-store {
 					z-index: $zindex-modal-backdrop;
 				}
 			}
-		}
 
-		.announcement-bar:not(.announcement-bar--open-modal) {
-			&:before {
-				@include media-breakpoint-up(lg) {
+			.announcement-bar:not(.announcement-bar--open-modal) {
+				&:before {
 					top: 0;
 				}
 			}

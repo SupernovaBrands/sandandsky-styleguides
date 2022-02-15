@@ -3,123 +3,143 @@
 }
 
 html.uk-store {
-	&.newsletter-abtest,
-	&.newsletter-without-announcement-abtest {
-		.announcement-bar--abtest-active {
-			display: block;
+	.modal--newsletter {
+		top: 2em;
+
+		.union {
+			height: 2em;
 		}
 
-		.announcement-bar:not(.announcement-bar--abtest-active) {
-			display: none;
+		.close {
+			right: 1em;
+			top: 1em;
 		}
 
+		.modal-content {
+			top: 0;
+			background: linear-gradient(rgba(255,129,153,1) 0%, rgba(253,223,229,1) 38%, rgba(255,255,255,0) 43%), url("https://cdn.shopify.com/s/files/1/0277/5262/8295/files/Clear_Skin_Kit_-_Floating_Spills_plain_bg_1.jpg?v=1644221858") no-repeat center bottom;
+			background-size: contain;
+
+			@include media-breakpoint-up(lg) {
+				top: auto;
+				background: white;
+			}
+		}
+
+		.completed-bg {
+			background: url("https://cdn.shopify.com/s/files/1/0277/5262/8295/files/popup_bg_final.png?v=1644859446") no-repeat center top;
+			background-size: cover;
+
+			@include media-breakpoint-up(lg) {
+				background: white;
+			}
+		}
+
+		.bottom-close {
+			background-color: $range-apc-light;
+		}
+
+		@include media-breakpoint-up(lg) {
+			.text-white {
+				color: $body-color !important;
+			}
+		}
+
+		@include media-breakpoint-down(md) {
+			input,
+			.countries-options__label,
+			.countries-options__input {
+				border: 0;
+			}
+
+			.countries-options__input {
+				border-left: 1px solid $gray-600;
+			}
+		}
+	}
+
+	.modal--newsletter-open {
+		.main-header {
+			z-index: $zindex-modal;
+		}
+
+		.navbar,
+		.announcement-bar:not(.announcement-bar--open-modal) {
+			&:before {
+				@include media-breakpoint-up(lg) {
+					content: ' ';
+					background-color: black;
+					opacity: .5;
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					left: 0;
+					z-index: $zindex-modal-backdrop;
+				}
+			}
+		}
+
+		.announcement-bar:not(.announcement-bar--open-modal) {
+			&:before {
+				@include media-breakpoint-up(lg) {
+					top: 0;
+				}
+			}
+		}
+	}
+
+	.countries-options {
+		&__label {
+			border: 1px solid $gray-600;
+			height: 100%;
+			width: calc(100% - 5px);
+			padding: $grid-gutter-width $grid-gutter-width $grid-gutter-width 0;
+			background: #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.6 22.6'%3e%3cpath d='M1.9 5.4l9.4 9.4 9.4-9.4 1.9 1.9-11.3 11.3L0 7.3l1.9-1.9z'/%3e%3c/svg%3e") no-repeat right 0.7em center/1em 0.5625em;
+		}
+
+		&__select {
+			opacity: 0;
+		}
+
+		&__input {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+
+
+
+	&.newsletter-abtest {
 		.announcement-bar {
 			background-color: $gray-100;
-		}
-		.announcement-bar--open-modal {
-			.chevron-left {
-				height: calc-em(32);
-				left: 1em;
+
+			&--abtest-active {
+				display: block;
 			}
 
-			.chevron-right {
-				height: calc-em(32);
-				right: 1em;
+			&:not(.announcement-bar--abtest-active) {
+				display: none;
 			}
 
-			a {
-				padding: calc-em(9.5) 0;
-			}
-		}
-
-		.modal--newsletter {
-			top: 2em;
-
-			.union {
-				height: 2em;
-			}
-
-			.close {
-				right: 1em;
-				top: 1em;
-			}
-
-			.modal-content {
-				top: 0;
-				background: linear-gradient(rgba(255,129,153,1) 0%, rgba(253,223,229,1) 38%, rgba(255,255,255,0) 43%), url("https://cdn.shopify.com/s/files/1/0277/5262/8295/files/Clear_Skin_Kit_-_Floating_Spills_plain_bg_1.jpg?v=1644221858") no-repeat center bottom;
-				background-size: contain;
-
-				&.completed-bg {
-					background: url("https://cdn.shopify.com/s/files/1/0277/5262/8295/files/popup_bg_final.png?v=1644859446") no-repeat center top;
-					background-size: cover;
+			&--open-modal {
+				.chevron-left {
+					height: calc-em(32);
+					left: 1em;
 				}
-				
-				@include media-breakpoint-up(lg) {
-					top: auto;
-					background-image: none;
-					background-color: white;
+	
+				.chevron-right {
+					height: calc-em(32);
+					right: 1em;
 				}
-
-				.text-white {
-					@include media-breakpoint-up(lg) {
-						color: $body-color !important;
-					}
+	
+				a {
+					padding: calc-em(9.5) 0;
 				}
-			}
-
-			.bottom-close {
-				background-color: $range-apc-light;
-			}
-		}
-
-		.modal--newsletter-open .main-header {
-			z-index: $zindex-modal;
-
-			.navbar,
-			.announcement-bar:not(.announcement-bar--open-modal) {
-				&:before {
-					@include media-breakpoint-up(lg) {
-						content: ' ';
-						background-color: black;
-						opacity: .5;
-						width: 100%;
-						height: 100%;
-						position: absolute;
-						left: 0;
-						z-index: $zindex-modal-backdrop;
-					}
-				}
-			}
-
-			.announcement-bar:not(.announcement-bar--open-modal) {
-				&:before {
-					@include media-breakpoint-up(lg) {
-						top: 0;
-					}
-				}
-			}
-		}
-
-		.countries-options {
-			&__label {
-				border: 1px solid $gray-600;
-				height: 100%;
-				width: calc(100% - #{$grid-gutter-width-lg});
-				padding: $grid-gutter-width $grid-gutter-width $grid-gutter-width 0;
-				background: #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.6 22.6'%3e%3cpath d='M1.9 5.4l9.4 9.4 9.4-9.4 1.9 1.9-11.3 11.3L0 7.3l1.9-1.9z'/%3e%3c/svg%3e") no-repeat right 0em center/1em 0.5625em;
-			}
-
-			&__select {
-				opacity: 0;
 			}
 		}
 	}
 
 	&.newsletter-without-announcement-abtest {
-		.announcement-bar--abtest-active {
-			display: none !important;
-		}
-
 		@include media-breakpoint-down(md) {
 			.modal--newsletter {
 				top: auto;
@@ -144,7 +164,7 @@ html.uk-store {
 			.modal--newsletter-open .navbar:before {
 				top: 0;
 				left: 0;
-				z-index: 1040;
+				z-index: $zindex-modal-backdrop;
 				width: 100vw;
 				height: 100%;
 				background-color: #000;

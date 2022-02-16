@@ -66,9 +66,20 @@ html.uk-store {
 			bottom: 1.1em;
 		}
 
-		.validated.row:after {
-			right: calc-em(17);
-			bottom: 1.4em;
+		.validated {
+			&.row {
+				&:after {
+					right: calc-em(17);
+					bottom: 1.4em;
+				}
+			}
+
+			&.col-6 {
+				&:after {
+					right: calc-em(24);
+					bottom: 1.2em;
+				}
+			}
 		}
 	}
 

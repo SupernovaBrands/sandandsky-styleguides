@@ -72,6 +72,10 @@ html.uk-store {
 		}
 	}
 
+	.cookies-banner-show .modal--newsletter {
+		top: calc-em(120);
+	}
+
 	.modal--newsletter-open {
 		.main-header {
 			z-index: $zindex-modal;

@@ -11,13 +11,8 @@ html.us-store {
 				right: $grid-gutter-width * 0.5;
 			}
 
-			.carousel-control-prev {
-				left: calc-em(250);
-			}
-
-			.carousel--scroll .scrollbar {
-				margin-left: auto;
-				max-width: calc(100% - 235px);
+			.col-lg-products {
+				@include make-col(9.35);
 			}
 		}
 	}

@@ -56,6 +56,20 @@ html.uk-store {
 				border-left: 1px solid $gray-600;
 			}
 		}
+
+		.validated:after {
+			position: absolute;
+			content: url(icon-svg('check-circle.svg', #{$primary}, #{$font-size-xs}));
+			width: $font-size-xs;
+			height: $font-size-xs;
+			right: calc-em(10);
+			bottom: 1.1em;
+		}
+
+		.validated.row:after {
+			right: calc-em(17);
+			bottom: 1.4em;
+		}
 	}
 
 	.modal--newsletter-open {

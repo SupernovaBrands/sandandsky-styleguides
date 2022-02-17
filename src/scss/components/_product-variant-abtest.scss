@@ -9,16 +9,12 @@ html.eu-store {
         }
     }
 
-    .abtest-change-price-color {
-        .product-variant__price {
-            color: $secondary;
-        }
+    .abtest-change-price-color .product-variant__price {
+        color: $secondary;
     }
 
-    .abtest-change-variants-position {
-        .swatch {
-            display: flex;
-            flex-wrap: wrap-reverse;
-        }
+    .abtest-change-variants-position .swatch {
+        display: flex;
+        flex-wrap: wrap-reverse;
     }
 }

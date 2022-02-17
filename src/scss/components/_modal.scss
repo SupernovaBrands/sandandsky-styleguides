@@ -26,6 +26,13 @@
 	.modal-content {
 		border-radius: calc-em(20);
 	}
+
+	@include media-breakpoint-up(lg) {
+		h2,
+		p {
+			color: white;
+		}
+	}
 }
 
 .modal--gift-card {

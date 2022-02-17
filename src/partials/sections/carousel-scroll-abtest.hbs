@@ -1,15 +1,10 @@
-<picture class="flex-grow-1 px-g float-lg-left pl-lg-g pr-lg-hg mb-g">
-	<source srcset="https://via.placeholder.com/219x468" media="(min-width: 992px)"/>
-	<img class="w-100" src="https://via.placeholder.com/346x140"/>
-</picture>
-
 <div {{#if id}}id="{{ id }}"{{/if}} class="{{ class }} px-g px-lg-hg">
 	<div class="carousel--scroll position-relative">
 		<div class="carousel-inner d-flex flex-lg-nowrap row w-auto" role="listbox">
 			{{#if @partial-block}}{{> @partial-block }}{{/if}}
 		</div>
-		<div class="px-lg-hg">
-			<div class="scrollbar mt-3">
+		<div class="mt-3 mx-lg-n1">
+			<div class="scrollbar">
 				<div class="scrollbar--thumb"></div>
 			</div>
 		</div>

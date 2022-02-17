@@ -7,17 +7,8 @@ html.us-store {
 				transform: translateY(-45%);
 			}
 
-			.carousel-control-next {
-				right: $grid-gutter-width * 0.5;
-			}
-
-			.carousel-control-prev {
-				left: calc-em(250);
-			}
-
-			.carousel--scroll .scrollbar {
-				margin-left: auto;
-				max-width: calc(100% - 235px);
+			.col-lg-products {
+				@include make-col(9.3);
 			}
 		}
 	}

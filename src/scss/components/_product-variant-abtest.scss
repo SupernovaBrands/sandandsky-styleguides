@@ -1,5 +1,5 @@
 html.eu-store {
-    .abtest-increase-price-size span {
+    .abtest-increase-price-size .product-variant span {
             font-size: calc-em(18);
 
             @include media-breakpoint-up(lg) {

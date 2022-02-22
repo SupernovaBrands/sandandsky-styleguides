@@ -1,0 +1,18 @@
+html.eu-store {
+    .abtest-increase-price-size .product-variant span {
+            font-size: calc-em(18);
+
+            @include media-breakpoint-up(lg) {
+                font-size: calc-em(20);
+            }
+    }
+
+    .abtest-change-price-color .product-variant__price {
+        color: $secondary;
+    }
+
+    .abtest-change-variants-position .swatch {
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+}

@@ -11,6 +11,7 @@
 		<form class="product-card-form flex-grow-1 d-flex flex-column h-100">
 			<input type="hidden" name="id" value="variantId" />
 			<input type="hidden" name="quantity" value="1" />
+			{{# if badge}}<span class="badge badge-light position-absolute">{{ badge }}</span>{{/if}}
 			<p class="product-card__text-sm mb-2 text-muted">Tasmanian Spring Water</p>
 			<a href="#" class="product-card__text mb-2 font-weight-bold">{{# if title}}{{ title }}{{ else }}Hydration Boost Cream{{/if}}</a>
 

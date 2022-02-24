@@ -169,8 +169,10 @@ html.uk-store {
 			}
 		}
 		@include media-breakpoint-down(md) {
-			.cookies-banner-show .modal--newsletter {
-				top: calc-em(120);
+			.cookies-banner-show.modal--newsletter-open .announcement-bar--open-modal {
+				top: 0;
+				position: absolute;
+				width: 100%;
 			}
 		}
 	}

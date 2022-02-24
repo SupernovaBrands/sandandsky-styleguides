@@ -1,6 +1,17 @@
 html.us-store {
 	.range-result--abtest {
 
+		.carousel-control {
+			top: 50%;
+			transform: translateY(-50%);
+
+			@include media-breakpoint-up(lg) {
+				&-next {
+					right: $grid-gutter-width;
+				}
+			}
+		}
+
 		&__decoration,
 		&__decoration-mobile {
 			&:after,

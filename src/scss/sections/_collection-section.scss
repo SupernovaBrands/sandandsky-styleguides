@@ -13,3 +13,15 @@
 		font-size: calc-em(30);
 	}
 }
+
+@include media-breakpoint-down(sm) {
+	html.us-store {
+		.collection-section__header h2, h4 {
+			width: 90%;
+		}
+
+		.collection-section__subtitle {
+			display:  block !important;
+		}
+	}
+}

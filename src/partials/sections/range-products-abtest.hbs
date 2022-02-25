@@ -3,17 +3,17 @@
 	<p class="font-weight-bold mb-3 mb-lg-2 px-hg px-lg-0 {{ textclass }}">{{ subtitle }}</p>
 	<p class="mb-3 mb-lg-5 px-hg px-lg-0">{{ text }}</p>
 	<div class="row">
-		<picture class="col-12 col-lg-auto pt-lg-4">
+		<picture class="col-12 col-lg-auto">
 			<source srcset="https://via.placeholder.com/219x465" media="(min-width: 992px)"/>
 			<img class="w-100 mb-g mb-lg-0 px-hg px-lg-0" src="https://via.placeholder.com/346x140"/>
 		</picture>
 		{{#> sections/carousel-scroll-abtest id="range-products-abtest" class="featured-products-carousel col-12 col-lg-products" }}
-			{{> compounds/product-card-abtest badgeimg=true class="carousel-item mb-0 pb-lg-0" color=color title="Hydration Boost Cream Moisturiser (2 lines)"}}
+			{{> compounds/product-card-abtest badge="Best Seller" class="carousel-item mb-0 pb-lg-0" color=color title="Hydration Boost Cream Moisturiser (2 lines)"}}
 			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
+			{{> compounds/product-card-abtest badge="Best Seller" class="carousel-item mb-0 pb-lg-0" color=color }}
+			{{> compounds/product-card-abtest badge="New" class="carousel-item mb-0 pb-lg-0" color=color }}
 			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
-			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
-			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
-			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
+			{{> compounds/product-card-abtest badge="New" class="carousel-item mb-0 pb-lg-0" color=color }}
 			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
 			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
 		{{/ sections/carousel-scroll-abtest}}

@@ -3,12 +3,16 @@ html.us-store {
 		@include media-breakpoint-up(lg) {
 			.carousel-control-next,
 			.carousel-control-prev {
-				top: calc-em(139);
-				transform: none;
+				top: 27.5%;
+				transform: translateY(-45%);
 			}
 
 			.col-lg-products {
 				@include make-col(9.3);
+			}
+
+			.badge {
+				left: calc-em(22.5);
 			}
 		}
 	}

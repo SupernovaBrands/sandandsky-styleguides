@@ -59,7 +59,7 @@ $('.carousel--scroll').each((index, carousel) => {
 			$(prevButton).removeClass('disabled');
 		}
 
-		if (inner.scrollLeft + inner.clientWidth === inner.scrollWidth) {
+		if (inner.scrollLeft + inner.clientWidth >= inner.scrollWidth - 15) {
 			if (!$(nextButton).hasClass('carousel-control-prev--always-show')) {
 				$(nextButton).addClass('d-none');
 			} else {

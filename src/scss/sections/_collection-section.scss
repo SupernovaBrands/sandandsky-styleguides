@@ -15,7 +15,8 @@
 }
 
 @include media-breakpoint-down(sm) {
-	html.us-store {
+	html.us-store,
+	html.dev-store {
 		.collection-section__header h2, h4 {
 			width: 90%;
 		}

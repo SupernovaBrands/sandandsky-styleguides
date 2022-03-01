@@ -37,6 +37,7 @@ html.uk-store {
 		.completed-bg {
 			background: url("https://cdn.shopify.com/s/files/1/0277/5262/8295/files/popup_bg_final.png?v=1644859446") no-repeat center top;
 			background-size: cover;
+			background-position: bottom;
 
 			@include media-breakpoint-up(lg) {
 				background: white;

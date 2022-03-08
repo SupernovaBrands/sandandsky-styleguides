@@ -1,0 +1,44 @@
+html.eu-store {
+	.product-image-carousel {
+		&.carousel--preview {
+			overflow: hidden;
+			.carousel-inner {
+				width: 150%;
+				left: 0;
+				margin-left: -2px;
+				margin-right: -2px;
+			}
+
+			.carousel-item-next:not(.carousel-item-left),
+			.carousel-item-right.active {
+				-webkit-transform: translate3d(50%, 0, 0);
+				transform: translate3d(50%, 0, 0);
+			}
+
+			.carousel-item-prev:not(.carousel-item-right),
+			.carousel-item-left.active {
+				-webkit-transform: translate3d(-50%, 0, 0);
+				transform: translate3d(-50%, 0, 0);
+			}
+
+			.item__third {
+				width: 50%;
+				padding-left: 2px;
+				padding-right: 2px;
+			}
+		}
+
+		.carousel-indicators {
+			li {
+				width: calc-em(6);
+				height: calc-em(6);
+				background: $gray-400;
+				border: 1px solid #FFF;
+				&.active {
+					background: $gray-600;
+					border-color: $gray-600;
+				}
+			}
+		}
+	}
+}

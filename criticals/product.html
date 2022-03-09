@@ -711,7 +711,7 @@
 	<section class="container mb-4 mb-lg-7 mt-lg-5">
 		<div class="row align-items-start">
 			<div class="product-image-carousel__container col-12 col-lg-6 order-lg-2 px-0 px-lg-g">
-				<figure id="product-image-carousel" class="product-image-carousel carousel slide mb-2 no-gutters__in-container d-lg-flex flex-column" data-ride="carousel" data-interval="false" data-indicator="#product-image-carousel__indicator">
+				<figure id="product-image-carousel" class="product-image-carousel carousel slide mb-0 no-gutters__in-container d-lg-flex flex-column" data-ride="carousel" data-interval="false" data-indicator="#product-image-carousel__indicator">
 					<div class="carousel-inner d-flex flex-nowrap order-lg-2" role="listbox">
 						<picture class="col-12 px-0 carousel-item active">
 							<source srcset="https://via.placeholder.com/1140x1418/?text=1" media="(min-width: 992px)">
@@ -742,14 +742,15 @@
 							<img class="w-100" src="https://via.placeholder.com/750x750/?text=7" alt="Slide 7">
 						</picture>
 					</div>
-					<figcaption class="position-absolute text-center font-size-sm py-1 text-white bg-aea">Best for Pore Refining</figcaption>
-					<picture class="product-image-carousel__badge position-absolute">
-						<img class="w-100" src="https://cdn.shopify.com/s/files/1/0277/5262/8295/files/BFCM_Roundel-BUNDLE.svg?v=1637899215">
-					</picture>
+					<figcaption class="text-center font-size-sm py-1 text-white order-lg-1 bg-aea">Best for Pore Refining</figcaption>
 				</figure>
+			
+				<picture class="product-image-carousel__badge position-absolute">
+					<img class="w-100" src="https://cdn.shopify.com/s/files/1/0277/5262/8295/files/BFCM_Roundel-BUNDLE.svg?v=1637899215">
+				</picture>
 			</div>
 			
-			<div id="product-image-carousel__indicator-scroll" class="carousel--scroll position-relative carousel px-g pt-4 d-lg-none" data-scrollbar="false">
+			<div id="product-image-carousel__indicator-scroll" class="carousel--scroll position-relative carousel px-g pt-g d-lg-none" data-scrollbar="false">
 				<div class="carousel-inner d-flex flex-nowrap row w-auto" role="listbox">
 					<div class="product-image-carousel__indicator__item carousel-item active col-12 px-lg-0 pb-lg-2 mw-100" data-target="#product-image-carousel" data-slide-to="0" data-index="1">
 						<img class="m-0 border img-fluid mx-auto d-block border-secondary" src="https://via.placeholder.com/150x150/?text=1" alt="Slide 1">

@@ -7,14 +7,12 @@
 
 <body>
 	{{> sections/header}}
-	{{> compounds/range-banner title="TASMANIAN SPRING WATER" background="bg-tsw" padding="p-4"}}
-	{{> sections/tsw }}
-	{{> sections/range-products }}
-	{{> compounds/range-map-tsw }}
-	{{> compounds/range-intro-tsw }}
-	{{> sections/review-testimonials}}
-	{{> compounds/bottom-banner badge="true" background="bg-tsw" reverse="true" }}
-	{{> sections/usp-banner}}
+	{{> compounds/range-banner }}
+	{{> sections/range-products title="Tasmanian Spring Water" subtitle="Hydrate • Revitalise • Fortify" text="Restores skin hydration and strengthens the skin barrier to lock in moisture, giving you smoother and more youthful skin." color="42A1CA" textclass="text-tsw"}}
+	{{> sections/range-result carousel=true tsw="true" title="Tasmanian Spring Water results" text="Revitalize plump, healthy glowing skin by ensuring your skin is deeply hydrated and moisturised. Your skin will feel so soft, you could dive right in." classes="bg-tsw-light range-result--abtest__decoration-tsw" decoration="range-result--abtest__decoration-mobile-tsw" }}
+	{{> sections/range-breakdown type="tsw" tsw="true" title="Breaking down the ingredients" }}
+	{{> sections/range-article titleclass="text-tsw" bgclass="bg-tsw-light"}}
+	{{> sections/range-review textcolor="text-tsw"}}
 	{{> sections/newsletter-banner}}
 	{{> sections/footer}}
 	{{> js jquery=true bootstrap=true main=true }}

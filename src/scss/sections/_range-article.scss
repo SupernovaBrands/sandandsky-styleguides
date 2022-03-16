@@ -1,0 +1,13 @@
+.range-article {
+	h2 {
+		@include media-breakpoint-down(md) {
+			// fix height for long & short text title
+			height: 2em * $line-height-base;
+		}
+	}
+
+	.carousel-control {
+		top: 22.5%;
+		transform: translateY(-33%);
+	}
+}

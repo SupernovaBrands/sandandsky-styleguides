@@ -15,14 +15,11 @@
 }
 
 @include media-breakpoint-down(sm) {
-	html.us-store,
-	html.dev-store {
-		.collection-section__header h2, h4 {
-			width: 90%;
-		}
+	.collection-section__header h2, h4 {
+		width: 90%;
+	}
 
-		.collection-section__subtitle {
-			display:  block !important;
-		}
+	.collection-section__subtitle {
+		display:  block !important;
 	}
 }

@@ -1,15 +1,8 @@
 .range-banner {
 	picture::before {
-		padding-top: percentage(656 / 828);
+		padding-top: percentage(221 / 828);
 		@include media-breakpoint-up(lg) {
-			padding-top: percentage(680 / 2880);
-		}
-	}
-
-	figcaption {
-		width: 100%;
-		@include media-breakpoint-up(lg) {
-			width: auto;
+			padding-top: percentage(401 / 2880);
 		}
 	}
 }

@@ -5,16 +5,14 @@
 	{{> html-head title="Range APC" maincss="range-page" }}
 </head>
 
-<body> 
+<body>
 	{{> sections/header}}
-	{{> compounds/range-banner title="Australian Pink Clay" background="bg-secondary" padding="px-6 py-4"}}
-	{{> sections/apc }}
-	{{> sections/range-products }}
-	{{> compounds/range-map-apc }}
-	{{> compounds/range-intro-apc }}
-	{{> sections/review-testimonials}}
-	{{> compounds/bottom-banner background="bg-secondary" }}
-	{{> sections/usp-banner}}
+	{{> compounds/range-banner }}
+	{{> sections/range-products title="Australian Pink Clay" subtitle="Detoxify • Refine • Soothe" text="Combats troubled, acne-prone and textured skin. Clears impurities and congestions, leaving you with soothed and pore-tight skin in minutes." color="ff6f8d" textclass="text-apc" }}
+	{{> sections/range-result carousel=true apc="true" title="Australian Pink Clay results" text="Achieve brighter, radiant skin with our unique blend of Glow BerriesTM consisting of 3 Aussie superfruits - Emu Apple (or Muntries), Riberry and Pepperberry. Bursting with Vitamin C, E and antioxidants, bid goodbye to fine lines and pigmentation." classes="bg-apc-light range-result__decoration-apc" decoration="range-result__decoration-mobile-apc" }}
+	{{> sections/range-breakdown type="apc" apc="true" title="Why choose our Australian Pink Clay?" }}
+	{{> sections/range-article titleclass="text-apc" bgclass="bg-apc-light"}}
+	{{> sections/range-review textcolor="text-apc"}}
 	{{> sections/newsletter-banner}}
 	{{> sections/footer}}
 	{{> js jquery=true bootstrap=true main=true }}

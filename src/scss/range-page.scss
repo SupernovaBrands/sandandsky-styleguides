@@ -1,20 +1,18 @@
 @import 'core';
 @import 'bootstrap/common';
+@import 'bootstrap/scss/badge';
 @import 'common';
 
 @import 'components/accordion';
 @import 'components/list';
-@import 'components/ingredient';
 @import 'components/badge';
-@import 'components/product-variant';
 
 @import 'compounds/upsell';
+@import 'compounds/post-card';
 @import 'compounds/range-banner';
-@import 'compounds/bottom-banner';
-@import 'compounds/range-map';
-@import 'compounds/image-with-text';
 
+@import 'sections/range-product';
+@import 'sections/range-result';
+@import 'sections/range-breakdown';
+@import 'sections/range-article';
 @import 'sections/newsletter-banner';
-@import 'sections/usp-banner';
-@import 'sections/range-info';
-@import 'sections/review-carousel';

@@ -18,16 +18,6 @@ eval("var carousels = [];\n\nvar adjustScrollThumb = function adjustScrollThumb(
 
 /***/ }),
 
-/***/ "./src/js/modules/featured-products-abtest.js":
-/*!****************************************************!*\
-  !*** ./src/js/modules/featured-products-abtest.js ***!
-  \****************************************************/
-/***/ (() => {
-
-eval("$('#tabFeaturedProductContentFeatured .carousel--scroll').each(function (index, carousel) {\n  carousel.classList.remove('d-none');\n  carousel.dispatchEvent(new CustomEvent('adjustThumb'));\n});\n$('#tabFeaturedProductAbTest a[data-toggle=\"tab\"]').on('shown.bs.tab', function () {\n  $('.carousel--scroll').each(function (index, carousel) {\n    carousel.classList.remove('d-none');\n    carousel.dispatchEvent(new CustomEvent('adjustThumb'));\n  });\n});\n\n//# sourceURL=webpack://sandandsky-styleguides/./src/js/modules/featured-products-abtest.js?");
-
-/***/ }),
-
 /***/ "./src/js/modules/featured-products-aea-abtest.js":
 /*!********************************************************!*\
   !*** ./src/js/modules/featured-products-aea-abtest.js ***!

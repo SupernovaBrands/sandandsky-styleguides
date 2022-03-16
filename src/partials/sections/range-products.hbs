@@ -5,17 +5,17 @@
 	<div class="row">
 		<picture class="col-12 col-lg-auto pt-lg-4">
 			<source srcset="https://via.placeholder.com/219x465" media="(min-width: 992px)"/>
-			<img class="w-100 mb-g mb-lg-0 px-hg px-lg-0" src="https://via.placeholder.com/346x140"/>
+			<img class="w-100 px-hg px-lg-0" src="https://via.placeholder.com/346x140"/>
 		</picture>
-		{{#> sections/carousel-scroll-abtest id="range-products-abtest" class="featured-products-carousel col-12 col-lg-products" }}
-			{{> compounds/product-card-abtest badgeimg=true class="carousel-item mb-0 pb-lg-0" color=color title="Hydration Boost Cream Moisturiser (2 lines)"}}
-			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
-			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
-			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
-			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
-			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
-			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
-			{{> compounds/product-card-abtest class="carousel-item mb-0 pb-lg-0" color=color }}
-		{{/ sections/carousel-scroll-abtest}}
+		{{#> sections/carousel-scroll-range id="range-products-abtest" class="featured-products-carousel col-12 col-lg-products" }}
+			{{> compounds/product-card range_page=true badgeimg=true class="carousel-item mb-2 mb-lg-0 pb-lg-0" color=color title="Hydration Boost Cream Moisturiser (2 lines)"}}
+			{{> compounds/product-card range_page=true class="carousel-item mb-2 mb-lg-0 pb-lg-0" color=color }}
+			{{> compounds/product-card range_page=true class="carousel-item mb-2 mb-lg-0 pb-lg-0" color=color }}
+			{{> compounds/product-card range_page=true class="carousel-item mb-2 mb-lg-0 pb-lg-0" color=color }}
+			{{> compounds/product-card range_page=true class="carousel-item mb-2 mb-lg-0 pb-lg-0" color=color }}
+			{{> compounds/product-card range_page=true class="carousel-item mb-2 mb-lg-0 pb-lg-0" color=color }}
+			{{> compounds/product-card range_page=true class="carousel-item mb-2 mb-lg-0 pb-lg-0" color=color }}
+			{{> compounds/product-card range_page=true class="carousel-item mb-2 mb-lg-0 pb-lg-0" color=color }}
+		{{/ sections/carousel-scroll-range}}
 	</div>
 </section>

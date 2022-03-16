@@ -1,0 +1,14 @@
+@include media-breakpoint-up(lg) {
+	.range-product {
+
+		.carousel-control-next,
+		.carousel-control-prev {
+			top: calc-em(139);
+			transform: none;
+		}
+
+		.col-lg-products {
+			@include make-col(9.3);
+		}
+	}
+}

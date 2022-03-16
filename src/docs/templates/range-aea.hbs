@@ -6,15 +6,13 @@
 </head>
 
 <body>
-	{{> sections/header secondnav=true }}
-	{{> compounds/range-banner title="Australian Emu Apple and Glow Berries™" background="bg-aea" padding="p-4"}}
-	{{> sections/aea }}
-	{{> sections/range-products }}
-	{{> compounds/range-map-aea }}
-	{{> compounds/range-intro-aea }}
-	{{> sections/review-testimonials}}
-	{{> compounds/bottom-banner reverse="true" background="bg-aea" }}
-	{{> sections/usp-banner}}
+	{{> sections/header}}
+	{{> compounds/range-banner }}
+	{{> sections/range-products title="Australian Emu Apple" subtitle="Brighten • Hydrate • Restore" text="Packed with the world’s most potent Vitamin C - 100X more than an orange - to fight against premature aging, allowing you to achieve glow-from-within skin." color="cc3195" textclass="text-aea"}}
+	{{> sections/range-result carousel=true aea="true" title="Australian Emu Apple results" text="Achieve brighter, radiant skin with our unique blend of Glow BerriesTM consisting of 3 Aussie superfruits - Emu Apple (or Muntries), Riberry and Pepperberry. Bursting with Vitamin C, E and antioxidants, bid goodbye to fine lines and pigmentation." classes="bg-aea-light range-result--abtest__decoration-aea" decoration="range-result--abtest__decoration-mobile-aea" }}
+	{{> sections/range-breakdown type="aea" aea="true" title="Breaking down Australian Glow Berries™" }}
+	{{> sections/range-article titleclass="text-aea" bgclass="bg-aea-light"}}
+	{{> sections/range-review textcolor="text-aea"}}
 	{{> sections/newsletter-banner}}
 	{{> sections/footer}}
 	{{> js jquery=true bootstrap=true main=true }}

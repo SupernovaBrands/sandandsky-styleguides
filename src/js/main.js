@@ -90,8 +90,8 @@ if ($('.upsell__article').length > 0) {
 	import(/* webpackChunkName: 'blog-upsell' */ '~mod/blog-upsell');
 }
 
-if ($('.announcement-bar--open-modal').length > 0) {
-	import(/* webpackChunkName: 'announcement-bar' */ '~mod/announcement-bar-abtest');
+if ($('.modal--newsletter').length > 0) {
+	import(/* webpackChunkName: 'modal-newsletter' */ '~mod/modal-newsletter');
 }
 
 if ($('.mobile-nav--abtest').length > 0) {

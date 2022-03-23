@@ -27,4 +27,12 @@
 			border-color: $primary;
 		}
 	}
+
+	span {
+		font-size: calc-em(18);
+
+		@include media-breakpoint-up(lg) {
+			font-size: calc-em(20);
+		}
+	}
 }

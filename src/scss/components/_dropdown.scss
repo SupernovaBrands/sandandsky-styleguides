@@ -38,7 +38,7 @@
 
 			.dropdown-menu {
 				transition: height .5s ease;
-				height: 16.5em;
+				height: calc-em(308);
 				visibility: visible;
 				margin-top: -0.5em;
 				z-index: $zindex-fixed; //above blog sticky sidebar
@@ -74,7 +74,7 @@
 				.cookies-banner-show & {
 					top: calc-em(120);
 				}
-			
+
 				.cookies-banner-show--expanded & {
 					top: calc-em(300);
 				}

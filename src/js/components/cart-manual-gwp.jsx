@@ -47,7 +47,7 @@ export default class CartManualGwp extends React.Component {
 								<p className="flex-grow-1 font-size-xs font-weight-bold my-2">{item.title}</p>
 								<button
 									type="button"
-									className={`btn btn-block px-1 btn-${isSelected ? 'primary' : 'outline-primary'}`}
+									className={`btn btn-block btn-outline-black px-1 btn-${isSelected ? 'primary' : 'outline-primary'}`}
 									onClick={() => {
 										if (isSelected) {
 											onRemoveItem(item.id);

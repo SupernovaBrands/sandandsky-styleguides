@@ -85,7 +85,7 @@ const YotpoQuestionForm = (props) => {
 				</div>
 				<div className="d-flex form-group align-items-center justify-content-end">
 					{hasError && <small className="text-secondary mr-2">{tStrings.yotpo.formError}</small>}
-					<button type="button" className="btn btn-secondary" onClick={onSubmitButton}>{tStrings.yotpo.submit}</button>
+					<button type="button" className="btn btn-secondary btn-black" onClick={onSubmitButton}>{tStrings.yotpo.submit}</button>
 				</div>
 			</div>
 		</div>

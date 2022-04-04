@@ -373,7 +373,7 @@ const YotpoReviewWidget = (props) => {
 						<div className="col-6 col-md-3 col-xl-2">
 							<button
 								type="button"
-								className="btn btn-outline-primary btn-block text-nowrap d-flex justify-content-center text-capitalize"
+								className="btn btn-outline-primary btn-block text-nowrap d-flex justify-content-center text-capitalize btn-outline-black"
 								data-toggle="collapse"
 								data-target="#yotpoReviewForm"
 								aria-expanded="false"
@@ -385,7 +385,7 @@ const YotpoReviewWidget = (props) => {
 						<div className="col-6 col-md-3 col-xl-2">
 							<button
 								type="button"
-								className="btn btn-outline-primary btn-block text-nowrap d-flex justify-content-center text-capitalize"
+								className="btn btn-outline-primary btn-block text-nowrap d-flex justify-content-center text-capitalize btn-outline-black"
 								data-toggle="collapse"
 								data-target="#yotpoQuestionForm"
 								aria-expanded="false"

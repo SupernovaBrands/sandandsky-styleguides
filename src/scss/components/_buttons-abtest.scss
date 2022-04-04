@@ -1,0 +1,43 @@
+html.au-store {
+    .button-abtest-active {
+        .announcement-bar,
+        .upsell-heading {
+            background-color: $range-apc-light !important;
+            color: $body-color !important;
+            a {
+                color: $body-color;
+            }
+        }
+
+        .btn-black {
+            background-color: $black;
+            border-color: $black;
+            color: white;
+
+            &:hover {
+                background-color: $body-color;
+                border-color: $body-color;
+            }
+        }
+
+        .btn-outline-black {
+            background-color: white;
+            border-color: $black;
+            color: $black;
+
+            &:hover {
+                background-color: $black;
+                border-color: $black;
+                color: white;
+            }
+        }
+
+        .product-variant .custom-control-input:checked ~ .active-border {
+            border-color: $black;
+        }
+
+        .custom-control-input:checked ~ .custom-control-label::before {
+            background-color: $black;
+        }
+    }
+}

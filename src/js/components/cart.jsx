@@ -672,7 +672,7 @@ export default class Cart extends React.Component {
 								<div className="container px-g">
 									<SvgSS class="svg logo text-secondary" />
 									<p className="my-3 text-center">{tStrings.cartEmpty}</p>
-									<a href="/collections" className="btn btn-primary" data-cy="shop-all-btn">Shop all products</a>
+									<a href="/collections" className="btn btn-primary btn-black" data-cy="shop-all-btn">Shop all products</a>
 								</div>
 								{recentProducts.length > 0 && (
 									<>

@@ -38,7 +38,7 @@ const RecentProducts = (props) => {
 						{product.comparePrice > 0 && <span className="text-muted text-linethrough mr-1">{formatMoney(product.comparePrice)}</span>}
 						<span className="font-weight-bold">{formatMoney(product.price)}</span>
 					</p>
-					<button className="btn btn-block btn-primary" type="button" onClick={() => { onAddToCart(product); setLoading(true); }} disabled={loading}>
+					<button className="btn btn-block btn-primary btn-black" type="button" onClick={() => { onAddToCart(product); setLoading(true); }} disabled={loading}>
 						{loading ? (
 							<span className="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
 						) : tStrings.addToCart}

@@ -36,7 +36,7 @@ export default class CartUpsell extends React.Component {
 							<span className="font-weight-bold mr-1">{formatMoney(upsell.price)}</span>
 							{upsell.comparePrice > 0 && (<span className="text-linethrough mr-1">{formatMoney(upsell.comparePrice)}</span>)}
 						</p>
-						<button className="btn col-10 btn-outline-primary text-nowrap" type="button" onClick={(e) => { this.handleClick(upsell, e); }} disabled={this.state.isLoading}>
+						<button className="btn col-10 btn-outline-primary btn-outline-black text-nowrap" type="button" onClick={(e) => { this.handleClick(upsell, e); }} disabled={this.state.isLoading}>
 							{this.state.isLoading ? (
 								<span className="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
 							) : tStrings.addToCart}

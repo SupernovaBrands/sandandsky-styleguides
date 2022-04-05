@@ -1,0 +1,70 @@
+html.au-store {
+    .button-black-abtest-active {
+        .announcement-bar {
+            background-color: $range-apc-light !important;
+            color: $body-color !important;
+            a {
+                color: $body-color;
+            }
+        }
+
+        .btn-outline-primary {
+            background-color: white;
+            border-color: $black;
+            color: $black;
+
+            &:hover {
+                background-color: $black;
+                border-color: $black;
+                color: white;
+            }
+        }
+
+        .btn-primary {
+            background-color: $black;
+            border-color: $black;
+            color: white;
+
+            &:hover {
+                background-color: $body-color;
+                border-color: $body-color;
+            }
+        }
+
+        .collection-section,
+        .featured-products-tab__heading,
+        .featured-products-carousel,
+        .instagram-carousel {
+            .btn-primary {
+                background-color: white;
+                border-color: $black;
+                color: $black;
+
+                &:hover {
+                    background-color: $black;
+                    border-color: $black;
+                    color: white;
+                }
+            }
+        }
+
+        .product-card .btn-outline-primary {
+            background-color: $black;
+            border-color: $black;
+            color: white;
+
+            &:hover {
+                background-color: $body-color;
+                border-color: $body-color;
+            }
+        }
+
+        .product-variant .custom-control-input:checked ~ .active-border {
+            border-color: $black;
+        }
+
+        .custom-control-input:checked ~ .custom-control-label::before {
+            background-color: $black;
+        }
+    }
+}

@@ -1,5 +1,14 @@
 html.au-store {
     .button-black-abtest-active {
+        .hero-carousel {
+            picture:not(.d-none) {
+                display: none;
+            }
+            picture.d-none {
+                display: block !important;
+            }
+        }
+
         .announcement-bar {
             background-color: $range-apc-light !important;
             color: $body-color !important;
@@ -37,20 +46,20 @@ html.au-store {
         .instagram-carousel {
             .btn-primary {
                 background-color: white;
-                border-color: $black;
-                color: $black;
+                border-color: #272727;
+                color: #272727;
 
                 &:hover {
-                    background-color: $black;
-                    border-color: $black;
+                    background-color: #272727;
+                    border-color: #272727;
                     color: white;
                 }
             }
         }
 
         .product-card .btn-outline-primary {
-            background-color: $black;
-            border-color: $black;
+            background-color: #272727;
+            border-color: #272727;
             color: white;
 
             &:hover {

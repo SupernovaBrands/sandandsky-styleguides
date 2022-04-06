@@ -10,19 +10,19 @@ html.au-store {
 
         .btn-outline-primary {
             background-color: white;
-            border-color: $black;
-            color: $black;
+            border-color: #272727;
+            color: #272727;
 
             &:hover {
-                background-color: $black;
-                border-color: $black;
+                background-color: #272727;
+                border-color: #272727;
                 color: white;
             }
         }
 
         .btn-primary {
-            background-color: $black;
-            border-color: $black;
+            background-color: #272727;
+            border-color: #272727;
             color: white;
 
             &:hover {
@@ -58,13 +58,52 @@ html.au-store {
                 border-color: $body-color;
             }
         }
+        
+        .progress-box {
+            background-color: $gray-100 !important;
+
+            .progress-bar {
+                background-color: #272727 !important;
+            }
+        }
+
+        .newsletter-banner {
+            background-color: #FFF3F8 !important;
+
+            h2,
+            svg,
+            input::placeholder  {
+                color: #272727 !important;
+            }
+
+            .border-white {
+                border-color: #272727 !important;
+            }
+        }
+
+        .usp-banner {
+            background-color: $gray-100 !important;
+
+            svg,
+            span {
+                color: #272727 !important;
+            }
+
+            .decor {
+                display: none;
+            }
+        }
 
         .product-variant .custom-control-input:checked ~ .active-border {
-            border-color: $black;
+            border-color: #272727;
         }
 
         .custom-control-input:checked ~ .custom-control-label::before {
-            background-color: $black;
+            background-color: #272727;
+        }
+
+        footer h4 {
+            color: #272727 !important;
         }
     }
 }

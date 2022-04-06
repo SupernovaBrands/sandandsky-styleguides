@@ -19,7 +19,7 @@ const CartDiscountMeter = (props) => {
 	const text = remaining <= 0 ? finalText : progressText.replace('{{freeShippingBarRemaining}}', amount);
 
 	return (
-		<div className="bg-secondary-light mx-ng mb-2 px-4 py-2">
+		<div className="progress-box bg-secondary-light mx-ng mb-2 px-4 py-2">
 			<p className="font-size-sm mb-2">{text}</p>
 			<div className="progress bg-white mb-1">
 				<div

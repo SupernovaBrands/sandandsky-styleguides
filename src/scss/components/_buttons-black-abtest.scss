@@ -1,5 +1,15 @@
 html.au-store {
     .button-black-abtest-active {
+        .hero-carousel,
+        .collection-banner {
+            picture:first-child {
+                display: none;
+            }
+            picture:last-child {
+                display: block !important;
+            }
+        }
+
         .announcement-bar {
             background-color: $range-apc-light !important;
             color: $body-color !important;
@@ -37,20 +47,20 @@ html.au-store {
         .instagram-carousel {
             .btn-primary {
                 background-color: white;
-                border-color: $black;
-                color: $black;
+                border-color: #272727;
+                color: #272727;
 
                 &:hover {
-                    background-color: $black;
-                    border-color: $black;
+                    background-color: #272727;
+                    border-color: #272727;
                     color: white;
                 }
             }
         }
 
         .product-card .btn-outline-primary {
-            background-color: $black;
-            border-color: $black;
+            background-color: #272727;
+            border-color: #272727;
             color: white;
 
             &:hover {
@@ -92,6 +102,10 @@ html.au-store {
             .decor {
                 display: none;
             }
+        }
+
+        #hp-abeauty-section {
+            background-color: white !important;
         }
 
         .product-variant .custom-control-input:checked ~ .active-border {

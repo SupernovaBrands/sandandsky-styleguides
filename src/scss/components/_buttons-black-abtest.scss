@@ -1,10 +1,11 @@
 html.au-store {
     .button-black-abtest-active {
-        .hero-carousel {
-            picture:not(.d-none) {
+        .hero-carousel,
+        .collection-banner {
+            picture:first-child {
                 display: none;
             }
-            picture.d-none {
+            picture:last-child {
                 display: block !important;
             }
         }
@@ -103,7 +104,7 @@ html.au-store {
             }
         }
 
-        .recognized-section {
+        #hp-abeauty-section {
             background-color: white !important;
         }
 

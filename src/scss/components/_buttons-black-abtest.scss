@@ -9,8 +9,10 @@ html.au-store {
             }
         }
 
-        .mega-menu-post-card a:hover {
-            color: $secondary;
+        .mega-menu-post-card {
+            .text-primary, u {
+                color: #ff6f8d !important;
+            }
         }
 
         .hero-carousel,

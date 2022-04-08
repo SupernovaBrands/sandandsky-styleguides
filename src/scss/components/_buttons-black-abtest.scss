@@ -13,6 +13,10 @@ html.au-store {
             .text-primary, u {
                 color: #ff6f8d !important;
             }
+
+            h4 {
+                color: $body-color !important;
+            }
         }
 
         .hero-carousel,

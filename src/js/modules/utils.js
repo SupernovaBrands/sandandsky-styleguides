@@ -1,4 +1,4 @@
-/* global tSettings */
+/* global tSettings screenLG */
 
 export const get = (obj, path, defValue) => {
 	if (!path) return undefined;
@@ -282,4 +282,32 @@ export const updateItemInArray = (array, compareFunc, modFunc) => {
 		modFunc(item),
 		...array.slice(index + 1),
 	];
+};
+
+export const popopOver = () => {
+	// popover
+	if ($('[data-toggle="popover"]').length) {
+		$(function () {
+			const popoverConfig = {
+				flip: 'top',
+				fallbackPlacement: ['top'],
+				placement: 'top',
+				delay: {
+					show: 100,
+				},
+				offset: window.innerWidth >= screenLG ? $('[data-toggle="popover"]').attr('data-offset-lg') : $('[data-toggle="popover"]').attr('data-offset'),
+				html: true,
+			};
+			$(document).find('[data-toggle="popover"]').popover(popoverConfig);
+		});
+
+		// Dismissable popover click out side
+		$(document).on('click', function (e) {
+			$(document).find('[data-toggle=popover]').each(function () {
+				if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0 && !$(e.target).hasClass('custom-control-input')) {
+					$(this).popover('hide');
+				}
+			});
+		});
+	}
 };

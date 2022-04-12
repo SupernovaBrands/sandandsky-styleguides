@@ -1,0 +1,195 @@
+html.au-store {
+    .button-black-abtest-active {
+        .nav-link,
+        .mega-menu a {
+            color: #272727;
+
+            &:hover {
+                color: $body-color;
+            }
+        }
+
+        .mega-menu-post-card {
+            .text-primary, u {
+                color: $secondary !important;
+            }
+
+            h4 {
+                color: $body-color !important;
+            }
+        }
+
+        a {
+            color: $secondary;
+            text-decoration: none;
+
+            &.text-primary {
+                color: $secondary !important;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        footer a {
+            color: #969696;
+
+            &:hover {
+                color: $secondary;
+            }
+        }
+
+        .hero-carousel,
+        .collection-banner {
+            picture:first-child {
+                display: none;
+            }
+            picture:last-child {
+                display: block !important;
+            }
+        }
+
+        .announcement-bar {
+            background-color: $range-apc-light !important;
+            color: $body-color !important;
+            a {
+                color: $body-color;
+            }
+        }
+
+        .btn-outline-primary {
+            background-color: white;
+            border-color: #272727;
+            color: #272727;
+
+            &:hover {
+                background-color: #272727;
+                border-color: #272727;
+                color: white;
+            }
+        }
+
+        .btn-primary {
+            background-color: #272727;
+            border-color: #272727;
+            color: white;
+
+            &:hover {
+                background-color: $body-color;
+                border-color: $body-color;
+            }
+        }
+
+        .collection-section,
+        .featured-products-tab__heading,
+        .featured-products-carousel & div:not(.range-banner),
+        .instagram-carousel {
+            .btn-primary {
+                background-color: white;
+                border-color: #272727;
+                color: #272727;
+
+                &:hover {
+                    background-color: #272727;
+                    border-color: #272727;
+                    color: white;
+                }
+            }
+        }
+
+        .product-card .btn-outline-primary {
+            background-color: #272727;
+            border-color: #272727;
+            color: white;
+
+            &:hover {
+                background-color: $body-color;
+                border-color: $body-color;
+            }
+        }
+        
+        .progress-box {
+            background-color: $gray-100 !important;
+
+            .progress-bar {
+                background-color: #272727 !important;
+            }
+        }
+
+        .a-beauty-banner {
+            a {
+                text-decoration: underline;
+                color: $secondary;
+            }
+        }
+
+        .howto-video__apc-light,
+        .howto-video__tsw-light,
+        .howto-video__aea-light {
+            background-color: white;
+
+            .container {
+                border-top: 1px solid $gray-400;
+                border-bottom: 1px solid $gray-400;
+                padding-top: 2em;
+                padding-bottom: 2em;
+            }
+        }
+
+
+        .newsletter-banner {
+            background-color: #FFF3F8 !important;
+
+            h2,
+            svg,
+            input::placeholder  {
+                color: #272727 !important;
+            }
+
+            input,
+            button {
+                background-color: white !important;
+                border-color: #272727 !important;
+            }
+        }
+
+        .usp-banner {
+            background-color: $gray-100 !important;
+
+            svg,
+            span {
+                color: #272727 !important;
+            }
+
+            .decor {
+                display: none;
+            }
+        }
+
+        .hp-abeauty-section .bg-light {
+            background-color: white !important;
+        }
+
+        .product-variant .custom-control-input:checked ~ .active-border {
+            border-color: #272727;
+        }
+
+        .custom-control-input:checked ~ .custom-control-label::before {
+            background-color: #272727;
+            border-color: #272727;
+        }
+
+        footer h4 {
+            color: #272727 !important;
+        }
+
+        .reading-proggress-bar {
+            background-color: $range-apc-light;
+
+            &__proggress {
+                background-color: $secondary;
+            }
+        }
+    }
+}

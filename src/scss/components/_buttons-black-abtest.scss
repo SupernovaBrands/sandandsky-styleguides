@@ -25,6 +25,11 @@ html.au-store {
         .mega-menu-post-card {
             .text-primary, u {
                 color: $secondary !important;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
 
             h4 {
@@ -33,6 +38,7 @@ html.au-store {
         }
 
         .product-card__text,
+        .mobile-nav__menu a:not(.btn-primary),
         &.template-product .tab-content a,
         &.template-product .accordion a {
             color: $body-color;
@@ -42,11 +48,12 @@ html.au-store {
             }
         }
 
-        footer a {
-            color: #969696;
+        footer a,
+        .mobile-nav__other-menu a {
+            color: #969696 !important;
 
             &:hover {
-                color: $secondary;
+                color: $secondary !important;
             }
         }
 
@@ -93,7 +100,7 @@ html.au-store {
 
         .collection-section,
         .featured-products-tab__heading,
-        .featured-products-carousel & div:not(.range-banner),
+        .featured-products-carousel,
         .instagram-carousel {
             .btn-primary {
                 background-color: white;

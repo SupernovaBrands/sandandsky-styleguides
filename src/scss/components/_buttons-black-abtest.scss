@@ -1,5 +1,18 @@
 html.au-store {
     .button-black-abtest-active {
+        a {
+            color: $secondary;
+            text-decoration: none;
+
+            &.text-primary {
+                color: $secondary !important;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        } 
+
         .nav-link,
         .mega-menu a {
             color: #272727;
@@ -19,16 +32,13 @@ html.au-store {
             }
         }
 
-        a {
-            color: $secondary;
-            text-decoration: none;
-
-            &.text-primary {
-                color: $secondary !important;
-            }
+        .product-card__text,
+        &.template-product .tab-content a,
+        &.template-product .accordion a {
+            color: $body-color;
 
             &:hover {
-                text-decoration: underline;
+                color: $secondary;
             }
         }
 

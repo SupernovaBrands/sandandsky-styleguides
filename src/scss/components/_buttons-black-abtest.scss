@@ -157,6 +157,11 @@ html.au-store {
 
         .newsletter-banner {
             background-color: #FFF3F8 !important;
+            background-image: url('/sandandsky-styleguides/images/newsletter-pattern-mobile-abtest.svg');
+
+            @include media-breakpoint-up(lg) {
+                background-image: url('/sandandsky-styleguides/images/newsletter-pattern-abtest.svg');
+            }
 
             h2,
             svg,

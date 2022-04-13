@@ -67,7 +67,14 @@
 		}
 
 		&__selector {
-			border: 2px solid $gray-400;
+			.subscription-label {
+				border: 2px solid $gray-400;
+			}
+
+			.custom-control-input:checked ~ .subscription-label {
+				background-color: $secondary-light;
+				border: 2px solid $secondary;
+			}
 		}
 	}
 }

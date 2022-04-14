@@ -45,7 +45,23 @@ html.au-store {
 
             &:hover {
                 color: $secondary;
+                text-decoration: none;
             }
+        }
+
+        &.template-product .tab-content span.text-underline,
+        .tab-ingredient__content a  {
+            color: $body-color !important;
+            text-decoration: none;
+
+            &:hover {
+                color: $secondary !important;
+                text-decoration: none;
+            }
+        }
+
+        .product-form__shipping-accordion u {
+            text-decoration: none;
         }
 
         footer a,
@@ -173,6 +189,7 @@ html.au-store {
             button {
                 background-color: white !important;
                 border-color: #272727 !important;
+                color: #272727 !important;
             }
         }
 

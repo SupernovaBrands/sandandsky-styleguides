@@ -4,12 +4,14 @@ html.au-store {
             color: $secondary;
             text-decoration: none;
 
-            &.text-primary {
+            &.text-primary,
+            &.text-body {
                 color: $secondary !important;
             }
-
-            &:hover {
-                text-decoration: underline;
+            &:not(.btn) {
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         } 
 
@@ -17,8 +19,18 @@ html.au-store {
         .mega-menu a {
             color: #272727;
 
+            span {
+                text-decoration: none;
+                display: inline-block;
+            }
+
             &:hover {
                 color: $body-color;
+
+                span {
+                    text-decoration: none;
+                    display: inline-block;
+                }
             }
         }
 
@@ -39,13 +51,20 @@ html.au-store {
 
         .product-card__text,
         .mobile-nav__menu a:not(.btn-primary),
-        &.template-product .tab-content a,
-        &.template-product .accordion a {
+        &.template-product .tab-content a {
             color: $body-color;
 
             &:hover {
                 color: $secondary;
                 text-decoration: none;
+            }
+        }
+
+        &.template-product .accordion a {
+            color: $body-color;
+
+            &:hover {
+                color: $secondary;
             }
         }
 

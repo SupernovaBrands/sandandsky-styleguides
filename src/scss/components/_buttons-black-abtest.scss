@@ -5,9 +5,18 @@ html.au-store {
             text-decoration: none;
 
             &.text-primary,
-            &.text-body {
+            &.text-body:not(.nav-link) {
                 color: $secondary !important;
             }
+
+            &.text-underline, span {
+                text-decoration: none !important;
+
+                &:hover {
+                    text-decoration: underline !important;
+                }
+            }
+
             &:not(.btn) {
                 &:hover {
                     text-decoration: underline;
@@ -34,6 +43,14 @@ html.au-store {
             }
         }
 
+        .tab-ingredient__content a.text-body {
+            color: $body-color !important;
+
+            &:hover {
+                color: $secondary !important;
+            }
+        }
+
         .mega-menu-post-card {
             .text-primary, u {
                 color: $secondary !important;
@@ -50,31 +67,11 @@ html.au-store {
         }
 
         .product-card__text,
-        .mobile-nav__menu a:not(.btn-primary),
-        &.template-product .tab-content a {
+        .mobile-nav__menu a:not(.btn-primary) {
             color: $body-color;
 
             &:hover {
                 color: $secondary;
-                text-decoration: none;
-            }
-        }
-
-        &.template-product .accordion a {
-            color: $body-color;
-
-            &:hover {
-                color: $secondary;
-            }
-        }
-
-        &.template-product .tab-content span.text-underline,
-        .tab-ingredient__content a  {
-            color: $body-color !important;
-            text-decoration: none;
-
-            &:hover {
-                color: $secondary !important;
                 text-decoration: none;
             }
         }

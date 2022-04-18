@@ -4,12 +4,23 @@ html.au-store {
             color: $secondary;
             text-decoration: none;
 
-            &.text-primary {
+            &.text-primary,
+            &.text-body:not(.nav-link) {
                 color: $secondary !important;
             }
 
-            &:hover {
-                text-decoration: underline;
+            &.text-underline, span {
+                text-decoration: none !important;
+
+                &:hover {
+                    text-decoration: underline !important;
+                }
+            }
+
+            &:not(.btn) {
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         } 
 
@@ -17,8 +28,26 @@ html.au-store {
         .mega-menu a {
             color: #272727;
 
+            span {
+                text-decoration: none;
+                display: inline-block;
+            }
+
             &:hover {
                 color: $body-color;
+
+                span {
+                    text-decoration: none;
+                    display: inline-block;
+                }
+            }
+        }
+
+        .tab-ingredient__content a.text-body {
+            color: $body-color !important;
+
+            &:hover {
+                color: $secondary !important;
             }
         }
 
@@ -38,24 +67,11 @@ html.au-store {
         }
 
         .product-card__text,
-        .mobile-nav__menu a:not(.btn-primary),
-        &.template-product .tab-content a,
-        &.template-product .accordion a {
+        .mobile-nav__menu a:not(.btn-primary) {
             color: $body-color;
 
             &:hover {
                 color: $secondary;
-                text-decoration: none;
-            }
-        }
-
-        &.template-product .tab-content span.text-underline,
-        .tab-ingredient__content a  {
-            color: $body-color !important;
-            text-decoration: none;
-
-            &:hover {
-                color: $secondary !important;
                 text-decoration: none;
             }
         }

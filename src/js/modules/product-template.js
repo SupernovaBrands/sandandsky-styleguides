@@ -1,4 +1,4 @@
-import { scrollToElement } from '~mod/utils';
+import { scrollToElement, popopOver } from '~mod/utils';
 
 const screenLG = 991;
 
@@ -76,3 +76,5 @@ $('.product-form [name=product-variant]').on('change', function () {
 		$('#product-image-carousel').carousel(targetIndicator);
 	}
 });
+
+popopOver();

@@ -4,9 +4,14 @@ html.au-store {
             color: $secondary;
             text-decoration: none;
 
+            &.text-secondary,
             &.text-primary,
-            &.text-body:not(.nav-link):not(.product-card__text) {
+            &.text-body:not(.nav-link):not(.product-card__text):not([data-target]) {
                 color: $secondary !important;
+
+                &:hover {
+                    color: $secondary !important;
+                }
             }
 
             &.text-underline, span {
@@ -24,7 +29,16 @@ html.au-store {
             }
         } 
 
-        .nav-link,
+        .product-card__text,
+        .nav-link {
+            color: #272727;
+
+            &:hover {
+                color: $body-color;
+                text-decoration: none !important;
+            }
+        }
+
         .mega-menu a {
             color: #272727;
 
@@ -85,7 +99,7 @@ html.au-store {
 
             &:hover {
                 color: $secondary !important;
-                text-decoration: none;
+                text-decoration: none !important;
             }
         }
 
@@ -100,9 +114,14 @@ html.au-store {
         }
 
         .announcement-bar {
-            a {
+            a, a:hover {
                 color: #fff;
+                text-decoration: none !important;
             }
+        }
+
+        .cart-item a {
+            color: $body-color;
         }
 
         .btn-outline-primary {

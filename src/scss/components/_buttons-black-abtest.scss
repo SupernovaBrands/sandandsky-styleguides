@@ -5,7 +5,7 @@ html.au-store {
             text-decoration: none;
 
             &.text-primary,
-            &.text-body:not(.nav-link) {
+            &.text-body:not(.nav-link):not(.product-card__text) {
                 color: $secondary !important;
             }
 
@@ -17,7 +17,7 @@ html.au-store {
                 }
             }
 
-            &:not(.btn) {
+            &:not(.btn):not(.product-card__text) {
                 &:hover {
                     text-decoration: underline;
                 }
@@ -66,7 +66,6 @@ html.au-store {
             }
         }
 
-        .product-card__text,
         .mobile-nav__menu a:not(.btn-primary) {
             color: $body-color;
 
@@ -101,10 +100,8 @@ html.au-store {
         }
 
         .announcement-bar {
-            background-color: $range-apc-light !important;
-            color: $body-color !important;
             a {
-                color: $body-color;
+                color: #fff;
             }
         }
 

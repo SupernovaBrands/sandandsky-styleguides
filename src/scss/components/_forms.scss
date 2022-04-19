@@ -110,12 +110,10 @@ input[type=number] {
 		&::before {
 			background-color: $primary;
 			border-color: $primary;
-		}
-
-		&::after {
 			background-image: url(icon-svg('checklist.svg', #{$white}));
 			background-size: 70%;
 			background-position: center;
+			background-repeat: no-repeat;
 		}
 	}
 }

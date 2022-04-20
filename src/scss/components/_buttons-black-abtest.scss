@@ -215,6 +215,14 @@ html.au-store {
             .upsell__article a {
                 color: #272727;
             }
+
+            .btn__submit img:not(.d-none) {
+                display: none;
+            }
+
+            .btn__submit img.d-none {
+                display: block !important;
+            }
         }
 
         .howto-video__apc-light,

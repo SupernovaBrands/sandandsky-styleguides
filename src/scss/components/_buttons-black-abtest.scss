@@ -30,7 +30,10 @@ html.au-store {
         } 
 
         .product-card__text,
-        .nav-link {
+        .nav-link,
+        .search-box__clear,
+        .search-box__close,
+        .dropdown-item {
             color: #272727;
 
             &:hover {

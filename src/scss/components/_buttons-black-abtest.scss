@@ -132,7 +132,14 @@ html.au-store {
             border-color: #272727;
             color: #272727;
 
-            &:hover {
+            &:hover,
+            &:active,
+            &:focus,
+            &:visited,
+            &:active,
+            &:not(:disabled):not(.disabled):active:focus,
+            &:not(:disabled):not(.disabled).active:focus {
+                box-shadow: none;
                 background-color: #272727;
                 border-color: #272727;
                 color: white;
@@ -144,7 +151,14 @@ html.au-store {
             border-color: #272727;
             color: white;
 
-            &:hover {
+            &:hover,
+            &:active,
+            &:focus,
+            &:visited,
+            &:active,
+            &:not(:disabled):not(.disabled):active:focus,
+            &:not(:disabled):not(.disabled).active:focus {
+                box-shadow: none;
                 background-color: $body-color;
                 border-color: $body-color;
             }
@@ -190,6 +204,16 @@ html.au-store {
             a {
                 text-decoration: underline;
                 color: $secondary;
+            }
+        }
+
+        .blog-post-grid__sidebar {
+            .post-card a {
+                color: $body-color;
+            }
+
+            .upsell__article a {
+                color: #272727;
             }
         }
 

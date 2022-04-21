@@ -116,6 +116,15 @@ html.au-store {
             }
         }
 
+        .product-form-banner {
+            picture:first-child {
+                display: none !important;
+            }
+            picture:last-child {
+                display: block !important;
+            }
+        }
+
         .announcement-bar {
             a, a:hover {
                 color: #fff;
@@ -285,6 +294,15 @@ html.au-store {
         .custom-control-input:checked ~ .custom-control-label::before {
             background-color: #272727;
             border-color: #272727;
+        }
+
+        .react-yotpo-widget button.btn.btn-link.p-0.ml-1 {
+            color: $secondary;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
 
         footer h4 {

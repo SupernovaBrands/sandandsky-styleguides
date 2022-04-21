@@ -216,9 +216,23 @@ html.au-store {
             }
         }
 
+        .post-card a {
+            color: $body-color;
+
+            &:hover {
+                color: $secondary;
+                text-decoration: none !important;
+            }
+        }
+
         .blog-post-grid__sidebar {
             .post-card a {
                 color: $body-color;
+
+                &:hover {
+                    color: $secondary;
+                    text-decoration: none;
+                }
             }
 
             .upsell__article a {

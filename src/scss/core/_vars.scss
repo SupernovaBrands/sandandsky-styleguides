@@ -223,3 +223,13 @@ $custom-control-indicator-border-color: white;
 
 // tooltip
 $tooltip-opacity: 1;
+
+//Popover
+$popover-max-width: 275px !default;
+$popover-border-radius: calc-em(8);
+$popover-body-padding-y: calc-em(8);
+$popover-body-padding-x: calc-em(8);
+$popover-box-shadow: 0 .25em .5em rgba(black, .2);
+$popover-border-width: 0;
+$popover-bg: $secondary;
+$popover-body-color: #fff;

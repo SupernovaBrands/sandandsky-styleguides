@@ -283,12 +283,3 @@ export const updateItemInArray = (array, compareFunc, modFunc) => {
 		...array.slice(index + 1),
 	];
 };
-
-export const popopOver = () => {
-	// popover
-	if ($('[data-toggle="popover"]').length) {
-		$(function () {
-			$(document).find('[data-toggle="popover"]').popover();
-		});
-	}
-};

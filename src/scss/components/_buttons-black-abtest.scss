@@ -1,17 +1,82 @@
-html.au-store {
+html.au-store,
+html.us-store {
     .button-black-abtest-active {
+        a {
+            color: $secondary;
+            text-decoration: none;
+
+            &.text-secondary,
+            &.text-primary,
+            &.text-body:not(.nav-link):not(.product-card__text):not([data-target]) {
+                color: $secondary !important;
+
+                &:hover {
+                    color: $secondary !important;
+                }
+            }
+
+            &.text-underline, span {
+                text-decoration: none !important;
+
+                &:hover {
+                    text-decoration: underline !important;
+                }
+            }
+
+            &:not(.btn):not(.product-card__text) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        } 
+
+        .product-card__text,
         .nav-link,
-        .mega-menu a {
+        .search-box__clear,
+        .search-box__close,
+        .dropdown-item {
             color: #272727;
 
             &:hover {
                 color: $body-color;
+                text-decoration: none !important;
+            }
+        }
+
+        .mega-menu a {
+            color: #272727;
+
+            span {
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            &:hover {
+                color: $body-color;
+
+                span {
+                    text-decoration: none;
+                    display: inline-block;
+                }
+            }
+        }
+
+        .tab-ingredient__content a.text-body {
+            color: $body-color !important;
+
+            &:hover {
+                color: $secondary !important;
             }
         }
 
         .mega-menu-post-card {
             .text-primary, u {
                 color: $secondary !important;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
 
             h4 {
@@ -19,24 +84,26 @@ html.au-store {
             }
         }
 
-        a {
-            color: $secondary;
-            text-decoration: none;
-
-            &.text-primary {
-                color: $secondary !important;
-            }
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-
-        footer a {
-            color: #969696;
+        .mobile-nav__menu a:not(.btn-primary) {
+            color: $body-color;
 
             &:hover {
                 color: $secondary;
+                text-decoration: none;
+            }
+        }
+
+        .product-form__shipping-accordion u {
+            text-decoration: none;
+        }
+
+        footer a,
+        .mobile-nav__other-menu a {
+            color: #969696 !important;
+
+            &:hover {
+                color: $secondary !important;
+                text-decoration: none !important;
             }
         }
 
@@ -50,12 +117,24 @@ html.au-store {
             }
         }
 
-        .announcement-bar {
-            background-color: $range-apc-light !important;
-            color: $body-color !important;
-            a {
-                color: $body-color;
+        .product-form-banner {
+            picture:first-child {
+                display: none !important;
             }
+            picture:last-child {
+                display: block !important;
+            }
+        }
+
+        .announcement-bar {
+            a, a:hover {
+                color: #fff;
+                text-decoration: none !important;
+            }
+        }
+
+        .cart-item a {
+            color: $body-color;
         }
 
         .btn-outline-primary {
@@ -63,7 +142,14 @@ html.au-store {
             border-color: #272727;
             color: #272727;
 
-            &:hover {
+            &:hover,
+            &:active,
+            &:focus,
+            &:visited,
+            &:active,
+            &:not(:disabled):not(.disabled):active:focus,
+            &:not(:disabled):not(.disabled).active:focus {
+                box-shadow: none;
                 background-color: #272727;
                 border-color: #272727;
                 color: white;
@@ -75,7 +161,14 @@ html.au-store {
             border-color: #272727;
             color: white;
 
-            &:hover {
+            &:hover,
+            &:active,
+            &:focus,
+            &:visited,
+            &:active,
+            &:not(:disabled):not(.disabled):active:focus,
+            &:not(:disabled):not(.disabled).active:focus {
+                box-shadow: none;
                 background-color: $body-color;
                 border-color: $body-color;
             }
@@ -83,7 +176,7 @@ html.au-store {
 
         .collection-section,
         .featured-products-tab__heading,
-        .featured-products-carousel & div:not(.range-banner),
+        .featured-products-carousel,
         .instagram-carousel {
             .btn-primary {
                 background-color: white;
@@ -124,6 +217,42 @@ html.au-store {
             }
         }
 
+        .post-card a {
+            color: $body-color;
+
+            &:hover {
+                color: $secondary;
+                text-decoration: none !important;
+            }
+        }
+
+        .blog-post-grid__sidebar {
+            .post-card a {
+                color: $body-color;
+
+                &:hover {
+                    color: $secondary;
+                    text-decoration: none;
+                }
+            }
+
+            .upsell__article a {
+                color: #272727;
+            }
+
+            .btn__submit img:not(.d-none) {
+                display: none;
+            }
+
+            .btn__submit img.d-none {
+                display: block !important;
+            }
+        }
+
+        .video-modal .close {
+            background-color: #272727 !important;
+        }
+
         .howto-video__apc-light,
         .howto-video__tsw-light,
         .howto-video__aea-light {
@@ -140,6 +269,11 @@ html.au-store {
 
         .newsletter-banner {
             background-color: #FFF3F8 !important;
+            background-image: url(asset-url('newsletter-pattern-mobile-abtest.svg'));
+
+            @include media-breakpoint-up(lg) {
+                background-image: url(asset-url('newsletter-pattern-abtest.svg'));
+            }
 
             h2,
             svg,
@@ -151,6 +285,7 @@ html.au-store {
             button {
                 background-color: white !important;
                 border-color: #272727 !important;
+                color: #272727 !important;
             }
         }
 
@@ -178,6 +313,19 @@ html.au-store {
         .custom-control-input:checked ~ .custom-control-label::before {
             background-color: #272727;
             border-color: #272727;
+        }
+
+        .react-yotpo-widget button.btn.btn-link.p-0.ml-1 {
+            color: $secondary;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .dropdown--account .dropdown-item:active {
+            background-color: $secondary;
         }
 
         footer h4 {

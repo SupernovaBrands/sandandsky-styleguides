@@ -1,4 +1,4 @@
-<div {{#if id}}id="{{ id }}"{{/if}} class="container {{#if (eq id 'search-products')}}{{else}}px-g{{/if}} {{ class }}">
+<div {{#if id}}id="{{ id }}"{{/if}} class="{{#if range-section}}{{else}}container{{/if}} {{#if (eq id 'search-products')}}{{else}}px-g{{/if}} {{ class }}">
 
 	{{#if header}}
 	<div class="d-flex justify-content-between align-items-start mb-0">

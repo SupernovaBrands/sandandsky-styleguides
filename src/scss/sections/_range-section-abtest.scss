@@ -1,0 +1,36 @@
+.uk-store {
+	.home-range-active {
+		.featured-products-carousel.d-none {
+			display: block !important;
+		}
+
+		.featured-products-tab,
+		.tab-content.d-block.d-lg-none {
+			display: none !important;
+		}
+
+		.collection-section__carousel {
+			@include media-breakpoint-up(lg) {
+				flex: 0 0 60%;
+				max-width: 60%;
+			}
+
+			.carousel-inner {
+				padding-top: 0 !important;
+			}
+		}
+
+		.carousel-control-prev,
+		.carousel-control-next {
+			top: 30%;
+	
+			@include media-breakpoint-up(lg) {
+				top: calc(263px / 2 + 30px);
+			}
+		}
+		
+		.collection-section {
+			display: none;
+		}
+	}
+}

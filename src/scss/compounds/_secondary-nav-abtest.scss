@@ -1,0 +1,7 @@
+@include media-breakpoint-up('lg') {
+	html.uk-store {
+		.nav__secondary--abtest .nav__secondary-desktop {
+			display: flex !important;
+		}
+	}
+}

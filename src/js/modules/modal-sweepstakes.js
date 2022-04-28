@@ -28,3 +28,5 @@ $('.countries-options__select').on('change', function () {
 	maskingEl.text(`+${phoneCode}`).addClass('selected');
 	$(this).trigger('mouseleave');
 });
+
+$('.modal--sweepstakes-cta').modal('show');

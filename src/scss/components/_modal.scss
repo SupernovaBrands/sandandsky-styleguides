@@ -51,3 +51,22 @@
 		}
 	}
 }
+
+.modal--sweepstakes-cta {
+	.modal-dialog {
+		@include media-breakpoint-up(lg) {
+			max-width: 630px;
+		}
+	}
+
+	.modal-content {
+		border-radius: calc-em(20);
+	}
+
+	&__close {
+		cursor: pointer;
+		top: calc-em(15);
+		right: calc-em(15);
+		z-index: $zindex-dropdown;
+	}
+}

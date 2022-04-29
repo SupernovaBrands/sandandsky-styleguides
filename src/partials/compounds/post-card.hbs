@@ -1,10 +1,13 @@
-<article class="post-card {{ class }}">
+{{#if rangePage}}
+<li class="col-11 col-lg-4 carousel-item">
+{{/if}}
+<article class="post-card">
 	{{#if img}}
-	<figure class="mb-3 mx-ng mx-lg-auto">
+	<figure class="{{#if rangePage}}mb-2{{ else }}mb-3 mx-ng mx-lg-auto{{/if}}">
 		<a href="#" class="d-block hover-overlay">
-			<picture class="embed-responsive bg-shimmer">
+			<picture {{#unless rangePage}}class="embed-responsive bg-shimmer"{{/unless}}>
 				<noscript class="loading-lazy">
-				<img src="https://via.placeholder.com/828x420.jpg?text={{ img }}" class="embed-responsive-item fit--cover" loading="lazy">
+				<img src="https://via.placeholder.com/828x420.jpg?text={{ img }}" class="{{#if rangePage}}w-100{{ else }}embed-responsive-item fit--cover{{/if}}" loading="lazy">
 				</noscript>
 			</picture>
 		</a>
@@ -12,7 +15,14 @@
 	{{/if}}
 	{{#if time}}<time>05 Apr, 2021</time>{{/if}}
 	<h2 class="my-2">
-		<a href="#">{{ title }}</a>
+		<a {{#if rangePage}}class="{{ textcolor }}"{{/if}} href="#">{{ title }}</a>
 	</h2>
-	<p>{{#if content}}{{content}}{{else}}Lorem ipsum dolor sit amet, consectetur adipiscing elit.{{/if}}</p>
+	<p {{#if rangePage}}class="mb-2 font-size-sm"{{/if}}>{{#if content}}{{content}}{{else}}Lorem ipsum dolor sit amet, consectetur adipiscing elit.{{/if}}</p>
+
+	{{#if rangePage}}
+	<a class="d-block text-underline {{ readmoreClass }}" href="#">Continue reading</a>
+	{{/if}}
 </article>
+{{#if rangePage}}
+</li>
+{{/if}}

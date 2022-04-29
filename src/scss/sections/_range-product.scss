@@ -9,6 +9,10 @@
 
 		.col-lg-products {
 			@include make-col(9.3);
+
+			&__no-carousel {
+				@include make-col(7.1);
+			}
 		}
 	}
 }

@@ -26,6 +26,10 @@
     <h1>Modal Newsletter</h1>
     <button class="btn btn-secondary" data-toggle="modal" data-target="#newsletter-modal">Launch Modal</button>
   </div>
+  <div class="container mt-4">
+    <h1>Modal Sweepstakes CTA</h1>
+    <button class="btn btn-secondary" data-toggle="modal" data-target="#modal-sweepstakes-cta">Launch Modal</button>
+  </div>
   <div class="modal modal--waitlist fade px-g px-lg-0" id="modal-waitlist" tabindex="-1" role="dialog" aria-labelledby="modal-waitlist" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered waitlist-modal" role="document">
       <div class="modal-content mx-auto">
@@ -262,6 +266,31 @@
   			<button type="button" class="close position-absolute font-size-base d-none d-lg-block " data-dismiss="modal">
   				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="svg text-white"><path d="m12 1-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1-5-5z"></path></svg>
   			</button>
+  		</div>
+  	</div>
+  </div>  <div class="modal modal--sweepstakes-cta fade px-g px-lg-0" id="modal-sweepstakes-cta" tabindex="-1" role="dialog">
+  	<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+  		<div class="modal-content mx-auto overflow-hidden border-0">
+  			<div class="modal-header p-0 border-0 position-absolute modal--sweepstakes-cta__close">
+  		        <button type="button" class="close font-size-base" data-dismiss="modal">
+  					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="svg"><path d="m12 1-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1-5-5z"></path></svg>
+  				</button>
+  		    </div>
+  			<div class="row align-items-center mx-0">
+                  <div class="col-lg-6 pl-lg-0 p-0">
+                      <picture class="w-100">
+                          <source srcset="https://via.placeholder.com/315x449.jpg?text=Image" media="(min-width: 992px)">
+                          <img src="https://via.placeholder.com/384x292.jpg?text=Image" alt="Placeholder" class="d-block w-100">
+                      </picture>
+                  </div>
+  				<div class="col-lg-6 pl-lg-0 p-0">
+  					<div class="pl-g pr-g pr-lg-4 my-5 mt-lg-7 mt-lg-6 mt-lg-0 mb-lg-7 text-center justify-content-center">
+  						<h2 class="mb-g w-100 mt-0 mt-lg-2">Win up to $1,500 worth <br>of products</h2>
+  						<p class="mb-g  ">Sign up for a chance to win and receive exclusive deals</p>
+  						<a href="" class="btn btn-lg btn-primary btn-block">Join now</a>
+  					</div>
+  				</div>
+  			</div>
   		</div>
   	</div>
   </div>  <script src="/sandandsky-styleguides/js/globals.js"></script>

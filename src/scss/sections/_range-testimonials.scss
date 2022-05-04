@@ -1,5 +1,14 @@
-@include media-breakpoint-up(lg) {
-	.range-testimonials__title {
-		@include font-size($h2-font-size-lg);
+
+.range-testimonials {
+	@include media-breakpoint-up(lg) {
+		&__title {
+			@include font-size($h2-font-size-lg);
+		}
+	}
+
+	@include media-breakpoint-down(sm) {
+		&__description {
+			@include font-size($font-size-sm);
+		}
 	}
 }

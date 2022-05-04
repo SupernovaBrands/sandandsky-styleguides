@@ -14,5 +14,9 @@
 				@include make-col(7.1);
 			}
 		}
+
+		&__subtitle {
+			@include font-size($h2-font-size-lg);
+		}
 	}
 }

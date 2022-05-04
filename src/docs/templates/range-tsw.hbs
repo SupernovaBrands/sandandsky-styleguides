@@ -8,11 +8,12 @@
 <body>
 	{{> sections/header}}
 	{{> compounds/range-banner }}
-	{{> sections/range-products title="Tasmanian Spring Water" subtitle="Hydrate • Revitalise • Fortify" text="Restores skin hydration and strengthens the skin barrier to lock in moisture, giving you smoother and more youthful skin." color="42A1CA" textclass="text-tsw"}}
+	{{> sections/range-products imgUrl="https://via.placeholder.com/346x140" imgUrl_dt="https://via.placeholder.com/219x465" useCarousel="true"
+		title="Tasmanian Spring Water" subtitle="Hydrate • Revitalise • Fortify" text="Restores skin hydration and strengthens the skin barrier to lock in moisture, giving you smoother and more youthful skin." color="42A1CA" textclass="text-tsw"}}
 	{{> sections/range-result carousel=true tsw="true" title="Tasmanian Spring Water results" text="Revitalize plump, healthy glowing skin by ensuring your skin is deeply hydrated and moisturised. Your skin will feel so soft, you could dive right in." classes="bg-tsw-light range-result--abtest__decoration-tsw" decoration="range-result--abtest__decoration-mobile-tsw" }}
-	{{> sections/range-breakdown type="tsw" tsw="true" title="Breaking down the ingredients" }}
-	{{> sections/range-article titleclass="text-tsw" bgclass="bg-tsw-light"}}
-	{{> sections/range-review textcolor="text-tsw"}}
+	{{> sections/range-breakdown type="tsw" tsw="true" title="Breaking down the ingredients" svgClass="svg mr-3 mr-lg-3 mt-lg-1" breakdownClass="align-items-center" }}
+	{{> sections/range-article titleclass="text-tsw" bgclass="bg-tsw-light" readmoreClass="text-primary"}}
+	{{> sections/range-review textcolor="text-tsw" linkColor="text-primary"}}
 	{{> sections/newsletter-banner}}
 	{{> sections/footer}}
 	{{> js jquery=true bootstrap=true main=true }}

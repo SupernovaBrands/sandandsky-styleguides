@@ -1,8 +1,8 @@
 <section class="container mb-5 range-breakdown">
-	<div class="row align-items-center position-relative range-breakdown__decoration range-breakdown__decoration-{{ type }}">
+	<div class="row position-relative range-breakdown__decoration range-breakdown__decoration-{{ type }} {{ breakdownClass }}">
 		<div class="col-lg-6 px-g">
-			<div class="d-flex align-items-center range-breakdown__header">
-				<img class="svg mr-3 mr-lg-3 mt-lg-1 text-{{ type }}" src="icons/range-{{ type }}.svg" replace-to-svg />
+			<div class="d-flex align-items-center range-breakdown__header {{headerClass}}">
+				<img class="text-{{ type }} {{ svgClass }}" src="icons/range-{{ type }}.svg" replace-to-svg />
 				<p class="h1 pt-g mb-3 flex-grow-1">{{ title }}</p>
 			</div>
 			{{#if apc}}
@@ -29,6 +29,20 @@
 
 			<p class="font-weight-bold text-tsw">Fermented Sea Kelp</p>
 			<p class="mb-5">Clinically proven to boost skin elasticity and protect skin barrier.</p>
+			{{/if}}
+
+			{{#if oil}}
+			<p class="font-weight-bold text-oil">Salicylic Acid</p>
+			<p class="mb-g">Penetrates deep into pores, dissolving dead skin cells while <br class="d-none d-lg-block">unclogging pores to prevent inflammation.</p>
+
+			<p class="font-weight-bold text-oil">Natural Prebiotics</p>
+			<p class="mb-g">Balances skin microbiome by strengthening the skin barrier and <br class="d-none d-lg-block">allowing the skin to fight against inflammation.</p>
+
+			<p class="font-weight-bold text-oil">Old Man Weed</p>
+			<p class="mb-g">Filled with anti-inflammatory properties and antioxidants to <br class="d-none d-lg-block">help soothe and calm blemishes and redness. </p>
+
+			<p class="font-weight-bold text-oil">Australian Finger Lime</p>
+			<p class="mb-5">Gently exfoliates and resurfaces new skin whilst <br class="d-none d-lg-block">plumping skin with moisture for smooth and even skin, <br class="d-none d-lg-block">with appearance of tighter pores.</p>
 			{{/if}}
 		</div>
 		<picture class="col-lg-6 px-g">

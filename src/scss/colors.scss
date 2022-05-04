@@ -30,6 +30,8 @@
 @include make-box('range-aea-light', $range-aea-light);
 @include make-box('range-tsw', $range-tsw);
 @include make-box('range-tsw-light', $range-tsw-light);
+@include make-box('range-oil', $range-oil);
+@include make-box('range-oil-light', $range-oil-light);
 @include make-box('body-color', $body-color);
 @include make-box('secondary-body', $gray-600);
 @include make-box('white', #FFFFFF);

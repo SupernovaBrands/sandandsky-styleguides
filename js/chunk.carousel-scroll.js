@@ -18,16 +18,6 @@ eval("var carousels = [];\n\nvar adjustScrollThumb = function adjustScrollThumb(
 
 /***/ }),
 
-/***/ "./src/js/modules/featured-products-aea-abtest.js":
-/*!********************************************************!*\
-  !*** ./src/js/modules/featured-products-aea-abtest.js ***!
-  \********************************************************/
-/***/ (() => {
-
-eval("$('.featured-products-aea-abtest .carousel--scroll').each(function (index, carousel) {\n  carousel.classList.remove('d-none');\n  carousel.dispatchEvent(new CustomEvent('adjustThumb'));\n});\n\n//# sourceURL=webpack://sandandsky-styleguides/./src/js/modules/featured-products-aea-abtest.js?");
-
-/***/ }),
-
 /***/ "./src/js/modules/featured-products-tab.js":
 /*!*************************************************!*\
   !*** ./src/js/modules/featured-products-tab.js ***!

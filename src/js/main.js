@@ -113,7 +113,3 @@ if ($('.modal--sweepstakes').length > 0) {
 if ($('.announcement-bar__timer').length > 0) {
 	import(/* webpackChunkName: 'announcement-timer' */ '~mod/announcement-timer');
 }
-
-if ($('.modal--gift-card').length > 0) {
-	import(/* webpackChunkName: 'modal-gift-card' */ '~mod/modal-gift-card');
-}

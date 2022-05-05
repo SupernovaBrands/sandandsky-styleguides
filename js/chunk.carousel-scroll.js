@@ -28,13 +28,13 @@ eval("$('.featured-products-aea-abtest .carousel--scroll').each(function (index,
 
 /***/ }),
 
-/***/ "./src/js/modules/range-section-abtest.js":
-/*!************************************************!*\
-  !*** ./src/js/modules/range-section-abtest.js ***!
-  \************************************************/
+/***/ "./src/js/modules/featured-products-tab.js":
+/*!*************************************************!*\
+  !*** ./src/js/modules/featured-products-tab.js ***!
+  \*************************************************/
 /***/ (() => {
 
-eval("$('#rangeTabContent .carousel--scroll').each(function (index, carousel) {\n  carousel.classList.remove('d-none');\n  carousel.dispatchEvent(new CustomEvent('adjustThumb'));\n});\n$('#rangeTab a[data-toggle=\"tab\"]').on('shown.bs.tab', function () {\n  $('.carousel--scroll').each(function (index, carousel) {\n    carousel.classList.remove('d-none');\n    carousel.dispatchEvent(new CustomEvent('adjustThumb'));\n  });\n});\n\n//# sourceURL=webpack://sandandsky-styleguides/./src/js/modules/range-section-abtest.js?");
+eval("$('#tabFeaturedProductContentFeatured .carousel--scroll').each(function (index, carousel) {\n  carousel.classList.remove('d-none');\n  carousel.dispatchEvent(new CustomEvent('adjustThumb'));\n});\n$('#tabFeaturedProductHead a[data-toggle=\"tab\"]').on('shown.bs.tab', function () {\n  $('.carousel--scroll').each(function (index, carousel) {\n    carousel.classList.remove('d-none');\n    carousel.dispatchEvent(new CustomEvent('adjustThumb'));\n  });\n});\n\n//# sourceURL=webpack://sandandsky-styleguides/./src/js/modules/featured-products-tab.js?");
 
 /***/ })
 

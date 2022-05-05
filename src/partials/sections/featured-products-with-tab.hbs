@@ -4,7 +4,7 @@
 		<button class="btn btn-lg btn-primary d-none d-lg-block">Shop all</button>
 	</div>
 
-	{{#> sections/carousel-scroll id="featured-products-1" class="mb-5 my-lg-0 featured-products-carousel featured-products-carousel-abtest d-none d-lg-block" button="Shop all featured" }}
+	{{#> sections/carousel-scroll id="featured-products-1" class="mb-5 my-lg-0 featured-products-carousel d-none d-lg-block" button="Shop all featured" }}
 		{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines) 1"}}
 		{{> compounds/product-card class="carousel-item mb-0" color="cc3195" }}
 		{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller" }}
@@ -16,7 +16,7 @@
 		{{> compounds/product-card class="carousel-item mb-0" color="66b3df" }}
 	{{/ sections/carousel-scroll}}
 
-	<ul class="featured-products-tab tab nav nav-tabs container border-0 px-g justify-content-center justify-content-lg-start d-flex d-lg-none" id="tabFeaturedProductAbTest" role="tablist">
+	<ul class="featured-products-tab tab nav nav-tabs container border-0 px-g justify-content-center justify-content-lg-start d-flex d-lg-none" id="tabFeaturedProductHead" role="tablist">
 		<li class="nav-item text-center">
 			<a class="nav-link border-0 pb-2 text-body active" data-toggle="tab" href="#tab-1-featured" role="tab" aria-controls="tab-1-featured" aria-selected="true" title="Best sellers">Best sellers</a>
 		</li>
@@ -33,7 +33,7 @@
 
 	<div class="tab-content featured-products-tab-content-abtest d-block d-lg-none" id="tabFeaturedProductContentFeatured">
 		<div id="tab-1-featured" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tab-1-featured">
-			{{#> sections/carousel-scroll id="featured-products-1" class="mb-5 my-lg-0 featured-products-carousel featured-products-carousel-abtest" button="Shop all featured" }}
+			{{#> sections/carousel-scroll id="featured-products-1" class="mb-5 my-lg-0 featured-products-carousel" button="Shop all featured" }}
 				{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines) 1"}}
 				{{> compounds/product-card class="carousel-item mb-0" color="cc3195" }}
 				{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller" }}
@@ -46,7 +46,7 @@
 			{{/ sections/carousel-scroll}}
 		</div>
 		<div id="tab-2-featured" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-2-featured">
-			{{#> sections/carousel-scroll id="featured-products-2" class="my-b my-lg-0 featured-products-carousel featured-products-carousel-abtest" button="Shop all featured" }}
+			{{#> sections/carousel-scroll id="featured-products-2" class="my-b my-lg-0 featured-products-carousel" button="Shop all featured" }}
 				{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines) 2"}}
 				{{> compounds/product-card class="carousel-item mb-0" color="cc3195" }}
 				{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller" }}
@@ -59,7 +59,7 @@
 			{{/ sections/carousel-scroll}}
 		</div>
 		<div id="tab-3-featured" class="tab-pane fade" role="tabpanel" aria-labelledby="tab-3-featured">
-			{{#> sections/carousel-scroll id="featured-products-3" class="my-b my-lg-0 featured-products-carousel featured-products-carousel-abtest" button="Shop all featured" }}
+			{{#> sections/carousel-scroll id="featured-products-3" class="my-b my-lg-0 featured-products-carousel" button="Shop all featured" }}
 				{{> compounds/product-card class="carousel-item mb-0" color="ff6f8d" title="Hydration Boost Cream Moisturiser (2 lines) 3"}}
 				{{> compounds/product-card class="carousel-item mb-0" color="cc3195" }}
 				{{> compounds/product-card class="carousel-item mb-0" color="66b3df" badge="Best Seller" }}

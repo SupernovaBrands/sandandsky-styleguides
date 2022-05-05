@@ -23,6 +23,10 @@ if ($('.featured-products-aea-abtest').length > 0) {
 	import(/* webpackChunkName: 'carousel-scroll' */ '~mod/featured-products-aea-abtest');
 }
 
+if ($('#tabFeaturedProductHead').length > 0) {
+	import(/* webpackChunkName: 'carousel-scroll' */ '~mod/featured-products-tab');
+}
+
 if ($('.product-image-carousel').length > 0) {
 	import(/* webpackChunkName: 'carousel-product-image' */ '~mod/carousel-product-image');
 }
@@ -112,8 +116,4 @@ if ($('.announcement-bar__timer').length > 0) {
 
 if ($('.modal--gift-card').length > 0) {
 	import(/* webpackChunkName: 'modal-gift-card' */ '~mod/modal-gift-card');
-}
-
-if ($('.range-tab').length > 0) {
-	import(/* webpackChunkName: 'carousel-scroll' */ '~mod/range-section-abtest');
 }

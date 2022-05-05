@@ -67,5 +67,6 @@
 		cursor: pointer;
 		top: calc-em(15);
 		right: calc-em(15);
+		z-index: $zindex-dropdown;
 	}
 }

@@ -1,7 +1,22 @@
 @include media-breakpoint-up('lg') {
 	html.uk-store {
-		.nav__secondary--abtest .nav__secondary-desktop {
-			display: flex !important;
+		.nav__secondary--abtest {
+
+			.nav__secondary-desktop {
+				display: flex !important;
+			}
+
+			.navbar__main {
+				display: none !important;
+
+				&--abtest {
+					display: flex !important;
+				}
+
+				&-right .font-weight-bold {
+					font-weight: normal !important;
+				}
+			}
 		}
 	}
 }

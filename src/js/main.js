@@ -19,10 +19,6 @@ if ($('.carousel--scroll').length > 0) {
 	import(/* webpackChunkName: 'carousel-scroll' */ '~mod/carousel-scroll');
 }
 
-if ($('.featured-products-aea-abtest').length > 0) {
-	import(/* webpackChunkName: 'carousel-scroll' */ '~mod/featured-products-aea-abtest');
-}
-
 if ($('#tabFeaturedProductHead').length > 0) {
 	import(/* webpackChunkName: 'carousel-scroll' */ '~mod/featured-products-tab');
 }

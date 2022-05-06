@@ -16,6 +16,10 @@
 @include bg-variant(".bg-tsw", $range-tsw, true);
 @include bg-variant(".bg-tsw-light", $range-tsw-light, true);
 
+// OIL range background color
+@include bg-variant(".bg-oil", $range-oil, true);
+@include bg-variant(".bg-oil-light", $range-oil-light, true);
+
 // Gray 100 background color
 @include bg-variant(".bg-gray-100", $gray-100, true);
 

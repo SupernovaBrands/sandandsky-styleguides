@@ -1,11 +1,13 @@
-<section class="pt-5 range-article {{ bgclass }}">
+<section class="py-5 range-article {{ bgclass }}">
 	<div class="container px-0">
 		<p class="h1 text-center mb-3">Lorem ipsum blog title</p>
 		<div class="carousel--scroll position-relative overflow-hidden">
 			<ul class="list-unstyled row carousel-inner d-flex flex-nowrap w-auto px-g" role="listbox">
-				{{> compounds/post-card-abtest textcolor=titleclass class="mb-5" img="1" title="Six Amazing Benefits of Pink Clay Masks" content="They say water is the foundation of life, and A-Beauty’s newest all-star ingredient, Tasmanian Spring Water, is definitely breathing new life into dry, depleted..."}}
-				{{> compounds/post-card-abtest textcolor=titleclass class="mb-5" img="2" title="How to soothe ‘Strawberry Legs’" content="Ever stepped out of the shower and examined your thighs or calves to see little smatterings of red spotty marks all over? Hmmm, you wonder. Was that a shaving mishap?..."}}
-				{{> compounds/post-card-abtest textcolor=titleclass class="mb-5" img="3" title="The Top 5 Benefits of a Body Scrub" content="They say water is the foundation of life, and A-Beauty’s newest all-star ingredient, Tasmanian Spring Water, is definitely breathing new life into dry, depleted..."}}
+				{{> compounds/post-card rangePage=true textcolor=titleclass class="mb-5" img="1" title="Six Amazing Benefits of Pink Clay Masks" content="They say water is the foundation of life, and A-Beauty’s newest all-star ingredient, Tasmanian Spring Water, is definitely breathing new life into dry, depleted..."}}
+				{{> compounds/post-card rangePage=true textcolor=titleclass class="mb-5" img="2" title="How to soothe ‘Strawberry Legs’" content="Ever stepped out of the shower and examined your thighs or calves to see little smatterings of red spotty marks all over? Hmmm, you wonder. Was that a shaving mishap?..."}}
+				{{#unless type}}
+				{{> compounds/post-card rangePage=true textcolor=titleclass class="mb-5" img="3" title="The Top 5 Benefits of a Body Scrub" content="They say water is the foundation of life, and A-Beauty’s newest all-star ingredient, Tasmanian Spring Water, is definitely breathing new life into dry, depleted..."}}
+				{{/unless}}
 			</ul>
 			<div class="px-2 px-lg-4 container mt-3 review-carousel__scroll">
 				<div class="scrollbar">

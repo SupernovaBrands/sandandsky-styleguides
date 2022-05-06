@@ -64,6 +64,7 @@
 
 		.range-icon {
 			font-size: calc-em(24);
+			flex-basis: 1em;
 		}
 	}
 
@@ -106,5 +107,89 @@
 
 	.mobile-nav-show & {
 		transform: translateX(0%);
+	}
+}
+
+.mobile-menu-type-2 {
+	.mobile-nav {
+		&__close {
+			right: auto;
+			top: auto;
+		}
+
+		> div {
+			border-top: 1px solid $gray-400;
+		}
+
+		> li:not(:first-child) {
+			border-top: 1px solid $gray-400;
+			border-bottom: none;
+		}
+
+		h3 {
+			font-size: 1em;
+		}
+
+		&__accordion {
+			.range-icon {
+				font-size: calc-em(24);
+			}
+
+			li {
+				border-top: 1px solid $gray-400;
+			}
+		}
+
+		.card {
+			ul {
+				border-top: 1px solid $gray-400;
+			}
+		}
+
+		.card__indicator {
+			width: calc-em(20);
+			height: calc-em(20);
+
+			&:before, &:after {
+				content: "";
+				position: absolute;
+				background: $body-color;
+			}
+			&:before {
+				right: 8.5px;
+				width: 2px;
+				height: 0px;
+				top: 0px;
+			}
+			&:after {
+				right: 0;
+				width: 18px;
+				height: 2px;
+				top: 8px;
+			}
+		}
+
+		.collapsed {
+			.card__indicator:before {
+				height: 18px;
+			}
+		}
+
+		u {
+			min-width: 6em;
+		}
+
+		&__select,
+		&__other-menu {
+			background-color: $gray-100;
+		}
+
+		&.custom-select {
+			border: 1px solid $gray-400;
+		}
+
+		.category-icon {
+			height: 1.3em;
+		}
 	}
 }

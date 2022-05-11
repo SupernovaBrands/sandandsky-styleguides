@@ -1,7 +1,7 @@
 @include media-breakpoint-up('lg') {
 	html.uk-store {
-		.nav__category--abtest,
-		.nav__range--abtest {
+		.nav__category--abtest:not(.nav__no-collection),
+		.nav__range--abtest:not(.nav__no-collection) {
 
 			.navbar__main {
 				display: none !important;
@@ -16,27 +16,15 @@
 			}
 		}
 
-		.nav__category--abtest {
+		.nav__category--abtest:not(.nav__no-collection) {
 			.nav__category-desktop {
 				display: flex !important;
 			}
-
-			&.nav__category--abtest-hide-collection {
-				.nav__category-desktop {
-					display: none !important;
-				}
-			}
 		}
 
-		.nav__range--abtest {
+		.nav__range--abtest:not(.nav__no-collection) {
 			.nav__range-desktop {
 				display: flex !important;
-			}
-
-			&.nav__range--abtest-hide-collection {
-				.nav__category-desktop {
-					display: none !important;
-				}
 			}
 		}
 	}

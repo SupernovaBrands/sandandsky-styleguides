@@ -6,6 +6,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import ConditionWrapper from '~comp/condition-wrapper';
 import QuantityBox from '~comp/quantity-box';
+import SvgRecurring from '~svg/repeat.svg';
 
 import { formatMoney } from '~mod/utils';
 
@@ -41,12 +42,22 @@ export default class CartItem extends React.Component {
 										{models.title}
 									</ConditionWrapper>
 								</h5>
+								{models.recurring && (
+									<span className="text-primary mt-1 d-flex font-italic font-size-sm font-weight-normal">
+										<SvgRecurring className="svg mr-1" />
+										{' '}
+										Recurring every 2 months
+									</span>
+								)}
 								{models.notes && models.notes.map((note) => (<span className="font-size-sm text-secondary">{note}</span>))}
 							</div>
 							<div className="d-flex flex-column text-right font-size-sm">
 								{models.comparePrice > 0 && (
 									<span className="text-linethrough text-muted">{formatMoney(models.comparePrice)}</span>)}
-								<span className={`font-weight-bold ${models.price === 0 ? 'text-secondary' : ''}`}>{formatMoney(models.price)}</span>
+								<span className={`font-weight-bold ${models.price === 0 ? 'text-secondary' : ''}`}>
+									{formatMoney(models.price)}
+									{models.recurring && ('/2month')}
+								</span>
 							</div>
 						</div>
 

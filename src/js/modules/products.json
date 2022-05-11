@@ -668,6 +668,38 @@
       "src": "https://cdn.shopify.com/s/files/1/0277/5262/8295/products/CAROUSEL_AEA_DGD_01.jpg?v=1625734261",
       "variant_ids": [],
       "admin_graphql_api_id": "gid://shopify/ProductImage/28213679751239"
+    },
+    "selling_plan_allocation": {
+      "price_adjustments": [
+          {
+              "position": 1,
+              "price": 4670
+          }
+      ],
+      "price": 4670,
+      "compare_at_price": 4670,
+      "per_delivery_price": 4670,
+      "selling_plan": {
+          "id": 550895721,
+          "name": "Delivery every 2 Months",
+          "description": null,
+          "options": [
+              {
+                  "name": "2 Month(s)",
+                  "position": 1,
+                  "value": "2 Month(s)"
+              }
+          ],
+          "recurring_deliveries": true,
+          "price_adjustments": [
+              {
+                  "order_count": null,
+                  "position": 1,
+                  "value_type": "percentage",
+                  "value": 0
+              }
+          ]
+      }
     }
   },
   {

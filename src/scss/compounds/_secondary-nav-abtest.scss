@@ -1,7 +1,7 @@
 @include media-breakpoint-up('lg') {
 	html.uk-store {
-		.nav__category--abtest:not(.nav__no-collection),
-		.nav__range--abtest:not(.nav__no-collection) {
+		.nav__category--abtest,
+		.nav__range--abtest {
 
 			.navbar__main {
 				display: none !important;

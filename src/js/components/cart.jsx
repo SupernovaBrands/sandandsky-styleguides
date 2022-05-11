@@ -261,6 +261,12 @@ export default class Cart extends React.Component {
 
 		models.comparePriceDiff = models.comparePrice > 0 ? models.comparePrice - models.price : 0;
 
+		models.recurring = false;
+
+		if (item.selling_plan_allocation) {
+			models.recurring = item.selling_plan_allocation.selling_plan.recurring_deliveries;
+		}
+
 		if (models.color) {
 			models.variantHandle = kebabCase(models.color);
 			models.variantOptions = await this.getColorOptions(item.handle, item.variant_options);
@@ -670,7 +676,7 @@ export default class Cart extends React.Component {
 						{!loadingInit && (itemCount === 0 ? (
 							<div className="pt-3 text-center">
 								<div className="container px-g">
-									<SvgSS class="svg logo text-secondary" />
+									<SvgSS className="svg logo text-secondary" />
 									<p className="my-3 text-center">{tStrings.cartEmpty}</p>
 									<a href="/collections" className="btn btn-primary" data-cy="shop-all-btn">Shop all products</a>
 								</div>

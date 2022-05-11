@@ -1,10 +1,7 @@
 @include media-breakpoint-up('lg') {
 	html.uk-store {
-		.nav__secondary--abtest {
-
-			.nav__secondary-desktop {
-				display: flex !important;
-			}
+		.nav__category--abtest,
+		.nav__range--abtest {
 
 			.navbar__main {
 				display: none !important;
@@ -15,6 +12,30 @@
 
 				&-right .font-weight-bold {
 					font-weight: normal !important;
+				}
+			}
+		}
+
+		.nav__category--abtest {
+			.nav__category-desktop {
+				display: flex !important;
+			}
+
+			&.nav__category--abtest-hide-collection {
+				.nav__category-desktop {
+					display: none !important;
+				}
+			}
+		}
+
+		.nav__range--abtest {
+			.nav__range-desktop {
+				display: flex !important;
+			}
+
+			&.nav__range--abtest-hide-collection {
+				.nav__category-desktop {
+					display: none !important;
 				}
 			}
 		}

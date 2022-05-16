@@ -8,6 +8,7 @@ import CartDiscountMeter from '~comp/cart-discount-meter';
 import CartDiscountForm from '~comp/cart-discount-form';
 import CartManualGwp from '~comp/cart-manual-gwp';
 import CartUpsell from '~comp/cart-upsell';
+import CartUpsellTop from '~comp/cart-upsell-top';
 import CartExtras from '~comp/cart-extras';
 import CartRecentProducts from '~comp/cart-recent-products';
 
@@ -43,7 +44,10 @@ export default class Cart extends React.Component {
 			itemCount: 0,
 			manualGwpCount: 0,
 			totalPrice: 0,
-			upsellData: {},
+			upsellData: {
+				targetId: 39409261805639,
+				upsellId: 32227653910599,
+			},
 
 			discountData: {},
 			loadingDiscount: false,
@@ -319,6 +323,7 @@ export default class Cart extends React.Component {
 		const upsellItems = window.cartUpsellItems || [];
 		const variantIds = items.map((item) => item.id);
 		let upsell = false;
+		console.log('item', items)
 
 		if (enable && upsellItems.length > 0) {
 			const upsellItem = upsellItems.find((item) => (
@@ -344,6 +349,20 @@ export default class Cart extends React.Component {
 				};
 			}
 		}
+
+		upsell = {
+			targetId: 39409261805639,
+			upsellId: 32227653910599,
+			topbar: 'Bundle up and SAVE 20%',
+			productTitle: 'upsellItem.upsell_item_title',
+			title: 'Product title',
+			description: 'Drastically reduce congestion and pore size 1x Porefining Face Mask',
+			url: '/products/flash-perfection-exfoliating-treatment',
+			price: 6140,
+			comparePrice: 7680,
+			image: '//cdn.shopify.com/s/files/1/0277/5262/8295/products/WEBSITE_CAROUSEL_APC_MASK_03_75x100_crop_center.jpg',
+			image2x: '//cdn.shopify.com/s/files/1/0277/5262/8295/products/WEBSITE_CAROUSEL_APC_MASK_03_75x100_crop_center.jpg',
+		};
 
 		return upsell;
 	}
@@ -699,7 +718,9 @@ export default class Cart extends React.Component {
 							>
 								<input type="hidden" name="checkout" value="Checkout" />
 
-								<div className="list-unstyled" role="list">
+								{upsellData && (<CartUpsellTop upsell={upsellData} onAddUpsell={this.onAddUpsell} />)}
+
+								<div className="list-unstyled a" role="list">
 									{cart.items.map((item) => !!item.models && !item.models.isManualGwp && (
 										<CartItem
 											key={item.key}

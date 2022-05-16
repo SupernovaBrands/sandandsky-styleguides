@@ -6,7 +6,10 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import ConditionWrapper from '~comp/condition-wrapper';
 import QuantityBox from '~comp/quantity-box';
+import CartUpsellPair from '~comp/cart-upsell-pair';
 import SvgRecurring from '~svg/repeat.svg';
+import SvgTickGreen from '~svg/tick-green-bg.svg';
+import SvgPlusGreen from '~svg/plus-green-bg.svg';
 
 import { formatMoney } from '~mod/utils';
 
@@ -75,6 +78,8 @@ export default class CartItem extends React.Component {
 							<p className="mt-1 mb-0 text-danger">Oh nuts! You got the last one!</p>)}
 					</figcaption>
 				</figure>
+
+				<CartUpsellPair />
 
 				{models.showPreorderNotif && (
 					<span className="d-block mb-2">{tStrings.estimated_delivery_text}</span>

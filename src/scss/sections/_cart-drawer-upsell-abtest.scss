@@ -1,0 +1,54 @@
+.cart-upsell--top {
+    background-color: $gray-100;
+}
+
+.cart-upsell--pair {
+    &__content {
+        background-color: $range-apc-light;
+        display: flex;
+
+        &.collapsing {
+            display: block;
+        }
+    }
+
+    &__arrow {
+        cursor: pointer;
+        width: max-content;
+        margin-left: auto;
+        border: 1px solid transparent;
+        background-color: $range-apc-light;
+    
+        &.collapsed {
+            background-color: transparent;
+            border-color: $body-color;
+    
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+html.au-store {
+    .cart-upsell-top-active {
+        .cart-upsell {
+            display: none;
+        }
+
+        .cart-upsell--top {
+            display: flex !important;
+        }
+    }
+    
+    .cart-upsell-pair-active {
+        .cart-upsell {
+            display: none;
+        }
+
+        .cart-upsell--arrow,
+        .cart-upsell--pair {
+            display: block !important;
+        }
+    }
+}

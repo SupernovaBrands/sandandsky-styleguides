@@ -25,7 +25,7 @@ export default class CartUpsell extends React.Component {
 	render() {
 		const { upsell } = this.props;
 		return (
-			<div className="mt-3 mb-2">
+			<div className="cart-upsell mt-3 mb-2">
 				<div className="text-center bg-secondary text-white py-1 font-size-xs">{upsell.topbar}</div>
 				<figure className="upsell bg-gray-100 media p-g">
 					<LazyLoadImage src={upsell.image} srcSet={`${upsell.image} 1x, ${upsell.image2x} 2x`} alt={upsell.title || upsell.productTitle} />

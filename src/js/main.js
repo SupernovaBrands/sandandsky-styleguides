@@ -5,6 +5,32 @@ import ReactDOM from 'react-dom';
 import Cart from '~comp/cart';
 
 if ($('#cart-drawer').length > 0) {
+	window.cartUpsellEnable = true;
+	window.cartUpsellItems = [
+		{
+			cart_item: 39409261805639,
+			upsell_product_handle: 'porefining-face-mask',
+			upsell_item: 32227653910599,
+			upsell_item_title: 'Australian Pink Clay Porefining Face Mask',
+			upsell_item_variant_title: 'Porefining Face Mask',
+			upsell_price: 3990,
+			upsell_compare_price: 0,
+			upsell_image: '//cdn.shopify.com/s/files/1/0277/5262/8295/products/SS_EcommHeo_SB_All_SetUp_1121SS_Ecomm_Hero_SB_APC_PFM_Crop_23_1_100x126_crop_center.jpg?v=1637739942',
+			upsell_image_2x: '//cdn.shopify.com/s/files/1/0277/5262/8295/products/SS_EcommHeo_SB_All_SetUp_1121SS_Ecomm_Hero_SB_APC_PFM_Crop_23_1_200x252_crop_center.jpg?v=1637739942',
+			url: '/products/porefining-face-mask?variant=39409261805639',
+			priority: '2',
+			topbar: 'Bundle up and SAVE 20%',
+			title: 'Add our Australian Pink Clay Mask',
+			replace_item: 32227653222471,
+			upsell_image_kit: '//cdn.shopify.com/s/files/1/0277/5262/8295/products/SS_Ecomm_Hero_SB_APC_PerfectSkinKit_23_1_100x126_crop_center.jpg?v=1637739840',
+			upsell_image_kit_2x: '//cdn.shopify.com/s/files/1/0277/5262/8295/products/SS_Ecomm_Hero_SB_APC_PerfectSkinKit_23_1_200x252_crop_center.jpg?v=1637739840',
+			upsell_kit_price: 6140,
+			upsell_kit_compare_price: 7680,
+			upsell_kit_description: '<b>Drastically reduce congestion and pore size</b><br>1x Porefining Face Mask <br>1x Flash Perfection Exfoliator',
+			description: 'Show your pores whos boss',
+		}
+	]
+
 	ReactDOM.render(
 		React.createElement(Cart, {}, null),
 		document.querySelector('#cart-drawer'),

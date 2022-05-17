@@ -44,6 +44,7 @@ export default class CartUpsell extends React.Component {
 						<SvgPlusGreen />
 					</button>
 				</div>
+				<hr/>
 			</>
 		);
 	}

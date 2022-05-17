@@ -8,6 +8,7 @@ import CartDiscountMeter from '~comp/cart-discount-meter';
 import CartDiscountForm from '~comp/cart-discount-form';
 import CartManualGwp from '~comp/cart-manual-gwp';
 import CartUpsell from '~comp/cart-upsell';
+import CartUpsellTop from '~comp/cart-upsell-top';
 import CartExtras from '~comp/cart-extras';
 import CartRecentProducts from '~comp/cart-recent-products';
 
@@ -43,7 +44,10 @@ export default class Cart extends React.Component {
 			itemCount: 0,
 			manualGwpCount: 0,
 			totalPrice: 0,
-			upsellData: {},
+			upsellData: {
+				targetId: 39409261805639,
+				upsellId: 32227653910599,
+			},
 
 			discountData: {},
 			loadingDiscount: false,
@@ -140,7 +144,6 @@ export default class Cart extends React.Component {
 		models.manualGwpCount = manualGwpCount;
 		models.comparePriceDiff = comparePriceDiff;
 		$('.cart-drawer__count').text(count);
-
 		models.upsellData = await this.getUpsell(items);
 
 		models.totalPrice = cart.items_subtotal_price;
@@ -699,7 +702,9 @@ export default class Cart extends React.Component {
 							>
 								<input type="hidden" name="checkout" value="Checkout" />
 
-								<div className="list-unstyled" role="list">
+								{upsellData && (<CartUpsellTop upsell={upsellData} onAddUpsell={this.onAddUpsell} />)}
+
+								<div className="list-unstyled a" role="list">
 									{cart.items.map((item) => !!item.models && !item.models.isManualGwp && (
 										<CartItem
 											key={item.key}
@@ -708,6 +713,8 @@ export default class Cart extends React.Component {
 											onChangeVariant={this.onChangeVariant}
 											onChangeQuantity={this.onChangeQuantity}
 											onRemoveItem={this.onRemoveItem}
+											upsell={upsellData}
+											onAddUpsell={this.onAddUpsell}
 										/>
 									))}
 								</div>

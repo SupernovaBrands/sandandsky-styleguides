@@ -6,6 +6,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import ConditionWrapper from '~comp/condition-wrapper';
 import QuantityBox from '~comp/quantity-box';
+import CartUpsellPair from '~comp/cart-upsell-pair';
 import SvgRecurring from '~svg/repeat.svg';
 
 import { formatMoney } from '~mod/utils';
@@ -16,7 +17,7 @@ export default class CartItem extends React.Component {
 	}
 
 	render() {
-		const { item } = this.props;
+		const { item, upsell, onAddUpsell } = this.props;
 		const { models } = item;
 		return (
 			<div className="cart-item" role="listitem">
@@ -76,6 +77,8 @@ export default class CartItem extends React.Component {
 					</figcaption>
 				</figure>
 
+				{upsell && (<CartUpsellPair upsell={upsell} onAddUpsell={onAddUpsell} />)}
+
 				{models.showPreorderNotif && (
 					<span className="d-block mb-2">{tStrings.estimated_delivery_text}</span>
 				)}
@@ -89,4 +92,6 @@ CartItem.propTypes = {
 	isLastStock: PropTypes.bool.isRequired,
 	onChangeQuantity: PropTypes.func.isRequired,
 	onRemoveItem: PropTypes.func.isRequired,
+	upsell: PropTypes.object.isRequired,
+	onAddUpsell: PropTypes.func.isRequired,
 };

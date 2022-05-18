@@ -25,13 +25,15 @@ export default class CartUpsell extends React.Component {
 	render() {
 		const { upsell } = this.props;
 		return (
-			<div className="cart-upsell--pair d-none">
-				<span className="cart-upsell--pair__arrow font-size-sm d-flex justify-content-end mb-2 mt-0 px-5 py-1 rounded collapsed" data-toggle="collapse" data-target="#cartItemPair1">
-					Pairs best with
-					<SvgChevronUp className="svg ml-2" />
-				</span>
-				<div className="cart-upsell--pair__content collapse" id="cartItemPair1">
-					<div className="p-g rounded d-flex">
+			<div className="cart-upsell--pair px-lg-hg row d-none">
+				<div className="d-flex mb-2 mt-0 col-9 px-lg-hg ml-auto">
+					<span className="cart-upsell--pair__arrow font-size-sm d-flex justify-content-center px-5 py-1 rounded w-100 collapsed" data-toggle="collapse" data-target="#cartItemPair1">
+						Pairs best with
+						<SvgChevronUp className="svg ml-2" />
+					</span>
+				</div>
+				<div className="collapse col-12 px-lg-hg" id="cartItemPair1">
+					<div className="cart-upsell--pair__content p-g rounded d-flex">
 						<figure className="d-flex flex-grow-1 mb-0">
 							<picture className="d-block flex-shrink-0">
 								<source srcSet="https://via.placeholder.com/75x100" media="(min-width: 992px)" />
@@ -42,7 +44,7 @@ export default class CartUpsell extends React.Component {
 								<p className="font-size-xs mb-2">WHY: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
 								<p className="mb-2">
 									{upsell.comparePrice > 0 && (<span className="text-linethrough">{formatMoney(upsell.comparePrice)}</span>)}
-									<span className="text-secondary font-weight-bold ml-1">{formatMoney(upsell.price)}</span>
+									<span className="font-weight-bold ml-1">{formatMoney(upsell.price)}</span>
 								</p>
 							</figcaption>
 						</figure>

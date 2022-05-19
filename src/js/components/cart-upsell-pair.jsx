@@ -43,8 +43,8 @@ export default class CartUpsell extends React.Component {
 								<h5 className="font-size-sm font-weight-bold mb-2">{upsell.title}</h5>
 								<p className="font-size-xs mb-2">WHY: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
 								<p className="mb-2">
-									{upsell.comparePrice > 0 && (<span className="text-linethrough">{formatMoney(upsell.comparePrice)}</span>)}
-									<span className="font-weight-bold ml-1">{formatMoney(upsell.price)}</span>
+									{upsell.comparePrice > 0 && (<span className="text-linethrough mr-1">{formatMoney(upsell.comparePrice)}</span>)}
+									<span className="font-weight-bold">{formatMoney(upsell.price)}</span>
 								</p>
 							</figcaption>
 						</figure>

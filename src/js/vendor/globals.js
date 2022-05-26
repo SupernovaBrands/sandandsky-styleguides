@@ -33,7 +33,7 @@ window.productFormSubmit = (e) => {
 		}
 	});
 	loadingBtn.forEach((btn) => {
-		btn.classList.remove('d-none');
+		btn.classList.remove('d-none')
 	});
 	window.snCart.addItem(id, quantity).then(() => {
 		submitBtn.forEach((btn) => {

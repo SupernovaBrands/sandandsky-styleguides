@@ -46,7 +46,7 @@ window.productFormSubmit = (e) => {
 			}
 		});
 		loadingBtn.forEach((btn) => {
-			btn.classList.add('d-none');
+			btn.classList.add('d-none')
 		});
 
 		if (isPdpUpsell) {

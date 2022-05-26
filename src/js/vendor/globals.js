@@ -67,17 +67,17 @@ window.variantAvailable = (variantSelected) => {
 		addCartBtn.forEach((btn) => {
 			if (variantSelected.getAttribute('data-waitlist') === 'true') {
 				btnText = mobileSwatchbtn.getAttribute('data-waitlist');
-				btn.setAttribute('type', 'button');
+				btn.removeAttribute('disabled');
 				btn.classList.add('btn-primary');
 				btn.classList.remove('bg-gray-400');
 			} else if (variantSelected.getAttribute('data-available') === 'false') {
 				btnText = mobileSwatchbtn.getAttribute('data-oos');
-				btn.setAttribute('type', 'button');
+				btn.setAttribute('disabled', 'disabled');
 				btn.classList.remove('btn-primary');
 				btn.classList.add('bg-gray-400');
 			} else {
 				btnText = mobileSwatchbtn.getAttribute('data-text');
-				btn.setAttribute('type', 'submit');
+				btn.removeAttribute('disabled');
 				btn.classList.remove('bg-gray-400');
 				btn.classList.add('btn-primary');
 			}

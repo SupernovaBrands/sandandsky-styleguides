@@ -62,13 +62,19 @@ const productWaitlistForm = $('.product__waitlist-form');
 const productWaitlistSubmitted = $('.product__waitlist-submitted');
 if (productWaitlistForm.length > 0 && productWaitlistSubmitted.length > 0) {
 	productWaitlistForm.find('.btn').on('click', function () {
-		console.log('click');
 		$(this).closest('.product__waitlist-form').addClass('d-none');
 		productWaitlistSubmitted.removeClass('d-none');
 	});
 }
 
+window.variantAvailable(document.querySelector('.product-form [name=product-variant]:checked'));
+
 $('.product-form [name=product-variant]').on('change', function () {
+	/** shopify klarna & afterpay */
+	// const qty = $(this).closest('form').find('input[name="quantity"]').val();
+	// afterpayHandle(qty);
+	// klarnaHandle(qty);
+
 	const carouselIndicator = $('.product-image-carousel__indicator .product-image-carousel__indicator__item');
 	const imageVariant = $(this).data('image');
 	if (imageVariant && carouselIndicator.length > 0) {

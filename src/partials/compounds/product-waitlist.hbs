@@ -1,11 +1,34 @@
 <div class="product__waitlist-form bg-gray-100 w-100 p-3 mb-3 rounded text-center">
-	<h4>Restock coming soon</h4>
-	<p class="mb-3 font-size-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat id sit nunc sit ut tellus cursus blandit lacus. Vestibulum sed pharetra vitae cras pharetra in.</p>
-	<form class="d-flex">
-		<input type="text" class="form-control py-1 px-2 text-body border-dark font-size-dt-lg rounded flex-grow-1" placeholder="Email address">
-		<button class="btn btn-primary btn-block ml-g ml-lg-2 col-3 col-lg-3 px-1 btn-black">Submit</button>
+	<h4>Join the waitlist</h4>
+	<p class="mb-3 font-size-sm">Be the first to know when Oil Control Clearing Cleanser is back in stock and get them before it’s gone again.</p>
+	<form class="w-100">
+		<div class="form-group">
+			<input type="email" class="form-control font-size-sm" placeholder="Email address">
+			<small id="emailHelp" class="form-text text-left text-danger d-none">Invalid email address.</small>
+		</div>
+		<span class="d-block mb-0 font-size-sm">and / or</span>
+		<div class="form-group row countries-options">
+			<div class="input-group mb-1 col-4 col-lg-3 countries-options">
+				<label class="countries-options__label position-absolute rounded-left text-body font-size-sm d-flex align-items-center justify-content-center pr-2" for="countries-options">+1</label>
+				<select class="countries-options__select font-size-sm" name="country" id="countries-options">
+					<option value="" disabled="" selected="">Country</option>
+					<option value="US" data-code="1">United States</option>
+					<option value="GB" data-code="44">United Kingdom</option>
+					<option value="CA" data-code="1">Canada</option>
+					<option value="DE" data-code="49">Germany</option>
+				</select>
+			</div>
+			<div class="input-group mb-1 col-8 col-lg-9 pl-0">
+				<input type="text" class="form-control font-size-sm rounded-right" placeholder="Phone numer (optional)">
+			</div>
+			<small id="phoneError" class="form-text text-left text-danger d-none">Invalid phone number</small>
+		</div>
+		<div class="row">
+			<div class="form-group col">
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+			</div>
+		</div>
 	</form>
-	<small class="col-12 text-danger email-error d-none px-0 mt-1 text-left">Invalid Email Address</small>
 </div>
 <div class="product__waitlist-submitted bg-gray-100 w-100 p-3 my-3 rounded text-center d-none">
 	<h4>Thank you</h4>

@@ -33,8 +33,8 @@ export default class CartUpsell extends React.Component {
 						<figcaption className="d-flex flex-column ml-g">
 							<h5 className="font-size-sm font-weight-bold mb-1">{upsell.title}</h5>
 							<p className="mb-2">
-								{upsell.comparePrice > 0 && (<span className="text-linethrough">{formatMoney(upsell.comparePrice)}</span>)}
-								<span className="text-secondary font-weight-bold ml-1">{formatMoney(upsell.price)}</span>
+								{upsell.comparePrice > 0 && (<span className="text-linethrough mr-1">{formatMoney(upsell.comparePrice)}</span>)}
+								<span className="font-weight-bold">{formatMoney(upsell.price)}</span>
 							</p>
 						</figcaption>
 					</figure>

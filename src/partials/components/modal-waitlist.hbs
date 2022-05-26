@@ -16,17 +16,6 @@
             <p class="h2 d-none d-lg-block">Restock coming soon!</p>
             <p class="h4">Australian Pink Flash Perfection Exfoliator</p>
             <p class="font-size-sm mb-3">Leave us your email address and we'll let you know when it's back!</p>
-            <form action="/" class="d-none d-lg-block">
-              <div class="input-group mb-2">
-                <input type="hidden" name="product" data-product-id />
-                <input type="hidden" name="variant" data-product-variant/>
-                <input type="email" class="form-control col-9 rounded" placeholder="Email address" aria-label="Email address" aria-describedby="Email address">
-                <div class="input-group-append col-3">
-                  <button class="btn btn-primary rounded" type="button">Submit</button>
-                </div>
-              </div>
-            </form>
-            <p class="h4 font-weight-normal text-danger message-error d-none font-size-sm d-none d-lg-block">Invalid Email Address</p>
           </figcaption>
           <figcaption class="col-8 flex-wrap align-content-center d-none" id="modal-desktop-content-submitted">
             <p class="h2 d-none d-lg-block">Thank you!</p>
@@ -34,15 +23,33 @@
             <a class="btn btn-primary rounded d-none d-lg-block">Shop other products</a>
           </figcaption>
         </figure>
-        <form action="/" class="d-lg-none">
-          <div class="input-group mb-2 justify-content-center">
-            <input type="hidden" name="product" data-product-id />
-            <input type="hidden" name="variant" data-product-variant/>
-            <input type="email" name="email" class="form-control col-8 rounded modal-mobile-content-form" placeholder="Email address" aria-label="Email address" aria-describedby="Email address">
-            <div class="input-group-append col-4 modal-mobile-content-form">
-              <button class="btn btn-primary rounded" type="submit">Submit</button>
+        <form class="w-100">
+          <div class="form-group  position-relative mb-2">
+            <input type="email" name="email" class="form-control font-size-sm" placeholder="Email address" aria-label="Email address" aria-describedby="Email address">
+            <small id="emailHelp" class="form-text text-left text-danger d-none font-size-sm">Invalid email address.</small>
+          </div>
+          <span class="d-block mb-0 font-size-sm text-center">and / or</span>
+          <div class="form-group row position-relative  mt-2 mb-1">
+            <div class="input-group mb-1 col-3 col-lg-2 countries-options">
+              <label class="countries-options__label position-absolute font-size-sm rounded-left text-center" for="countries-options">+1</label>
+              <select class="countries-options__select" name="country" id="countries-options">
+                <option value="" disabled="" selected="">Country</option>
+                <option value="US" data-code="492">United States</option>
+                <option value="GB" data-code="44">United Kingdom</option>
+                <option value="CA" data-code="1">Canada</option>
+                <option value="DE" data-code="492">Germany</option>
+              </select>
             </div>
-            <a class="btn btn-primary rounded d-none modal-mobile-content-submitted">Shop other products</a>
+            <div class="input-group mb-1 col-9 col-lg-10 pl-0">
+              <input type="text" class="countries-options__input form-control font-size-sm" placeholder="Enter Phone Number">
+            </div>
+            <small id="phoneError" class="form-text text-left text-danger d-none font-size-sm">Invalid phone number</small>
+          </div>
+          <p class="w-100 font-size-sm mt-0 mb-1">Our <a href=""><u>Privacy Policy</u></a> has more information about how we use your data.</p>
+          <div class="row">
+            <div class="form-group col mt-0 ">
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Submit form</button>
+            </div>
           </div>
         </form>
       </div>

@@ -217,5 +217,26 @@ html.uk-store {
                 color: $darker-pink-hover;
             }
         }
+
+        .hero-carousel,
+        .collection-banner {
+            picture:first-child,
+            picture:last-child {
+                display: none !important;
+            }
+            picture:nth-child(2) {
+                display: block !important;
+            }
+        }
+
+        .product-form-banner {
+            picture:first-child,
+            picture:last-child {
+                display: none !important;
+            }
+            picture:nth-child(2) {
+                display: block !important;
+            }
+        }
     }
 }

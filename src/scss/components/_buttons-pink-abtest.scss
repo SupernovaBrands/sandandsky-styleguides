@@ -141,7 +141,7 @@ html.uk-store {
             text-decoration: underline;
         }
 
-        .mega-menu a,
+        .mega-menu a:not(.btn-primary),
         .post-card a,
         .upsell__article a {
             color: $body-color !important;;

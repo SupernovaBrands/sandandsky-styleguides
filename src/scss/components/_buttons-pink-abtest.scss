@@ -136,6 +136,11 @@ html.uk-store {
             }
         }
 
+        .product-form__shipping a {
+            color: $darker-pink !important;
+            text-decoration: underline !important;
+        }
+
         .navbar-nav .dropdown-menu a {
             color: $darker-pink !important;
             text-decoration: underline;

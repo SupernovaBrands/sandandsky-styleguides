@@ -110,7 +110,8 @@ html.uk-store {
 
         .hero-carousel,
         .collection-banner {
-            picture:first-child {
+            picture:first-child,
+            picture:nth-child(2) {
                 display: none;
             }
             picture:last-child {
@@ -119,7 +120,8 @@ html.uk-store {
         }
 
         .product-form-banner {
-            picture:first-child {
+            picture:first-child,
+            picture:nth-child(2) {
                 display: none !important;
             }
             picture:last-child {

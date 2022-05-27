@@ -19,14 +19,16 @@
 				<p class="my-2 mb-lg-3">Smooth uneven texture and clear congestion with this triple-action facial exfoliator.</p>
 				{{> compounds/product-waitlist}}
 				<div class="d-flex order-lg-3 mb-3">
-					<form class="product-form w-100">
+					<form class="product-form w-100" onsubmit="window.productFormSubmit(event)">
 						<div class="swatch">
-							{{> components/product-variant name="product-variant" title="Single" value="1-x-sunny-honey-bali-bronzing-foam" image="https://via.placeholder.com/150x150/?text=1" checked=true}}
-							{{> components/product-variant name="product-variant" title="Bundle" subtitle=true value="1-x-sunny-honey-bali-bronzing-bundle" image="https://via.placeholder.com/150x150/?text=2"  compare=true}}
+							{{> components/product-variant name="product-variant" title="Single" value="1-x-sunny-honey-bali-bronzing-foam" image="https://via.placeholder.com/150x150/?text=1" checked=true variantid="39652548771911" available=true}}
+							{{> components/product-variant name="product-variant" title="Variant OOS" value="1-x-sunny-honey-bali-bronzing-foam-oos" image="https://via.placeholder.com/150x150/?text=1" variantid="39652548771911" available=false}}
+							{{> components/product-variant name="product-variant" title="Variant Waitlist" value="1-x-sunny-honey-bali-bronzing-foam-waitlist" image="https://via.placeholder.com/150x150/?text=1" variantid="39652548771911" available=false waitlist=true}}
+							{{> components/product-variant name="product-variant" title="Bundle" subtitle=true value="1-x-sunny-honey-bali-bronzing-bundle" image="https://via.placeholder.com/150x150/?text=2"  compare=true variantid="39652548771911" available=true}}
 							{{> components/product-variant-subscription-v1 }}
 							{{> components/product-variant-subscription-v2 }}
 						</div>
-						<div class="d-flex product-swatch-mobile__trigger">
+						<div class="d-flex product-swatch-mobile__trigger" data-text="Add to cart" data-oos="Sold Out" data-waitlist="Waitlist">
 							<div class="d-flex">
 								<button class="quantity--minus input-group-text border-right-0 rounded rounded-right-0 border-dark flex-grow-0" type="button" aria-label="Add Subtract" data-cy="pdp-subtract-quantity-icon">
 									<img class="svg" src="icons/minus.svg" replace-to-svg />
@@ -36,11 +38,18 @@
 									<img class="svg" src="icons/plus.svg" replace-to-svg />
 								</button>
 							</div>
-							<button class="btn btn-primary btn-block ml-g ml-lg-3" type="submit" data-cy="pdp-addtocart-btn">Add to Cart</button>
+							<button class="btn btn-primary btn-block ml-g ml-lg-3 btn__submit position-relative d-flex align-items-center justify-content-center" type="submit" data-cy="pdp-addtocart-btn">
+								<span class="btn__submit-text">Add to cart</span>
+								<span class="position-absolute spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+							</button>
 						</div>
 						<div class="product-swatch-mobile fixed-bottom d-lg-none mx-g mb-3">
-							<button class="btn btn-lg btn-primary btn-block m-0" type="submit">Add to cart</button>
+							<button class="btn btn-lg btn-primary btn-block m-0 position-relative btn__submit position-relative d-flex align-items-center justify-content-center" type="submit">
+								<span class="btn__submit-text">Add to cart</span>
+								<span class="position-absolute spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+							</button>
 						</div>
+						<input id="variantid" type="hidden" name="id" value="39652550213703">
 					</form>
 				</div>
 				<p class="mb-3 font-size-sm order-lg-4">Afterpay</p>

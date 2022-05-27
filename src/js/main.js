@@ -28,8 +28,8 @@ if ($('#cart-drawer').length > 0) {
 			upsell_kit_compare_price: 7680,
 			upsell_kit_description: '<b>Drastically reduce congestion and pore size</b><br>1x Porefining Face Mask <br>1x Flash Perfection Exfoliator',
 			description: 'Show your pores whos boss',
-		}
-	]
+		},
+	];
 
 	ReactDOM.render(
 		React.createElement(Cart, {}, null),

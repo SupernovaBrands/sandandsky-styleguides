@@ -23,6 +23,9 @@
 // Gray 100 background color
 @include bg-variant(".bg-gray-100", $gray-100, true);
 
+// Gray 400 background color
+@include bg-variant(".bg-gray-400", $gray-400, true);
+
 // bg body color
 @include bg-variant(".bg-body-color", $body-color, true);
 

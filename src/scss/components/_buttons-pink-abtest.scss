@@ -185,6 +185,15 @@ html.uk-store {
             }
         }
 
+        .cart-item a {
+            color: $body-color !important;
+            text-decoration: none !important;
+
+            &:hover {
+                color: $darker-pink !important;
+            }
+        }
+
         .react-yotpo-widget {
             .btn-secondary {
                 background-color: $darker-pink;

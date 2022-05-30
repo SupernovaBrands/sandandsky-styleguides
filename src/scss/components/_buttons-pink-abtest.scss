@@ -206,6 +206,11 @@ html.uk-store {
             .tab .nav-link.active {
                 border-color: $darker-pink !important;
             }
+
+            .list-unstyled.justify-content-end button.text-secondary,
+            .list-unstyled.justify-content-end svg.text-secondary {
+                color: $darker-pink;
+            }
         }
 
         footer a,

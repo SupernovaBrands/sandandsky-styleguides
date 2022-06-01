@@ -1,5 +1,5 @@
 <div class="product-variant custom-radio w-100 mb-3 position-relative">
-	<input id="{{name}}-{{value}}" class="custom-control-input" type="radio" name="{{name}}" value="{{value}}" {{#if checked}}checked{{/if}} data-image="{{image}}" />
+	<input id="{{name}}-{{value}}" class="custom-control-input" type="radio" name="{{name}}" value="{{value}}" {{#if checked}}checked{{/if}} data-image="{{image}}" data-variant-id="{{ variantid }}" data-available="{{ available }}" data-waitlist="{{ waitlist }}" onchange="window.variantAvailable(this)" />
 	<div class="active-border position-absolute rounded"></div>
 	<label for="{{name}}-{{value}}" class="custom-control-label w-100 py-3 pr-2">
 		<p class="mb-2 font-weight-bold">{{title}}</p>

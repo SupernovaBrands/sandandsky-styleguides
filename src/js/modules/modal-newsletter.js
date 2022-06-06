@@ -9,16 +9,18 @@ $('.modal--newsletter').on('hidden.bs.modal', function () {
 	$('#completed-form').addClass('d-none');
 });
 
-$('#main-newsletter-form form').on('submit', function (e) {
+$('#less-intrusive-newsletter-form--newsletter form').on('submit', function (e) {
 	e.preventDefault();
-	$('#main-newsletter-form').addClass('d-none');
-	$('#main-account-form').removeClass('d-none');
+	$('#less-intrusive-newsletter-form--newsletter').addClass('d-none');
+	$('#account-form--newsletter').removeClass('d-none');
 });
 
-$('#main-account-form form').on('submit', function (e) {
+$('#account-form--newsletter form').on('submit', function (e) {
 	e.preventDefault();
-	$('#main-account-form').addClass('d-none');
-	$('#main-completed-form').removeClass('d-none');
+	$('#account-form--newsletter').addClass('d-none');
+	$('#completed-form--newsletter').removeClass('d-none');
+	$('.modal--newsletter__bg').addClass('d-none');
+	$('.modal--newsletter__bg-completed').removeClass('d-none');
 	$('.modal--newsletter .modal-content').addClass('completed-bg');
 });
 
@@ -33,3 +35,5 @@ $('.countries-options__select').on('change', function () {
 if ($('html').hasClass('newsletter-without-announcement-abtest')) {
 	$('.modal--newsletter').modal('show');
 }
+
+$('.modal--newsletter').modal('show');

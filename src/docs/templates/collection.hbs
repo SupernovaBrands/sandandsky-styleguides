@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html class="us-store">
 <head>
 	{{> html-head title="Collection Template" maincss="collection" }}
 </head>
-<body class="collection-template">
+<body class="collection-template button-pink-abtest-active">
 	{{> sections/header secondnav=true activefirst="active"}}
   <div class="collection-banner">
     <picture class="embed-responsive bg-shimmer">
@@ -11,8 +11,12 @@
       <img src="https://via.placeholder.com/750x840" alt="Slide 1" class="d-block w-100 embed-responsive-item fit--cover">
   	</picture>
 	<picture class="embed-responsive bg-shimmer d-none">
-      <source srcset="https://via.placeholder.com/1400x380?text=VARIANT" media="(min-width: 992px)">
-      <img src="https://via.placeholder.com/750x840?text=VARIANT" alt="Slide 1" class="d-block w-100 embed-responsive-item fit--cover">
+      <source srcset="https://via.placeholder.com/1400x380?text=PINK_VARIANT" media="(min-width: 992px)">
+      <img src="https://via.placeholder.com/750x840?text=PINK_VARIANT" alt="Slide 1" class="d-block w-100 embed-responsive-item fit--cover">
+  	</picture>
+	  <picture class="embed-responsive bg-shimmer d-none">
+      <source srcset="https://via.placeholder.com/1400x380?text=BLACK_VARIANT" media="(min-width: 992px)">
+      <img src="https://via.placeholder.com/750x840?text=BLACK_VARIANT" alt="Slide 1" class="d-block w-100 embed-responsive-item fit--cover">
   	</picture>
   </div>
 	<div class="container px-g mt-5">

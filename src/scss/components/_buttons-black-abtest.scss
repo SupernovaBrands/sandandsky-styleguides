@@ -1,5 +1,6 @@
 html.au-store,
-html.us-store {
+html.us-store,
+html.uk-store {
     .button-black-abtest-active {
         a {
             color: $secondary;
@@ -109,7 +110,8 @@ html.us-store {
 
         .hero-carousel,
         .collection-banner {
-            picture:first-child {
+            picture:first-child,
+            picture:nth-child(2) {
                 display: none;
             }
             picture:last-child {
@@ -118,7 +120,8 @@ html.us-store {
         }
 
         .product-form-banner {
-            picture:first-child {
+            picture:first-child,
+            picture:nth-child(2) {
                 display: none !important;
             }
             picture:last-child {

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html >
+<html class="us-store">
 <head>
 	{{> html-head title="Article" maincss="blog" }}
 </head>
-<body>
+<body class="button-pink-abtest-active">
 	{{> sections/header blognav=true}}
 	<div class="reading-proggress-bar reading-proggress-bar--scrolled-down d-none position-fixed w-100 m-0">
     <div class="reading-proggress-bar__proggress"></div>
@@ -95,6 +95,7 @@
 								<button type="submit" class="btn flex-column flex-shrink-0 align-items-center font-size-sm upsell__add btn__submit">
 									<img src="../images/plus-circle.svg" alt="Generic placeholder image">
 									<img src="../images/plus-circle-abtest.svg" alt="Generic placeholder image" class="d-none">
+									<img src="../images/plus-circle-pink-abtest.svg" alt="Generic placeholder image" class="pink-variant d-none">
 								</button>
 								<button type="button" class="btn flex-column flex-shrink-0 align-items-center font-size-sm btn__loading d-none">
 									<span class="spinner-border text-secondary" role="status" aria-hidden="true"></span>

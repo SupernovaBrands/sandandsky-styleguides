@@ -9,16 +9,16 @@ $('.modal--newsletter').on('hidden.bs.modal', function () {
 	$('#completed-form').addClass('d-none');
 });
 
-$('#newsletter-form form').on('submit', function (e) {
+$('#main-newsletter-form form').on('submit', function (e) {
 	e.preventDefault();
-	$('#newsletter-form').addClass('d-none');
-	$('#account-form').removeClass('d-none');
+	$('#main-newsletter-form').addClass('d-none');
+	$('#main-account-form').removeClass('d-none');
 });
 
-$('#account-form form').on('submit', function (e) {
+$('#main-account-form form').on('submit', function (e) {
 	e.preventDefault();
-	$('#account-form').addClass('d-none');
-	$('#completed-form').removeClass('d-none');
+	$('#main-account-form').addClass('d-none');
+	$('#main-completed-form').removeClass('d-none');
 	$('.modal--newsletter .modal-content').addClass('completed-bg');
 });
 

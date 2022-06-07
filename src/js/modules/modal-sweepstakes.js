@@ -29,4 +29,4 @@ $('.countries-options__select').on('change', function () {
 	$(this).trigger('mouseleave');
 });
 
-$('.modal--sweepstakes-cta').modal('show');
+// $('.modal--sweepstakes-cta').modal('show');

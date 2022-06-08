@@ -1,51 +1,112 @@
-<div class="modal modal--waitlist fade px-g px-lg-0" id="modal-waitlist" tabindex="-1" role="dialog" aria-labelledby="modal-waitlist" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered waitlist-modal" role="document">
-    <div class="modal-content mx-auto">
-      <div class="modal-header border-bottom-0">
-        <button type="button" class="d-flex btn btn-primary p-1 mt-n4 ml-auto position-relative font-size-xs" data-dismiss="modal" aria-label="Close">
-          <img class="svg" src="icons/close.svg" replace-to-svg />
-        </button>
-      </div>
-      <div class="modal-body pt-0 container">
-        <p class="h2 d-lg-none text-center mb-3">Restock coming soon!</p>
-        <figure class="row">
-          <picture class="col-4">
-            <img src="https://via.placeholder.com/160x200?text=Product" class="w-100" alt="Product Image" loading="lazy">
-          </picture>
-          <figcaption class="col-8 d-flex flex-wrap align-content-center pl-lg-0" id="modal-desktop-content-form">
-            <p class="h2 d-none d-lg-block">Restock coming soon!</p>
-            <p class="h4">Australian Pink Flash Perfection Exfoliator</p>
-            <p class="font-size-sm mb-3">Leave us your email address and we'll let you know when it's back!</p>
-            <form action="/" class="d-none d-lg-block">
-              <div class="input-group mb-2">
-                <input type="hidden" name="product" data-product-id />
-                <input type="hidden" name="variant" data-product-variant/>
-                <input type="email" class="form-control col-9 rounded" placeholder="Email address" aria-label="Email address" aria-describedby="Email address">
-                <div class="input-group-append col-3">
-                  <button class="btn btn-primary rounded" type="button">Submit</button>
+<div class="modal modal--waitlist fade" id="modal-waitlist" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg modal-dialog-centered mt-0" role="document">
+		<div class="modal-content mx-0 position-absolute border-0 rounded-0 overflow-hidden">
+			<img src="https://cdn.shopify.com/s/files/1/0277/5262/8295/files/APC_icon_Mobile_690_1156.jpg?v=1654569535" class="w-100 modal--newsletter__bg position-absolute d-lg-none" alt="Product Image" loading="lazy">
+			<img src="https://cdn.shopify.com/s/files/1/0277/5262/8295/files/SS_BrandMood_Mobile_690_1156.jpg?v=1654568998" class="w-100 modal--newsletter__bg-completed position-absolute d-lg-none d-none" alt="Product Image" loading="lazy">
+			<div class="row align-items-center">
+				<div class="col-lg-6 pr-lg-0 d-none d-lg-block">
+					<img src="https://cdn.shopify.com/s/files/1/0277/5262/8295/files/APC_icon_Desktop_800_1180_with-text.jpg?v=1654568998" class="w-100 modal--newsletter__bg" alt="Product Image" loading="lazy">
+					<img src="https://cdn.shopify.com/s/files/1/0277/5262/8295/files/SS_BrandMood_Desktop_800_1180.jpg?v=1654568998" class="w-100 modal--newsletter__bg-completed d-none" alt="Product Image" loading="lazy">
+				</div>
+				<div id="less-intrusive-newsletter-form--newsletter" class="col-lg-6 pl-lg-0">
+					<div class="modal-content__wrapper px-4 px-lg-5 py-3 pb-7 pb-lg-3 mb-4 mb-6 mb-lg-0">
+						<div class="d-flex flex-wrap mb-2 text-center justify-content-center">
+							<img class="svg union mt-4 text-white d-none d-lg-block" src="icons/envelope.svg" replace-to-svg />
+							<h2 class="mt-3 mb-2 mb-lg-2 text-left w-100">Join the waitlist</h2>
+							<p class="mb-3 text-left w-100">Be the first to know when Oil Control<br/>Clearing Cleanser is back in stock.</p>
+							<form class="w-100">
+								<div class="form-group row position-relative  mt-2 mb-1">
+                  <div class="input-group mb-1 col-3 col-lg-3 phone-countries">
+                    <label class="phone-countries__label position-absolute font-size-sm rounded-left text-center" for="countries-options">+1</label>
+                    <select class="phone-countries__select" name="country" id="countries-options">
+                      <option value="" disabled="" selected="">Country</option>
+                      <option value="US" data-code="492">United States</option>
+                      <option value="GB" data-code="44">United Kingdom</option>
+                      <option value="CA" data-code="1">Canada</option>
+                      <option value="DE" data-code="492">Germany</option>
+                    </select>
+                  </div>
+                  <div class="input-group mb-1 col-9 col-lg-9 pl-0">
+                    <input type="text" class="phone-countries__input form-control font-size-sm" placeholder="Notify me by SMS">
+                  </div>
+                  <span class="d-block mb-0 font-size-sm text-center my-1 w-100">- Or -</span>
                 </div>
-              </div>
-            </form>
-            <p class="h4 font-weight-normal text-danger message-error d-none font-size-sm d-none d-lg-block">Invalid Email Address</p>
-          </figcaption>
-          <figcaption class="col-8 flex-wrap align-content-center d-none" id="modal-desktop-content-submitted">
-            <p class="h2 d-none d-lg-block">Thank you!</p>
-            <p class="font-size-sm mb-3">We have received your email and will notifiy you when this item is back in stock!</p>
-            <a class="btn btn-primary rounded d-none d-lg-block">Shop other products</a>
-          </figcaption>
-        </figure>
-        <form action="/" class="d-lg-none">
-          <div class="input-group mb-2 justify-content-center">
-            <input type="hidden" name="product" data-product-id />
-            <input type="hidden" name="variant" data-product-variant/>
-            <input type="email" name="email" class="form-control col-8 rounded modal-mobile-content-form" placeholder="Email address" aria-label="Email address" aria-describedby="Email address">
-            <div class="input-group-append col-4 modal-mobile-content-form">
-              <button class="btn btn-primary rounded" type="submit">Submit</button>
-            </div>
-            <a class="btn btn-primary rounded d-none modal-mobile-content-submitted">Shop other products</a>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+                <div class="form-group mb-3 d-none">
+                  <img class="svg" src="icons/close-circle.svg" replace-to-svg /><span class="ml-2">We will notify you when product are available by SMS.</span>
+                </div>
+                <div class="form-group mb-3">
+                  <input type="email" class="form-control font-size-sm" placeholder="Notify me by Email">
+                  <small id="emailHelp" class="form-text text-left text-danger d-none">Invalid email address.</small>
+                </div>
+                <div class="form-group mb-3 d-none">
+                  <img class="svg" src="icons/close-circle.svg" replace-to-svg /><span class="ml-2">We will notify you when product are available by Email.</span>
+                </div>
+                <div class="row">
+                  <div class="form-group col">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+                  </div>
+                </div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div id="account-form--newsletter" class="col-lg-6 pl-lg-0 d-none">
+					<div class="modal-content__wrapper px-4 px-lg-5 py-3 pb-5 pb-lg-3 mb-5  mb-lg-0">
+						<div class="d-flex flex-wrap mb-2 text-center justify-content-center">
+							<img class="svg union mt-4 d-none d-lg-block" src="icons/account-two.svg" replace-to-svg />
+							<h2 class="mt-3 mb-2 mb-lg-2 w-100 text-white">Thanks for subcribing!</h2>
+							<p class="mb-2 mb-lg-3 text-white">To enjoy even MORE benefits, join our Sand & Sky Rewards program today and receive free shipping + 50 POINTS that can be redeemed for exclusive discounts.</p>
+							<form class="w-100">
+								<div class="row">
+									<div class="form-group mb-2 position-relative col-6 validated">
+										<input type="email" class="form-control font-size-sm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name">
+										<small id="emailHelp" class="form-text text-left text-danger d-none">Invalid first name.</small>
+									</div>
+									<div class="form-group mb-2 position-relative col-6">
+										<input type="text" class="form-control font-size-sm" placeholder="Last Name">
+										<small id="emailHelp" class="form-text text-left text-danger d-none">Invalid last name.</small>
+									</div>
+								</div>
+								<div class="form-group mb-2 position-relative">
+									<input type="email" class="form-control font-size-sm" placeholder="Email">
+									<small id="emailHelp" class="form-text text-left text-danger d-none">Invalid email.</small>
+								</div>
+								<div class="form-group mb-0  position-relative ">
+									<input type="password" class="form-control font-size-sm" placeholder="Password">
+									<small id="emailHelp" class="form-text text-left text-danger d-none">Please enter at least 8 characters with: 1 uppercase, 1 lowercase, 1 special character.</small>
+								</div>
+								<div class="row mb-3 position-relative ">
+									<div class="form-group col mt-3">
+										<button class="btn btn-lg btn-primary btn-block" type="submit">Create an account</button>
+									</div>
+								</div>
+								<a href="javascript:void(0);" class="w-100 font-size-sm mt-3 mb-3"><u>No thanks, maybe another time.</u></a>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div id="completed-form--newsletter" class="col-lg-6 pl-lg-0 d-none">
+					<div class="modal-content__wrapper px-4 px-lg-5 py-3 pb-lg-3 mb-lg-0">
+						<div class="d-flex flex-wrap mb-2 text-center justify-content-center">
+							<img class="svg union mt-4 d-none d-lg-block" src="icons/convetti.svg" replace-to-svg />
+							<h2 class="mt-3 mb-2 mb-lg-2 w-100 text-white">Thanks for subcribing!</h2>
+							<p class="mb-2 mb-lg-3 text-white">Start enjoying your Sand & Sky Rewards!</p>
+							<ul class="list-check mb-6 mb-lg-0 ml-2 pl-4 pr-3 pl-lg-5 pr-lg-4 list-unstyled text-left text-white pb-7 pb-lg-0">
+								<li class="mb-2 mb-lg-3">You’re now registered for Sand & Sky rewards.</li>
+								<li class="mb-2 mb-lg-3">Receive first hand news about new products, deals and surprises!</li>
+								<li class="mb-2 mb-lg-3">Check your inbox to activate your account.</li>
+							</ul>
+							<a href="javascript:void(0);" class="btn btn-lg btn-primary btn-block" data-dismiss="modal">Start shopping</a>
+							<a href="javascript:void(0);" class="btn btn-lg btn-outline-primary btn-block mt-2" data-dismiss="modal">Learn more about Rewards</a>
+						</div>
+					</div>
+				</div>
+				<div class="bottom-close w-100 text-center d-block d-lg-none" data-dismiss="modal"><img class="svg" src="icons/chevron-up.svg" replace-to-svg /></div>
+			</div>
+			<button type="button" class="close position-absolute font-size-base d-none d-lg-block " data-dismiss="modal">
+				<img class="d-none d-lg-block" src="icons/close-circle-dark.svg" replace-to-svg />
+				<img class="d-lg-none" src="icons/close-circle-light.svg" replace-to-svg />
+			</button>
+		</div>
+	</div>
 </div>

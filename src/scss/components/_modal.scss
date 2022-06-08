@@ -6,16 +6,6 @@
 	}
 }
 
-.modal--waitlist {
-	.modal-dialog {
-		max-width: 570px;
-	}
-
-	.sni__times {
-		right: 1em;
-	}
-}
-
 .modal--sweepstakes {
 	.modal-dialog {
 		@include media-breakpoint-up(lg) {

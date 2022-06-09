@@ -43,3 +43,16 @@
 		z-index: $zindex-dropdown;
 	}
 }
+
+.modal--waitlist {
+	.checkmark {
+		width: calc-em(24);
+		font-size: calc-em(24);
+	}
+
+	.close {
+		right: calc-em(20);
+		top: - calc-em(13);
+		opacity: 1;
+	}
+}

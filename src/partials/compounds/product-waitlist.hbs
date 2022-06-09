@@ -2,35 +2,37 @@
 <div class="product__waitlist-form mt-5 mb-5">
 	<h2 class="mb-3">Join the waitlist</h2>
 	<p class="mb-3">Be the first to know when Oil Control Clearing<br />Cleanser is back in stock.</p>
-	<div class="form-group row position-relative  mt-2 mb-1">
-		<div class="input-group mb-1 col-3 col-lg-2 phone-countries">
-			<label class="phone-countries__label position-absolute font-size-sm rounded-left text-center" for="countries-options">+1</label>
-			<select class="phone-countries__select" name="country" id="countries-options">
-				<option value="" disabled="" selected="">Country</option>
-				<option value="US" data-code="492">United States</option>
-				<option value="GB" data-code="44">United Kingdom</option>
-				<option value="CA" data-code="1">Canada</option>
-				<option value="DE" data-code="492">Germany</option>
-			</select>
+	<form>
+		<div class="modal--waitlist__phone form-group row position-relative  mt-2 mb-1">
+			<div class="input-group mb-1 col-3 col-lg-2 phone-countries">
+				<label class="phone-countries__label position-absolute font-size-sm rounded-left text-center" for="countries-options">+1</label>
+				<select class="phone-countries__select" name="country" id="countries-options">
+					<option value="" disabled="" selected="">Country</option>
+					<option value="US" data-code="492">United States</option>
+					<option value="GB" data-code="44">United Kingdom</option>
+					<option value="CA" data-code="1">Canada</option>
+					<option value="DE" data-code="492">Germany</option>
+				</select>
+			</div>
+			<div class="input-group mb-1 col-9 col-lg-10 pl-0">
+				<input type="text" name="phone" class="phone-countries__input form-control font-size-sm" placeholder="Notify me by SMS">
+			</div>
+			<span class="d-block mb-0 font-size-sm text-center my-1 w-100">- Or -</span>
 		</div>
-		<div class="input-group mb-1 col-9 col-lg-10 pl-0">
-			<input type="text" class="phone-countries__input form-control font-size-sm" placeholder="Notify me by SMS">
+		<div class="modal--waitlist__phone-submitted form-group mb-3 d-none text-left">
+			<img class="svg checkmark" src="icons/green-checkmark.svg" replace-to-svg /><span class="ml-2">We will notify you when product are available by SMS.</span>
 		</div>
-		<span class="d-block mb-0 font-size-sm text-center my-1 w-100">- Or -</span>
-	</div>
-	<div class="form-group mb-3 d-none">
-		<img class="svg" src="icons/close-circle.svg" replace-to-svg /><span class="ml-2">We will notify you when product are available by SMS.</span>
-	</div>
-	<div class="form-group mb-3">
-		<input type="email" class="form-control font-size-sm" placeholder="Notify me by Email">
-		<small id="emailHelp" class="form-text text-left text-danger d-none">Invalid email address.</small>
-	</div>
-	<div class="form-group mb-3 d-none">
-		<img class="svg" src="icons/close-circle.svg" replace-to-svg /><span class="ml-2">We will notify you when product are available by Email.</span>
-	</div>
-	<div class="row">
-		<div class="form-group col">
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+		<div class="modal--waitlist__email form-group mb-3">
+			<input type="email" name="email" class="form-control font-size-sm" placeholder="Notify me by Email">
+			<small id="emailHelp" class="form-text text-left text-danger d-none">Invalid email address.</small>
 		</div>
-	</div>
+		<div class="modal--waitlist__email-submitted form-group mb-3 d-none text-left">
+			<img class="svg checkmark" src="icons/green-checkmark.svg" replace-to-svg /><span class="ml-2">We will notify you when product are available by Email.</span>
+		</div>
+		<div class="row">
+			<div class="form-group col">
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+			</div>
+		</div>
+	</form>
 </div>

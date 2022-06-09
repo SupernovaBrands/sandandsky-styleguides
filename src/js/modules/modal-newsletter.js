@@ -35,5 +35,3 @@ $('.countries-options__select').on('change', function () {
 if ($('html').hasClass('newsletter-without-announcement-abtest')) {
 	$('.modal--newsletter').modal('show');
 }
-
-$('.modal--newsletter').modal('show');

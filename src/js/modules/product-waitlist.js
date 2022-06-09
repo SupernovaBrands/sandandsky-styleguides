@@ -14,8 +14,7 @@ const emailSubmitted = (el) => {
 };
 
 const formListener = () => {
-	$('.modal--waitlist form, .product__waitlist-form form').on('submit', function (e) {
-		console.log('form submit');
+	$('.modal--waitlist form, .product__waitlist-form').on('submit', function (e) {
 		e.preventDefault();
 		const el = e.target;
 		const email = $(el).find('input[name="email"]').val();
@@ -25,12 +24,10 @@ const formListener = () => {
 
 		if (emailValid || phoneValid) {
 			if (emailValid) {
-				console.log('emailValid');
 				emailSubmitted(el);
 			}
 
 			if (phoneValid) {
-				console.log('phoneValid');
 				phoneSubmitted(el);
 			}
 		}

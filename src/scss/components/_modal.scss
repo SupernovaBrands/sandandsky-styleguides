@@ -45,6 +45,13 @@
 }
 
 .modal--waitlist {
+	@include media-breakpoint-down(md) {
+		img {
+			height: calc-em(235);
+			object-fit: cover;
+		}
+	}
+
 	.checkmark {
 		height: calc-em(24);
 	}

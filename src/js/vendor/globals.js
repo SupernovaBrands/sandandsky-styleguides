@@ -60,16 +60,32 @@ window.productFormSubmit = (e) => {
 window.variantAvailable = (variantSelected) => {
 	const variantId = variantSelected.getAttribute('data-variant-id');
 	const mobileSwatchbtn = document.querySelector('.product-swatch-mobile__trigger');
-	const addCartBtn = document.querySelectorAll('.product-form button.btn:not(.klarna__close)');
+	const addCartBtn = document.querySelectorAll('.product-form button.btn:not(.klarna__close):not(.modal--waitlist__submit)');
 	document.getElementById('variantid').value = variantId;
+
+	const productWaitlistForm = document.querySelector('.product__waitlist-form');
+	if (productWaitlistForm) {
+		productWaitlistForm.classList.add('d-none');
+	}
+
 	if (addCartBtn) {
 		let btnText;
 		addCartBtn.forEach((btn) => {
+			if (btn.closest('div').classList.contains('d-none')) {
+				btn.closest('div').classList.add('d-flex');
+				btn.closest('div').classList.remove('d-none');
+			}
 			if (variantSelected.getAttribute('data-waitlist') === 'true') {
 				btnText = mobileSwatchbtn.getAttribute('data-waitlist');
 				btn.removeAttribute('disabled');
 				btn.classList.add('btn-primary');
 				btn.classList.remove('bg-gray-400');
+				
+				if (productWaitlistForm) {
+					btn.closest('div').classList.add('d-none');
+					btn.closest('div').classList.remove('d-flex');
+					productWaitlistForm.classList.remove('d-none');
+				}
 			} else if (variantSelected.getAttribute('data-available') === 'false') {
 				btnText = mobileSwatchbtn.getAttribute('data-oos');
 				btn.setAttribute('disabled', 'disabled');
@@ -82,7 +98,7 @@ window.variantAvailable = (variantSelected) => {
 				btn.classList.add('btn-primary');
 			}
 			// eslint-disable-next-line no-param-reassign
-			btn.querySelector('.btn__submit-text').textContent = btnText;
+			if (btn.querySelector('.btn__submit-text')) btn.querySelector('.btn__submit-text').textContent = btnText;
 		});
 	}
 };

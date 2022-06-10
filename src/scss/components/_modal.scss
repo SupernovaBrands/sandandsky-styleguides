@@ -6,35 +6,6 @@
 	}
 }
 
-.modal--waitlist {
-	.modal-dialog {
-		max-width: 570px;
-	}
-
-	.sni__times {
-		right: 1em;
-	}
-
-	.countries-options {
-        &__label {
-            border: 1px solid $gray-600;
-            height: 100%;
-            width: calc(100% - 5px);
-            padding: calc-em(15) $grid-gutter-width $grid-gutter-width 0;
-            background: #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.6 22.6'%3e%3cpath d='M1.9 5.4l9.4 9.4 9.4-9.4 1.9 1.9-11.3 11.3L0 7.3l1.9-1.9z'/%3e%3c/svg%3e") no-repeat right 0.7em center/1em 0.5625em;
-        }
-
-        &__select {
-            opacity: 0;
-        }
-
-        &__input {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-    }
-}
-
 .modal--sweepstakes {
 	.modal-dialog {
 		@include media-breakpoint-up(lg) {
@@ -70,5 +41,24 @@
 		top: calc-em(15);
 		right: calc-em(15);
 		z-index: $zindex-dropdown;
+	}
+}
+
+.modal--waitlist {
+	@include media-breakpoint-down(md) {
+		img {
+			height: calc-em(235);
+			object-fit: cover;
+		}
+	}
+
+	.checkmark {
+		height: calc-em(24);
+	}
+
+	.close {
+		right: calc-em(20);
+		top: - calc-em(13);
+		opacity: 1;
 	}
 }

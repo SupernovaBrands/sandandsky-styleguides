@@ -22,4 +22,10 @@
 			cursor: pointer;
 		}
 	}
+
+	&__waitlist-form {
+		.checkmark {
+			height: calc-em(24);
+		}
+	}
 }

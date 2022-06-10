@@ -1,37 +1,39 @@
-<div class="product__waitlist-form bg-gray-100 w-100 p-3 mb-3 rounded text-center">
-	<h4>Join the waitlist</h4>
-	<p class="mb-3 font-size-sm">Be the first to know when Oil Control Clearing Cleanser is back in stock and get them before it’s gone again.</p>
-	<form class="w-100">
-		<div class="form-group">
-			<input type="email" class="form-control font-size-sm" placeholder="Email address">
-			<small id="emailHelp" class="form-text text-left text-danger d-none">Invalid email address.</small>
-		</div>
-		<span class="d-block mb-0 font-size-sm">and / or</span>
-		<div class="form-group row countries-options">
-			<div class="input-group mb-1 col-4 col-lg-3 countries-options">
-				<label class="countries-options__label position-absolute rounded-left text-body font-size-sm d-flex align-items-center justify-content-center pr-2" for="countries-options">+1</label>
-				<select class="countries-options__select font-size-sm" name="country" id="countries-options">
+
+<div class="product__waitlist-form mt-5 mb-5 order-lg-3 d-none">
+	<hr class="m-0 mb-5">
+	<h2 class="mb-3">Join the waitlist</h2>
+	<p class="mb-3">Be the first to know when Oil Control Clearing<br />Cleanser is back in stock.</p>
+	<form>
+		<div class="modal--waitlist__phone form-group row position-relative  mt-2 mb-1">
+			<div class="input-group mb-1 col-3 col-lg-2 phone-countries">
+				<label class="phone-countries__label position-absolute font-size-sm rounded-left text-center" for="countries-options">+1</label>
+				<select class="phone-countries__select" name="country" id="countries-options">
 					<option value="" disabled="" selected="">Country</option>
-					<option value="US" data-code="1">United States</option>
+					<option value="US" data-code="492">United States</option>
 					<option value="GB" data-code="44">United Kingdom</option>
 					<option value="CA" data-code="1">Canada</option>
-					<option value="DE" data-code="49">Germany</option>
+					<option value="DE" data-code="492">Germany</option>
 				</select>
 			</div>
-			<div class="input-group mb-1 col-8 col-lg-9 pl-0">
-				<input type="text" class="form-control font-size-sm rounded-right" placeholder="Phone numer (optional)">
+			<div class="input-group mb-1 col-9 col-lg-10 pl-0">
+				<input type="text" name="phone" class="phone-countries__input form-control font-size-sm" placeholder="Notify me by SMS">
 			</div>
-			<small id="phoneError" class="form-text text-left text-danger d-none">Invalid phone number</small>
+			<span class="d-block mb-0 font-size-sm text-center my-1 w-100">- Or -</span>
+		</div>
+		<div class="modal--waitlist__phone-submitted form-group mb-3 d-none text-left align-items-center">
+			<img class="checkmark" src="icons/green-checkmark.svg" replace-to-svg /><span class="ml-2">We will notify you when product are available by SMS.</span>
+		</div>
+		<div class="modal--waitlist__email form-group mb-3">
+			<input type="email" name="email" class="form-control font-size-sm" placeholder="Notify me by Email">
+			<small id="emailHelp" class="form-text text-left text-danger d-none">Invalid email address.</small>
+		</div>
+		<div class="modal--waitlist__email-submitted form-group mb-3 d-none text-left align-items-center">
+			<img class="checkmark" src="icons/green-checkmark.svg" replace-to-svg /><span class="ml-2">We will notify you when product are available by Email.</span>
 		</div>
 		<div class="row">
 			<div class="form-group col">
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+				<button class="modal--waitlist__submit btn btn-lg btn-primary btn-block" type="submit">Submit</button>
 			</div>
 		</div>
 	</form>
-</div>
-<div class="product__waitlist-submitted bg-gray-100 w-100 p-3 my-3 rounded text-center d-none">
-	<h4>Thank you</h4>
-	<p class="mb-3 font-size-sm">We have received your email and will notifiy you when this item is back in stock!</p>
-	<a class="btn btn-primary btn-block col-7 col-lg-5 mx-auto">Shop other products</a>
 </div>

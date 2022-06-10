@@ -132,6 +132,10 @@ if ($('.modal--sweepstakes').length > 0) {
 	import(/* webpackChunkName: 'modal' */ '~mod/modal-sweepstakes');
 }
 
+if ($('.modal--waitlist').length > 0 || $('.product__waitlist-form').length > 0) {
+	import(/* webpackChunkName: 'modal' */ '~mod/product-waitlist');
+}
+
 if ($('.announcement-bar__timer').length > 0) {
 	import(/* webpackChunkName: 'announcement-timer' */ '~mod/announcement-timer');
 }

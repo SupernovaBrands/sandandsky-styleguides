@@ -75,16 +75,17 @@ $range-oil-light: #E3F3E6;
 $secondary: $range-apc;
 $secondary-light: $range-apc-light;
 
-$theme-colors: (
-  'primary': $primary,
-  'secondary': $secondary,
-);
-
 $body-color: #484848;
 
 $gray-100: #F8F8F8;
 $gray-400: #CECECE;
 $gray-600: #969696;
+
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'gray-600': $gray-600
+);
 
 $border-color: $gray-400;
 

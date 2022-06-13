@@ -1,9 +1,16 @@
 
-<div class="product__waitlist-form mt-5 mb-5 order-lg-3 d-none">
-	<hr class="m-0 mb-5">
+<div class="product__waitlist-form mb-5 order-lg-3 d-none">
+	<p class="mb-3 font-size-lg">
+		<span class="text-linethrough text-muted">$99.80</span>
+		<span class="font-weight-bold">$44.90</span>
+		<span class="text-secondary font-weight-bold">(SAVE 100%)</span>
+	</p>
+	<hr class="m-0 mb-4">
 	<h2 class="mb-3">Join the waitlist</h2>
 	<p class="mb-3">Be the first to know when Oil Control Clearing<br />Cleanser is back in stock.</p>
 	<form>
+		<input type="hidden" name="product" data-product-id value="{{ product.id }}"/>
+        <input type="hidden" name="variant" data-product-variant value="" />
 		<div class="modal--waitlist__phone form-group row position-relative  mt-2 mb-1">
 			<div class="input-group mb-1 col-3 col-lg-2 phone-countries">
 				<label class="phone-countries__label position-absolute font-size-sm rounded-left text-center" for="countries-options">+1</label>

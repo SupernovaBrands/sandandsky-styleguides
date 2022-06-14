@@ -14,5 +14,9 @@
 				@include make-col(7.1);
 			}
 		}
+
+		.product-card__text:is(a) {
+			min-height: calc-em(40);
+		}
 	}
 }

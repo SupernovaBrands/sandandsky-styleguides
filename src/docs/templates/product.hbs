@@ -17,13 +17,12 @@
 				{{!-- US --}}
 				{{!-- <div class="react-yotpo-star mb-2" data-product-id="3595105992809" data-show-total="true"></div> --}}
 				<p class="my-2 mb-lg-3">Smooth uneven texture and clear congestion with this triple-action facial exfoliator.</p>
-				{{> compounds/product-waitlist}}
-				<div class="d-flex order-lg-3 mb-3">
+				<div class="product__main-form d-flex order-lg-3 mb-3">
 					<form class="product-form w-100" onsubmit="window.productFormSubmit(event)">
 						<div class="swatch">
 							{{> components/product-variant name="product-variant" title="Single" value="1-x-sunny-honey-bali-bronzing-foam" image="https://via.placeholder.com/150x150/?text=1" checked=true variantid="39652548771911" available=true}}
 							{{> components/product-variant name="product-variant" title="Variant OOS" value="1-x-sunny-honey-bali-bronzing-foam-oos" image="https://via.placeholder.com/150x150/?text=1" variantid="39652548771911" available=false}}
-							{{> components/product-variant name="product-variant" title="Variant Waitlist" value="1-x-sunny-honey-bali-bronzing-foam-waitlist" image="https://via.placeholder.com/150x150/?text=1" variantid="39652548771911" available=false waitlist=true}}
+							{{> components/product-variant name="product-variant" title="Variant Waitlist" isWaitlist="true" value="1-x-sunny-honey-bali-bronzing-foam-waitlist" image="https://via.placeholder.com/150x150/?text=1" variantid="39652548771911" available=false waitlist=true}}
 							{{> components/product-variant name="product-variant" title="Bundle" subtitle=true value="1-x-sunny-honey-bali-bronzing-bundle" image="https://via.placeholder.com/150x150/?text=2"  compare=true variantid="39652548771911" available=true}}
 							{{> components/product-variant-subscription-v1 }}
 							{{> components/product-variant-subscription-v2 }}
@@ -52,6 +51,7 @@
 						<input id="variantid" type="hidden" name="id" value="39652550213703">
 					</form>
 				</div>
+				{{> compounds/product-waitlist}}
 				<p class="mb-3 font-size-sm order-lg-4">Afterpay</p>
 				<p class="mb-3 font-size-sm order-lg-5 d-flex align-items-center flex-wrap product__klarna">
 					<span>or 4 interest-free installments of <strong>£9.23</strong> by</span>

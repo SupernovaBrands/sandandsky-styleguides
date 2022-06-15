@@ -59,32 +59,76 @@ window.productFormSubmit = (e) => {
 
 window.variantAvailable = (variantSelected) => {
 	const variantId = variantSelected.getAttribute('data-variant-id');
-	const mobileSwatchbtn = document.querySelector('.product-swatch-mobile__trigger');
-	const addCartBtn = document.querySelectorAll('.product-form button.btn:not(.klarna__close)');
-	document.getElementById('variantid').value = variantId;
-	if (addCartBtn) {
-		let btnText;
-		addCartBtn.forEach((btn) => {
-			if (variantSelected.getAttribute('data-waitlist') === 'true') {
-				btnText = mobileSwatchbtn.getAttribute('data-waitlist');
-				btn.removeAttribute('disabled');
-				btn.classList.add('btn-primary');
-				btn.classList.remove('bg-gray-400');
-			} else if (variantSelected.getAttribute('data-available') === 'false') {
-				btnText = mobileSwatchbtn.getAttribute('data-oos');
-				btn.setAttribute('disabled', 'disabled');
-				btn.classList.remove('btn-primary');
-				btn.classList.add('bg-gray-400');
-			} else {
-				btnText = mobileSwatchbtn.getAttribute('data-text');
-				btn.removeAttribute('disabled');
-				btn.classList.remove('bg-gray-400');
-				btn.classList.add('btn-primary');
-			}
-			// eslint-disable-next-line no-param-reassign
-			btn.querySelector('.btn__submit-text').textContent = btnText;
-		});
-	}
+    const mobileSwatchbtn = document.querySelector('.product-swatch-mobile__trigger');
+    const addCartBtn = document.querySelectorAll('.product-form button.btn:not(.klarna__close):not(.modal--waitlist__submit)');
+    document.getElementById('variantid').value = variantId;
+
+    const productMainForm = document.querySelector('.product__main-form');
+    const productWaitlistForm = document.querySelector('.product__waitlist-form');
+    const klarnaEl = productMainForm.querySelector('.product__klarna');
+    if (productWaitlistForm) {
+      productWaitlistForm.classList.add('d-none');
+    }
+
+    if (addCartBtn) {
+      let btnText;
+      addCartBtn.forEach((btn) => {
+        if (productWaitlistForm) {
+          if (btn.closest('div').classList.contains('d-none')) {
+            btn.closest('div').classList.add('d-flex');
+            btn.closest('div').classList.remove('d-none');
+          }
+          
+          if (klarnaEl && klarnaEl.classList.contains('d-none')) {
+            klarnaEl.classList.remove('d-none');
+            klarnaEl.classList.add('d-flex');
+          }
+
+          const afterpayEl = productMainForm.querySelector('afterpay-placement');
+          if (afterpayEl && afterpayEl.classList.contains('d-none')) {
+            afterpayEl.classList.remove('d-none');
+          }
+        }
+
+        if (variantSelected.getAttribute('data-waitlist') === 'true') {
+			console.log('isw')
+          btnText = mobileSwatchbtn.getAttribute('data-waitlist');
+          btn.removeAttribute('disabled');
+          btn.classList.add('btn-primary');
+          btn.classList.remove('bg-gray-400');
+          if (productWaitlistForm) {        
+			console.log('isw3', productWaitlistForm)    
+            btn.closest('div').classList.add('d-none');
+            btn.closest('div').classList.remove('d-flex');
+            productWaitlistForm.querySelector('[data-product-variant]').value = variantSelected.getAttribute('data-variant-id');
+            productWaitlistForm.classList.remove('d-none');
+
+            if (productMainForm) {
+              if (klarnaEl) {
+                klarnaEl.classList.remove('d-flex');
+                klarnaEl.classList.add('d-none');
+              }
+            }
+          }
+        } else if (variantSelected.getAttribute('data-available') === 'false') {
+          btnText = mobileSwatchbtn.getAttribute('data-oos');
+          btn.setAttribute('disabled', 'disabled');
+          btn.classList.remove('btn-primary');
+          btn.classList.add('bg-gray-400');
+        } else {
+          if (variantSelected.getAttribute('data-variant-preorder') === 'true') {
+            btnText = mobileSwatchbtn.getAttribute('data-preorder');
+          } else {
+            btnText = mobileSwatchbtn.getAttribute('data-text');
+          }
+          btn.removeAttribute('disabled');
+          btn.classList.remove('bg-gray-400');
+          btn.classList.add('btn-primary');
+        }
+        // eslint-disable-next-line no-param-reassign
+        if (btn.querySelector('.btn__submit-text')) btn.querySelector('.btn__submit-text').textContent = btnText;
+      });
+    }
 };
 
 window.customerEmail = "";

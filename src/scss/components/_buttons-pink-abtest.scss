@@ -11,6 +11,14 @@ html.uk-store {
             text-decoration: underline;
         } 
 
+        .modal-content__wrapper a.btn-outline-primary {
+            text-decoration: none !important;
+        }
+
+        .modal-content__wrapper a.btn-outline-primary:hover {
+            color: white;
+        }
+
         .btn-outline-primary {
             background-color: white;
             border-color: $darker-pink;

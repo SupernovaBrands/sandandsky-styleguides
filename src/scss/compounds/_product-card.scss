@@ -29,6 +29,13 @@
 
 	&__text {
 		font-size: $font-size-sm;
+		text-decoration: none;
+		color: $body-color;
+
+		&:hover {
+			text-decoration: none;
+		}
+
 		@include media-breakpoint-up(lg) {
 			font-size: $font-size-base;
 		}

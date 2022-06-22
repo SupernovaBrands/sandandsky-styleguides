@@ -58,9 +58,9 @@ $h5-font-size-lg: calc-em(14);
 $paragraph-margin-bottom: map-get($spacers, 1);
 
 // Colors
-$primary: #4ACD8A;
+$primary: #D7395A;
 $primary-light: #D2F3E2;
-$primary-dark: #4CB376;
+$primary-dark: #AD1938;
 
 // Products
 $range-apc: #FF6F8D;
@@ -74,6 +74,10 @@ $range-oil-light: #E3F3E6;
 
 $secondary: $range-apc;
 $secondary-light: $range-apc-light;
+
+$old-primary: #4ACD8A;
+$old-primary-light: #D2F3E2;
+$old-primary-dark: #4CB376;
 
 $body-color: #484848;
 
@@ -213,8 +217,8 @@ $custom-control-indicator-checked-disabled-bg: $gray-400;
 $custom-control-indicator-border-color: white;
 
 // A
-$link-color: $body-color;
-$link-hover-decoration: none;
+$link-color: $primary;
+$link-decoration: underline;
 $link-hover-color: $primary;
 
 // Custom switch

@@ -3,6 +3,14 @@
 		padding-top: percentage(420 / 828);
 	}
 
+	a.text-body {
+		text-decoration: none;
+
+		&:hover {
+			color: $primary !important;
+		}
+	}
+
 	&:not(.post-card__featured) {
 		h2, p {
 			display: -webkit-box;

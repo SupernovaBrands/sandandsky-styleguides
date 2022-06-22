@@ -78,6 +78,7 @@
 	&__clear {
 		right: calc-em(42, 16);
 		color: $body-color;
+		text-decoration: none;
 
 		&:hover,
 		&:focus {

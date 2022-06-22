@@ -10,6 +10,15 @@
 		color: $gray-600;
 	}
 
+	a {
+		color: $body-color;
+		text-decoration: none;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
 	&__range {
 		small {
 			font-size: 1em;

@@ -3,6 +3,18 @@
 }
 
 .cart-upsell--pair {
+    .col-12::before {
+        content: '';
+        position: absolute;
+        width: 0; 
+        height: 0; 
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid $range-apc-light;
+        top: -10px;
+        right: 35%;
+    }
+
     &__content {
         background-color: $range-apc-light;
         display: flex;

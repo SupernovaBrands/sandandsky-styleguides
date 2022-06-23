@@ -17,4 +17,8 @@
     left: calc(50% - 0.5rem);
   }
 
+  &__article a {
+    color: $body-color;
+    text-decoration: none;
+  }
 }

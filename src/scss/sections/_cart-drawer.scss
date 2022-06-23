@@ -41,6 +41,11 @@
 		picture::before {
 			padding-top: percentage(95 / 75);
 		}
+
+		a {
+			text-decoration: none;
+			color: $body-color;
+		}
 	}
 
 	&__shopify-icon {

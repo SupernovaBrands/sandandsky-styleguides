@@ -49,6 +49,7 @@
 
 		a:not(.btn) {
 			color: $body-color;
+			text-decoration: none;
 		}
 
 	}
@@ -95,6 +96,12 @@
 		z-index: $zindex-sticky;
 		height: 100vh !important;
 		top: 0;
+	}
+
+	&__other-menu {
+		a {
+			color: $gray-600 !important;
+		}
 	}
 
 	input:checked {

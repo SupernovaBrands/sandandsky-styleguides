@@ -26,7 +26,7 @@ export default class CartUpsell extends React.Component {
 		const { upsell } = this.props;
 		return (
 			<div className="cart-upsell--pair px-lg-hg row d-none">
-				<div className="d-flex mb-2 mt-0 col-9 px-lg-hg ml-auto">
+				<div className="d-flex mb-2 mt-0 col-9 px-lg-hg ml-auto mb-g">
 					<span className="cart-upsell--pair__arrow font-size-sm d-flex justify-content-center px-5 py-1 rounded w-100 collapsed" data-toggle="collapse" data-target="#cartItemPair1">
 						Pairs best with
 						<SvgChevronUp className="svg ml-2" />

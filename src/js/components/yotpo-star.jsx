@@ -29,7 +29,7 @@ const YotpoStar = (props) => {
 			<SvgFull className="svg text-secondary" />
 			<span className="ml-1 mt-1 font-size-xs">{`${score.toFixed(1)}/5.0`}</span>
 			<span className="ml-1 mt-1 font-size-xs">
-				<a className="text-underline text-nowrap text-dark" href={`${props.productUrl}#write-a-review`}>{`${total} ${tStrings.yotpo.reviews}`}</a>
+				<a className="text-underline text-nowrap text-body" href={`${props.productUrl}#write-a-review`}>{`${total} ${tStrings.yotpo.reviews}`}</a>
 			</span>
 		</div>
 	) : (
@@ -38,7 +38,7 @@ const YotpoStar = (props) => {
 			{props.showScore && <span className="ml-1">{`${score.toFixed(1)} stars`}</span>}
 			{props.showTotal && (
 				<span className="ml-1">
-					<a className="text-underline text-dark" href={`${props.productUrl}#write-a-review`}>{`${total} ${tStrings.yotpo.reviews}`}</a>
+					<a className="text-underline text-body" href={`${props.productUrl}#write-a-review`}>{`${total} ${tStrings.yotpo.reviews}`}</a>
 				</span>
 			)}
 		</div>

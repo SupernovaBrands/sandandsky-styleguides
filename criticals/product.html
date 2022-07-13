@@ -646,7 +646,7 @@
 	<section class="container mb-4 mb-lg-7 mt-lg-5">
 		<div class="row align-items-start">
 			<div class="product-image-carousel__container col-12 col-lg-6 order-lg-2 px-0 px-lg-g">
-				<figure id="product-image-carousel" class="product-image-carousel carousel slide mb-0 no-gutters__in-container d-lg-flex flex-column" data-ride="carousel" data-interval="false" data-indicator="#product-image-carousel__indicator">
+				<figure id="product-image-carousel" class="product-image-carousel carousel slide mb-0 no-gutters__in-container d-none d-lg-flex flex-column" data-ride="carousel" data-interval="false" data-indicator="#product-image-carousel__indicator">
 					<div class="carousel-inner d-flex flex-nowrap order-lg-2" role="listbox">
 						<picture class="col-12 px-0 carousel-item active">
 							<source srcset="https://via.placeholder.com/1140x1418/?text=1" media="(min-width: 992px)">
@@ -679,35 +679,37 @@
 					</div>
 				</figure>
 			
+				<figure class="product-image-carousel carousel carousel--preview slide mb-0 no-gutters__in-container d-lg-none flex-column" data-ride="carousel" data-interval="false" data-indicator="#product-image-carousel__indicator">
+					<div class="carousel-inner d-flex flex-nowrap order-lg-2" role="listbox">
+						<div class="col-12 px-0 carousel-item active">
+							<img class="item__third" src="https://via.placeholder.com/750x750/?text=1" alt="Slide 1">
+							<img class="item__third" src="https://via.placeholder.com/750x750/?text=2" alt="Slide 2">
+						</div>
+						<div class="col-12 px-0 carousel-item ">
+							<img class="item__third" src="https://via.placeholder.com/750x750/?text=2" alt="Slide 2">
+							<img class="item__third" src="https://via.placeholder.com/750x750/?text=3" alt="Slide 3">
+						</div>
+						<div class="col-12 px-0 carousel-item">
+							<img class="item__third" src="https://via.placeholder.com/750x750/?text=3" alt="Slide 3">
+							<img class="item__third" src="https://via.placeholder.com/750x750/?text=4" alt="Slide 4">
+						</div>
+						<div class="col-12 px-0 carousel-item">
+							<img class="item__third" src="https://via.placeholder.com/750x750/?text=4" alt="Slide 4">
+							<img class="item__third" src="https://via.placeholder.com/750x750/?text=1" alt="Slide 1">
+						</div>
+					</div>
+			
+					<ol class="carousel-indicators d-lg-none position-static mt-2 mb-0 mx-g justify-content-end">
+						<li data-target="#product-image-carousel-ab-2" data-slide-to="0" class="rounded active"></li>
+						<li data-target="#product-image-carousel-ab-2" data-slide-to="1" class="rounded"></li>
+						<li data-target="#product-image-carousel-ab-2" data-slide-to="2" class="rounded"></li>
+						<li data-target="#product-image-carousel-ab-2" data-slide-to="3" class="rounded"></li>
+					</ol>
+				</figure>
+			
 				<picture class="product-image-carousel__badge position-absolute">
 					<img class="w-100" src="https://cdn.shopify.com/s/files/1/0277/5262/8295/files/BFCM_Roundel-BUNDLE.svg?v=1637899215">
 				</picture>
-			</div>
-			
-			<div id="product-image-carousel__indicator-scroll" class="carousel--scroll position-relative carousel px-g pt-g d-lg-none" data-scrollbar="false">
-				<div class="carousel-inner d-flex flex-nowrap row w-auto" role="listbox">
-					<div class="product-image-carousel__indicator__item carousel-item active col-12 px-lg-0 pb-lg-2 mw-100" data-target="#product-image-carousel" data-slide-to="0" data-index="1">
-						<img class="m-0 border img-fluid mx-auto d-block border-secondary" src="https://via.placeholder.com/150x150/?text=1" alt="Slide 1">
-					</div>
-					<div class="product-image-carousel__indicator__item carousel-item col-12 px-lg-0 pb-lg-2 mw-100" data-target="#product-image-carousel" data-slide-to="1" data-index="2">
-						<img class="m-0 border img-fluid mx-auto d-block border-white" src="https://via.placeholder.com/150x150/?text=2" alt="Slide 2">
-					</div>
-					<div class="product-image-carousel__indicator__item carousel-item col-12 px-lg-0 pb-lg-2 mw-100" data-target="#product-image-carousel" data-slide-to="2" data-index="3">
-						<img class="m-0 border img-fluid mx-auto d-block border-white" src="https://via.placeholder.com/150x150/?text=3" alt="Slide 3">
-					</div>
-					<div class="product-image-carousel__indicator__item carousel-item col-12 px-lg-0 pb-lg-2 mw-100" data-target="#product-image-carousel" data-slide-to="3" data-index="4">
-						<img class="m-0 border img-fluid mx-auto d-block border-white" src="https://via.placeholder.com/150x150/?text=4" alt="Slide 4">
-					</div>
-					<div class="product-image-carousel__indicator__item carousel-item col-12 px-lg-0 pb-lg-2 mw-100" data-target="#product-image-carousel" data-slide-to="4" data-index="5">
-						<img class="m-0 border img-fluid mx-auto d-block border-white" src="https://via.placeholder.com/150x150/?text=5" alt="Slide 5">
-					</div>
-					<div class="product-image-carousel__indicator__item carousel-item col-12 px-lg-0 pb-lg-2 mw-100" data-target="#product-image-carousel" data-slide-to="5" data-index="6">
-						<img class="m-0 border img-fluid mx-auto d-block border-white" src="https://via.placeholder.com/150x150/?text=6" alt="Slide 6">
-					</div>
-					<div class="product-image-carousel__indicator__item carousel-item col-12 px-lg-0 pb-lg-2 mw-100" data-target="#product-image-carousel" data-slide-to="6" data-index="7">
-						<img class="m-0 border img-fluid mx-auto d-block border-white" src="https://via.placeholder.com/150x150/?text=7" alt="Slide 7">
-					</div>
-				</div>
 			</div>
 			
 			<div id="product-image-carousel__indicator-vertical" class="d-none d-lg-block product-image-carousel__indicator col-12 col-lg-1 order-lg-1 carousel slide carousel--loop mb-1" data-interval="false" >

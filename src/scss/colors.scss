@@ -37,3 +37,5 @@
 @include make-box('white', #FFFFFF);
 @include make-box('gray-400', $gray-400);
 @include make-box('gray-100', $gray-100);
+@include make-box('gray-600', $gray-600);
+@include make-box('link', $link-black);

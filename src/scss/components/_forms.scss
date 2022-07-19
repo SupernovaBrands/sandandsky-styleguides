@@ -59,7 +59,7 @@ input[type=number] {
 	&__text {
 		top: 50%;
 		left: calc-em(17, 14);
-		color: $gray-400;
+		color: $gray-600;
 		transform: translateY(-50%);
 		transform-origin: left;
 		transition: transform 100ms linear,
@@ -124,7 +124,7 @@ input[type=number] {
 		height: 100%;
 		width: 100%;
 		background: #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.6 22.6'%3e%3cpath d='M1.9 5.4l9.4 9.4 9.4-9.4 1.9 1.9-11.3 11.3L0 7.3l1.9-1.9z'/%3e%3c/svg%3e") no-repeat right 1em center/1em 0.5625em;
-		
+
 		@include media-breakpoint-up(lg) {
 			width: calc(100% - #{$grid-gutter-width});
 			background: #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.6 22.6'%3e%3cpath d='M1.9 5.4l9.4 9.4 9.4-9.4 1.9 1.9-11.3 11.3L0 7.3l1.9-1.9z'/%3e%3c/svg%3e") no-repeat right 0.3em center/1em 0.5625em;

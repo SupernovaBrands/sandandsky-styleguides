@@ -54,6 +54,7 @@ h3, .h3 {
 @include text-emphasis-variant(".text-tsw", $range-tsw, true);
 @include text-emphasis-variant(".text-oil", $range-oil, true);
 @include text-emphasis-variant(".text-black", $black, true);
+@include text-emphasis-variant(".text-link", $link-black, true);
 
 .link-secondary {
 	color: $secondary;

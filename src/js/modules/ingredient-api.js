@@ -17,7 +17,7 @@ const listIngredients = (ingredientArray) => {
 			const upperCase = toCapitalize(ingName);
 			const speciality = ingredientArray[i].specialty;
 			const isLast = (ingredientArray.length - 1) === i;
-			serialize += `<a href="#" class="d-inline-block text-body text-capitalize mr-1" data-toggle="modal" data-target="#ingredientModal" data-name="${ingName}" data-note="${note}" data-speciality="${speciality}">${upperCase}${isLast ? '' : ','}</a>`;
+			serialize += `<a href="#" class="d-inline-block text-capitalize mr-1" data-toggle="modal" data-target="#ingredientModal" data-name="${ingName}" data-note="${note}" data-speciality="${speciality}">${upperCase}${isLast ? '' : ','}</a>`;
 		}
 	}
 	return serialize;

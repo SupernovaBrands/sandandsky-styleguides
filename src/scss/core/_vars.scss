@@ -61,13 +61,14 @@ $paragraph-margin-bottom: map-get($spacers, 1);
 $primary: #D7395A;
 $primary-light: #FFEFF2;
 $primary-dark: #AD1938;
+$link-black: #272727;
 
 // Products
-$range-apc: #FF6F8D;
+$range-apc: #D7395A;
 $range-apc-light: #FFEFF2;
 $range-aea: #CC3195;
 $range-aea-light: #F5E7F3;
-$range-tsw: #42A1CA;
+$range-tsw: #03567A;
 $range-tsw-light: #DFF4F9;
 $range-oil: #50973B;
 $range-oil-light: #E3F3E6;
@@ -88,7 +89,7 @@ $gray-600: #969696;
 $theme-colors: (
   'primary': $primary,
   'secondary': $secondary,
-  'gray-600': $gray-600
+  'gray-600': $gray-600,
 );
 
 $border-color: $gray-400;
@@ -217,7 +218,7 @@ $custom-control-indicator-checked-disabled-bg: $gray-400;
 $custom-control-indicator-border-color: white;
 
 // A
-$link-color: $primary;
+$link-color: $link-black;
 $link-decoration: underline;
 $link-hover-color: $primary;
 
@@ -240,3 +241,6 @@ $popover-box-shadow: 0 .25em .5em rgba(black, .2);
 $popover-border-width: 0;
 $popover-bg: $secondary;
 $popover-body-color: #fff;
+
+// Text
+$text-muted: $body-color;

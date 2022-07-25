@@ -507,7 +507,7 @@ const YotpoReviewWidget = (props) => {
 
 							<div className="input-group row mt-2">
 								<div className="col-6 col-lg-3">
-									<select className="custom-select my-2" name="scores" onChange={() => { onFilterChange(); }}>
+									<select className="custom-select my-2" name="scores" aria-label="Rating" onChange={() => { onFilterChange(); }}>
 										<option value="" selected>{tStrings.yotpo.rating}</option>
 										<option value="5">5 Stars</option>
 										<option value="4">4 Stars</option>
@@ -517,7 +517,7 @@ const YotpoReviewWidget = (props) => {
 									</select>
 								</div>
 								<div className="col-6 col-lg-3">
-									<select className="custom-select my-2" name="pictured" onChange={() => { onFilterChange(); }}>
+									<select className="custom-select my-2" name="pictured" aria-label="Pictured" onChange={() => { onFilterChange(); }}>
 										<option value="" selected>{tStrings.yotpo.imageVideo}</option>
 										<option value="false">{tStrings.yotpo.all}</option>
 										<option value="true">{tStrings.yotpo.withImageVideo}</option>
@@ -525,7 +525,7 @@ const YotpoReviewWidget = (props) => {
 								</div>
 								{customQs.map((q) => (
 									<div key={q.slug} className="col-6 col-lg-3">
-										<select className="custom-select my-2" name={q.slug} onChange={() => { onFilterChange(); }}>
+										<select className="custom-select my-2" aria-label={q.slug} name={q.slug} onChange={() => { onFilterChange(); }}>
 											<option value="" selected>{q.filter}</option>
 											{q.options.map((o) => (
 												<option key={o} value={o}>{o}</option>

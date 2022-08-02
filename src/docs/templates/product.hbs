@@ -17,12 +17,14 @@
 				{{!-- US --}}
 				{{!-- <div class="react-yotpo-star mb-2" data-product-id="3595105992809" data-show-total="true"></div> --}}
 				<p class="my-2 mb-lg-3">Smooth uneven texture and clear congestion with this triple-action facial exfoliator.</p>
-				<div class="bg-primary-light text-center py-2 mb-3 d-lg-flex justify-content-lg-center">
-					<p class="mb-0 mr-lg-1">Discover your perfect routine!</p>
-					<a href="#">Take our skin quiz</a>
-				</div>
+				{{> components/quiz-banner class="quiz-banner__primary"}}
 				<div class="product__main-form d-flex order-lg-3 mb-3">
 					<form class="product-form w-100" onsubmit="window.productFormSubmit(event)">
+						<p class="d-none product-variant__price mb-3">
+							<span class="mr-1 font-weight-bold text-linethrough text-muted">$152.80</span>
+							<span class="mr-1 font-weight-bold">$114.70</span>
+							<span class="text-primary">(Save 40%)</span>
+						</p>
 						<div class="swatch">
 							{{> components/product-variant name="product-variant" title="Single" value="1-x-sunny-honey-bali-bronzing-foam" image="https://via.placeholder.com/150x150/?text=1" checked=true variantid="39652548771911" available=true}}
 							{{> components/product-variant name="product-variant" title="Variant OOS" value="1-x-sunny-honey-bali-bronzing-foam-oos" image="https://via.placeholder.com/150x150/?text=1" variantid="39652548771911" available=false}}
@@ -57,6 +59,7 @@
 				</div>
 				{{> compounds/product-waitlist}}
 				<p class="mb-3 font-size-sm order-lg-4">Afterpay</p>
+				{{> components/quiz-banner class="quiz-banner__abtest order-lg-5 d-none"}}
 				<p class="mb-3 font-size-sm order-lg-5 d-flex align-items-center flex-wrap product__klarna">
 					<span>or 4 interest-free installments of <strong>£9.23</strong> by</span>
 					<img class="svg font-size-sm ml-1" src="icons/logo-klarna.svg" replace-to-svg />

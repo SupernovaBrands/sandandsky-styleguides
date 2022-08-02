@@ -25,10 +25,6 @@ const adjustScrollThumb = (thumb, inner, scrollParent) => {
 	}
 };
 
-window.addEventListener('resize', () => {
-	carousels.forEach((s) => s.dispatchEvent(new CustomEvent('adjustThumb')));
-});
-
 $('.carousel--scroll').each((index, carousel) => {
 	const inner = carousel.querySelector('.carousel-inner');
 	const scrollbar = carousel.querySelector('.scrollbar');
@@ -140,8 +136,4 @@ $('.carousel--scroll').each((index, carousel) => {
 	if (nextButton) {
 		nextButton.addEventListener('mousedown', scrollItem('right'));
 	}
-
-	window.addEventListener('resize', function () {
-		checkButton();
-	});
 });

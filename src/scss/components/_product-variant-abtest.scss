@@ -1,0 +1,72 @@
+html.uk-store {
+	.variant-box--abtest {
+
+		.product-variant {
+			margin-bottom: 0 !important;
+			color: $black;
+
+			&__pricing {
+				display: block !important;
+
+				&-item {
+					@include font-size($h1-font-size);
+				}
+			}
+
+			&__price-label {
+				display: none;
+			}
+
+			&__tag {
+				display: inline !important;
+			}
+
+			.custom-control-input {
+
+				~ .active-border {
+					display: none;
+				}
+
+				~ .custom-control-label .product-variant__description {
+					display: none;
+					margin-bottom: 0 !important;
+				}
+
+				&:checked ~ .custom-control-label {
+					&::before {
+						box-shadow: inset 0px 0px 0px 3px $white;
+					}
+
+					.product-variant__description {
+						display: block;
+					}
+				}
+			}
+
+			.custom-control-label {
+				padding-left: calc-em(35);
+				padding-top: 0 !important;
+
+				&:before {
+					width: calc-em(20);
+					height: calc-em(20);
+					left: 0;
+					top: 0;
+					border-color: $primary;
+				}
+			}
+		}
+
+		.quiz-banner__primary {
+			display: none !important;
+		}
+
+		.quiz-banner__abtest {
+			display: block !important;
+
+			@include media-breakpoint-up(lg) {
+				display: flex !important;
+			}
+		}
+	}
+}

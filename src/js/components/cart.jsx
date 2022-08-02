@@ -73,26 +73,12 @@ export default class Cart extends React.Component {
 		document.addEventListener('snCart.requestComplete', this.getDiscountAndShipping);
 		document.addEventListener('snCart.requestDone', this.setCartCount);
 		document.addEventListener('snCart.recentProducts', this.setRecentProducts);
-
-		if (tSettings.extraButtons) {
-			setTimeout(() => {
-				this.modifyExtraButtons();
-				window.addEventListener('resize', this.checkExtraButtons);
-				this.trackPaypal();
-			}, 3000);
-			this.injectWalletListener();
-		}
 	}
 
 	componentWillUnmount() {
 		document.removeEventListener('snCart.requestComplete', this.getDiscountAndShipping);
 		document.removeEventListener('snCart.requestDone', this.setCartCount);
 		document.removeEventListener('snCart.recentProducts', this.setRecentProducts);
-
-		if (tSettings.extraButtons) {
-			window.removeEventListener('resize', this.checkExtraButtons);
-			window.removeEventListener('blur');
-		}
 	}
 
 	setCartCount = (e) => {

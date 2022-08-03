@@ -15,6 +15,10 @@
 			}
 		}
 
+		.col-lg-banner img {
+			max-width: calc-em(219);
+		}
+
 		.product-card__text:is(a) {
 			min-height: calc-em(40);
 		}

@@ -6,19 +6,19 @@ html.uk-store {
 			color: $black;
 
 			&__pricing {
-				@include font-size($h1-font-size);
+				display: block !important;
+
+				&-item {
+					@include font-size($h1-font-size);
+				}
 			}
 
-			&__price {
+			&__price-label {
 				display: none;
 			}
 
 			&__tag {
 				display: inline !important;
-			}
-
-			&__title {
-				margin-bottom: 0 !important;
 			}
 
 			.custom-control-input {

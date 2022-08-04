@@ -11,6 +11,10 @@
 	&__aea-light {
 		background-color: $range-aea-light;
 	}
+
+	&__supercharge img {
+		max-width: calc-em(120);
+	}
 }
 
 .howto-gift__step {

@@ -63,6 +63,20 @@
 	&__sidebar {
 		grid-area: sidebar;
 	}
+
+	&__newsletter--content  {
+		background-image: url(asset-url('blog-newsletter-pattern-bg.svg'));
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	&__newsletter--submitted svg {
+		height: calc-em(14);
+
+		@include media-breakpoint-down(md) {
+			margin-left: -1.6em;
+		}
+	}
 }
 
 @include media-breakpoint-down(md) {

@@ -139,3 +139,7 @@ if ($('.modal--waitlist').length > 0 || $('.product__waitlist-form').length > 0)
 if ($('.announcement-bar__timer').length > 0) {
 	import(/* webpackChunkName: 'announcement-timer' */ '~mod/announcement-timer');
 }
+
+if ($('.blog-post-grid__newsletter').length > 0) {
+	import(/* webpackChunkName: 'blog-newsletter' */ '~mod/blog-newsletter');
+}

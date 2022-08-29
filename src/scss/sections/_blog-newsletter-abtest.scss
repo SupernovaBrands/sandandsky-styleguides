@@ -1,0 +1,12 @@
+html.au-store {
+    .blog-newsletter-abtest {
+        .blog-post-grid__newsletter picture {
+            display: block !important;
+        }
+
+        .blog-post-grid__newsletter--content {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+    }
+}

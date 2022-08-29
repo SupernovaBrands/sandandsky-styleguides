@@ -65,9 +65,15 @@
 	}
 
 	&__newsletter--content  {
-		background-image: url(asset-url('blog-newsletter-pattern-bg.svg'));
+		background-image: url(asset-url('blog-newsletter-pattern-bg-desktop.svg'));
 		background-size: contain;
 		background-repeat: no-repeat;
+		background-position: right;
+
+		@include media-breakpoint-down(md) {
+			background-image: url(asset-url('blog-newsletter-pattern-bg-mobile.svg'));
+			background-position: bottom;
+		}
 	}
 
 	&__newsletter--submitted svg {

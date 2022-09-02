@@ -8,41 +8,31 @@
 			<button class="navbar-toggler" type="button">
 				<span class="d-block"></span>
 			</button>
-			<ul class="navbar-nav align-items-center d-none d-lg-flex navbar__main">
-				<li class="nav-item nav-item--mega-menu">
-					<a href="#" class="nav-link font-weight-bold d-flex align-items-baseline mr-1 m-0 pl-0">
-						Shop
-						<img class="svg font-size-xs ml-1" src="icons/chevron-down.svg" replace-to-svg />
-					</a>
-					{{> compounds/mega-menu-shop}}
-				</li>
-				<li class="nav-item nav-item--mega-menu">
-					<a class="nav-link font-weight-bold d-flex align-items-baseline m-0" href="#">
-						About
-						<img class="svg font-size-xs ml-1" src="icons/chevron-down.svg" replace-to-svg />
-					</a>
-					{{> compounds/mega-menu-about}}
+			<ul class="navbar-nav align-items-center d-none d-lg-flex">
+				<li class="nav-item">
+					<a href="#" class="nav-link m-0 pl-0">About Us</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link h4 m-0 font-weight-bold" href="#">Blog</a>
+					<a href="#" class="nav-link m-0">Rewards</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link h4 m-0 font-weight-bold" href="#">Sweepstakes</a>
+					<a href="#" class="nav-link m-0">Blog</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link m-0">Waitlist & Win</a>
 				</li>
 			</ul>
-
-			{{> compounds/navbar-main-abtest}}
 
 			<a href="#" class="navbar-brand mx-auto">
 				<img class="svg" src="icons/logo-ss.svg" replace-to-svg />
 			</a>
-			<ul class="navbar-nav d-lg-flex justify-content-end flex-row navbar__main-right">
+			<ul class="navbar-nav d-lg-flex justify-content-end flex-row">
 				<li class="nav-item d-none d-lg-block">
-					<a class="nav-link h4 font-weight-bold m-0" href="#" data-cy="tracking-order">Track My Order</a>
+					<a class="nav-link m-0" href="#" data-cy="tracking-order">Track My Order</a>
 				</li>
 				<li class="nav-item d-none d-lg-block">
 					<div class="dropdown dropdown--onhover">
-						<a class="dropdown-toggle font-weight-bold m-0 nav-link d-flex align-items-baseline" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a class="dropdown-toggle m-0 nav-link d-flex align-items-baseline" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							US (USD)
 							<img class="svg font-size-xs ml-1" src="icons/chevron-down.svg" replace-to-svg />
 						</a>
@@ -137,8 +127,9 @@
 	{{> compounds/secondary-nav gridclass="px-0"}}
 	{{/if}}
 
-	{{> compounds/nav-category-abtest}}
-	{{> compounds/nav-range-abtest}}
+	{{#unless hideCategoryNav}}
+	{{> compounds/nav-category}}
+	{{/unless}}
 
 	{{> components/tooltip}}
 </header>

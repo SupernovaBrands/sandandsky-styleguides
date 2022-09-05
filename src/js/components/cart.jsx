@@ -690,7 +690,7 @@ export default class Cart extends React.Component {
 
 								{upsellData && (<CartUpsellTop upsell={upsellData} onAddUpsell={this.onAddUpsell} />)}
 
-								<div className="list-unstyled a" role="list">
+								<div className="list-unstyled" role="list">
 									{cart.items.map((item) => !!item.models && !item.models.isManualGwp && (
 										<CartItem
 											key={item.key}
@@ -704,24 +704,6 @@ export default class Cart extends React.Component {
 										/>
 									))}
 								</div>
-
-								{upsellData && (<CartUpsell upsell={upsellData} onAddUpsell={this.onAddUpsell} />)}
-
-								{manualGwp.enabled && (
-									<>
-										<hr />
-										<CartManualGwp
-											title={manualGwp.title}
-											maxSelected={manualGwp.maxSelected}
-											selectedKey={manualGwp.selectedKey}
-											items={manualGwp.items}
-											onAddItem={this.onToggleManualGwp}
-											onRemoveItem={this.onToggleManualGwp}
-											loading={loadingManualGwp.loading}
-											processingId={loadingManualGwp.id}
-										/>
-									</>
-								)}
 
 								<hr />
 								<CartDiscountForm
@@ -769,6 +751,24 @@ export default class Cart extends React.Component {
 
 									<p className="col-12 font-size-sm mt-2 mb-2 text-muted">{tStrings.cartTaxMessage}</p>
 								</div>
+
+								{upsellData && (<CartUpsell upsell={upsellData} onAddUpsell={this.onAddUpsell} />)}
+
+								{manualGwp.enabled && (
+									<>
+										<hr />
+										<CartManualGwp
+											title={manualGwp.title}
+											maxSelected={manualGwp.maxSelected}
+											selectedKey={manualGwp.selectedKey}
+											items={manualGwp.items}
+											onAddItem={this.onToggleManualGwp}
+											onRemoveItem={this.onToggleManualGwp}
+											loading={loadingManualGwp.loading}
+											processingId={loadingManualGwp.id}
+										/>
+									</>
+								)}
 
 								<CartExtras totalPrice={totalPrice} />
 							</form>

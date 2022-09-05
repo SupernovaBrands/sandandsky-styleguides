@@ -5,8 +5,10 @@ html.au-store {
         }
 
         .blog-post-grid__newsletter--content {
-            flex: 0 0 75%;
-            max-width: 75%;
+            @include media-breakpoint-up(lg) {
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
         }
     }
 }

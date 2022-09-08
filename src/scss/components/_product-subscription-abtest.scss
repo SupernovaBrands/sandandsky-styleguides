@@ -27,7 +27,8 @@ html.us-store {
 				&::before {
 					border-color: $secondary;
 					left: 0;
-					top: map-get($spacers, 1);
+					top: 50%;
+					transform: translateY(-50%);
 					border-radius: calc-em(2);
 				}
 

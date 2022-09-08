@@ -1,0 +1,52 @@
+html.us-store {
+	.product-subscription--abtest {
+
+		.product-variant--subscription-checked {
+			.product-variant__title,
+			.product-variant__price {
+				display: none !important;
+
+				&-subscription {
+					display: flex !important;
+				}
+			}
+		}
+
+		.product-variant--subscription {
+			display: block !important;
+
+			.embed-responsive {
+				padding-top: calc-em(105);
+				left: 0;
+				z-index: -1;
+			}
+
+			.custom-control-label {
+				padding-left: calc-em(20);
+
+				&::before {
+					border-color: $secondary;
+					left: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					border-radius: calc-em(2);
+				}
+
+				&::after {
+					display: none;
+				}
+			}
+
+			&__selector {
+				.subscription-label {
+					border: 2px solid $gray-400;
+				}
+
+				.custom-control-input:checked ~ .subscription-label {
+					background-color: $secondary-light;
+					border: 2px solid $secondary;
+				}
+			}
+		}
+	}
+}

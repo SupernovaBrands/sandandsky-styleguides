@@ -8,6 +8,9 @@
 			<span class="d-none product-variant__tag rounded bg-primary text-white font-size-sm font-weight-normal px-1 ml-1">Save 40%</span>
 			{{/if}}
 		</p>
+		{{#if subscription}}
+		<p class="d-none mb-2 font-weight-bold product-variant__title-subscription">{{subscriptionTitle}}</p>
+		{{/if}}
 		<p class="mb-2 product-variant__description">1x Hydration Boost Cream Moisturiser</p>
 		{{#if subtitle}}
 		<p class="mb-2 product-variant__description">1x Hydration Boost Cream Moisturiser</p>
@@ -21,5 +24,16 @@
 			<span class="text-secondary font-weight-bold">(SAVE 30%)</span>
 			{{/if}}
 		</p>
+		{{#if subscription}}
+		<p class="d-none mb-0 product-variant__price-subscription">
+			{{#if compare}}
+			<span class="text-linethrough text-muted">$89.80</span>
+			{{/if}}
+			<span class="font-weight-bold">$39.73/bimonthly</span>
+			{{#if compare}}
+			<span class="text-secondary font-weight-bold">(SAVE 30%)</span>
+			{{/if}}
+		</p>
+		{{/if}}
 	</label>
 </div>

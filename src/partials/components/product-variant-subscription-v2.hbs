@@ -1,30 +1,22 @@
-<div class="product-variant product-variant--subscription product-variant--subscription--v1 mb-4 position-relative">
-	<figure>
+<div class="{{ class }} product-variant product-variant--subscription mb-4 position-relative mx-ng mx-md-0">
+	<figure class="my-2 my-lg-1">
 		<noscript class="loading-lazy">
 			<picture class="embed-responsive bg-shimmer position-absolute">
-				<img src="../images/subscription-tsw.jpg" alt="Slide {{@index}}" class="d-block embed-responsive-item fit--cover" loading="lazy">
+				<img src="https://via.placeholder.com/468x105/FFEFF2?text=banner" class="d-block embed-responsive-item fit--cover" loading="lazy">
 			</picture>
 		</noscript>
-		<figcaption class="pt-3 px-3">
-			<p class="font-size-sm"><span class="text-secondary">Save 15% instantly +</span> have your skincare staple<br/>automatically replenished!</p>
-			<span class="text-linethrough text-muted">$89.80</span>
-			<span class="product-variant__price font-weight-bold">$44.90</span>
+		<figcaption class="p-3">
+			<p class="text-secondary mb-0">Save 20% off + free shipping</p>
+			<p class="font-size-sm">when you subscribe!</p>
 			<div class="custom-checkbox d-flex align-items-center">
 				<input id="{{name}}-{{value}}" class="custom-control-input" type="checkbox" name="{{name}}" value="{{value}}" {{#if checked}}checked{{/if}} data-image="{{image}}" />
-				<label for="{{name}}-{{value}}" class="custom-control-label pl-3 pt-1 text-secondary font-size-sm font-weight-bold">
-					Subscribe now 
+				<label for="{{name}}-{{value}}" class="custom-control-label pl-3 py-1 font-weight-bold">
+					<span class="font-size-sm ml-1">Let’s do it!</span>
 				</label>
-				<a class="text-primary ml-1 d-inline-flex" data-container="body" 
-				data-toggle="popover" data-placement="top" 
-				data-trigger="hover"
-				data-content="We’ll send your products and bill you every 2 months. Cancel anytime, with no hassle! ❤️" 
-				data-html="true">
-					<img class="svg text-secondary" src="icons/help.svg" replace-to-svg />
-				</a>
 			</div>
 		</figcaption>
 	</figure>
-	<a href="javascript:void(0)" class="ml-3 mt-3 mt-lg-2 text-underline font-size-sm d-inline-block" data-toggle="modal" data-target="#subscriptionDetail">
+	<a href="javascript:void(0)" class="px-g px-lg-0 text-underline font-size-sm d-inline-block" data-toggle="modal" data-target="#subscriptionDetail">
 		<img class="svg mr-1 font-size-lg" src="icons/recurring.svg" replace-to-svg/> Subscriptions Detail
 	</a>
 </div>

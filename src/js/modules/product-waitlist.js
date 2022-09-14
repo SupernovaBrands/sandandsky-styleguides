@@ -35,4 +35,4 @@ const formListener = () => {
 };
 
 formListener();
-$('.modal--waitlist').modal('show');
+// $('.modal--waitlist').modal('show');

@@ -19,20 +19,6 @@
         }
     }
 
-    .modal-content {
-        top: 0;
-        background-size: contain;
-
-        @include media-breakpoint-up(lg) {
-            top: auto;
-            background: white;
-        }
-    }
-
-    .bottom-close {
-        background-color: $range-apc-light;
-    }
-
     .validated:after {
         position: absolute;
         content: url(icon-svg('check-circle.svg', #{$primary}, #{$font-size-xs}));
@@ -59,15 +45,6 @@
     }
 
     @include media-breakpoint-down(md) {
-        .modal-content {
-            top: auto;
-            position: relative !important;
-        }
-
-        .bottom-close {
-            display: none !important;
-        }
-
         .close {
             display: block !important;
         }

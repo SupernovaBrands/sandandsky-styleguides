@@ -115,6 +115,22 @@
 	.mobile-nav-show & {
 		transform: translateX(0%);
 	}
+
+	&__banner {
+		div:not(.w-100) {
+			width: calc(100% - 10px);
+		}
+
+		.banner-decoration {
+			top: 0;
+			right: -10px;
+			height: 100%;
+		}
+
+		svg {
+			height: 2em;
+		}
+	}
 }
 
 .mobile-menu-type-2 {

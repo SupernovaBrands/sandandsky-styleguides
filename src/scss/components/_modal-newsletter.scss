@@ -33,13 +33,6 @@
         background-color: $range-apc-light;
     }
 
-    @include media-breakpoint-down(md) {
-
-        .countries-options__input {
-            border-left: 1px solid $gray-600;
-        }
-    }
-
     .validated:after {
         position: absolute;
         content: url(icon-svg('check-circle.svg', #{$primary}, #{$font-size-xs}));
@@ -94,10 +87,16 @@
         .modal-content__wrapper {
             margin-bottom: 0 !important;
             background-color: $secondary-light;
+        }
 
-            &-title {
-                @include font-size($h1-font-size);
-            }
+        .countries-options__input {
+            border-left: 1px solid $gray-600;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .modal-content__wrapper-title {
+            @include font-size($h1-font-size);
         }
     }
 

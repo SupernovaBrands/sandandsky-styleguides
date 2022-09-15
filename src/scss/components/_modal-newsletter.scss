@@ -11,6 +11,11 @@
         opacity: 1;
     }
 
+    .form-control {
+        border-color: $gray-500;
+        height: calc-em(50, 14);
+    }
+
     .list-check li:before {
         content: url(icon-svg('checklist.svg', #{white}, #{calc-em(12, 16)}));
 
@@ -22,24 +27,21 @@
     .validated:after {
         position: absolute;
         content: url(icon-svg('check-circle.svg', #{$primary}, #{$font-size-xs}));
-        width: $font-size-xs;
-        height: $font-size-xs;
         right: calc-em(10);
-        bottom: 1.1em;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .validated {
         &.row {
             &:after {
                 right: calc-em(17);
-                bottom: 1.4em;
             }
         }
 
         &.col-6 {
             &:after {
                 right: calc-em(24);
-                bottom: 1.2em;
             }
         }
     }
@@ -61,13 +63,12 @@
             content: ' ';
         }
 
-        .modal-content__wrapper {
-            margin-bottom: 0 !important;
-            background-color: $secondary-light;
-        }
-
         .countries-options__input {
             border-left: 1px solid $gray-600;
+        }
+
+        .modal-content__wrapper-bg {
+            background-color: $secondary-light;
         }
     }
 
@@ -79,11 +80,15 @@
 
     .countries-options {
         &__label {
-            border: 1px solid $gray-600;
+            border: 1px solid $gray-500;
             height: 100%;
             width: calc(100% - 5px);
             padding: calc-em(15) $grid-gutter-width $grid-gutter-width 0;
             background: #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.6 22.6'%3e%3cpath d='M1.9 5.4l9.4 9.4 9.4-9.4 1.9 1.9-11.3 11.3L0 7.3l1.9-1.9z'/%3e%3c/svg%3e") no-repeat right 0.7em center/1em 0.5625em;
+
+            @include media-breakpoint-up(lg) {
+                background-position: right 1em center;
+            }
         }
 
         &__select {

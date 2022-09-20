@@ -78,6 +78,10 @@
         }
     }
 
+    .modal-content__wrapper-copy {
+        min-height: calc-em(54);
+    }
+
     .countries-options {
         &__label {
             border: 1px solid $gray-500;

@@ -64,6 +64,12 @@
 		grid-area: sidebar;
 	}
 
+	&__newsletter {
+		input::placeholder {
+			color: $link-black;
+		}
+	}
+
 	&__newsletter--submitted {
 		button {
 			@include media-breakpoint-down(md) {

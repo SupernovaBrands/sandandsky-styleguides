@@ -64,11 +64,25 @@
 		grid-area: sidebar;
 	}
 
-	&__newsletter--submitted svg {
-		height: calc-em(14);
+	&__newsletter {
+		input::placeholder {
+			color: $link-black;
+		}
+	}
 
-		@include media-breakpoint-down(md) {
-			margin-left: -1.6em;
+	&__newsletter--submitted {
+		button {
+			@include media-breakpoint-down(md) {
+				width: 100%;
+			}
+		}
+
+		svg {
+			height: calc-em(18);
+
+			@include media-breakpoint-down(md) {
+				margin-left: -1.6em;
+			}
 		}
 	}
 }

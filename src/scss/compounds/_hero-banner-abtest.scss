@@ -13,6 +13,13 @@ html.us-store {
 			bottom: auto;
 			top: calc-em(145.5);
 		}
+
+		@include media-breakpoint-up(lg) {
+			.hero-banner__note {
+				position: absolute;
+				bottom: 0;
+			}
+		}
 	}
 
 	@include media-breakpoint-up(lg) {
@@ -22,13 +29,7 @@ html.us-store {
 			}
 
 			&__text {
-				grid-column-start: col-start 1;
 				margin-right: map-get($spacers, 5);
-			}
-
-			&__note {
-				position: absolute;
-				bottom: 0;
 			}
 		}
 
@@ -48,15 +49,6 @@ html.us-store {
 				picture {
 					grid-column-start: col-start 1;
 					grid-column-end: span 9;
-				}
-
-				&__text {
-					grid-column-start: col-start 1;
-				}
-
-				&__note {
-					position: absolute;
-					bottom: 0;
 				}
 			}
 		}

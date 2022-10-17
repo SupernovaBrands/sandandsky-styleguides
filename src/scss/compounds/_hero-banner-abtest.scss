@@ -9,11 +9,6 @@ html.us-store {
 			display: block !important;
 		}
 
-		.carousel-control {
-			bottom: auto;
-			top: calc-em(145.5);
-		}
-
 		@include media-breakpoint-up(lg) {
 			.hero-banner__note {
 				position: absolute;

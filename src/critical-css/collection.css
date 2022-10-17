@@ -32,12 +32,6 @@ h1{font-size:1.5em}
 .col{flex-basis:0;flex-grow:1;max-width:100%}
 .col-6{flex:0 0 50%;max-width:50%}
 .col-12{flex:0 0 100%;max-width:100%}
-.form-control{display:block;width:100%;height:calc(1.25em + 1.75em + 2px);padding:.875em 1em;font-size:1em;font-weight:400;line-height:1.25;color:#484848;background-color:#fff;background-clip:padding-box;border:1px solid #969696;border-radius:.25rem}
-.form-control::-ms-expand{background-color:transparent;border:0}
-.form-control:-moz-focusring{color:transparent;text-shadow:0 0 0 #484848}
-.form-control::-moz-placeholder{color:#cecece;opacity:1}
-.form-control:-ms-input-placeholder{color:#cecece;opacity:1}
-.form-group{margin-bottom:.3125rem}
 .btn{display:inline-block;font-weight:700;color:#484848;text-align:center;text-decoration:none;vertical-align:middle;background-color:transparent;border:1px solid transparent;padding:.75em 2em;font-size:.875em;line-height:1.25;border-radius:.25rem}
 .btn-primary{background-color:#d7395a;border-color:#d7395a}
 .btn-lg{padding:.875em 1.875em;font-size:1em;line-height:1.25;border-radius:.25rem}
@@ -152,8 +146,6 @@ h3{font-weight:400}
 .text-underline{text-decoration:underline}
 .font-size-sm{font-size:.875em!important}
 .font-size-xs{font-size:.75em!important}
-.text-aea{color:#cc3195!important}
-.text-tsw{color:#03567a!important}
 .fit--cover{-o-object-fit:cover;object-fit:cover}
 @-webkit-keyframes gradient-shimmer{
 0%{background-position:100% 50%}
@@ -195,7 +187,6 @@ select+.floating-label__text{top:.9375em;transform:translateY(-50%) scale(.85)}
 .product-card .badge{top:.41667em;left:1.04167em;padding:.41667em .83333em}
 .product-card__text{font-size:.875em;text-decoration:none;color:#272727}
 .product-card__text-sm{font-size:.75em}
-.img--hover{opacity:0;visibility:hidden}
 .main-header{z-index:1030;width:100%;top:0;position:relative}
 @media (max-width:1259.98px){
 .main-header .h4{font-size:1em}

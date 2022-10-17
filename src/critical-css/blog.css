@@ -1,6 +1,6 @@
 *,::after,::before{box-sizing:border-box}
 html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%}
-article,aside,figcaption,figure,header,nav{display:block}
+article,figcaption,figure,header,nav{display:block}
 body{margin:0;font-family:sofia-pro,"Helvetica Neue",Arial,sans-serif;font-size:1em;font-weight:400;line-height:1.25;color:#484848;text-align:left;background-color:#fff}
 h1,h2,h3,h4,h5{margin-top:0}
 p{margin-top:0;margin-bottom:.3125rem}

@@ -34,7 +34,7 @@ html.us-store {
 		}
 
 		.hero-banner--abtest-v2 {
-			.hero-carousel--fullimage .carousel-indicators {
+			.carousel-indicators {
 				justify-content: flex-start;
 				left: map-get($spacers, 5);
 			}

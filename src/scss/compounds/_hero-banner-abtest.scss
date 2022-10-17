@@ -1,18 +1,53 @@
 html.us-store {
-	.hero-banner--abtest {
+	.hero-banner--abtest-v1,
+	.hero-banner--abtest-v2 {
 		.hero-carousel:not(.hero-carousel--abtest) {
 			display: none !important;
+		}
+
+		.hero-carousel--abtest {
+			display: block !important;
 		}
 
 		.carousel-control {
 			bottom: auto;
 			top: calc-em(145.5);
 		}
+	}
 
-		@include media-breakpoint-up(lg) {
+	@include media-breakpoint-up(lg) {
+		.hero-banner--abtest-v1 .hero-banner {
+			figcaption {
+				grid-column-end: span 4;
+			}
+
+			&__text {
+				grid-column-start: col-start 1;
+				margin-right: map-get($spacers, 5);
+			}
+
+			&__note {
+				position: absolute;
+				bottom: 0;
+			}
+		}
+
+		.hero-banner--abtest-v2 {
+			.hero-carousel--fullimage .carousel-indicators {
+				justify-content: flex-start;
+				left: map-get($spacers, 5);
+			}
+
 			.hero-banner {
+
 				figcaption {
-					grid-column-end: span 4;
+					grid-column-start: col-start 10;
+					grid-column-end: span 3;
+				}
+
+				picture {
+					grid-column-start: col-start 1;
+					grid-column-end: span 9;
 				}
 
 				&__text {
@@ -24,7 +59,6 @@ html.us-store {
 					bottom: 0;
 				}
 			}
-
 		}
 	}
 }

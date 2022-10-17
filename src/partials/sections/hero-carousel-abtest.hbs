@@ -1,4 +1,4 @@
-<section id="hero-carousel-abtest{{#if num}}{{num}}{{/if}}{{#if num}}{{num}}{{/if}}" class="hero-carousel hero-carousel--abtest {{#if fullimage}}hero-carousel--fullimage{{/if}} carousel slide {{ class }}" data-interval="7000" data-pause="false">
+<section id="hero-carousel-abtest{{#if num}}{{num}}{{/if}}{{#if num}}{{num}}{{/if}}" class="d-none hero-carousel hero-carousel--abtest {{#if fullimage}}hero-carousel--fullimage{{/if}} carousel slide {{ class }}" data-interval="7000" data-pause="false">
 	<ol class="carousel-indicators {{#if indicator-timer}}carousel-indicators--timer{{/if}} mb-0 d-none d-lg-flex">
 		{{#times totalSlide}}
 		<li data-target="#hero-carousel-abtest{{#if num}}{{num}}{{/if}}" data-slide-to="{{minus @index 1}}" class="border-0 mb-3 mx-1 {{#if @first}}active{{/if}}"></li>

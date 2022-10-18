@@ -1,12 +1,31 @@
 html.us-store {
+	.hero-banner--abtest-v2 .hero-carousel--abtest {
+		.embed-responsive::before {
+			padding-top: percentage(750 / 828);
+			@include media-breakpoint-up(lg) {
+			  padding-top: percentage(490 / 870);
+			}
+		}
+	}
+
+	.hero-banner--abtest-v1 .hero-carousel--abtest {
+		.embed-responsive::before {
+			padding-top: percentage(750 / 828);
+			@include media-breakpoint-up(lg) {
+			  padding-top: percentage(490 / 870);
+			}
+		}
+	}
+
 	.hero-banner--abtest-v1,
 	.hero-banner--abtest-v2 {
 		.hero-carousel:not(.hero-carousel--abtest) {
 			display: none !important;
 		}
 
-		.hero-carousel--abtest {
-			display: block !important;
+		.carousel-control {
+			bottom: auto;
+			top: calc-em(145.5);
 		}
 
 		@include media-breakpoint-up(lg) {
@@ -17,8 +36,16 @@ html.us-store {
 		}
 	}
 
+	.hero-banner--abtest-v1 .hero-carousel--abtest-v1 {
+		display: block !important;
+	}
+
+	.hero-banner--abtest-v2 .hero-carousel--abtest-v2 {
+		display: block !important;
+	}
+
 	@include media-breakpoint-up(lg) {
-		.hero-banner--abtest-v1 .hero-banner {
+		.hero-carousel--abtest-v1 .hero-banner {
 			figcaption {
 				grid-column-end: span 4;
 			}
@@ -28,7 +55,7 @@ html.us-store {
 			}
 		}
 
-		.hero-banner--abtest-v2 {
+		.hero-carousel--abtest-v2 {
 			.carousel-indicators {
 				justify-content: flex-start;
 				left: map-get($spacers, 5);

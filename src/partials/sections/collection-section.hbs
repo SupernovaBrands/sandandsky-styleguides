@@ -13,14 +13,13 @@
 			<img src="{{ imageUrl }}/decor-range-{{ range }}.svg" alt="Decor" class="mt-n3" loading="lazy">
 			</noscript>
 		</div>
-		{{> compounds/product-card class="col-6 col-lg-3 mb-3" color=color}}
-		{{> compounds/product-card class="col-6 col-lg-3 mb-3" title="Hydration Boost Cream Moisturiser (2 lines)" color=color}}
-		{{> compounds/product-card class="col-6 col-lg-3 mb-3" color=color}}
-		{{> compounds/product-card class="col-6 col-lg-3 mb-3 d-lg-none" color=color}}
-	</div>
 
-	<div class="d-flex justify-content-center d-lg-none mb-5">
-		<a href="" class="btn btn-lg btn-outline-primary">{{ button }}</a>
+		{{#> sections/carousel-scroll id=range class="collection-section__ranges-products mb-5 my-lg-0" no-scrollbar="true" home-range-section="true" }}
+			{{> compounds/product-card class="carousel-item col-6 col-lg-4 mb-3" color=color home-range-section="true"}}
+			{{> compounds/product-card class="carousel-item col-6 col-lg-4 mb-3" title="Hydration Boost Cream Moisturiser (2 lines)" color=color home-range-section="true"}}
+			{{> compounds/product-card class="carousel-item col-6 col-lg-4 mb-3" color=color home-range-section="true"}}
+			{{> compounds/product-card class="carousel-item col-6 col-lg-4 mb-3 d-lg-none" color=color home-range-section="true"}}
+		{{/ sections/carousel-scroll}}
 	</div>
 
 	<hr>

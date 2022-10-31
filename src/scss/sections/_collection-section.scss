@@ -7,6 +7,10 @@
 				padding-top: 522 / 900 * 100%;
 			}
 		}
+
+		&__ranges-products {
+			@include make-col(3, 5);
+		}
 	}
 
 	&__header .svg {

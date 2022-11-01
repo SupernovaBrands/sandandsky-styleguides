@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{{> html-head title="Product Card" }}
+</head>
+
+<body>
+	<div class="container px-g mt-4">
+		<h1>Product Card</h1>
+
+		<div class="row">
+			{{> compounds/product-card-abtest v1="v1"}}
+			{{> compounds/product-card-abtest v2="v2"}}
+			{{> compounds/product-card-abtest v3="v3" color="66b3df" badge="Best Seller"}}
+			{{> compounds/product-card-abtest v4="v4" color="66b3df" badge="Best Seller"}}
+		</div>
+	</div>
+	{{> js jquery=true main=true }}
+</body>
+
+</html>

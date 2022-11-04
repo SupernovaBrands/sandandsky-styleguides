@@ -2,4 +2,11 @@
     .rounded-pill-left {
         border-radius: $rounded-pill 0 0 $rounded-pill !important;
     }
+
+    .btn-outline-white {
+        background: white;
+        &:hover {
+            background: $gray-100;
+        }
+    }
 }

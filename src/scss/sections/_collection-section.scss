@@ -1,10 +1,8 @@
 .collection-section {
 	@include media-breakpoint-up(lg) {
 		&__cover {
-			@include make-col(2, 5);
-
-			picture::before {
-				padding-top: 522 / 900 * 100%;
+			.embed-responsive {
+				padding-top: 339px;
 			}
 		}
 

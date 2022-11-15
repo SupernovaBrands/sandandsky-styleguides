@@ -9,12 +9,14 @@
 	<div class="row">
 		<div class="collection-section__cover d-none d-lg-block col-lg-3">
 			<noscript class="loading-lazy">
-			<img src="https://via.placeholder.com/900x522/" alt="Placeholder" class="d-block w-100" loading="lazy">
-			<img src="{{ imageUrl }}/decor-range-{{ range }}.svg" alt="Decor" class="mt-n3" loading="lazy">
+				<picture class="embed-responsive">
+					<img src="https://via.placeholder.com/900x522/" alt="Placeholder" class="d-block w-100 embed-responsive-item fit--cover" loading="lazy">
+				</picture>
+				<img src="{{ imageUrl }}/decor-range-{{ range }}.svg" alt="Decor" class="mt-n3" loading="lazy">
 			</noscript>
 		</div>
 
-		{{#> sections/carousel-scroll id=range class="collection-section__ranges-products mb-5 my-lg-0" no-scrollbar="true" home-range-section="true" }}
+		{{#> sections/carousel-scroll id=range class="container px-g mb-5 my-lg-0 col-lg-9" no-scrollbar="true" home-range-section="true" }}
 			{{> compounds/product-card class="carousel-item col-6 col-lg-4 mb-3" color=color home-range-section="true"}}
 			{{> compounds/product-card class="carousel-item col-6 col-lg-4 mb-3" title="Hydration Boost Cream Moisturiser (2 lines)" color=color home-range-section="true"}}
 			{{> compounds/product-card class="carousel-item col-6 col-lg-4 mb-3" color=color home-range-section="true"}}

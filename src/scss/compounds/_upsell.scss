@@ -12,17 +12,25 @@
     width: 3em;
   }
 
-  &__pdp .spinner-border {
-    top: calc(50% - 0.5rem);
-    left: calc(50% - 0.5rem);
-  }
-
   &__article a {
     color: $body-color;
     text-decoration: none;
   }
 
-  &__pdp a {
-    max-width: calc-em(100);
+  &__pdp {
+    a {
+      max-width: calc-em(100);
+    }
+
+    .spinner-border {
+      top: calc(50% - 0.5rem);
+      left: calc(50% - 0.5rem);
+    }
+
+    @include media-breakpoint-up(lg) {
+      .media-body p {
+        @include font-size($font-size-base, true);
+      }
+    }
   }
 }

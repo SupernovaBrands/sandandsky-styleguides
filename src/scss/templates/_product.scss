@@ -23,7 +23,7 @@
 		}
 	}
 
-	&__waitlist-form {
+	&__waitlist-form, &__launch-waitlist {
 		.checkmark {
 			height: calc-em(24);
 		}

@@ -27,10 +27,9 @@
       left: calc(50% - 0.5rem);
     }
 
-    .media-body p {
-      @include font-size($font-size-sm);
-      @include media-breakpoint-up(lg) {
-        @include font-size($font-size-base);
+    @include media-breakpoint-up(lg) {
+      .media-body p {
+        @include font-size($font-size-base, true);
       }
     }
   }

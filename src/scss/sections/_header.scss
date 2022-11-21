@@ -53,6 +53,16 @@
 			color: $primary;
 		}
 	}
+
+	.nav__secondary {
+		ul {
+			overflow-x: scroll;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+	}
 }
 
 .mega-menu {

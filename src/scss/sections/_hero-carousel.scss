@@ -14,7 +14,19 @@
       padding-top: percentage(550 / 1440);
     }
   }
+}
 
+.hero-carousel--split {
+  .embed-responsive::before {
+    padding-top: percentage(750 / 828);
+		@include media-breakpoint-up(lg) {
+		  padding-top: percentage(490 / 870);
+		}
+  }
+}
+
+.hero-carousel--fullimage,
+.hero-carousel--split {
   .carousel-indicators {
     position: absolute;
     right: 0;

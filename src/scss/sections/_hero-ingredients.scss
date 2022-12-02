@@ -1,0 +1,27 @@
+.hero-ingredients {
+
+	@include media-breakpoint-up(lg) {
+		&__title {
+			@include font-size($h2-font-size-lg);
+		}
+	}
+
+	h2 {
+		color: $link-black;
+	}
+
+	.carousel-control-icon {
+		font-size: 30px;
+		width: auto;
+	}
+
+	.carousel-control-next,
+	.carousel-control-prev {
+		top: calc-em(161.5);
+		transform: none;
+
+		.svg {
+			width: calc-em(10);
+		}
+	}
+}

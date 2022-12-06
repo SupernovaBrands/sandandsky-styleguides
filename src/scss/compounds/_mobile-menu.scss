@@ -36,7 +36,7 @@
 		li:not(:first-child) {
 			border-bottom: 1px solid $gray-400;
 
-			> .svg:not(.range-icon) {
+			> .svg:not(.range-icon), fieldset .next-icon {
 				position: absolute;
 				right: calc-em(20);
 				font-size: .75em;

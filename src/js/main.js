@@ -132,7 +132,7 @@ if ($('.modal--sweepstakes').length > 0) {
 	import(/* webpackChunkName: 'modal' */ '~mod/modal-sweepstakes');
 }
 
-if ($('.modal--waitlist').length > 0 || $('.product__waitlist-form').length > 0) {
+if ($('.modal--waitlist').length > 0 || $('.product__waitlist-form').length > 0 || $('.launch__waitlist-form').length > 0) {
 	import(/* webpackChunkName: 'modal' */ '~mod/product-waitlist');
 }
 

@@ -1,0 +1,47 @@
+
+<div class="product__launch-waitlist mb-5 order-lg-3 bg-primary-light p-3 mx-ng mx-lg-0">
+	<h2 class="mb-2">Join the waitlist</h2>
+	<p class="mb-3">Be the first to know when Oil Control Clearing<br />Cleanser is back in stock.</p>
+	<form>
+		<input type="hidden" name="product" data-product-id value="{{ product.id }}"/>
+		<input type="hidden" name="variant" data-product-variant value="" />
+		<div class="launch-waitlist__email form-group mb-2">
+			<input type="email" name="email" class="form-control font-size-sm" placeholder="Notify me by Email">
+			<small id="emailHelp" class="form-text text-left text-danger d-none">Invalid email address.</small>
+		</div>
+		<span class="text-gray-600 d-block mb-0 font-size-sm text-center my-1 w-100">- Or -</span>
+		<div class="launch-waitlist__phone form-group row position-relative  mt-2 mb-1">
+			<div class="input-group mb-1 col-3 col-lg-2 phone-countries">
+				<label class="phone-countries__label position-absolute font-size-sm rounded-left text-center" for="countries-options">+1</label>
+				<select class="phone-countries__select" name="country" id="countries-options">
+					<option value="" disabled="" selected="">Country</option>
+					<option value="US" data-code="492">United States</option>
+					<option value="GB" data-code="44">United Kingdom</option>
+					<option value="CA" data-code="1">Canada</option>
+					<option value="DE" data-code="492">Germany</option>
+				</select>
+			</div>
+			<div class="input-group mb-1 col-9 col-lg-10 pl-0">
+				<input type="text" name="phone" class="phone-countries__input form-control font-size-sm" placeholder="Notify me by SMS">
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-group mb-2 col d-flex my-1 pl-3">
+				<div class="custom-control custom-checkbox col d-flex my-1">
+				<input type="checkbox" name="tos" class="custom-control-input" id="agreement" />
+				<label class="custom-control-label font-size-sm text-underline" for="agreement">I agree to Privacy Policy & ToS</label>
+				</div>
+			</div>
+			<small class="col-12 text-danger terms-error d-none">You have not agreed to the Privacy Policy & ToS</small>
+		</div>
+		<div class="row">
+			<div class="form-group col">
+				<button class="launch-waitlist__submit btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+			</div>
+		</div>
+	</form>
+	<div class="launch-waitlist__submitted form-group mb-2 d-none text-left align-items-center">
+		<img class="checkmark font-size-sm" src="icons/green-checkmark.svg" replace-to-svg /><span class="ml-2">We will notify when product is available again</span>
+	</div>
+	<p class="mt-3 font-size-xs text-center">Receive exclusive offers via email or automated marketing SMS (4/mth). For more info see our Privacy Policy opt out any time). Msg & data rates may apply. Consent not required for purchase.</p>
+</div>

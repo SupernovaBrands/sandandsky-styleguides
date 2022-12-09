@@ -1,23 +1,28 @@
 <ul class="nav justify-content-center nav__category-desktop d-none d-lg-flex">
-	<li class="nav-item">
-		<a href="#" class="nav-link p-g font-weight-bold">Shop All</a>
+	<li class="nav-item nav-item--mega-menu">
+		<a href="#" class="nav-link p-g font-weight-bold d-flex align-items-baseline mr-1 m-0 pl-0">Shop All</a>
+		{{> compounds/mega-menu-shop-all}}
+	</li>
+	<li class="nav-item dropdown dropdown--onhover">
+		<a href="#" id="ddSkinConcern" class="nav-link p-g font-weight-bold dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Skin Concern</a>
+		{{> compounds/nav-dropdown ddSkinConcern=true}}
+	</li>
+	<li class="nav-item dropdown dropdown--onhover">
+		<a href="#" id="ddIngredients" class="nav-link p-g font-weight-bold dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ingredients</a>
+		{{> compounds/nav-dropdown ddIngredients=true}}
+	</li>
+	<li class="nav-item dropdown dropdown--onhover">
+		<a href="#" id="ddRoutine" class="nav-link p-g font-weight-bold dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Routine</a>
+		{{> compounds/nav-dropdown ddRoutine=true}}
+	</li>
+	<li class="nav-item dropdown dropdown--onhover">
+		<a href="#" id="ddRanges" class="nav-link p-g font-weight-bold dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ranges</a>
+		{{> compounds/nav-dropdown ddRanges=true}}
 	</li>
 	<li class="nav-item">
 		<a href="#" class="nav-link p-g font-weight-bold">Value Kits</a>
 	</li>
 	<li class="nav-item">
-		<a href="#" class="nav-link p-g font-weight-bold">Face Masks</a>
-	</li>
-	<li class="nav-item">
-		<a href="#" class="nav-link p-g font-weight-bold">Moisturisers & Serums</a>
-	</li>
-	<li class="nav-item">
-		<a href="#" class="nav-link p-g font-weight-bold">Cleanser & Exfoliators</a>
-	</li>
-	<li class="nav-item">
-		<a href="#" class="nav-link p-g font-weight-bold">Body</a>
-	</li>
-	<li class="nav-item">
-		<a href="#" class="nav-link p-g font-weight-bold">Accessories</a>
+		<a href="#" class="nav-link p-g font-weight-bold">Bestsellers</a>
 	</li>
 </ul>

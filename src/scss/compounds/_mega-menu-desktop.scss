@@ -1,0 +1,33 @@
+@include media-breakpoint-up(lg) {
+	.mega-menu {
+		background-color: $gray-100;
+		visibility: hidden;
+		max-height: 0;
+		transition: max-height .8s ease;
+		left: 0;
+		box-shadow: 0 calc-em(4) calc-em(5) 0 rgba(0, 0, 0, .06);
+		z-index: $zindex-sticky;
+		overflow: hidden;
+
+		&:before {
+			content: ' ';
+			width: 100%;
+			height: 1em;
+			margin-top: -0.5em;
+		}
+
+		.nav-item--mega-menu:hover & {
+			max-height: 100vh;
+			visibility: visible;
+			transition: max-height .8s ease;
+		}
+	}
+
+	.nav-item {
+		&--mega-menu:hover {
+			.nav-link .svg {
+				transform: rotate(180deg) translateX(0%);
+			}
+		}
+	}
+}

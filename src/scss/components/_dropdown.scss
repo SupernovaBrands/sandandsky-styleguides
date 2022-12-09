@@ -37,12 +37,18 @@
 			}
 
 			.dropdown-menu {
-				transition: height .5s ease;
-				height: calc-em(304);
+				transition: max-height .8s ease;
+				height: auto;
+				max-height: 100vh;
 				visibility: visible;
 				margin-top: -0.5em;
 				z-index: $zindex-fixed; //above blog sticky sidebar
 			}
+		}
+
+		.dropdown-menu {
+			max-height: 0;
+			transition: max-height .8s ease;
 		}
 	}
 

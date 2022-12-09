@@ -66,32 +66,6 @@
 	}
 }
 
-.mega-menu {
-	visibility: hidden;
-	max-height: 0;
-	transition: max-height .8s ease;
-	left: 0;
-	top: 90%;
-	box-shadow: 0 calc-em(4) calc-em(5) 0 rgba(0, 0, 0, .06);
-	z-index: $zindex-sticky;
-	overflow: hidden;
-	margin-top: -1em;
-
-	.nav-item--mega-menu:hover & {
-		max-height: 100vh;
-		visibility: visible;
-		transition: max-height .8s ease;
-	}
-}
-
-.nav-item {
-	&--mega-menu:hover {
-		.nav-link .svg {
-			transform: rotate(180deg) translateX(0%);
-		}
-	}
-}
-
 .navbar-toggler {
 	flex-basis: 20%;
 

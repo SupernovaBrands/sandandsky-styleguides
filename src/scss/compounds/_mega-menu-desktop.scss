@@ -9,25 +9,10 @@
 		z-index: $zindex-sticky;
 		overflow: hidden;
 
-		&:before {
-			content: ' ';
-			width: 100%;
-			height: 1em;
-			margin-top: -0.5em;
-		}
-
 		.nav-item--mega-menu:hover & {
 			max-height: 100vh;
 			visibility: visible;
 			transition: max-height .8s ease;
-		}
-	}
-
-	.nav-item {
-		&--mega-menu:hover {
-			.nav-link .svg {
-				transform: rotate(180deg) translateX(0%);
-			}
 		}
 	}
 }

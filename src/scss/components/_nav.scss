@@ -72,4 +72,11 @@
 			right: 0;
 		}
 	}
+
+	@include media-breakpoint-up(lg) {
+		&__category-desktop .dropdown-menu {
+			min-width: calc-em(275);
+			left: 0;
+		}
+	}
 }

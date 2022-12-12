@@ -14,5 +14,9 @@
 			visibility: visible;
 			transition: max-height .8s ease;
 		}
+
+		&__subtitle {
+			@include font-size($h2-font-size);
+		}
 	}
 }

@@ -62,3 +62,8 @@
 		opacity: 1;
 	}
 }
+
+.modal-open .terms--link a {
+	background: $primary-light;
+	color: $primary !important;
+}

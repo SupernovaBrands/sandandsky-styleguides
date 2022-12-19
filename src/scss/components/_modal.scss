@@ -68,3 +68,11 @@
 		background: $primary-light;
 	}
 }
+
+.modal--terms {
+    .close {
+        right: 1em;
+        top: 1em;
+        opacity: 1;
+    }
+}

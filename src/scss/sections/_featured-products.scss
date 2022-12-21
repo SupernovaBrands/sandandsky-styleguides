@@ -6,6 +6,10 @@
 		@include media-breakpoint-up(lg) {
 			top: calc(263px / 2 + 30px);
 		}
+
+		@include media-breakpoint-down(lg) {
+			display: none !important;
+		}
 	}
 }
 

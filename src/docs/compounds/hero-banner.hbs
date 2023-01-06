@@ -10,17 +10,7 @@
 		<h1>Hero Banner</h1>
 	</div>
 
-	{{#> compounds/hero-banner class="mb-5" }}
-		<p class="h1">Dive into deep hydration</p>
-		<p>Meet Tasmanian Spring Water</p>
-		<button class="btn btn-lg btn-primary">Shop the range</button>
-	{{/ compounds/hero-banner}}
-
-	{{#> compounds/hero-banner class="mb-5" reverse="true" }}
-		<p class="h1">Dive into deep hydration</p>
-		<p>Meet Tasmanian Spring Water - Reverse</p>
-		<button class="btn btn-lg btn-primary">Shop the range</button>
-	{{/ compounds/hero-banner}}
+	{{> sections/hero-carousel fullimage=true totalSlide=3 }}
 
 	{{> js jquery=true main=true }}
 </body>

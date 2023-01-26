@@ -26,6 +26,16 @@ html.au-store {
 					@include font-size($font-size-base, true);
 				}
 			}
+
+			@include media-breakpoint-down(md) {
+				.btn__loading {
+					min-height: calc-em(52.63, 14);
+				}
+			}
+		}
+
+		.price-cta--abtest-loading .product-card__btn-variant {
+			display: none !important;
 		}
 	}
 
@@ -41,6 +51,13 @@ html.au-store {
 		.product-card__btn-variant {
 			@include button-variant($white, $gray-400, $primary, $primary);
 			color: $link-black;
+		}
+	}
+
+	.price-cta--abtest-v1,
+	.price-cta--abtest-v2 {
+		.product-card .btn__loading {
+			border-radius: $border-radius !important;
 		}
 	}
 

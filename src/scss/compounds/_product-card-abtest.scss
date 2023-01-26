@@ -1,8 +1,22 @@
 html.us-store,
 html.uk-store,
 html.au-store {
-	.price-cta--abtest {
+	.price-cta--abtest-v1,
+	.price-cta--abtest-v2,
+	.price-cta--abtest-v3,
+	.price-cta--abtest-v4 {
 		.product-card {
+			&__btn {
+				display: none !important;
+
+				&-variant {
+					display: block !important;
+					@include media-breakpoint-up(lg) {
+						display: flex !important;
+					}
+				}
+			}
+
 			figure {
 				border-radius: calc-em(8) !important;
 			}

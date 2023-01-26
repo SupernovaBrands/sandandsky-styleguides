@@ -17,6 +17,11 @@ html.au-store {
 				}
 			}
 
+			&__btn-variant-home {
+				display: flex !important;
+				min-height: calc-em(40, 14);
+			}
+
 			figure {
 				border-radius: calc-em(8) !important;
 			}
@@ -30,6 +35,10 @@ html.au-store {
 			@include media-breakpoint-down(md) {
 				.btn__loading {
 					min-height: calc-em(52.63, 14);
+
+					&-home {
+						min-height: calc-em(40, 14);
+					}
 				}
 			}
 		}

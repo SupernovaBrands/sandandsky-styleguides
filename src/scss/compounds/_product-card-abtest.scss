@@ -1,0 +1,41 @@
+html.us-store {
+	.price-cta--abtest {
+		.product-card__content .btn-primary {
+			@include button-size(calc-em(5), 0 !important, $btn-font-size, $btn-line-height, $border-radius !important);
+			background-color: $white !important;
+			flex-flow: column;
+
+			.product-card__cta {
+				order: 1;
+				display: block !important;
+				width: 100% !important;
+			}
+
+			.product-card__price {
+				order: 2;
+				border-radius: 0 !important;
+				border: none !important;
+				padding: 0 !important;
+				display: block !important;
+				width: 100% !important;
+			}
+		}
+	}
+
+	.price-cta--abtest-v1 {
+		.product-card__content .btn-primary {
+
+			.product-card__price {
+				background-color: $white !important;
+
+				&-text {
+					@include font-size($font-size-base, true);
+				}
+			}
+
+			.product-card__cta {
+				@include font-size($font-size-base, true);
+			}
+		}
+	}
+}

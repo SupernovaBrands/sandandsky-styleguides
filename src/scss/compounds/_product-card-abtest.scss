@@ -1,41 +1,39 @@
-html.us-store {
+html.us-store,
+html.uk-store,
+html.au-store {
 	.price-cta--abtest {
-		.product-card__content .btn-primary {
-			@include button-size(calc-em(5), 0 !important, $btn-font-size, $btn-line-height, $border-radius !important);
-			background-color: $white !important;
-			flex-flow: column;
-
-			.product-card__cta {
-				order: 1;
-				display: block !important;
-				width: 100% !important;
+		.product-card {
+			figure {
+				border-radius: calc-em(8) !important;
 			}
 
-			.product-card__price {
-				order: 2;
-				border-radius: 0 !important;
-				border: none !important;
-				padding: 0 !important;
-				display: block !important;
-				width: 100% !important;
+			@include media-breakpoint-up(lg) {
+				&__btn-variant-text {
+					@include font-size($font-size-base, true);
+				}
 			}
 		}
 	}
 
-	.price-cta--abtest-v1 {
-		.product-card__content .btn-primary {
+	.price-cta--abtest-v1,
+	.price-cta--abtest-v3 {
+		.product-card__btn-variant {
+			@include button-variant($primary, $primary);
+		}
+	}
 
-			.product-card__price {
-				background-color: $white !important;
+	.price-cta--abtest-v2,
+	.price-cta--abtest-v4 {
+		.product-card__btn-variant {
+			@include button-variant($white, $gray-400, $primary, $primary);
+			color: $link-black;
+		}
+	}
 
-				&-text {
-					@include font-size($font-size-base, true);
-				}
-			}
-
-			.product-card__cta {
-				@include font-size($font-size-base, true);
-			}
+	.price-cta--abtest-v3,
+	.price-cta--abtest-v4 {
+		.product-card__btn-variant {
+			border-radius: $rounded-pill !important;
 		}
 	}
 }

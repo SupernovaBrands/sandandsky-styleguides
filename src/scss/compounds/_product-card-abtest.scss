@@ -1,0 +1,70 @@
+html.us-store,
+html.uk-store,
+html.au-store {
+	.price-cta--abtest-v1,
+	.price-cta--abtest-v2,
+	.price-cta--abtest-v3,
+	.price-cta--abtest-v4 {
+		.product-card {
+			&__btn {
+				display: none !important;
+			}
+
+			&__btn-variant {
+				display: block !important;
+				@include media-breakpoint-up(lg) {
+					display: flex !important;
+				}
+			}
+
+			figure {
+				border-radius: calc-em(8) !important;
+			}
+
+			@include media-breakpoint-up(lg) {
+				&__btn-variant-text {
+					@include font-size($font-size-base, true);
+				}
+			}
+
+			@include media-breakpoint-down(md) {
+				.btn__loading {
+					min-height: calc-em(52.63, 14);
+				}
+			}
+		}
+
+		.price-cta--abtest-loading .product-card__btn-variant {
+			display: none !important;
+		}
+	}
+
+	.price-cta--abtest-v1,
+	.price-cta--abtest-v3 {
+		.product-card__btn-variant {
+			@include button-variant($primary, $primary);
+		}
+	}
+
+	.price-cta--abtest-v2,
+	.price-cta--abtest-v4 {
+		.product-card__btn-variant {
+			@include button-variant($white, $gray-400, $primary, $primary);
+			color: $link-black;
+		}
+	}
+
+	.price-cta--abtest-v1,
+	.price-cta--abtest-v2 {
+		.product-card .btn__loading {
+			border-radius: $border-radius !important;
+		}
+	}
+
+	.price-cta--abtest-v3,
+	.price-cta--abtest-v4 {
+		.product-card__btn-variant {
+			border-radius: $rounded-pill !important;
+		}
+	}
+}

@@ -8,12 +8,12 @@ html.au-store {
 		.product-card {
 			&__btn {
 				display: none !important;
+			}
 
-				&-variant {
-					display: block !important;
-					@include media-breakpoint-up(lg) {
-						display: flex !important;
-					}
+			&__btn-variant {
+				display: block !important;
+				@include media-breakpoint-up(lg) {
+					display: flex !important;
 				}
 			}
 

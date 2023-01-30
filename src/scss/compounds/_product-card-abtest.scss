@@ -46,6 +46,18 @@ html.au-store {
 		.price-cta--abtest-loading .product-card__btn-variant {
 			display: none !important;
 		}
+
+		@include media-breakpoint-up(lg) {
+			.range-product .col-lg {
+				&-products {
+					@include make-col(9);
+				}
+
+				&-banner img {
+					max-width: calc-em(270);
+				}
+			}
+		}
 	}
 
 	.price-cta--abtest-v1,

@@ -43,6 +43,12 @@ html.au-store {
 			}
 		}
 
+		@include media-breakpoint-down(md) {
+			.featured-products-carousel:not(.col-lg-products) .product-card {
+				@include make-col(9);
+			}
+		}
+
 		.price-cta--abtest-loading .product-card__btn-variant {
 			display: none !important;
 		}

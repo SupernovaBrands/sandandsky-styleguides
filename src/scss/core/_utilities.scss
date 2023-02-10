@@ -20,6 +20,10 @@
 @include bg-variant(".bg-oil", $range-oil, true);
 @include bg-variant(".bg-oil-light", $range-oil-light, true);
 
+// Essential range background color
+@include bg-variant(".bg-oil", $range-essential, true);
+@include bg-variant(".bg-oil-light", $range-essential-light, true);
+
 // Gray 100 background color
 @include bg-variant(".bg-gray-100", $gray-100, true);
 
@@ -32,6 +36,10 @@
 
 .text-gray-500 {
 	color: $gray-500 !important;
+}
+
+.text-essential {
+	color: $range-essential !important;
 }
 
 .rounded-right-0 {

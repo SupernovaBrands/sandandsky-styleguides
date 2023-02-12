@@ -21,8 +21,8 @@
 @include bg-variant(".bg-oil-light", $range-oil-light, true);
 
 // Essential range background color
-@include bg-variant(".bg-oil", $range-essential, true);
-@include bg-variant(".bg-oil-light", $range-essential-light, true);
+@include bg-variant(".bg-essential", $range-essential, true);
+@include bg-variant(".bg-essential-light", $range-essential-light, true);
 
 // Gray 100 background color
 @include bg-variant(".bg-gray-100", $gray-100, true);

@@ -42,7 +42,10 @@
 
 		&-essential-description {
 			@include media-breakpoint-up(lg) {
-				padding-right: $spacer * 8;
+				padding-right: $spacer * 5;
+				p:last-child {
+					padding-right: $spacer * 5;
+				}
 			}
 		}
 	}

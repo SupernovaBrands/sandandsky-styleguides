@@ -34,5 +34,19 @@
 		&-oil:before {
 			background-image: url(asset-url('range-oil.svg'));
 		}
+
+		&-essential:before {
+			background-image: url(asset-url('range-essential.svg'));
+			color: $range-essential;
+		}
+
+		&-essential-description {
+			@include media-breakpoint-up(lg) {
+				padding-right: $spacer * 5;
+				p:last-child {
+					padding-right: $spacer * 5;
+				}
+			}
+		}
 	}
 }

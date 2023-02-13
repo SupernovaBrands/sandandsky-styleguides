@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{{> html-head title="Range Essential" maincss="range-page" }}
+</head>
+
+<body>
+	{{> sections/header}}
+	{{> compounds/range-banner }}
+	{{> sections/range-products imgUrl="https://via.placeholder.com/346x140" imgUrl_dt="https://via.placeholder.com/219x465" useCarousel="true"
+		title="Australian Pink Clay" subtitle="Detoxify • Refine • Soothe" text="Combats troubled, acne-prone and textured skin. Clears impurities and congestions, leaving you with soothed and pore-tight skin in minutes." color="ff6f8d" textclass="text-apc" }}
+	{{> sections/range-result carousel=true essential="true"
+		title="The Essentials results"
+		text="Refresh and rejuvenate your skin with essential face and body products catered to support day-to-day activities, while nourishing and protecting skin barriers."
+		classes="range-result__decoration-essential"
+		decoration="range-result__decoration-mobile-essential" }}
+	{{> sections/range-breakdown type="essential" essential="true" title="Breaking down the ingredients" headerClass="pr-4 pr-lg-0" svgClass="text-essential svg ml-3 mr-2 ml-lg-3 mr-lg-1 h2" breakdownClass="align-items-center"}}
+	{{> sections/range-article type="essential" titleclass="text-apc" bgclass="bg-essential-light"}}
+	{{> sections/range-review textcolor="text-essential" linkColor="text-primary"}}
+	{{> sections/newsletter-banner}}
+	{{> sections/footer}}
+	{{> js jquery=true bootstrap=true main=true }}
+</body>
+</html>

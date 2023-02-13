@@ -155,29 +155,29 @@
 			}
 		}
 
-		&-essential:before {
-			background-image: url(asset-url('range-essential-decor-2.svg'));
-			width: calc-em(105);
-			height: calc-em(80);
-			top: -#{map-get($spacers,2)};
-			right: 0;
 
-
-			@include media-breakpoint-up(lg) {
-				left: calc(50% - #{$grid-gutter-width});
-				top: map-get($spacers,6);
+		&-essential {
+			&:before {
+				background-image: url(asset-url('range-essential-decor-2.svg'));
+				width: calc-em(105);
+				height: calc-em(80);
+				top: -#{map-get($spacers,2)};
+				right: 0;
+				@include media-breakpoint-up(lg) {
+					left: calc(50% - #{$grid-gutter-width});
+					top: map-get($spacers,6);
+				}
 			}
-		}
 
-		&-essential:after {
-			content: none;
 			@include media-breakpoint-up(lg) {
-				background-image: url(asset-url('range-essential-decor-1.svg'));
-				content: '';
-				width: calc-em(147);
-				height: calc-em(150);
-				right: $grid-gutter-width;
-				bottom: $grid-gutter-width;
+				&:after {
+					background-image: url(asset-url('range-essential-decor-1.svg'));
+					content: '';
+					width: calc-em(147);
+					height: calc-em(150);
+					right: $grid-gutter-width;
+					bottom: $grid-gutter-width;
+				}
 			}
 		}
 	}

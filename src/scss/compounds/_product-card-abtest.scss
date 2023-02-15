@@ -19,6 +19,10 @@ html.au-store {
 			&__btn-variant-home {
 				display: flex !important;
 				min-height: calc-em(40, 14);
+
+				.product-card__btn-variant-text {
+					@include font-size($font-size-base, true);
+				}
 			}
 
 			figure {

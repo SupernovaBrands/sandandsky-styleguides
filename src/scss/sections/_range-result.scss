@@ -158,11 +158,12 @@
 		&-oil:before {
 			content: none;
 			@include media-breakpoint-up(lg) {
+				content: '';
 				background-image: url(asset-url('range-oil-decor-1.svg'));
 				width: calc-em(120);
 				height: calc-em(100);
 				left: 76%;
-				top: 10px;
+				top: 8%;
 			}
 		}
 
@@ -172,8 +173,8 @@
 			height: calc-em(80);
 			top: 3%;
     		right: 0%;
+			content: '';
 			@include media-breakpoint-up(lg) {
-				content: '';
 				background-image: url(asset-url('range-oil-decor-2.svg'));
 				width: calc-em(270);
 				height: calc-em(170);

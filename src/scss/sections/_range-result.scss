@@ -179,7 +179,7 @@
 				width: calc-em(270);
 				height: calc-em(170);
 				right: $grid-gutter-width;
-				bottom: $grid-gutter-width;
+				bottom: calc-em(-30);
 				top: auto;
 			}
 		}

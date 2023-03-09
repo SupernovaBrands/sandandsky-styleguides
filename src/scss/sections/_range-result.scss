@@ -155,6 +155,35 @@
 			}
 		}
 
+		&-oil:before {
+			content: none;
+			@include media-breakpoint-up(lg) {
+				content: '';
+				background-image: url(asset-url('range-oil-decor-1.svg'));
+				width: calc-em(120);
+				height: calc-em(100);
+				left: 76%;
+				top: 8%;
+			}
+		}
+
+		&-oil:after {
+			background-image: url(asset-url('range-oil-decor-3.svg'));
+			width: calc-em(120);
+			height: calc-em(80);
+			top: 3%;
+    		right: 0%;
+			content: '';
+			@include media-breakpoint-up(lg) {
+				background-image: url(asset-url('range-oil-decor-2.svg'));
+				width: calc-em(270);
+				height: calc-em(170);
+				right: $grid-gutter-width;
+				bottom: calc-em(-30);
+				top: auto;
+			}
+		}
+
 
 		&-essential {
 			&:before {
@@ -177,24 +206,6 @@
 					height: calc-em(150);
 					right: $grid-gutter-width;
 					bottom: $grid-gutter-width;
-				}
-			}
-		}
-
-		&-oil {
-			&:after {
-				background-image: url(asset-url('range-oil-decor-2.svg'));
-				width: calc-em(120);
-				height: calc-em(80);
-				top: 3%;
-				right: 0%;
-				content: "";
-				@include media-breakpoint-up(lg) {
-					width: calc-em(270);
-					height: calc-em(170);
-					right: $grid-gutter-width;
-					bottom: calc-em(-30);
-					top: auto;
 				}
 			}
 		}

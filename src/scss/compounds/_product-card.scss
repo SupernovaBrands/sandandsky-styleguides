@@ -66,6 +66,13 @@
 		}
 	}
 
+	&__btn-price {
+		@include font-size($font-size-sm);
+		@include media-breakpoint-up(lg) {
+			@include font-size($font-size-base);
+		}
+	}
+
 	&--search-result {
 		> a {
 			@include media-breakpoint-up(lg) {

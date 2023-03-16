@@ -12,6 +12,14 @@
 		background-color: $range-aea-light;
 	}
 
+	&__essentials {
+		background-color: $range-essentials;
+	}
+
+	&__essentials-light {
+		background-color: $range-essentials-light;
+	}
+
 	&__supercharge img {
 		max-width: calc-em(120);
 	}

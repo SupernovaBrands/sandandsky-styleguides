@@ -1,7 +1,10 @@
 html.us-store,
 html.uk-store,
 html.au-store {
-	.price-cta--abtest-v1 {
+	.price-cta--abtest-v1,
+	.price-cta--abtest-v2,
+	.price-cta--abtest-v3,
+	.price-cta--abtest-v4 {
 		.product-card {
 			&__btn {
 				display: none !important;
@@ -12,17 +15,11 @@ html.au-store {
 				@include media-breakpoint-up(lg) {
 					display: flex !important;
 				}
-				@include button-variant($primary, $primary);
-				border-radius: $rounded-pill !important;
 			}
 
 			&__btn-variant-home {
 				display: flex !important;
 				min-height: calc-em(40, 14);
-
-				.product-card__btn-variant-text {
-					@include font-size($font-size-base, true);
-				}
 			}
 
 			figure {
@@ -81,6 +78,35 @@ html.au-store {
 					top: calc-em(179);
 				}
 			}
+		}
+	}
+
+	.price-cta--abtest-v1,
+	.price-cta--abtest-v2 {
+		.btn__loading {
+			border-radius: $border-radius !important;
+		}
+	}
+
+	.price-cta--abtest-v2,
+	.price-cta--abtest-v4 {
+		.product-card__btn-variant {
+			@include button-variant($primary, $primary);
+		}
+	}
+
+	.price-cta--abtest-v1,
+	.price-cta--abtest-v3 {
+		.product-card__btn-variant {
+			@include button-variant($white, $gray-400, $white, $link-black);
+			color: $link-black;
+		}
+	}
+
+	.price-cta--abtest-v3,
+	.price-cta--abtest-v4 {
+		.product-card__btn-variant {
+			border-radius: $rounded-pill !important;
 		}
 	}
 }

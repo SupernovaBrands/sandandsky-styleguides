@@ -19,7 +19,6 @@ html.au-store {
 
 			&__btn-variant-home {
 				display: flex !important;
-				min-height: calc-em(40, 14);
 			}
 
 			figure {
@@ -34,7 +33,7 @@ html.au-store {
 
 			@include media-breakpoint-down(md) {
 				.btn__loading {
-					min-height: calc-em(52.63, 14);
+					min-height: calc-em(57, 14);
 
 					&-home {
 						min-height: calc-em(40, 14);
@@ -48,8 +47,8 @@ html.au-store {
 				@include make-col(9);
 			}
 
-			.collection__row .product-card__text {
-				min-height: calc-em(35);
+			.product-card__content-collection .product-card__text {
+				min-height: calc-em(35, 14);
 			}
 		}
 
@@ -77,6 +76,30 @@ html.au-store {
 				.carousel-control-prev {
 					top: calc-em(179);
 				}
+			}
+		}
+	}
+
+	.price-cta--abtest-v1,
+	.price-cta--abtest-v2 {
+		.product-card {
+			&__content {
+
+				&-home {
+					padding-left: $grid-gutter-width !important;
+					padding-right: $grid-gutter-width !important;
+				}
+
+				@include media-breakpoint-up(lg) {
+					&-collection {
+						padding-left: $grid-gutter-width !important;
+						padding-right: $grid-gutter-width !important;
+					}
+				}
+			}
+
+			.btn__loading {
+				border-radius: $border-radius !important;
 			}
 		}
 	}

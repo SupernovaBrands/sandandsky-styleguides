@@ -73,10 +73,21 @@
 		}
 	}
 
+	&--filter {
+		&__icon {
+			flex: 1 0 100%;
+			@include media-breakpoint-up(lg) {
+				flex: initial;
+			}
+		}
+	}
+
 	@include media-breakpoint-up(lg) {
 		&__category-desktop .dropdown-menu {
 			min-width: calc-em(275);
 			left: 0;
 		}
 	}
+
+
 }

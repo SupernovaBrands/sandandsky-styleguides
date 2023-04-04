@@ -94,6 +94,16 @@
 			}
 		}
 	}
+
+	&--routine {
+		a {
+			text-decoration: none;
+		}
+
+		button {
+			max-width: calc-em(140);
+		}
+	}
 }
 
 // secondary image

@@ -127,10 +127,11 @@
 			}
 
 			&__badge {
-				width: $font-size-base;
-				height: $font-size-base;
+				width: $font-size-lg;
+				height: $font-size-lg;
+				padding-top: 1px;
 			}
-		}
+	}
 
 		.dropdown-item {
 			font-size: $font-size-base;
@@ -152,11 +153,6 @@
 				border: 1px solid transparent;
 				border-radius: $btn-border-radius-lg;
 				font-size: $font-size-lg;
-
-				&__badge {
-					width: $font-size-lg;
-					height: $font-size-lg;
-				}
 			}
 
 			&.show {

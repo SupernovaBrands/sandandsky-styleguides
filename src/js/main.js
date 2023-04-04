@@ -143,3 +143,7 @@ if ($('.announcement-bar__timer').length > 0) {
 if ($('.blog-post-grid__newsletter').length > 0) {
 	import(/* webpackChunkName: 'blog-newsletter' */ '~mod/blog-newsletter');
 }
+
+if ($('.tab--scroll-carousel').length > 0) {
+	import(/* webpackChunkName: 'featured-carousel-tabs' */ '~mod/featured-carousel-tabs');
+}

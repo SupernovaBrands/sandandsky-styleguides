@@ -1,4 +1,4 @@
-<div {{#if id}}id="{{ id }}"{{/if}} class="{{#if range-section}}{{else}}container{{/if}} {{#if (eq id 'search-products')}}{{else}}px-g{{/if}} {{ class }}">
+<div {{#if id}}id="{{ id }}"{{/if}} class="{{#if range-section}}{{else}}container{{/if}} {{#if (eq id 'search-products')}}{{else}}{{#unless home-carousel}}px-g{{/unless}}{{/if}} {{ class }}">
 	{{#if home-range-section }}
 	{{else}}
 		{{#if header}}
@@ -12,7 +12,7 @@
 	{{/if}}
 
 
-	<div class="carousel--scroll position-relative">
+	<div class="carousel--scroll position-relative" {{#if home-carousel}}{{#if id}}id="{{ id }}"{{/if}}{{/if}}>
 		<div class="carousel-inner d-flex flex-nowrap row w-auto {{#if home-range-section}}{{else}}pt-3 pt-lg-4{{/if}}" role="listbox">
 			{{#if @partial-block}}{{> @partial-block }}{{/if}}
 		</div>

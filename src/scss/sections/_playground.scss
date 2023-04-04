@@ -1,0 +1,12 @@
+.playground {
+	figcaption {
+		top: 50%;
+		transform: translateY(-50%);
+
+		@include media-breakpoint-up(lg) {
+			top: calc-em(50);
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}

@@ -100,6 +100,18 @@
 			bottom: auto;
 			width: auto;
 			transform: translateY(-50%);
+
+			&--tabs {
+				top: calc-em(115.93);
+				transform: none;
+
+				@include media-breakpoint-up(lg) {
+					top: calc-em(109.335);
+				}
+				@include media-breakpoint-up(xl) {
+					top: calc-em(139.5);
+				}
+			}
 		}
 	}
 

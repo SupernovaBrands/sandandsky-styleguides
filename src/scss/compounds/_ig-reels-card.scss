@@ -1,5 +1,5 @@
 .ig-reels-card {
-    iframe {
-        min-width: auto !important;
+    video::-webkit-media-controls {
+        opacity: 0;
     }
 }

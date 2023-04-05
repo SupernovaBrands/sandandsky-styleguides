@@ -104,7 +104,7 @@
 			&.show {
 				visibility: visible;
 				height: auto;
-				top: 1.8em;
+				top: 2em;
 				border-top: 0;
 				border-radius: 0 0 1.5em 1.5em;
 			}
@@ -127,8 +127,9 @@
 			}
 
 			&__badge {
-				width: $font-size-base;
-				height: $font-size-base;
+				width: $font-size-lg;
+				height: $font-size-lg;
+				padding-top: 1px;
 			}
 		}
 
@@ -152,11 +153,6 @@
 				border: 1px solid transparent;
 				border-radius: $btn-border-radius-lg;
 				font-size: $font-size-lg;
-
-				&__badge {
-					width: $font-size-lg;
-					height: $font-size-lg;
-				}
 			}
 
 			&.show {
@@ -171,7 +167,6 @@
 					border-radius: 0 0 $btn-border-radius-lg $btn-border-radius-lg;
 				}
 			}
-
 		}
 	}
 }

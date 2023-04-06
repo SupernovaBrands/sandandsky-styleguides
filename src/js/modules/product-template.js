@@ -84,3 +84,18 @@ $('.product-form [name=product-variant]').on('change', function () {
 });
 
 popopOver();
+
+setTimeout(function () {
+	if ($('.ig-reels-card').length > 0) {
+		$('.ig-reels-card').each((index, el) => {
+			const postId = $(el).find('video').data('id');
+			$.get(`https://api.sandandsky.com/instagram/post_feed/${postId}`).then(function (data) {
+				if (data) {
+					const dataResp = JSON.parse(data);
+					$(el).find('video').attr('poster', dataResp.post.thumbnail_url);
+					$(el).find('video').html(`<source src='${dataResp.post.media_url}' type='video/mp4'>`);
+				}
+			});
+		});
+	}
+}, 500);

@@ -99,7 +99,6 @@
 
 	&--filter {
 		.dropdown-menu {
-			min-width: $dropdown-min-width;
 
 			&.show {
 				visibility: visible;
@@ -117,7 +116,6 @@
 		.dropdown-toggle {
 			border-radius: $rounded-pill;
 			border: 1px solid $border-color;
-			min-width: $dropdown-min-width;
 			font-size: $font-size-base;
 
 			&:after {
@@ -153,6 +151,7 @@
 				border: 1px solid transparent;
 				border-radius: $btn-border-radius-lg;
 				font-size: $font-size-lg;
+				min-width: $dropdown-min-width - 2rem;
 			}
 
 			&.show {
@@ -162,6 +161,7 @@
 			}
 
 			.dropdown-menu {
+				min-width: $dropdown-min-width - 2rem;
 				&.show {
 					top: 2.5em;
 					border-radius: 0 0 $btn-border-radius-lg $btn-border-radius-lg;

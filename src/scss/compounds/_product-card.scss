@@ -103,6 +103,10 @@
 		button {
 			min-width: calc-em(140);
 		}
+
+		&__title {
+			min-height: 38px;
+		}
 	}
 
 	&--routine-loading {

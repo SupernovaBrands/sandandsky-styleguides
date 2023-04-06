@@ -80,6 +80,19 @@
 				flex: initial;
 			}
 		}
+
+		&__group {
+			@include media-breakpoint-down(lg) {
+				width: 100%;
+				.dropdown {
+					width: 50%;
+
+					.dropdown-toggle {
+						width: 100%;
+					}
+				}
+			}
+		}
 	}
 
 	@include media-breakpoint-up(lg) {

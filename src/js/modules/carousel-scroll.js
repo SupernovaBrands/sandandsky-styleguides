@@ -42,6 +42,21 @@ $('.carousel--scroll').each((index, carousel) => {
 	let left = 0;
 	let itemIndex = 0;
 
+	const checkIGDots = (el, leftPos) => {
+		let pageIndex = 1;
+		if (leftPos < 50) {
+			pageIndex = 1;
+		} else if (leftPos < 280) {
+			pageIndex = 2;
+		} else if (leftPos < 580) {
+			pageIndex = 3;
+		} else {
+			pageIndex = 4;
+		}
+		el.find('.rounded-circle').removeClass('active');
+		el.find(`[data-slide-to="${pageIndex}"]`).addClass('active');
+	};
+
 	const checkButton = () => {
 		if (inner.scrollLeft === 0) {
 			if (!$(prevButton).hasClass('carousel-control-prev--always-show')) {
@@ -65,6 +80,9 @@ $('.carousel--scroll').each((index, carousel) => {
 			$(nextButton).removeClass('d-none');
 		} else {
 			$(nextButton).removeClass('disabled');
+		}
+		if ($('#ig-reels-carousel').length > 0) {
+			checkIGDots($('#ig-reels-carousel'), inner.scrollLeft);
 		}
 	};
 	if (scrollThumb) {
@@ -127,6 +145,8 @@ $('.carousel--scroll').each((index, carousel) => {
 		else if (left > inner.scrollWidth - inner.clientWidth) left = inner.scrollWidth - inner.clientWidth;
 		$(inner).animate({ scrollLeft: left }, 300);
 		$(scrollThumb).animate({ left: `${(left / inner.scrollWidth) * 100}%` }, 300);
+		console.log('scrollItem');
+		checkDots(left);
 	};
 
 	if (prevButton) {

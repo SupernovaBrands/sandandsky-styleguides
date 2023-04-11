@@ -113,6 +113,18 @@
 				}
 			}
 		}
+
+		&__indicators {
+			li {
+				width: 6px;
+				height: 6px;
+
+				&.active {
+					width: 8px;
+					height: 8px;
+				}
+			}
+		}
 	}
 
 	&--centered {

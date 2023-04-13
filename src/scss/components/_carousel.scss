@@ -102,6 +102,16 @@
 			transform: translateY(-50%);
 		}
 
+		.carousel-control--tabs {
+			&-prev {
+				transform: translateX(-100%);
+			}
+
+			&-next {
+				transform: translateX(100%);
+			}
+		}
+
 		&__indicators {
 			li {
 				width: 6px;

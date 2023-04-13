@@ -113,6 +113,11 @@
 		min-height: calc-em(45, 16);
 		padding: calc-em(8);
 	}
+
+	img {
+		border-top-left-radius: calc-em(8);
+		border-top-right-radius: calc-em(8);
+	}
 }
 
 // secondary image

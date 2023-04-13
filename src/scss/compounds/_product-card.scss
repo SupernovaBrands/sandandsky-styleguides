@@ -94,6 +94,11 @@
 			}
 		}
 	}
+
+	img {
+		border-top-left-radius: calc-em(8);
+		border-top-right-radius: calc-em(8);
+	}
 }
 
 // secondary image

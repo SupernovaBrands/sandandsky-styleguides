@@ -101,16 +101,29 @@
 			width: auto;
 			transform: translateY(-50%);
 
-			&--tabs {
-				top: calc-em(115.93);
-				transform: none;
+		}
+
+		.carousel-control--tabs {
+			&-prev,
+			&-next {
+				display: none;
 
 				@include media-breakpoint-up(lg) {
-					top: calc-em(109.335);
+					display: block;
+					top: calc-em(161.95);
 				}
+
 				@include media-breakpoint-up(xl) {
-					top: calc-em(139.5);
+					top: calc-em(199.655);
 				}
+			}
+
+			&-prev {
+				transform: translateX(-100%);
+			}
+
+			&-next {
+				transform: translateX(100%);
 			}
 		}
 

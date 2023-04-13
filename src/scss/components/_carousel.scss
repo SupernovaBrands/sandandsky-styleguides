@@ -100,9 +100,24 @@
 			bottom: auto;
 			width: auto;
 			transform: translateY(-50%);
+
 		}
 
 		.carousel-control--tabs {
+			&-prev,
+			&-next {
+				display: none;
+
+				@include media-breakpoint-up(lg) {
+					display: block;
+					top: calc-em(161.95);
+				}
+
+				@include media-breakpoint-up(xl) {
+					top: calc-em(199.655);
+				}
+			}
+
 			&-prev {
 				transform: translateX(-100%);
 			}

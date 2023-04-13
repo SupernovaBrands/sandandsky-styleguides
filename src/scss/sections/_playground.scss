@@ -9,4 +9,13 @@
 			transform: translateX(-50%);
 		}
 	}
+
+	@include media-breakpoint-up(lg) {
+		&__full figcaption {
+			top: 0;
+			right: 0;
+			left: auto;
+			transform: none;
+		}
+	}
 }

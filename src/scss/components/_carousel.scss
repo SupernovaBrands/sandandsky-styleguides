@@ -100,26 +100,16 @@
 			bottom: auto;
 			width: auto;
 			transform: translateY(-50%);
+		}
 
-			&--tabs {
-				display: none;
-
-				@include media-breakpoint-up(lg) {
-					display: block;
-					top: calc-em(161.95);
-				}
-				@include media-breakpoint-up(xl) {
-					top: calc-em(199.655);
-				}
+		.carousel-control--tabs {
+			&-prev {
+				transform: translateX(-100%);
 			}
-		}
 
-		.carousel-control-prev--tabs {
-			transform: translateX(-100%);
-		}
-
-		.carousel-control-next--tabs {
-			transform: translateX(100%);
+			&-next {
+				transform: translateX(100%);
+			}
 		}
 	}
 

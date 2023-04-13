@@ -11,7 +11,7 @@
 		<div class="row align-items-start">
 			{{> product-image-carousel rangeclass="bg-aea" gutter=""}}
 			<div class="col-12 col-lg-5 d-flex flex-column order-lg-3 px-g">
-				<h1 class="mt-4">Australian Pink Clay Porefining Face Mask</h1>
+				<h1 class="mt-3 mt-lg-0">Australian Pink Clay Porefining Face Mask</h1>
 				{{!-- DEV --}}
 				<div class="react-yotpo-star mb-2" data-product-id="4633315409991" data-show-total="true"></div>
 				{{!-- US --}}
@@ -27,11 +27,19 @@
 				{{> components/quiz-banner class="quiz-banner__primary"}}
 				<div class="product__main-form d-flex order-lg-3 mb-3">
 					<form class="product-form w-100" onsubmit="window.productFormSubmit(event)">
-						<p class="d-none product-variant__price mb-3">
-							<span class="mr-1 font-weight-bold text-linethrough text-muted">$152.80</span>
-							<span class="mr-1 font-weight-bold">$114.70</span>
-							<span class="text-primary">(Save 40%)</span>
+						<div class="d-none product-variant__pricing mb-3">
+							<div class="product-variant__pricing-item mb-3">
+								<span class="mr-1 font-weight-bold text-linethrough text-muted">$152.80</span>
+								<span class="mr-1 font-weight-bold">$114.70</span>
+								<span class="text-primary">(Save 40%)</span>
+							</div>
+						</div>
+						<p class="mb-3 font-size-sm order-lg-5 d-flex align-items-center flex-wrap product__klarna">
+							<span>or 4 interest-free installments of <strong>£9.23</strong> by</span>
+							<img class="svg font-size-sm ml-1" src="icons/logo-klarna.svg" replace-to-svg />
+							<img class="svg info ml-1" src="icons/info-circle.svg" replace-to-svg data-toggle="modal" data-target="#KlarnaModal" />
 						</p>
+						{{> components/klarna-modal}}
 						<div class="swatch">
 							{{> components/product-variant name="product-variant" title="Single" value="1-x-sunny-honey-bali-bronzing-foam" image="https://via.placeholder.com/150x150/?text=1" checked=true variantid="39652548771911" available=true}}
 							{{> components/product-variant name="product-variant" title="Variant OOS" value="1-x-sunny-honey-bali-bronzing-foam-oos" image="https://via.placeholder.com/150x150/?text=1" variantid="39652548771911" available=false}}
@@ -65,14 +73,7 @@
 				</div>
 				{{> compounds/product-waitlist}}
 				{{> compounds/launch-waitlist}}
-				<p class="mb-3 font-size-sm order-lg-4">Afterpay</p>
 				{{> components/quiz-banner class="quiz-banner__abtest order-lg-5 d-none"}}
-				<p class="mb-3 font-size-sm order-lg-5 d-flex align-items-center flex-wrap product__klarna">
-					<span>or 4 interest-free installments of <strong>£9.23</strong> by</span>
-					<img class="svg font-size-sm ml-1" src="icons/logo-klarna.svg" replace-to-svg />
-					<img class="svg info ml-1" src="icons/info-circle.svg" replace-to-svg data-toggle="modal" data-target="#KlarnaModal" />
-				</p>
-				{{> components/klarna-modal}}
 				<p class="mb-3 font-size-sm order-lg-5 product-form__shipping" data-target="#collapsible4">FREE standard shipping on all orders $40+ View delivery times <a href="#" class="text-primary">here</a></p>
 				<figure class="product-form-banner order-lg-6">
 					<picture class="d-block">

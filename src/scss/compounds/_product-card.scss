@@ -3,6 +3,10 @@
 		border-radius: $rounded-pill 0 0 $rounded-pill !important;
 	}
 
+	.rounded-pill-right {
+		border-radius: 0 $rounded-pill $rounded-pill 0 !important;
+	}
+
 	.btn-outline-white {
 		background: white;
 		&:hover {

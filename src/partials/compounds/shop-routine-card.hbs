@@ -7,7 +7,9 @@
         </a>
         <figcaption class="text-center mx-lg-2 mx-1 flex-grow-1 d-flex flex-column rounded">
             <a href="/" class="h4 mb-2 d-block">{{title}}</a>
-            <p class="d-block text-body flex-grow-1 d-flex flex-row flex-grow-1">{{ content }}</p>
+            <div class="d-block text-body flex-grow-1 d-flex flex-column">
+                <p>{{ content }}</p>
+            </div>
             <p class="text-center d-flex flex-row flex-grow-1 justify-content-center align-items-end">
                 {{#if compare_price }}<span class="text-linethrough font-size-lg font-weight-bold m-1">{{compare_price}}</span>{{/if}}<span class="text-primary font-size-lg font-weight-bold my-1">{{price}}</span>
             </p>

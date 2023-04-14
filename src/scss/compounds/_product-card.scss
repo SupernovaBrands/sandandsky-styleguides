@@ -3,6 +3,10 @@
 		border-radius: $rounded-pill 0 0 $rounded-pill !important;
 	}
 
+	.rounded-pill-right {
+		border-radius: 0 $rounded-pill $rounded-pill 0 !important;
+	}
+
 	.btn-outline-white {
 		background: white;
 		&:hover {
@@ -11,7 +15,7 @@
 	}
 
 	&__content {
-		min-height: 169px;
+		min-height: calc-em(185);
 		@include media-breakpoint-up(lg) {
 			min-height: 187px;
 		}
@@ -112,6 +116,11 @@
 	&--routine-loading {
 		min-height: calc-em(45, 16);
 		padding: calc-em(8);
+	}
+
+	img {
+		border-top-left-radius: calc-em(8);
+		border-top-right-radius: calc-em(8);
 	}
 }
 

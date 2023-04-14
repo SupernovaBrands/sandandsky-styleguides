@@ -94,6 +94,25 @@
 			}
 		}
 	}
+
+	&--routine {
+		a {
+			text-decoration: none;
+		}
+
+		button {
+			min-width: calc-em(140);
+		}
+
+		&__title {
+			min-height: 38px;
+		}
+	}
+
+	&--routine-loading {
+		min-height: calc-em(45, 16);
+		padding: calc-em(8);
+	}
 }
 
 // secondary image

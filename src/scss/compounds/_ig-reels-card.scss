@@ -1,0 +1,8 @@
+.ig-reels-card {
+    video {
+        cursor: pointer;
+    }
+    video::-webkit-media-controls {
+        opacity: 0;
+    }
+}

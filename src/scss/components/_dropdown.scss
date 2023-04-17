@@ -125,10 +125,9 @@
 			}
 
 			&__badge {
-				width: calc-em(20);
-				height: calc-em(20);
-				font-size: $font-size-sm;
-				padding-top: 1px;
+				width: calc-em(20, 16, 1rem);
+				height: calc-em(20, 16, 1rem);
+				font-size: calc-em(14,16, 1rem);
 
 				@include media-breakpoint-down(lg) {
 					position: absolute;

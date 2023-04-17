@@ -125,9 +125,15 @@
 			}
 
 			&__badge {
-				width: $font-size-lg;
-				height: $font-size-lg;
+				width: calc-em(20);
+				height: calc-em(20);
+				font-size: $font-size-sm;
 				padding-top: 1px;
+
+				@include media-breakpoint-down(lg) {
+					position: absolute;
+					right: 1.75em;
+				}
 			}
 		}
 

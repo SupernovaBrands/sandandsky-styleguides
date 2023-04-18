@@ -125,11 +125,12 @@
 			}
 
 			&__badge {
-				width: calc-em(20, 16, 1rem);
-				height: calc-em(20, 16, 1rem);
-				font-size: calc-em(14,16, 1rem);
+				width: calc-em(15, 16, 1rem);
+				height: calc-em(15, 16, 1rem);
+				font-size: calc-em(12,16, 1rem);
 
 				@include media-breakpoint-down(lg) {
+					font-size: calc-em(13,16, 1rem);
 					position: absolute;
 					right: 1.75em;
 				}

@@ -99,6 +99,13 @@
 		}
 	}
 
+	&__stars {
+		@include font-size($font-size-xs);
+		@include media-breakpoint-up(md) {
+			@include font-size($font-size-sm);
+		}
+	}
+
 	&--routine {
 		a {
 			text-decoration: none;
@@ -116,6 +123,26 @@
 	&--routine-loading {
 		min-height: calc-em(45, 16);
 		padding: calc-em(8);
+	}
+
+	&--btn-loading .product-card__btn {
+		display: none !important;
+	}
+
+	@include media-breakpoint-up(lg) {
+		&__btn-text {
+			@include font-size($font-size-base, true);
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		.btn__loading {
+			min-height: calc-em(57, 14);
+
+			&-home {
+				min-height: calc-em(40, 14);
+			}
+		}
 	}
 
 	img {

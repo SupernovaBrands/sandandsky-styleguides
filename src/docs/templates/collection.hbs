@@ -98,12 +98,18 @@
 				</li>
 				<li class="d-none d-lg-flex col-4 position-relative justify-content-center align-items-center">
 					<label for="selectInputLg" class="mb-0 w-100 text-right font-weight-bold font-size-lg">Sort by:</label>
-					<select id="selectInputLg" class="custom-select border-0 mb-0 w-auto pl-2 font-size-lg font-weight-bold">
-						<option selected="">Bestsellers</option>
-						<option>Lowest price</option>
-						<option>Highest price</option>
-						<option>Top rated</option>
-					</select>
+					<div class="dropdown dropdown--filter ml-0 ml-lg-g px-0">
+						<button class="text-left btn dropdown-toggle dropdown-toggle--with-icon font-weight-bold pl-2 pr-4 d-flex align-items-center" type="button" id="dropdownMenuButton" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Bestsellers
+						</button>
+						<div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item text-wrap px-2" href="#">Bestsellers</a>
+							<a class="dropdown-item text-wrap px-2" href="#">Lowest price</a>
+							<a class="dropdown-item text-wrap px-2" href="#">Highest price</a>
+							<a class="dropdown-item text-wrap px-2" href="#">Fine Lines & Wrinkles</a>
+							<a class="dropdown-item text-wrap px-2" href="#">Top rated</a>
+						</div>
+					</div>
 				</li>
 			</ul>
 		</nav>

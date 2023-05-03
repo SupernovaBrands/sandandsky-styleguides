@@ -107,6 +107,10 @@
 		&__category-desktop .dropdown-menu {
 			min-width: calc-em(275);
 			left: 0;
+
+			&.dropdown-menu-right {
+				left: auto;
+			}
 		}
 	}
 

@@ -96,19 +96,15 @@
 						</div>
 					</div>
 				</li>
-				<li class="d-none d-lg-flex col-4 position-relative justify-content-center align-items-center">
-					<label for="selectInputLg" class="mb-0 w-100 text-right font-weight-bold font-size-lg">Sort by:</label>
-					<div class="dropdown dropdown--filter ml-0 ml-lg-g px-0">
-						<button class="text-left btn dropdown-toggle dropdown-toggle--with-icon font-weight-bold pl-2 pr-4 d-flex align-items-center" type="button" id="dropdownMenuButton" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Bestsellers
-						</button>
-						<div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item text-wrap px-2" href="#">Bestsellers</a>
-							<a class="dropdown-item text-wrap px-2" href="#">Lowest price</a>
-							<a class="dropdown-item text-wrap px-2" href="#">Highest price</a>
-							<a class="dropdown-item text-wrap px-2" href="#">Fine Lines & Wrinkles</a>
-							<a class="dropdown-item text-wrap px-2" href="#">Top rated</a>
-						</div>
+				<li class="d-none d-lg-flex col-4 position-relative justify-content-end align-items-center">
+					<div class="floating-label position-relative">
+						<select id="selectInput" class="custom-select mb-0 pt-3 pb-1">
+							<option selected>Bestsellers</option>
+							<option>Lowest price</option>
+							<option>Highest price</option>
+							<option>Top rated</option>
+						</select>
+						<label for="selectInput" class="floating-label__text mb-0 position-absolute font-size-sm">Sort by:</label>
 					</div>
 				</li>
 			</ul>

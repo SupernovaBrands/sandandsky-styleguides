@@ -79,6 +79,14 @@
 			@include media-breakpoint-up(lg) {
 				flex: initial;
 			}
+
+			.filter {
+				height: 1.2em;
+
+				@include media-breakpoint-up(lg) {
+					height: 2em;
+				}
+			}
 		}
 
 		&__group {

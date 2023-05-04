@@ -96,14 +96,16 @@
 						</div>
 					</div>
 				</li>
-				<li class="d-none d-lg-flex col-4 position-relative justify-content-center align-items-center">
-					<label for="selectInputLg" class="mb-0 w-100 text-right font-weight-bold font-size-lg">Sort by:</label>
-					<select id="selectInputLg" class="custom-select border-0 mb-0 w-auto pl-2 font-size-lg font-weight-bold">
-						<option selected="">Bestsellers</option>
-						<option>Lowest price</option>
-						<option>Highest price</option>
-						<option>Top rated</option>
-					</select>
+				<li class="d-none d-lg-flex col-4 position-relative justify-content-end align-items-center">
+					<div class="floating-label position-relative">
+						<select id="selectInput" class="custom-select mb-0 pt-3 pb-1">
+							<option selected>Bestsellers</option>
+							<option>Lowest price</option>
+							<option>Highest price</option>
+							<option>Top rated</option>
+						</select>
+						<label for="selectInput" class="floating-label__text mb-0 position-absolute font-size-sm">Sort by:</label>
+					</div>
 				</li>
 			</ul>
 		</nav>

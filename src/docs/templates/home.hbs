@@ -26,6 +26,11 @@
 
 	{{> sections/footer}}
 
+	<button class="d-none btn text-white modal-newsletter--abtest__btn position-fixed rounded-pill px-g align-items-center">
+      <span data-toggle="modal" data-target="#main-newsletter-modal" class="font-weight-normal">Want 10% off?</span>
+      <img class="svg pl-1 font-size-xs" src="icons/close.svg" replace-to-svg />
+    </button>
+
 	{{> components/modal-newsletter }}
 
 	{{!-- {{> sections/featured-products-with-tab}}

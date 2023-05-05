@@ -1,0 +1,23 @@
+@function calculate-right($breakpoint) {
+	@return calc(((100% - #{map-get($container-max-widths , $breakpoint)}) / 2) + (#{$grid-gutter-width-lg}) - (#{$grid-gutter-width} / 2));
+}
+
+html.au-store,
+html.uk-store,
+html.us-store {
+	.modal-newsletter--abtest .modal-newsletter--abtest__btn {
+		display: flex !important;
+		background-color: $link-black;
+		right: $grid-gutter-width;
+		bottom: calc-em(90);
+
+		@include media-breakpoint-up(lg) {
+			right: calculate-right('lg');
+			bottom: calc-em(70);
+		}
+
+		@include media-breakpoint-up(xl) {
+			right: calculate-right('xl');
+		}
+	}
+}

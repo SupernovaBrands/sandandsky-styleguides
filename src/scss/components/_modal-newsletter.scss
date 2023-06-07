@@ -1,4 +1,33 @@
+@function calculate-right($breakpoint) {
+	@return calc(((100% - #{map-get($container-max-widths , $breakpoint)}) / 2) + (#{$grid-gutter-width-lg}) - (#{$grid-gutter-width} / 2));
+}
+
 .modal--newsletter {
+
+    &--floating__btn {
+		background-color: $link-black;
+		right: $grid-gutter-width;
+		transition: all .3s ease-in-out;
+		bottom: -100%;
+		z-index: $zindex-fixed;
+
+		&.show {
+			bottom: calc-em(90);
+		}
+
+		@include media-breakpoint-up(lg) {
+			right: calculate-right('lg');
+
+			&.show {
+				bottom: calc-em(70);
+			}
+		}
+
+		@include media-breakpoint-up(xl) {
+			right: calculate-right('xl');
+		}
+	}
+
     top: 2em;
 
     .union {

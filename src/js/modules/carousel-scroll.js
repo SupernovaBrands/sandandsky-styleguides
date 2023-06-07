@@ -146,7 +146,7 @@ $('.carousel--scroll').each((index, carousel) => {
 		$(inner).animate({ scrollLeft: left }, 300);
 		$(scrollThumb).animate({ left: `${(left / inner.scrollWidth) * 100}%` }, 300);
 		console.log('scrollItem');
-		checkDots(left);
+		// checkDots(left);
 	};
 
 	if (prevButton) {

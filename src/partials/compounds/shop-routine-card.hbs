@@ -1,16 +1,26 @@
-<figure class="product-card--routine col-9 col-lg-4 flex-grow-1 d-flex flex-wrap flex-column {{ carousel }} mb-0">
-    <div class="m-0 bg-gray-100 pb-3 d-flex flex-column flex-grow-1 rounded">
-        <a href="/" class="d-block">
+<figure class="product-card--routine col-12 col-lg-4 flex-grow-1 {{ carousel }} mb-0">
+    <div class="m-0 product-card--routine__content pb-g pb-lg-3 flex-lg-column flex-grow-1 row">
+        <a href="/" class="d-block col-auto col-lg-12 px-lg-0">
             <picture>
-                <img src="https://via.placeholder.com/700x660" alt="Placeholder" class="d-block w-100 mb-3 rounded-top">
+                <source srcset="https://via.placeholder.com/700x660" media="(min-width: 992px)">
+                <img src="https://via.placeholder.com/101x117" alt="Placeholder" class="w-100 mb-lg-3">
             </picture>
         </a>
-        <figcaption class="text-center mx-lg-2 mx-1 flex-grow-1 d-flex flex-column rounded">
-            <a href="/" class="h4 mb-2 d-block">{{title}}</a>
-            <div class="d-block text-body flex-grow-1 d-flex flex-column">
+        <figcaption class="text-lelft text-lg-center rounded col-auto col-lg-12">
+            <span class="d-block d-lg-none font-size-xs mb-1">{{range}}</span>
+            <a href="/" class="d-inline-block font-weight-bold d-lg-none font-size-sm mb-2">
+                {{title}}
+            </a>
+            <a href="/" class="h4 mb-2 d-none d-lg-block">
+                {{titlefull}}
+            </a>
+            <div class="text-body flex-grow-1 flex-column d-none d-lg-flex">
                 <p>{{ content }}</p>
             </div>
-            <p class="text-center d-flex flex-row flex-grow-1 justify-content-center align-items-end">
+            <p class="d-lg-none text-left mb-2">
+                {{#if compare_price }}<span class="text-linethrough mr-1">{{compare_price}}</span>{{/if}}<span class="font-weight-bold my-1">{{price}}</span>
+            </p>
+            <p class="d-none text-center d-lg-flex flex-row flex-grow-1 justify-content-center align-items-end">
                 {{#if compare_price }}<span class="text-linethrough font-size-lg font-weight-bold m-1">{{compare_price}}</span>{{/if}}<span class="text-primary font-size-lg font-weight-bold my-1">{{price}}</span>
             </p>
             <button type="button" class="btn mx-auto px-3 add-to-cart px-0 btn-primary mb-0 justify-content-center">

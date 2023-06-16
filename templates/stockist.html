@@ -1199,7 +1199,156 @@
 	</header>
 	
 	<div class="modal fade cart-drawer" id="cart-drawer" tabindex="-1" aria-hidden="true"></div>
-	
+	<div class="modal fade cart-drawer pr-0 filter-drawer" id="filter-drawer" tabindex="-1" style="display: none;" aria-hidden="true">
+	    <div class="modal-dialog modal-dialog-scrollable modal-md m-0 w-100 mh-100 float-right">
+	        <div class="modal-content vh-100 mh-100 border-0 rounded-0">
+	            <div class="modal-body pt-0 px-0">
+	                <div class="container px-g d-flex flex-column align-items-stretch text-left pt-3">
+	                    <h5>Filter by</h5>
+	                    <button type="button" class="close text-body m-0 p-3 position-absolute font-size-xs" data-dismiss="modal" aria-label="Close" data-cy="close-icon">
+	                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="d-flex svg text-secondary"><path d="m12 1-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1-5-5z"></path></svg>
+	                    </button>
+	                </div>
+	                <div class="container px-g">
+	                    <div class="row">
+	                        <div class="col-12">
+	                            <ul id="accordion" class="accordion list-unstyled">
+	                                <li>
+	                                    <span class="pt-3 pb-1 w-100 d-flex justify-content-between collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapsible1" aria-expanded="true" aria-controls="collapsible1">
+	                                        Categories
+	                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="svg plus"><path d="M6 0a.6.6 0 01.6.6v4.799l4.8.001a.6.6 0 010 1.2H6.6v4.8a.6.6 0 01-1.2 0V6.6H.6a.6.6 0 110-1.2l4.8-.001V.6A.6.6 0 016 0z"></path></svg>
+	                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="svg minus"><path d="M17.543 11.029H2.1A1.032 1.032 0 0 1 1.071 10c0-.566.463-1.029 1.029-1.029h15.443c.566 0 1.029.463 1.029 1.029 0 .566-.463 1.029-1.029 1.029z"></path></svg>
+	                                    </span>
+	                                    <div id="collapsible1" class="collapse" data-parent="#accordion">
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" value="skincare-kits-value-bundles" id="skincare-kits-value-bundles" data-type="category" checked="">
+	                                            <label class="custom-control-label" for="skincare-kits-value-bundles" role="button">Value Kits</label>
+	                                        </div>
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" value="face-masks" id="face-masks" data-type="category">
+	                                            <label class="custom-control-label" for="face-masks" role="button">Face Masks</label>
+	                                        </div>
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" value="moisturisers-serums" id="moisturisers-serums" data-type="category">
+	                                            <label class="custom-control-label" for="moisturisers-serums" role="button">Moisturisers &amp; Serums</label>
+	                                        </div>
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" value="cleanser-exfoliators" id="cleanser-exfoliators" data-type="category">
+	                                            <label class="custom-control-label" for="cleanser-exfoliators" role="button">Cleansers &amp; Exfoliators</label>
+	                                        </div>
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" value="body" id="body" data-type="category">
+	                                            <label class="custom-control-label" for="body" role="button">Body</label>
+	                                        </div>
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" value="austrialian-beauty-accessories" id="austrialian-beauty-accessories" data-type="category">
+	                                            <label class="custom-control-label" for="austrialian-beauty-accessories" role="button">Accessories</label>
+	                                        </div>
+	                                    </div>
+	                                </li>
+	                                <li>
+	                                    <span class="pt-3 pb-1 w-100 d-flex justify-content-between collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapsible2" aria-expanded="true" aria-controls="collapsible2">
+	                                        Skin Concerns
+	                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="svg plus"><path d="M6 0a.6.6 0 01.6.6v4.799l4.8.001a.6.6 0 010 1.2H6.6v4.8a.6.6 0 01-1.2 0V6.6H.6a.6.6 0 110-1.2l4.8-.001V.6A.6.6 0 016 0z"></path></svg>
+	                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="svg minus"><path d="M17.543 11.029H2.1A1.032 1.032 0 0 1 1.071 10c0-.566.463-1.029 1.029-1.029h15.443c.566 0 1.029.463 1.029 1.029 0 .566-.463 1.029-1.029 1.029z"></path></svg>
+	                                    </span>
+	                                    <div id="collapsible2" class="collapse" data-parent="#accordion">
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="breakouts-acne" value="breakouts-acne" data-type="skin">
+	                                            <label class="custom-control-label" for="breakouts-acne" role="button">Breakouts &amp; Acne</label>
+	                                        </div>
+	                                    
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="dryness" value="dryness" data-type="skin">
+	                                            <label class="custom-control-label" for="dryness" role="button">Dryness</label>
+	                                        </div>
+	                                    
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="dullness-uneven-skin-tone" value="dullness-uneven-skin-tone" data-type="skin">
+	                                            <label class="custom-control-label" for="dullness-uneven-skin-tone" role="button">Dullness &amp; Uneven Skin Tone</label>
+	                                        </div>
+	                                    
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="fine-lines-wrinkles" value="fine-lines-wrinkles" data-type="skin">
+	                                            <label class="custom-control-label" for="fine-lines-wrinkles" role="button">Fine Lines &amp; Wrinkles</label>
+	                                        </div>
+	                                    
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="redness-sensitivity" value="redness-sensitivity" data-type="skin">
+	                                            <label class="custom-control-label" for="redness-sensitivity" role="button">Redness &amp; Sensitivity</label>
+	                                        </div>
+	                                    
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="dark-spots-hyperpigmentation" value="dark-spots-hyperpigmentation" data-type="skin">
+	                                            <label class="custom-control-label" for="dark-spots-hyperpigmentation" role="button">Dark Spots &amp; Hyperpigmentation</label>
+	                                        </div>
+	                                    </div>
+	                                </li>
+	                                <li>
+	                                    <span class="pt-3 pb-1 w-100 d-flex justify-content-between collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapsible3" aria-expanded="true" aria-controls="collapsible3">
+	                                        Routine
+	                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="svg plus"><path d="M6 0a.6.6 0 01.6.6v4.799l4.8.001a.6.6 0 010 1.2H6.6v4.8a.6.6 0 01-1.2 0V6.6H.6a.6.6 0 110-1.2l4.8-.001V.6A.6.6 0 016 0z"></path></svg>
+	                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="svg minus"><path d="M17.543 11.029H2.1A1.032 1.032 0 0 1 1.071 10c0-.566.463-1.029 1.029-1.029h15.443c.566 0 1.029.463 1.029 1.029 0 .566-.463 1.029-1.029 1.029z"></path></svg>
+	                                    </span>
+	                                    <div id="collapsible3" class="collapse" data-parent="#accordion">  
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="cleanser" value="cleanser" data-type="routine">
+	                                            <label class="custom-control-label" for="cleanser" role="button">Cleanser</label>
+	                                        </div>
+	                                    
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="exfoliator" value="exfoliator" data-type="routine">
+	                                            <label class="custom-control-label" for="exfoliator" role="button">Exfoliator</label>
+	                                        </div>
+	                                    
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="toner" value="toner" data-type="routine">
+	                                            <label class="custom-control-label" for="toner" role="button">Toner</label>
+	                                        </div>
+	                                    
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="mask" value="mask" data-type="routine">
+	                                            <label class="custom-control-label" for="mask" role="button">Mask</label>
+	                                        </div>
+	                                    
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="serum" value="serum" data-type="routine">
+	                                            <label class="custom-control-label" for="serum" role="button">Serum</label>
+	                                        </div>
+	                                    
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="moisturiser" value="moisturiser" data-type="routine">
+	                                            <label class="custom-control-label" for="moisturiser" role="button">Moisturiser</label>
+	                                        </div>
+	                                    
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="eye-care" value="eye-care" data-type="routine">
+	                                            <label class="custom-control-label" for="eye-care" role="button">Eye Care</label>
+	                                        </div>
+	                                    
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="sun-care" value="sun-care" data-type="routine">
+	                                            <label class="custom-control-label" for="sun-care" role="button">Sun Care</label>
+	                                        </div>
+	                                    
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="body-care" value="body-care" data-type="routine">
+	                                            <label class="custom-control-label" for="body-care" role="button">Body Care</label>
+	                                        </div>
+	                                    </div>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="modal-footer border-0">
+	                <a class="btn btn-outline-primary btn-block mb-2 resetFilter" role="button">Reset all filters</a>
+	                <a class="btn btn-primary btn-block applyFilter" role="button">Apply filters</a>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 	<section class="container text-center stockist my-4">
 		<h1 class="mb-5">Find us in a store near you</h1>
 		<form class="form-row justify-content-center align-items-center">

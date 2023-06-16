@@ -1,0 +1,25 @@
+html.au-store {
+	.quiz-banner--abtest {
+		.product-card--quiz {
+
+			figcaption {
+				top: 50%;
+				transform: translateY(-50%);
+				@include media-breakpoint-up(md) {
+					top: auto;
+					transform: none;
+					left: 0;
+					right: 0;
+				}
+			}
+
+			@include media-breakpoint-up(md) {
+				picture {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+				}
+			}
+		}
+	}
+}

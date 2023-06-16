@@ -5,19 +5,27 @@ html.au-store {
 			figcaption {
 				top: 50%;
 				transform: translateY(-50%);
-				@include media-breakpoint-up(md) {
+				@include media-breakpoint-up(lg) {
 					top: auto;
 					transform: none;
-					left: 0;
-					right: 0;
 				}
 			}
 
-			@include media-breakpoint-up(md) {
+			@include media-breakpoint-down(md) {
+				&__mb {
+					display: flex !important;
+				}
+			}
+
+			@include media-breakpoint-up(lg) {
 				picture {
 					position: absolute;
 					top: 0;
 					bottom: 0;
+				}
+
+				&__dt {
+					display: flex !important;
 				}
 			}
 		}

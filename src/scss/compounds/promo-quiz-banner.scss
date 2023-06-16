@@ -1,9 +1,10 @@
 .au-store,
 .uk-store,
-.us-store {
+.us-store,
+.dev-store {
     .product-quiz-banner-abtest {
         .quiz-banner__primary {
-            display: none;
+            display: none !important;
         }
 
         .product-quiz-banner {

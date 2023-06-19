@@ -1,0 +1,33 @@
+html.au-store {
+	.quiz-banner--abtest {
+		.product-card--quiz {
+
+			figcaption {
+				top: 50%;
+				transform: translateY(-50%);
+				@include media-breakpoint-up(lg) {
+					top: auto;
+					transform: none;
+				}
+			}
+
+			@include media-breakpoint-down(md) {
+				&__mb {
+					display: flex !important;
+				}
+			}
+
+			@include media-breakpoint-up(lg) {
+				picture {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+				}
+
+				&__dt {
+					display: flex !important;
+				}
+			}
+		}
+	}
+}

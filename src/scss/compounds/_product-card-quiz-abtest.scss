@@ -14,6 +14,10 @@ html.au-store {
 			@include media-breakpoint-down(md) {
 				&__mb {
 					display: flex !important;
+					margin-left: -($grid-gutter-width * 0.5);
+					margin-right: -($grid-gutter-width * 0.5);
+					max-width: calc(100% + #{$grid-gutter-width});
+					flex: 0 0 calc(100% + #{$grid-gutter-width});
 				}
 			}
 
@@ -22,6 +26,8 @@ html.au-store {
 					position: absolute;
 					top: 0;
 					bottom: 0;
+					left: $grid-gutter-width;
+					right: $grid-gutter-width;
 				}
 
 				&__dt {

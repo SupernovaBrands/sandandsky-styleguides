@@ -1205,7 +1205,7 @@
 	        <div class="modal-content vh-100 mh-100 border-0 rounded-0">
 	            <div class="modal-body pt-0 px-0">
 	                <div class="container px-g d-flex flex-column align-items-stretch text-left pt-3">
-	                    <h5>Filter by</h5>
+	                    <h2 class="font-size-lg">Filter by</h2>
 	                    <button type="button" class="close text-body m-0 p-3 position-absolute font-size-xs" data-dismiss="modal" aria-label="Close" data-cy="close-icon">
 	                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="d-flex svg text-secondary"><path d="m12 1-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1-5-5z"></path></svg>
 	                    </button>
@@ -1215,14 +1215,18 @@
 	                        <div class="col-12">
 	                            <ul id="accordion" class="accordion list-unstyled">
 	                                <li>
-	                                    <span class="pt-3 pb-1 w-100 d-flex justify-content-between collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapsible1" aria-expanded="true" aria-controls="collapsible1">
+	                                    <span class="pt-3 pb-1 w-100 d-flex justify-content-between collapsed font-weight-bold font-size-lg" type="button" data-toggle="collapse" data-target="#collapsible1" aria-expanded="true" aria-controls="collapsible1">
 	                                        Categories
 	                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="svg plus"><path d="M6 0a.6.6 0 01.6.6v4.799l4.8.001a.6.6 0 010 1.2H6.6v4.8a.6.6 0 01-1.2 0V6.6H.6a.6.6 0 110-1.2l4.8-.001V.6A.6.6 0 016 0z"></path></svg>
 	                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="svg minus"><path d="M17.543 11.029H2.1A1.032 1.032 0 0 1 1.071 10c0-.566.463-1.029 1.029-1.029h15.443c.566 0 1.029.463 1.029 1.029 0 .566-.463 1.029-1.029 1.029z"></path></svg>
 	                                    </span>
 	                                    <div id="collapsible1" class="collapse" data-parent="#accordion">
 	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
-	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" value="skincare-kits-value-bundles" id="skincare-kits-value-bundles" data-type="category" checked="">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item category-filter" data-title="All products" value="singles" id="singles" data-type="category" checked="">
+	                                            <label class="custom-control-label" for="singles" role="button">All products</label>
+	                                        </div>
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
+	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" value="skincare-kits-value-bundles" id="skincare-kits-value-bundles" data-type="category">
 	                                            <label class="custom-control-label" for="skincare-kits-value-bundles" role="button">Value Kits</label>
 	                                        </div>
 	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
@@ -1245,10 +1249,13 @@
 	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" value="austrialian-beauty-accessories" id="austrialian-beauty-accessories" data-type="category">
 	                                            <label class="custom-control-label" for="austrialian-beauty-accessories" role="button">Accessories</label>
 	                                        </div>
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2 p-0">
+	                                            <a class="text-primary text-decoration-none reset-single-filter" data-filter="category-filter" role="button">Reset filter</a>
+	                                        </div>
 	                                    </div>
 	                                </li>
 	                                <li>
-	                                    <span class="pt-3 pb-1 w-100 d-flex justify-content-between collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapsible2" aria-expanded="true" aria-controls="collapsible2">
+	                                    <span class="pt-3 pb-1 w-100 d-flex justify-content-between collapsed font-weight-bold font-size-lg" type="button" data-toggle="collapse" data-target="#collapsible2" aria-expanded="true" aria-controls="collapsible2">
 	                                        Skin Concerns
 	                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="svg plus"><path d="M6 0a.6.6 0 01.6.6v4.799l4.8.001a.6.6 0 010 1.2H6.6v4.8a.6.6 0 01-1.2 0V6.6H.6a.6.6 0 110-1.2l4.8-.001V.6A.6.6 0 016 0z"></path></svg>
 	                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="svg minus"><path d="M17.543 11.029H2.1A1.032 1.032 0 0 1 1.071 10c0-.566.463-1.029 1.029-1.029h15.443c.566 0 1.029.463 1.029 1.029 0 .566-.463 1.029-1.029 1.029z"></path></svg>
@@ -1283,10 +1290,13 @@
 	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="dark-spots-hyperpigmentation" value="dark-spots-hyperpigmentation" data-type="skin">
 	                                            <label class="custom-control-label" for="dark-spots-hyperpigmentation" role="button">Dark Spots &amp; Hyperpigmentation</label>
 	                                        </div>
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2 p-0">
+	                                            <a class="text-primary text-decoration-none reset-single-filter" data-filter="skin-filter" role="button">Reset filter</a>
+	                                        </div>
 	                                    </div>
 	                                </li>
 	                                <li>
-	                                    <span class="pt-3 pb-1 w-100 d-flex justify-content-between collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapsible3" aria-expanded="true" aria-controls="collapsible3">
+	                                    <span class="pt-3 pb-1 w-100 d-flex justify-content-between collapsed font-weight-bold font-size-lg" type="button" data-toggle="collapse" data-target="#collapsible3" aria-expanded="true" aria-controls="collapsible3">
 	                                        Routine
 	                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="svg plus"><path d="M6 0a.6.6 0 01.6.6v4.799l4.8.001a.6.6 0 010 1.2H6.6v4.8a.6.6 0 01-1.2 0V6.6H.6a.6.6 0 110-1.2l4.8-.001V.6A.6.6 0 016 0z"></path></svg>
 	                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="svg minus"><path d="M17.543 11.029H2.1A1.032 1.032 0 0 1 1.071 10c0-.566.463-1.029 1.029-1.029h15.443c.566 0 1.029.463 1.029 1.029 0 .566-.463 1.029-1.029 1.029z"></path></svg>
@@ -1335,6 +1345,9 @@
 	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2">
 	                                            <input type="checkbox" name="filters[]" class="custom-control-input pristine filter-item" id="body-care" value="body-care" data-type="routine">
 	                                            <label class="custom-control-label" for="body-care" role="button">Body Care</label>
+	                                        </div>
+	                                        <div class="custom-control custom-checkbox d-flex justify-content-start mt-2 p-0">
+	                                            <a class="text-primary text-decoration-none reset-single-filter" data-filter="routine-filter" role="button">Reset filter</a>
 	                                        </div>
 	                                    </div>
 	                                </li>

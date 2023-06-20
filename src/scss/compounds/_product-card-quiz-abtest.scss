@@ -28,6 +28,10 @@ html.au-store {
 					bottom: 0;
 					left: $grid-gutter-width;
 					right: $grid-gutter-width;
+
+					img {
+						border-radius: calc-em(8);
+					}
 				}
 
 				&__dt {

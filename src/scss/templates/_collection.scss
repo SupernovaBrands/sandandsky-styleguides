@@ -13,12 +13,8 @@ html.us-store, html.uk-store {
 		.new-filter--abtest {
 			display: flex !important;
 		}
-
-		.tab-content--abtest {
-			display: block !important;
-		}
 		
-		.nav-filter--original, .collection-title--original, .tab-content--original {
+		.nav-filter--original, .collection-title--original {
 			display: none !important;
 		}
 	}

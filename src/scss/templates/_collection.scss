@@ -14,7 +14,11 @@ html.us-store, html.uk-store {
 			display: flex !important;
 		}
 		
-		.nav-filter--original, .collection-title--original {
+		.tab-content--abtest {
+			display: block !important;
+		}
+
+		.nav-filter--original, .collection-title--original, .tab-content--original {
 			display: none !important;
 		}
 	}

@@ -118,6 +118,21 @@
 		&__title {
 			min-height: 38px;
 		}
+
+		@include media-breakpoint-up(lg) {
+			&__content {
+				background-color: $gray-100;
+			}
+
+			&__price {
+				@include font-size($font-size-lg);
+			}
+
+			img {
+				border-top-left-radius: $border-radius;
+				border-top-right-radius: $border-radius;
+			}
+		}
 	}
 
 	&--routine-loading {

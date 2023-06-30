@@ -137,7 +137,7 @@
 
 	@include media-breakpoint-down(md) {
 		.btn__loading {
-			min-height: calc-em(57, 14);
+			min-height: calc-em(39.5, 14);
 
 			&-home {
 				min-height: calc-em(40, 14);

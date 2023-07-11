@@ -115,13 +115,25 @@
 			min-width: calc-em(140);
 		}
 
-		&__title {
-			min-height: 38px;
+		&__range {
+			color: $gray-500;
+			@include font-size($font-size-xs);
+			@include media-breakpoint-up(lg) {
+				@include font-size($font-size-sm);
+			}
+		}
+
+		@include media-breakpoint-down(md) {
+			&__title {
+				@include font-size($font-size-sm);
+			}
 		}
 
 		@include media-breakpoint-up(lg) {
 			&__content {
 				background-color: $gray-100;
+				border-bottom-left-radius: calc-em(8);
+				border-bottom-right-radius: calc-em(8);
 			}
 
 			&__price {
@@ -129,8 +141,8 @@
 			}
 
 			img {
-				border-top-left-radius: $border-radius;
-				border-top-right-radius: $border-radius;
+				border-top-left-radius: calc-em(8);
+				border-top-right-radius: calc-em(8);
 			}
 		}
 	}

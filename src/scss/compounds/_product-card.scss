@@ -116,7 +116,6 @@
 		}
 
 		&__range {
-			color: $gray-500;
 			@include font-size($font-size-xs);
 			@include media-breakpoint-up(lg) {
 				@include font-size($font-size-sm);

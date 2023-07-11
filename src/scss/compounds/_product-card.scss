@@ -136,10 +136,6 @@
 				border-bottom-right-radius: calc-em(8);
 			}
 
-			&__price {
-				@include font-size($font-size-lg);
-			}
-
 			img {
 				border-top-left-radius: calc-em(8);
 				border-top-right-radius: calc-em(8);

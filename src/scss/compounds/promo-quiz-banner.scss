@@ -1,0 +1,19 @@
+.au-store,
+.uk-store,
+.us-store,
+.dev-store {
+    .product-quiz-banner-abtest {
+        .quiz-banner__primary {
+            display: none !important;
+        }
+
+        .product-quiz-banner {
+            display: block !important;
+
+            figcaption {
+                top: calc-em(10);
+                right: 0;
+            }
+        }
+    }
+}

@@ -21,17 +21,5 @@ html.us-store, html.uk-store {
 		.nav-filter--original, .collection-title--original, .tab-content--original {
 			display: none !important;
 		}
-
-		.filter-drawer .custom-checkbox .custom-control-label:before {
-			border-radius: 0.15rem !important;
-		}
-
-		.filter-drawer .custom-checkbox {
-			.custom-control-input:checked~.custom-control-label {
-				&::before {
-					background-size: 50% !important;
-				}
-			}
-		}
 	}
 }

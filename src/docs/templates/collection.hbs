@@ -12,7 +12,7 @@
   	</picture>
   </div>
 	<div class="container px-g mt-5">
-		<div class="row justify-content-between align-items-center mb-3">
+		<div class="row justify-content-between align-items-center mb-3 d-none">
 			<h1 id="collection__title" class="col-6 mb-0">Shop All</h1>
 			<div class="col-6">
 				<div class="floating-label position-relative d-lg-none">
@@ -59,7 +59,7 @@
 				</li>
 			</ul>
 
-			<ul class="nav--filter list-unstyled d-flex justify-content-between">
+			<ul class="nav--filter list-unstyled d-none justify-content-between">
 				<li class="col-12 col-lg-6 d-flex align-items-center pl-0 pl-lg-g flex-wrap">
 					<div class="nav--filter__icon mb-2 mb-lg-0">
 						<img class="svg filter mr-1 mr-lg-0" src="icons/filter.svg" replace-to-svg />
@@ -106,6 +106,30 @@
 						</select>
 						<label for="selectInput" class="floating-label__text mb-0 position-absolute font-size-sm">Sort by:</label>
 					</div>
+				</li>
+			</ul>
+			<ul class="row nav--filter list-unstyled justify-content-between new-filter--abtest mt-3" data-main-collection="skincare-kits-value-bundles">
+				<input type="hidden" id="isAbtest" value="true">
+				<li class="col-12 col-lg-6 align-items-center flex-wrap d-flex mb-sm-3 mb-lg-0">
+					<h2 id="collection__title" class="mb-0 pl-0">Kits &amp; Value Sets</h2>
+				</li>
+				<li class="col-6 col-lg-3 position-relative justify-content-center align-items-center">
+					<div class="floating-label position-relative">
+						<select id="sortCollection" class="collection__sort-by custom-select mb-0 pt-2 sort-desktop border-dark font-size-sm">
+							<option value="best-selling">Bestsellers</option>
+							<option value="manual" selected="">Popular</option>
+							<option value="price-ascending">Lowest price</option>
+							<option value="price-descending">Highest price</option>
+							<option value="created-descending">Latest</option>
+							<option value="created-ascending">Oldest</option>
+						</select>
+					</div>
+				</li>
+				<li class="col-6 col-lg-3 position-relative justify-content-center align-items-center">
+					<a class="btn btn-lg btn-block btn-outline-dark mb-0 text-left font-size-sm" data-toggle="modal" data-target="#filter-drawer" role="button" data-cy="filter-icon">
+						<img class="svg filter mr-1 mr-lg-0" src="icons/filter.svg" replace-to-svg="sg"/>
+						<span class="pl-1">Filter by</span>
+					</a>
 				</li>
 			</ul>
 		</nav>

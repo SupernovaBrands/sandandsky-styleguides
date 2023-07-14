@@ -104,6 +104,7 @@ input[type=number] {
 .custom-checkbox {
 	.custom-control-label::before {
 		border-color: $text-muted;
+		border-radius: $input-border-radius-sm;
 	}
 
 	.custom-control-input:checked~.custom-control-label {
@@ -111,7 +112,7 @@ input[type=number] {
 			background-color: $primary;
 			border-color: $primary;
 			background-image: url(icon-svg('checklist.svg', #{$white}));
-			background-size: 70%;
+			background-size: 50%;
 			background-position: center;
 			background-repeat: no-repeat;
 		}

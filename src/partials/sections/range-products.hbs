@@ -1,5 +1,29 @@
+{{#if showTabs}}
+<section class="container px-g shadow-sm mt-4">
+	<p class="h1 mb-3">Ranges</p>
+	<ul class="border-0 flex-nowrap tab nav nav-tabs tab--scroll mb-3 mb-lg-2 align-items-end justify-content-start" id="scrolltab" role="tablist">
+		<li class="nav-item flex-shrink-0 text-center mb-0 pr-3">
+			<a class="nav-link font-size-sm mb-0 border-0 px-0 pb-2 text-body active" data-toggle="tab" href="#" role="tab" aria-selected="true">Australian Pink Clay</a>
+		</li>
+		<li class="nav-item flex-shrink-0 text-center mb-0 pr-3">
+			<a class="nav-link font-size-sm mb-0 border-0 px-0 pb-2 text-body" data-toggle="tab" href="#" role="tab" aria-selected="false">Australian Glow Berries</a>
+		</li>
+		<li class="nav-item flex-shrink-0 text-center mb-0 pr-3">
+			<a class="nav-link font-size-sm mb-0 border-0 px-0 pb-2 text-body" data-toggle="tab" href="#" role="tab" aria-selected="false">Tasmanian Spring Water</a>
+		</li>
+		<li class="nav-item flex-shrink-0 text-center mb-0 pr-3">
+			<a class="nav-link font-size-sm mb-0 border-0 px-0 pb-2 text-body" data-toggle="tab" href="#" role="tab" aria-selected="false">Oil Control</a>
+		</li>
+		<li class="nav-item flex-shrink-0 text-center mb-0 pr-3">
+			<a class="nav-link font-size-sm mb-0 border-0 px-0 pb-2 text-body" data-toggle="tab" href="#" role="tab" aria-selected="false">The Essentials</a>
+		</li>
+	</ul>
+</section>
+{{/if}}
 <section class="container mb-5 range-product">
+	{{#unless hideTitle}}
 	<p class="h1 mb-3 mb-lg-2 px-hg px-lg-0">{{ title }}</p>
+	{{/unless}}
 	<p class="font-weight-bold mb-3 mb-lg-2 px-hg px-lg-0 {{ textclass }}">{{ subtitle }}</p>
 	<p class="mb-3 px-hg px-lg-0">{{ text }}</p>
 	<div class="row">
@@ -11,7 +35,9 @@
 		{{#> sections/carousel-scroll-range id="range-products-abtest" class="featured-products-carousel col-12 col-lg-products" }}
 			{{> compounds/product-card range_page=true range_page_classes="col-lg-3 px-lg-hg" badgeimg=true class="carousel-item mb-2 mb-lg-0 pb-lg-0" color=color title="Hydration Boost Cream Moisturiser (2 lines)"}}
 			{{> compounds/product-card range_page=true range_page_classes="col-lg-3 px-lg-hg" class="carousel-item mb-2 mb-lg-0 pb-lg-0" color=color }}
+			{{#unless hideProductQuiz}}
 			{{> compounds/quiz-banner showbanner=true }}
+			{{/unless}}
 			{{> compounds/product-card range_page=true range_page_classes="col-lg-3 px-lg-hg" class="carousel-item mb-2 mb-lg-0 pb-lg-0" color=color }}
 			{{> compounds/product-card range_page=true range_page_classes="col-lg-3 px-lg-hg" class="carousel-item mb-2 mb-lg-0 pb-lg-0" color=color }}
 			{{> compounds/product-card range_page=true range_page_classes="col-lg-3 px-lg-hg" class="carousel-item mb-2 mb-lg-0 pb-lg-0" color=color }}
@@ -28,3 +54,8 @@
 		{{/if}}
 	</div>
 </section>
+{{#if showQuizBanner }}
+<section class="row my-4">
+	{{> compounds/quiz-banner showbanner=true }}
+</section>
+{{/if}}

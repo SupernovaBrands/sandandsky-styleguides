@@ -1,0 +1,34 @@
+.product-card--quiz {
+
+	figcaption {
+		top: 50%;
+		transform: translateY(-50%);
+		@include media-breakpoint-up(lg) {
+			top: auto;
+			transform: none;
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		&__mb {
+			margin-left: -($grid-gutter-width * 0.5);
+			margin-right: -($grid-gutter-width * 0.5);
+			max-width: calc(100% + #{$grid-gutter-width});
+			flex: 0 0 calc(100% + #{$grid-gutter-width});
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		picture {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: $grid-gutter-width;
+			right: $grid-gutter-width;
+
+			img {
+				border-radius: calc-em(8);
+			}
+		}
+	}
+}

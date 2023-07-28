@@ -18,7 +18,6 @@ const CartRedemption = () => {
 		el.current.scrollTo({ left: left + offset });
 	};
 
-	// const { item, itemRedeemed } = props;
 	const resetBtn = () => {
 		document.querySelectorAll('.cart-drawer__redemption-item .btn')?.forEach((btn) => {
 			btn.classList.remove('btn-primary', 'rounded-pill');

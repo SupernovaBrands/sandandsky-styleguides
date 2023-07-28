@@ -76,9 +76,10 @@ const CartRedemption = () => {
 			</ul>
 			<figure className="d-block position-relative mb-0 cart-drawer__redemption-banner">
 				<img className="w-100" src="https://cdn.shopify.com/s/files/1/0277/5262/8295/files/Cart_Beauty_Club_banner_x184.jpg?v=1690529024" alt="Redemption Banner" height="92" loading="lazy" />
-				<figcaption className="position-absolute ml-g">
+				<figcaption className="position-absolute ml-g col-7 p-0">
 					<p>
-						Get 52 points
+						{'Get '}
+						<b>52 points</b>
 						<br />
 						with this purchase
 					</p>

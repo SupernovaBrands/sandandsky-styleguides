@@ -1,0 +1,8 @@
+.swell-banner {
+    border-radius: calc-em(10);
+    height: calc-em(92);
+
+    &__img {
+        right: $grid-gutter-width/2;
+    }
+}

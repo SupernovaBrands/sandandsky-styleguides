@@ -1,0 +1,660 @@
+[
+    {
+        "id": 776113,
+        "cost_text": "50 points",
+        "is_offline": false,
+        "discount_amount_cents": 0,
+        "discount_rate_cents": null,
+        "type": "Coupon",
+        "discount_type": "product",
+        "min_amount": null,
+        "cart_greater_than_cents": null,
+        "cost_in_points": 50,
+        "name": "SS TERRY HEADBAND",
+        "unrendered_name": "SS TERRY HEADBAND",
+        "subunit_to_unit": 100,
+        "currency_symbol": "$",
+        "variant_id": "SS0001432020",
+        "quantity": null,
+        "background_image_url": "https://cdn-swell-paperclip.yotpo.com/images/images/68086_1683858120.original.png?1683858120",
+        "title_and_id": "SS TERRY HEADBAND (776113)",
+        "vip_tiers": [
+            {
+                "value": 17141,
+                "display": "Mates"
+            },
+            {
+                "value": 20859,
+                "display": "Besties"
+            },
+            {
+                "value": 20860,
+                "display": "Soulmates"
+            }
+        ],
+        "vip_tier_label": "VIP ONLY",
+        "mode": "regular",
+        "icon": "fa-dollar",
+        "amount": 50,
+        "applies_to_product_type": "ALL",
+        "duration": "single_use",
+        "discount_percentage": null,
+        "discount_value_cents": null,
+        "description": "Get a free product with variant id SS0001432020",
+        "unrendered_description": "Get a free product with variant id SS0001432020",
+        "cart_greater_than": "0",
+        "discount_with_currency": "$0"
+    },
+    {
+        "id": 776119,
+        "cost_text": "50 points",
+        "is_offline": false,
+        "discount_amount_cents": 0,
+        "discount_rate_cents": null,
+        "type": "Coupon",
+        "discount_type": "product",
+        "min_amount": null,
+        "cart_greater_than_cents": null,
+        "cost_in_points": 50,
+        "name": "SS REUSABLE BAMBOO PADS",
+        "unrendered_name": "SS REUSABLE BAMBOO PADS",
+        "subunit_to_unit": 100,
+        "currency_symbol": "$",
+        "variant_id": "SS0001492020",
+        "quantity": null,
+        "background_image_url": "https://cdn-swell-paperclip.yotpo.com/images/images/68090_1683858215.original.png?1683858215",
+        "title_and_id": "SS REUSABLE BAMBOO PADS (776119)",
+        "vip_tiers": [
+            {
+                "value": 17141,
+                "display": "Mates"
+            },
+            {
+                "value": 20859,
+                "display": "Besties"
+            },
+            {
+                "value": 20860,
+                "display": "Soulmates"
+            }
+        ],
+        "vip_tier_label": "VIP ONLY",
+        "mode": "regular",
+        "icon": "fa-dollar",
+        "amount": 50,
+        "applies_to_product_type": "ALL",
+        "duration": "single_use",
+        "discount_percentage": null,
+        "discount_value_cents": null,
+        "description": "Get a free product with variant id SS0001492020",
+        "unrendered_description": "Get a free product with variant id SS0001492020",
+        "cart_greater_than": "0",
+        "discount_with_currency": "$0"
+    },
+    {
+        "id": 776114,
+        "cost_text": "80 points",
+        "is_offline": false,
+        "discount_amount_cents": 0,
+        "discount_rate_cents": null,
+        "type": "Coupon",
+        "discount_type": "product",
+        "min_amount": null,
+        "cart_greater_than_cents": null,
+        "cost_in_points": 80,
+        "name": "SS NEOPRENE POUCH PINK",
+        "unrendered_name": "SS NEOPRENE POUCH PINK",
+        "subunit_to_unit": 100,
+        "currency_symbol": "$",
+        "variant_id": "SS0001462020",
+        "quantity": null,
+        "background_image_url": "https://cdn-swell-paperclip.yotpo.com/images/images/68087_1683858145.original.png?1683858145",
+        "title_and_id": "SS NEOPRENE POUCH PINK (776114)",
+        "vip_tiers": [
+            {
+                "value": 17141,
+                "display": "Mates"
+            },
+            {
+                "value": 20859,
+                "display": "Besties"
+            },
+            {
+                "value": 20860,
+                "display": "Soulmates"
+            }
+        ],
+        "vip_tier_label": "VIP ONLY",
+        "mode": "regular",
+        "icon": "fa-dollar",
+        "amount": 80,
+        "applies_to_product_type": "ALL",
+        "duration": "single_use",
+        "discount_percentage": null,
+        "discount_value_cents": null,
+        "description": "Get a free product with variant id SS0001462020",
+        "unrendered_description": "Get a free product with variant id SS0001462020",
+        "cart_greater_than": "0",
+        "discount_with_currency": "$0"
+    },
+    {
+        "id": 776115,
+        "cost_text": "80 points",
+        "is_offline": false,
+        "discount_amount_cents": 0,
+        "discount_rate_cents": null,
+        "type": "Coupon",
+        "discount_type": "product",
+        "min_amount": null,
+        "cart_greater_than_cents": null,
+        "cost_in_points": 80,
+        "name": "SS NEOPRENE POUCH PURPLE",
+        "unrendered_name": "SS NEOPRENE POUCH PURPLE",
+        "subunit_to_unit": 100,
+        "currency_symbol": "$",
+        "variant_id": "SS0001462040",
+        "quantity": null,
+        "background_image_url": "https://cdn-swell-paperclip.yotpo.com/images/images/68088_1683858168.original.png?1683858168",
+        "title_and_id": "SS NEOPRENE POUCH PURPLE (776115)",
+        "vip_tiers": [
+            {
+                "value": 17141,
+                "display": "Mates"
+            },
+            {
+                "value": 20859,
+                "display": "Besties"
+            },
+            {
+                "value": 20860,
+                "display": "Soulmates"
+            }
+        ],
+        "vip_tier_label": "VIP ONLY",
+        "mode": "regular",
+        "icon": "fa-dollar",
+        "amount": 80,
+        "applies_to_product_type": "ALL",
+        "duration": "single_use",
+        "discount_percentage": null,
+        "discount_value_cents": null,
+        "description": "Get a free product with variant id SS0001462040",
+        "unrendered_description": "Get a free product with variant id SS0001462040",
+        "cart_greater_than": "0",
+        "discount_with_currency": "$0"
+    },
+    {
+        "id": 776117,
+        "cost_text": "80 points",
+        "is_offline": false,
+        "discount_amount_cents": 0,
+        "discount_rate_cents": null,
+        "type": "Coupon",
+        "discount_type": "product",
+        "min_amount": null,
+        "cart_greater_than_cents": null,
+        "cost_in_points": 80,
+        "name": "SS NEOPRENE POUCH BLUE",
+        "unrendered_name": "SS NEOPRENE POUCH BLUE",
+        "subunit_to_unit": 100,
+        "currency_symbol": "$",
+        "variant_id": "SS0001462060",
+        "quantity": null,
+        "background_image_url": "https://cdn-swell-paperclip.yotpo.com/images/images/68089_1683858193.original.png?1683858193",
+        "title_and_id": "SS NEOPRENE POUCH BLUE (776117)",
+        "vip_tiers": [
+            {
+                "value": 17141,
+                "display": "Mates"
+            },
+            {
+                "value": 20859,
+                "display": "Besties"
+            },
+            {
+                "value": 20860,
+                "display": "Soulmates"
+            }
+        ],
+        "vip_tier_label": "VIP ONLY",
+        "mode": "regular",
+        "icon": "fa-dollar",
+        "amount": 80,
+        "applies_to_product_type": "ALL",
+        "duration": "single_use",
+        "discount_percentage": null,
+        "discount_value_cents": null,
+        "description": "Get a free product with variant id SS0001462060",
+        "unrendered_description": "Get a free product with variant id SS0001462060",
+        "cart_greater_than": "0",
+        "discount_with_currency": "$0"
+    },
+    {
+        "id": 776102,
+        "icon": "fa-dollar",
+        "cost_text": "100 points",
+        "amount": 100,
+        "applies_to_product_type": "ALL",
+        "duration": "single_use",
+        "type": "Coupon",
+        "discount_amount_cents": 500,
+        "discount_rate_cents": null,
+        "discount_percentage": null,
+        "discount_type": "fixed_amount",
+        "discount_value_cents": null,
+        "name": "$5 Off",
+        "description": "Get $5.00 off your next purchase for 100 points",
+        "unrendered_name": "$5 Off",
+        "unrendered_description": "Get $5.00 off your next purchase for 100 points",
+        "cart_greater_than": "35",
+        "discount_with_currency": "$5"
+    },
+    {
+        "id": 776110,
+        "cost_text": "100 points",
+        "is_offline": false,
+        "discount_amount_cents": 0,
+        "discount_rate_cents": null,
+        "type": "Coupon",
+        "discount_type": "product",
+        "min_amount": null,
+        "cart_greater_than_cents": null,
+        "cost_in_points": 100,
+        "name": "SS PACK OF 3 MITTEN IN EVA BAG",
+        "unrendered_name": "SS PACK OF 3 MITTEN IN EVA BAG",
+        "subunit_to_unit": 100,
+        "currency_symbol": "$",
+        "variant_id": "SS0000222045",
+        "quantity": null,
+        "background_image_url": "https://cdn-swell-paperclip.yotpo.com/images/images/68082_1683858019.original.png?1683858019",
+        "title_and_id": "SS PACK OF 3 MITTEN IN EVA BAG (776110)",
+        "vip_tiers": [
+            {
+                "value": 17141,
+                "display": "Mates"
+            },
+            {
+                "value": 20859,
+                "display": "Besties"
+            },
+            {
+                "value": 20860,
+                "display": "Soulmates"
+            }
+        ],
+        "vip_tier_label": "VIP ONLY",
+        "mode": "regular",
+        "icon": "fa-dollar",
+        "amount": 100,
+        "applies_to_product_type": "ALL",
+        "duration": "single_use",
+        "discount_percentage": null,
+        "discount_value_cents": null,
+        "description": "Get a free product with variant id SS0000222045",
+        "unrendered_description": "Get a free product with variant id SS0000222045",
+        "cart_greater_than": "0",
+        "discount_with_currency": "$0"
+    },
+    {
+        "id": 776107,
+        "cost_text": "140 points",
+        "is_offline": false,
+        "discount_amount_cents": 0,
+        "discount_rate_cents": null,
+        "type": "Coupon",
+        "discount_type": "product",
+        "min_amount": null,
+        "cart_greater_than_cents": null,
+        "cost_in_points": 140,
+        "name": "SS AEA SUPER BOUNCE MASK 30G FILLED JAR + BOX",
+        "unrendered_name": "SS AEA SUPER BOUNCE MASK 30G FILLED JAR + BOX",
+        "subunit_to_unit": 100,
+        "currency_symbol": "$",
+        "variant_id": "SS0000104020",
+        "quantity": null,
+        "background_image_url": "https://cdn-swell-paperclip.yotpo.com/images/images/68081_1683857944.original.png?1683857944",
+        "title_and_id": "SS AEA SUPER BOUNCE MASK 30G FILLED JAR + BOX (776107)",
+        "vip_tiers": [
+            {
+                "value": 17141,
+                "display": "Mates"
+            },
+            {
+                "value": 20859,
+                "display": "Besties"
+            },
+            {
+                "value": 20860,
+                "display": "Soulmates"
+            }
+        ],
+        "vip_tier_label": "VIP ONLY",
+        "mode": "regular",
+        "icon": "https://cdn/shop/products/SS_Ecomm_Hero_SB_AEA_SBM-mini_23_1_1140x1440_crop_center.jpg?v=1637828950",
+        "amount": 140,
+        "applies_to_product_type": "ALL",
+        "duration": "single_use",
+        "discount_percentage": null,
+        "discount_value_cents": null,
+        "description": "Get a free product with variant id SS0000104020",
+        "unrendered_description": "Get a free product with variant id SS0000104020",
+        "cart_greater_than": "0",
+        "discount_with_currency": "$0"
+    },
+    {
+        "id": 776109,
+        "cost_text": "140 points",
+        "is_offline": false,
+        "discount_amount_cents": 0,
+        "discount_rate_cents": null,
+        "type": "Coupon",
+        "discount_type": "product",
+        "min_amount": null,
+        "cart_greater_than_cents": null,
+        "cost_in_points": 140,
+        "name": "SS AEA ENZYME POLISH 15G FILLED JAR + PACKAGING",
+        "unrendered_name": "SS AEA ENZYME POLISH 15G FILLED JAR + PACKAGING",
+        "subunit_to_unit": 100,
+        "currency_symbol": "$",
+        "variant_id": "SS0000125020",
+        "quantity": null,
+        "background_image_url": "https://cdn-swell-paperclip.yotpo.com/images/images/68083_1683858031.original.png?1683858031",
+        "title_and_id": "SS AEA ENZYME POLISH 15G FILLED JAR + PACKAGING (776109)",
+        "vip_tiers": [
+            {
+                "value": 17141,
+                "display": "Mates"
+            },
+            {
+                "value": 20859,
+                "display": "Besties"
+            },
+            {
+                "value": 20860,
+                "display": "Soulmates"
+            }
+        ],
+        "vip_tier_label": "VIP ONLY",
+        "mode": "regular",
+        "icon": "https://cdn/shop/products/SS_Ecomm_Hero_SB_AEA_EPMini_Crop_1_1140x1440_crop_center.jpg?v=1638347069",
+        "amount": 140,
+        "applies_to_product_type": "ALL",
+        "duration": "single_use",
+        "discount_percentage": null,
+        "discount_value_cents": null,
+        "description": "Get a free product with variant id SS0000125020",
+        "unrendered_description": "Get a free product with variant id SS0000125020",
+        "cart_greater_than": "0",
+        "discount_with_currency": "$0"
+    },
+    {
+        "id": 776121,
+        "cost_text": "140 points",
+        "is_offline": false,
+        "discount_amount_cents": 0,
+        "discount_rate_cents": null,
+        "type": "Coupon",
+        "discount_type": "product",
+        "min_amount": null,
+        "cart_greater_than_cents": null,
+        "cost_in_points": 140,
+        "name": "SS APC CLEANSER TRAVEL SIZE 50ML FILLED TUBE + BOX",
+        "unrendered_name": "SS APC CLEANSER TRAVEL SIZE 50ML FILLED TUBE + BOX",
+        "subunit_to_unit": 100,
+        "currency_symbol": "$",
+        "variant_id": "SS0001614020",
+        "quantity": null,
+        "background_image_url": "https://cdn-swell-paperclip.yotpo.com/images/images/68091_1683858238.original.png?1683858238",
+        "title_and_id": "SS APC CLEANSER TRAVEL SIZE 50ML FILLED TUBE + BOX (776121)",
+        "vip_tiers": [
+            {
+                "value": 17141,
+                "display": "Mates"
+            },
+            {
+                "value": 20859,
+                "display": "Besties"
+            },
+            {
+                "value": 20860,
+                "display": "Soulmates"
+            }
+        ],
+        "vip_tier_label": "VIP ONLY",
+        "mode": "regular",
+        "icon": "fa-dollar",
+        "amount": 140,
+        "applies_to_product_type": "ALL",
+        "duration": "single_use",
+        "discount_percentage": null,
+        "discount_value_cents": null,
+        "description": "Get a free product with variant id SS0001614020",
+        "unrendered_description": "Get a free product with variant id SS0001614020",
+        "cart_greater_than": "0",
+        "discount_with_currency": "$0"
+    },
+    {
+        "id": 776104,
+        "icon": "fa-dollar",
+        "cost_text": "200 points",
+        "amount": 200,
+        "applies_to_product_type": "ALL",
+        "duration": "single_use",
+        "type": "Coupon",
+        "discount_amount_cents": 1500,
+        "discount_rate_cents": null,
+        "discount_percentage": null,
+        "discount_type": "fixed_amount",
+        "discount_value_cents": null,
+        "name": "$15 Off",
+        "description": "Get $15.00 off your next purchase for 200 points",
+        "unrendered_name": "$15 Off",
+        "unrendered_description": "Get $15.00 off your next purchase for 200 points",
+        "cart_greater_than": "35",
+        "discount_with_currency": "$15"
+    },
+    {
+        "id": 776106,
+        "cost_text": "200 points",
+        "is_offline": false,
+        "discount_amount_cents": 0,
+        "discount_rate_cents": null,
+        "type": "Coupon",
+        "discount_type": "product",
+        "min_amount": null,
+        "cart_greater_than_cents": null,
+        "cost_in_points": 200,
+        "name": "SS APC MASK 30G TRAVEL SIZE FILLED JAR + BOX + PINK BRUSH",
+        "unrendered_name": "SS APC MASK 30G TRAVEL SIZE FILLED JAR + BOX + PINK BRUSH",
+        "subunit_to_unit": 100,
+        "currency_symbol": "$",
+        "variant_id": "4958811095111",
+        "quantity": null,
+        "background_image_url": "https://cdn-swell-paperclip.yotpo.com/images/images/68080_1683857907.original.png?1683857907",
+        "title_and_id": "SS APC MASK 30G TRAVEL SIZE FILLED JAR + BOX + PINK BRUSH (776106)",
+        "vip_tiers": [
+            {
+                "value": 17141,
+                "display": "Mates"
+            },
+            {
+                "value": 20859,
+                "display": "Besties"
+            },
+            {
+                "value": 20860,
+                "display": "Soulmates"
+            }
+        ],
+        "vip_tier_label": "VIP ONLY",
+        "mode": "regular",
+        "icon": "https://cdn.shopify.com/s/files/1/0248/5370/8886/products/SS_Ecomm_Hero_SB_AEA_MiniMaskDuo_23_1140x1440_crop_center.jpg?v=1637750739",
+        "amount": 200,
+        "applies_to_product_type": "ALL",
+        "duration": "single_use",
+        "discount_percentage": null,
+        "discount_value_cents": null,
+        "description": "Get a free product with variant id SS0000014060",
+        "unrendered_description": "Get a free product with variant id SS0000014060",
+        "cart_greater_than": "0",
+        "discount_with_currency": "$0"
+    },
+    {
+        "id": 776108,
+        "cost_text": "240 points",
+        "is_offline": false,
+        "discount_amount_cents": 0,
+        "discount_rate_cents": null,
+        "type": "Coupon",
+        "discount_type": "product",
+        "min_amount": null,
+        "cart_greater_than_cents": null,
+        "cost_in_points": 240,
+        "name": "SS AEA DREAMY GLOW DROPS 17ML FILLED BOTTLE + BOX",
+        "unrendered_name": "SS AEA DREAMY GLOW DROPS 17ML FILLED BOTTLE + BOX",
+        "subunit_to_unit": 100,
+        "currency_symbol": "$",
+        "variant_id": "SS0000112040",
+        "quantity": null,
+        "background_image_url": null,
+        "title_and_id": "SS AEA DREAMY GLOW DROPS 17ML FILLED BOTTLE + BOX (776108)",
+        "vip_tiers": [
+            {
+                "value": 17141,
+                "display": "Mates"
+            },
+            {
+                "value": 20859,
+                "display": "Besties"
+            },
+            {
+                "value": 20860,
+                "display": "Soulmates"
+            }
+        ],
+        "vip_tier_label": "VIP ONLY",
+        "mode": "regular",
+        "icon": "https://cdn/shop/products/SS_Ecomm_Hero_SB_AEA_Drops_Mini_17ml_1140x1440_crop_center.jpg?v=1637746170",
+        "amount": 240,
+        "applies_to_product_type": "ALL",
+        "duration": "single_use",
+        "discount_percentage": null,
+        "discount_value_cents": null,
+        "description": "Get a free product with variant id SS0000112040",
+        "unrendered_description": "Get a free product with variant id SS0000112040",
+        "cart_greater_than": "0",
+        "discount_with_currency": "$0"
+    },
+    {
+        "id": 776111,
+        "cost_text": "240 points",
+        "is_offline": false,
+        "discount_amount_cents": 0,
+        "discount_rate_cents": null,
+        "type": "Coupon",
+        "discount_type": "product",
+        "min_amount": null,
+        "cart_greater_than_cents": null,
+        "cost_in_points": 240,
+        "name": "SS TW SPLASH SERUM 17ML FILLED BOTTLE + BOX",
+        "unrendered_name": "SS TW SPLASH SERUM 17ML FILLED BOTTLE + BOX",
+        "subunit_to_unit": 100,
+        "currency_symbol": "$",
+        "variant_id": "SS0000404020",
+        "quantity": null,
+        "background_image_url": "https://cdn-swell-paperclip.yotpo.com/images/images/68084_1683858058.original.png?1683858058",
+        "title_and_id": "SS TW SPLASH SERUM 17ML FILLED BOTTLE + BOX (776111)",
+        "vip_tiers": [
+            {
+                "value": 17141,
+                "display": "Mates"
+            },
+            {
+                "value": 20859,
+                "display": "Besties"
+            },
+            {
+                "value": 20860,
+                "display": "Soulmates"
+            }
+        ],
+        "vip_tier_label": "VIP ONLY",
+        "mode": "regular",
+        "icon": "https://cdn/shop/products/SS_Ecomm_Hero_SB_TSW_17ml-Splash-Seum_1140x1440_crop_center.jpg?v=1637746342",
+        "amount": 240,
+        "applies_to_product_type": "ALL",
+        "duration": "single_use",
+        "discount_percentage": null,
+        "discount_value_cents": null,
+        "description": "Get a free product with variant id SS0000404020",
+        "unrendered_description": "Get a free product with variant id SS0000404020",
+        "cart_greater_than": "0",
+        "discount_with_currency": "$0"
+    },
+    {
+        "id": 776112,
+        "cost_text": "240 points",
+        "is_offline": false,
+        "discount_amount_cents": 0,
+        "discount_rate_cents": null,
+        "type": "Coupon",
+        "discount_type": "product",
+        "min_amount": null,
+        "cart_greater_than_cents": null,
+        "cost_in_points": 240,
+        "name": "SS FACE MASSAGER TOOL (SINGLE) PACKED IN BOX",
+        "unrendered_name": "SS FACE MASSAGER TOOL (SINGLE) PACKED IN BOX",
+        "subunit_to_unit": 100,
+        "currency_symbol": "$",
+        "variant_id": "SS0001312020",
+        "quantity": null,
+        "background_image_url": "https://cdn-swell-paperclip.yotpo.com/images/images/68085_1683858083.original.png?1683858083",
+        "title_and_id": "SS FACE MASSAGER TOOL (SINGLE) PACKED IN BOX (776112)",
+        "vip_tiers": [
+            {
+                "value": 17141,
+                "display": "Mates"
+            },
+            {
+                "value": 20859,
+                "display": "Besties"
+            },
+            {
+                "value": 20860,
+                "display": "Soulmates"
+            }
+        ],
+        "vip_tier_label": "VIP ONLY",
+        "mode": "regular",
+        "icon": "fa-dollar",
+        "amount": 240,
+        "applies_to_product_type": "ALL",
+        "duration": "single_use",
+        "discount_percentage": null,
+        "discount_value_cents": null,
+        "description": "Get a free product with variant id SS0001312020",
+        "unrendered_description": "Get a free product with variant id SS0001312020",
+        "cart_greater_than": "0",
+        "discount_with_currency": "$0"
+    },
+    {
+        "id": 776105,
+        "icon": "fa-dollar",
+        "cost_text": "300 points",
+        "amount": 300,
+        "applies_to_product_type": "ALL",
+        "duration": "single_use",
+        "type": "Coupon",
+        "discount_amount_cents": 3000,
+        "discount_rate_cents": null,
+        "discount_percentage": null,
+        "discount_type": "fixed_amount",
+        "discount_value_cents": null,
+        "name": "$30 Off",
+        "description": "Get $30.00 off your next purchase for 300 points",
+        "unrendered_name": "$30 Off",
+        "unrendered_description": "Get $30.00 off your next purchase for 300 points",
+        "cart_greater_than": "35",
+        "discount_with_currency": "$30"
+    }
+]

@@ -21,16 +21,16 @@
                 <input type="hidden" name="id" value="variantId" />
                 <input type="hidden" name="quantity" value="1" />
                 {{# if badge}}<span class="badge badge-light position-absolute font-weight-normal">{{ badge }}</span>{{/if}}
-                <p class="product-card__text font-size-sm mb-0 text-muted flex-grow-1 d-flex flex-column h-100">{{# if rangeText }}{{rangeText}}{{else}}Tasmanian Spring Water{{/if}}</p>
-                <a class="text-decoration-none mb-0 font-weight-bold flex-grow-1 d-flex flex-column h-100">{{# if title}}{{ title }}{{ else }}Hydration Boost Cream{{/if}}</a>
+                <p class="product-card__text font-size-sm mb-0 text-muted flex-grow-1 d-flex flex-column h-100 {{#if home-range-section }}text-center text-lg-left{{/if}}">{{# if rangeText }}{{rangeText}}{{else}}Tasmanian Spring Water{{/if}}</p>
+                <a class="text-decoration-none mb-0 font-weight-bold flex-grow-1 d-flex flex-column h-100 {{#if home-range-section }}text-center text-lg-left{{/if}}">{{# if title}}{{ title }}{{ else }}Hydration Boost Cream{{/if}}</a>
 
-                <div class="mb-2 flex-grow-1 align-items-center">
+                <div class="mb-2 flex-grow-1 align-items-center ">
                     {{!-- DEV --}}
                     <div class="react-yotpo-star" data-product-id="4633315409991" data-hide-stars="true"></div>
                     {{!-- US --}}
                     {{!-- <div class="react-yotpo-star" data-product-id="3595105992809" data-hide-stars="true"></div> --}}
                 </div>
-                <button type="button" class="{{#if collection}}d-flex justify-content-between{{else}}d-flex justify-content-between align-items-center{{/if}} py-2 btn px-g px-lg-3 justify-content-lg-between btn-primary font-size-base {{#if home-range-section}}product-card__btn-variant-home justify-content-between align-items-center{{/if}} {{#if range_page}}product-card__btn-variant-home justify-content-between align-items-center{{/if}}">
+                <button type="button" class="{{#if home-range-section }}mx-3 mx-lg-0{{/if}} {{#if collection}}d-flex justify-content-between{{else}}d-flex justify-content-between align-items-center{{/if}} py-2 btn px-g px-lg-3 justify-content-lg-between btn-primary font-size-base {{#if home-range-section}}product-card__btn-variant-home justify-content-between align-items-center{{/if}} {{#if range_page}}product-card__btn-variant-home justify-content-between align-items-center{{/if}}">
                     <span class="d-flex align-items-center justify-content-center font-size-sm product-card__btn-variant-text">Add</span>
                     <span class="d-flex align-items-center justify-content-center product-card__btn-variant-text">
                         <span class="font-weight-normal text-linethrough mr-1 {{#if collection}}product-card__btn-price{{/if}}">$99</span>

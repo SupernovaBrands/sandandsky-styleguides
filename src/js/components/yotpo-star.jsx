@@ -25,7 +25,7 @@ const YotpoStar = (props) => {
 
 	if (!init) return (<div />);
 	return props.hideStars ? (
-		<div className={`d-flex align-items-center ${window.location.href.includes('home') && 'justify-content-center'} ${window.location.href.includes('collection') ? 'product-card__stars' : 'font-size-sm'}`}>
+		<div className={`d-flex align-items-center ${window.location.href.includes('home') && 'justify-content-center justify-content-lg-start'} ${window.location.href.includes('collection') ? 'product-card__stars' : 'font-size-sm'}`}>
 			<SvgFull className="svg text-secondary" />
 			<span className="ml-1 mt-1">{`${score.toFixed(1)}/5.0 - `}</span>
 			<span className="ml-1 mt-1">

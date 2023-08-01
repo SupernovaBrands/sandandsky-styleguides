@@ -58,18 +58,25 @@
 					</a>
 					<div class="dropdown-menu border-0 rounded-0 pt-lg-g pb-0 d-block mt-sm-6 mt-lg-0" aria-labelledby="dropdownMenuUser">
 						<form id="dropdown__login" class="p-g shadow collapse show" data-parent="#dropdownMenuForm">
-							<p class="font-weight-bold text-center px-2 mb-3">Earn and redeem points from purchases</p>
-							<div class="form-group">
-								<input type="email" class="form-control font-size-sm" id="dropdownLoginFormEmail" placeholder="Email">
+							<p class="font-weight-bold text-center px-2 mb-3">Sign in to your account</p>
+							{{> components/social-auth }}
+							<p class="text-center my-2">or login with email</p>
+							<div class="floating-label position-relative">
+								<input type="email" class="form-control font-size-sm" id="dropdownLoginFormEmail">
+								<label class="floating-label__text position-absolute font-size-sm mb-0">Email</label>
 							</div>
-							<div class="form-group mt-2">
-								<input type="password" class="form-control font-size-sm" id="dropdownLoginFormPassword" placeholder="Password">
+							<div class="floating-label position-relative mt-2">
+								<input type="password" class="form-control font-size-sm" id="dropdownLoginFormPassword">
+								<label class="floating-label__text position-absolute font-size-sm mb-0">Password</label>
 							</div>
 							<button type="submit" class="btn btn-primary btn-block mt-3 mb-0">Log In</button>
 							<div class="form-group font-size-sm d-flex justify-content-between mt-3">
 								<a href="#" class="text-underline text-primary">Forgot your password?</a>
 								<a href="#dropdown__register" class="text-underline text-primary" data-toggle="collapse">Register Account</a>
 							</div>
+							<p class="font-size-sm mt-3">
+								This site is protected by reCAPTCHA and the Google <a class="text-primary" href="#">Privacy Policy</a> and <a class="text-primary" href="#">Terms & Conditions</a> apply.
+							</p>
 						</form>
 						<form id="dropdown__register" class="px-3 py-g shadow collapse" data-parent="#dropdownMenuForm">
 							<p class="font-weight-bold text-center mb-3">Get 50 bonus points and an exclusive welcome offer</p>
@@ -101,6 +108,9 @@
 							<div class="form-group font-size-xs text-center mt-2">
 								<a href="#dropdown__login" class="text-underline text-primary" data-toggle="collapse">Back to login</a>
 							</div>
+						</form>
+						<form id="dropdown__reset" class="" data-parent="#dropdownMenuForm">
+
 						</form>
 					</div>
 				</li>

@@ -76,3 +76,23 @@
         opacity: 1;
     }
 }
+
+.modal--birthday {
+	.modal-content {
+		border-radius: calc-em(8);
+		@include media-breakpoint-up(lg) {
+			border-radius: calc-em(16);
+		}
+	}
+
+	.close {
+        right: 1em;
+        top: 1em;
+        opacity: 1;
+    }
+
+	input,
+	select {
+		border-color: $gray-500;
+	}
+}

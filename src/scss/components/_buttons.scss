@@ -9,6 +9,13 @@
 		color: $white;
 	}
 
+	&-primary.disabled,
+	&-primary:disabled {
+		background: $input-btn-primary-disabled-color;
+		border: $input-btn-primary-disabled-color;
+		opacity: 1;
+	}
+
 	&-outline-primary {
 		border-color: $primary;
 		background-color: $white;
@@ -18,5 +25,9 @@
 			border-color: $gray-600;
 			color: $gray-600;
 		}
+	}
+
+	&--auth {
+		height: 40px;
 	}
 }

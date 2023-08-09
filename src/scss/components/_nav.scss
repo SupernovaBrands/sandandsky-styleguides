@@ -114,5 +114,11 @@
 		}
 	}
 
+	.nav-item {
+		&--divider {
+			height: calc-em(20);
+			border-left: 1px solid $body-color;
+		}
+	}
 
 }

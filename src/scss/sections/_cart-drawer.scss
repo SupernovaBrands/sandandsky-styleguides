@@ -136,3 +136,18 @@
 		}
 	}
 }
+
+.discount__banner {
+	width: calc(100% - 10px);
+
+	.banner-decoration {
+		top: 0;
+		right: -10px;
+		height: 100%;
+	}
+
+	svg {
+		height: 2em;
+		color: $primary-light;
+	}
+}

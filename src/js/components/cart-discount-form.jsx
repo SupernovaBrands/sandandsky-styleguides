@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 
 import SvgTag from '~svg/tag.svg';
 import SvgCloseCircle from '~svg/close-circle.svg';
+import SvgPercent from '~svg/percent-square.svg';
+import MenuBannerDecorative from '~svg/menu-banner-decoration.svg';
 
 export default class CartDiscountForm extends React.Component {
 	constructor(props) {
@@ -82,18 +84,28 @@ export default class CartDiscountForm extends React.Component {
 				)}
 			</div>
 		) : (
-			<div className="d-flex flex-wrap mt-1">
-				<label htmlFor="cart-discount" className="floating-label position-relative flex-grow-1 mr-1 mb-0">
-					<input id="cart-discount" type="text" name="discount" className="form-control font-size-sm text-body" placeholder={tStrings.cartDiscountInput} value={code} onChange={this.onTextChange} onKeyUp={this.onKeyUp} readOnly={loading} data-cy="cart-discount" />
-					<span className="floating-label__text position-absolute font-size-sm">{tStrings.cartDiscountInput}</span>
-				</label>
-				<button className="btn btn-lg btn-outline-primary" type="button" onClick={this.applyDiscount} disabled={!code} data-cy="apply-btn">
-					{loading ? (<div className="spinner-border spinner-border-sm" role="status" />) : tStrings.cartDiscountApply}
-				</button>
-				{error && (
-					<p className="small text-danger mb-0 w-100">{error}</p>
-				)}
-			</div>
+			<>
+				<div className="d-flex flex-wrap mt-1">
+					<label htmlFor="cart-discount" className="floating-label position-relative flex-grow-1 mr-1 mb-0">
+						<input id="cart-discount" type="text" name="discount" className="form-control font-size-sm text-body" placeholder={tStrings.cartDiscountInput} value={code} onChange={this.onTextChange} onKeyUp={this.onKeyUp} readOnly={loading} data-cy="cart-discount" />
+						<span className="floating-label__text position-absolute font-size-sm">{tStrings.cartDiscountInput}</span>
+					</label>
+					<button className="btn btn-lg btn-outline-primary" type="button" onClick={this.applyDiscount} disabled={!code} data-cy="apply-btn">
+						{loading ? (<div className="spinner-border spinner-border-sm" role="status" />) : tStrings.cartDiscountApply}
+					</button>
+					{error && (
+						<p className="small text-danger mb-0 w-100">{error}</p>
+					)}
+				</div>
+				<div className="discount__banner position-relative m-0 d-flex px-g py-2 bg-primary-light mt-2">
+					<SvgPercent className="svg text-primary" />
+					<div className="mobile-nav__banner-content pl-g d-flex justify-content-between w-100">
+						<p className="mb-0">10% off on all bundles!<br />promocode: <b>AFTERPAY10</b></p>
+						<span className="d-flex text-primary font-weight-bold align-items-center ">Use</span>
+					</div>
+					<MenuBannerDecorative className='svg position-absolute banner-decoration' />
+				</div>
+			</>
 		);
 	}
 }

@@ -94,5 +94,11 @@
 	input,
 	select {
 		border-color: $gray-500;
+		min-height: 50px;
+	}
+
+	input::-webkit-input-placeholder,
+	input::placeholder {
+		color: $gray-500;
 	}
 }

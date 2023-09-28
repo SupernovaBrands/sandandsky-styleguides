@@ -6,6 +6,18 @@
 	}
 }
 
+.modal {
+	.close {
+		opacity: 1;
+		right: 1em;
+		top: 1em;
+	}
+
+	.modal-content {
+		border-radius: calc-em(20);
+	}
+}
+
 .modal--sweepstakes {
 	.modal-dialog {
 		@include media-breakpoint-up(lg) {
@@ -30,10 +42,6 @@
 		@include media-breakpoint-up(lg) {
 			max-width: 630px;
 		}
-	}
-
-	.modal-content {
-		border-radius: calc-em(20);
 	}
 
 	&__close {
@@ -69,14 +77,6 @@
 	}
 }
 
-.modal--terms {
-    .close {
-        right: 1em;
-        top: 1em;
-        opacity: 1;
-    }
-}
-
 .modal--birthday {
 	.modal-content {
 		border-radius: calc-em(8);
@@ -105,39 +105,11 @@
 
 
 .modal--checkout-upsell {
-	.close {
-        right: 1em;
-        top: 1em;
-        opacity: 1;
-    }
-
-	.modal-body {
-		padding: calc-em(60);
-
-		@include media-breakpoint-down(md) {
-			padding: calc-em(24);	
-		}
-	}
-
 	.modal-dialog {
 		max-width: 425px;
 	}
 
-	.percent-icon {
+	.percentage-icon {
 		height: calc-em(36);
-	}
-
-	.modal-content {
-		border-radius: calc-em(20);
-	}
-
-	form {
-		button {
-			max-width: 140px;
-		}
-
-		.range {
-			color: $gray-500;
-		}
 	}
 }

@@ -60,3 +60,13 @@
 		background: $primary-light;
 	}
 }
+
+.modal--checkout-upsell {
+	.modal-dialog {
+		max-width: 425px;
+	}
+
+	.percentage-icon {
+		height: calc-em(36);
+	}
+}

@@ -30,9 +30,13 @@
     <h1>Modal Sweepstakes CTA</h1>
     <button class="btn btn-secondary" data-toggle="modal" data-target="#modal-sweepstakes-cta">Launch Modal</button>
   </div>
+  <div class="container mt-4">
+    <h1>Modal Checkout Upsell</h1>
+    <button class="btn btn-secondary" data-toggle="modal" data-target="#modal-checkout-upsell">Launch Modal</button>
+  </div>
   <div class="modal modal--waitlist fade px-g px-lg-0" id="modal-waitlist" tabindex="-1" role="dialog">
   	<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-  		<div class="modal-content border-0 rounded-0">
+  		<div class="modal-content border-0 overflow-hidden">
   			<div class="row align-items-center">
   				<div class="col-lg-6 pr-lg-0">
   					<picture class="">
@@ -90,7 +94,7 @@
   					</div>
   				</div>
   			</div>
-  			<button type="button" class="close position-absolute font-size-base p-1 bg-primary text-white" data-dismiss="modal">
+  			<button type="button" class="close position-absolute font-size-base" data-dismiss="modal">
   				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="svg"><path d="m12 1-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1-5-5z"></path></svg>
   			</button>
   		</div>
@@ -103,14 +107,12 @@
   				<source srcset="https://cdn.shopify.com/s/files/1/0277/5262/8295/files/BFCM_Sweepstakes_Website_Assets1260x900_V2.jpg?v=1636540373" media="(min-width: 992px)">
   				<img src="https://cdn.shopify.com/s/files/1/0277/5262/8295/files/BFCM_Sweepstakes_Website_Assets690x1060_V2.jpg?v=1636540373" alt="Placeholder" class="d-block w-100">
   			</picture>
-  			<div class="modal-header justify-content-end">
-  		        <button type="button" class="close font-size-base text-white" data-dismiss="modal">
-  					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="svg"><path d="m12 1-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1-5-5z"></path></svg>
-  				</button>
-  		    </div>
+  			<button type="button" class="position-absolute close font-size-base text-white" data-dismiss="modal">
+  				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="svg"><path d="m12 1-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1-5-5z"></path></svg>
+  			</button>
   			<div class="row align-items-center">
   				<div id="newsletter-form" class="col-lg-6 pl-lg-0 offset-lg-6">
-  					<div class="px-4 pr-lg-5 pl-lg-1 py-1 mt-7 mt-lg-0 text-center justify-content-center mb-2 mb-lg-4">
+  					<div class="px-4 pr-lg-5 pl-lg-1 py-1 mt-7 mt-lg-3 text-center justify-content-center mb-2 mb-lg-4">
   						<h2 class="mb-1 w-100 mt-4 mt-lg-0">Win up to $1,500 worth<br>of products</h2>
   						<p class="mb-1 mb-lg-g font-size-sm font-weight-bold mx-lg-2">Sign up for a chance to win and receive exclusive deals</p>
   						<form class="w-100">
@@ -182,7 +184,7 @@
   	</div>
   </div>  <div class="modal modal--newsletter fade" id="main-newsletter-modal" tabindex="-1" role="dialog">
   	<div class="modal-dialog modal-lg modal-dialog-centered mt-0" role="document">
-  		<div class="modal-content mx-0 position-relative border-0 rounded-0 overflow-hidden mx-1">
+  		<div class="modal-content mx-0 position-relative border-0 overflow-hidden mx-1">
   			<img src="https://via.placeholder.com/808x310?text=1" class="w-100 modal--newsletter__bg d-lg-none" alt="Product Image" loading="lazy">
   			<img src="https://via.placeholder.com/730x560?text=1" class="w-100 modal--newsletter__bg-completed d-lg-none d-none" alt="Product Image" loading="lazy">
   			<div class="row align-items-center">
@@ -279,8 +281,8 @@
   					</div>
   				</div>
   			</div>
-  			<button type="button" class="close position-absolute font-size-base d-none d-lg-block " data-dismiss="modal">
-  				<svg width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="13" cy="13" r="13" fill="#484848"></circle><rect x="8.333" y="7" width="15.085" height="1.886" rx=".943" transform="rotate(45 8.333 7)" fill="#fff"></rect><rect x="7" y="17.666" width="15.085" height="1.886" rx=".943" transform="rotate(-45 7 17.666)" fill="#fff"></rect></svg>
+  			<button type="button" class="close position-absolute font-size-base" data-dismiss="modal">
+  				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="svg"><path d="m12 1-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1-5-5z"></path></svg>
   			</button>
   		</div>
   	</div>
@@ -288,11 +290,9 @@
   <div class="modal modal--sweepstakes-cta fade px-g px-lg-0" id="modal-sweepstakes-cta" tabindex="-1" role="dialog">
   	<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
   		<div class="modal-content mx-auto overflow-hidden border-0">
-  			<div class="modal-header p-0 border-0 position-absolute modal--sweepstakes-cta__close">
-  		        <button type="button" class="close font-size-base" data-dismiss="modal">
-  					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="svg"><path d="m12 1-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1-5-5z"></path></svg>
-  				</button>
-  		    </div>
+  			<button type="button" class="close position-absolute font-size-base" data-dismiss="modal">
+  				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="svg"><path d="m12 1-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1-5-5z"></path></svg>
+  			</button>
   			<div class="row align-items-center mx-0">
                   <div class="col-lg-6 pl-lg-0 p-0">
                       <picture class="w-100">
@@ -310,7 +310,84 @@
   			</div>
   		</div>
   	</div>
-  </div>  <script src="/sandandsky-styleguides/js/globals.js"></script>
+  </div>  <div class="modal fade modal--checkout-upsell" id="modal-checkout-upsell" tabindex="-1" role="dialog" aria-labelledby="modal-checkout-upsell" aria-hidden="true">
+  	<div class="modal-dialog modal-dialog-centered" role="document">
+  		<div class="modal-content">
+  			<button type="button" class="close position-absolute font-size-base" data-dismiss="modal">
+  				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="svg"><path d="m12 1-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1-5-5z"></path></svg>
+  			</button>
+  			<div class="modal-body text-center px-4 px-lg-5 py-4">
+  				<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 36" class="svg percentage-icon mb-3">
+  <path d="M10.88 14.74a3.33 3.33 0 1 1 0-6.65 3.33 3.33 0 0 1 0 6.65Zm0-4.43a1.1 1.1 0 1 0 0 2.22 1.1 1.1 0 0 0 0-2.22ZM19.12 22.98a3.33 3.33 0 1 1 0-6.65 3.33 3.33 0 0 1 0 6.65Zm0-4.43a1.1 1.1 0 1 0 0 2.22 1.1 1.1 0 0 0 0-2.22ZM19.32 9.66l1.56 1.56-10.2 10.2-1.56-1.56 10.2-10.2Z"></path>
+  <path d="M29.54 36H.46V.2l3.23 1.26L6.04 0l2.24 1.4L10.52 0l2.24 1.4L15 0l2.24 1.4L19.48 0l2.24 1.4L23.96 0l2.35 1.46L29.54.2V36ZM2.67 33.79h24.66V3.44l-1.25.5-2.12-1.33L21.72 4l-2.24-1.4L17.24 4 15 2.6 12.76 4l-2.24-1.4L8.28 4 6.04 2.6 3.92 3.93l-1.25-.49V33.8Z"></path>
+  <path d="M22.82 27.28h-2.96v2.21h2.96v-2.21ZM17.65 27.28H7.18v2.21h10.47v-2.21Z"></path>
+</svg>
+  				<h3 class="mb-2  font-weight-bold">Exclusive Offer Awaits!</h3>
+  				<p class="mb-4">Get additional discounted products now</p>
+  				<form action="" class="d-flex mb-3">
+  					<figure class="d-flex flex-grow-1 mb-0">
+  						<a href="#" class="flex-shrink-0">
+  							<picture class="d-block">
+  								<source srcset="https://via.placeholder.com/115x115" media="(min-width: 992px)">
+  								<img src="https://via.placeholder.com/115x115" alt="" class="w-100">
+  							</picture>
+  						</a>
+  						<figcaption class="media-body pl-g text-left">
+  							<span class="font-size-xs mb-1 d-block  text-gray-600">Tasmanian Spring Water</span>
+  							<span class="font-weight-bold font-size-sm mb-1">Australian Pink Clay Porefining Face Mask</span>
+  							<p class="font-size-sm ">
+  								<span class="text-linethrough">$53.00</span>
+  								<span class="font-weight-bold">$65.80</span>
+  							</p>
+  							<button type="submit" class="btn d-block mt-2 btn-primary">Add to cart</button>
+  						</figcaption>
+  					</figure>
+  				</form>
+  
+  				<form action="" class="d-flex mb-3">
+  					<figure class="d-flex flex-grow-1 mb-0">
+  						<a href="#" class="flex-shrink-0">
+  							<picture class="d-block">
+  								<source srcset="https://via.placeholder.com/115x115" media="(min-width: 992px)">
+  								<img src="https://via.placeholder.com/115x115" alt="" class="w-100">
+  							</picture>
+  						</a>
+  						<figcaption class="media-body pl-g text-left">
+  							<span class="font-size-xs mb-1 d-block  text-gray-600">Tasmanian Spring Water</span>
+  							<span class="font-weight-bold font-size-sm mb-1">Australian Pink Clay Porefining Face Mask</span>
+  							<p class="font-size-sm ">
+  								<span class="text-linethrough">$53.00</span>
+  								<span class="font-weight-bold">$65.80</span>
+  							</p>
+  							<button type="submit" class="btn d-block mt-2 btn-primary">Add to cart</button>
+  						</figcaption>
+  					</figure>
+  				</form>
+  
+  				<form action="" class="d-flex mb-3">
+  					<figure class="d-flex flex-grow-1 mb-0">
+  						<a href="#" class="flex-shrink-0">
+  							<picture class="d-block">
+  								<source srcset="https://via.placeholder.com/115x115" media="(min-width: 992px)">
+  								<img src="https://via.placeholder.com/115x115" alt="" class="w-100">
+  							</picture>
+  						</a>
+  						<figcaption class="media-body pl-g text-left">
+  							<span class="font-size-xs mb-1 d-block  text-gray-600">Tasmanian Spring Water</span>
+  							<span class="font-weight-bold font-size-sm mb-1">Australian Pink Clay Porefining Face Mask</span>
+  							<p class="font-size-sm ">
+  								<span class="text-linethrough">$53.00</span>
+  								<span class="font-weight-bold">$65.80</span>
+  							</p>
+  							<button type="submit" class="btn d-block mt-2 btn-primary">Add to cart</button>
+  						</figcaption>
+  					</figure>
+  				</form>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+  <script src="/sandandsky-styleguides/js/globals.js"></script>
   <script src="/sandandsky-styleguides/js/lazyload.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
   

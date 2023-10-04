@@ -6,15 +6,24 @@
 	}
 }
 
+.modal  {
+	.close {
+		opacity: 1;
+		right: 1em;
+		top: 1em;
+		z-index: $zindex-dropdown;
+	}
+
+	.modal-content {
+		border-radius: calc-em(20);
+	}
+}
+
 .modal--sweepstakes {
 	.modal-dialog {
 		@include media-breakpoint-up(lg) {
 			max-width: 630px;
 		}
-	}
-
-	.modal-content {
-		border-radius: calc-em(20);
 	}
 
 	@include media-breakpoint-up(lg) {
@@ -31,17 +40,6 @@
 			max-width: 630px;
 		}
 	}
-
-	.modal-content {
-		border-radius: calc-em(20);
-	}
-
-	&__close {
-		cursor: pointer;
-		top: calc-em(15);
-		right: calc-em(15);
-		z-index: $zindex-dropdown;
-	}
 }
 
 .modal--waitlist {
@@ -55,12 +53,6 @@
 	.checkmark {
 		height: calc-em(24);
 	}
-
-	.close {
-		right: calc-em(20);
-		top: - calc-em(13);
-		opacity: 1;
-	}
 }
 
 .modal-open {
@@ -69,10 +61,12 @@
 	}
 }
 
-.modal--terms {
-    .close {
-        right: 1em;
-        top: 1em;
-        opacity: 1;
-    }
+.modal--checkout-upsell {
+	.modal-dialog {
+		max-width: 425px;
+	}
+
+	.percentage-icon {
+		height: calc-em(36);
+	}
 }

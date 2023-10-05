@@ -5,4 +5,11 @@
     &__img {
         right: $grid-gutter-width/2;
     }
+
+    &__text {
+        max-width: 60%;
+        @include media-breakpoint-up(lg) {
+            max-width: 100%;
+        }
+    }
 }

@@ -1,5 +1,5 @@
 <div class="product-card position-relative {{#unless home-range-section}}col-6{{/unless}} {{#if range_page}}{{range_page_classes}}{{else}}{{#if home-range-section}}{{else}}col-lg-3{{/if}}{{/if}} d-flex flex-column pb-2 {{ class }}">
-    <figure class="bg-gray-100 rounded-lg">
+    <figure class="bg-gray-100 rounded-lg flex-grow-1 d-flex flex-column">
         <a href="">
             <noscript class="loading-lazy">
             <picture class="embed-responsive bg-shimmer">
@@ -16,22 +16,22 @@
             </noscript>
             {{/if}}
         </a>
-        <figcaption class="mt-2 flex-grow-1 d-flex flex-column p-g product-card__content">
+        <figcaption class="mt-0 flex-grow-1 d-flex flex-column p-2 product-card__content">
             <form class="product-card-form flex-grow-1 d-flex flex-column h-100">
                 <input type="hidden" name="id" value="variantId" />
                 <input type="hidden" name="quantity" value="1" />
                 {{# if badge}}<span class="badge badge-light position-absolute font-weight-normal">{{ badge }}</span>{{/if}}
-                <p class="product-card__text font-size-sm mb-2 text-muted">Tasmanian Spring Water</p>
-                <a class="text-decoration-none mb-2 font-weight-bold">{{# if title}}{{ title }}{{ else }}Hydration Boost Cream{{/if}}</a>
+                <p class="product-card__text font-size-sm mb-0 text-muted flex-grow-1 d-flex flex-column h-100 {{#if home-range-section }}text-center text-lg-left{{/if}}">{{# if rangeText }}{{rangeText}}{{else}}Tasmanian Spring Water{{/if}}</p>
+                <a class="text-decoration-none mb-0 font-weight-bold flex-grow-1 d-flex flex-column h-100 {{#if home-range-section }}text-center text-lg-left{{/if}}">{{# if title}}{{ title }}{{ else }}Hydration Boost Cream{{/if}}</a>
 
-                <div class="mb-1 flex-grow-1 align-items-center">
+                <div class="mb-2 flex-grow-1 align-items-center ">
                     {{!-- DEV --}}
                     <div class="react-yotpo-star" data-product-id="4633315409991" data-hide-stars="true"></div>
                     {{!-- US --}}
                     {{!-- <div class="react-yotpo-star" data-product-id="3595105992809" data-hide-stars="true"></div> --}}
                 </div>
-                <button type="button" class="{{#if collection}}d-block d-lg-flex justify-content-lg-between{{else}}d-flex justify-content-between align-items-center{{/if}} py-2 btn px-g px-lg-3 justify-content-lg-between btn-primary font-size-base {{#if home-range-section}}product-card__btn-variant-home justify-content-between align-items-center{{/if}} {{#if range_page}}product-card__btn-variant-home justify-content-between align-items-center{{/if}}">
-                    <span class="d-flex align-items-center justify-content-center font-size-sm product-card__btn-variant-text">Add to Cart</span>
+                <button type="button" class="{{#if home-range-section }}mx-3 mx-lg-0{{/if}} {{#if collection}}d-flex justify-content-between{{else}}d-flex justify-content-between align-items-center{{/if}} py-2 btn px-g px-lg-3 justify-content-lg-between btn-primary font-size-base {{#if home-range-section}}product-card__btn-variant-home justify-content-between align-items-center{{/if}} {{#if range_page}}product-card__btn-variant-home justify-content-between align-items-center{{/if}}">
+                    <span class="d-flex align-items-center justify-content-center font-size-sm product-card__btn-variant-text">Add</span>
                     <span class="d-flex align-items-center justify-content-center product-card__btn-variant-text">
                         <span class="font-weight-normal text-linethrough mr-1 {{#if collection}}product-card__btn-price{{/if}}">$99</span>
                         <span class="{{#if collection}}product-card__btn-price{{/if}}">$39</span>

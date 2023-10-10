@@ -1,0 +1,54 @@
+html.us-store {
+	.newsletter-popup--abtest-v1,
+	.newsletter-popup--abtest-v2 {
+		.modal--newsletter {
+			&__bg {
+				display: none !important;
+			}
+
+			.modal-content {
+				border-radius: calc-em(8) !important;
+
+				@include media-breakpoint-up(lg) {
+					border-radius: calc-em(16) !important;
+				}
+			}
+		}
+	}
+
+	.newsletter-popup--abtest-v1 {
+		.modal--newsletter__bg {
+			&-mb-v1 {
+				display: block !important;
+
+				@include media-breakpoint-up(lg) {
+					display: none !important;
+				}
+			}
+
+			@include media-breakpoint-up(lg) {
+				&-dt-v1 {
+					display: block !important;
+				}
+			}
+		}
+	}
+
+	.newsletter-popup--abtest-v2 {
+		.modal--newsletter__bg {
+			&-mb-v2 {
+				display: block !important;
+
+				@include media-breakpoint-up(lg) {
+					display: none !important;
+				}
+			}
+
+			@include media-breakpoint-up(lg) {
+				&-dt-v2 {
+					display: block !important;
+				}
+			}
+		}
+	}
+}

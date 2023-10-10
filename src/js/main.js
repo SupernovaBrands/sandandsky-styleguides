@@ -104,10 +104,6 @@ if ($('.reading-proggress-bar').length > 0) {
 	import(/* webpackChunkName: 'article-progress-bar' */ '~mod/article-progress-bar');
 }
 
-if ($('.cookies-banner').length > 0) {
-	import(/* webpackChunkName: 'cookies-banner' */ '~mod/cookies-banner.js');
-}
-
 if ($('.collection-template').length > 0) {
 	import(/* webpackChunkName: 'collection-template' */ '~mod/collection-template');
 }

@@ -158,22 +158,15 @@ html.au-store {
 					height: calc-em(32);
 					left: 1em;
 				}
-	
+
 				.chevron-right {
 					height: calc-em(32);
 					right: 1em;
 				}
-	
+
 				a {
 					padding: calc-em(9.5) 0;
 				}
-			}
-		}
-		@include media-breakpoint-down(md) {
-			.cookies-banner-show.modal--newsletter-open .announcement-bar--open-modal {
-				top: 0;
-				position: absolute;
-				width: 100%;
 			}
 		}
 	}

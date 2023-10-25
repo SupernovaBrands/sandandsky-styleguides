@@ -16,61 +16,72 @@
 				<div class="react-yotpo-star mb-2" data-product-id="4633315409991" data-show-total="true"></div>
 				{{!-- US --}}
 				{{!-- <div class="react-yotpo-star mb-2" data-product-id="3595105992809" data-show-total="true"></div> --}}
-				<p class="my-2 mb-lg-3">Smooth uneven texture and clear congestion with this triple-action facial exfoliator.</p>
-				<ul class="list-check pl-4 list-unstyled">
-					<li class="my-2">Hydrates & strengthens with Tasmanian Spring Water</li>
-					<li class="my-2">Hyaluronic Acid Complex locks in moisture</li>
-					<li class="my-2">Fermented Sea Kelp smooths skin & targets wrinkles</li>
-					<li class="my-2">Red Seaweed Extract forms ‘second skin’ to prevent dehydration</li>
-					<li class="my-2">Ultra-lightweight gel-cream – ideal for all skin types</li>
-				</ul>
-				{{> components/quiz-banner class="quiz-banner__primary"}}
-				<div class="product__main-form d-flex order-lg-3 mb-3">
-					<form class="product-form w-100" onsubmit="window.productFormSubmit(event)">
-						<div class="d-none product-variant__pricing mb-3">
-							<div class="product-variant__pricing-item mb-3">
-								<span class="mr-1 font-weight-bold text-linethrough text-muted">$152.80</span>
-								<span class="mr-1 font-weight-bold">$114.70</span>
-								<span class="text-primary">(Save 40%)</span>
+				<div class="d-flex flex-column pdp-cta--abtest-position">
+					<p class="my-2 mb-lg-3">Smooth uneven texture and clear congestion with this triple-action facial exfoliator.</p>
+					<ul class="list-check pl-4 list-unstyled">
+						<li class="my-2">Hydrates & strengthens with Tasmanian Spring Water</li>
+						<li class="my-2">Hyaluronic Acid Complex locks in moisture</li>
+						<li class="my-2">Fermented Sea Kelp smooths skin & targets wrinkles</li>
+						<li class="my-2">Red Seaweed Extract forms ‘second skin’ to prevent dehydration</li>
+						<li class="my-2">Ultra-lightweight gel-cream – ideal for all skin types</li>
+					</ul>
+					{{> components/quiz-banner class="quiz-banner__primary"}}
+					<div class="product__main-form d-flex order-lg-3 mb-3">
+						<form class="product-form w-100" onsubmit="window.productFormSubmit(event)">
+							<div class="d-none product-variant__pricing mb-3">
+								<div class="product-variant__pricing-item mb-3">
+									<span class="mr-1 font-weight-bold text-linethrough text-muted">$152.80</span>
+									<span class="mr-1 font-weight-bold">$114.70</span>
+									<span class="text-primary">(Save 40%)</span>
+								</div>
 							</div>
-						</div>
-						<p class="mb-3 font-size-sm order-lg-5 d-flex align-items-center flex-wrap product__klarna">
-							<span>or 4 interest-free installments of <strong>£9.23</strong> by</span>
-							<img class="svg font-size-sm ml-1" src="icons/logo-klarna.svg" replace-to-svg />
-							<img class="svg info ml-1" src="icons/info-circle.svg" replace-to-svg data-toggle="modal" data-target="#KlarnaModal" />
-						</p>
-						{{> components/klarna-modal}}
-						<div class="swatch">
-							{{> components/product-variant name="product-variant" title="Single" value="1-x-sunny-honey-bali-bronzing-foam" image="https://via.placeholder.com/150x150/?text=1" checked=true variantid="39652548771911" available=true}}
-							{{> components/product-variant name="product-variant" title="Variant OOS" value="1-x-sunny-honey-bali-bronzing-foam-oos" image="https://via.placeholder.com/150x150/?text=1" variantid="39652548771911" available=false}}
-							{{> components/product-variant name="product-variant" title="Variant Waitlist" isWaitlist="true" value="1-x-sunny-honey-bali-bronzing-foam-waitlist" image="https://via.placeholder.com/150x150/?text=1" variantid="39652548771911" available=false waitlist=true}}
-							{{> components/product-variant name="product-variant" title="Bundle" subtitle=true value="1-x-sunny-honey-bali-bronzing-bundle" image="https://via.placeholder.com/150x150/?text=2"  compare=true variantid="39652548771911" available=true subscription=true subscriptionTitle="Bundle Subscription"}}
-							{{> components/product-variant-subscription-v2 class="d-none" }}
-						</div>
-						<div class="d-flex product-swatch-mobile__trigger" data-text="Add to cart" data-oos="Sold Out" data-waitlist="Waitlist">
-							<div class="d-flex">
-								<button class="quantity--minus input-group-text border-right-0 rounded rounded-right-0 border-dark flex-grow-0" type="button" aria-label="Add Subtract" data-cy="pdp-subtract-quantity-icon">
-									<img class="svg" src="icons/minus.svg" replace-to-svg />
-								</button>
-								<input type="number" name="quantity" class="form-control border-left-0 border-right-0 rounded-0 p-0 text-center flex-grow-0 text-body border-dark font-size-dt-lg" value="1">
-								<button class="quantity--plus input-group-text border-left-0 rounded rounded-left-0 border-dark flex-grow-0" type="button" aria-label="Add Quantity" data-cy="pdp-add-quantity-icon">
-									<img class="svg" src="icons/plus.svg" replace-to-svg />
+							<p class="mb-3 font-size-sm order-lg-5 d-flex align-items-center flex-wrap product__klarna">
+								<span>or 4 interest-free installments of <strong>£9.23</strong> by</span>
+								<img class="svg font-size-sm ml-1" src="icons/logo-klarna.svg" replace-to-svg />
+								<img class="svg info ml-1" src="icons/info-circle.svg" replace-to-svg data-toggle="modal" data-target="#KlarnaModal" />
+							</p>
+							{{> components/klarna-modal}}
+							<div class="swatch">
+								{{> components/product-variant name="product-variant" title="Single" value="1-x-sunny-honey-bali-bronzing-foam" image="https://via.placeholder.com/150x150/?text=1" checked=true variantid="39652548771911" available=true}}
+								{{> components/product-variant name="product-variant" title="Variant OOS" value="1-x-sunny-honey-bali-bronzing-foam-oos" image="https://via.placeholder.com/150x150/?text=1" variantid="39652548771911" available=false}}
+								{{> components/product-variant name="product-variant" title="Variant Waitlist" isWaitlist="true" value="1-x-sunny-honey-bali-bronzing-foam-waitlist" image="https://via.placeholder.com/150x150/?text=1" variantid="39652548771911" available=false waitlist=true}}
+								{{> components/product-variant name="product-variant" title="Bundle" subtitle=true value="1-x-sunny-honey-bali-bronzing-bundle" image="https://via.placeholder.com/150x150/?text=2"  compare=true variantid="39652548771911" available=true subscription=true subscriptionTitle="Bundle Subscription"}}
+								{{> components/product-variant-subscription-v2 class="d-none" }}
+							</div>
+							<div class="d-flex product-swatch-mobile__trigger" data-text="Add to cart" data-oos="Sold Out" data-waitlist="Waitlist">
+								<div class="d-flex product-form--qty-box">
+									<button class="quantity--minus input-group-text border-right-0 rounded rounded-right-0 border-dark flex-grow-0" type="button" aria-label="Add Subtract" data-cy="pdp-subtract-quantity-icon">
+										<img class="svg" src="icons/minus.svg" replace-to-svg />
+									</button>
+									<input type="number" name="quantity" class="form-control border-left-0 border-right-0 rounded-0 p-0 text-center flex-grow-0 text-body border-dark font-size-dt-lg" value="1">
+									<button class="quantity--plus input-group-text border-left-0 rounded rounded-left-0 border-dark flex-grow-0" type="button" aria-label="Add Quantity" data-cy="pdp-add-quantity-icon">
+										<img class="svg" src="icons/plus.svg" replace-to-svg />
+									</button>
+								</div>
+								<button class="btn btn-primary btn-block ml-g ml-lg-3 btn__submit position-relative d-flex align-items-center justify-content-center" type="submit" data-cy="pdp-addtocart-btn">
+									<span class="btn__submit-text">Add to cart</span>
+									<div class="d-none btn__submit-price justify-content-between border-primary border-bottom border-top w-100 align-items-center">
+										<span class="font-size-sm">Add to cart</span>
+										<div class="btn__submit-price-group font-size-base">
+											<span class="text-linethrough mr-1">$70</span>
+											<span class="mr-1">$39</span>
+											<span class="font-weight-normal">(SAVE 50%)</span>
+										</div>
+									</div>
+									<span class="position-absolute spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
 								</button>
 							</div>
-							<button class="btn btn-primary btn-block ml-g ml-lg-3 btn__submit position-relative d-flex align-items-center justify-content-center" type="submit" data-cy="pdp-addtocart-btn">
-								<span class="btn__submit-text">Add to cart</span>
-								<span class="position-absolute spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
-							</button>
-						</div>
-						<div class="product-swatch-mobile fixed-bottom d-lg-none mx-g mb-3 show">
-							<button class="btn btn-lg btn-primary btn-block m-0 position-relative btn__submit position-relative d-flex align-items-center justify-content-center" type="submit">
-								<span class="btn__submit-text">Add to cart</span>
-								<span class="position-absolute spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
-							</button>
-						</div>
-						<input id="variantid" type="hidden" name="id" value="39652550213703">
-					</form>
+							<div class="product-swatch-mobile fixed-bottom d-lg-none mx-g mb-3 show">
+								<button class="btn btn-lg btn-primary btn-block m-0 position-relative btn__submit position-relative d-flex align-items-center justify-content-center" type="submit">
+									<span class="btn__submit-text">Add to cart</span>
+									<span class="position-absolute spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+								</button>
+							</div>
+							<input id="variantid" type="hidden" name="id" value="39652550213703">
+						</form>
+					</div>
 				</div>
+
 				{{> compounds/product-waitlist}}
 				{{> compounds/launch-waitlist}}
 				{{> components/quiz-banner class="quiz-banner__abtest order-lg-5 d-none"}}
@@ -208,7 +219,7 @@
 	{{> sections/howto-video bg='howto-video__aea-light'}}
 	{{> components/video-modal}}
 	{{> sections/ig-reels}}
-	
+
 	<!--
 	{{> sections/howto-video bg='howto-video__aea-light'}}
 	{{> components/video-modal}}

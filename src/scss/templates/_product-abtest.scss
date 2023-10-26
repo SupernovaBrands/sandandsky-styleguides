@@ -10,19 +10,42 @@
 			}
 
 			.product-form {
-				&--qty-box,
-				.btn__submit-text {
+				&--qty-box {
 					display: none !important;
 				}
-				.btn__submit {
-					margin-left: 0 !important;
-					padding-left: map-get($spacers, 3);
-					padding-right: map-get($spacers, 3);
-					@include font-size($font-size-base, true);
-
-					&-price {
-						display: flex !important;
+				.product-swatch-mobile__trigger {
+					.btn__submit-text {
+						display: none !important;
 					}
+					.btn__submit {
+						margin-left: 0 !important;
+						padding-left: map-get($spacers, 3);
+						padding-right: map-get($spacers, 3);
+						@include font-size($font-size-base, true);
+						border-top-width: 2px;
+						border-bottom-width: 2px;
+
+						&-price {
+							display: flex !important;
+						}
+					}
+				}
+			}
+
+			.product-form {
+				display: flex;
+				flex-flow: column;
+
+				.swatch {
+					order: 1;
+				}
+
+				.product-swatch-mobile__trigger {
+					order: 2;
+				}
+
+				afterpay-placement {
+					order: 3;
 				}
 			}
 		}

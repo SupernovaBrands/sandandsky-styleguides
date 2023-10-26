@@ -1,0 +1,77 @@
+@include media-breakpoint-down(md) {
+	html.us-store {
+		.pdp-cta--abtest-v1,
+		.pdp-cta--abtest-v3 {
+			.product-variant {
+				&__price,
+				&__pricing {
+					display: none !important;
+				}
+			}
+
+			.product-form {
+				&--qty-box {
+					display: none !important;
+				}
+				.product-swatch-mobile__trigger {
+					.btn__submit-text {
+						display: none !important;
+					}
+					.btn__submit {
+						margin-left: 0 !important;
+						padding-left: map-get($spacers, 3);
+						padding-right: map-get($spacers, 3);
+						@include font-size($font-size-base, true);
+						border-top-width: 2px;
+						border-bottom-width: 2px;
+
+						&-price {
+							display: flex !important;
+						}
+					}
+				}
+			}
+
+			.product-form {
+				display: flex;
+				flex-flow: column;
+
+				.swatch {
+					order: 1;
+				}
+
+				.product-swatch-mobile__trigger {
+					order: 2;
+				}
+
+				afterpay-placement {
+					order: 3;
+				}
+			}
+		}
+
+		.pdp-cta--abtest-v2,
+		.pdp-cta--abtest-v3 {
+			.pdp-cta--abtest-position {
+				.product__main-form {
+					order: 1;
+				}
+				p {
+					order: 2;
+				}
+				ul {
+					order: 3;
+				}
+				.quiz-banner__primary {
+					order: 4;
+				}
+			}
+		}
+
+		.pdp-cta--abtest-v2 {
+			.product-variant__price {
+				display: none !important;
+			}
+		}
+	}
+}

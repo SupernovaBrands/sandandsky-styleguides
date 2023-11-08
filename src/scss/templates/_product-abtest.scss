@@ -72,6 +72,12 @@
 			.product-variant__price {
 				display: none !important;
 			}
+			.product-form {
+				.btn__submit-text,
+				.btn__submit {
+					@include font-size($font-size-base, true);
+				}
+			}
 		}
 	}
 }

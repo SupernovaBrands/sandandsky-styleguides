@@ -28,4 +28,21 @@
 			height: calc-em(24);
 		}
 	}
+
+	@include media-breakpoint-down(md) {
+		&__description {
+			.product__main-form {
+				order: 1;
+			}
+			p {
+				order: 2;
+			}
+			ul {
+				order: 3;
+			}
+			.quiz-banner__primary {
+				order: 4;
+			}
+		}
+	}
 }

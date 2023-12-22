@@ -47,5 +47,12 @@
 		.sticky-header--abtest-v2 .nav__secondary {
 			display: block !important;
 		}
+
+		.sticky-header--abtest-v3 .scrolled-down,
+		.sticky-header--abtest-v3 .scrolled-up {
+			.nav__secondary {
+				display: none !important;
+			}
+		}
 	}
 }

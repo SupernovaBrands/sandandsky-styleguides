@@ -43,5 +43,9 @@
 				margin-left: auto;
 			}
 		}
+
+		.sticky-header--abtest-v2 .nav__secondary {
+			display: block !important;
+		}
 	}
 }

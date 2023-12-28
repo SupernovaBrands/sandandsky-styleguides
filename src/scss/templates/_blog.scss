@@ -44,6 +44,20 @@
 			"comment sidebar";
 	}
 
+	.badge:empty {
+		display: none;
+	}
+
+	.badge-light {
+		color: $black;
+		background-color: $white;
+	}
+
+	.product-card__stars {
+		justify-content: center;
+		font-size: $font-size-sm;
+	}
+
 	&__content {
 		grid-area: content;
 

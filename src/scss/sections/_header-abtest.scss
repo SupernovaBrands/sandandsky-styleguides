@@ -1,0 +1,64 @@
+@include media-breakpoint-down(md) {
+	html.uk-store {
+		.sticky-header--abtest-v1,
+		.sticky-header--abtest-v2,
+		.sticky-header--abtest-v3 {
+			.scrolled-down {
+				transition: all 0.4s ease-in-out, right 0s;
+				transform: none;
+
+				.announcement-bar {
+					display: none;
+				}
+			}
+		}
+
+		.sticky-header--abtest-v2,
+		.sticky-header--abtest-v3 {
+			.container {
+				justify-content: flex-start;
+			}
+
+			.navbar-toggler {
+				flex-basis: auto;
+
+				span {
+					width: calc-em(20, 20);
+					&::before,
+					&::after {
+						width: calc-em(20, 20);
+					}
+				}
+			}
+
+			.navbar-brand {
+				display: none;
+
+				&--abtest {
+					display: block !important;
+				}
+			}
+
+			.navbar-nav {
+				margin-left: auto;
+			}
+		}
+
+		.sticky-header--abtest-v2 .nav__secondary {
+			display: block !important;
+
+			.nav-item:not(:last-child):not(:first-child) {
+				margin-right: 0 !important;
+				padding-left: $grid-gutter-width / 2 !important;
+				padding-right: $grid-gutter-width / 2 !important;
+			}
+		}
+
+		.sticky-header--abtest-v3 .scrolled-down,
+		.sticky-header--abtest-v3 .scrolled-up {
+			.nav__secondary {
+				display: none !important;
+			}
+		}
+	}
+}

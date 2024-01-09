@@ -11,6 +11,7 @@ import CartUpsell from '~comp/cart-upsell';
 import CartUpsellTop from '~comp/cart-upsell-top';
 import CartExtras from '~comp/cart-extras';
 import CartRecentProducts from '~comp/cart-recent-products';
+import CartRedemption from '~comp/swell/cart-redemption';
 
 import snCart from '~mod/sn-cart';
 import { getShippingPrice } from '~mod/shipping';
@@ -704,6 +705,9 @@ export default class Cart extends React.Component {
 										/>
 									))}
 								</div>
+
+								<hr />
+								<CartRedemption />
 
 								<hr />
 								<CartDiscountForm

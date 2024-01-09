@@ -84,6 +84,11 @@
 		.manual-gwp__item {
 			border-radius: map-get($spacers, 2);
 		}
+
+		&-item-img {
+			border-bottom-left-radius: 0 !important;
+			border-bottom-right-radius: 0 !important;
+		}
 	}
 }
 

@@ -61,7 +61,8 @@
 	}
 }
 
-.modal--checkout-upsell {
+.modal--checkout-upsell,
+.modal--popup-upsell {
 	.modal-dialog {
 		max-width: 425px;
 	}
@@ -102,5 +103,17 @@
 	input::-webkit-input-placeholder,
 	input::placeholder {
 		color: $gray-500;
+	}
+}
+
+.modal--popup-upsell {
+	.modal-dialog {
+		max-width: calc-em(386);
+	}
+
+	@include media-breakpoint-down(md) {
+		&__title {
+			@include font-size($h1-font-size);
+		}
 	}
 }

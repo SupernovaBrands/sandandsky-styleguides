@@ -33,6 +33,10 @@
 // bg body color
 @include bg-variant(".bg-body-color", $body-color, true);
 
+// bg product tags
+@include bg-variant(".bg-green", $bg-green, true);
+@include bg-variant(".bg-black", $black, true);
+@include bg-variant(".bg-spring-blue", $bg-spring-blue, true);
 
 .text-gray-500 {
 	color: $gray-500 !important;
@@ -157,4 +161,9 @@
 	iframe {
 		display: none !important;
 	}
+}
+
+// Special margin for text spacing
+.mb-25 {
+	margin-bottom: $spacer * 0.35 !important;
 }

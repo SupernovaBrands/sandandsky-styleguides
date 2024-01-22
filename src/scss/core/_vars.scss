@@ -77,6 +77,10 @@ $range-essential-light: #FFEFEE;
 $range-essentials: #FEB1A1;
 $range-essentials-light: #FFEFEE;
 
+// Product Tags
+$bg-green: #1E7548;
+$bg-spring-blue: #42A1CA;
+
 $secondary: $range-apc;
 $secondary-light: $range-apc-light;
 
@@ -109,6 +113,7 @@ $input-btn-focus-color: transparent;
 $input-focus-border-color: $gray-600;
 $input-disabled-bg: $gray-100;
 $input-disabled-color: $gray-400;
+$input-btn-primary-disabled-color: #EBD2D7;
 $custom-control-gutter: .5em;
 $custom-control-indicator-size: 1em;
 $custom-control-indicator-checked-border-color: $body-color;

@@ -5,3 +5,13 @@
 		@include badge-variant($gray-400);
 	}
 }
+
+.pdp-badge {
+	min-width: calc-em(54);
+	line-height: $line-height-base;
+	font-size: $font-size-base;
+
+	&--sm {
+	  line-height: $font-size-base;
+	}
+  }

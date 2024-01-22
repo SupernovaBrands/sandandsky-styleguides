@@ -111,9 +111,10 @@
 		max-width: calc-em(386);
 	}
 
-	@include media-breakpoint-down(md) {
-		&__title {
-			@include font-size($h1-font-size);
+	&__title {
+		@include font-size($h1-font-size);
+		@include media-breakpoint-up(lg) {
+			@include font-size($h2-font-size-lg);
 		}
 	}
 }

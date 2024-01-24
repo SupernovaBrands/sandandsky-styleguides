@@ -61,12 +61,26 @@
 	}
 }
 
-.modal--checkout-upsell {
+.modal--checkout-upsell,
+.modal--popup-upsell {
 	.modal-dialog {
 		max-width: 425px;
 	}
 
 	.percentage-icon {
 		height: calc-em(36);
+	}
+}
+
+.modal--popup-upsell {
+	.modal-dialog {
+		max-width: calc-em(386);
+	}
+
+	&__title {
+		@include font-size($h1-font-size);
+		@include media-breakpoint-up(lg) {
+			@include font-size($h2-font-size-lg);
+		}
 	}
 }

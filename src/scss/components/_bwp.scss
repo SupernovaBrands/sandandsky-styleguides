@@ -1,0 +1,14 @@
+.bwp-or-separator {
+    &:before, &:after {
+        content: " ";
+        border-bottom: 1px solid $gray-500;
+        flex: 1;
+    }
+    &:before {
+        margin-right: 0.5em;
+    }
+
+    &:after {
+        margin-left: 0.5em;
+    }
+}

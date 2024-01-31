@@ -26,12 +26,15 @@
 	}
 
 	.badge {
-		top: calc-em(5, 12);
-		left: calc-em(12.5, 12);
-		padding: calc-em(5, 12) calc-em(10, 12);
-		@include media-breakpoint-up(lg) {
-			top: calc-em(10, 12);
-			left: calc-em(25, 12);
+
+		&--container {
+			top: calc-em(5, 12);
+			left: calc-em(12.5, 12);
+
+			@include media-breakpoint-up(lg) {
+				top: calc-em(10, 12);
+				left: calc-em(25, 12);
+			}
 		}
 
 		&--image {

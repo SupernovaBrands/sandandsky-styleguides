@@ -20,6 +20,15 @@
 		will-change: transform;
 		animation: marquee 60s linear infinite;
 		top: calc-em(3);
+
+		&:hover {
+			animation-play-state: paused;
+		}
+
+		a {
+			padding-left: calc-em(112);
+			padding-right: calc-em(112);
+		}
 	}
 }
 

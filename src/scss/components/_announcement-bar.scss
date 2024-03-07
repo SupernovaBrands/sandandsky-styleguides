@@ -8,4 +8,36 @@
 	&__timer ul {
         border-bottom: 2px solid #fff;
     }
+
+	&__marquee {
+		transform: initial;
+		height: calc-em(32);
+	}
+
+	&__content {
+		position: absolute;
+		white-space: nowrap;
+		will-change: transform;
+		animation: marquee 60s linear infinite;
+		top: calc-em(3);
+
+		&:hover {
+			animation-play-state: paused;
+		}
+
+		span {
+			padding-left: calc-em(112);
+			padding-right: calc-em(112);
+		}
+	}
+}
+
+@keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(-50%);
+	}
 }

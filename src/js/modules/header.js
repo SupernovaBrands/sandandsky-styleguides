@@ -25,16 +25,16 @@ $(document).ready(function () {
 		scrollTop = $(this).scrollTop();
 
 		if (scrollTop < lastScrollTop) {
-			navbarEl.removeClass('scrolled-down').addClass('scrolled-up');
+			navbarEl.addClass('scrolled');
 			if (scrollTop <= 0) {
 				// remove scrolled up for mobile menu show properly
-				navbarEl.removeClass('scrolled-up');
+				navbarEl.removeClass('scrolled');
 			}
 		} else if (scrollTop <= 0) {
 			// safari fix bounce effect
-			navbarEl.removeClass('scrolled-up');
+			navbarEl.removeClass('scrolled');
 		} else {
-			navbarEl.removeClass('scrolled-up').addClass('scrolled-down');
+			navbarEl.addClass('scrolled');
 		}
 
 		lastScrollTop = scrollTop;

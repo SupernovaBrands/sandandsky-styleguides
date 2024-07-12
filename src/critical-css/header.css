@@ -171,6 +171,9 @@ h5{font-size:.875em}
 .main-header .h4{font-size:1em}
 }
 .main-header .nav-link__icon{font-size:1.25em}
+.main-header.scrolled {transition:all 0.4s ease-in-out, right 0s;top:0;right:0;left:0;box-shadow:0 .25em .3125em #0000000f;position: fixed;}
+.main-header.scrolled .nav__secondary{display:none}
+.main-header.scrolled .announcement-bar{display:none}
 .navbar-toggler{flex-basis:20%}
 .navbar-toggler span{width:1.25em;height:2px;background-color:#484848;position:relative}
 .navbar-toggler span::after,.navbar-toggler span::before{content:"";height:2px;background:#484848;position:absolute;left:0}

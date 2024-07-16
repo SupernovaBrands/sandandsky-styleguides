@@ -12,13 +12,13 @@
 		height: 100%;
 	}
 
-	&.scrolled-down {
-		transform: translateY(-100%);
-		transition: all 0.1s ease-in-out;
-		position: fixed;
-	}
+	// &.scrolled-down {
+	// 	transform: translateY(-100%);
+	// 	transition: all 0.1s ease-in-out;
+	// 	position: fixed;
+	// }
 
-	&.scrolled-up {
+	&.scrolled {
 		transition: all 0.4s ease-in-out, right 0s;
 		top: 0;
 		right: 0;
@@ -29,7 +29,8 @@
 			align-items: flex-start;
 		}
 
-		.announcement-bar {
+		.announcement-bar,
+		.nav__secondary {
 			display: none;
 		}
 	}
